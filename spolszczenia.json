@@ -1,40 +1,40 @@
 [
   {
-  "game": "Luigi`s Mansion - [Nintendo 3DS]",
-  "img": "https://cdn2.steamgriddb.com/thumb/ac7c433007ac68a863d12dd75b2d13eb.jpg",
-  "platform": "PC emu- Azahar",
-  "type": "Pełne",
-  "status": "Gotowe",
-  "prog": 100,
-  "ver": "—",
-  "author": "Voxar",
-  "upd": "2025-10-28",
-  "link": "https://drive.google.com/file/d/1V3Sl-zrqNbT2RgECS18Wk7pKg92kUGI3/view"
-  "tygodnia": true,
-  "opis": "Twój krótki opis, dlaczego warto."
- },
+    "game": "Luigi`s Mansion - [Nintendo 3DS]",
+    "img": "https://cdn2.steamgriddb.com/thumb/ac7c433007ac68a863d12dd75b2d13eb.jpg",
+    "platform": "PC emu- Azahar",
+    "type": "Pełne",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "Voxar",
+    "upd": "2025-10-28",
+    "link": "https://drive.google.com/file/d/1V3Sl-zrqNbT2RgECS18Wk7pKg92kUGI3/view",
+    "tygodnia": true,
+    "opis": "Twój krótki opis, dlaczego warto."
+  },
   {
-  "game": "Final Fantasy VII Rebirth",
-  "img": "https://cdn2.steamgriddb.com/thumb/01639920c81fcc08b5b7a8db3d55723a.jpg",
-  "platform": "PC",
-  "type": "Pełne",
-  "status": "Premiera 31.10.2026",
-  "prog": 90,
-  "ver": "1.0",
-  "author": "Balamb",
-  "upd": "2025-10-28",
-  "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika"
- },
+    "game": "Final Fantasy VII Rebirth",
+    "img": "https://cdn2.steamgriddb.com/thumb/01639920c81fcc08b5b7a8db3d55723a.jpg",
+    "platform": "PC",
+    "type": "Pełne",
+    "status": "Premiera 31.10.2026",
+    "prog": 90,
+    "ver": "1.0",
+    "author": "Balamb",
+    "upd": "2025-10-28",
+    "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika"
+  },
   {
-  "game": "Silver Pines",
-  "img": "https://cdn2.steamgriddb.com/thumb/199cea4e1477cc6185076773ab1dd637.jpg",
-  "platform": "PC",
-  "type": "Pełne",
-  "status": "Gotowe",
-  "prog": 100,
-  "ver": "1.0",
-  "author": "promptowy",
-  "upd": "2025-10-28",
-  "link": "https://promptowy.com/silver-pines/#pobierz"
- }
+    "game": "Silver Pines",
+    "img": "https://cdn2.steamgriddb.com/thumb/199cea4e1477cc6185076773ab1dd637.jpg",
+    "platform": "PC",
+    "type": "Pełne",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "promptowy",
+    "upd": "2025-10-28",
+    "link": "https://promptowy.com/silver-pines/#pobierz"
+  }
 ]

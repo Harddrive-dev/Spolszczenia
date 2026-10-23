@@ -23,4 +23,16 @@
   "upd": "2025-10-28",
   "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika"
  }
+  {
+  "game": "Silver Pines",
+  "img": "https://cdn2.steamgriddb.com/thumb/199cea4e1477cc6185076773ab1dd637.jpg",
+  "platform": "PC",
+  "type": "Pełne",
+  "status": "Gotowe",
+  "prog": 100,
+  "ver": "1.0",
+  "author": "promptowy",
+  "upd": "2025-10-28",
+  "link": "https://promptowy.com/silver-pines/#pobierz"
+ }
 ]

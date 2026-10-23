@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spolszczenia.haven – katalog polskich wersji gier</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f4ef;--surface:#fff;--text:#1d1b18;--muted:#6b665e;--line:#e2ded5;--accent:#c8102e;--ok:#1e7a46;--warn:#a86a00;--bad:#8a8a8a;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120f;--surface:#1e1b17;--text:#f1ede6;--muted:#a39d92;--line:#33302a;--accent:#ff4d64;--ok:#4fcf8a;--warn:#f0b04a;--bad:#8d8a84;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14120f;--surface:#1e1b17;--text:#f1ede6;--muted:#a39d92;--line:#33302a;--accent:#ff4d64;--ok:#4fcf8a;--warn:#f0b04a;--bad:#8d8a84;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+header{text-align:center;padding:40px 0 24px}
+h1{margin:0;font-size:clamp(28px,6vw,44px);letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.tag{color:var(--muted);margin:8px 0 16px}
+.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:8px 14px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;text-decoration:none}
+.btn:hover,.btn.on{border-color:var(--accent);color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0 20px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:24px}
+.stat small{color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+input[type=search]{flex:1 1 220px}
+.count{color:var(--muted);font-size:14px;margin:0 0 10px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+tr:last-child td{border-bottom:0}
+td a.g{color:var(--text);font-weight:600;text-decoration:none}
+td a.g:hover{color:var(--accent)}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.st-done{color:var(--ok);border-color:var(--ok)}.st-wip{color:var(--warn);border-color:var(--warn)}.st-stop{color:var(--bad)}
+.prog{width:90px;height:6px;background:var(--line);border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent)}
+.cards{display:none;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:17px}
+.card .meta{color:var(--muted);font-size:13px}
+.view-cards .scroll{display:none}.view-cards .cards{display:grid}
+.empty{padding:32px;text-align:center;color:var(--muted)}
+section.info{margin-top:36px;color:var(--muted);font-size:14px}
+section.info h2{color:var(--text);font-size:18px;margin:20px 0 6px}
+footer{margin-top:28px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+a{color:var(--accent)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:none}
+.panel.open{display:block}
+.panel h2{margin:0 0 10px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.grid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.grid input,.grid select,.grid textarea{width:100%}
+textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);resize:vertical}
+.wide{grid-column:1/-1}
+.msg{font-size:14px;margin:10px 0 0;color:var(--muted)}
+.msg.err{color:var(--accent)}
+.pend{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.act{display:inline-flex;gap:6px;margin-left:8px}
+.mini{border:1px solid var(--line);background:none;color:var(--muted);border-radius:6px;font-size:12px;padding:1px 7px;cursor:pointer}
+.mini:hover{color:var(--accent);border-color:var(--accent)}
+.badge{font-size:12px;color:var(--ok);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Spolszczenia<span>.haven</span></h1>
+  <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
+  <div class="btns">
+    <button class="btn" id="openForm">Zgłoś spolszczenie</button>
+    <a class="btn" href="https://grajpopolsku.pl" target="_blank" rel="noopener">GrajPoPolsku.pl</a>
+    <button class="btn" id="theme">Motyw</button>
+  </div>
+</header>
+
+<div class="panel" id="form">
+  <h2 id="formTitle">Zgłoś spolszczenie</h2>
+  <div class="grid">
+    <label>Gra *<input id="f_game" maxlength="120"></label>
+    <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
+    <label>Zakres<select id="f_type"><option>Napisy</option><option>Pełne</option><option>Dubbing</option><option>Oficjalne</option></select></label>
+    <label>Status<select id="f_status"><option>Gotowe</option><option>W toku</option><option>Wstrzymane</option></select></label>
+    <label>Postęp (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
+    <label>Wersja<input id="f_ver" maxlength="30"></label>
+    <label>Autor / grupa<input id="f_author" maxlength="80"></label>
+    <label>Ostatnia aktualizacja<input id="f_upd" type="date"></label>
+    <label class="wide">Link do spolszczenia lub artykułu * (https://…)<input id="f_link" type="url" maxlength="400"></label>
+    <label class="wide">Uwagi dla weryfikującego (opcjonalnie)<textarea id="f_note" rows="2" maxlength="400"></textarea></label>
+  </div>
+  <datalist id="plist"><option>PC</option><option>PlayStation</option><option>Nintendo Switch</option><option>Xbox</option><option>Nintendo 64</option><option>SNES</option></datalist>
+  <p class="btns" style="justify-content:flex-start;margin-top:12px"><button class="btn on" id="send">Wyślij</button><button class="btn" id="cancel">Anuluj</button></p>
+  <p class="msg" id="fmsg"></p>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="bar">
+  <input type="search" id="q" placeholder="Szukaj gry lub autora…" aria-label="Szukaj">
+  <select id="fp" aria-label="Platforma"></select>
+  <select id="ft" aria-label="Zakres tłumaczenia"></select>
+  <select id="fs" aria-label="Status"></select>
+  <select id="sort" aria-label="Sortowanie">
+    <option value="game">A–Z</option><option value="upd">Ostatnia aktualizacja</option><option value="prog">Postęp</option>
+  </select>
+  <button class="btn on" id="vt">Tabela</button><button class="btn" id="vc">Karty</button>
+  <button class="btn" id="clr">Wyczyść</button>
+</div>
+<p class="count" id="count"></p>
+
+<div id="out">
+  <div class="scroll"><table>
+    <thead><tr><th>Gra</th><th>Platforma</th><th>Zakres</th><th>Status</th><th>Postęp</th><th>Wersja</th><th>Autor</th><th>Aktualizacja</th></tr></thead>
+    <tbody id="tb"></tbody></table></div>
+  <div class="cards" id="cards"></div>
+</div>
+
+<section class="info">
+  <h2>Zakresy tłumaczenia</h2>
+  <p><b>Napisy</b>: przetłumaczone teksty interfejsu i dialogów. <b>Pełne</b>: napisy plus grafiki, menu i filmy. <b>Dubbing</b>: polskie głosy. <b>Oficjalne</b>: wydane przez wydawcę lub twórców gry.</p>
+  <h2>Statusy</h2>
+  <p><b>Gotowe</b>: kompletne tłumaczenie. <b>W toku</b>: prace trwają. <b>Wstrzymane</b>: brak aktywności od ponad 6 miesięcy.</p>
+  <h2>Zgłoszenia</h2>
+  <p>Zgłoszenie otwiera się jako publiczne zgłoszenie (Issue) w serwisie GitHub. Moderator sprawdza je i dopiero wtedy dodaje wpis do listy.</p>
+</section>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry.</footer>
+</div>
+
+<script>
+// ====== USTAWIENIA ======
+// Wpisz swój login i nazwę repozytorium na GitHubie, np. "jankowalski/spolszczenia"
+var REPO="TWOJ-LOGIN/NAZWA-REPO";
+// ========================
+var $=function(i){return document.getElementById(i)};
+var items=[];
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function safe(u){return /^https?:\/\//i.test(u||"")?u:"#"}
+function pct(n){return Math.max(0,Math.min(100,+n||0))}
+function cls(s){return s==="Gotowe"?"st-done":s==="W toku"?"st-wip":"st-stop"}
+function uniq(k){return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
+function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=document.createElement("option");o.value="";o.textContent=label;el.appendChild(o);
+  uniq(k).forEach(function(v){var x=document.createElement("option");x.value=v;x.textContent=v;el.appendChild(x)});el.value=cur}
+function filtered(){
+  var q=$("q").value.toLowerCase().trim(),p=$("fp").value,t=$("ft").value,s=$("fs").value,so=$("sort").value;
+  var r=items.filter(function(g){return(!p||g.platform===p)&&(!t||g.type===t)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
+  r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?(b.upd||"").localeCompare(a.upd||""):pct(b.prog)-pct(a.prog)});
+  return r}
+function render(){
+  var r=filtered();
+  $("count").textContent="Wyświetlono "+r.length+" z "+items.length+" spolszczeń";
+  if(!r.length){$("tb").innerHTML='<tr><td colspan="8" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></td><td>'+esc(g.platform)+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3><a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div><span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
+function stats(){
+  var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length,o=items.filter(function(g){return g.type==="Oficjalne"}).length;
+  $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"],[o,"oficjalnych"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}
+function refresh(){fillSel("fp","platform","Platforma");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");stats();render()}
+function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
+$("openForm").onclick=function(){$("fmsg").textContent="";$("form").className="panel open";$("form").scrollIntoView({behavior:"smooth"})};
+$("cancel").onclick=function(){$("form").className="panel"};
+$("send").onclick=function(){
+  var v=function(i){return $(i).value.trim()};
+  if(!v("f_game"))return say("Podaj nazwę gry.",1);
+  if(!/^https?:\/\//i.test(v("f_link")))return say("Podaj poprawny link zaczynający się od https://",1);
+  if(REPO.indexOf("TWOJ-LOGIN")===0)return say("Właściciel strony musi najpierw ustawić REPO w pliku index.html.",1);
+  var body=["**Gra:** "+v("f_game"),"**Platforma:** "+v("f_platform"),"**Zakres:** "+v("f_type"),"**Status:** "+v("f_status"),"**Postęp:** "+(v("f_prog")||"?")+"%","**Wersja:** "+(v("f_ver")||"—"),"**Autor:** "+(v("f_author")||"—"),"**Aktualizacja:** "+(v("f_upd")||"—"),"**Link:** "+v("f_link"),"","**Uwagi:** "+(v("f_note")||"—")].join("\n");
+  var url="https://github.com/"+REPO+"/issues/new?title="+encodeURIComponent("Nowe spolszczenie: "+v("f_game"))+"&body="+encodeURIComponent(body);
+  window.open(url,"_blank","noopener");
+  say("Otworzyłem GitHub z gotowym zgłoszeniem. Kliknij tam „Submit new issue”. (Wymagane darmowe konto GitHub.)");
+};
+["q","fp","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",render)});
+$("clr").onclick=function(){$("q").value="";$("fp").value="";$("ft").value="";$("fs").value="";render()};
+function view(v){$("out").className=v==="cards"?"view-cards":"";$("vt").className="btn"+(v==="table"?" on":"");$("vc").className="btn"+(v==="cards"?" on":"")}
+$("vt").onclick=function(){view("table")};$("vc").onclick=function(){view("cards")};
+$("theme").onclick=function(){var d=document.documentElement,dark=d.getAttribute("data-theme")==="dark"||(!d.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);d.setAttribute("data-theme",dark?"light":"dark")};
+fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){items=d;refresh()}).catch(function(){
+  $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."});
+</script>
+</body>
+</html>

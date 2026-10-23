@@ -65,6 +65,9 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .mini{border:1px solid var(--line);background:none;color:var(--muted);border-radius:6px;font-size:12px;padding:1px 7px;cursor:pointer}
 .mini:hover{color:var(--accent);border-color:var(--accent)}
 .badge{font-size:12px;color:var(--ok);margin-left:6px}
+.gcell{display:flex;align-items:center;gap:10px}
+.thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
+.ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -140,6 +143,10 @@ var $=function(i){return document.getElementById(i)};
 var items=[];
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function safe(u){return /^https?:\/\//i.test(u||"")?u:"#"}
+function imgOk(u){return typeof u==="string"&&u.indexOf("..")<0&&(/^https:\/\//i.test(u)||/^[\w\-][\w\-\/.]*\.(png|jpe?g|webp|gif|svg)$/i.test(u))}
+function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());
+  return imgOk(g.img)?'<img class="thumb" loading="lazy" alt="" data-l="'+l+'" src="'+esc(g.img)+'">':'<span class="thumb ph">'+l+'</span>'}
+document.addEventListener("error",function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}},true);
 function pct(n){return Math.max(0,Math.min(100,+n||0))}
 function cls(s){return s==="Gotowe"?"st-done":s==="W toku"?"st-wip":"st-stop"}
 function uniq(k){return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
@@ -154,8 +161,8 @@ function render(){
   var r=filtered();
   $("count").textContent="Wyświetlono "+r.length+" z "+items.length+" spolszczeń";
   if(!r.length){$("tb").innerHTML='<tr><td colspan="8" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></td><td>'+esc(g.platform)+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3><a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div><span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></div></td><td>'+esc(g.platform)+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div><span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
 function stats(){
   var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length,o=items.filter(function(g){return g.type==="Oficjalne"}).length;
   $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"],[o,"oficjalnych"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}

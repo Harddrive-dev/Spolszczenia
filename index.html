@@ -69,6 +69,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
 .ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted)}
 .cbtn{margin-left:auto}
+.vgrp{display:inline-flex;gap:8px}
 .feat{display:flex;flex-wrap:wrap;gap:28px;background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:32px}
 .fcover{flex:0 0 200px;width:200px;height:260px;border-radius:12px;background:var(--line);color:var(--muted);font-size:72px;font-weight:700;display:flex;align-items:center;justify-content:center;object-fit:cover}
 .fbody{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px;justify-content:center}
@@ -158,8 +159,8 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
   <select id="sort" aria-label="Sortowanie">
     <option value="game">A–Z</option><option value="upd">Ostatnia aktualizacja</option><option value="prog">Postęp</option>
   </select>
-  <button class="btn on" id="vt">Tabela</button><button class="btn" id="vc">Karty</button>
   <button class="btn" id="clr">Wyczyść</button>
+  <span class="vgrp"><button class="btn on" id="vt">Tabela</button><button class="btn" id="vc">Karty</button></span>
 </div>
 <p class="count" id="count"></p>
 

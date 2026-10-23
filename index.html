@@ -69,6 +69,36 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
 .ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted)}
 .cbtn{margin-left:auto}
+.feat{display:flex;flex-wrap:wrap;gap:28px;background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:32px}
+.fcover{flex:0 0 200px;width:200px;height:260px;border-radius:12px;background:var(--line);color:var(--muted);font-size:72px;font-weight:700;display:flex;align-items:center;justify-content:center;object-fit:cover}
+.fbody{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.fhead{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.fbadge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--accent);color:var(--bg);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.fwhen{color:var(--muted);font-size:14px}
+.ftitle{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.01em}
+.fpills{display:flex;flex-wrap:wrap;gap:8px}
+.fmeta{margin:0;color:var(--muted)}
+.fdesc{margin:0;max-width:560px}
+.fbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.fbtn{display:inline-flex;align-items:center;min-height:44px;padding:8px 20px;border-radius:999px;background:var(--accent);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none}
+.fbtn:hover{color:var(--bg);opacity:.85}
+.fbtns .cbtn{margin-left:0;min-height:44px;padding:8px 20px;border-radius:999px;font-size:15px;color:var(--text)}
+.home{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;margin-bottom:36px}
+.home h2{margin:0 0 14px;font-size:22px}
+.news{flex:999 1 560px;min-width:0}
+.toprank{flex:1 1 300px;min-width:0}
+.ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.ncard{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--text);text-decoration:none}
+.ncard:hover{border-color:var(--accent);color:var(--text)}
+.ncard .thumb{width:56px;height:56px}
+.ntxt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ntxt b{font-weight:600;line-height:1.25}
+.ntxt small{color:var(--muted);font-size:14px}
+.rlist{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.rlist li{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.rank{flex:0 0 28px;font-size:24px;font-weight:700;color:var(--accent);text-align:center}
+.rlist a{flex:1 1 auto;min-width:0;font-weight:600;color:var(--text);text-decoration:none}
+.rlist a:hover{color:var(--accent)}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
 .overlay.open{display:flex}
 .box{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;max-width:640px;width:100%;max-height:85vh;overflow:auto;padding:18px;position:relative}
@@ -109,6 +139,13 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
   <datalist id="plist"><option>PC</option><option>PlayStation</option><option>Nintendo Switch</option><option>Xbox</option><option>Nintendo 64</option><option>SNES</option></datalist>
   <p class="btns" style="justify-content:flex-start;margin-top:12px"><button class="btn on" id="send">Wyślij</button><button class="btn" id="cancel">Anuluj</button></p>
   <p class="msg" id="fmsg"></p>
+</div>
+
+<section class="feat" id="week" aria-label="Spolszczenie tygodnia" style="display:none"></section>
+
+<div class="home" id="home" style="display:none">
+  <section class="news" id="news" aria-label="Nowości" style="display:none"></section>
+  <section class="toprank" id="toprank" aria-label="Najczęściej komentowane" style="display:none"></section>
 </div>
 
 <div class="stats" id="stats"></div>
@@ -163,7 +200,7 @@ function safe(u){return /^https?:\/\//i.test(u||"")?u:"#"}
 function imgOk(u){return typeof u==="string"&&u.indexOf("..")<0&&(/^https:\/\//i.test(u)||/^[\w\-][\w\-\/.]*\.(png|jpe?g|webp|gif|svg)$/i.test(u))}
 function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());
   return imgOk(g.img)?'<img class="thumb" loading="lazy" alt="" data-l="'+l+'" src="'+esc(g.img)+'">':'<span class="thumb ph">'+l+'</span>'}
-document.addEventListener("error",function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}},true);
+document.addEventListener("error",function(e){var t=e.target;if(!t||!t.classList)return;if(t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}else if(t.classList.contains("fimg")){var q=document.createElement("div");q.className="fcover";q.textContent=t.getAttribute("data-l")||"?";t.replaceWith(q)}},true);
 function pct(n){return Math.max(0,Math.min(100,+n||0))}
 function cls(s){return s==="Gotowe"?"st-done":s==="W toku"?"st-wip":"st-stop"}
 function uniq(k){return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
@@ -183,7 +220,26 @@ function render(){
 function stats(){
   var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length,o=items.filter(function(g){return g.type==="Oficjalne"}).length;
   $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"],[o,"oficjalnych"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}
-function refresh(){fillSel("fp","platform","Platforma");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");stats();render()}
+var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
+function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
+  return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
+function renderHome(){
+  var f=items.filter(function(g){return g.tygodnia})[0],w=$("week");
+  if(f){
+    var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
+    var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
+    w.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">Spolszczenie tygodnia</span><span class="fwhen">'+esc(weekRange())+'</span></div><h2 class="ftitle">'+esc(f.game)+'</h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span><span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'. Ostatnia aktualizacja: '+esc(f.upd||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
+    w.style.display="";
+  }else{w.style.display="none";w.innerHTML=""}
+  var nw=items.filter(function(g){return g.upd}).sort(function(a,b){return String(b.upd).localeCompare(String(a.upd))}).slice(0,4);
+  $("news").innerHTML=nw.length?'<h2>Nowości</h2><div class="ngrid">'+nw.map(function(g){return '<a class="ncard" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(g.author||"—")+'</small><small>'+esc(g.upd)+'</small></span></a>'}).join("")+'</div>':"";
+  $("news").style.display=nw.length?"":"none";
+  var tp=CM?items.filter(function(g){return counts[keyOf(g)]>0}).sort(function(a,b){return counts[keyOf(b)]-counts[keyOf(a)]}).slice(0,5):[];
+  $("toprank").innerHTML=tp.length?'<h2>Najczęściej komentowane</h2><ol class="rlist">'+tp.map(function(g,i){return '<li><span class="rank">'+(i+1)+'</span><a target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a><button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze ('+counts[keyOf(g)]+')</button></li>'}).join("")+'</ol>':"";
+  $("toprank").style.display=tp.length?"":"none";
+  $("home").style.display=(nw.length||tp.length)?"":"none";
+}
+function refresh(){fillSel("fp","platform","Platforma");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");stats();render();renderHome()}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";$("form").className="panel open";$("form").scrollIntoView({behavior:"smooth"})};
 $("cancel").onclick=function(){$("form").className="panel"};
@@ -218,7 +274,7 @@ async function loadCounts(){
       if(r.error)throw r.error;
       r.data.forEach(function(x){c[x.game_key]=(c[x.game_key]||0)+1});
       if(r.data.length<1000)break;from+=1000}
-    counts=c;render()}catch(e){}}
+    counts=c;render();renderHome()}catch(e){}}
 function me(){return session&&session.user}
 function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}

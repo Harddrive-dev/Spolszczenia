@@ -209,7 +209,16 @@ var session=null,curKey=null,armedC=null,REDIR=location.origin+location.pathname
 var PNAME={github:"GitHub",discord:"Discord",google:"Google"};
 function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function keyOf(g){return g.id||slug(g.game||"")}
-function cbtn(g){return CM?'<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze</button>':""}
+var counts={};
+function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0;return '<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze'+(n?' ('+n+')':'')+'</button>'}
+async function loadCounts(){
+  try{var c={},from=0;
+    for(var i=0;i<10;i++){
+      var r=await sb.from("comments").select("game_key").order("id").range(from,from+999);
+      if(r.error)throw r.error;
+      r.data.forEach(function(x){c[x.game_key]=(c[x.game_key]||0)+1});
+      if(r.data.length<1000)break;from+=1000}
+    counts=c;render()}catch(e){}}
 function me(){return session&&session.user}
 function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}
@@ -259,13 +268,14 @@ if(CM){
         t.disabled=true;var key=curKey;
         var w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});t.disabled=false;
         if(w.error)return cmsg(/Zbyt szybko/.test(w.error.message)?"Zbyt szybko, poczekaj chwilę.":"Nie udało się dodać: "+w.error.message,1);
-        $("cbody").value="";cmsg("");loadComments(key);return}
+        $("cbody").value="";cmsg("");loadComments(key);loadCounts();return}
       if(t.getAttribute("data-del")){
         var id=t.getAttribute("data-del");
         if(armedC!==id){armedC=id;t.textContent="Na pewno?";setTimeout(function(){if(armedC===id){armedC=null;t.textContent="Usuń"}},3000);return}
-        armedC=null;var d=await sb.from("comments").delete().eq("id",id);if(d.error)alert("Błąd: "+d.error.message);else loadComments(curKey)}
+        armedC=null;var d=await sb.from("comments").delete().eq("id",id);if(d.error)alert("Błąd: "+d.error.message);else{loadComments(curKey);loadCounts()}}
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
+  loadCounts();
   sb.auth.getSession().then(function(r){session=r.data.session;updateAuth()});
   sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();
     if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});

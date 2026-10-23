@@ -68,6 +68,16 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .gcell{display:flex;align-items:center;gap:10px}
 .thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
 .ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted)}
+.cbtn{margin-left:auto}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.overlay.open{display:flex}
+.box{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;max-width:640px;width:100%;max-height:85vh;overflow:auto;padding:18px;position:relative}
+.box h2{margin:0 28px 10px 0;font-size:18px}
+#mclose{position:absolute;top:10px;right:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row input{flex:1 1 200px}
+.cmt{border-top:1px solid var(--line);padding:10px 0}
+.cmeta{font-size:12px;color:var(--muted);margin-bottom:2px}
+.cbody{white-space:pre-wrap;word-break:break-word;font-size:14px}
 </style>
 </head>
 <body>
@@ -77,6 +87,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
     <button class="btn" id="openForm">Zgłoś spolszczenie</button>
+    <button class="btn" id="authBtn" style="display:none">Zaloguj się</button>
     <button class="btn" id="theme">Motyw</button>
   </div>
 </header>
@@ -133,10 +144,17 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 <footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry.</footer>
 </div>
 
+<div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script>
 <script>
 // ====== USTAWIENIA ======
 // Wpisz swój login i nazwę repozytorium na GitHubie, np. "jankowalski/spolszczenia"
 var REPO="harddrive-dev/spolszczenia";
+// Komentarze (Supabase). Dopóki zostawisz "TWOJ…", komentarze są wyłączone.
+var SUPABASE_URL="TWOJ-ADRES-PROJEKTU";   // np. https://abcdxyz.supabase.co
+var SUPABASE_KEY="TWOJ-KLUCZ-PUBLICZNY";  // klucz "anon" lub "publishable" (NIGDY service_role)
+var ADMIN_EMAIL="TWOJ-EMAIL";             // Twój e-mail moderatora (może usuwać każdy komentarz)
+var PROVIDERS=[];                         // opcjonalnie: ["github","discord","google"] po włączeniu w Supabase
 // ========================
 var $=function(i){return document.getElementById(i)};
 var items=[];
@@ -160,8 +178,8 @@ function render(){
   var r=filtered();
   $("count").textContent="Wyświetlono "+r.length+" z "+items.length+" spolszczeń";
   if(!r.length){$("tb").innerHTML='<tr><td colspan="8" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></div></td><td>'+esc(g.platform)+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div><span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div><span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
 function stats(){
   var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length,o=items.filter(function(g){return g.type==="Oficjalne"}).length;
   $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"],[o,"oficjalnych"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}
@@ -184,6 +202,75 @@ $("clr").onclick=function(){$("q").value="";$("fp").value="";$("ft").value="";$(
 function view(v){$("out").className=v==="cards"?"view-cards":"";$("vt").className="btn"+(v==="table"?" on":"");$("vc").className="btn"+(v==="cards"?" on":"")}
 $("vt").onclick=function(){view("table")};$("vc").onclick=function(){view("cards")};
 $("theme").onclick=function(){var d=document.documentElement,dark=d.getAttribute("data-theme")==="dark"||(!d.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);d.setAttribute("data-theme",dark?"light":"dark")};
+// ====== KOMENTARZE ======
+var CM=SUPABASE_URL.indexOf("TWOJ")<0&&SUPABASE_KEY.indexOf("TWOJ")<0&&!!window.supabase;
+var sb=CM?supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
+var session=null,curKey=null,armedC=null,REDIR=location.origin+location.pathname;
+var PNAME={github:"GitHub",discord:"Discord",google:"Google"};
+function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function keyOf(g){return g.id||slug(g.game||"")}
+function cbtn(g){return CM?'<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze</button>':""}
+function me(){return session&&session.user}
+function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
+function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}
+  return n||m.user_name||m.preferred_username||m.full_name||(u&&u.email?u.email.split("@")[0]:"")}
+function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open"}
+function closeModal(){$("cm").className="overlay";curKey=null}
+function loginHtml(){
+  var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'">Zaloguj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
+  return '<h2>Logowanie</h2><p class="msg">Podaj adres e-mail. Wyślemy Ci jednorazowy link logowania (bez hasła).</p><div class="row"><input type="email" id="lemail" placeholder="adres e-mail" maxlength="200"><button class="btn on" id="lsend">Wyślij link</button></div>'+(p?'<p class="msg">lub</p><div class="btns" style="justify-content:flex-start">'+p+'</div>':"")+'<p class="msg" id="lmsg"></p>'}
+function updateAuth(){var b=$("authBtn");b.style.display="";b.textContent=me()?"Wyloguj ("+nick()+")":"Zaloguj się"}
+function renderForm(){
+  $("cform").innerHTML=me()?'<div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
+async function loadComments(key){
+  try{
+    var r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
+    if(r.error)throw r.error;if(curKey!==key)return;
+    var u=me();
+    $("clist").innerHTML=r.data.length?r.data.map(function(c){
+      var del=u&&(c.user_id===u.id||isMod())?' <button class="mini" data-del="'+esc(c.id)+'">Usuń</button>':"";
+      return '<div class="cmt"><div class="cmeta"><b>'+esc(c.author)+'</b> · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
+  }catch(e){if(curKey===key)$("clist").textContent="Nie udało się wczytać komentarzy."}
+}
+function showComments(key){
+  var g=items.filter(function(x){return keyOf(x)===key})[0];curKey=key;
+  openModal('<h2>Komentarze: '+esc(g?g.game:key)+'</h2><div id="clist" class="msg">Wczytywanie…</div><div id="cform"></div>');
+  renderForm();loadComments(key)}
+function cmsg(t,err){var m=$("cmsg")||$("lmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
+if(CM){
+  $("mclose").onclick=closeModal;
+  $("cm").addEventListener("click",function(e){if(e.target===$("cm"))closeModal()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
+  $("authBtn").onclick=function(){if(me())sb.auth.signOut();else{curKey=null;openModal(loginHtml())}};
+  document.addEventListener("click",async function(ev){
+    var t=ev.target.closest&&ev.target.closest("button");if(!t)return;
+    try{
+      if(t.classList.contains("cbtn"))return showComments(t.getAttribute("data-k"));
+      if(t.id==="gologin"){curKey=null;return openModal(loginHtml())}
+      if(t.id==="lsend"){
+        var em=$("lemail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em))return cmsg("Podaj poprawny adres e-mail.",1);
+        t.disabled=true;var r=await sb.auth.signInWithOtp({email:em,options:{emailRedirectTo:REDIR}});t.disabled=false;
+        return r.error?cmsg("Nie udało się wysłać linku: "+r.error.message,1):cmsg("Wysłano! Kliknij link w mailu (sprawdź też spam).")}
+      if(t.getAttribute("data-oauth")){var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:REDIR}});if(o.error)cmsg(o.error.message,1);return}
+      if(t.id==="csend"){
+        var nk=$("cnick").value.trim(),bd=$("cbody").value.trim();
+        if(!nk)return cmsg("Podaj nick.",1);if(!bd)return cmsg("Napisz komentarz.",1);
+        try{localStorage.setItem("nick",nk)}catch(e){}
+        t.disabled=true;var key=curKey;
+        var w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});t.disabled=false;
+        if(w.error)return cmsg(/Zbyt szybko/.test(w.error.message)?"Zbyt szybko, poczekaj chwilę.":"Nie udało się dodać: "+w.error.message,1);
+        $("cbody").value="";cmsg("");loadComments(key);return}
+      if(t.getAttribute("data-del")){
+        var id=t.getAttribute("data-del");
+        if(armedC!==id){armedC=id;t.textContent="Na pewno?";setTimeout(function(){if(armedC===id){armedC=null;t.textContent="Usuń"}},3000);return}
+        armedC=null;var d=await sb.from("comments").delete().eq("id",id);if(d.error)alert("Błąd: "+d.error.message);else loadComments(curKey)}
+    }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
+  });
+  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth()});
+  sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();
+    if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
+}
+// ====== KONIEC KOMENTARZY ======
 fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){items=d;refresh()}).catch(function(){
   $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."});
 </script>

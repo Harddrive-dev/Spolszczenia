@@ -81,6 +81,11 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .featrow.two .fcover{flex:0 0 140px;width:140px;height:196px;font-size:52px}
 .featrow.two .ftitle{font-size:clamp(22px,2.4vw,30px)}
 @media (max-width:900px){.featrow.two{grid-template-columns:1fr}}
+#month{--accent:#7c3aed;--bg:#fff}
+:root[data-theme="dark"] #month,:root.hw #month{--accent:#b57cff;--bg:#150f1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #month{--accent:#b57cff;--bg:#150f1c}}
+.hw #month{box-shadow:0 0 48px rgba(181,124,255,.28)}
+.hw #month::after{display:none}
 .fcover{flex:0 0 200px;width:200px;height:260px;border-radius:12px;background:var(--line);color:var(--muted);font-size:72px;font-weight:700;display:flex;align-items:center;justify-content:center;object-fit:cover}
 .fbody{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px;justify-content:center}
 .fhead{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -346,7 +351,7 @@ function renderHome(){
   var fw=items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
   var MN=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],now=new Date();
   feat($("week"),fw,"Spolszczenie tygodnia",weekRange());
-  feat($("month"),fm,"Premiera miesiąca",MN[now.getMonth()]+" "+now.getFullYear());
+  feat($("month"),fm,"★ Premiera miesiąca",MN[now.getMonth()]+" "+now.getFullYear());
   $("featrow").className="featrow"+(fw&&fm?" two":"");
   var nw=items.filter(function(g){return g.upd}).sort(function(a,b){return String(b.upd).localeCompare(String(a.upd))}).slice(0,4);
   $("news").innerHTML=nw.length?'<h2>Nowości</h2><div class="ngrid">'+nw.map(function(g){return '<a class="ncard" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>Autor: '+esc(g.author||"—")+'</small><small>'+esc(g.type||"—")+'</small></span></a>'}).join("")+'</div>':"";

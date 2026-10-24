@@ -168,6 +168,11 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .pod small{color:var(--muted)}
 .leader{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:-12px 0 28px;padding:10px 16px;border:1px dashed var(--accent);background:rgba(255,138,31,.07);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:12px;color:var(--muted)}
 .leader b{color:var(--text)}
+.vlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
+.vlink:hover{color:var(--accent);border-bottom-style:solid}
+.leader .votebtn{margin-left:auto;border:0;border-radius:10px;padding:8px 18px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--bg);background:var(--accent);box-shadow:0 2px 0 rgba(0,0,0,.35);box-shadow:0 2px 0 color-mix(in srgb,var(--accent) 55%,#000)}
+.leader .votebtn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.leader .votebtn:active{transform:translateY(1px);box-shadow:none}
 .vrow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .vrow b{overflow:hidden;text-overflow:ellipsis}
 .vbar{grid-column:1/-1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
@@ -599,17 +604,17 @@ var winnerKey=null;
 function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}
 function voteRows(rows,mine,max){
   return rows.map(function(r){var g=gameByKey(r.k);if(!g)return "";var w=max?Math.round(r.v/max*100):0;
-    return '<div class="vrow"><b>'+esc(g.game)+'</b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
+    return '<div class="vrow"><b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
 function podium(rows,mine){
   if(!rows.length)return "";
   var med=["🥇","🥈","🥉"],order=[1,0,2].filter(function(i){return rows[i]&&gameByKey(rows[i].k)});
   return '<div class="podium">'+order.map(function(i){var g=gameByKey(rows[i].k),lt=esc((g.game||"?").charAt(0).toUpperCase());
     var im=imgOk(g.img)?'<img alt="" loading="lazy" src="'+esc(g.img)+'">':'<div class="pimg">'+lt+'</div>';
-    return '<div class="pod p'+(i+1)+'"><span class="medal">'+med[i]+'</span>'+im+'<b>'+esc(g.game)+'</b><small>'+rows[i].v+' głos'+(rows[i].v===1?'':(rows[i].v%10>=2&&rows[i].v%10<=4&&(rows[i].v%100<12||rows[i].v%100>14)?'y':'ów'))+(mine===rows[i].k?' · ✓ Twój':'')+'</small></div>'}).join("")+'</div>'}
+    return '<div class="pod p'+(i+1)+'"><span class="medal">'+med[i]+'</span>'+im+'<b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><small>'+rows[i].v+' głos'+(rows[i].v===1?'':(rows[i].v%10>=2&&rows[i].v%10<=4&&(rows[i].v%100<12||rows[i].v%100>14)?'y':'ów'))+(mine===rows[i].k?' · ✓ Twój':'')+'</small></div>'}).join("")+'</div>'}
 var leadRow=null;
 function renderLeader(){var el=$("leader");if(!el)return;var g=leadRow&&gameByKey(leadRow.k);
   if(!CM||!g){el.style.display="none";el.innerHTML="";return}
-  el.style.display="";el.innerHTML='<span>🗳️ Głosowanie na spolszczenie tygodnia, prowadzi:</span><b>'+esc(g.game)+'</b><span>('+leadRow.v+' głos'+(leadRow.v===1?'':(leadRow.v%10>=2&&leadRow.v%10<=4&&(leadRow.v%100<12||leadRow.v%100>14)?'y':'ów'))+')</span><button class="mini" id="leadgo" type="button">Zagłosuj</button>'}
+  el.style.display="";el.innerHTML='<span>🗳️ Głosowanie na spolszczenie tygodnia, prowadzi:</span><b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>('+leadRow.v+' głos'+(leadRow.v===1?'':(leadRow.v%10>=2&&leadRow.v%10<=4&&(leadRow.v%100<12||leadRow.v%100>14)?'y':'ów'))+')</span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>'}
 async function openVote(){
   if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");
   curKey=null;openModal('<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Wczytywanie…</p>');

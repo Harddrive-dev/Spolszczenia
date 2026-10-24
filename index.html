@@ -199,7 +199,6 @@ header{padding-top:56px}
   <h1>Spolszczenia<span>.haven</span></h1>
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
-    <button class="btn" id="authBtn" style="display:none">Zaloguj się</button>
     <button class="btn" id="openForm">Dodaj spolszczenie</button>
     <button class="btn" id="navNews" type="button">Aktualności</button>
     <button class="btn" id="navLektor" type="button">Polski Lektor</button>
@@ -444,10 +443,10 @@ function loginHtml(mode){
    ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
    :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   return '<h2>Logowanie</h2>'+(p?'<p class="msg">Zaloguj się jednym kliknięciem. Nie musisz zakładać osobnego konta.</p><div class="btns" style="justify-content:flex-start">'+p+'</div><p class="msg" style="margin-top:16px">lub użyj adresu e-mail i hasła:</p>':"")+tabs+form+'<p class="msg" id="lmsg"></p>'}
-function updateAuth(){var b=$("authBtn"),u=me(),c=$("uchip");
-  if(!u){b.style.display="";b.textContent="Zaloguj się";c.style.display="none";$("umenu").className="umenu";return}
-  b.style.display="none";c.style.display="";
-  var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"",box=$("uav");
+var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
+function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
+  if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
+  var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
   $("unm").textContent=n;box.innerHTML="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase()}
@@ -472,8 +471,7 @@ if(CM){
   $("mclose").onclick=closeModal;
   $("cm").addEventListener("click",function(e){if(e.target===$("cm"))closeModal()});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
-  $("authBtn").onclick=function(){curKey=null;openModal(loginHtml())};
-  $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
+  $("ubtn").onclick=function(e){e.stopPropagation();if(!me()){curKey=null;openModal(loginHtml());return}$("umenu").classList.toggle("open")};
   $("ulogout").onclick=function(){$("umenu").className="umenu";sb.auth.signOut()};
   document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest("#uchip"))$("umenu").className="umenu"});
   document.addEventListener("click",async function(ev){

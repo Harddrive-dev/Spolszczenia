@@ -114,9 +114,19 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 :root.hw,:root.hw[data-theme="light"],:root.hw[data-theme="dark"]{--bg:#150f1c;--surface:#211729;--text:#f6eee6;--muted:#bcaec7;--line:#3a2b47;--accent:#ff8a1f;--ok:#4fcf8a;--warn:#f0b04a;--bad:#9a90a3;color-scheme:dark}
 .hw body{position:relative;background:radial-gradient(ellipse 60% 460px at 50% 0,rgba(255,138,31,.2),rgba(21,15,28,0) 70%) no-repeat,var(--bg)}
 .hw .wrap{position:relative;z-index:1}
-.hw #theme{display:none}
+.wrap{position:relative}
+.themes{position:absolute;top:12px;right:16px;display:flex;gap:8px;z-index:3}
+.tb{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);padding:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:#f6f4ef}
+.tb[data-t="dark"]{background:#1e1b17}
+.tb[data-t="halloween"]{background:#150f1c;display:none}
+.hwev .tb[data-t="halloween"]{display:inline-flex}
+.tb:hover{border-color:var(--accent)}
+.tb.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.tb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+html:not(.hw) .hwd,html:not(.hw) .hwe,html:not(.hw) .hwrow{display:none}
+header{padding-top:56px}
 .hw h1{font-family:"Creepster",system-ui,sans-serif;font-weight:400;font-size:clamp(30px,8.5vw,84px);line-height:1;letter-spacing:.02em;overflow-wrap:anywhere}
-.hw header{padding-top:48px}
+.hw header{padding-top:56px}
 .hw .feat{position:relative;box-shadow:0 0 48px rgba(255,138,31,.14)}
 .hw .feat::after{content:"";position:absolute;top:-30px;right:20px;width:72px;height:64px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2264%22 viewBox=%220 0 72 64%22%3E%3Cpath d=%22M36 14c-3-6-1-10 4-12%22 stroke=%22%237cc14a%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cellipse cx=%2222%22 cy=%2238%22 rx=%2218%22 ry=%2222%22 fill=%22%23e8730c%22/%3E%3Cellipse cx=%2250%22 cy=%2238%22 rx=%2218%22 ry=%2222%22 fill=%22%23e8730c%22/%3E%3Cellipse cx=%2236%22 cy=%2238%22 rx=%2216%22 ry=%2224%22 fill=%22%23ff8a1f%22/%3E%3Cpath d=%22M24 34l6 6-9 1zM48 34l-6 6 9 1z%22 fill=%22%23ffe27a%22/%3E%3Cpath d=%22M22 48q14 12 28 0%22 stroke=%22%23150f1c%22 stroke-width=%224%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/svg%3E") no-repeat center/contain;pointer-events:none;animation:hwflick 3.2s infinite}
 .hwd{position:absolute;top:0;left:0;right:0;height:380px;overflow:hidden;pointer-events:none;z-index:0}
@@ -135,22 +145,35 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 @media (prefers-reduced-motion:reduce){.hw *,.hw *::after{animation:none!important}}
 </style>
 <script>
-// Motyw Halloween: sam włącza się 24.10–2.11. Podgląd: dopisz do adresu ?halloween=1 (wyłączenie: ?halloween=0)
-(function(){var q=location.search.match(/[?&]halloween=(\d)/),d=new Date(),m=d.getMonth()+1,n=d.getDate();
+// Motyw: jasny / ciemny / Halloween. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0).
+(function(){var q=location.search.match(/[?&]halloween=(\d)/),d=new Date(),m=d.getMonth()+1,n=d.getDate(),h=document.documentElement;
   var on=q?q[1]==="1":((m===10&&n>=24)||(m===11&&n<=2));
-  if(!on)return;document.documentElement.className+=" hw";
-  var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Creepster&display=swap";document.head.appendChild(l)})();
+  window.__hwEvent=on;var cur=null;
+  function store(){return localStorage}
+  function mark(){var b=document.querySelectorAll(".tb");for(var i=0;i<b.length;i++){var a=b[i].getAttribute("data-t")===(cur||"auto");b[i].className="tb"+(b[i].getAttribute("data-t")==="halloween"?" tb-hw":"")+(a?" on":"");b[i].setAttribute("aria-pressed",a?"true":"false")}}
+  function apply(x){cur=x;h.classList.remove("hw");h.removeAttribute("data-theme");
+    if(x==="halloween")h.classList.add("hw");else if(x==="light"||x==="dark")h.setAttribute("data-theme",x);mark()}
+  window.__setTheme=function(x){try{store().setItem("theme",x)}catch(e){}apply(x)};
+  window.__markTheme=mark;
+  var x=null;try{x=store().getItem("theme")}catch(e){}
+  if(!on&&x==="halloween")x=null;if(on&&!x)x="halloween";
+  if(on){h.classList.add("hwev");var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Creepster&display=swap";document.head.appendChild(l)}
+  apply(x)})();
 </script>
 </head>
 <body>
 <div class="wrap">
+<div class="themes" role="group" aria-label="Motyw strony">
+  <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
+  <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
+  <button type="button" class="tb tb-hw" data-t="halloween" aria-label="Motyw Halloween" title="Halloween"><svg width="24" height="22" viewBox="0 0 72 64" aria-hidden="true"><path d="M36 14c-3-6-1-10 4-12" stroke="#7cc14a" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="22" cy="38" rx="18" ry="22" fill="#e8730c"/><ellipse cx="50" cy="38" rx="18" ry="22" fill="#e8730c"/><ellipse cx="36" cy="38" rx="16" ry="24" fill="#ff8a1f"/><path d="M24 34l6 6-9 1zM48 34l-6 6 9 1z" fill="#ffe27a"/></svg></button>
+</div>
 <header>
   <h1>Spolszczenia<span>.haven</span></h1>
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
     <button class="btn" id="openForm">Zgłoś spolszczenie</button>
     <button class="btn" id="authBtn" style="display:none">Zaloguj się</button>
-    <button class="btn" id="theme">Motyw</button>
   </div>
 </header>
 
@@ -220,7 +243,9 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 <script>
 // ====== DEKORACJE HALLOWEEN (tylko gdy motyw jest włączony) ======
 (function(){
-  if(document.documentElement.className.indexOf("hw")<0)return;
+  var tbs=document.querySelectorAll(".tb");for(var k=0;k<tbs.length;k++)tbs[k].onclick=function(){window.__setTheme(this.getAttribute("data-t"))};
+  window.__markTheme();
+  if(!window.__hwEvent)return;
   var STEM='<path d="M36 14c-3-6-1-10 4-12" stroke="#7cc14a" stroke-width="5" fill="none" stroke-linecap="round"/>';
   var TRI='<path d="M24 34l6 6-9 1zM48 34l-6 6 9 1z" fill="#150f1c"/>';
   var DOTS='<circle cx="26" cy="36" r="4" fill="#150f1c"/><circle cx="46" cy="36" r="4" fill="#150f1c"/>';
@@ -347,7 +372,6 @@ $("rm").addEventListener("click",function(e){if(e.target===$("rm"))$("rm").class
 document.addEventListener("keydown",function(e){if(e.key==="Escape")$("rm").className="overlay"});
 function view(v){$("out").className=v==="cards"?"view-cards":"";$("vt").className="btn"+(v==="table"?" on":"");$("vc").className="btn"+(v==="cards"?" on":"")}
 $("vt").onclick=function(){view("table")};$("vc").onclick=function(){view("cards")};
-$("theme").onclick=function(){var d=document.documentElement,dark=d.getAttribute("data-theme")==="dark"||(!d.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);d.setAttribute("data-theme",dark?"light":"dark")};
 // ====== KOMENTARZE ======
 var CM=SUPABASE_URL.indexOf("TWOJ")<0&&SUPABASE_KEY.indexOf("TWOJ")<0&&!!window.supabase;
 var sb=CM?supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;

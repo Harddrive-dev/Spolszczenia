@@ -74,6 +74,13 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .cbtn{margin-left:auto}
 .vgrp{display:inline-flex;gap:8px}
 .feat{display:flex;flex-wrap:wrap;gap:28px;background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:32px}
+.featrow{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:32px}
+.featrow.two{grid-template-columns:1fr 1fr}
+.featrow .feat{margin-bottom:0}
+.featrow.two .feat{padding:18px;gap:18px}
+.featrow.two .fcover{flex:0 0 140px;width:140px;height:196px;font-size:52px}
+.featrow.two .ftitle{font-size:clamp(22px,2.4vw,30px)}
+@media (max-width:900px){.featrow.two{grid-template-columns:1fr}}
 .fcover{flex:0 0 200px;width:200px;height:260px;border-radius:12px;background:var(--line);color:var(--muted);font-size:72px;font-weight:700;display:flex;align-items:center;justify-content:center;object-fit:cover}
 .fbody{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px;justify-content:center}
 .fhead{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -202,7 +209,7 @@ header{padding-top:56px}
   <p class="msg" style="margin-top:6px">Pola oznaczone * są obowiązkowe. Pozostałe nie muszą być wypełnione.</p>
 </div>
 
-<section class="feat" id="week" aria-label="Spolszczenie tygodnia" style="display:none"></section>
+<div class="featrow" id="featrow"><section class="feat" id="week" aria-label="Spolszczenie tygodnia" style="display:none"></section><section class="feat" id="month" aria-label="Premiera miesiąca" style="display:none"></section></div>
 
 <div class="home" id="home" style="display:none">
   <section class="news" id="news" aria-label="Nowości" style="display:none"></section>
@@ -330,13 +337,17 @@ var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sie
 function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
   return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
 function renderHome(){
-  var f=items.filter(function(g){return g.tygodnia})[0],w=$("week");
-  if(f){
+  function feat(el,f,badge,when){
+    if(!f){el.style.display="none";el.innerHTML="";return}
     var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
     var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
-    w.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">Spolszczenie tygodnia</span><span class="fwhen">'+esc(weekRange())+'</span></div><h2 class="ftitle">'+esc(f.game)+'</h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span><span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'. Ostatnia aktualizacja: '+esc(f.upd||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
-    w.style.display="";
-  }else{w.style.display="none";w.innerHTML=""}
+    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle">'+esc(f.game)+'</h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'. Ostatnia aktualizacja: '+esc(f.upd||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
+    el.style.display=""}
+  var fw=items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
+  var MN=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],now=new Date();
+  feat($("week"),fw,"Spolszczenie tygodnia",weekRange());
+  feat($("month"),fm,"Premiera miesiąca",MN[now.getMonth()]+" "+now.getFullYear());
+  $("featrow").className="featrow"+(fw&&fm?" two":"");
   var nw=items.filter(function(g){return g.upd}).sort(function(a,b){return String(b.upd).localeCompare(String(a.upd))}).slice(0,4);
   $("news").innerHTML=nw.length?'<h2>Nowości</h2><div class="ngrid">'+nw.map(function(g){return '<a class="ncard" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>Autor: '+esc(g.author||"—")+'</small><small>'+esc(g.type||"—")+'</small></span></a>'}).join("")+'</div>':"";
   $("news").style.display=nw.length?"":"none";

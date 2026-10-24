@@ -192,6 +192,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
     <option value="game">A–Z</option><option value="upd">Ostatnia aktualizacja</option><option value="prog">Postęp</option>
   </select>
   <button class="btn" id="clr">Wyczyść</button>
+  <button class="btn" id="rnd" type="button">🎲 Wylosuj</button>
   <span class="vgrp"><button class="btn on" id="vt">Tabela</button><button class="btn" id="vc">Karty</button></span>
 </div>
 <p class="count" id="count"></p>
@@ -214,6 +215,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 <footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry.</footer>
 </div>
 
+<div class="overlay" id="rm"><div class="box"><button class="mini" id="rclose" aria-label="Zamknij">✕</button><div id="rbody"></div></div></div>
 <div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
 <script>
 // ====== DEKORACJE HALLOWEEN (tylko gdy motyw jest włączony) ======
@@ -328,6 +330,21 @@ $("send").onclick=function(){
 };
 ["q","fp","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",render)});
 $("clr").onclick=function(){$("q").value="";$("fp").value="";$("ft").value="";$("fs").value="";render()};
+var lastPick=null;
+function pick(){
+  var r=filtered();
+  if(!r.length){$("rbody").innerHTML='<h2>Wylosuj spolszczenie</h2><p class="msg">Brak spolszczeń do wylosowania. Zmień filtry i spróbuj ponownie.</p>';return}
+  var g=r[Math.floor(Math.random()*r.length)];
+  if(r.length>1)while(g===lastPick)g=r[Math.floor(Math.random()*r.length)];
+  lastPick=g;
+  var lt=esc((g.game||"?").charAt(0).toUpperCase());
+  var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="width:140px;height:180px;font-size:52px">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span><span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="msg" style="margin-top:10px">Losowanie uwzględnia ustawione filtry (platforma, zakres, status).</p>';
+  $("again").onclick=pick}
+$("rnd").onclick=function(){pick();$("rm").className="overlay open"};
+$("rclose").onclick=function(){$("rm").className="overlay"};
+$("rm").addEventListener("click",function(e){if(e.target===$("rm"))$("rm").className="overlay"});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$("rm").className="overlay"});
 function view(v){$("out").className=v==="cards"?"view-cards":"";$("vt").className="btn"+(v==="table"?" on":"");$("vc").className="btn"+(v==="cards"?" on":"")}
 $("vt").onclick=function(){view("table")};$("vc").onclick=function(){view("cards")};
 $("theme").onclick=function(){var d=document.documentElement,dark=d.getAttribute("data-theme")==="dark"||(!d.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);d.setAttribute("data-theme",dark?"light":"dark")};

@@ -147,6 +147,19 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rndb{--rc:#2fd4c6}}
 .rndb:hover{background:var(--rc);color:#fff}
 :root[data-theme="dark"] .rndb:hover,:root.hw .rndb:hover{color:#0b1f1d}
+.rfbox{margin-top:14px;padding:12px 14px;border:1px solid var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:12px;background:rgba(255,138,31,.06);background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.rftop{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--accent);font-weight:700;font-size:14px}
+.rftog,.rfclr{background:none;border:0;color:var(--accent);font:inherit;font-weight:700;font-size:13px;cursor:pointer;padding:2px 4px;text-decoration:underline}
+.rchips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.rchip{display:inline-flex;align-items:center;gap:6px;padding:3px 6px 3px 10px;border-radius:999px;border:1px solid var(--accent);background:rgba(255,138,31,.15);background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--text);font-size:13px}
+.rchip button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:12px;padding:0 3px}
+.rchip button:hover{color:var(--accent)}
+.rnone{color:var(--muted);font-size:13px}
+.rsels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.rsel small{display:block;color:var(--muted);font-size:11px;margin-bottom:2px}
+.rsel select{width:100%}
+.rcnt{margin-top:10px;color:var(--muted);font-size:13px}.rcnt b{color:var(--text)}
+@media (max-width:480px){.rsels{grid-template-columns:1fr}}
 .rhint{display:inline-block;margin:14px 0 0;padding:8px 14px;border:1px solid var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:999px;color:var(--accent);font-size:14px;line-height:1.4}
 .rolling{display:flex;flex-direction:column;align-items:center;gap:22px;padding:34px 0 24px;text-align:center}
 .stage{perspective:700px;height:120px;display:flex;align-items:center;justify-content:center}
@@ -459,16 +472,29 @@ $("ps").addEventListener("input",function(){PS=+$("ps").value;page=1;try{localSt
 $("pager").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-pg]");if(!b||b.disabled)return;page=+b.getAttribute("data-pg");render();var o=$("out");window.scrollTo({top:o.getBoundingClientRect().top+window.pageYOffset-70,behavior:"smooth"})});
 $("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
 var lastPick=null;
+var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
+function rfBox(forceOpen){
+  var open=rfOpen||forceOpen,act=RF.filter(function(x){return $(x[0]).value}),n=filtered().length;
+  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">brak (losuję ze wszystkich)</span>';
+  var sels=RF.map(function(x){var el=$(x[0]),h="";for(var i=0;i<el.options.length;i++){var o=el.options[i];h+='<option value="'+esc(o.value)+'"'+(o.value===el.value?' selected':'')+'>'+esc(i?o.textContent:x[1]+": wszystkie")+'</option>'}
+    return '<label class="rsel"><small>'+x[1]+'</small><select data-rfs="'+x[0]+'">'+h+'</select></label>'}).join("");
+  return '<div class="rfbox"><div class="rftop"><span>🎛️ Filtry losowania</span><button type="button" class="rftog" id="rftog">'+(open?'Zwiń ▴':'Zmień ▾')+'</button></div><div class="rchips">'+chips+'</div>'+(open?'<div class="rsels">'+sels+'</div>':'')+'<div class="rcnt">Do wylosowania: <b>'+n+'</b> '+(n===1?'gra':'gier')+(act.length?' · <button type="button" class="rfclr" id="rfclr">Wyczyść filtry</button>':'')+'</div></div>'}
+function rfApply(){page=1;render();pick()}
 function pick(){
   var r=filtered();
-  if(!r.length){$("rbody").innerHTML='<h2>Wylosuj spolszczenie</h2><p class="msg">Brak spolszczeń do wylosowania. Zmień filtry i spróbuj ponownie.</p>';return}
+  if(!r.length){$("rbody").innerHTML='<h2>Wylosuj spolszczenie</h2><p class="msg">Brak spolszczeń do wylosowania. Zmień filtry i spróbuj ponownie.</p>'+rfBox(true);return}
   var g=r[Math.floor(Math.random()*r.length)];
   if(r.length>1)while(g===lastPick)g=r[Math.floor(Math.random()*r.length)];
   lastPick=g;
   var lt=esc((g.game||"?").charAt(0).toUpperCase());
   var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="flex:none;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;background:none">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
-  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="rhint">🎛️ Losowanie uwzględnia ustawione filtry (platforma, gatunek, zakres, status).</p>';
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
   $("again").onclick=roll}
+$("rbody").addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.id==="rftog"){rfOpen=!rfOpen;pick();return}
+  if(t.id==="rfclr"){RF.forEach(function(x){$(x[0]).value=""});rfApply();return}
+  if(t.getAttribute("data-rfx")){$(t.getAttribute("data-rfx")).value="";rfApply()}});
+$("rbody").addEventListener("change",function(e){var t=e.target;if(t&&t.getAttribute&&t.getAttribute("data-rfs")){$(t.getAttribute("data-rfs")).value=t.value;rfApply()}});
 var rollT=null,rollI=null;
 function roll(){
   var r=filtered();

@@ -141,6 +141,9 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .umenu.open{display:block}
 .umenu .btn{width:100%}
 @media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
+.pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin:18px 0 8px}
+.pager .btn{min-width:40px;padding:6px 12px}
+.pager .gap{color:var(--muted);padding:0 4px}
 .tb{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);padding:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:#f6f4ef}
 .tb[data-t="dark"]{background:#1e1b17}
 .tb[data-t="halloween"]{background:#150f1c;display:none}
@@ -241,6 +244,7 @@ header{padding-top:56px}
   <select id="fg" aria-label="Gatunek"></select>
   <select id="ft" aria-label="Zakres tłumaczenia"></select>
   <select id="fs" aria-label="Status"></select>
+  <select id="ps" aria-label="Liczba na stronie"><option value="25">25 na stronę</option><option value="50">50 na stronę</option><option value="100">100 na stronę</option></select>
   <select id="sort" aria-label="Sortowanie">
     <option value="game">A–Z</option><option value="upd">Ostatnia aktualizacja</option><option value="prog">Postęp</option>
   </select>
@@ -256,6 +260,7 @@ header{padding-top:56px}
     <tbody id="tb"></tbody></table></div>
   <div class="cards" id="cards"></div>
 </div>
+<nav class="pager" id="pager" aria-label="Strony"></nav>
 
 <section class="info">
   <h2>Zakresy tłumaczenia</h2>
@@ -341,10 +346,20 @@ function filtered(){
   var r=items.filter(function(g){return(!p||g.platform===p)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?(b.upd||"").localeCompare(a.upd||""):pct(b.prog)-pct(a.prog)});
   return r}
+var page=1,PS=25;
+try{var sps=+localStorage.getItem("ps");if(sps===25||sps===50||sps===100)PS=sps}catch(e){}
+function pagerHtml(pages){
+  if(pages<2)return "";
+  var nums=[],i;for(i=1;i<=pages;i++)if(i===1||i===pages||Math.abs(i-page)<=2)nums.push(i);
+  var h='<button class="btn" data-pg="'+(page-1)+'"'+(page<2?' disabled':'')+'>‹</button>',last=0;
+  nums.forEach(function(n){if(n-last>1)h+='<span class="gap">…</span>';h+='<button class="btn'+(n===page?' on':'')+'" data-pg="'+n+'"'+(n===page?' aria-current="page"':'')+'>'+n+'</button>';last=n});
+  return h+'<button class="btn" data-pg="'+(page+1)+'"'+(page>=pages?' disabled':'')+'>›</button>'}
 function render(){
-  var r=filtered();
-  $("count").textContent="Wyświetlono "+r.length+" z "+items.length+" spolszczeń";
-  if(!r.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
+  var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;
+  var r=all.slice((page-1)*PS,page*PS);
+  $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
+  $("pager").innerHTML=pagerHtml(pages);
+  if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
   $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
   $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+'<span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
 function stats(){
@@ -387,8 +402,11 @@ $("send").onclick=function(){
   window.open(url,"_blank","noopener");
   say("Otworzyłem GitHub z gotowym zgłoszeniem. Kliknij tam „Submit new issue”. (Wymagane darmowe konto GitHub.)");
 };
-["q","fp","fg","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",render)});
-$("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";render()};
+["q","fp","fg","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",function(){page=1;render()})});
+$("ps").value=String(PS);
+$("ps").addEventListener("input",function(){PS=+$("ps").value;page=1;try{localStorage.setItem("ps",PS)}catch(e){}render()});
+$("pager").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-pg]");if(!b||b.disabled)return;page=+b.getAttribute("data-pg");render();var o=$("out");window.scrollTo({top:o.getBoundingClientRect().top+window.pageYOffset-70,behavior:"smooth"})});
+$("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
 var lastPick=null;
 function pick(){
   var r=filtered();

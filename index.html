@@ -160,6 +160,16 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .rsel select{width:100%}
 .rcnt{margin-top:10px;color:var(--muted);font-size:13px}.rcnt b{color:var(--text)}
 @media (max-width:480px){.rsels{grid-template-columns:1fr}}
+.rowmenu{margin-left:6px;padding:0 8px;font-weight:700;letter-spacing:1px}
+.rmenu{display:none;position:fixed;z-index:70;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 10px 28px rgba(0,0,0,.4)}
+.rmenu.open{display:block}
+.rmenu button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:8px;color:var(--text);font:inherit;font-size:14px;padding:9px 12px;cursor:pointer}
+.rmenu button:hover,.rmenu button:focus-visible{background:var(--line)}
+.rpf{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.rpf label,.rpw{display:block;font-size:13px;color:var(--muted)}
+.rpf input,.rpf select,.rpw textarea{display:block;width:100%;margin-top:3px}
+.rpw{margin-bottom:10px}
+@media (max-width:480px){.rpf{grid-template-columns:1fr}}
 .rhint{display:inline-block;margin:14px 0 0;padding:8px 14px;border:1px solid var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:999px;color:var(--accent);font-size:14px;line-height:1.4}
 .rolling{display:flex;flex-direction:column;align-items:center;gap:22px;padding:34px 0 24px;text-align:center}
 .stage{perspective:700px;height:120px;display:flex;align-items:center;justify-content:center}
@@ -334,6 +344,7 @@ header{padding-top:56px}
 <footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a></footer>
 </div>
 
+<div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
 <div class="overlay" id="rm"><div class="box"><button class="mini" id="rclose" aria-label="Zamknij">✕</button><div id="rbody"></div></div></div>
 <div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
 <script>
@@ -423,8 +434,8 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+'<span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+'<span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
 function stats(){
   var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length,o=items.filter(function(g){return g.type==="Oficjalne"}).length;
   $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"],[o,"oficjalnych"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}
@@ -526,6 +537,7 @@ google:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style
 function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function keyOf(g){return g.id||slug(g.game||"")}
 var counts=Object.create(null);
+function rowBtn(g){return '<button class="mini rowmenu" type="button" data-rk="'+esc(keyOf(g))+'" aria-label="Więcej akcji" aria-haspopup="true">⋯</button>'}
 function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0;return '<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze'+(n?' ('+n+')':'')+'</button>'}
 async function loadCounts(){
   try{var c=Object.create(null),from=0;
@@ -632,6 +644,41 @@ if(CM){
     if(ev==="PASSWORD_RECOVERY"){curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
     if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
 }
+// ====== ZGŁOSZENIA ZMIAN ======
+var menuG=null;
+function hideRmenu(){$("rmenu").className="rmenu"}
+function stField(id,cur,opts){return '<select id="'+id+'">'+opts.map(function(o){return '<option'+(o===cur?' selected':'')+'>'+esc(o)+'</option>'}).join("")+'</select>'}
+function openReport(kind,g){
+  var ST=["Gotowe","W toku","Wstrzymane"];if(ST.indexOf(g.status)<0)ST.unshift(g.status||"Gotowe");
+  var h='<h2>'+(kind==="edit"?"Zaproponuj zmianę":kind==="link"?"Zgłoś zepsuty link":"Zgłoś błąd")+'</h2><p class="msg" style="margin-top:0"><b>'+esc(g.game)+'</b></p>';
+  if(kind==="edit")h+='<div class="rpf"><label>Status'+stField("rp_status",g.status,ST)+'</label><label>Wersja<input id="rp_ver" maxlength="30" value="'+esc(g.ver||"")+'"></label><label>Autor / grupa<input id="rp_author" maxlength="80" value="'+esc(g.author||"")+'"></label><label>Gatunek<input id="rp_genre" maxlength="40" value="'+esc(g.genre||"")+'"></label><label style="grid-column:1/-1">Link do spolszczenia<input id="rp_link" type="url" maxlength="400" value="'+esc(g.link||"")+'"></label></div>';
+  if(kind==="link")h+='<div class="rpf"><label style="grid-column:1/-1">Nowy, działający link (jeśli go znasz)<input id="rp_link" type="url" maxlength="400" placeholder="https://…"></label></div>';
+  h+='<label class="rpw">'+(kind==="edit"?"Co się zmieniło? (np. nowa wersja)":kind==="link"?"Co jest nie tak z linkiem?":"Opisz błąd")+'<textarea id="rp_note" rows="3" maxlength="600"></textarea></label><p class="btns" style="justify-content:flex-start"><button class="btn on" id="rpsend" type="button">Wyślij zgłoszenie</button></p><p class="msg" id="rpmsg"></p><p class="msg">Zgłoszenie otwiera się na GitHubie (wymagane darmowe konto). Moderator sprawdza je, zanim cokolwiek się zmieni.</p>';
+  curKey=null;openModal(h);$("cm").setAttribute("data-rk",keyOf(g));$("cm").setAttribute("data-rkind",kind)}
+document.addEventListener("click",function(e){
+  var rb=e.target.closest&&e.target.closest(".rowmenu");
+  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();
+    m.className="rmenu open";m.style.top=Math.min(r.bottom+4,innerHeight-m.offsetHeight-8)+"px";m.style.left=Math.max(8,Math.min(r.left,innerWidth-m.offsetWidth-8))+"px";return}
+  var ra=e.target.closest&&e.target.closest("[data-ra]");
+  if(ra&&menuG){var g2=menuG;hideRmenu();openReport(ra.getAttribute("data-ra"),g2);return}
+  if(!e.target.closest||!e.target.closest("#rmenu"))hideRmenu();
+  if(e.target.id==="rpsend"){
+    var k=$("cm").getAttribute("data-rk"),kind=$("cm").getAttribute("data-rkind"),g3=gameByKey(k);if(!g3)return;
+    var val=function(i){var el=$(i);return el?el.value.trim():""},lines=["**Gra:** "+g3.game,"**Aktualny link:** "+(g3.link||"—"),""],note=val("rp_note"),msg=$("rpmsg");
+    if(kind==="edit"){var ch=[];[["Status","rp_status",g3.status],["Wersja","rp_ver",g3.ver],["Autor","rp_author",g3.author],["Gatunek","rp_genre",g3.genre],["Link","rp_link",g3.link]].forEach(function(x){var nv=val(x[1]);if(nv!==String(x[2]||"")&&!(nv===""&&!x[2]))ch.push("- **"+x[0]+":** "+(x[2]||"—")+" → "+(nv||"—"))});
+      if(!ch.length&&!note){msg.textContent="Zmień jakieś pole albo opisz, co się zmieniło.";msg.className="msg err";return}
+      lines.push("**Proponowane zmiany:**",ch.length?ch.join("\n"):"—")}
+    else if(kind==="link"){var nl=val("rp_link");if(nl&&!/^https?:\/\//i.test(nl)){msg.textContent="Link musi zaczynać się od https://";msg.className="msg err";return}
+      if(!nl&&!note){msg.textContent="Podaj nowy link albo opisz problem.";msg.className="msg err";return}
+      lines.push("**Nowy link:** "+(nl||"—"))}
+    else if(!note){msg.textContent="Opisz błąd.";msg.className="msg err";return}
+    lines.push("","**Opis:** "+(note||"—"));
+    var ttl={edit:"Zmiana: ",link:"Zepsuty link: ",bug:"Błąd: "}[kind]+g3.game;
+    window.open("https://github.com/"+REPO+"/issues/new?title="+encodeURIComponent(ttl)+"&body="+encodeURIComponent(lines.join("\n")),"_blank","noopener");
+    msg.textContent="Otworzyłem GitHub z gotowym zgłoszeniem. Kliknij tam „Submit new issue”.";msg.className="msg"}
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")hideRmenu()});
+window.addEventListener("scroll",hideRmenu,{passive:true});
 // ====== GŁOSOWANIE ======
 var winnerKey=null;
 function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}

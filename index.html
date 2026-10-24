@@ -160,6 +160,12 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .rsel select{width:100%}
 .rcnt{margin-top:10px;color:var(--muted);font-size:13px}.rcnt b{color:var(--text)}
 @media (max-width:480px){.rsels{grid-template-columns:1fr}}
+.cav{width:40px;height:40px;border-radius:50%;flex:none;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;color:#150f1c}
+.cav img{width:100%;height:100%;object-fit:cover;display:block}
+.cmt{display:flex;gap:12px}.cmt .cmain{min-width:0;flex:1}
+.modb{background:var(--accent);color:var(--bg);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cformrow{display:flex;gap:12px;align-items:flex-start}.cformrow .cin{flex:1;min-width:0}
+.cwho{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-bottom:8px;font-weight:700;font-size:14px}.cwho small{color:var(--muted);font-weight:400;font-size:12px}
 .rowmenu{margin-left:6px;padding:0 8px;font-weight:700;letter-spacing:1px}
 .rmenu{display:none;position:fixed;z-index:70;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 10px 28px rgba(0,0,0,.4)}
 .rmenu.open{display:block}
@@ -571,15 +577,21 @@ function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase()}
 function renderForm(){
-  $("cform").innerHTML=me()?'<div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
+  $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
+function avHue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c.charCodeAt(0))%360});return h}
+function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
+  if(/^https:\/\//i.test(url||""))return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)"><img alt="" loading="lazy" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+'</span>';
+  return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)">'+l+'</span>'}
+function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
 async function loadComments(key){
   try{
-    var r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
+    var r=await sb.from("comments").select("id,user_id,author,body,created_at,avatar_url,is_mod").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
+    if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
     if(r.error)throw r.error;if(curKey!==key)return;
     var u=me();
     $("clist").innerHTML=r.data.length?r.data.map(function(c){
       var del=u&&(c.user_id===u.id||isMod())?' <button class="mini" data-del="'+esc(c.id)+'">Usuń</button>':"";
-      return '<div class="cmt"><div class="cmeta"><b>'+esc(c.author)+'</b> · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
+      return '<div class="cmt">'+avHtml(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
   }catch(e){if(curKey===key)$("clist").textContent="Nie udało się wczytać komentarzy."}
 }
 function showComments(key){
@@ -629,7 +641,9 @@ if(CM){
         if(!nk)return cmsg("Podaj nick.",1);if(!bd)return cmsg("Napisz komentarz.",1);
         try{localStorage.setItem("nick",nk)}catch(e){}updateAuth();
         t.disabled=true;var key=curKey;
-        var w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});t.disabled=false;
+        var av=myAvatar(),w=await sb.from("comments").insert(av?{game_key:key,user_id:me().id,author:nk,body:bd,avatar_url:av}:{game_key:key,user_id:me().id,author:nk,body:bd});
+        if(w.error&&av&&/avatar_url|column/i.test(w.error.message))w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});
+        t.disabled=false;
         if(w.error)return cmsg(/Zbyt szybko/.test(w.error.message)?"Zbyt szybko, poczekaj chwilę.":"Nie udało się dodać: "+w.error.message,1);
         $("cbody").value="";cmsg("");loadComments(key);loadCounts();return}
       if(t.getAttribute("data-del")){

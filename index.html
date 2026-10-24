@@ -147,6 +147,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rndb{--rc:#2fd4c6}}
 .rndb:hover{background:var(--rc);color:#fff}
 :root[data-theme="dark"] .rndb:hover,:root.hw .rndb:hover{color:#0b1f1d}
+.rhint{display:inline-block;margin:14px 0 0;padding:8px 14px;border:1px solid var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:999px;color:var(--accent);font-size:14px;line-height:1.4}
 .rolling{display:flex;flex-direction:column;align-items:center;gap:22px;padding:34px 0 24px;text-align:center}
 .stage{perspective:700px;height:120px;display:flex;align-items:center;justify-content:center}
 .hop{transform-style:preserve-3d;animation:dhop 2s ease-in-out;will-change:transform}
@@ -466,7 +467,7 @@ function pick(){
   lastPick=g;
   var lt=esc((g.game||"?").charAt(0).toUpperCase());
   var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="flex:none;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;background:none">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
-  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="msg" style="margin-top:10px">Losowanie uwzględnia ustawione filtry (platforma, gatunek, zakres, status).</p>';
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="rhint">🎛️ Losowanie uwzględnia ustawione filtry (platforma, gatunek, zakres, status).</p>';
   $("again").onclick=roll}
 var rollT=null,rollI=null;
 function roll(){

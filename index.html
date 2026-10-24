@@ -12,7 +12,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 :root[data-theme="dark"]{--bg:#14120f;--surface:#1e1b17;--text:#f1ede6;--muted:#a39d92;--line:#33302a;--accent:#ff4d64;--ok:#4fcf8a;--warn:#f0b04a;--bad:#8d8a84;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+.wrap{max-width:1500px;margin:0 auto;padding:0 16px 48px}
 header{text-align:center;padding:40px 0 24px}
 h1{margin:0;font-size:clamp(28px,6vw,44px);letter-spacing:-.02em}
 h1 span{color:var(--accent)}
@@ -29,7 +29,10 @@ input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(-
 input[type=search]{flex:1 1 220px}
 .count{color:var(--muted);font-size:14px;margin:0 0 10px}
 .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:1000px}
+tbody td:first-child,thead th:first-child{min-width:340px}
+.gcell .g{flex:1 1 auto;min-width:0}
+.gcell .cbtn{flex:none;white-space:nowrap}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}

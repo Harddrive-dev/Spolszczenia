@@ -131,6 +131,16 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .hw .wrap{position:relative;z-index:1}
 .wrap{position:relative}
 .themes{position:absolute;top:12px;right:16px;display:flex;gap:8px;z-index:3}
+.uchip{position:absolute;top:12px;left:16px;z-index:5}
+.ubtn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:2px 14px 2px 2px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:14px;font-weight:600;max-width:240px}
+.ubtn:hover{border-color:var(--accent)}
+.uav{width:34px;height:34px;border-radius:50%;flex:none;overflow:hidden;background:var(--accent);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.uav img{width:100%;height:100%;object-fit:cover;display:block}
+.unm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.umenu{display:none;position:absolute;top:48px;left:0;min-width:180px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.umenu.open{display:block}
+.umenu .btn{width:100%}
+@media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
 .tb{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);padding:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:#f6f4ef}
 .tb[data-t="dark"]{background:#1e1b17}
 .tb[data-t="halloween"]{background:#150f1c;display:none}
@@ -178,6 +188,7 @@ header{padding-top:56px}
 </script>
 </head>
 <body>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span></button><div class="umenu" id="umenu"><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -433,7 +444,13 @@ function loginHtml(mode){
    ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
    :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   return '<h2>Logowanie</h2>'+(p?'<p class="msg">Zaloguj się jednym kliknięciem. Nie musisz zakładać osobnego konta.</p><div class="btns" style="justify-content:flex-start">'+p+'</div><p class="msg" style="margin-top:16px">lub użyj adresu e-mail i hasła:</p>':"")+tabs+form+'<p class="msg" id="lmsg"></p>'}
-function updateAuth(){var b=$("authBtn");b.style.display="";b.textContent=me()?"Wyloguj ("+nick()+")":"Zaloguj się"}
+function updateAuth(){var b=$("authBtn"),u=me(),c=$("uchip");
+  if(!u){b.style.display="";b.textContent="Zaloguj się";c.style.display="none";$("umenu").className="umenu";return}
+  b.style.display="none";c.style.display="";
+  var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"",box=$("uav");
+  $("unm").textContent=n;box.innerHTML="";
+  if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
+  else box.textContent=n.charAt(0).toUpperCase()}
 function renderForm(){
   $("cform").innerHTML=me()?'<div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
 async function loadComments(key){
@@ -455,7 +472,10 @@ if(CM){
   $("mclose").onclick=closeModal;
   $("cm").addEventListener("click",function(e){if(e.target===$("cm"))closeModal()});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
-  $("authBtn").onclick=function(){if(me())sb.auth.signOut();else{curKey=null;openModal(loginHtml())}};
+  $("authBtn").onclick=function(){curKey=null;openModal(loginHtml())};
+  $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
+  $("ulogout").onclick=function(){$("umenu").className="umenu";sb.auth.signOut()};
+  document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest("#uchip"))$("umenu").className="umenu"});
   document.addEventListener("click",async function(ev){
     var t=ev.target.closest&&ev.target.closest("button");if(!t)return;
     try{
@@ -489,7 +509,7 @@ if(CM){
       if(t.id==="csend"){
         var nk=$("cnick").value.trim(),bd=$("cbody").value.trim();
         if(!nk)return cmsg("Podaj nick.",1);if(!bd)return cmsg("Napisz komentarz.",1);
-        try{localStorage.setItem("nick",nk)}catch(e){}
+        try{localStorage.setItem("nick",nk)}catch(e){}updateAuth();
         t.disabled=true;var key=curKey;
         var w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});t.disabled=false;
         if(w.error)return cmsg(/Zbyt szybko/.test(w.error.message)?"Zbyt szybko, poczekaj chwilę.":"Nie udało się dodać: "+w.error.message,1);

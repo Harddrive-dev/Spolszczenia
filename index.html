@@ -170,6 +170,9 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .leader b{color:var(--text)}
 .vlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .vlink:hover{color:var(--accent);border-bottom-style:solid}
+.leader .ltop{display:flex;flex-wrap:wrap;gap:6px 18px}
+.leader .lpl{white-space:nowrap}
+.leader .lv{color:var(--muted);font-size:13px}
 .leader .votebtn{margin-left:auto;border:0;border-radius:10px;padding:8px 18px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--bg);background:var(--accent);box-shadow:0 2px 0 rgba(0,0,0,.35);box-shadow:0 2px 0 color-mix(in srgb,var(--accent) 55%,#000)}
 .leader .votebtn:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .leader .votebtn:active{transform:translateY(1px);box-shadow:none}
@@ -460,7 +463,7 @@ function pick(){
   lastPick=g;
   var lt=esc((g.game||"?").charAt(0).toUpperCase());
   var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="flex:none;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;background:none">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
-  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="msg" style="margin-top:10px">Losowanie uwzględnia ustawione filtry (platforma, zakres, status).</p>';
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div><p class="msg" style="margin-top:10px">Losowanie uwzględnia ustawione filtry (platforma, gatunek, zakres, status).</p>';
   $("again").onclick=roll}
 var rollT=null,rollI=null;
 function roll(){
@@ -611,10 +614,13 @@ function podium(rows,mine){
   return '<div class="podium">'+order.map(function(i){var g=gameByKey(rows[i].k),lt=esc((g.game||"?").charAt(0).toUpperCase());
     var im=imgOk(g.img)?'<img alt="" loading="lazy" src="'+esc(g.img)+'">':'<div class="pimg">'+lt+'</div>';
     return '<div class="pod p'+(i+1)+'"><span class="medal">'+med[i]+'</span>'+im+'<b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><small>'+rows[i].v+' głos'+(rows[i].v===1?'':(rows[i].v%10>=2&&rows[i].v%10<=4&&(rows[i].v%100<12||rows[i].v%100>14)?'y':'ów'))+(mine===rows[i].k?' · ✓ Twój':'')+'</small></div>'}).join("")+'</div>'}
-var leadRow=null;
-function renderLeader(){var el=$("leader");if(!el)return;var g=leadRow&&gameByKey(leadRow.k);
-  if(!CM||!g){el.style.display="none";el.innerHTML="";return}
-  el.style.display="";el.innerHTML='<span>🗳️ Głosowanie na spolszczenie tygodnia, prowadzi:</span><b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>('+leadRow.v+' głos'+(leadRow.v===1?'':(leadRow.v%10>=2&&leadRow.v%10<=4&&(leadRow.v%100<12||leadRow.v%100>14)?'y':'ów'))+')</span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>'}
+var leadRows=[];
+function plVotes(v){return v+' głos'+(v===1?'':(v%10>=2&&v%10<=4&&(v%100<12||v%100>14)?'y':'ów'))}
+function renderLeader(){var el=$("leader");if(!el)return;
+  var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"];
+  if(!CM||!top.length){el.style.display="none";el.innerHTML="";return}
+  el.style.display="";
+  el.innerHTML='<span class="lbl">🗳️ Głosowanie na spolszczenie tygodnia:</span><span class="ltop">'+top.map(function(x,i){return '<span class="lpl">'+med[i]+' <b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(x.g.link))+'">'+esc(x.g.game)+'</a></b> <span class="lv">('+plVotes(x.v)+')</span></span>'}).join("")+'</span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>'}
 async function openVote(){
   if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");
   curKey=null;openModal('<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Wczytywanie…</p>');
@@ -641,7 +647,7 @@ document.addEventListener("click",async function(ev){
   var r=await sb.from("votes").upsert({game_key:t.getAttribute("data-vote")},{onConflict:"week,user_id"});
   if(r.error){t.disabled=false;var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+r.error.message;vm2.className="msg err"}return}
   loadLeader();openVote()});
-async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});if(!r.error&&r.data&&r.data.length){leadRow={k:r.data[0].game_key,v:+r.data[0].votes}}else leadRow=null;renderLeader()}catch(e){}}
+async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];renderLeader()}catch(e){}}
 if(CM){loadLeader();sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){winnerKey=r.data[0].game_key;if(items.length)renderHome()}}).catch(function(){})}
 // ====== KONIEC KOMENTARZY ======
 fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){items=d;refresh()}).catch(function(){

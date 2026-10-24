@@ -157,6 +157,12 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 @keyframes dhop{0%{transform:translateY(-30px)}15%{transform:translateY(24px)}30%{transform:translateY(-22px)}45%{transform:translateY(16px)}60%{transform:translateY(-10px)}75%{transform:translateY(8px)}100%{transform:translateY(0)}}
 .rname{min-height:1.6em;font-size:18px;font-weight:600;color:var(--muted);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.cube,.stage{animation:none}}
+.vrow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.vrow b{overflow:hidden;text-overflow:ellipsis}
+.vbar{grid-column:1/-1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.vbar i{display:block;height:100%;background:var(--accent)}
+.vcnt{color:var(--muted);font-size:13px}
+.vmine{color:var(--accent);font-weight:700;font-size:13px}
 .pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin:18px 0 8px}
 .pager .btn{min-width:40px;padding:6px 12px}
 .pager .gap{color:var(--muted);padding:0 4px}
@@ -219,6 +225,7 @@ header{padding-top:56px}
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
     <button class="btn" id="openForm">Dodaj spolszczenie</button>
+    <button class="btn" id="navVote" type="button">Głosowanie</button>
     <button class="btn" id="navNews" type="button">Aktualności</button>
     <button class="btn" id="navLektor" type="button">Polski Lektor</button>
   </div>
@@ -392,7 +399,7 @@ function renderHome(){
     var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
     el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle">'+esc(f.game)+'</h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'. Ostatnia aktualizacja: '+esc(f.upd||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
     el.style.display=""}
-  var fw=items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
+  var fw=(winnerKey&&gameByKey(winnerKey))||items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
   var MN=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],now=new Date();
   feat($("week"),fw,"Spolszczenie tygodnia",weekRange());
   feat($("month"),fm,"★ Premiera miesiąca",MN[now.getMonth()]+" "+now.getFullYear());
@@ -572,6 +579,38 @@ if(CM){
     if(ev==="PASSWORD_RECOVERY"){curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
     if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
 }
+// ====== GŁOSOWANIE ======
+var winnerKey=null;
+function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}
+function voteRows(rows,mine,max){
+  return rows.map(function(r){var g=gameByKey(r.k);if(!g)return "";var w=max?Math.round(r.v/max*100):0;
+    return '<div class="vrow"><b>'+esc(g.game)+'</b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
+async function openVote(){
+  if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");
+  curKey=null;openModal('<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Wczytywanie…</p>');
+  try{
+    var rr=await sb.rpc("vote_counts",{w:0});if(rr.error)throw rr.error;
+    var mine=null;if(me()){var m=await sb.rpc("my_vote");if(!m.error)mine=m.data}
+    var rows=(rr.data||[]).map(function(x){return{k:x.game_key,v:+x.votes}}),max=rows.length?rows[0].v:0;
+    $("mbody").innerHTML='<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Tydzień: '+esc(weekRange())+'. Wygrywa gra z największą liczbą głosów, a w kolejnym tygodniu zostaje „Spolszczeniem tygodnia". Jeden głos na osobę, można go zmienić do końca tygodnia.</p>'
+     +(me()?'':'<p class="msg err">Aby zagłosować, musisz się zalogować (kliknij „Zaloguj się" w lewym górnym rogu).</p>')
+     +'<h3 style="margin:14px 0 4px;font-size:16px">Ranking tygodnia</h3><div id="vtop">'+(rows.length?voteRows(rows.slice(0,10),mine,max):'<p class="msg">Nikt jeszcze nie zagłosował. Bądź pierwszy!</p>')+'</div>'
+     +'<h3 style="margin:18px 0 6px;font-size:16px">Zagłosuj na dowolną grę z listy</h3><input id="vq" type="search" placeholder="Wpisz nazwę gry…" style="width:100%" autocomplete="off"><div id="vres"></div><p class="msg" id="vmsg"></p>';
+    var vq=$("vq");vq.addEventListener("input",function(){
+      var q=vq.value.toLowerCase().trim();if(q.length<2){$("vres").innerHTML="";return}
+      var res=items.filter(function(g){return (g.game||"").toLowerCase().indexOf(q)>-1}).slice(0,8).map(function(g){var f=rows.filter(function(x){return x.k===keyOf(g)})[0];return{k:keyOf(g),v:f?f.v:0}});
+      $("vres").innerHTML=res.length?voteRows(res,mine,Math.max(max,1)):'<p class="msg">Nie znaleziono gry.</p>'});
+  }catch(e){$("mbody").innerHTML='<h2>Głosowanie</h2><p class="msg err">Głosowanie nie jest jeszcze skonfigurowane albo wystąpił błąd.</p>'}
+}
+$("navVote").onclick=openVote;
+document.addEventListener("click",async function(ev){
+  var t=ev.target.closest&&ev.target.closest("button[data-vote]");if(!t)return;
+  if(!me()){var vm=$("vmsg");if(vm){vm.textContent="Najpierw się zaloguj (lewy górny róg).";vm.className="msg err"}return}
+  t.disabled=true;
+  var r=await sb.from("votes").upsert({game_key:t.getAttribute("data-vote")},{onConflict:"week,user_id"});
+  if(r.error){t.disabled=false;var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+r.error.message;vm2.className="msg err"}return}
+  openVote()});
+if(CM){sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){winnerKey=r.data[0].game_key;if(items.length)renderHome()}}).catch(function(){})}
 // ====== KONIEC KOMENTARZY ======
 fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){items=d;refresh()}).catch(function(){
   $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."});

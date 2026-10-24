@@ -374,12 +374,14 @@ function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());
 document.addEventListener("error",function(e){var t=e.target;if(!t||!t.classList)return;if(t.tagName==="IMG"&&t.closest&&t.closest(".pod")){var pi=document.createElement("div");pi.className="pimg";pi.textContent=(t.parentNode.querySelector("b")||{textContent:"?"}).textContent.charAt(0).toUpperCase();t.replaceWith(pi);return}if(t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}else if(t.classList.contains("fimg")){var q=document.createElement("div");q.className="fcover";q.textContent=t.getAttribute("data-l")||"?";t.replaceWith(q)}},true);
 function pct(n){return Math.max(0,Math.min(100,+n||0))}
 function cls(s){return s==="Gotowe"?"st-done":s==="W toku"?"st-wip":"st-stop"}
-function uniq(k){return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
+function pcats(g){var o=[];String(g.platform||"").split(",").forEach(function(t){t=t.trim();if(!t)return;if(/^pc\b/i.test(t))t="PC";if(o.indexOf(t)<0)o.push(t)});return o}
+function uniq(k){if(k==="platform"){var a=[];items.forEach(function(g){pcats(g).forEach(function(c){if(a.indexOf(c)<0)a.push(c)})});return a.sort(function(x,y){return x==="PC"?-1:y==="PC"?1:x.localeCompare(y,"pl")})}
+  return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
 function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=document.createElement("option");o.value="";o.textContent=label;el.appendChild(o);
   uniq(k).forEach(function(v){var x=document.createElement("option");x.value=v;x.textContent=v;el.appendChild(x)});el.value=cur}
 function filtered(){
   var q=$("q").value.toLowerCase().trim(),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(!p||g.platform===p)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
+  var r=items.filter(function(g){return(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?(b.upd||"").localeCompare(a.upd||""):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;

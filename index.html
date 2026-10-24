@@ -418,10 +418,10 @@ google:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style
 
 function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function keyOf(g){return g.id||slug(g.game||"")}
-var counts={};
+var counts=Object.create(null);
 function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0;return '<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze'+(n?' ('+n+')':'')+'</button>'}
 async function loadCounts(){
-  try{var c={},from=0;
+  try{var c=Object.create(null),from=0;
     for(var i=0;i<10;i++){
       var r=await sb.from("comments").select("game_key").order("id").range(from,from+999);
       if(r.error)throw r.error;

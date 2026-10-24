@@ -109,7 +109,38 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .cmt{border-top:1px solid var(--line);padding:10px 0}
 .cmeta{font-size:12px;color:var(--muted);margin-bottom:2px}
 .cbody{white-space:pre-wrap;word-break:break-word;font-size:14px}
+
+/* ====== MOTYW HALLOWEEN (włącza się sam 24.10–2.11) ====== */
+:root.hw,:root.hw[data-theme="light"],:root.hw[data-theme="dark"]{--bg:#150f1c;--surface:#211729;--text:#f6eee6;--muted:#bcaec7;--line:#3a2b47;--accent:#ff8a1f;--ok:#4fcf8a;--warn:#f0b04a;--bad:#9a90a3;color-scheme:dark}
+.hw body{position:relative;background:radial-gradient(ellipse 60% 460px at 50% 0,rgba(255,138,31,.2),rgba(21,15,28,0) 70%) no-repeat,var(--bg)}
+.hw .wrap{position:relative;z-index:1}
+.hw #theme{display:none}
+.hw h1{font-family:"Creepster",system-ui,sans-serif;font-weight:400;font-size:clamp(30px,8.5vw,84px);line-height:1;letter-spacing:.02em;overflow-wrap:anywhere}
+.hw header{padding-top:48px}
+.hw .feat{position:relative;box-shadow:0 0 48px rgba(255,138,31,.14)}
+.hw .feat::after{content:"";position:absolute;top:-30px;right:20px;width:72px;height:64px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2264%22 viewBox=%220 0 72 64%22%3E%3Cpath d=%22M36 14c-3-6-1-10 4-12%22 stroke=%22%237cc14a%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cellipse cx=%2222%22 cy=%2238%22 rx=%2218%22 ry=%2222%22 fill=%22%23e8730c%22/%3E%3Cellipse cx=%2250%22 cy=%2238%22 rx=%2218%22 ry=%2222%22 fill=%22%23e8730c%22/%3E%3Cellipse cx=%2236%22 cy=%2238%22 rx=%2216%22 ry=%2224%22 fill=%22%23ff8a1f%22/%3E%3Cpath d=%22M24 34l6 6-9 1zM48 34l-6 6 9 1z%22 fill=%22%23ffe27a%22/%3E%3Cpath d=%22M22 48q14 12 28 0%22 stroke=%22%23150f1c%22 stroke-width=%224%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/svg%3E") no-repeat center/contain;pointer-events:none;animation:hwflick 3.2s infinite}
+.hwd{position:absolute;top:0;left:0;right:0;height:380px;overflow:hidden;pointer-events:none;z-index:0}
+.hwd svg{position:absolute}
+.hwd path[fill="#150f1c"],.hwd circle[fill="#150f1c"]{fill:#ffe27a;filter:drop-shadow(0 0 3px #ffd23c) drop-shadow(0 0 8px #ff9c1a);animation:hwflick 3.2s infinite}
+.hwe{position:fixed;z-index:0;pointer-events:none;animation:hwglow 4s ease-in-out infinite}
+.hwe path,.hwe ellipse{transform-box:fill-box;transform-origin:center;animation:hwblink 4s infinite;animation-delay:inherit}
+.hwrow{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:20px;overflow:hidden;pointer-events:none}
+.hwrow svg{flex:none;height:auto;max-width:14%}
+.hwrow path[fill="#150f1c"],.hwrow circle[fill="#150f1c"]{fill:#ffe27a;filter:drop-shadow(0 0 3px #ffd23c) drop-shadow(0 0 8px #ff9c1a);animation:hwflick 3.2s infinite}
+@keyframes hwflick{0%,100%{opacity:1}18%{opacity:.82}22%{opacity:1}55%{opacity:.9}60%{opacity:.7}64%{opacity:1}}
+@keyframes hwglow{0%,100%{opacity:.75}50%{opacity:1}}
+@keyframes hwblink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.08)}}
+@media (max-width:900px){.hwd,.hwe{display:none}}
+@media (max-width:640px){.hwrow svg:nth-child(n+5){display:none}}
+@media (prefers-reduced-motion:reduce){.hw *,.hw *::after{animation:none!important}}
 </style>
+<script>
+// Motyw Halloween: sam włącza się 24.10–2.11. Podgląd: dopisz do adresu ?halloween=1 (wyłączenie: ?halloween=0)
+(function(){var q=location.search.match(/[?&]halloween=(\d)/),d=new Date(),m=d.getMonth()+1,n=d.getDate();
+  var on=q?q[1]==="1":((m===10&&n>=24)||(m===11&&n<=2));
+  if(!on)return;document.documentElement.className+=" hw";
+  var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Creepster&display=swap";document.head.appendChild(l)})();
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -117,14 +148,14 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
   <h1>Spolszczenia<span>.haven</span></h1>
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
-    <button class="btn" id="openForm">Dodaj spolszczenie</button>
+    <button class="btn" id="openForm">Zgłoś spolszczenie</button>
     <button class="btn" id="authBtn" style="display:none">Zaloguj się</button>
     <button class="btn" id="theme">Motyw</button>
   </div>
 </header>
 
 <div class="panel" id="form">
-  <h2 id="formTitle">Dodaj spolszczenie</h2>
+  <h2 id="formTitle">Zgłoś spolszczenie</h2>
   <div class="grid">
     <label>Gra *<input id="f_game" maxlength="120"></label>
     <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
@@ -184,6 +215,46 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 </div>
 
 <div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
+<script>
+// ====== DEKORACJE HALLOWEEN (tylko gdy motyw jest włączony) ======
+(function(){
+  if(document.documentElement.className.indexOf("hw")<0)return;
+  var STEM='<path d="M36 14c-3-6-1-10 4-12" stroke="#7cc14a" stroke-width="5" fill="none" stroke-linecap="round"/>';
+  var TRI='<path d="M24 34l6 6-9 1zM48 34l-6 6 9 1z" fill="#150f1c"/>';
+  var DOTS='<circle cx="26" cy="36" r="4" fill="#150f1c"/><circle cx="46" cy="36" r="4" fill="#150f1c"/>';
+  var SMILE='<path d="M22 48q14 12 28 0" stroke="#150f1c" stroke-width="4" fill="none" stroke-linecap="round"/>';
+  var ZIG='<path d="M24 48l4 4 4-4 4 4 4-4 4 4 4-4" stroke="#150f1c" stroke-width="3" fill="none" stroke-linejoin="round"/>';
+  function pump(w,st,face,dim){
+    var a=dim?"#d9660a":"#e8730c",b=dim?"#f07d12":"#ff8a1f",f=face===1?TRI+SMILE:face===2?DOTS+ZIG:face===3?TRI+ZIG:"";
+    return '<svg width="'+w+'" height="'+Math.round(w*.89)+'" viewBox="0 0 72 64" aria-hidden="true" style="'+st+'">'+STEM+'<ellipse cx="22" cy="38" rx="18" ry="22" fill="'+a+'"/><ellipse cx="50" cy="38" rx="18" ry="22" fill="'+a+'"/><ellipse cx="36" cy="38" rx="16" ry="24" fill="'+b+'"/>'+f+'</svg>'}
+  function ghost(w,st,fill,mouth){
+    var m=mouth===1?'<ellipse cx="48" cy="66" rx="7" ry="9" fill="#150f1c"/>':mouth===2?'<path d="M38 66q10 9 20 0" stroke="#150f1c" stroke-width="4" fill="none" stroke-linecap="round"/>':'';
+    var cheeks=mouth===1?'<ellipse cx="27" cy="58" rx="6" ry="3.5" fill="#ffb4c6"/><ellipse cx="69" cy="58" rx="6" ry="3.5" fill="#ffb4c6"/>':'';
+    return '<svg width="'+w+'" height="'+Math.round(w*116/96)+'" viewBox="0 0 96 116" aria-hidden="true" style="'+st+'"><path d="M48 6C27 6 12 22 12 44v58l12-9 12 9 12-9 12 9 12-9 12 9V44C84 22 69 6 48 6z" fill="'+fill+'"/><ellipse cx="36" cy="44" rx="6" ry="9" fill="#150f1c"/><ellipse cx="60" cy="44" rx="6" ry="9" fill="#150f1c"/>'+m+cheeks+'</svg>'}
+  function bat(w,st){return '<svg width="'+w+'" height="'+Math.round(w*30/64)+'" viewBox="0 0 64 30" aria-hidden="true" style="'+st+'"><path d="M32 12c-4-8-14-11-30-8 6 3 6 9 10 13 3-3 8-2 10 2 2-4 8-5 10-2 4-4 4-10 10-13-16-3-26 0-30 8z" fill="#4a3858" transform="translate(0 4)"/></svg>'}
+  function eyes(w,st,id){
+    return '<svg class="hwe" width="'+w+'" height="'+Math.round(w*50/90)+'" viewBox="0 0 90 50" aria-hidden="true" style="'+st+'"><defs><radialGradient id="'+id+'"><stop offset="0" stop-color="#b7ff3c" stop-opacity=".75"/><stop offset="1" stop-color="#b7ff3c" stop-opacity="0"/></radialGradient></defs><circle cx="26" cy="26" r="22" fill="url(#'+id+')"/><circle cx="64" cy="26" r="22" fill="url(#'+id+')"/><path d="M14 28q12-18 24 0q-12 12-24 0z" fill="#b7ff3c"/><path d="M52 28q12-18 24 0q-12 12-24 0z" fill="#b7ff3c"/><ellipse cx="26" cy="26" rx="2.5" ry="6" fill="#150f1c"/><ellipse cx="64" cy="26" rx="2.5" ry="6" fill="#150f1c"/></svg>'}
+  var top='<div class="hwd" aria-hidden="true">'
+    +ghost(96,"top:70px;left:4%;opacity:.95","#f6eee6",1)
+    +ghost(70,"top:130px;right:5%;opacity:.8;transform:rotate(10deg)","#cfc4ee",2)
+    +ghost(46,"top:310px;left:11%;opacity:.55;transform:rotate(-12deg)","#f6eee6",0)
+    +bat(64,"top:40px;right:22%;opacity:.8")+bat(44,"top:96px;left:30%;opacity:.6")
+    +pump(84,"top:210px;left:2%;transform:rotate(-8deg)",1)
+    +pump(60,"top:262px;left:8%;transform:rotate(6deg);opacity:.9",2)
+    +pump(96,"top:200px;right:2%;transform:rotate(9deg)",1)
+    +pump(56,"top:272px;right:9%;transform:rotate(-7deg);opacity:.9",3)
+    +'</div>'
+    +eyes(90,"top:42vh;left:1%","hwg1")
+    +eyes(70,"top:64vh;right:1.5%;animation-delay:1.3s","hwg2")
+    +eyes(54,"top:82vh;left:2.5%;animation-delay:2.4s","hwg3")
+    +eyes(80,"top:24vh;right:3%;animation-delay:.7s","hwg4");
+  document.body.insertAdjacentHTML("afterbegin",top);
+  var row='<div class="hwrow" aria-hidden="true">'
+    +pump(120,"",1)+pump(70,"",0,1)+pump(96,"",2)+ghost(64,"margin-bottom:6px","#f6eee6",1).replace(' style="margin-bottom:6px"',' style="margin-bottom:6px"')
+    +pump(110,"",1)+pump(70,"",0,1)+pump(126,"",2)+'</div>';
+  var f=document.querySelector("footer");if(f)f.insertAdjacentHTML("afterend",row);
+})();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script>
 <script>
 // ====== USTAWIENIA ======

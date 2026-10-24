@@ -188,13 +188,15 @@ header{padding-top:56px}
   <h1>Spolszczenia<span>.haven</span></h1>
   <p class="tag">Katalog polskich wersji językowych gier: oficjalnych i fanowskich.</p>
   <div class="btns">
-    <button class="btn" id="openForm">Zgłoś spolszczenie</button>
     <button class="btn" id="authBtn" style="display:none">Zaloguj się</button>
+    <button class="btn" id="openForm">Dodaj spolszczenie</button>
+    <button class="btn" id="navNews" type="button">Aktualności</button>
+    <button class="btn" id="navLektor" type="button">Polski Lektor</button>
   </div>
 </header>
 
 <div class="panel" id="form">
-  <h2 id="formTitle">Zgłoś spolszczenie</h2>
+  <h2 id="formTitle">Dodaj spolszczenie</h2>
   <div class="grid">
     <label>Gra *<input id="f_game" maxlength="120"></label>
     <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
@@ -415,6 +417,9 @@ function me(){return session&&session.user}
 function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}
   return n||m.user_name||m.preferred_username||m.full_name||(u&&u.email?u.email.split("@")[0]:"")}
+function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
+$("navNews").onclick=function(){soon("Aktualności","Tutaj pojawią się newsy ze świata polskich wersji językowych gier.")};
+$("navLektor").onclick=function(){soon("Polski Lektor","Tutaj pojawią się programy lektorskie do gier.")};
 function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open"}
 function closeModal(){$("cm").className="overlay";curKey=null}
 function loginHtml(){

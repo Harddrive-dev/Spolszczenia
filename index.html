@@ -212,6 +212,12 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .leader .votebtn:active{transform:translateY(1px);box-shadow:none}
 .vrow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .vrow b{overflow:hidden;text-overflow:ellipsis}
+.usug{display:none;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.usug.open{display:block}
+.usug button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;color:inherit;font:inherit;padding:7px 10px;cursor:pointer;border-bottom:1px solid var(--line)}
+.usug button:last-child{border-bottom:0}.usug button:hover{background:var(--line)}
+.usug img,.usug i{width:26px;height:26px;border-radius:50%;object-fit:cover;flex:none;background:var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
+.usug small{display:block;color:var(--muted)}
 .vrow.vt{grid-template-columns:auto 1fr auto}
 .vrow.vt .vth{width:38px;height:54px;object-fit:cover;border-radius:6px;background:var(--line);grid-row:1/3;display:grid;place-items:center;font-weight:700;color:var(--muted,#9b8ab3)}
 .vrow.vt .vbar{grid-column:2/-1}
@@ -719,9 +725,10 @@ async function openMods(){
   try{var r=await sb.from("moderators").select("email,role,added_at").order("added_at",{ascending:true});if(r.error)throw r.error;
     $("mbody").innerHTML='<h2>Moderatorzy</h2><p class="msg">Moderator widzi panel „Zgłoszenia", zatwierdza zgłoszenia i usuwa komentarze. Osoba musi logować się kontem z podanym adresem e-mail.</p>'+
      r.data.map(function(m){var owner=m.email.toLowerCase()===String(ADMIN_EMAIL).toLowerCase();return '<div class="sub" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><b style="flex:1;min-width:0;overflow-wrap:anywhere">'+esc(m.email)+'</b><span class="modb" style="margin:0">'+(m.role==="admin"?"Administrator":"Moderator")+'</span>'+(owner?'<span class="cvmuted">właściciel</span>':'<button class="mini" data-modrm="'+esc(m.email)+'">Usuń</button>')+'</div>'}).join("")+
-     '<h3 style="margin:16px 0 6px;font-size:16px">Dodaj moderatora</h3><div class="rpf"><label style="grid-column:1/-1">Adres e-mail konta<input id="mod_email" type="email" maxlength="200" placeholder="np. osoba@gmail.com"></label><label>Rola<select id="mod_role"><option value="mod">Moderator</option><option value="admin">Administrator (może dodawać innych)</option></select></label></div><p class="btns" style="justify-content:flex-start"><button class="btn on" id="mod_add" type="button">Dodaj</button></p><p class="msg" id="modmsg"></p>'
+     '<h3 style="margin:16px 0 6px;font-size:16px">Dodaj moderatora</h3><div class="rpf"><label style="grid-column:1/-1">Adres e-mail konta<input id="mod_email" type="email" maxlength="200" placeholder="Zacznij pisać e-mail lub nazwę…" autocomplete="off"><div id="mod_sug" class="usug"></div></label><label>Rola<select id="mod_role"><option value="mod">Moderator</option><option value="admin">Administrator (może dodawać innych)</option></select></label></div><p class="btns" style="justify-content:flex-start"><button class="btn on" id="mod_add" type="button">Dodaj</button></p><p class="msg" id="modmsg"></p>'
   }catch(e){$("mbody").innerHTML='<h2>Moderatorzy</h2><p class="msg err">Nie udało się wczytać listy (czy uruchomiłeś moderatorzy.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.getAttribute("data-sug")){$("mod_email").value=t.getAttribute("data-sug");$("mod_sug").className="usug";return}
   if(t.id==="umods"){$("umenu").className="umenu";openMods();return}
   if(t.id==="mod_add"){var em=$("mod_email").value.trim().toLowerCase(),msg=$("modmsg");
     if(!/^\S+@\S+\.\S+$/.test(em)){msg.textContent="Podaj poprawny adres e-mail.";msg.className="msg err";return}
@@ -729,6 +736,17 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     if(r.error){msg.textContent="Nie udało się dodać: "+r.error.message;msg.className="msg err";return}openMods();return}
   if(t.getAttribute("data-modrm")){if(!confirm("Usunąć uprawnienia tej osoby?"))return;var d=await sb.from("moderators").delete().eq("email",t.getAttribute("data-modrm"));if(d.error)alert("Błąd: "+d.error.message);openMods()}
 });
+var sugT=null;
+document.addEventListener("input",function(e){if(!e.target||e.target.id!=="mod_email")return;
+  var q=e.target.value.trim(),box=$("mod_sug");clearTimeout(sugT);
+  if(q.length<2){box.className="usug";return}
+  sugT=setTimeout(async function(){
+    try{var r=await sb.rpc("search_users",{q:q});if(r.error)throw r.error;
+      if($("mod_email").value.trim()!==q)return;
+      if(!r.data||!r.data.length){box.innerHTML='<small style="display:block;padding:8px 10px;color:var(--muted)">Nie znaleziono – ta osoba musi się najpierw zalogować na stronie.</small>';box.className="usug open";return}
+      box.innerHTML=r.data.map(function(u){var av=u.avatar?'<img alt="" src="'+esc(u.avatar)+'">':'<i>'+esc((u.name||u.email||"?").charAt(0).toUpperCase())+'</i>';
+        return '<button type="button" data-sug="'+esc(u.email)+'">'+av+'<span>'+esc(u.name||u.email)+(u.name?'<small>'+esc(u.email)+'</small>':'')+'</span></button>'}).join("");box.className="usug open"
+    }catch(err){box.className="usug"}},250)});
 // ====== ZGŁOSZENIA ZMIAN ======
 var menuG=null;
 function hideRmenu(){$("rmenu").className="rmenu"}

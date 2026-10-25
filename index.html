@@ -620,11 +620,17 @@ function afterConfirm(){
   history.replaceState(null,"",location.pathname);
   var done=function(){partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony. Możesz się teraz zalogować.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})};
   sb.auth.getSession().then(function(){return sb.auth.signOut()}).then(done,done)}
+// Enter zatwierdza formularze w całej stronie (w polu tekstowym: Ctrl+Enter)
 document.addEventListener("keydown",function(e){
-  if(e.key!=="Enter"||e.shiftKey||e.isComposing)return;var t=e.target;
-  if(!t||t.tagName!=="INPUT"||!t.closest||!t.closest("#mbody"))return;
-  var b=$(["rnick","remail","rpass","rpass2"].indexOf(t.id)>-1?"rsend":["lemail","lpass"].indexOf(t.id)>-1?"lsend":"__none");
-  if(b&&!b.disabled){e.preventDefault();b.click()}});
+  if(e.key!=="Enter"||e.shiftKey||e.altKey||e.isComposing)return;var t=e.target;
+  if(!t||!t.tagName||!t.closest)return;var tag=t.tagName;
+  if(tag==="TEXTAREA"){if(!(e.ctrlKey||e.metaKey))return}
+  else if(tag==="INPUT"){var ty=(t.type||"").toLowerCase();if(ty==="checkbox"||ty==="radio"||ty==="button"||ty==="submit"||ty==="file")return}
+  else return;
+  var box=t.closest("#mbody,#rbody,#form");if(!box)return;
+  var bs=box.querySelectorAll("button.btn.on:not([disabled]):not([data-mode]):not([data-oauth])");
+  var b=bs.length?bs[bs.length-1]:null;
+  if(b){e.preventDefault();b.click()}});
 function closeModal(){$("cm").className="overlay";curKey=null}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
@@ -633,6 +639,8 @@ function loginHtml(mode){
    ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
    :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   return '<h2>Logowanie</h2>'+(p?'<p class="msg">Zaloguj się jednym kliknięciem. Nie musisz zakładać osobnego konta.</p><div class="btns" style="justify-content:flex-start">'+p+'</div><p class="msg" style="margin-top:16px">lub użyj adresu e-mail i hasła:</p>':"")+tabs+form+'<p class="msg" id="lmsg"></p>'}
+function forgotHtml(email){
+  return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
@@ -692,9 +700,12 @@ if(CM){
         if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
         return r2.data&&r2.data.session?closeModal():celebrate(em2)}
       if(t.id==="lforgot"){
-        var em3=$("lemail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em3))return cmsg("Wpisz swój adres e-mail powyżej, a wyślemy link do zmiany hasła.",1);
+        var pre=$("lemail")?$("lemail").value.trim():"";curKey=null;openModal(forgotHtml(pre));var fe=$("femail");if(fe)fe.focus();return}
+      if(t.id==="fback"){curKey=null;openModal(loginHtml("login"));return}
+      if(t.id==="fgo"){
+        var em3=$("femail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em3))return cmsg("Wpisz poprawny adres e-mail.",1);
         t.disabled=true;var r3=await sb.auth.resetPasswordForEmail(em3,{redirectTo:REDIR});t.disabled=false;
-        return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):cmsg("Jeśli konto istnieje, wysłaliśmy link do zmiany hasła (sprawdź też spam).")}
+        return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):cmsg("Jeśli konto o tym adresie istnieje, wysłaliśmy link do zmiany hasła (sprawdź też spam).")}
       if(t.id==="psend"){
         var np=$("pnew").value;if(np.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);if(np!==$("pnew2").value)return cmsg("Hasła nie są takie same.",1);
         t.disabled=true;var r4=await sb.auth.updateUser({password:np});t.disabled=false;

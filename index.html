@@ -379,7 +379,7 @@ header{padding-top:56px}
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 25.10.2026 j</span></footer>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 26.10.2026 k</span></footer>
 </div>
 
 <div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
@@ -881,9 +881,9 @@ var leadRows=[];
 function plVotes(v){return v+' głos'+(v===1?'':(v%10>=2&&v%10<=4&&(v%100<12||v%100>14)?'y':'ów'))}
 function renderLeader(){var el=$("leader");if(!el)return;
   var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"];
-  if(!CM||!top.length){el.style.display="none";el.innerHTML="";return}
+  if(!CM){el.style.display="none";el.innerHTML="";return}
   el.style.display="";
-  el.innerHTML='<span class="lbl">🗳️ Głosuj na spolszczenie tygodnia</span><span class="ltop">'+top.map(function(x,i){return '<span class="lpl">'+med[i]+' <b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(x.g.link))+'">'+esc(x.g.game)+'</a></b> <span class="lv">('+plVotes(x.v)+')</span></span>'}).join("")+'</span><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>';cdTick()}
+  el.innerHTML='<span class="lbl">🗳️ Głosuj na spolszczenie tygodnia</span><span class="ltop">'+(top.length?"":'<span class="lpl">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</span>')+top.map(function(x,i){return '<span class="lpl">'+med[i]+' <b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(x.g.link))+'">'+esc(x.g.game)+'</a></b> <span class="lv">('+plVotes(x.v)+')</span></span>'}).join("")+'</span><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>';cdTick()}
 function weekLeft(){var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Warsaw",hour12:false,hour:"2-digit",minute:"2-digit",second:"2-digit",weekday:"short"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
   var wd={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[o.weekday],sec=wd*86400+(+o.hour%24)*3600+(+o.minute)*60+(+o.second);return 7*86400-sec}
 function cdTick(){var v=$("cdv");if(!v)return;var r=weekLeft(),d=Math.floor(r/86400),h=Math.floor(r%86400/3600),m=Math.floor(r%3600/60),sc=r%60,t2=function(n){return n<10?"0"+n:""+n};

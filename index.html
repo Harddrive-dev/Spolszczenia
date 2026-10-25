@@ -374,7 +374,7 @@ header{padding-top:56px}
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 25.10.2026 g</span></footer>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 25.10.2026 h</span></footer>
 </div>
 
 <div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
@@ -879,32 +879,47 @@ function renderLeader(){var el=$("leader");if(!el)return;
   if(!CM||!top.length){el.style.display="none";el.innerHTML="";return}
   el.style.display="";
   el.innerHTML='<span class="lbl">🗳️ Głosowanie na spolszczenie tygodnia:</span><span class="ltop">'+top.map(function(x,i){return '<span class="lpl">'+med[i]+' <b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(x.g.link))+'">'+esc(x.g.game)+'</a></b> <span class="lv">('+plVotes(x.v)+')</span></span>'}).join("")+'</span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>'}
+var vState={rows:[],mine:null};
 async function openVote(){
   if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");
   curKey=null;openModal('<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Wczytywanie…</p>');
   try{
-    var rr=await sb.rpc("vote_counts",{w:0});if(rr.error)throw rr.error;
-    var mine=null;if(me()){var m=await sb.rpc("my_vote");if(!m.error)mine=m.data}
-    var rows=(rr.data||[]).map(function(x){return{k:x.game_key,v:+x.votes}}),max=rows.length?rows[0].v:0;
-    $("mbody").innerHTML='<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Tydzień: '+esc(weekRange())+'. Wygrywa gra z największą liczbą głosów, a w kolejnym tygodniu zostaje „Spolszczeniem tygodnia". Jeden głos na osobę, można go zmienić do końca tygodnia.</p>'
-     +(me()?'':'<p class="msg err">Aby zagłosować, musisz się zalogować (kliknij „Zaloguj się" w lewym górnym rogu).</p>')
-     +'<h3 style="margin:14px 0 4px;font-size:16px">Ranking tygodnia</h3>'+podium(rows,mine)+'<div id="vtop">'+(rows.length?voteRows(rows.slice(0,10),mine,max):'<p class="msg">Nikt jeszcze nie zagłosował. Bądź pierwszy!</p>')+'</div>'
-     +'<h3 style="margin:18px 0 6px;font-size:16px">Zagłosuj na dowolną grę z listy</h3><input id="vq" type="search" placeholder="Wpisz nazwę gry…" style="width:100%" autocomplete="off"><div id="vres"></div><p class="msg" id="vmsg"></p>';
-    var vq=$("vq");vq.addEventListener("input",function(){
-      var q=vq.value.toLowerCase().trim();if(q.length<2){$("vres").innerHTML="";return}
-      var res=items.filter(function(g){return (g.game||"").toLowerCase().indexOf(q)>-1}).slice(0,8).map(function(g){var f=rows.filter(function(x){return x.k===keyOf(g)})[0];return{k:keyOf(g),v:f?f.v:0}});
-      $("vres").innerHTML=res.length?voteRows(res,mine,Math.max(max,1),true):'<p class="msg">Nie znaleziono gry.</p>'});
+    var got=await Promise.all([sb.rpc("vote_counts",{w:0}),me()?sb.rpc("my_vote"):Promise.resolve(null)]);
+    var rr=got[0],m=got[1];if(rr.error)throw rr.error;
+    var mine=(m&&!m.error)?m.data:null;
+    vState={rows:(rr.data||[]).map(function(x){return{k:x.game_key,v:+x.votes}}),mine:mine};
+    renderVote("")
   }catch(e){$("mbody").innerHTML='<h2>Głosowanie</h2><p class="msg err">Głosowanie nie jest jeszcze skonfigurowane albo wystąpił błąd.</p>'}
 }
+function renderVote(q0){
+  var rows=vState.rows,mine=vState.mine,max=rows.length?rows[0].v:0;
+  $("mbody").innerHTML='<h2>Głosowanie na spolszczenie tygodnia</h2><p class="msg">Tydzień: '+esc(weekRange())+'. Wygrywa gra z największą liczbą głosów, a w kolejnym tygodniu zostaje „Spolszczeniem tygodnia". Jeden głos na osobę, można go zmienić do końca tygodnia.</p>'
+   +(me()?'':'<p class="msg err">Aby zagłosować, musisz się zalogować (kliknij „Zaloguj się" w lewym górnym rogu).</p>')
+   +'<h3 style="margin:14px 0 4px;font-size:16px">Ranking tygodnia</h3>'+podium(rows,mine)+'<div id="vtop">'+(rows.length?voteRows(rows.slice(0,10),mine,max):'<p class="msg">Nikt jeszcze nie zagłosował. Bądź pierwszy!</p>')+'</div>'
+   +'<h3 style="margin:18px 0 6px;font-size:16px">Zagłosuj na dowolną grę z listy</h3><input id="vq" type="search" placeholder="Wpisz nazwę gry…" style="width:100%" autocomplete="off"><div id="vres"></div><p class="msg" id="vmsg"></p>';
+  var vq=$("vq");
+  function showRes(){
+    var q=vq.value.toLowerCase().trim();if(q.length<2){$("vres").innerHTML="";return}
+    var res=items.filter(function(g){return (g.game||"").toLowerCase().indexOf(q)>-1}).slice(0,8).map(function(g){var f=rows.filter(function(x){return x.k===keyOf(g)})[0];return{k:keyOf(g),v:f?f.v:0}});
+    $("vres").innerHTML=res.length?voteRows(res,mine,Math.max(max,1),true):'<p class="msg">Nie znaleziono gry.</p>'}
+  vq.addEventListener("input",showRes);
+  if(q0){vq.value=q0;showRes()}}
 $("navVote").onclick=openVote;
 document.addEventListener("click",function(e){if(e.target&&e.target.id==="leadgo")openVote()});
 document.addEventListener("click",async function(ev){
   var t=ev.target.closest&&ev.target.closest("button[data-vote]");if(!t)return;
   if(!me()){var vm=$("vmsg");if(vm){vm.textContent="Najpierw się zaloguj (lewy górny róg).";vm.className="msg err"}return}
-  t.disabled=true;
-  var r=await sb.from("votes").upsert({game_key:t.getAttribute("data-vote")},{onConflict:"week,user_id"});
-  if(r.error){t.disabled=false;var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+plMsg(r.error.message);vm2.className="msg err"}return}
-  loadLeader();openVote()});
+  var key=t.getAttribute("data-vote"),prev={rows:vState.rows.map(function(r){return{k:r.k,v:r.v}}),mine:vState.mine},q=$("vq")?$("vq").value:"";
+  if(vState.mine===key)return;
+  // natychmiast pokazujemy nowy wynik, a zapis dzieje się w tle
+  var rows=vState.rows;
+  if(vState.mine){rows.forEach(function(r){if(r.k===vState.mine)r.v=Math.max(0,r.v-1)})}
+  var cur=rows.filter(function(r){return r.k===key})[0];if(cur)cur.v++;else rows.push({k:key,v:1});
+  vState.rows=rows.filter(function(r){return r.v>0}).sort(function(a,b){return b.v-a.v});vState.mine=key;
+  renderVote(q);
+  var r=await sb.from("votes").upsert({game_key:key},{onConflict:"week,user_id"});
+  if(r.error){vState=prev;renderVote(q);var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+plMsg(r.error.message);vm2.className="msg err"}return}
+  loadLeader()});
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];renderLeader()}catch(e){}}
 if(CM){loadLeader();sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){winnerKey=r.data[0].game_key;if(items.length)renderHome()}}).catch(function(){})}
 // ====== KONIEC KOMENTARZY ======

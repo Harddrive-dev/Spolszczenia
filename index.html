@@ -201,7 +201,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .pod.p1 img,.pod.p1 .pimg{width:104px;height:140px}
 .pod b{font-size:13px;line-height:1.25;overflow-wrap:anywhere}
 .pod small{color:var(--muted)}
-.leader{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:-12px 0 28px;padding:10px 16px;border:1px dashed var(--accent);background:rgba(255,138,31,.07);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:12px;color:var(--muted)}
+.leader{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:-12px 0 28px;padding:10px 16px;border:1px dashed var(--accent);background:var(--surface);background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-radius:12px;color:var(--muted)}
 .leader b{color:var(--text)}
 .vlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .vlink:hover{color:var(--accent);border-bottom-style:solid}
@@ -672,7 +672,25 @@ function showComments(key){
   var g=items.filter(function(x){return keyOf(x)===key})[0];curKey=key;
   openModal('<h2>Komentarze: '+esc(g?g.game:key)+'</h2><div id="clist" class="msg">Wczytywanie…</div><div id="cform"></div>');
   renderForm();loadComments(key)}
-function cmsg(t,err){var m=$("cmsg")||$("lmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
+var PLERR=[
+ [/For security purposes, you can only request this after (\d+) seconds?\.?/i,function(m,n){return "Ze względów bezpieczeństwa możesz ponowić tę prośbę dopiero po "+n+" s. Spróbuj za chwilę."}],
+ [/email rate limit exceeded|over_email_send_rate_limit/i,function(){return "Wysłano zbyt wiele wiadomości e-mail. Spróbuj ponownie za jakiś czas."}],
+ [/rate limit|too many requests|over_request_rate_limit/i,function(){return "Zbyt wiele prób. Spróbuj ponownie za chwilę."}],
+ [/New password should be different from the old password\.?/i,function(){return "Nowe hasło musi być inne niż poprzednie."}],
+ [/Password should be at least (\d+) characters\.?/i,function(m,n){return "Hasło musi mieć co najmniej "+n+" znaków."}],
+ [/Password is known to be weak and easy to guess[^.]*\.?/i,function(){return "To hasło jest zbyt słabe lub zbyt popularne. Wybierz inne."}],
+ [/Unable to validate email address: invalid format/i,function(){return "Nieprawidłowy format adresu e-mail."}],
+ [/Email address .* is invalid/i,function(){return "Ten adres e-mail jest nieprawidłowy."}],
+ [/User already registered/i,function(){return "Konto z tym adresem e-mail już istnieje. Użyj logowania."}],
+ [/Signups not allowed for this instance|Signup is disabled/i,function(){return "Rejestracja jest obecnie wyłączona."}],
+ [/Email not confirmed/i,function(){return "Najpierw potwierdź adres e-mail (link w mailu)."}],
+ [/Invalid login credentials/i,function(){return "Nieprawidłowy e-mail lub hasło."}],
+ [/Auth session missing!?/i,function(){return "Sesja wygasła. Zaloguj się ponownie."}],
+ [/Failed to fetch|NetworkError|Load failed/i,function(){return "Brak połączenia z serwerem. Sprawdź internet i spróbuj ponownie."}],
+ [/Error sending (confirmation|recovery) email/i,function(){return "Nie udało się wysłać wiadomości e-mail. Spróbuj ponownie później."}]
+];
+function plMsg(t){t=String(t==null?"":t);PLERR.forEach(function(p){t=t.replace(p[0],p[1])});return t}
+function cmsg(t,err){var m=$("cmsg")||$("lmsg");if(m){m.textContent=plMsg(t);m.className="msg"+(err?" err":"")}}
 if(CM){
   $("mclose").onclick=closeModal;
   $("cm").addEventListener("click",function(e){if(e.target===$("cm"))closeModal()});
@@ -774,7 +792,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.id==="mod_add"){var em=$("mod_email").value.trim().toLowerCase(),msg=$("modmsg");
     if(!/^\S+@\S+\.\S+$/.test(em)){msg.textContent="Podaj poprawny adres e-mail.";msg.className="msg err";return}
     var r=await sb.from("moderators").upsert({email:em,role:$("mod_role").value},{onConflict:"email"});
-    if(r.error){msg.textContent="Nie udało się dodać: "+r.error.message;msg.className="msg err";return}openMods();return}
+    if(r.error){msg.textContent="Nie udało się dodać: "+plMsg(r.error.message);msg.className="msg err";return}openMods();return}
   if(t.getAttribute("data-modrm")){if(!confirm("Usunąć uprawnienia tej osoby?"))return;var d=await sb.from("moderators").delete().eq("email",t.getAttribute("data-modrm"));if(d.error)alert("Błąd: "+d.error.message);openMods()}
 });
 var sugT=null;
@@ -870,7 +888,7 @@ document.addEventListener("click",async function(ev){
   if(!me()){var vm=$("vmsg");if(vm){vm.textContent="Najpierw się zaloguj (lewy górny róg).";vm.className="msg err"}return}
   t.disabled=true;
   var r=await sb.from("votes").upsert({game_key:t.getAttribute("data-vote")},{onConflict:"week,user_id"});
-  if(r.error){t.disabled=false;var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+r.error.message;vm2.className="msg err"}return}
+  if(r.error){t.disabled=false;var vm2=$("vmsg");if(vm2){vm2.textContent="Nie udało się zagłosować: "+plMsg(r.error.message);vm2.className="msg err"}return}
   loadLeader();openVote()});
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];renderLeader()}catch(e){}}
 if(CM){loadLeader();sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){winnerKey=r.data[0].game_key;if(items.length)renderHome()}}).catch(function(){})}

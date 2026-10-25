@@ -212,6 +212,10 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .leader .votebtn:active{transform:translateY(1px);box-shadow:none}
 .vrow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .vrow b{overflow:hidden;text-overflow:ellipsis}
+.vrow.vt{grid-template-columns:auto 1fr auto}
+.vrow.vt .vth{width:38px;height:54px;object-fit:cover;border-radius:6px;background:var(--line);grid-row:1/3;display:grid;place-items:center;font-weight:700;color:var(--muted,#9b8ab3)}
+.vrow.vt .vbar{grid-column:2/-1}
+.vrow.vt b{white-space:nowrap}
 .vbar{grid-column:1/-1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
 .vbar i{display:block;height:100%;background:var(--accent)}
 .vcnt{color:var(--muted);font-size:13px}
@@ -766,9 +770,10 @@ window.addEventListener("scroll",hideRmenu,{passive:true});
 // ====== GŁOSOWANIE ======
 var winnerKey=null;
 function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}
-function voteRows(rows,mine,max){
+function voteRows(rows,mine,max,thumbs){
   return rows.map(function(r){var g=gameByKey(r.k);if(!g)return "";var w=max?Math.round(r.v/max*100):0;
-    return '<div class="vrow"><b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
+    var th=thumbs?(imgOk(g.img)?'<img class="vth" alt="" loading="lazy" src="'+esc(g.img)+'">':'<div class="vth vph">'+esc((g.game||"?").charAt(0).toUpperCase())+'</div>'):"";
+    return '<div class="vrow'+(thumbs?' vt':'')+'">'+th+'<b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
 function podium(rows,mine){
   if(!rows.length)return "";
   var med=["🥇","🥈","🥉"],order=[1,0,2].filter(function(i){return rows[i]&&gameByKey(rows[i].k)});
@@ -796,7 +801,7 @@ async function openVote(){
     var vq=$("vq");vq.addEventListener("input",function(){
       var q=vq.value.toLowerCase().trim();if(q.length<2){$("vres").innerHTML="";return}
       var res=items.filter(function(g){return (g.game||"").toLowerCase().indexOf(q)>-1}).slice(0,8).map(function(g){var f=rows.filter(function(x){return x.k===keyOf(g)})[0];return{k:keyOf(g),v:f?f.v:0}});
-      $("vres").innerHTML=res.length?voteRows(res,mine,Math.max(max,1)):'<p class="msg">Nie znaleziono gry.</p>'});
+      $("vres").innerHTML=res.length?voteRows(res,mine,Math.max(max,1),true):'<p class="msg">Nie znaleziono gry.</p>'});
   }catch(e){$("mbody").innerHTML='<h2>Głosowanie</h2><p class="msg err">Głosowanie nie jest jeszcze skonfigurowane albo wystąpił błąd.</p>'}
 }
 $("navVote").onclick=openVote;

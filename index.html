@@ -611,6 +611,11 @@ function celebrate(email){
     c+='<i style="left:'+l.toFixed(1)+'%;width:'+sz+'px;height:'+(sz*1.6).toFixed(0)+'px;background:'+cols[i%cols.length]+';animation-delay:'+d+'s;animation-duration:'+du+'s;transform:rotate('+rot+'deg)"></i>'}
   openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>Konto utworzone!</h2><p class="msg">Wysłaliśmy link potwierdzający na adres <b>'+esc(email)+'</b>. Kliknij go (sprawdź też spam), a potem się zaloguj.</p><p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">Rozumiem</button></p></div></div>');
   $("partyok").onclick=closeModal}
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"||e.shiftKey||e.isComposing)return;var t=e.target;
+  if(!t||t.tagName!=="INPUT"||!t.closest||!t.closest("#mbody"))return;
+  var b=$(["rnick","remail","rpass","rpass2"].indexOf(t.id)>-1?"rsend":["lemail","lpass"].indexOf(t.id)>-1?"lsend":"__none");
+  if(b&&!b.disabled){e.preventDefault();b.click()}});
 function closeModal(){$("cm").className="overlay";curKey=null}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");

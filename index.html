@@ -631,7 +631,8 @@ document.addEventListener("keydown",function(e){
   var bs=box.querySelectorAll("button.btn.on:not([disabled]):not([data-mode]):not([data-oauth])");
   var b=bs.length?bs[bs.length-1]:null;
   if(b){e.preventDefault();b.click()}});
-function closeModal(){$("cm").className="overlay";curKey=null}
+var recov=false;
+function closeModal(){recov=false;$("cm").className="overlay";curKey=null}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
   var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';
@@ -705,11 +706,11 @@ if(CM){
       if(t.id==="fgo"){
         var em3=$("femail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em3))return cmsg("Wpisz poprawny adres e-mail.",1);
         t.disabled=true;var r3=await sb.auth.resetPasswordForEmail(em3,{redirectTo:REDIR});t.disabled=false;
-        return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):cmsg("Jeśli konto o tym adresie istnieje, wysłaliśmy link do zmiany hasła (sprawdź też spam).")}
+        return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):partyView("Link wysłany!","Jeśli konto o adresie <b>"+esc(em3)+"</b> istnieje, wysłaliśmy na nie link do ustawienia nowego hasła. Sprawdź skrzynkę (także spam).","Rozumiem",closeModal)}
       if(t.id==="psend"){
         var np=$("pnew").value;if(np.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);if(np!==$("pnew2").value)return cmsg("Hasła nie są takie same.",1);
         t.disabled=true;var r4=await sb.auth.updateUser({password:np});t.disabled=false;
-        return r4.error?cmsg("Nie udało się zmienić hasła: "+r4.error.message,1):(cmsg("Hasło zmienione."),setTimeout(closeModal,1200))}
+        return r4.error?cmsg("Nie udało się zmienić hasła: "+r4.error.message,1):(recov=false,sb.auth.signOut().then(function(){return 0},function(){return 0}).then(function(){partyView("Hasło zostało zmienione!","Możesz się teraz zalogować nowym hasłem.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})}))}
       if(t.getAttribute("data-oauth")){var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:REDIR}});if(o.error)cmsg(o.error.message,1);return}
       if(t.id==="csend"){
         var nk=nick(),bd=$("cbody").value.trim();
@@ -729,8 +730,8 @@ if(CM){
   loadCounts();
   sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole()});
   sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();loadRole();
-    if(ev==="PASSWORD_RECOVERY"){curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
-    if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
+    if(ev==="PASSWORD_RECOVERY"){recov=true;curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
+    if(curKey){renderForm();loadComments(curKey)}else if(!recov&&$("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
 }
 // ====== PANEL MODERATORA: ZGŁOSZENIA ======
 var subAll=false;
@@ -896,6 +897,8 @@ function loadCatalog(){
   }).catch(function(){
     $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}
 if(CM)afterConfirm();
+if(/error_code=otp_expired|error=access_denied/.test(location.hash||"")){history.replaceState(null,"",location.pathname);
+  openModal('<h2>Link wygasł</h2><p class="msg">Ten link jest już nieważny (działa tylko raz i przez ograniczony czas). Poproś o nowy: kliknij „Zaloguj się” → „Nie pamiętam hasła”.</p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="expok">Rozumiem</button></p>');$("expok").onclick=closeModal}
 loadCatalog();
 </script>
 <script data-goatcounter="https://hardzik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

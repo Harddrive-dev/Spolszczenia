@@ -369,7 +369,7 @@ header{padding-top:56px}
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 25.10.2026 d</span></footer>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 25.10.2026 e</span></footer>
 </div>
 
 <div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
@@ -605,7 +605,13 @@ function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
 $("navNews").onclick=function(){soon("Aktualności","Tutaj pojawią się newsy ze świata polskich wersji językowych gier.")};
 $("navLektor").onclick=function(){soon("Polski Lektor","Tutaj pojawią się programy lektorskie do gier.")};
-function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open"}
+var TS_KEY="0x4AAAAAAFlm4-HEqU2giO-W",tsTok="",tsId=null;
+function mountCaptcha(n){var el=$("cft");tsTok="";tsId=null;if(!el)return;
+  if(!window.turnstile){if((n||0)<25)setTimeout(function(){mountCaptcha((n||0)+1)},300);return}
+  try{tsId=turnstile.render(el,{sitekey:TS_KEY,theme:"dark",language:"pl",callback:function(t){tsTok=t},"expired-callback":function(){tsTok=""},"error-callback":function(){tsTok=""}})}catch(e){tsId=null}}
+function resetCaptcha(){tsTok="";try{if(window.turnstile&&tsId!==null)turnstile.reset(tsId)}catch(e){}}
+function captchaWait(){return !!window.turnstile&&tsId!==null&&!tsTok}
+function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open";mountCaptcha()}
 function partyView(title,text,btn,onok){
   var cols=["#ff9a3c","#ff4d64","#f0b04a","#4fcf8a","#8b6cf0","#4fb3ff"],c="";
   for(var i=0;i<28;i++){var l=Math.random()*100,d=(Math.random()*.5).toFixed(2),du=(1.6+Math.random()*1.4).toFixed(2),sz=6+Math.floor(Math.random()*7),rot=Math.floor(Math.random()*360);
@@ -639,12 +645,12 @@ function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
   var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';
   var form=mode==="reg"
-   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
-   :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
+   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
+   :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   var alt=p?'<div class="orsep"><span>lub</span></div><div class="btns" style="justify-content:flex-start">'+p+'</div>':"";
   return '<h2>Logowanie</h2>'+tabs+form+'<p class="msg" id="lmsg"></p>'+alt}
 function forgotHtml(email){
-  return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
+  return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
@@ -688,6 +694,7 @@ var PLERR=[
  [/Signups not allowed for this instance|Signup is disabled/i,function(){return "Rejestracja jest obecnie wyłączona."}],
  [/Email not confirmed/i,function(){return "Najpierw potwierdź adres e-mail (link w mailu)."}],
  [/Invalid login credentials/i,function(){return "Nieprawidłowy e-mail lub hasło."}],
+ [/captcha (verification|protection)|captcha_failed|captcha token/i,function(){return "Weryfikacja zabezpieczeń nie powiodła się. Odśwież stronę i spróbuj ponownie."}],
  [/Auth session missing!?/i,function(){return "Sesja wygasła. Zaloguj się ponownie."}],
  [/Failed to fetch|NetworkError|Load failed/i,function(){return "Brak połączenia z serwerem. Sprawdź internet i spróbuj ponownie."}],
  [/Error sending (confirmation|recovery) email/i,function(){return "Nie udało się wysłać wiadomości e-mail. Spróbuj ponownie później."}]
@@ -708,7 +715,7 @@ if(CM){
       if(t.getAttribute("data-mode")){return openModal(loginHtml(t.getAttribute("data-mode")))}
       if(t.id==="lsend"){
         var em=$("lemail").value.trim(),pw=$("lpass").value;if(!/^\S+@\S+\.\S+$/.test(em))return cmsg("Podaj poprawny adres e-mail.",1);if(!pw)return cmsg("Podaj hasło.",1);
-        t.disabled=true;var r=await sb.auth.signInWithPassword({email:em,password:pw});t.disabled=false;
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);t.disabled=true;var r=await sb.auth.signInWithPassword({email:em,password:pw,options:{captchaToken:tsTok||undefined}});t.disabled=false;resetCaptcha();
         return r.error?cmsg(/Email not confirmed/i.test(r.error.message)?"Najpierw potwierdź adres e-mail (link w mailu).":/Invalid login/i.test(r.error.message)?"Nieprawidłowy e-mail lub hasło.":"Nie udało się zalogować: "+r.error.message,1):closeModal()}
       if(t.id==="rsend"){
         var nk2=$("rnick").value.trim(),em2=$("remail").value.trim(),pw2=$("rpass").value;
@@ -716,7 +723,7 @@ if(CM){
         if(!/^\S+@\S+\.\S+$/.test(em2))return cmsg("Podaj poprawny adres e-mail.",1);
         if(pw2.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
-        t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR+"?potwierdzono=1"}});t.disabled=false;
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR+"?potwierdzono=1",captchaToken:tsTok||undefined}});t.disabled=false;resetCaptcha();
         if(r2.error)return cmsg(/already registered/i.test(r2.error.message)?"Konto z tym adresem e-mail już istnieje. Użyj logowania.":"Nie udało się założyć konta: "+r2.error.message,1);
         if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
         return r2.data&&r2.data.session?closeModal():celebrate(em2)}
@@ -725,7 +732,7 @@ if(CM){
       if(t.id==="fback"){curKey=null;openModal(loginHtml("login"));return}
       if(t.id==="fgo"){
         var em3=$("femail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em3))return cmsg("Wpisz poprawny adres e-mail.",1);
-        t.disabled=true;var r3=await sb.auth.resetPasswordForEmail(em3,{redirectTo:REDIR});t.disabled=false;
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);t.disabled=true;var r3=await sb.auth.resetPasswordForEmail(em3,{redirectTo:REDIR,captchaToken:tsTok||undefined});t.disabled=false;resetCaptcha();
         return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):partyView("Link wysłany!","Jeśli konto o adresie <b>"+esc(em3)+"</b> istnieje, wysłaliśmy na nie link do ustawienia nowego hasła. Sprawdź skrzynkę (także spam).","Rozumiem",closeModal)}
       if(t.id==="psend"){
         var np=$("pnew").value;if(np.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);if(np!==$("pnew2").value)return cmsg("Hasła nie są takie same.",1);
@@ -922,6 +929,7 @@ if(/error_code=otp_expired|error=access_denied/.test(location.hash||"")){history
   openModal('<h2>Link wygasł</h2><p class="msg">Ten link jest już nieważny (działa tylko raz i przez ograniczony czas). Poproś o nowy: kliknij „Zaloguj się” → „Nie pamiętam hasła”.</p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="expok">Rozumiem</button></p>');$("expok").onclick=closeModal}
 loadCatalog();
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 <script data-goatcounter="https://hardzik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

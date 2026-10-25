@@ -266,7 +266,7 @@ header{padding-top:56px}
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span></button><div class="umenu" id="umenu"><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span></button><div class="umenu" id="umenu"><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -561,7 +561,14 @@ async function loadCounts(){
       if(r.data.length<1000)break;from+=1000}
     counts=c;render();renderHome()}catch(e){}}
 function me(){return session&&session.user}
-function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
+var myRole=null,roleLoaded=false;
+function emailIsOwner(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
+function isMod(){return roleLoaded?!!myRole:emailIsOwner()}
+function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
+async function loadRole(){
+  if(!CM||!me()){myRole=null;roleLoaded=false;return}
+  try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;roleLoaded=true}catch(e){roleLoaded=false}
+  updateAuth();if(curKey)loadComments(curKey)}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
   var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
   return String(n).trim().slice(0,30)}
@@ -580,7 +587,7 @@ function loginHtml(mode){
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
-  $("umod").style.display=isMod()?"":"none";
+  $("umod").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
   $("unm").textContent=n;box.innerHTML="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
@@ -660,8 +667,8 @@ if(CM){
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
   loadCounts();
-  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth()});
-  sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();
+  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole()});
+  sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();loadRole();
     if(ev==="PASSWORD_RECOVERY"){curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
     if(curKey){renderForm();loadComments(curKey)}else if($("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
 }
@@ -691,6 +698,22 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.getAttribute("data-subjson")){var x=(window.__subs||[]).filter(function(y){return String(y.id)===t.getAttribute("data-subjson")})[0];if(!x)return;var d=x.data||{},o={game:d.game||x.game};
     ["platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(d[k]!==""&&d[k]!=null)o[k]=d[k]});
     try{await navigator.clipboard.writeText(JSON.stringify(o,null,2));t.textContent="Skopiowano ✓"}catch(err){t.textContent="Nie udało się"}}
+});
+// ====== ZARZĄDZANIE MODERATORAMI ======
+async function openMods(){
+  if(!CM||!isAdmin())return;curKey=null;openModal('<h2>Moderatorzy</h2><p class="msg">Wczytywanie…</p>');
+  try{var r=await sb.from("moderators").select("email,role,added_at").order("added_at",{ascending:true});if(r.error)throw r.error;
+    $("mbody").innerHTML='<h2>Moderatorzy</h2><p class="msg">Moderator widzi panel „Zgłoszenia", zatwierdza zgłoszenia i usuwa komentarze. Osoba musi logować się kontem z podanym adresem e-mail.</p>'+
+     r.data.map(function(m){var owner=m.email.toLowerCase()===String(ADMIN_EMAIL).toLowerCase();return '<div class="sub" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><b style="flex:1;min-width:0;overflow-wrap:anywhere">'+esc(m.email)+'</b><span class="modb" style="margin:0">'+(m.role==="admin"?"Administrator":"Moderator")+'</span>'+(owner?'<span class="cvmuted">właściciel</span>':'<button class="mini" data-modrm="'+esc(m.email)+'">Usuń</button>')+'</div>'}).join("")+
+     '<h3 style="margin:16px 0 6px;font-size:16px">Dodaj moderatora</h3><div class="rpf"><label style="grid-column:1/-1">Adres e-mail konta<input id="mod_email" type="email" maxlength="200" placeholder="np. osoba@gmail.com"></label><label>Rola<select id="mod_role"><option value="mod">Moderator</option><option value="admin">Administrator (może dodawać innych)</option></select></label></div><p class="btns" style="justify-content:flex-start"><button class="btn on" id="mod_add" type="button">Dodaj</button></p><p class="msg" id="modmsg"></p>'
+  }catch(e){$("mbody").innerHTML='<h2>Moderatorzy</h2><p class="msg err">Nie udało się wczytać listy (czy uruchomiłeś moderatorzy.sql w Supabase?).</p>'}}
+document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.id==="umods"){$("umenu").className="umenu";openMods();return}
+  if(t.id==="mod_add"){var em=$("mod_email").value.trim().toLowerCase(),msg=$("modmsg");
+    if(!/^\S+@\S+\.\S+$/.test(em)){msg.textContent="Podaj poprawny adres e-mail.";msg.className="msg err";return}
+    var r=await sb.from("moderators").upsert({email:em,role:$("mod_role").value},{onConflict:"email"});
+    if(r.error){msg.textContent="Nie udało się dodać: "+r.error.message;msg.className="msg err";return}openMods();return}
+  if(t.getAttribute("data-modrm")){if(!confirm("Usunąć uprawnienia tej osoby?"))return;var d=await sb.from("moderators").delete().eq("email",t.getAttribute("data-modrm"));if(d.error)alert("Błąd: "+d.error.message);openMods()}
 });
 // ====== ZGŁOSZENIA ZMIAN ======
 var menuG=null;

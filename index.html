@@ -499,7 +499,7 @@ var lastPick=null;
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
   var act=RF.filter(function(x){return $(x[0]).value}),n=filtered().length;
-  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">brak (losuję ze wszystkich)</span>';
+  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">Brak filtrów (losuję ze wszystkich)</span>';
   var sels=RF.map(function(x){var el=$(x[0]),h="";for(var i=0;i<el.options.length;i++){var o=el.options[i];h+='<option value="'+esc(o.value)+'"'+(o.value===el.value?' selected':'')+'>'+esc(i?o.textContent:x[1]+": wszystkie")+'</option>'}
     return '<label class="rsel"><small>'+x[1]+'</small><select data-rfs="'+x[0]+'">'+h+'</select></label>'}).join("");
   return '<div class="rfbox"><div class="rftop"><span>🎛️ Filtry losowania</span></div><div class="rchips">'+chips+'</div><div class="rsels">'+sels+'</div>'+'<div class="rcnt">Do wylosowania: <b>'+n+'</b> '+(n===1?'gra':'gier')+(act.length?' · <button type="button" class="rfclr" id="rfclr">Wyczyść filtry</button>':'')+'</div></div>'}

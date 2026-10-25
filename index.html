@@ -496,16 +496,19 @@ $("ps").addEventListener("input",function(){PS=+$("ps").value;page=1;try{localSt
 $("pager").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-pg]");if(!b||b.disabled)return;page=+b.getAttribute("data-pg");render();var o=$("out");window.scrollTo({top:o.getBoundingClientRect().top+window.pageYOffset-70,behavior:"smooth"})});
 $("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
 var lastPick=null;
+var RV={fp:"",fg:"",ft:"",fs:""};
+function rpool(){var q=$("q").value.toLowerCase().trim();
+  return items.filter(function(g){return(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||g.type===RV.ft)&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||g.status===RV.fs)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)})}
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
-  var act=RF.filter(function(x){return $(x[0]).value}),n=filtered().length;
-  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">brak (losuję ze wszystkich)</span>';
-  var sels=RF.map(function(x){var el=$(x[0]),h="";for(var i=0;i<el.options.length;i++){var o=el.options[i];h+='<option value="'+esc(o.value)+'"'+(o.value===el.value?' selected':'')+'>'+esc(i?o.textContent:x[1]+": wszystkie")+'</option>'}
+  var act=RF.filter(function(x){return RV[x[0]]}),n=rpool().length;
+  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc(RV[x[0]])+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">brak (losuję ze wszystkich)</span>';
+  var sels=RF.map(function(x){var el=$(x[0]),h="";for(var i=0;i<el.options.length;i++){var o=el.options[i];h+='<option value="'+esc(o.value)+'"'+(o.value===RV[x[0]]?' selected':'')+'>'+esc(i?o.textContent:x[1]+": wszystkie")+'</option>'}
     return '<label class="rsel"><small>'+x[1]+'</small><select data-rfs="'+x[0]+'">'+h+'</select></label>'}).join("");
   return '<div class="rfbox"><div class="rftop"><span>🎛️ Filtry losowania</span></div><div class="rchips">'+chips+'</div><div class="rsels">'+sels+'</div>'+'<div class="rcnt">Do wylosowania: <b>'+n+'</b> '+(n===1?'gra':'gier')+(act.length?' · <button type="button" class="rfclr" id="rfclr">Wyczyść filtry</button>':'')+'</div></div>'}
-function rfApply(){page=1;render();pick()}
+function rfApply(){var b=document.querySelector("#rbody .rfbox");if(b)b.outerHTML=rfBox();var m=document.querySelector("#rbody .msg");if(m&&rpool().length)m.remove()}
 function pick(){
-  var r=filtered();
+  var r=rpool();
   if(!r.length){$("rbody").innerHTML='<h2>Wylosuj spolszczenie</h2><p class="msg">Brak spolszczeń do wylosowania. Zmień filtry i spróbuj ponownie.</p>'+rfBox(true);return}
   var g=r[Math.floor(Math.random()*r.length)];
   if(r.length>1)while(g===lastPick)g=r[Math.floor(Math.random()*r.length)];
@@ -515,12 +518,12 @@ function pick(){
   $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+'<span class="pill">'+esc(g.type)+'</span><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
   $("again").onclick=roll}
 $("rbody").addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
-  if(t.id==="rfclr"){RF.forEach(function(x){$(x[0]).value=""});rfApply();return}
-  if(t.getAttribute("data-rfx")){$(t.getAttribute("data-rfx")).value="";rfApply()}});
-$("rbody").addEventListener("change",function(e){var t=e.target;if(t&&t.getAttribute&&t.getAttribute("data-rfs")){$(t.getAttribute("data-rfs")).value=t.value;rfApply()}});
+  if(t.id==="rfclr"){RF.forEach(function(x){RV[x[0]]=""});rfApply();return}
+  if(t.getAttribute("data-rfx")){RV[t.getAttribute("data-rfx")]="";rfApply()}});
+$("rbody").addEventListener("change",function(e){var t=e.target;if(t&&t.getAttribute&&t.getAttribute("data-rfs")){RV[t.getAttribute("data-rfs")]=t.value;rfApply()}});
 var rollT=null,rollI=null;
 function roll(){
-  var r=filtered();
+  var r=rpool();
   if(!r.length){pick();$("rm").className="overlay open";return}
   var PIPS=[[4],[0,8],[0,4,8],[0,2,6,8],[0,2,4,6,8],[0,2,3,5,6,8]];
   var faces=PIPS.map(function(p,i){var c="";for(var k=0;k<9;k++)c+=p.indexOf(k)>-1?"<b></b>":"<span></span>";return '<div class="face f'+(i+1)+'">'+c+'</div>'}).join("");
@@ -532,7 +535,7 @@ function roll(){
   rollI=setInterval(function(){var e=$("rname");if(e)e.textContent=r[Math.floor(Math.random()*r.length)].game},90);
   rollT=setTimeout(function(){clearInterval(rollI);if($("rm").className.indexOf("open")>-1)pick()},quick?300:2000)}
 function stopRoll(){clearTimeout(rollT);clearInterval(rollI)}
-$("rnd").onclick=roll;
+$("rnd").onclick=function(){RF.forEach(function(x){RV[x[0]]=$(x[0]).value});roll()};
 $("rclose").onclick=function(){stopRoll();$("rm").className="overlay"};
 $("rm").addEventListener("click",function(e){if(e.target===$("rm")){stopRoll();$("rm").className="overlay"}});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){stopRoll();$("rm").className="overlay"}});

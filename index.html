@@ -773,7 +773,7 @@ function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}
 function voteRows(rows,mine,max,thumbs){
   return rows.map(function(r){var g=gameByKey(r.k);if(!g)return "";var w=max?Math.round(r.v/max*100):0;
     var th=thumbs?(imgOk(g.img)?'<img class="vth" alt="" loading="lazy" src="'+esc(g.img)+'">':'<div class="vth vph">'+esc((g.game||"?").charAt(0).toUpperCase())+'</div>'):"";
-    return '<div class="vrow'+(thumbs?' vt':'')+'">'+th+'<b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> <button class="mini" data-vote="'+esc(r.k)+'">'+(mine===r.k?'Zmień':'Głosuj')+'</button></span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
+    return '<div class="vrow'+(thumbs?' vt':'')+'">'+th+'<b><a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a></b><span>'+(mine===r.k?'<span class="vmine">✓ Twój głos</span> ':'')+'<span class="vcnt">'+r.v+' głos'+(r.v===1?'':(r.v%10>=2&&r.v%10<=4&&(r.v%100<12||r.v%100>14)?'y':'ów'))+'</span> '+(mine===r.k?'':'<button class="mini" data-vote="'+esc(r.k)+'">'+(mine?'Zmień głos':'Głosuj')+'</button>')+'</span><div class="vbar"><i style="width:'+w+'%"></i></div></div>'}).join("")}
 function podium(rows,mine){
   if(!rows.length)return "";
   var med=["🥇","🥈","🥉"],order=[1,0,2].filter(function(i){return rows[i]&&gameByKey(rows[i].k)});

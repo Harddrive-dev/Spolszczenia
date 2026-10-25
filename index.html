@@ -563,7 +563,6 @@ function roll(){
 function stopRoll(){clearTimeout(rollT);clearInterval(rollI)}
 $("rnd").onclick=function(){RF.forEach(function(x){RV[x[0]]=$(x[0]).value});roll()};
 $("rclose").onclick=function(){stopRoll();$("rm").className="overlay"};
-$("rm").addEventListener("click",function(e){if(e.target===$("rm")){stopRoll();$("rm").className="overlay"}});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){stopRoll();$("rm").className="overlay"}});
 function view(v){$("out").className=v==="cards"?"view-cards":"";$("vt").className="btn"+(v==="table"?" on":"");$("vc").className="btn"+(v==="cards"?" on":"")}
 $("vt").onclick=function(){view("table")};$("vc").onclick=function(){view("cards")};
@@ -694,7 +693,6 @@ function plMsg(t){t=String(t==null?"":t);PLERR.forEach(function(p){t=t.replace(p
 function cmsg(t,err){var m=$("cmsg")||$("lmsg");if(m){m.textContent=plMsg(t);m.className="msg"+(err?" err":"")}}
 if(CM){
   $("mclose").onclick=closeModal;
-  $("cm").addEventListener("click",function(e){if(e.target===$("cm"))closeModal()});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
   $("ubtn").onclick=function(e){e.stopPropagation();if(!me()){curKey=null;openModal(loginHtml());return}$("umenu").classList.toggle("open")};
   $("ulogout").onclick=function(){$("umenu").className="umenu";sb.auth.signOut()};

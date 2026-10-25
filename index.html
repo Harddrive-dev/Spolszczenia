@@ -562,9 +562,8 @@ async function loadCounts(){
     counts=c;render();renderHome()}catch(e){}}
 function me(){return session&&session.user}
 function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
-function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
-  var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
-  return String(n).trim().slice(0,30)}
+function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}
+  return n||m.nick||m.user_name||m.preferred_username||m.full_name||(u&&u.email?u.email.split("@")[0]:"")}
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
 $("navNews").onclick=function(){soon("Aktualności","Tutaj pojawią się newsy ze świata polskich wersji językowych gier.")};
 $("navLektor").onclick=function(){soon("Polski Lektor","Tutaj pojawią się programy lektorskie do gier.")};
@@ -586,7 +585,7 @@ function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase()}
 function renderForm(){
-  $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
+  $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
 function avHue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c.charCodeAt(0))%360});return h}
 function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
   if(/^https:\/\//i.test(url||""))return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)"><img alt="" loading="lazy" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+'</span>';
@@ -633,6 +632,7 @@ if(CM){
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
         t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR}});t.disabled=false;
         if(r2.error)return cmsg(/already registered/i.test(r2.error.message)?"Konto z tym adresem e-mail już istnieje. Użyj logowania.":"Nie udało się założyć konta: "+r2.error.message,1);
+        try{localStorage.setItem("nick",nk2)}catch(e){}
         if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
         return r2.data&&r2.data.session?closeModal():cmsg("Konto utworzone! Kliknij link potwierdzający w mailu (sprawdź też spam), a potem się zaloguj.")}
       if(t.id==="lforgot"){
@@ -645,8 +645,9 @@ if(CM){
         return r4.error?cmsg("Nie udało się zmienić hasła: "+r4.error.message,1):(cmsg("Hasło zmienione."),setTimeout(closeModal,1200))}
       if(t.getAttribute("data-oauth")){var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:REDIR}});if(o.error)cmsg(o.error.message,1);return}
       if(t.id==="csend"){
-        var nk=nick(),bd=$("cbody").value.trim();
-        if(!nk)return cmsg("Nie udało się ustalić nazwy konta.",1);if(!bd)return cmsg("Napisz komentarz.",1);
+        var nk=$("cnick").value.trim(),bd=$("cbody").value.trim();
+        if(!nk)return cmsg("Podaj nick.",1);if(!bd)return cmsg("Napisz komentarz.",1);
+        try{localStorage.setItem("nick",nk)}catch(e){}updateAuth();
         t.disabled=true;var key=curKey;
         var av=myAvatar(),w=await sb.from("comments").insert(av?{game_key:key,user_id:me().id,author:nk,body:bd,avatar_url:av}:{game_key:key,user_id:me().id,author:nk,body:bd});
         if(w.error&&av&&/avatar_url|column/i.test(w.error.message))w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});

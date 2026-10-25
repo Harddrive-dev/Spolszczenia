@@ -605,12 +605,21 @@ function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja
 $("navNews").onclick=function(){soon("Aktualności","Tutaj pojawią się newsy ze świata polskich wersji językowych gier.")};
 $("navLektor").onclick=function(){soon("Polski Lektor","Tutaj pojawią się programy lektorskie do gier.")};
 function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open"}
-function celebrate(email){
+function partyView(title,text,btn,onok){
   var cols=["#ff9a3c","#ff4d64","#f0b04a","#4fcf8a","#8b6cf0","#4fb3ff"],c="";
   for(var i=0;i<28;i++){var l=Math.random()*100,d=(Math.random()*.5).toFixed(2),du=(1.6+Math.random()*1.4).toFixed(2),sz=6+Math.floor(Math.random()*7),rot=Math.floor(Math.random()*360);
     c+='<i style="left:'+l.toFixed(1)+'%;width:'+sz+'px;height:'+(sz*1.6).toFixed(0)+'px;background:'+cols[i%cols.length]+';animation-delay:'+d+'s;animation-duration:'+du+'s;transform:rotate('+rot+'deg)"></i>'}
-  openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>Konto utworzone!</h2><p class="msg">Wysłaliśmy link potwierdzający na adres <b>'+esc(email)+'</b>. Kliknij go (sprawdź też spam), a potem się zaloguj.</p><p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">Rozumiem</button></p></div></div>');
-  $("partyok").onclick=closeModal}
+  curKey=null;openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>'+title+'</h2><p class="msg">'+text+'</p><p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">'+btn+'</button></p></div></div>');
+  $("partyok").onclick=onok}
+function celebrate(email){
+  partyView("Konto utworzone!","Wysłaliśmy link potwierdzający na adres <b>"+esc(email)+"</b>. Kliknij go (sprawdź też spam), a potem się zaloguj.","Rozumiem",closeModal)}
+// po kliknięciu linku z maila: nie zostawiamy użytkownika zalogowanego, tylko pokazujemy komunikat
+function afterConfirm(){
+  var h=location.hash||"",q=location.search||"";
+  if(!(/[?&]potwierdzono=1/.test(q)||/type=signup/.test(h)))return;
+  history.replaceState(null,"",location.pathname);
+  var done=function(){partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony. Możesz się teraz zalogować.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})};
+  sb.auth.getSession().then(function(){return sb.auth.signOut()}).then(done,done)}
 document.addEventListener("keydown",function(e){
   if(e.key!=="Enter"||e.shiftKey||e.isComposing)return;var t=e.target;
   if(!t||t.tagName!=="INPUT"||!t.closest||!t.closest("#mbody"))return;
@@ -678,7 +687,7 @@ if(CM){
         if(!/^\S+@\S+\.\S+$/.test(em2))return cmsg("Podaj poprawny adres e-mail.",1);
         if(pw2.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
-        t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR}});t.disabled=false;
+        t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR+"?potwierdzono=1"}});t.disabled=false;
         if(r2.error)return cmsg(/already registered/i.test(r2.error.message)?"Konto z tym adresem e-mail już istnieje. Użyj logowania.":"Nie udało się założyć konta: "+r2.error.message,1);
         if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
         return r2.data&&r2.data.session?closeModal():celebrate(em2)}
@@ -875,6 +884,7 @@ function loadCatalog(){
     if(CM)sb.rpc("approved_changes").then(function(r){if(!r.error&&r.data&&r.data.length){items=mergeApproved(r.data);refresh()}}).catch(function(){})
   }).catch(function(){
     $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}
+if(CM)afterConfirm();
 loadCatalog();
 </script>
 <script data-goatcounter="https://hardzik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

@@ -499,7 +499,7 @@ var lastPick=null;
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
   var act=RF.filter(function(x){return $(x[0]).value}),n=filtered().length;
-  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">Brak filtrów (losuję ze wszystkich)</span>';
+  var chips=act.length?act.map(function(x){return '<span class="rchip">'+esc($(x[0]).value)+' <button type="button" data-rfx="'+x[0]+'" aria-label="Usuń filtr '+x[1]+'">✕</button></span>'}).join(""):'<span class="rnone">brak (losuję ze wszystkich)</span>';
   var sels=RF.map(function(x){var el=$(x[0]),h="";for(var i=0;i<el.options.length;i++){var o=el.options[i];h+='<option value="'+esc(o.value)+'"'+(o.value===el.value?' selected':'')+'>'+esc(i?o.textContent:x[1]+": wszystkie")+'</option>'}
     return '<label class="rsel"><small>'+x[1]+'</small><select data-rfs="'+x[0]+'">'+h+'</select></label>'}).join("");
   return '<div class="rfbox"><div class="rftop"><span>🎛️ Filtry losowania</span></div><div class="rchips">'+chips+'</div><div class="rsels">'+sels+'</div>'+'<div class="rcnt">Do wylosowania: <b>'+n+'</b> '+(n===1?'gra':'gier')+(act.length?' · <button type="button" class="rfclr" id="rfclr">Wyczyść filtry</button>':'')+'</div></div>'}
@@ -562,8 +562,9 @@ async function loadCounts(){
     counts=c;render();renderHome()}catch(e){}}
 function me(){return session&&session.user}
 function isMod(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
-function nick(){var u=me(),m=(u&&u.user_metadata)||{},n="";try{n=localStorage.getItem("nick")||""}catch(e){}
-  return n||m.nick||m.user_name||m.preferred_username||m.full_name||(u&&u.email?u.email.split("@")[0]:"")}
+function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
+  var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
+  return String(n).trim().slice(0,30)}
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
 $("navNews").onclick=function(){soon("Aktualności","Tutaj pojawią się newsy ze świata polskich wersji językowych gier.")};
 $("navLektor").onclick=function(){soon("Polski Lektor","Tutaj pojawią się programy lektorskie do gier.")};
@@ -585,7 +586,7 @@ function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase()}
 function renderForm(){
-  $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="grid"><label>Nick<input id="cnick" maxlength="30" value="'+esc(nick())+'"></label></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
+  $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
 function avHue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c.charCodeAt(0))%360});return h}
 function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
   if(/^https:\/\//i.test(url||""))return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)"><img alt="" loading="lazy" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+'</span>';
@@ -632,7 +633,6 @@ if(CM){
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
         t.disabled=true;var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR}});t.disabled=false;
         if(r2.error)return cmsg(/already registered/i.test(r2.error.message)?"Konto z tym adresem e-mail już istnieje. Użyj logowania.":"Nie udało się założyć konta: "+r2.error.message,1);
-        try{localStorage.setItem("nick",nk2)}catch(e){}
         if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
         return r2.data&&r2.data.session?closeModal():cmsg("Konto utworzone! Kliknij link potwierdzający w mailu (sprawdź też spam), a potem się zaloguj.")}
       if(t.id==="lforgot"){
@@ -645,9 +645,8 @@ if(CM){
         return r4.error?cmsg("Nie udało się zmienić hasła: "+r4.error.message,1):(cmsg("Hasło zmienione."),setTimeout(closeModal,1200))}
       if(t.getAttribute("data-oauth")){var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:REDIR}});if(o.error)cmsg(o.error.message,1);return}
       if(t.id==="csend"){
-        var nk=$("cnick").value.trim(),bd=$("cbody").value.trim();
-        if(!nk)return cmsg("Podaj nick.",1);if(!bd)return cmsg("Napisz komentarz.",1);
-        try{localStorage.setItem("nick",nk)}catch(e){}updateAuth();
+        var nk=nick(),bd=$("cbody").value.trim();
+        if(!nk)return cmsg("Nie udało się ustalić nazwy konta.",1);if(!bd)return cmsg("Napisz komentarz.",1);
         t.disabled=true;var key=curKey;
         var av=myAvatar(),w=await sb.from("comments").insert(av?{game_key:key,user_id:me().id,author:nk,body:bd,avatar_url:av}:{game_key:key,user_id:me().id,author:nk,body:bd});
         if(w.error&&av&&/avatar_url|column/i.test(w.error.message))w=await sb.from("comments").insert({game_key:key,user_id:me().id,author:nk,body:bd});
@@ -681,14 +680,14 @@ async function openSubs(){
     var q=sb.from("submissions").select("*").order("created_at",{ascending:false}).limit(100);if(!subAll)q=q.eq("status","new");
     var r=await q;if(r.error)throw r.error;
     $("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="btns" style="justify-content:flex-start"><button class="btn'+(subAll?'':' on')+'" data-subf="new">Nowe</button><button class="btn'+(subAll?' on':'')+'" data-subf="all">Wszystkie</button></p>'+
-     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div><div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.kind==="new"?'<button class="mini" data-subjson="'+x.id+'">Kopiuj JSON</button>':"")+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">Załatwione</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
+     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div><div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.kind==="new"?'<button class="mini" data-subjson="'+x.id+'">Kopiuj JSON</button>':"")+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":"Zatwierdź i dodaj na stronę")+'</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
     window.__subs=r.data;
   }catch(e){$("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="msg err">Nie udało się wczytać zgłoszeń (czy uruchomiłeś zgloszenia.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="umod"){$("umenu").className="umenu";openSubs();return}
   if(t.getAttribute("data-subf")){subAll=t.getAttribute("data-subf")==="all";openSubs();return}
-  if(t.getAttribute("data-subset")){await sb.from("submissions").update({status:t.getAttribute("data-subset")}).eq("id",t.getAttribute("data-id"));openSubs();return}
-  if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();return}
+  if(t.getAttribute("data-subset")){await sb.from("submissions").update({status:t.getAttribute("data-subset")}).eq("id",t.getAttribute("data-id"));openSubs();loadCatalog();return}
+  if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadCatalog();return}
   if(t.getAttribute("data-subjson")){var x=(window.__subs||[]).filter(function(y){return String(y.id)===t.getAttribute("data-subjson")})[0];if(!x)return;var d=x.data||{},o={game:d.game||x.game};
     ["platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(d[k]!==""&&d[k]!=null)o[k]=d[k]});
     try{await navigator.clipboard.writeText(JSON.stringify(o,null,2));t.textContent="Skopiowano ✓"}catch(err){t.textContent="Nie udało się"}}
@@ -779,8 +778,28 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];renderLeader()}catch(e){}}
 if(CM){loadLeader();sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){winnerKey=r.data[0].game_key;if(items.length)renderHome()}}).catch(function(){})}
 // ====== KONIEC KOMENTARZY ======
-fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){items=d;refresh()}).catch(function(){
-  $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."});
+var baseItems=[];
+function mergeApproved(rows){
+  var list=baseItems.map(function(g){return Object.assign({},g)}),TYPES=["Napisy","Pełne","Dubbing","Oficjalne"],EDIT=["status","ver","author","genre","link"];
+  function find(k){return list.filter(function(g){return keyOf(g)===k})[0]}
+  rows.forEach(function(r){var d=r.data||{},day=String(r.created_at||"").slice(0,10);
+    if(r.kind==="new"){var name=String(d.game||r.game||"").trim(),link=String(d.link||"");
+      if(!name||!/^https?:\/\//i.test(link)||find(slug(name)))return;
+      var e={game:name,platform:d.platform||"PC",type:TYPES.indexOf(d.type)>-1?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—",link:link};
+      if(d.genre)e.genre=d.genre;e.upd=d.upd||day;list.push(e)}
+    else if(r.kind==="edit"){var g=find(d.key);if(!g)return;
+      (d.changes||[]).forEach(function(c){if(EDIT.indexOf(c.field)<0)return;var v=String(c.to==null?"":c.to).trim();
+        if(c.field==="link"&&!/^https?:\/\//i.test(v))return;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre});
+      if(day)g.upd=day}
+    else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
+  return list}
+function loadCatalog(){
+  return fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    baseItems=d;items=d;refresh();
+    if(CM)sb.rpc("approved_changes").then(function(r){if(!r.error&&r.data&&r.data.length){items=mergeApproved(r.data);refresh()}}).catch(function(){})
+  }).catch(function(){
+    $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}
+loadCatalog();
 </script>
 <script data-goatcounter="https://hardzik.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

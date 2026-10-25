@@ -589,7 +589,7 @@ async function loadCounts(){
       r.data.forEach(function(x){c[x.game_key]=(c[x.game_key]||0)+1});
       if(r.data.length<1000)break;from+=1000}
     counts=c;render();renderHome()}catch(e){}}
-function me(){return session&&session.user}
+function me(){return recov?null:(session&&session.user)}
 var myRole=null,roleLoaded=false;
 function emailIsOwner(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function isMod(){return roleLoaded?!!myRole:emailIsOwner()}
@@ -632,8 +632,8 @@ document.addEventListener("keydown",function(e){
   var b=bs.length?bs[bs.length-1]:null;
   if(b){e.preventDefault();b.click()}});
 var recov=false;
-function showNewPass(){recov=true;curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');var pn=$("pnew");if(pn)pn.focus()}
-function closeModal(){recov=false;$("cm").className="overlay";curKey=null}
+function showNewPass(){recov=true;updateAuth();curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');var pn=$("pnew");if(pn)pn.focus()}
+function closeModal(){var was=recov;recov=false;$("cm").className="overlay";curKey=null;if(was&&sb){sb.auth.signOut().then(function(){updateAuth()},function(){updateAuth()})}}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
   var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';

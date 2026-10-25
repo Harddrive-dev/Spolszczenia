@@ -632,6 +632,7 @@ document.addEventListener("keydown",function(e){
   var b=bs.length?bs[bs.length-1]:null;
   if(b){e.preventDefault();b.click()}});
 var recov=false;
+function showNewPass(){recov=true;curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');var pn=$("pnew");if(pn)pn.focus()}
 function closeModal(){recov=false;$("cm").className="overlay";curKey=null}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
@@ -748,7 +749,7 @@ if(CM){
   loadCounts();
   sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole()});
   sb.auth.onAuthStateChange(function(ev,s){session=s;setTimeout(function(){updateAuth();loadRole();
-    if(ev==="PASSWORD_RECOVERY"){recov=true;curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');return}
+    if(ev==="PASSWORD_RECOVERY"){showNewPass();return}
     if(curKey){renderForm();loadComments(curKey)}else if(!recov&&$("cm").className.indexOf("open")>-1&&s)closeModal()},0)});
 }
 // ====== PANEL MODERATORA: ZGŁOSZENIA ======
@@ -914,6 +915,7 @@ function loadCatalog(){
     if(CM)sb.rpc("approved_changes").then(function(r){if(!r.error&&r.data&&r.data.length){items=mergeApproved(r.data);refresh()}}).catch(function(){})
   }).catch(function(){
     $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}
+if(CM&&/type=recovery/.test(location.hash||"")){sb.auth.getSession().then(function(r){if(r.data&&r.data.session){history.replaceState(null,"",location.pathname);showNewPass()}})}
 if(CM)afterConfirm();
 if(/error_code=otp_expired|error=access_denied/.test(location.hash||"")){history.replaceState(null,"",location.pathname);
   openModal('<h2>Link wygasł</h2><p class="msg">Ten link jest już nieważny (działa tylko raz i przez ograniczony czas). Poproś o nowy: kliknij „Zaloguj się” → „Nie pamiętam hasła”.</p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="expok">Rozumiem</button></p>');$("expok").onclick=closeModal}

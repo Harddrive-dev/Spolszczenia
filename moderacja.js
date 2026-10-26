@@ -134,3 +134,43 @@ document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=
   if(!sub||!$("mbody")||!$("mbody").contains(sub))return;
   e.preventDefault();e.stopPropagation();var b=row&&row.querySelector("[data-fedit]");if(b){b.click();return}
   var ok=sub.querySelector("[data-subset=done]");if(ok&&!ok.disabled)ok.click()},true);
+
+// ====== EDYCJA ISTNIEJĄCEGO WPISU (moderator / administrator) ======
+var editG=null;
+function openModEdit(g){
+  if(!CM||!isMod()||!g)return;editG=g;curKey=null;
+  var opt=function(a,cur){a=a.slice();if(cur&&a.indexOf(cur)<0)a.push(cur);return a.map(function(x){return '<option value="'+esc(x)+'"'+(x===cur?' selected':'')+'>'+esc(x||"— brak —")+'</option>'}).join("")};
+  var v=function(k){return esc(g[k]==null?"":String(g[k]))};
+  openModal('<h2>Edytuj wpis</h2><p class="msg">Zmiany pojawią się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Zmieniona nazwa nie psuje komentarzy ani głosów.</p>'+
+   '<div class="rpf">'+
+   '<label style="grid-column:1/-1">Gra *<input id="e_game" maxlength="150" value="'+v("game")+'"></label>'+
+   '<label>Platforma<input id="e_platform" maxlength="60" value="'+v("platform")+'"></label>'+
+   '<label>Gatunek<select id="e_genre">'+opt([""].concat(GENRES),g.genre||"")+'</select></label>'+
+   '<label>Zakres<select id="e_type">'+opt(["Napisy","Pełne","Dubbing"],g.type||"Napisy")+'</select></label>'+
+   '<label>Status<select id="e_status">'+opt(["Gotowe","W toku","Wstrzymane"],g.status||"Gotowe")+'</select></label>'+
+   '<label>Postęp (%)<input id="e_prog" type="number" min="0" max="100" value="'+v("prog")+'"></label>'+
+   '<label>Wersja<input id="e_ver" maxlength="40" value="'+v("ver")+'"></label>'+
+   '<label style="grid-column:1/-1">Autor / grupa<input id="e_author" maxlength="100" value="'+v("author")+'"></label>'+
+   '<label style="grid-column:1/-1">Link do spolszczenia lub artykułu * (https://…)<input id="e_link" type="url" maxlength="500" value="'+v("link")+'"></label>'+
+   '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
+   '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
+   '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
+   '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="e_go">Zapisz zmiany</button><button class="btn" type="button" id="e_close">Anuluj</button></p>');
+  setTimeout(function(){var f=$("e_game");if(f)f.focus()},50)}
+document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
+  if(t.id==="e_close"){closeModal();return}
+  if(t.id!=="e_go"||!editG)return;
+  var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
+  var nv={game:val("e_game"),platform:val("e_platform"),genre:val("e_genre"),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis")};
+  if(!nv.game)return bad("Podaj nazwę gry.");
+  if(!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
+  if(nv.img&&!/^(https?:\/\/|img\/)/i.test(nv.img))return bad("Okładka musi zaczynać się od https:// albo img/");
+  if(slug(nv.game)!==slug(g.game)&&items.some(function(x){return slug(x.game)===slug(nv.game)}))return bad("Gra o takiej nazwie już jest w katalogu.");
+  var changes=[];Object.keys(nv).forEach(function(k){var old=g[k]==null?"":String(g[k]);if(nv[k]!==old)changes.push({field:k,from:old,to:nv[k]})});
+  if($("e_upd").checked)changes.push({field:"upd",from:String(g.upd||""),to:new Date().toISOString().slice(0,10)});
+  if(!changes.length)return bad("Nic nie zmieniono.");
+  busy(t,"Zapisuję…");
+  var res=await sb.from("submissions").insert({kind:"modedit",game:g.game,data:{key:keyOf(g),changes:changes},status:"done",user_name:nick()||null});
+  busy(t,0);
+  if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message)+" (czy uruchomiłeś edycja-wpisow.sql w Supabase?)");
+  closeModal();editG=null;await loadCatalog()});

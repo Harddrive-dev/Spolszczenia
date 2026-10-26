@@ -12,7 +12,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
 :root[data-theme="dark"]{--bg:#14120f;--surface:#1e1b17;--text:#f1ede6;--muted:#a39d92;--line:#33302a;--accent:#ff4d64;--ok:#4fcf8a;--warn:#f0b04a;--bad:#8d8a84;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:1500px;margin:0 auto;padding:0 16px 48px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px 48px}
 header{text-align:center;padding:40px 0 24px}
 h1{margin:0;font-size:clamp(28px,6vw,44px);letter-spacing:-.02em}
 h1 span{color:var(--accent)}
@@ -30,7 +30,7 @@ input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(-
 input[type=search]{flex:1 1 140px;min-width:140px}
 .count{color:var(--muted);font-size:14px;margin:0 0 10px}
 .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:1000px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .g{flex:1 1 auto;min-width:0}
 .gcell .cbtn{flex:none;white-space:nowrap}
@@ -326,7 +326,6 @@ header{padding-top:56px}
     <label>Postęp (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
     <label>Wersja<input id="f_ver" maxlength="30"></label>
     <label>Autor / grupa<input id="f_author" maxlength="80"></label>
-    <label>Ostatnia aktualizacja<input id="f_upd" type="date"></label>
     <label class="wide">Link do spolszczenia lub artykułu * (https://…)<input id="f_link" type="url" maxlength="400"></label>
     <label class="wide">Uwagi dla weryfikującego (opcjonalnie)<textarea id="f_note" rows="2" maxlength="400"></textarea></label>
   </div>
@@ -365,7 +364,7 @@ header{padding-top:56px}
 
 <div id="out">
   <div class="scroll"><table>
-    <thead><tr><th>Gra</th><th>Platforma</th><th>Gatunek</th><th>Zakres</th><th>Status</th><th>Postęp</th><th>Wersja</th><th>Autor</th><th>Aktualizacja</th></tr></thead>
+    <thead><tr><th>Gra</th><th>Platforma</th><th>Gatunek</th><th>Zakres</th><th>Status</th><th>Postęp</th><th>Wersja</th><th>Autor</th></tr></thead>
     <tbody id="tb"></tbody></table></div>
   <div class="cards" id="cards"></div>
 </div>
@@ -379,7 +378,7 @@ header{padding-top:56px}
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 26.10.2026 m</span></footer>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 26.10.2026 n</span></footer>
 </div>
 
 <div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
@@ -472,8 +471,8 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td><td>'+esc(g.upd||"—")+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+'<span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+' · '+esc(g.upd||"—")+'</div></div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td><span class="pill">'+esc(g.type)+'</span></td><td><span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></td><td><div class="prog" title="'+pct(g.prog)+'%"><i style="width:'+pct(g.prog)+'%"></i></div></td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author)+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform)+' · '+esc(g.author)+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+'<span class="pill">'+esc(g.type)+'</span> <span class="pill '+cls(g.status)+'">'+esc(g.status)+'</span></div><div class="prog"><i style="width:'+pct(g.prog)+'%"></i></div><div class="meta">Wersja '+esc(g.ver||"—")+'</div></div>'}).join("")}
 function stats(){
   var d=items.filter(function(g){return g.status==="Gotowe"}).length,w=items.filter(function(g){return g.status==="W toku"}).length;
   $("stats").innerHTML=[[items.length,"wszystkich spolszczeń"],[d,"gotowych"],[w,"w toku"]].map(function(x){return '<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>'}).join("")}
@@ -485,7 +484,7 @@ function renderHome(){
     if(!f){el.style.display="none";el.innerHTML="";return}
     var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
     var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
-    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">'+esc(f.game)+'</a></h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'. Ostatnia aktualizacja: '+esc(f.upd||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
+    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">'+esc(f.game)+'</a></h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(f.status)+'</span></div><p class="fmeta">Autor: '+esc(f.author||"—")+'.</p>'+(f.opis?'<p class="fdesc">'+esc(f.opis)+'</p>':"")+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
     el.style.display=""}
   var fw=(winnerKey&&gameByKey(winnerKey))||items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
   var MN=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],now=new Date();
@@ -517,9 +516,9 @@ $("send").onclick=async function(){
   if(!/^https?:\/\//i.test(v("f_link")))return say("Podaj poprawny link zaczynający się od https://",1);
   if(!CM)return say("Wysyłanie zgłoszeń jest chwilowo niedostępne.",1);
   if(!me()){say("Aby wysłać zgłoszenie, zaloguj się (ikona w lewym górnym rogu).",1);curKey=null;openModal(loginHtml());return}
-  var data={game:v("f_game"),platform:v("f_platform")||"PC",genre:v("f_genre"),type:v("f_type"),status:v("f_status"),prog:+v("f_prog")||0,ver:v("f_ver"),author:v("f_author"),upd:v("f_upd"),link:v("f_link")};
+  var data={game:v("f_game"),platform:v("f_platform")||"PC",genre:v("f_genre"),type:v("f_type"),status:v("f_status"),prog:+v("f_prog")||0,ver:v("f_ver"),author:v("f_author"),upd:new Date().toISOString().slice(0,10),link:v("f_link")};
   $("send").disabled=true;var r=await submitReport("new",data.game,data,v("f_note"));$("send").disabled=false;
-  if(r.ok){say("Dziękujemy! Zgłoszenie trafiło do moderacji.");["f_game","f_ver","f_author","f_upd","f_link","f_note"].forEach(function(i){$(i).value=""})}else say(r.err,1)
+  if(r.ok){say("Dziękujemy! Zgłoszenie trafiło do moderacji.");["f_game","f_ver","f_author","f_link","f_note"].forEach(function(i){$(i).value=""})}else say(r.err,1)
 };
 ["q","fp","fg","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",function(){page=1;render()})});
 $("ps").value=String(PS);

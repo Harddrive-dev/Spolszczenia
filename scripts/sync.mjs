@@ -18,6 +18,16 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
   if(day)g.upd=day}
+ else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;
+  for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
+   if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd"].includes(f))continue;
+   if(f==="game"){if(!v)continue;if(!g.id)g.id=keyOf(g);g.game=v;continue}
+   if(f==="link"){if(/^https?:\/\//i.test(v))g.link=v;continue}
+   if(f==="img"){if(!v)delete g.img;else if(/^(https?:\/\/|img\/)/i.test(v))g.img=v;continue}
+   if(f==="genre"||f==="opis"){if(v)g[f]=f==="opis"?v.slice(0,500):v;else delete g[f];continue}
+   if(f==="type"){if(TYPES.includes(v))g.type=v;continue}
+   if(f==="prog"){g.prog=Math.max(0,Math.min(100,+v||0));continue}
+   if(v)g[f]=v}}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
 const after=JSON.stringify(list,null,2);
 if(after===before){console.log("Brak zmian");process.exit(0)}

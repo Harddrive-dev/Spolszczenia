@@ -3,7 +3,7 @@
 // ====== PANEL MODERATORA: ZGŁOSZENIA ======
 var subAll=false;
 var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"};
-(function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}";document.head.appendChild(st)})();
+(function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
 var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","s"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"]];
 function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W toku","Wstrzymane"];if(cur&&a.indexOf(cur)<0)a.push(cur);
   return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
@@ -18,13 +18,13 @@ function subDetails(x){var d=x.data||{},h="";
   else if(x.kind==="link")h=d.newLink?'<div><span class="cvmuted">nowy link:</span> <a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(d.newLink))+'">'+esc(d.newLink)+'</a></div>':"";
   if(d.currentLink&&x.kind!=="new")h+='<div><span class="cvmuted">obecny link:</span> '+esc(d.currentLink)+'</div>';
   return h}
-async function openSubs(){
-  if(!CM||!isMod())return;curKey=null;openModal('<h2>Zgłoszenia</h2><p class="msg">Wczytywanie…</p>');
+async function openSubs(keep){
+  if(!CM||!isMod())return;curKey=null;if(!keep)openModal('<h2>Zgłoszenia</h2><p class="msg"><span class="spn"></span>Wczytywanie…</p>');
   try{
     var q=sb.from("submissions").select("*").order("created_at",{ascending:false}).limit(100);if(!subAll)q=q.eq("status","new");
     var r=await q;if(r.error)throw r.error;
     $("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="btns" style="justify-content:flex-start"><button class="btn'+(subAll?'':' on')+'" data-subf="new">Nowe</button><button class="btn'+(subAll?' on':'')+'" data-subf="all">Wszystkie</button></p>'+
-     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div>'+(x.kind==="new"&&x.status==="new"?'<label style="display:block;margin-top:8px;font-size:13px;color:var(--muted)">Okładka (opcjonalnie, https://… lub img/nazwa.jpg) – dodajesz ją tylko Ty jako moderator<input type="text" id="si_'+x.id+'" maxlength="500" style="width:100%;margin-top:4px" placeholder="np. https://cdn2.steamgriddb.com/…"><small style="display:block;margin-top:4px">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”).</small></label><p class="msg err" id="sim_'+x.id+'" style="margin:4px 0 0"></p>':"")+'<div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":"Zatwierdź i dodaj na stronę")+'</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
+     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div>'+(x.kind==="new"&&x.status==="new"?'<label style="display:block;margin-top:8px;font-size:13px;color:var(--muted)">Okładka (opcjonalnie, https://… lub img/nazwa.jpg) – dodajesz ją tylko Ty jako moderator<input type="text" id="si_'+x.id+'" maxlength="500" style="width:100%;margin-top:4px" placeholder="np. https://cdn2.steamgriddb.com/…"><small style="display:block;margin-top:4px">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”).</small></label><p class="msg err" id="sim_'+x.id+'" style="margin:4px 0 0"></p>':"")+'<div class="acts">'+(x.status==="new"?'<button class="btn okb" type="button" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":(x.kind==="new"?"Zatwierdź i dodaj na stronę":"Zatwierdź"))+'</button><button class="btn nob" type="button" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
     window.__subs=r.data;loadSubCount();
   }catch(e){$("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="msg err">Nie udało się wczytać zgłoszeń (czy uruchomiłeś zgloszenia.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
@@ -44,9 +44,10 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
       if(items.some(function(g){return slug(g.game)===slug(nd.game)})){bad("Gra „"+nd.game+"” jest już w katalogu. Zmień jej nazwę albo odrzuć zgłoszenie.");return}
       nd.link=lk;nd.prog=Math.max(0,Math.min(100,+nd.prog||0));
       if(!nd.game)nd.game=sx.game;if(iv)nd.img=iv;upd.data=nd}
-    busy(t,"…");var ur=await sb.from("submissions").update(upd).eq("id",sid);
-    if(ur.error){busy(t,0);var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
-    openSubs();loadSubCount();loadCatalog();return}
+    var sibs=t.closest(".sub").querySelectorAll("button");busy(t,st==="done"?"Zapisuję…":"Odrzucam…");sibs.forEach(function(b){if(b!==t)b.disabled=true});
+    var ur=await sb.from("submissions").update(upd).eq("id",sid);
+    if(ur.error){busy(t,0);sibs.forEach(function(b){b.disabled=false});var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
+    await openSubs(true);loadSubCount();loadCatalog();return}
   if(t.getAttribute("data-fedit")){var row=t.closest(".sf"),sv=row.querySelector(".sv"),kind=row.getAttribute("data-t");
     if(!row.querySelector("input,select")){var cur=row.getAttribute("data-v");
       sv.innerHTML=kind==="s"?'<select>'+sfOpts(row.getAttribute("data-f"),cur)+'</select>':'<input '+(kind==="n"?'type="number" min="0" max="100"':'type="text" maxlength="200"')+' value="'+esc(cur)+'">';
@@ -54,7 +55,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     else{var nv=row.querySelector("input,select").value.trim();row.setAttribute("data-v",nv);sv.textContent=nv||"—";t.textContent="Zmień";t.className="mini";
       var ch=nv!==row.getAttribute("data-o");row.classList.toggle("ch",ch);if(ch){var n=document.createElement("span");n.className="chn";n.textContent="zmienione";sv.appendChild(n)}}
     return}
-  if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadSubCount();loadCatalog();return}
+  if(t.getAttribute("data-subdel")){busy(t,"Usuwam…");await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));await openSubs(true);loadSubCount();loadCatalog();return}
 });
 
 // ====== DODAWANIE SPOLSZCZEŃ NA STRONIE (moderator / administrator) ======
@@ -131,4 +132,5 @@ document.addEventListener("input",function(e){if(!e.target||e.target.id!=="mod_e
 document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target;
   if(!t||!t.closest||!(t.tagName==="INPUT"||t.tagName==="SELECT"))return;var row=t.closest(".sf"),sub=t.closest(".sub");
   if(!sub||!$("mbody")||!$("mbody").contains(sub))return;
-  e.preventDefault();e.stopPropagation();if(row){var b=row.querySelector("[data-fedit]");if(b)b.click()}},true);
+  e.preventDefault();e.stopPropagation();var b=row&&row.querySelector("[data-fedit]");if(b){b.click();return}
+  var ok=sub.querySelector("[data-subset=done]");if(ok&&!ok.disabled)ok.click()},true);

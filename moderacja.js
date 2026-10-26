@@ -15,17 +15,24 @@ async function openSubs(){
     var q=sb.from("submissions").select("*").order("created_at",{ascending:false}).limit(100);if(!subAll)q=q.eq("status","new");
     var r=await q;if(r.error)throw r.error;
     $("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="btns" style="justify-content:flex-start"><button class="btn'+(subAll?'':' on')+'" data-subf="new">Nowe</button><button class="btn'+(subAll?' on':'')+'" data-subf="all">Wszystkie</button></p>'+
-     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div><div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.kind==="new"?'<button class="mini" data-subjson="'+x.id+'">Kopiuj JSON</button>':"")+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":"Zatwierdź i dodaj na stronę")+'</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
+     (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div>'+(x.kind==="new"&&x.status==="new"?'<label style="display:block;margin-top:8px;font-size:13px;color:var(--muted)">Okładka (opcjonalnie, https://… lub img/nazwa.jpg) – dodajesz ją tylko Ty jako moderator<input type="text" id="si_'+x.id+'" maxlength="500" style="width:100%;margin-top:4px" placeholder="np. https://cdn2.steamgriddb.com/…"><small style="display:block;margin-top:4px">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”).</small></label><p class="msg err" id="sim_'+x.id+'" style="margin:4px 0 0"></p>':"")+'<div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":"Zatwierdź i dodaj na stronę")+'</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
     window.__subs=r.data;loadSubCount();
   }catch(e){$("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="msg err">Nie udało się wczytać zgłoszeń (czy uruchomiłeś zgloszenia.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="umod"){$("umenu").className="umenu";openSubs();return}
   if(t.getAttribute("data-subf")){subAll=t.getAttribute("data-subf")==="all";openSubs();return}
-  if(t.getAttribute("data-subset")){await sb.from("submissions").update({status:t.getAttribute("data-subset")}).eq("id",t.getAttribute("data-id"));openSubs();loadSubCount();loadCatalog();return}
+  if(t.getAttribute("data-subset")){var sid=t.getAttribute("data-id"),st=t.getAttribute("data-subset"),upd={status:st};
+    var sx=(window.__subs||[]).filter(function(y){return String(y.id)===sid})[0];
+    if(st==="done"&&sx&&sx.kind==="new"){
+      var iv=($("si_"+sid)||{value:""}).value.trim(),em=$("sim_"+sid);
+      if(iv&&!/^(https?:\/\/|img\/)/i.test(iv)){if(em)em.textContent="Okładka musi zaczynać się od https:// albo img/";return}
+      // zostawiamy tylko pola, które wolno podać użytkownikowi, a okładkę ustawia wyłącznie moderator
+      var od=sx.data||{},nd={};["game","platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(od[k]!==""&&od[k]!=null)nd[k]=od[k]});
+      if(!nd.game)nd.game=sx.game;if(iv)nd.img=iv;upd.data=nd}
+    busy(t,"…");var ur=await sb.from("submissions").update(upd).eq("id",sid);
+    if(ur.error){busy(t,0);var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
+    openSubs();loadSubCount();loadCatalog();return}
   if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadSubCount();loadCatalog();return}
-  if(t.getAttribute("data-subjson")){var x=(window.__subs||[]).filter(function(y){return String(y.id)===t.getAttribute("data-subjson")})[0];if(!x)return;var d=x.data||{},o={game:d.game||x.game};
-    ["platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(d[k]!==""&&d[k]!=null)o[k]=d[k]});
-    try{await navigator.clipboard.writeText(JSON.stringify(o,null,2));t.textContent="Skopiowano ✓"}catch(err){t.textContent="Nie udało się"}}
 });
 
 // ====== DODAWANIE SPOLSZCZEŃ NA STRONIE (moderator / administrator) ======

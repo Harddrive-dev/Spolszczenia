@@ -3,7 +3,7 @@
 // ====== PANEL MODERATORA: ZGŁOSZENIA ======
 var subAll=false;
 var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"};
-(function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
+(function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.pp{position:relative}.pps{width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 32px 9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text);cursor:pointer;position:relative;min-height:40px}.pps::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}.ppl{display:none;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:6px;max-height:240px;overflow:auto}.ppl.open{display:block}.ppl label.pi{display:flex;flex-direction:row;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;color:var(--text);font-size:14px;cursor:pointer}.ppl label.pi:hover{background:var(--line)}.ppl label.pi input{width:auto}.ppo{display:flex;gap:6px;margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}.ppo input{flex:1}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
 var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","s"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"]];
 function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W toku","Wstrzymane"];if(cur&&a.indexOf(cur)<0)a.push(cur);
   return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
@@ -58,6 +58,30 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.getAttribute("data-subdel")){busy(t,"Usuwam…");await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));await openSubs(true);loadSubCount();loadCatalog();return}
 });
 
+
+// ====== WYBÓR PLATFORM (rozwijana lista z możliwością wyboru kilku) ======
+function platList(){var c={};(items||[]).forEach(function(g){String(g.platform||"").split(",").forEach(function(x){x=x.trim();if(x)c[x]=(c[x]||0)+1})});
+  var base=["PC","PC Steam","PC emu","PlayStation","Nintendo Switch","Xbox","Nintendo 64","SNES"];Object.keys(c).sort(function(a,b){return c[b]-c[a]}).forEach(function(x){if(base.indexOf(x)<0&&c[x]>=2)base.push(x)});return base}
+function platSplit(v){return String(v||"").split(",").map(function(x){return x.trim()}).filter(Boolean)}
+function platBtnText(arr){return arr.length?arr.join(", "):"— wybierz platformę —"}
+function platPicker(id,val){var sel=platSplit(val),all=platList();sel.forEach(function(x){if(all.indexOf(x)<0)all.push(x)});
+  return '<div class="pp" id="'+id+'" data-val="'+esc(sel.join(", "))+'"><button type="button" class="pps" data-ppt="'+id+'">'+esc(platBtnText(sel))+'</button><div class="ppl" id="'+id+'_l">'+
+   all.map(function(x){return '<label class="pi"><input type="checkbox" data-ppc="'+id+'" value="'+esc(x)+'"'+(sel.indexOf(x)>-1?' checked':'')+'> '+esc(x)+'</label>'}).join("")+
+   '<div class="ppo"><input type="text" id="'+id+'_o" maxlength="40" placeholder="Inna platforma…"><button type="button" class="mini" data-ppa="'+id+'">Dodaj</button></div></div></div>'}
+function platSet(id,arr){var w=$(id);if(!w)return;w.setAttribute("data-val",arr.join(", "));w.querySelector(".pps").textContent=platBtnText(arr)}
+function platGet(id){var w=$(id);return w?w.getAttribute("data-val"):""}
+function platAddCustom(id){var i=$(id+"_o"),x=i.value.trim();if(!x)return;var arr=platSplit(platGet(id));if(arr.indexOf(x)<0)arr.push(x);platSet(id,arr);
+  var l=$(id+"_l"),ex=l.querySelector('input[data-ppc="'+id+'"][value="'+x.replace(/"/g,"")+'"]');
+  if(ex)ex.checked=true;else{var lb=document.createElement("label");lb.className="pi";lb.innerHTML='<input type="checkbox" data-ppc="'+id+'" checked> ';var cb=lb.firstChild;cb.value=x;lb.appendChild(document.createTextNode(x));l.insertBefore(lb,l.querySelector(".ppo"))}
+  i.value=""}
+document.addEventListener("click",function(e){var t=e.target;if(!t.closest)return;
+  var b=t.closest("[data-ppt]");if(b){var l=$(b.getAttribute("data-ppt")+"_l");l.classList.toggle("open");return}
+  var a=t.closest("[data-ppa]");if(a){platAddCustom(a.getAttribute("data-ppa"));return}});
+document.addEventListener("change",function(e){var c=e.target;if(!c||!c.getAttribute||!c.getAttribute("data-ppc"))return;var id=c.getAttribute("data-ppc"),arr=[];
+  $(id+"_l").querySelectorAll('input[data-ppc="'+id+'"]').forEach(function(x){if(x.checked)arr.push(x.value)});platSet(id,arr)});
+document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target;if(!t||!t.id||!/_o$/.test(t.id)||!t.closest(".ppo"))return;
+  e.preventDefault();e.stopPropagation();platAddCustom(t.id.replace(/_o$/,""))},true);
+
 // ====== DODAWANIE SPOLSZCZEŃ NA STRONIE (moderator / administrator) ======
 var GENRES=["RPG","Przygodowa","Horror","Akcja / platformówka","Strzelanka","Strategia","Symulacja","Sportowa / wyścigi","Bijatyka"];
 function addMem(k,v){try{if(v===undefined)return localStorage.getItem("add."+k)||"";localStorage.setItem("add."+k,v)}catch(e){return ""}}
@@ -67,7 +91,7 @@ function openAdd(){
   openModal('<h2>Dodaj spolszczenie</h2><p class="msg">Wpis pojawi się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Pola z * są wymagane.</p>'+
    '<div class="rpf">'+
    '<label style="grid-column:1/-1">Gra *<input id="a_game" maxlength="150" autocomplete="off"></label>'+
-   '<label>Platforma<input id="a_platform" list="a_plist" maxlength="60" value="'+esc(addMem("platform")||"PC")+'"><datalist id="a_plist"><option>PC</option><option>PC Steam</option><option>PlayStation</option><option>Nintendo Switch</option><option>Xbox</option><option>Nintendo 64</option><option>SNES</option><option>PC emu</option></datalist></label>'+
+   '<div class="rpw">Platforma'+platPicker("a_platform",addMem("platform")||"PC")+'</div>'+
    '<label>Gatunek<select id="a_genre"><option value="">— brak —</option>'+opt(GENRES,"")+'</select></label>'+
    '<label>Zakres<select id="a_type">'+opt(["Napisy","Pełne","Dubbing"],addMem("type")||"Napisy")+'</select></label>'+
    '<label>Status<select id="a_status">'+opt(["Gotowe","W toku","Wstrzymane"],addMem("status")||"Gotowe")+'</select></label>'+
@@ -77,7 +101,7 @@ function openAdd(){
    '<label style="grid-column:1/-1">Link do spolszczenia lub artykułu * (https://…)<input id="a_link" type="url" maxlength="500"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (opcjonalnie: https://… lub img/nazwa.jpg)<input id="a_img" maxlength="500"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Skąd wziąć: wejdź na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a>, wyszukaj grę i otwórz zakładkę „Grids”. Kliknij wybraną okładkę prawym przyciskiem myszy i wybierz „Kopiuj adres obrazu”, a potem wklej go tutaj. Zwykle są to adresy zaczynające się od <code>https://cdn2.steamgriddb.com/…</code></small></label>'+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="a_opis" rows="2" maxlength="500" style="width:100%;display:block"></textarea></label>'+
-   '</div><p class="msg" id="a_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="a_go">Dodaj do katalogu</button><button class="btn" type="button" id="a_close">Zamknij</button></p>');
+   '</div><p class="msg" id="a_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="a_go">Dodaj do katalogu</button><button class="btn nob" type="button" id="a_close">Zamknij</button></p>');
   setTimeout(function(){var g=$("a_game");if(g)g.focus()},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="uadd"){$("umenu").className="umenu";openAdd();return}
@@ -89,7 +113,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(!/^https?:\/\//i.test(link))return bad("Podaj poprawny link zaczynający się od https://");
   if(img&&!/^(https?:\/\/|img\/)/i.test(img))return bad("Okładka musi zaczynać się od https:// albo img/");
   if(items.some(function(g){return slug(g.game)===slug(game)}))return bad("Gra „"+game+"” jest już w katalogu.");
-  var data={game:game,platform:v("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",link:link,upd:new Date().toISOString().slice(0,10)};
+  var data={game:game,platform:platGet("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",link:link,upd:new Date().toISOString().slice(0,10)};
   if(v("a_genre"))data.genre=v("a_genre");if(img)data.img=img;if(v("a_opis"))data.opis=v("a_opis");
   busy(t,"Dodaję…");
   var res=await sb.from("submissions").insert({kind:"new",game:game,data:data,status:"done",user_name:nick()||null});
@@ -144,7 +168,7 @@ function openModEdit(g){
   openModal('<h2>Edytuj wpis</h2><p class="msg">Zmiany pojawią się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Zmieniona nazwa nie psuje komentarzy ani głosów.</p>'+
    '<div class="rpf">'+
    '<label style="grid-column:1/-1">Gra *<input id="e_game" maxlength="150" value="'+v("game")+'"></label>'+
-   '<label>Platforma<input id="e_platform" maxlength="60" value="'+v("platform")+'"></label>'+
+   '<div class="rpw">Platforma'+platPicker("e_platform",g.platform||"")+'</div>'+
    '<label>Gatunek<select id="e_genre">'+opt([""].concat(GENRES),g.genre||"")+'</select></label>'+
    '<label>Zakres<select id="e_type">'+opt(["Napisy","Pełne","Dubbing"],g.type||"Napisy")+'</select></label>'+
    '<label>Status<select id="e_status">'+opt(["Gotowe","W toku","Wstrzymane"],g.status||"Gotowe")+'</select></label>'+
@@ -155,13 +179,13 @@ function openModEdit(g){
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
-   '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on" type="button" id="e_go">Zapisz zmiany</button><button class="btn" type="button" id="e_close">Anuluj</button></p>');
+   '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button></p>');
   setTimeout(function(){var f=$("e_game");if(f)f.focus()},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="e_close"){closeModal();return}
   if(t.id!=="e_go"||!editG)return;
   var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
-  var nv={game:val("e_game"),platform:val("e_platform"),genre:val("e_genre"),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis")};
+  var nv={game:val("e_game"),platform:platGet("e_platform"),genre:val("e_genre"),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis")};
   if(!nv.game)return bad("Podaj nazwę gry.");
   if(!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
   if(nv.img&&!/^(https?:\/\/|img\/)/i.test(nv.img))return bad("Okładka musi zaczynać się od https:// albo img/");

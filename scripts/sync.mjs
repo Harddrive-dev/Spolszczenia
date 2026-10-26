@@ -13,7 +13,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   if(!name||!/^https?:\/\//i.test(link)||find(slug(name)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—",link};
-  if(d.genre)e.genre=d.genre;e.upd=d.upd||day;list.push(e)}
+  if(d.genre)e.genre=d.genre;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}

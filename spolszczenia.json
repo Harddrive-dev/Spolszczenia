@@ -2,7 +2,7 @@
   {
     "game": "Luigi`s Mansion - [Nintendo 3DS]",
     "img": "https://cdn2.steamgriddb.com/thumb/ac7c433007ac68a863d12dd75b2d13eb.jpg",
-    "platform": "PC emu- Azahar",
+    "platform": "PC emu, PC emu- Azahar",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
@@ -5326,7 +5326,7 @@
   },
   {
     "game": "The Legend of Zelda: Links Awakening",
-    "platform": "PC",
+    "platform": "PC emu, Nintendo Switch",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,

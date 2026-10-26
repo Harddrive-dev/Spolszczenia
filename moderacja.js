@@ -3,7 +3,16 @@
 // ====== PANEL MODERATORA: ZGŁOSZENIA ======
 var subAll=false;
 var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"};
+(function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}";document.head.appendChild(st)})();
+var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","s"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"]];
+function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W toku","Wstrzymane"];if(cur&&a.indexOf(cur)<0)a.push(cur);
+  return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
+function editRows(x){var d=x.data||{};if(!d.game)d=Object.assign({},d,{game:x.game});
+  return SF.map(function(f){var v=d[f[0]]==null?"":String(d[f[0]]);
+    return '<div class="sf" data-f="'+f[0]+'" data-t="'+f[2]+'" data-v="'+esc(v)+'" data-o="'+esc(v)+'"><span class="sk">'+f[1]+'</span><span class="sv">'+(v?esc(v):"—")+'</span><button class="mini" type="button" data-fedit="1">Zmień</button></div>'}).join("")+
+  '<div class="sf" data-r="1"><span class="sk">Link *</span><input type="url" id="sl_'+x.id+'" maxlength="500" value="'+esc(d.link||"")+'"></div>'}
 function subDetails(x){var d=x.data||{},h="";
+  if(x.kind==="new"&&x.status==="new")return editRows(x)+(d.upd?'<div class="sf"><span class="sk">Data</span><span class="sv">'+esc(d.upd)+'</span></div>':"");
   if(x.kind==="new")h=["platform","genre","type","status","prog","ver","author","upd","link"].filter(function(k){return d[k]!==""&&d[k]!=null}).map(function(k){return '<div><span class="cvmuted">'+k+':</span> '+(k==="link"?'<a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(d[k]))+'">'+esc(d[k])+'</a>':esc(d[k]))+'</div>'}).join("");
   else if(x.kind==="edit")h=(d.changes||[]).map(function(c){return '<div><span class="cvmuted">'+esc(c.field)+':</span> '+esc(c.from||"—")+' → <b>'+esc(c.to||"—")+'</b></div>'}).join("");
   else if(x.kind==="link")h=d.newLink?'<div><span class="cvmuted">nowy link:</span> <a class="vlink" target="_blank" rel="noopener" href="'+esc(safe(d.newLink))+'">'+esc(d.newLink)+'</a></div>':"";
@@ -24,14 +33,27 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.getAttribute("data-subset")){var sid=t.getAttribute("data-id"),st=t.getAttribute("data-subset"),upd={status:st};
     var sx=(window.__subs||[]).filter(function(y){return String(y.id)===sid})[0];
     if(st==="done"&&sx&&sx.kind==="new"){
-      var iv=($("si_"+sid)||{value:""}).value.trim(),em=$("sim_"+sid);
-      if(iv&&!/^(https?:\/\/|img\/)/i.test(iv)){if(em)em.textContent="Okładka musi zaczynać się od https:// albo img/";return}
-      // zostawiamy tylko pola, które wolno podać użytkownikowi, a okładkę ustawia wyłącznie moderator
-      var od=sx.data||{},nd={};["game","platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(od[k]!==""&&od[k]!=null)nd[k]=od[k]});
+      var iv=($("si_"+sid)||{value:""}).value.trim(),em=$("sim_"+sid),bad=function(m){if(em)em.textContent=m};
+      if(iv&&!/^(https?:\/\/|img\/)/i.test(iv)){bad("Okładka musi zaczynać się od https:// albo img/");return}
+      // zostawiamy tylko pola z formularza moderatora; okładkę ustawia wyłącznie moderator
+      var od=sx.data||{},nd={};if(od.upd)nd.upd=od.upd;
+      t.closest(".sub").querySelectorAll(".sf[data-f]").forEach(function(row){var c=row.querySelector("input,select"),v=(c?c.value:row.getAttribute("data-v")).trim();if(v!=="")nd[row.getAttribute("data-f")]=v});
+      var lk=($("sl_"+sid)||{value:""}).value.trim();
+      if(!nd.game){bad("Podaj nazwę gry.");return}
+      if(!/^https?:\/\//i.test(lk)){bad("Link musi zaczynać się od https://");return}
+      if(items.some(function(g){return slug(g.game)===slug(nd.game)})){bad("Gra „"+nd.game+"” jest już w katalogu. Zmień jej nazwę albo odrzuć zgłoszenie.");return}
+      nd.link=lk;nd.prog=Math.max(0,Math.min(100,+nd.prog||0));
       if(!nd.game)nd.game=sx.game;if(iv)nd.img=iv;upd.data=nd}
     busy(t,"…");var ur=await sb.from("submissions").update(upd).eq("id",sid);
     if(ur.error){busy(t,0);var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
     openSubs();loadSubCount();loadCatalog();return}
+  if(t.getAttribute("data-fedit")){var row=t.closest(".sf"),sv=row.querySelector(".sv"),kind=row.getAttribute("data-t");
+    if(!row.querySelector("input,select")){var cur=row.getAttribute("data-v");
+      sv.innerHTML=kind==="s"?'<select>'+sfOpts(row.getAttribute("data-f"),cur)+'</select>':'<input '+(kind==="n"?'type="number" min="0" max="100"':'type="text" maxlength="200"')+' value="'+esc(cur)+'">';
+      t.textContent="Zapisz";t.className="mini ok";sv.firstChild.focus()}
+    else{var nv=row.querySelector("input,select").value.trim();row.setAttribute("data-v",nv);sv.textContent=nv||"—";t.textContent="Zmień";t.className="mini";
+      var ch=nv!==row.getAttribute("data-o");row.classList.toggle("ch",ch);if(ch){var n=document.createElement("span");n.className="chn";n.textContent="zmienione";sv.appendChild(n)}}
+    return}
   if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadSubCount();loadCatalog();return}
 });
 
@@ -104,3 +126,9 @@ document.addEventListener("input",function(e){if(!e.target||e.target.id!=="mod_e
       box.innerHTML=r.data.map(function(u){var av=u.avatar?'<img alt="" src="'+esc(u.avatar)+'">':'<i>'+esc((u.name||u.email||"?").charAt(0).toUpperCase())+'</i>';
         return '<button type="button" data-sug="'+esc(u.email)+'">'+av+'<span>'+esc(u.name||u.email)+(u.name?'<small>'+esc(u.email)+'</small>':'')+'</span></button>'}).join("");box.className="usug open"
     }catch(err){box.className="usug"}},250)});
+
+// Enter w polu edycji zgłoszenia zatwierdza tylko to pole (nie odświeża całej listy)
+document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target;
+  if(!t||!t.closest||!(t.tagName==="INPUT"||t.tagName==="SELECT"))return;var row=t.closest(".sf"),sub=t.closest(".sub");
+  if(!sub||!$("mbody")||!$("mbody").contains(sub))return;
+  e.preventDefault();e.stopPropagation();if(row){var b=row.querySelector("[data-fedit]");if(b)b.click()}},true);

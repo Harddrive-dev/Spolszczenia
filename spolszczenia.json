@@ -5323,5 +5323,18 @@
     "link": "https://www.nexusmods.com/castlevaniabelmontscurse/mods/9",
     "genre": "Metroidvania",
     "upd": "2026-10-25"
+  },
+  {
+    "game": "The Legend of Zelda: Links Awakening",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0.1-1.0.2",
+    "author": "pogo",
+    "link": "https://drive.google.com/drive/folders/1eiI31BK-GsnE3leBD3oNGM6SFaiYkxIo",
+    "genre": "RPG",
+    "img": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
+    "upd": "2026-10-26"
   }
 ]

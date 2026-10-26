@@ -16,13 +16,13 @@ async function openSubs(){
     var r=await q;if(r.error)throw r.error;
     $("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="btns" style="justify-content:flex-start"><button class="btn'+(subAll?'':' on')+'" data-subf="new">Nowe</button><button class="btn'+(subAll?' on':'')+'" data-subf="all">Wszystkie</button></p>'+
      (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div><div class="btns" style="justify-content:flex-start;margin-top:6px">'+(x.kind==="new"?'<button class="mini" data-subjson="'+x.id+'">Kopiuj JSON</button>':"")+(x.status==="new"?'<button class="mini" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":"Zatwierdź i dodaj na stronę")+'</button><button class="mini" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':'<button class="mini" data-subdel="'+x.id+'">Usuń</button>')+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
-    window.__subs=r.data;
+    window.__subs=r.data;loadSubCount();
   }catch(e){$("mbody").innerHTML='<h2>Zgłoszenia</h2><p class="msg err">Nie udało się wczytać zgłoszeń (czy uruchomiłeś zgloszenia.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="umod"){$("umenu").className="umenu";openSubs();return}
   if(t.getAttribute("data-subf")){subAll=t.getAttribute("data-subf")==="all";openSubs();return}
-  if(t.getAttribute("data-subset")){await sb.from("submissions").update({status:t.getAttribute("data-subset")}).eq("id",t.getAttribute("data-id"));openSubs();loadCatalog();return}
-  if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadCatalog();return}
+  if(t.getAttribute("data-subset")){await sb.from("submissions").update({status:t.getAttribute("data-subset")}).eq("id",t.getAttribute("data-id"));openSubs();loadSubCount();loadCatalog();return}
+  if(t.getAttribute("data-subdel")){await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel"));openSubs();loadSubCount();loadCatalog();return}
   if(t.getAttribute("data-subjson")){var x=(window.__subs||[]).filter(function(y){return String(y.id)===t.getAttribute("data-subjson")})[0];if(!x)return;var d=x.data||{},o={game:d.game||x.game};
     ["platform","genre","type","status","prog","ver","author","upd","link"].forEach(function(k){if(d[k]!==""&&d[k]!=null)o[k]=d[k]});
     try{await navigator.clipboard.writeText(JSON.stringify(o,null,2));t.textContent="Skopiowano ✓"}catch(err){t.textContent="Nie udało się"}}

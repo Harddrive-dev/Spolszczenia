@@ -5680,5 +5680,32 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-2-directors-cut/",
     "genre": "Horror",
     "dodano": "2026-10-28"
+  },
+  {
+    "game": "Castlevania Belmont's Curse",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "0.9.5",
+    "author": "LivRT",
+    "link": "https://www.nexusmods.com/castlevaniabelmontscurse/mods/9",
+    "dodano": "2026-10-28",
+    "img": "https://cdn2.steamgriddb.com/thumb/5e405beb87c8bc251a3c8fbc2555c52d.jpg",
+    "upd": "2026-10-28"
+  },
+  {
+    "game": "The Legend of Zelda: Tears of The Kingdom",
+    "platform": "PC, Nintendo Switch",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.4.3",
+    "author": "—",
+    "link": "https://drive.google.com/drive/folders/1_RWpHVPf3gY0ZrVGkHQ36RmjSwAJgPzT?usp=sharing",
+    "genre": "RPG",
+    "dodano": "2026-10-28",
+    "img": "https://cdn2.steamgriddb.com/thumb/ae758fbcbd5bd841516c53b3c08ebc6f.jpg",
+    "upd": "2026-10-28"
   }
 ]

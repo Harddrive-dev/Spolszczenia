@@ -2,7 +2,7 @@
   {
     "game": "Luigi`s Mansion - [Nintendo 3DS]",
     "img": "https://cdn2.steamgriddb.com/thumb/ac7c433007ac68a863d12dd75b2d13eb.jpg",
-    "platform": "PC emu, PC emu- Azahar",
+    "platform": "PC emu- Azahar",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
@@ -18,15 +18,15 @@
     "img": "https://cdn2.steamgriddb.com/thumb/01639920c81fcc08b5b7a8db3d55723a.jpg",
     "platform": "PC Steam",
     "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
+    "status": "Zapowiedź",
+    "prog": 90,
     "ver": "1.0",
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "opis": "Premiera 31.10.2026 !",
     "genre": "RPG",
-    "miesiaca": true
+    "miesiaca": true,
+    "premiera": "2026-10-31"
   },
   {
     "game": "Silver Pines",
@@ -916,7 +916,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/celeste/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Chaser",
@@ -928,7 +929,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chaser/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Chicken Run",
@@ -940,7 +942,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chicken-run/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Child of Light",
@@ -952,7 +955,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/child-of-light/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Chrono Trigger",
@@ -964,7 +968,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chrono-trigger/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Citadels",
@@ -974,7 +979,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/citadels/"
+    "link": "https://grajpopolsku.pl/download/citadels/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Clive Baker's Undying",
@@ -986,7 +992,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/clive-bakers-undying/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cognition: An Erica Reed Thriller (GOG)",
@@ -998,7 +1005,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition-gog/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cognition: An Erica Reed Thriller (Steam)",
@@ -1010,7 +1018,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition-steam/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (GOG)",
@@ -1022,7 +1031,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition_ep2_gog/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (Steam)",
@@ -1034,7 +1044,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition_ep2_steam/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Conarium",
@@ -1046,7 +1057,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/conarium/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Condemned: Criminal Origins",
@@ -1058,7 +1070,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/condemned-criminal-origins/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Constructor",
@@ -1070,7 +1083,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/constructor/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Contra",
@@ -1082,7 +1096,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/contra/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Contra Force",
@@ -1094,7 +1109,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/contra-force/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Crash Bandicoot Fusion",
@@ -1106,7 +1122,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Crash Bandicoot Fusion [GBA]",
@@ -1118,7 +1135,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion-2/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Crash Team Racing [PSX]",
@@ -1130,7 +1148,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-team-racing-psx/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "CS: Source",
@@ -1142,7 +1161,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cs-source/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cyber Knight",
@@ -1154,7 +1174,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cyber-knight/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Cyber Knight II",
@@ -1166,7 +1187,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cyber-knight-ii/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Darkwing Duck",
@@ -1178,7 +1200,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/darkwing-duck/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dave Mirra 2 Freestyle BMX",
@@ -1190,7 +1213,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dave-mirra-2-freestyle-bmx/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Day of the Tentacle",
@@ -1202,7 +1226,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/day-of-the-tentacle/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dead City",
@@ -1212,7 +1237,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/dead-city/"
+    "link": "https://grajpopolsku.pl/download/dead-city/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dead or Alive [PSX]",
@@ -1224,7 +1250,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-or-alive-psx/",
-    "genre": "Bijatyka"
+    "genre": "Bijatyka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dead Space 2",
@@ -1236,7 +1263,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-space-2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dead Space 3",
@@ -1248,7 +1276,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-space-3/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Deadlight",
@@ -1260,7 +1289,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadlight/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Deadlight: Director's Cut",
@@ -1272,7 +1302,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadlight_dc/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Deadpool",
@@ -1284,7 +1315,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadpool/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dementium 2",
@@ -1296,7 +1328,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dementium-2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dementium: The Ward",
@@ -1308,7 +1341,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dementium-the-ward/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dexter's Laboratory – Mandark's Lab [PSX]",
@@ -1320,7 +1354,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dexters-laboratory-mandarks-lab/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Diablo",
@@ -1332,7 +1367,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/diablo/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Diablo (GOG)",
@@ -1344,7 +1380,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/diablo-gog/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dink Smallwood HD",
@@ -1356,7 +1393,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dink-smallwood-hd/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dino Crisis 2 [PSX]",
@@ -1368,7 +1406,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dino-crisis-2-psx/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Discworld",
@@ -1379,7 +1418,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/discworld/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dizzy The Adventurer",
@@ -1391,7 +1431,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dizzy-the-adventurer/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dizzy Treasure Island",
@@ -1403,7 +1444,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dizzy-treasure-island/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Donald Duck Goin' Quackers",
@@ -1415,7 +1457,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/donald-duck-goin-quackers/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Donkey Kong 3",
@@ -1427,7 +1470,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/donkey-kong-3/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Doom",
@@ -1439,7 +1483,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/doom/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Downtown – Nekketsu Koushin Kyoku – Soreyuke Daiundoukai",
@@ -1451,7 +1496,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/downtown-nekketsu-koushin-kyoku-soreyuke-daiundoukai/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dragon Age Początek Pieśń Leliany",
@@ -1463,7 +1509,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-age-poczatek-piesn-leliany/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dragon Ball Advanced Adventure",
@@ -1475,7 +1522,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-advanced-adventure/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dragon Ball Legacy of Goku",
@@ -1487,7 +1535,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-legacy-of-goku/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dragon Ball Z: Legend of the Super Saiyan",
@@ -1499,7 +1548,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-z-legend-of-the-super-saiyan/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dragon's Dogma: Dark Arisen",
@@ -1511,7 +1561,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragons-dogma-dark-arisen/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Drawn 2: Dark Flight",
@@ -1523,7 +1574,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/drawn-2-dark-flight/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Drawn: Painted Tower",
@@ -1535,7 +1587,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/drawn-painted-tower/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Linux x86-64]",
@@ -1547,7 +1600,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-linux/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [MacOSX x86-64] (Humble Bundle)",
@@ -1559,7 +1613,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-mac/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Humble Bundle)",
@@ -1571,7 +1626,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-32bit-hb/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Steam, GOG)",
@@ -1583,7 +1639,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-32bit/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Humble Bundle)",
@@ -1595,7 +1652,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-hb/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Steam, GOG)",
@@ -1607,7 +1665,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Driver You Are The Wheelman",
@@ -1619,7 +1678,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/driver-you-are-the-wheelman/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dual Orb 2",
@@ -1631,7 +1691,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dual-orb-2/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Duck Tales",
@@ -1643,7 +1704,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/duck-tales/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Duke Nukem Forever",
@@ -1655,7 +1717,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/duke-nukem-forever/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dungeons of Avalon",
@@ -1665,7 +1728,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/dungeons-of-avalon/"
+    "link": "https://grajpopolsku.pl/download/dungeons-of-avalon/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Dust: An Elysian Tail",
@@ -1677,7 +1741,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dust-an-elysian-tail/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ed, Edd & Eddy: Jawbreakers!",
@@ -1689,7 +1754,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ed-edd-eddy-jawbreakers/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Elvenland",
@@ -1699,7 +1765,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/elvenland/"
+    "link": "https://grajpopolsku.pl/download/elvenland/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Eriksholm The Stolen Dream",
@@ -1711,7 +1778,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/eriksholm-the-stolen-dream/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Escape from Monkey Island",
@@ -1723,7 +1791,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/escape-from-monkey-island/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Evil Twin: Cyprien's Chronicles",
@@ -1735,7 +1804,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/evil-twin-cypriens-chronicles/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Excitebike",
@@ -1747,7 +1817,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/excitebike/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "F1 2011",
@@ -1759,7 +1830,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/f1-2011/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Fantastic Adventures of Dizzy",
@@ -1771,7 +1843,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/908/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Felix the Cat!",
@@ -1783,7 +1856,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/felix-the-cat/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "FIFA Manager 12",
@@ -1795,7 +1869,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fifa-manager-12/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Fighting Force 2",
@@ -1807,7 +1882,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fighting-force-2/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy",
@@ -1819,7 +1895,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy (steam)",
@@ -1831,7 +1908,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-pixel-remaster/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy III",
@@ -1843,7 +1921,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-iii/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy IV",
@@ -1855,7 +1934,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-iv/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy IX (Sony PSX)",
@@ -1867,7 +1947,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-ix/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy V",
@@ -1879,7 +1960,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-v/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy VI",
@@ -1891,7 +1973,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-vi/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy VII",
@@ -1903,7 +1986,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-vii/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy VIII (Sony PSX)",
@@ -1915,7 +1999,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-viii-psx/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy XII",
@@ -1927,7 +2012,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-xii/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Final Fantasy XII (PC/Steam)",
@@ -1939,7 +2025,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-xii-steam/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Firewatch (GOG)",
@@ -1951,7 +2038,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/firewatch-gog/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Firewatch (Steam)",
@@ -1963,7 +2051,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/firewatch/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Fist of Jesus",
@@ -1975,7 +2064,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fist-of-jesus/",
-    "genre": "Bijatyka"
+    "genre": "Bijatyka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "FlatOut",
@@ -1987,7 +2077,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/flatout/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "FlatOut 2",
@@ -1999,7 +2090,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/flatout-2/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ford Racing 2",
@@ -2011,7 +2103,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-racing-2/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ford Racing 3",
@@ -2023,7 +2116,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-racing-3/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ford Street Racing",
@@ -2035,7 +2129,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-street-racing/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "From Dust",
@@ -2047,7 +2142,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/from-dust/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "From the Abyss",
@@ -2058,7 +2154,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/from-the-abyss/"
+    "link": "https://grajpopolsku.pl/download/from-the-abyss/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Front Line",
@@ -2070,7 +2167,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/front-line/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Front Mission",
@@ -2082,7 +2180,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/front-mission/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Frontier First Encounters",
@@ -2094,7 +2193,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/frontier-first-encounters/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Furi",
@@ -2106,7 +2206,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/furi/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Fushigi no Umi no Nadia",
@@ -2117,7 +2218,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fushigi-no-umi-no-nadia/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "G.I. Joe",
@@ -2129,7 +2231,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/g-i-joe/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Gabriel Knight: Grzechy Ojców 2014 (GOG)",
@@ -2141,7 +2244,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grzechy-ojcow-gog/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Gabriel Knight: Grzechy Ojców 2014 (Steam)",
@@ -2153,7 +2257,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grzechy-ojcow-steam/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Gabriel Knight: Sins of the Fathers",
@@ -2165,7 +2270,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gabriel-knight-sins-of-the-fathers/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Galaxian",
@@ -2177,7 +2283,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/galaxian/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Game of Thrones: A Telltale Games Series",
@@ -2189,7 +2296,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/game-of-thrones-a-telltale-games-series/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ghostbusters II",
@@ -2201,7 +2309,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ghostbusters-ii/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Go! Dizzy Go!",
@@ -2212,7 +2321,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/go-dizzy-go/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "God of War Chains of Olympus",
@@ -2224,19 +2334,21 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/god-of-war-chains-of-olympus/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Gods Will Be Watching (do testów otwartych)",
     "img": "https://cdn2.steamgriddb.com/thumb/7a0a77002f55780b7827cb193b5b31c2.jpg",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Wstrzymane",
+    "status": "W toku",
     "prog": 90,
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gwbw-testy/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Golden Sun",
@@ -2248,7 +2360,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/golden-sun/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Golden Sun: The Lost Age",
@@ -2260,7 +2373,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/golden-sun-the-lost-age/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Gore: Ultimate Soldier",
@@ -2272,7 +2386,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gore-ultimate-soldier/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Grand Theft Auto Advance",
@@ -2284,7 +2399,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-advance/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Grand Theft Auto IV",
@@ -2296,7 +2412,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-iv/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Grand Theft Auto: London, 1961",
@@ -2308,7 +2425,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-london-1961/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Grim Fandango",
@@ -2320,7 +2438,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grim-fandango/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Grim Fandango Remastered",
@@ -2332,7 +2451,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gfr/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "GTA Liberty City Stories",
@@ -2344,7 +2464,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gta-liberty-city-stories/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "GTA Vice City Stories",
@@ -2356,7 +2477,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gta-vice-city-stories/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "GYLT",
@@ -2368,7 +2490,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gylt/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Hacker Evolution",
@@ -2380,7 +2503,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hacker-evolution/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Half Life 2",
@@ -2392,7 +2516,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/half-life-2/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Half Life 2: Episode One",
@@ -2404,7 +2529,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/half-life-2-episode-one/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Harvest Moon",
@@ -2416,7 +2542,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/harvest-moon/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Harvest Moon (Nintendo SNES)",
@@ -2428,7 +2555,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/harvest-moon-2/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Hollow Knight",
@@ -2440,7 +2568,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hollow-knight/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Horizon Chase Turbo",
@@ -2452,7 +2581,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/2484/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Hudson's Adventure Island",
@@ -2463,7 +2593,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hudsons-adventure-island/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Hue",
@@ -2475,7 +2606,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hue/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "I am Alive",
@@ -2487,7 +2619,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-am-alive/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "I Have No Mouth, and I Must Scream (GOG)",
@@ -2499,7 +2632,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-have-no-mouth-and-i-must-scream-gog/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "I Have No Mouth, and I Must Scream (STEAM)",
@@ -2511,7 +2645,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-have-no-mouth-and-i-must-scream-steam/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Igneous",
@@ -2522,7 +2657,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/igneous/"
+    "link": "https://grajpopolsku.pl/download/igneous/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ike Ike! Nekketsu Hockey Bu – Subette Koronde Dai Rantou",
@@ -2534,7 +2670,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ike-ike-nekketsu-hockey-bu-subette-koronde-dai-rantou/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Inkheart",
@@ -2546,7 +2683,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inkheart/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Inspector Gadget Crazy Maze [PSX]",
@@ -2558,7 +2696,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inspector-gadget-crazy-maze-psx/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Inversion",
@@ -2570,7 +2709,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inversion/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Inversion [PS3]",
@@ -2582,7 +2722,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inversion-ps3/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jagged Alliance 2’005",
@@ -2594,7 +2735,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2005/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jagged Alliance 2: Renegade Republic",
@@ -2606,7 +2748,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-renegade-republic/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jagged Alliance 2: Shady Job",
@@ -2618,7 +2761,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-shady-job/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jagged Alliance 2: Urban Chaos",
@@ -2630,7 +2774,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-urban-chaos/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jagged Alliance 2: Vietnam SOG ’69",
@@ -2642,7 +2787,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-vietnam-sog-69/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jisei",
@@ -2653,7 +2799,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/jisei/"
+    "link": "https://grajpopolsku.pl/download/jisei/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jurassic Park: The Game",
@@ -2665,7 +2812,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jurassic-park-the-game/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Jurassic World Evolution",
@@ -2677,7 +2825,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jurassic-world-evolution/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Kao Challengers",
@@ -2689,7 +2838,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/kao-challengers/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Kick Master",
@@ -2701,7 +2851,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/kick-master/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Legend of Zelda A Link to the Past",
@@ -2713,7 +2864,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/legend-of-zelda-a-link-to-the-past/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "LEGO Indiana Jones",
@@ -2725,7 +2877,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-indiana-jones/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lego Island 2: The Brickster's Revenge",
@@ -2737,7 +2890,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-island-2-the-bricksters-revenge/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lego Star Wars: The Complete Saga",
@@ -2749,7 +2903,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-star-wars-cs/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Les Adventures de Tintin Le Temple du Soleil",
@@ -2761,7 +2916,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/les-adventures-de-tintin-le-temple-du-soleil/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Life Is Strange",
@@ -2773,7 +2929,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/life-is-strange/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Life is Strange: Before the Storm",
@@ -2785,7 +2942,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lis_bts/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Life is Strange: True Colors",
@@ -2797,7 +2955,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/life-is-strange-true-colors/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lifeless Moon",
@@ -2809,7 +2968,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lifeless-moon/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lifeless Planet",
@@ -2821,7 +2981,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lifeless-planet/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Little Nemo – The Dream Master",
@@ -2833,7 +2994,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/little-nemo-the-dream-master/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lobotomy Corporation",
@@ -2845,7 +3007,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lobotomy-corporation/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Lord of the Rings: Fellowship of the Ring",
@@ -2857,7 +3020,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lord-of-the-rings-fellowship-of-the-ring/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Love Hina Advance",
@@ -2869,7 +3033,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/love-hina-advance/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Magic Knight Rayearth",
@@ -2881,7 +3046,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/magic-knight-rayearth/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Manhunt",
@@ -2893,7 +3059,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/manhunt/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Mass Effect 2: Geneza",
@@ -2905,7 +3072,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mass-effect-2-geneza/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Mass Effect 2: Lair of Shadow Broker",
@@ -2917,7 +3085,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mass-effect-2-lair-of-shadow-broker/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Medal of Honor: Allied Assault – War Chest",
@@ -2929,7 +3098,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medal-of-honor-allied-assault-war-chest/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil",
@@ -2941,7 +3111,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil [PSX] Dubbing",
@@ -2953,7 +3124,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-psx-dubbing/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil 2",
@@ -2965,7 +3137,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil 2 [PSX]",
@@ -2977,7 +3150,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-2-psx/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil Resurrection [PSP]",
@@ -2989,7 +3163,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-resurrection-psp/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "MediEvil [PSX]",
@@ -3001,7 +3176,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-psx/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Megaman II",
@@ -3013,7 +3189,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/megaman-ii/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Megaman III",
@@ -3025,7 +3202,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/megaman-iii/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Mental Repairs Inc",
@@ -3035,7 +3213,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/mental-repairs-inc/"
+    "link": "https://grajpopolsku.pl/download/mental-repairs-inc/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Metal Gear",
@@ -3047,7 +3226,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/metal-gear/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Miami Vice The Game",
@@ -3059,7 +3239,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/miami-vice-the-game/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Mickey's Speedway USA",
@@ -3071,7 +3252,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mickeys-speedway-usa/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Micro Machines",
@@ -3083,7 +3265,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/micro-machines/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Monkey Island 2",
@@ -3095,7 +3278,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monkey-island-2/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Monkey Island 2 Special Edition: LeChuck's Revenge",
@@ -3107,7 +3291,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monkey-island-2-special-edition-lechucks-revenge/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Monster In My Pocket",
@@ -3119,7 +3304,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monster-in-my-pocket/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Moonlight Walks",
@@ -3129,7 +3315,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/moonlight-walks/"
+    "link": "https://grajpopolsku.pl/download/moonlight-walks/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Mortal Kombat Komplete Edition",
@@ -3141,7 +3328,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mortal-kombat-komplete-edition/",
-    "genre": "Bijatyka"
+    "genre": "Bijatyka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Need For Speed: Underground 2",
@@ -3153,7 +3341,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/need-for-speed-underground-2/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Nekketsu Kakutou Densetsu",
@@ -3165,7 +3354,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nekketsu-kakutou-densetsu/",
-    "genre": "Bijatyka"
+    "genre": "Bijatyka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Nekketsu Kouha – Kunio-kun",
@@ -3177,7 +3367,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nekketsu-kouha-kunio-kun/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "New Super Mario Bros",
@@ -3189,7 +3380,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/new-super-mario-bros/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ni no Kuni II: Revenant Kingdom",
@@ -3201,7 +3393,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nnk2/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Nightmare Creatures 2",
@@ -3213,7 +3406,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nightmare-creatures-2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Nintendo World Cup",
@@ -3225,7 +3419,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nintendo-world-cup/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Obscure",
@@ -3237,7 +3432,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/obscure/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Obscure (GOG)",
@@ -3249,7 +3445,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/obscure-gog/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Okami",
@@ -3261,7 +3458,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/okami/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Okami HD",
@@ -3273,7 +3471,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/okami-hd/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "OMORI",
@@ -3285,7 +3484,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/omori/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "One Afternoon",
@@ -3295,7 +3495,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/one-afternoon/"
+    "link": "https://grajpopolsku.pl/download/one-afternoon/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "OneShot",
@@ -3307,7 +3508,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/oneshot/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "OneShot World Machine Edition",
@@ -3319,7 +3521,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/oneshot-world-machine-edition/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Osmos",
@@ -3331,7 +3534,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/osmos/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pac-Man",
@@ -3343,7 +3547,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pac-man/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Papo & Yo",
@@ -3355,7 +3560,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/papo-yo/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pathologic",
@@ -3367,7 +3573,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pathologic/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "PES 2009",
@@ -3379,7 +3586,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pes-2009/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Phantasy Star IV: The End of the Millennium",
@@ -3391,7 +3599,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/phantasy-star-iv-the-end-of-the-millennium/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pharaoh: A New Era",
@@ -3403,7 +3612,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pharaoh-a-new-era/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pięć Magicznych Amuletów",
@@ -3414,7 +3624,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/piec-magicznych-amuletow/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Planet Coaster",
@@ -3426,7 +3637,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/planet-coaster/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Planetarian HD",
@@ -3438,7 +3650,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/planetarian-hd/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pocket Mirror – GoldenerTraum",
@@ -3450,7 +3663,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pocket-mirror-goldenertraum/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon Emerald",
@@ -3462,7 +3676,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-emerald/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokemon Fire Red",
@@ -3474,7 +3689,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-fire-red/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon HeartGold",
@@ -3486,7 +3702,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-heartgold/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon Mystery Dungeon: Explorers Of Time",
@@ -3498,7 +3715,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-mystery-dungeon-explorers-of-time/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon Platinum",
@@ -3510,7 +3728,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-platinum/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon Red",
@@ -3522,7 +3741,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-red/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Pokémon SoulSilver",
@@ -3534,7 +3754,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-soulsilver/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Prince of Persia",
@@ -3546,7 +3767,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prince-of-persia/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Prince of Persia: The Forgotten Sands",
@@ -3558,7 +3780,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prince-of-persia-the-forgotten-sands/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Prison Tycoon 2: Maximum Security",
@@ -3570,7 +3793,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prison-tycoon-2-maximum-security/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Psychonauts",
@@ -3582,7 +3806,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/psychonauts/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Psychotoxic",
@@ -3594,7 +3819,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/psychotoxic/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "PT Boats",
@@ -3606,7 +3832,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pt-boats/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Quantum Break",
@@ -3618,7 +3845,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/quantum-break/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ranma 1/2: Treasure of The Red Cat Gang",
@@ -3629,7 +3857,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ranma-12-treasure-of-the-red-cat-gang/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Rayman",
@@ -3641,7 +3870,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rayman/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Real Kanojo",
@@ -3652,7 +3882,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/real-kanojo/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "RealRTCW",
@@ -3664,7 +3895,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/realrtcw/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil 0 HD Remaster",
@@ -3676,7 +3908,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-0-hd-remaster/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil Code: Veronica [PS2]",
@@ -3688,7 +3921,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-code-veronica-ps2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil HD Remaster",
@@ -3699,7 +3933,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-hd-remaster/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil Mercenaries 3D [3DS]",
@@ -3711,7 +3946,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-mercenaries-3d-3ds/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil Outbreak File 2 [PS2]",
@@ -3723,7 +3959,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-outbreak-file-2-ps2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil Survivor 2: Code Veronica [PS2]",
@@ -3735,7 +3972,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-2-code-veronica-ps2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Resident Evil Survivor [PSX]",
@@ -3747,7 +3985,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-psx/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Return to Monkey Island",
@@ -3759,7 +3998,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/return-to-monkey-island/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Revelations, The Demon Slayer",
@@ -3771,7 +4011,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/revelations-the-demon-slayer/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Road Fighter",
@@ -3783,7 +4024,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/road-fighter/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Rockin' Kats",
@@ -3795,7 +4037,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rockin-kats/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "ROX [PSX]",
@@ -3807,7 +4050,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rox-psx/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Rune",
@@ -3819,7 +4063,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rune/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ryse: Son of Rome",
@@ -3831,7 +4076,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ryse-son-of-rome/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Safecracker",
@@ -3843,7 +4089,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/safecracker/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sailor Moon Dating Sim",
@@ -3854,7 +4101,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-dating-sim/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sailor Moon Dating Simulator: Sailor Saturn",
@@ -3865,7 +4113,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-dating-simulator-sailor-saturn/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sailor Moon: Another Story",
@@ -3877,7 +4126,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-another-story/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sailor Venus Dating Sim",
@@ -3888,7 +4138,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-venus-dating-sim/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sam & Max 201: Ice Station Santa",
@@ -3900,7 +4151,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-201-ice-station-santa/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sam & Max 202: Czarny Blues Moai (Moai Better Blues)",
@@ -3912,7 +4164,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-202/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sam & Max 203: Noc żwawych trupów (Night of the Raving Dead)",
@@ -3924,7 +4177,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-203/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sam & Max 204: Powrót do teraźniejszości (Chariots of the Dogs)",
@@ -3936,7 +4190,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-204/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sam & Max: Season 2 – What's New, Beelzebub?",
@@ -3948,7 +4203,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-season-2-whats-new-beelzebub/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sanitarium",
@@ -3960,7 +4216,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sanitarium/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Serious Sam 2",
@@ -3972,7 +4229,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/serious-sam-2/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Shadow of Comet",
@@ -3984,7 +4242,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/shadow-of-comet/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill",
@@ -3996,7 +4255,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 2 – Wersja reżyserska",
@@ -4008,7 +4268,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-wr/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 2 Enhanced Edition",
@@ -4020,7 +4281,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-ee/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 2 [x]",
@@ -4032,7 +4294,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-x-2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 3",
@@ -4044,7 +4307,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-3/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 4: The Room",
@@ -4056,7 +4320,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-4-the-room/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill: Shattered Memories [PSP]",
@@ -4068,7 +4333,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-shattered-memories-psp/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Snake Pass",
@@ -4080,7 +4346,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/snake-pass/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Soldier of Fortune",
@@ -4091,7 +4358,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/soldier-of-fortune/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "SOMA",
@@ -4103,7 +4371,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/soma/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Spider-Man – Return of the Sinister Six",
@@ -4115,7 +4384,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/spider-man-return-of-the-sinister-six/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Star Wars Jedi Knight II: Jedi Outcast",
@@ -4127,7 +4397,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-ii-jedi-outcast/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Star Wars Jedi Knight II: Jedi Outcast (z dubbingiem)",
@@ -4139,7 +4410,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-ii-jedi-outcast-z-dubbingiem/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Star Wars Jedi Knight: Dark Forces 2",
@@ -4151,7 +4423,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-dark-forces-2/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Star Wars Jedi Knight: Mysteries of the Sith",
@@ -4163,7 +4436,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-mysteries-of-the-sith/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Stories Untold",
@@ -4175,7 +4449,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/stories-untold/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Stubbs the Zombie Rebel Without a Pulse",
@@ -4187,7 +4462,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/stubbs-the-zombie-rebel-without-a-pulse/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Suikoden",
@@ -4199,7 +4475,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/suikoden/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sunblaze",
@@ -4210,7 +4487,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/sunblaze/"
+    "link": "https://grajpopolsku.pl/download/sunblaze/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Back to the Future Part 2",
@@ -4222,7 +4500,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-back-to-the-future-part-2/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Contra",
@@ -4234,7 +4513,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-contra/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Mario Bros.",
@@ -4246,7 +4526,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Mario Bros. 2",
@@ -4258,7 +4539,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros-2/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Mario Bros. 3",
@@ -4270,7 +4552,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros-3/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Super Space Pug",
@@ -4282,7 +4565,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-space-pug/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Superbike Racing",
@@ -4294,7 +4578,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/superbike-racing/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sword of Mana",
@@ -4306,7 +4591,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sword-of-mana/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Sword&Soldiers",
@@ -4318,7 +4604,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/swordsoldiers/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Syberia",
@@ -4330,7 +4617,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/syberia/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tactics Ogre – The Knight of Lodis",
@@ -4342,7 +4630,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tactics-ogre-the-knight-of-lodis/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tales from the Borderlands",
@@ -4354,7 +4643,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-from-the-borderlands/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tales of Destiny",
@@ -4366,7 +4656,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-destiny/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tales of Monkey Island",
@@ -4378,7 +4669,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-monkey-island-rise-of-the-pirate-god/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tales of Phantasia",
@@ -4390,7 +4682,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-phantasia/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tank 1990",
@@ -4402,7 +4695,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tank-1990/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tekken 3 [PSX]",
@@ -4414,7 +4708,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tekken-3-psx/",
-    "genre": "Bijatyka"
+    "genre": "Bijatyka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tenchi Muyo RPG",
@@ -4426,7 +4721,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tenchi-muyo-rpg/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tenchu Stealth Assassins",
@@ -4438,7 +4734,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tenchu-stealth-assassins/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tennis",
@@ -4450,7 +4747,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tennis/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Terminator 2 – Judgment Day",
@@ -4462,7 +4760,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/terminator-2-judgment-day/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Terranigma",
@@ -4474,7 +4773,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/terranigma/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tetris",
@@ -4486,7 +4786,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tetris/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Addams Family",
@@ -4498,7 +4799,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-addams-family/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Adventures of Rad Gravity",
@@ -4510,7 +4812,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-adventures-of-rad-gravity/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Awesome Adventures of Captain Spirit",
@@ -4522,7 +4825,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-awesome-adventures-of-captain-spirit/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Beast Within: A Gabriel Knight Mystery",
@@ -4534,7 +4838,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-beast-within-a-gabriel-knight-mystery/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Count Lucanor",
@@ -4546,7 +4851,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-count-lucanor/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dark Eye: Demonicon",
@@ -4558,7 +4864,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-eye-demonicon/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dark Pictures Anthology – House of Ashes",
@@ -4570,7 +4877,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-house-of-ashes/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dark Pictures Anthology – Little Hope",
@@ -4582,7 +4890,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-little-hope/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dark Pictures Anthology – Man of Medan",
@@ -4594,7 +4903,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-man-of-medan/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dark Pictures Anthology: The Devil in Me",
@@ -4606,7 +4916,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-the-devil-in-me/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Dig",
@@ -4618,7 +4929,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dig/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Legend of Zelda",
@@ -4630,7 +4942,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/948/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Legend of Zelda Majora's Mask",
@@ -4642,7 +4955,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/616/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Legend of Zelda Ocarina of Time",
@@ -4654,7 +4968,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-ocarina-of-time/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Legend of Zelda, Link's Awakening DX",
@@ -4666,7 +4981,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-links-awakening-dx/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Legend of Zelda: The Minish Cap",
@@ -4678,7 +4994,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-the-minish-cap/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Little Mermaid",
@@ -4689,7 +5006,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-little-mermaid/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Room",
@@ -4701,7 +5019,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-room/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Room 2",
@@ -4713,7 +5032,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-room-2/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Secret of Monkey Island",
@@ -4725,7 +5045,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-secret-of-monkey-island/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Secret of Monkey Island: Special Edition",
@@ -4737,7 +5058,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-secret-of-monkey-island-special-edition/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Silent Age",
@@ -4749,7 +5071,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-silent-age/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Simpsons Hit & Run",
@@ -4761,7 +5084,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-simpsons-hit-run/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead Season 1",
@@ -4773,7 +5097,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-season-1/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead Season 2",
@@ -4785,7 +5110,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-season-2/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead: A New Frontier",
@@ -4797,7 +5123,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-a-new-frontier/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead: Michonne",
@@ -4809,7 +5136,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-michonne/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead: Survival Instinct",
@@ -4821,7 +5149,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-survival-instinct/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Walking Dead: The Final Season",
@@ -4833,7 +5162,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/twdtfs/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Wolf Among Us Season 1",
@@ -4845,7 +5175,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/twau-season-1/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "The Yakyuuken Special [PSX]",
@@ -4856,7 +5187,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-yakyuuken-special-psx/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Theme Hospital",
@@ -4868,7 +5200,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/theme-hospital/",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Thief & Sword: Another Stories – Przygody Raiki",
@@ -4879,7 +5212,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/thief-sword-another-stories-przygody-raiki/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "This is the Police (GOG)",
@@ -4891,7 +5225,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/titp_gog/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "This is the Police (Steam)",
@@ -4903,7 +5238,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/titp_steam/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Time Hollow",
@@ -4915,7 +5251,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/time-hollow/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tiny Toon Adventures",
@@ -4927,7 +5264,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tiny-toon-adventures/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tom & Jerry",
@@ -4939,7 +5277,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tom-jerry-and-tuffy/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Tony Hawk's Pro Skater HD",
@@ -4951,7 +5290,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tony-hawks-pro-skater-hd/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Top Gun",
@@ -4963,7 +5303,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/top-gun/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Toy Story 3 The Video Game",
@@ -4975,7 +5316,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/toy-story-3-the-video-game/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Ultimate Basketball",
@@ -4987,7 +5329,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ultimate-basketball/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Unreal",
@@ -4999,7 +5342,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Unreal Tournament",
@@ -5011,7 +5355,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal-tournament/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Unreal: Return to NaPali",
@@ -5023,7 +5368,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal-return-to-napali/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Urban Chaos",
@@ -5035,7 +5381,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/urban-chaos/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Velvet Assassin",
@@ -5047,7 +5394,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/velvet-assassin/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Vietcong + Fist Alpha + Red Dawn",
@@ -5059,7 +5407,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/vietcong-fist-alpha-red-dawn/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Vietcong 2",
@@ -5071,7 +5420,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/vietcong-2/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Villgust",
@@ -5082,7 +5432,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/villgust/"
+    "link": "https://grajpopolsku.pl/download/villgust/",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Waking Mars",
@@ -5094,7 +5445,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/waking-mars/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Wallace & Gromit's Grand Adventures",
@@ -5106,7 +5458,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wallace-gromits-grand-adventures/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "WarCraft II Battle.net Edition",
@@ -5118,7 +5471,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/warcraft-ii-battle-net-edition/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Warcraft: Orcs & Humans",
@@ -5130,7 +5484,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/warcraft/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Wings of Fury",
@@ -5142,7 +5497,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wings-of-fury/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Wonder Project J",
@@ -5154,7 +5510,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wonder-project-j/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Worms Armageddon",
@@ -5166,7 +5523,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/worms-armageddon/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "dodano": "2026-10-28"
   },
   {
     "game": "WRATH: Aeon of Ruin",
@@ -5178,7 +5536,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wrath-aeon-of-ruin/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Xenogears",
@@ -5190,7 +5549,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/xenogears/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Xenonauts",
@@ -5202,7 +5562,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/xenonauts/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Yooka-Laylee",
@@ -5214,7 +5575,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/yooka-laylee/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Yume Nikki",
@@ -5226,7 +5588,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/yume-nikki/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Yuusha kara wa Nigerarenai",
@@ -5237,7 +5600,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/yuusha-kara-wa-nigerarenai/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Zak McKracken and the Alien Mindbenders",
@@ -5249,7 +5613,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zak-mckracken-and-the-alien-mindbenders/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Zelda II – The Adventure of Link",
@@ -5261,7 +5626,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zelda-ii-the-adventure-of-link/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Zero Wing",
@@ -5273,7 +5639,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zero-wing/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Zombiez Seeker",
@@ -5285,7 +5652,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zombiez-seeker/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 2",
@@ -5297,7 +5665,8 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-ps2/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   },
   {
     "game": "Silent Hill 2: Director's Cut",
@@ -5309,32 +5678,7 @@
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-directors-cut/",
-    "genre": "Horror"
-  },
-  {
-    "game": "Castlevania Belmont's Curse",
-    "img": "https://cdn2.steamgriddb.com/thumb/5e405beb87c8bc251a3c8fbc2555c52d.jpg",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "1",
-    "author": "LivRT",
-    "link": "https://www.nexusmods.com/castlevaniabelmontscurse/mods/9",
-    "genre": "Metroidvania",
-    "upd": "2026-10-25"
-  },
-  {
-    "game": "The Legend of Zelda: Links Awakening",
-    "platform": "PC emu, Nintendo Switch",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "1.0.1-1.0.2",
-    "author": "pogo",
-    "link": "https://drive.google.com/drive/folders/1eiI31BK-GsnE3leBD3oNGM6SFaiYkxIo",
-    "genre": "RPG",
-    "img": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
-    "upd": "2026-10-26"
+    "genre": "Horror",
+    "dodano": "2026-10-28"
   }
 ]

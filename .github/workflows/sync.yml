@@ -14,12 +14,16 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/sync.mjs
+      - name: Generuj strony Aktualności
+        if: always()
+        run: node scripts/news.mjs
       - name: Zapisz zmiany
+        if: always()
         run: |
-          if [ -n "$(git status --porcelain spolszczenia.json)" ]; then
+          git add -A spolszczenia.json aktualnosci sitemap.xml
+          if [ -n "$(git status --porcelain)" ]; then
             git config user.name "spolszczenia-bot"
             git config user.email "bot@users.noreply.github.com"
-            git add spolszczenia.json
-            git commit -m "Automatyczna aktualizacja katalogu"
+            git commit -m "Automatyczna aktualizacja katalogu i aktualności"
             git push
           fi

@@ -28,45 +28,98 @@ function renderUser(){var c=$("uchip");if(!c)return;var u=me();
 document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});
 async function loadRole(){myRole=null;if(!sb||!me())return;try{var r=await sb.rpc("my_role");if(!r.error)myRole=r.data||null}catch(e){}renderUser()}
 
-// ---- okienko logowania (bez opuszczania strony) ----
+// ---- okienko logowania i rejestracji (kod skopiowany z index.html, żeby wyglądało i działało tak samo) ----
+var PNAME={github:"GitHub",discord:"Discord",google:"Google"};
+var PROVIDERS=["discord","google"],curKey=null,recov=false,REDIR=location.origin+"/";
 var PICON={
 discord:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path fill="#5865F2" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>',
 google:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 01-2.4 3.62v3h3.88c2.27-2.09 3.58-5.17 3.58-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3a7.2 7.2 0 01-10.7-3.78H1.37v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.36 14.31a7.2 7.2 0 010-4.62v-3.1H1.37a12 12 0 000 10.82l3.99-3.1z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44A11.5 11.5 0 0012 0 12 12 0 001.37 6.59l3.99 3.1A7.2 7.2 0 0112 4.75z"/></svg>'};
 var TS_KEY="0x4AAAAAAFlm4-HEqU2giO-W",tsTok="",tsId=null,tsLoading=false;
 function remember(){try{sessionStorage.setItem("wroc",JSON.stringify({w:location.pathname,t:Date.now()}))}catch(e){}}
+function busy(t,txt){if(txt){t._o=t.textContent;t.textContent=txt;t.disabled=true;t.classList.add("busy")}else{t.disabled=false;if(t._o!=null)t.textContent=t._o;t.classList.remove("busy")}}
 function ensureModal(){if($("cm"))return;
   var d=document.createElement("div");d.className="overlay";d.id="cm";d.innerHTML='<div class="box"><button class="mini" id="mclose" type="button" aria-label="Zamknij">✕</button><div id="mbody"></div></div>';document.body.appendChild(d);
   $("mclose").onclick=closeModal;
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal();
-    if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing&&$("cm").classList.contains("open")&&e.target&&e.target.tagName==="INPUT"){var b=$("lsend");if(b){e.preventDefault();b.click()}}})}
+    if(e.key!=="Enter"||e.shiftKey||e.altKey||e.isComposing)return;var t=e.target;
+    if(!t||t.tagName!=="INPUT"||!t.closest||!t.closest("#mbody"))return;var ty=(t.type||"").toLowerCase();if(ty==="checkbox"||ty==="radio"||ty==="button"||ty==="submit")return;
+    var bs=$("mbody").querySelectorAll("button.btn.on:not([disabled]):not([data-mode]):not([data-oauth])");var b=bs.length?bs[bs.length-1]:null;if(b){e.preventDefault();b.click()}})}
 function closeModal(){var m=$("cm");if(m)m.className="overlay"}
 function mountCaptcha(n){var el=$("cft");tsTok="";tsId=null;if(!el)return;
   if(!window.turnstile){if(!tsLoading){tsLoading=true;var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";s.async=true;document.head.appendChild(s)}
     if((n||0)<40)setTimeout(function(){mountCaptcha((n||0)+1)},300);return}
   try{tsId=turnstile.render(el,{sitekey:TS_KEY,theme:"dark",language:"pl",callback:function(t){tsTok=t},"expired-callback":function(){tsTok=""},"error-callback":function(){tsTok=""}})}catch(e){tsId=null}}
 function resetCaptcha(){tsTok="";try{if(window.turnstile&&tsId!==null)turnstile.reset(tsId)}catch(e){}}
-function lmsg(t,err){var m=$("lmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
-function openLogin(){
-  if(!sb)return alert("Logowanie jest chwilowo niedostępne.");
-  ensureModal();
-  var prov=[["discord","Discord"],["google","Google"]].map(function(x){return '<button class="btn" type="button" data-oauth="'+x[0]+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x[0]]||"")+'Kontynuuj przez '+x[1]+'</button>'}).join(" ");
-  $("mbody").innerHTML='<h2>Logowanie</h2><div class="lgrid"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><div id="cft" style="margin-top:10px"></div>'+
-   '<p class="lbtns"><button class="btn pri" id="lsend" type="button">Zaloguj się</button></p><p class="msg" id="lmsg"></p>'+
-   '<p class="msg"><a class="linkb" href="'+esc(loginUrl("forgot"))+'">Nie pamiętam hasła</a> · <a class="linkb" href="'+esc(loginUrl("reg"))+'">Załóż konto</a></p>'+
-   '<div class="orsep"><span>lub</span></div><div class="lbtns" style="margin-top:0">'+prov+'</div>';
-  $("cm").className="overlay open";mountCaptcha();var e=$("lemail");if(e)e.focus()}
+function captchaWait(){return !!window.turnstile&&tsId!==null&&!tsTok}
+function openModal(h){ensureModal();$("mbody").innerHTML=h;$("cm").className="overlay open";mountCaptcha()}
+function partyView(title,text,btn,onok){
+  var cols=["#ff9a3c","#ff4d64","#f0b04a","#4fcf8a","#8b6cf0","#4fb3ff"],c="";
+  for(var i=0;i<28;i++){var l=Math.random()*100,d=(Math.random()*.5).toFixed(2),du=(1.6+Math.random()*1.4).toFixed(2),sz=6+Math.floor(Math.random()*7),rot=Math.floor(Math.random()*360);
+    c+='<i style="left:'+l.toFixed(1)+'%;width:'+sz+'px;height:'+(sz*1.6).toFixed(0)+'px;background:'+cols[i%cols.length]+';animation-delay:'+d+'s;animation-duration:'+du+'s;transform:rotate('+rot+'deg)"></i>'}
+  curKey=null;openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>'+title+'</h2><p class="msg">'+text+'</p><p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">'+btn+'</button></p></div></div>');
+  $("partyok").onclick=onok}
+function celebrate(email){
+  partyView("Konto utworzone!","Wysłaliśmy link potwierdzający na adres <b>"+esc(email)+"</b>. Kliknij go (sprawdź też spam), a potem się zaloguj.","Rozumiem",closeModal)}
+function loginHtml(mode){
+  var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
+  var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';
+  var form=mode==="reg"
+   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
+   :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
+  var alt=p?'<div class="orsep"><span>lub</span></div><div class="btns" style="justify-content:flex-start">'+p+'</div>':"";
+  return '<h2>Logowanie</h2>'+tabs+form+'<p class="msg" id="lmsg"></p>'+alt}
+function forgotHtml(email){
+  return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
+var PLERR=[
+ [/For security purposes, you can only request this after (\d+) seconds?\.?/i,function(m,n){return "Ze względów bezpieczeństwa możesz ponowić tę prośbę dopiero po "+n+" s. Spróbuj za chwilę."}],
+ [/email rate limit exceeded|over_email_send_rate_limit/i,function(){return "Wysłano zbyt wiele wiadomości e-mail. Spróbuj ponownie za jakiś czas."}],
+ [/rate limit|too many requests|over_request_rate_limit/i,function(){return "Zbyt wiele prób. Spróbuj ponownie za chwilę."}],
+ [/New password should be different from the old password\.?/i,function(){return "Nowe hasło musi być inne niż poprzednie."}],
+ [/Password should be at least (\d+) characters\.?/i,function(m,n){return "Hasło musi mieć co najmniej "+n+" znaków."}],
+ [/Password is known to be weak and easy to guess[^.]*\.?/i,function(){return "To hasło jest zbyt słabe lub zbyt popularne. Wybierz inne."}],
+ [/Unable to validate email address: invalid format/i,function(){return "Nieprawidłowy format adresu e-mail."}],
+ [/Email address .* is invalid/i,function(){return "Ten adres e-mail jest nieprawidłowy."}],
+ [/User already registered/i,function(){return "Konto z tym adresem e-mail już istnieje. Użyj logowania."}],
+ [/Signups not allowed for this instance|Signup is disabled/i,function(){return "Rejestracja jest obecnie wyłączona."}],
+ [/Email not confirmed/i,function(){return "Najpierw potwierdź adres e-mail (link w mailu)."}],
+ [/Invalid login credentials/i,function(){return "Nieprawidłowy e-mail lub hasło."}],
+ [/captcha (verification|protection)|captcha_failed|captcha token/i,function(){return "Weryfikacja zabezpieczeń nie powiodła się. Odśwież stronę i spróbuj ponownie."}],
+ [/Auth session missing!?/i,function(){return "Sesja wygasła. Zaloguj się ponownie."}],
+ [/Failed to fetch|NetworkError|Load failed/i,function(){return "Brak połączenia z serwerem. Sprawdź internet i spróbuj ponownie."}],
+ [/Error sending (confirmation|recovery) email/i,function(){return "Nie udało się wysłać wiadomości e-mail. Spróbuj ponownie później."}]
+];
+function plMsg(t){t=String(t==null?"":t);PLERR.forEach(function(p){t=t.replace(p[0],p[1])});return t}
+function cmsg(t,err){var m=$("cmsg")||$("lmsg");if(m){m.textContent=plMsg(t);m.className="msg"+(err?" err":"")}}
+
+function openLogin(){if(!sb)return alert("Logowanie jest chwilowo niedostępne.");openModal(loginHtml())}
 document.addEventListener("click",async function(ev){
   var t=ev.target.closest&&ev.target.closest("button");if(!t||!sb)return;
   try{
-    if(t.getAttribute("data-oauth")){remember();var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:location.origin+location.pathname}});if(o.error)lmsg(o.error.message,1);return}
-    if(t.id==="lsend"){
-      var em=$("lemail").value.trim(),pw=$("lpass").value;
-      if(!/^\S+@\S+\.\S+$/.test(em))return lmsg("Podaj poprawny adres e-mail.",1);if(!pw)return lmsg("Podaj hasło.",1);
-      if(window.turnstile&&tsId!==null&&!tsTok)return lmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);
-      t.disabled=true;t.classList.add("busy");var r=await sb.auth.signInWithPassword({email:em,password:pw,options:{captchaToken:tsTok||undefined}});t.disabled=false;t.classList.remove("busy");resetCaptcha();
-      if(r.error)return lmsg(/Email not confirmed/i.test(r.error.message)?"Najpierw potwierdź adres e-mail (link w mailu).":/Invalid login/i.test(r.error.message)?"Nieprawidłowy e-mail lub hasło.":/captcha/i.test(r.error.message)?"Weryfikacja zabezpieczeń nie powiodła się. Odśwież stronę i spróbuj ponownie.":"Nie udało się zalogować: "+plErr(r.error.message),1);
-      closeModal()}
-  }catch(e){lmsg("Błąd: "+((e&&e.message)||e),1)}});
+      if(t.id==="gologin"){curKey=null;return openModal(loginHtml())}
+      if(t.getAttribute("data-mode")){return openModal(loginHtml(t.getAttribute("data-mode")))}
+      if(t.id==="lsend"){
+        var em=$("lemail").value.trim(),pw=$("lpass").value;if(!/^\S+@\S+\.\S+$/.test(em))return cmsg("Podaj poprawny adres e-mail.",1);if(!pw)return cmsg("Podaj hasło.",1);
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);busy(t,"Logowanie…");var r=await sb.auth.signInWithPassword({email:em,password:pw,options:{captchaToken:tsTok||undefined}});busy(t,0);resetCaptcha();
+        return r.error?cmsg(/Email not confirmed/i.test(r.error.message)?"Najpierw potwierdź adres e-mail (link w mailu).":/Invalid login/i.test(r.error.message)?"Nieprawidłowy e-mail lub hasło.":"Nie udało się zalogować: "+r.error.message,1):closeModal()}
+      if(t.id==="rsend"){
+        var nk2=$("rnick").value.trim(),em2=$("remail").value.trim(),pw2=$("rpass").value;
+        if(nk2.length<3)return cmsg("Nazwa użytkownika musi mieć co najmniej 3 znaki.",1);
+        if(!/^\S+@\S+\.\S+$/.test(em2))return cmsg("Podaj poprawny adres e-mail.",1);
+        if(pw2.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);
+        if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);busy(t,"Zakładam konto…");var r2=await sb.auth.signUp({email:em2,password:pw2,options:{data:{nick:nk2},emailRedirectTo:REDIR+"?potwierdzono=1",captchaToken:tsTok||undefined}});busy(t,0);resetCaptcha();
+        if(r2.error)return cmsg(/already registered/i.test(r2.error.message)?"Konto z tym adresem e-mail już istnieje. Użyj logowania.":"Nie udało się założyć konta: "+r2.error.message,1);
+        if(r2.data&&r2.data.user&&r2.data.user.identities&&!r2.data.user.identities.length)return cmsg("Konto z tym adresem e-mail już istnieje. Użyj logowania.",1);
+        return r2.data&&r2.data.session?closeModal():celebrate(em2)}
+      if(t.id==="lforgot"){
+        var pre=$("lemail")?$("lemail").value.trim():"";curKey=null;openModal(forgotHtml(pre));var fe=$("femail");if(fe)fe.focus();return}
+      if(t.id==="fback"){curKey=null;openModal(loginHtml("login"));return}
+      if(t.id==="fgo"){
+        var em3=$("femail").value.trim();if(!/^\S+@\S+\.\S+$/.test(em3))return cmsg("Wpisz poprawny adres e-mail.",1);
+        if(captchaWait())return cmsg("Poczekaj chwilę na weryfikację zabezpieczeń i spróbuj ponownie.",1);busy(t,"Wysyłam…");var r3=await sb.auth.resetPasswordForEmail(em3,{redirectTo:REDIR,captchaToken:tsTok||undefined});busy(t,0);resetCaptcha();
+        return r3.error?cmsg("Nie udało się wysłać: "+r3.error.message,1):partyView("Link wysłany!","Jeśli konto o adresie <b>"+esc(em3)+"</b> istnieje, wysłaliśmy na nie link do ustawienia nowego hasła. Sprawdź skrzynkę (także spam).","Rozumiem",closeModal)}
+      if(t.getAttribute("data-oauth")){remember();var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:location.origin+location.pathname}});if(o.error)cmsg(o.error.message,1);return}
+  }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}});
 
 // ---- lista ----
 function initList(){
@@ -110,7 +163,7 @@ async function loadComments(){
     if(rows.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",rows.map(function(c){return c.id})).limit(5000);if(!l.error)likes=l.data}
     renderList()}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
 function renderForm(){var f=$("cform");
-  f.innerHTML=me()?'<div class="cform">'+av(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea class="t" id="cbody" maxlength="1000" placeholder="Twój komentarz…"></textarea><p style="margin:8px 0 0"><button class="btn pri" id="csend" type="button">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>'
+  f.innerHTML=me()?'<div class="cform">'+av(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea class="t" id="cbody" maxlength="1000" placeholder="Twój komentarz…"></textarea><p style="margin:8px 0 0"><button class="btn pri" id="csend" type="button">Dodaj komentarz</button></p><p class="msg" id="cfmsg"></p></div></div>'
    :'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn pri" id="cgologin" type="button">Zaloguj się</button>'}
 async function send(body,parent,msgEl,btn){
   var u=me();if(!u)return;var n=nick();body=body.trim();
@@ -130,7 +183,7 @@ function initPost(){
     var t=ev.target.closest&&ev.target.closest("button");if(!t)return;
     try{
       if(t.id==="cgologin"){openLogin();return}
-      if(t.id==="csend"){if(await send($("cbody").value,null,$("cmsg"),t)){$("cbody").value="";$("cmsg").textContent="";loadComments()}return}
+      if(t.id==="csend"){if(await send($("cbody").value,null,$("cfmsg"),t)){$("cbody").value="";$("cfmsg").textContent="";loadComments()}return}
       var a=t.getAttribute("data-a"),id=+t.getAttribute("data-i");
       if(a==="like"){var u=me();if(!u){openLogin();return}
         var has=likes.some(function(l){return l.comment_id===id&&l.user_id===u.id});t.disabled=true;

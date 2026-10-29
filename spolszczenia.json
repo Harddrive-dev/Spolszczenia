@@ -5215,7 +5215,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/thief-sword-another-stories-przygody-raiki/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "img": "https://cdn2.steamgriddb.com/thumb/c3aa8c2610fef6e13105549c4a7e4baa.jpg"
   },
   {
     "game": "This is the Police (GOG)",
@@ -7003,7 +7004,11 @@
     "lore": "https://lorespeak.pl/games/thief",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/c3aa8c2610fef6e13105549c4a7e4baa.jpg"
   },
   {
     "game": "Silent Hill 2 Remake",
@@ -7013,7 +7018,11 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "genre": "Horror",
-    "opis": "Nowa wersja horroru psychologicznego od Bloober Team. James Sunderland przyjeżdża do mglistego miasta Silent Hill po liście od zmarłej żony i staje twarzą w twarz z własną przeszłością."
+    "opis": "Nowa wersja horroru psychologicznego od Bloober Team. James Sunderland przyjeżdża do mglistego miasta Silent Hill po liście od zmarłej żony i staje twarzą w twarz z własną przeszłością.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/4f05f9e047d07998ddcf3e95fb6fd675.jpg"
   },
   {
     "game": "Phantom Blade Zero",
@@ -7028,6 +7037,7 @@
     "premiera": "2026-10-30",
     "dodano": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/2470e3a630ce607b21eee976602842dc.jpg",
-    "upd": "2026-10-29"
+    "upd": "2026-10-29",
+    "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk”."
   }
 ]

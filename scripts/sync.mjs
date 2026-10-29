@@ -7,6 +7,7 @@ const res=await fetch(URL_+"/rest/v1/rpc/approved_changes",{method:"POST",header
 if(!res.ok){console.error("Błąd Supabase",res.status,await res.text());process.exit(1)}
 const rows=await res.json();
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
+for(const g of list)if(g.status==="W toku")g.status="Beta";
 const TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
@@ -14,7 +15,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
   if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader))||find(slug(name)))continue;
-  const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
+  const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
   if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;
@@ -24,6 +25,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
  else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
    if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt"].includes(f))continue;
+   if(f==="status"){if(v)g.status=v==="W toku"?"Beta":v;continue}
    if(f==="yt"){if(YT(v))g.yt=v;else if(!v)delete g.yt;continue}
    if(f==="ytt"){if(v)g.ytt=v.slice(0,80);else delete g.ytt;continue}
    if(f==="pl"){if(v==="of")g.pl="of";else delete g.pl;continue}

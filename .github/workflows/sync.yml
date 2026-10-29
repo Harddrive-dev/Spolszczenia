@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Import gier (jednorazowy)
+        run: node scripts/import.mjs
       - run: node scripts/sync.mjs
       - name: Generuj strony Aktualności
         if: always()
@@ -23,7 +25,7 @@ jobs:
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci gra sitemap.xml
+          git add -A spolszczenia.json import-lektor.json aktualnosci gra sitemap.xml
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "spolszczenia-bot"
             git config user.email "bot@users.noreply.github.com"

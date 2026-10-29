@@ -16,13 +16,17 @@ function av(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
 function loginUrl(){return "/?zaloguj=1&wroc="+encodeURIComponent(location.pathname)}
 function plErr(m){m=String(m||"");if(/Zbyt szybko/i.test(m))return "Zbyt szybko, poczekaj chwilę.";if(/Failed to fetch|NetworkError|Load failed/i.test(m))return "Brak połączenia z serwerem.";return m}
 
-// ---- chip użytkownika ----
-function renderUser(){var b=$("uc");if(!b)return;var u=me();
-  if(!u){b.className="uc in";b.innerHTML='<a href="'+esc(loginUrl())+'" style="color:inherit;text-decoration:none">Zaloguj się</a>';return}
-  var n=nick()||"Użytkownik",a=myAvatar();
-  b.className="uc";b.innerHTML='<span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span>'+esc(n)+'<button type="button" id="ulo">Wyloguj</button>';
+// ---- chip użytkownika (taki sam jak na stronie głównej) ----
+var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
+function renderUser(){var c=$("uchip");if(!c)return;var u=me();
+  if(!u){c.innerHTML='<a class="ubtn" href="'+esc(loginUrl())+'" style="text-decoration:none"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></a>';return}
+  var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
+  var menu=(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
+  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span></button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>';
+  $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   $("ulo").onclick=function(){sb.auth.signOut()}}
-async function loadRole(){myRole=null;if(!sb||!me())return;try{var r=await sb.rpc("my_role");if(!r.error)myRole=r.data||null}catch(e){}}
+document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});
+async function loadRole(){myRole=null;if(!sb||!me())return;try{var r=await sb.rpc("my_role");if(!r.error)myRole=r.data||null}catch(e){}renderUser()}
 
 // ---- lista ----
 function initList(){

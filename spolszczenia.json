@@ -6158,7 +6158,11 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "genre": "Przygodowa",
-    "opis": "Przygodowa gra akcji od Remedy Entertainment. Jesse Faden trafia do tajemniczego Federalnego Biura Kontroli i dzięki nadprzyrodzonym mocom stawia czoła siłom, które przejęły jego siedzibę."
+    "opis": "Przygodowa gra akcji od Remedy Entertainment. Jesse Faden trafia do tajemniczego Federalnego Biura Kontroli i dzięki nadprzyrodzonym mocom stawia czoła siłom, które przejęły jego siedzibę.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/2afc4cb06d0995aded2820397864a475.jpg"
   },
   {
     "game": "Assassin's Creed Black Flag Resynced",

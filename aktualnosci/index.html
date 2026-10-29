@@ -4,14 +4,21 @@
 <title>Aktualności – GryPoPolsku.pl</title><meta name="description" content="Aktualności ze świata polskich wersji językowych gier: premiery, nowe spolszczenia, aktualizacje i ogłoszenia GryPoPolsku.pl."><link rel="canonical" href="https://grypopolsku.pl/aktualnosci/"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#14120f">
 <meta property="og:site_name" content="GryPoPolsku.pl"><meta property="og:locale" content="pl_PL"><meta property="og:type" content="website"><meta property="og:title" content="Aktualności – GryPoPolsku.pl"><meta property="og:description" content="Aktualności ze świata polskich wersji językowych gier: premiery, nowe spolszczenia, aktualizacje i ogłoszenia GryPoPolsku.pl."><meta property="og:url" content="https://grypopolsku.pl/aktualnosci/"><meta property="og:image" content="https://grypopolsku.pl/icon-192.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Aktualności – GryPoPolsku.pl"><meta name="twitter:description" content="Aktualności ze świata polskich wersji językowych gier: premiery, nowe spolszczenia, aktualizacje i ogłoszenia GryPoPolsku.pl."><meta name="twitter:image" content="https://grypopolsku.pl/icon-192.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Aktualności – GryPoPolsku.pl","url":"https://grypopolsku.pl/aktualnosci/","inLanguage":"pl"}</script>
-<link rel="stylesheet" href="/aktualnosci/news.css"><script>(function(){var q=location.search.match(/[?&]halloween=(\d)/),d=new Date(),m=d.getMonth()+1,n=d.getDate(),h=document.documentElement,on=q?q[1]==="1":((m===10&&n>=24)||(m===11&&n<=2)),x=null;try{x=localStorage.getItem("theme")}catch(e){}if(!on&&x==="halloween")x=null;if(on&&!x)x="halloween";if(x==="halloween")h.classList.add("hw");else if(x==="light"||x==="dark")h.setAttribute("data-theme",x)})();</script></head>
+<link rel="stylesheet" href="/aktualnosci/news.css"><script src="/aktualnosci/theme.js"></script></head>
 <body data-page="list">
-<div class="wrap">
-<div class="top"><span id="uc" class="uc in"></span></div>
-<header><h1 class="logo"><a href="/" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></h1><p class="sl">Katalog fanowskich polskich wersji językowych gier</p>
-<nav class="nav"><a class="btn" href="/">Katalog</a><a class="btn" href="/#/dodaj">Dodaj spolszczenie</a><a class="btn" href="/#/glosowanie">Głosowanie</a><a class="btn on" href="/aktualnosci/">Aktualności</a></nav></header>
-<div class="panel"><h2 class="pt">Aktualności</h2><p class="empty">Na razie nie ma jeszcze żadnych aktualności. Zajrzyj tu wkrótce!</p><input id="q" type="hidden"><span id="empty" style="display:none"></span></div>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>
+<div class="uchip" id="uchip"></div>
+<div class="themes" role="group" aria-label="Motyw strony">
+  <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
+  <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
+  <button type="button" class="tb tb-hw" data-t="halloween" aria-label="Motyw Halloween" title="Halloween"><svg width="24" height="22" viewBox="0 0 72 64" aria-hidden="true"><path d="M36 14c-3-6-1-10 4-12" stroke="#7cc14a" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="22" cy="38" rx="18" ry="22" fill="#e8730c"/><ellipse cx="50" cy="38" rx="18" ry="22" fill="#e8730c"/><ellipse cx="36" cy="38" rx="16" ry="24" fill="#ff8a1f"/><path d="M24 34l6 6-9 1zM48 34l-6 6 9 1z" fill="#ffe27a"/></svg></button>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script><script src="/aktualnosci/news.js"></script>
+<div class="wrap">
+<header><h1><a href="/" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></h1><p class="tag">Katalog fanowskich polskich wersji językowych gier</p>
+<div class="btns"><a class="btn" href="/#/dodaj">Dodaj spolszczenie</a><a class="btn" href="/#/glosowanie">Głosowanie</a><a class="btn on" href="/aktualnosci/">Aktualności</a><a class="btn" href="/#/lektor">Polski Lektor</a></div></header>
+<main class="main">
+<div class="panel"><h2 class="pt">Aktualności</h2><p class="empty">Na razie nie ma jeszcze żadnych aktualności. Zajrzyj tu wkrótce!</p><input id="q" type="hidden"><span id="empty" style="display:none"></span></div>
+</main>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script><script src="/aktualnosci/news.js"></script><script src="/aktualnosci/decor.js"></script>
 </body></html>

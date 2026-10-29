@@ -5824,9 +5824,12 @@
     "lore": "https://lorespeak.pl/games/hades",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/ce8a253393a1bbbb3d72cd2093b81ede.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/2fa384be1daf050a816980c7413da8a0.jpg",
     "genre": "Akcja / platformówka",
-    "opis": "Roguelike akcji od Supergiant Games. Wcielasz się w Zagreusa, syna Hadesa, który raz za razem próbuje uciec z Podziemi, a po każdej porażce wraca z nowymi siłami, a fabuła posuwa się naprzód."
+    "opis": "Roguelike akcji od Supergiant Games. Wcielasz się w Zagreusa, syna Hadesa, który raz za razem próbuje uciec z Podziemi, a po każdej porażce wraca z nowymi siłami, a fabuła posuwa się naprzód.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "The Callisto Protocol",

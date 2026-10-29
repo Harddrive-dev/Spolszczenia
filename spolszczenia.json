@@ -5868,7 +5868,11 @@
     "lore": "https://lorespeak.pl/games/minecraft-dungeons-ii",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/e01fa640a8b7840f1950b0610ae713c4.jpg"
   },
   {
     "game": "Dune: Awakening",

@@ -25,7 +25,8 @@ jobs:
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json import-lektor.json aktualnosci gra sitemap.xml
+          git add -A spolszczenia.json aktualnosci gra sitemap.xml
+          git rm -q --cached --ignore-unmatch import-lektor.json
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "spolszczenia-bot"
             git config user.email "bot@users.noreply.github.com"

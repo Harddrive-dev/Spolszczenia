@@ -199,6 +199,12 @@ function initPost(){
     }catch(e){alert("Błąd: "+((e&&e.message)||e))}});
   }
 
+// Enter wysyła komentarz lub odpowiedź (Shift+Enter = nowy wiersz)
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"||e.shiftKey||e.altKey||e.isComposing)return;var t=e.target;
+  if(!t||t.tagName!=="TEXTAREA"||!t.classList.contains("t"))return;
+  var box=t.closest(".cin,.rform");if(!box)return;var b=box.querySelector('button[data-a="rsend"],#csend');
+  if(b&&!b.disabled){e.preventDefault();b.click()}});
 function boot(){
   var pg=document.body.getAttribute("data-page");
   if(pg==="list")initList();

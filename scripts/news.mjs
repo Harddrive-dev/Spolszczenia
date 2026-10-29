@@ -26,7 +26,7 @@ const dateLong=iso=>{const p=parts(iso);return p.d+" "+MONTHS[p.m-1]+" "+p.y};
 const cover=r=>!r.cover?"":/^img\//.test(r.cover)?"/"+r.cover:/^https:\/\//.test(r.cover)?r.cover:"";
 const imgOf=r=>!r.image?"":/^img\//.test(r.image)?"/"+r.image:/^https:\/\//.test(r.image)?r.image:"";
 const initials=t=>String(t).replace(/[^\p{L}\p{N} ]/gu,"").trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase()||"G.";
-const coverBox=(r,cls)=>{const c=cover(r);return '<div class="cov">'+(c?'<img src="'+esc(c)+'" alt="" loading="lazy">':esc(initials(r.title)))+'</div>'};
+const coverBox=(r,u)=>{const c=cover(r);return '<a class="cov" href="'+u+'" aria-label="'+esc(r.title)+'">'+(c?'<img src="'+esc(c)+'" alt="" loading="lazy">':esc(initials(r.title)))+'</a>'};
 
 // prosty format: pusty wiersz = akapit, "## " = nagłówek, "- " = lista, **pogrubienie**, [tekst](https://adres)
 function inline(s){let t=esc(s);
@@ -61,7 +61,7 @@ function item(r,hero){
   const ex=r.excerpt||String(r.body).replace(/[#*\[\]()\-]/g," ").replace(/\s+/g," ").trim().slice(0,160);
   const t=(r.title+" "+ex+" "+r.category).toLowerCase();
   const inner='<span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d">'+dateLong(r.created_at)+'</span><h3><a href="'+u+'">'+esc(r.title)+'</a></h3><p class="ex">'+esc(ex)+'</p><div class="bar"><a class="pb" href="'+u+'#komentarze" data-cnt="'+esc(r.slug)+'">💬 0</a><a class="more" href="'+u+'">Czytaj i komentuj →</a></div>';
-  return hero?'<div class="hero" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+coverBox(r)+'<div>'+inner+'</div></div>':'<div class="it" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+inner+'</div>'}
+  return hero?'<div class="hero" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+coverBox(r,u)+'<div>'+inner+'</div></div>':'<div class="it" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+inner+'</div>'}
 
 fs.mkdirSync(OUT,{recursive:true});
 // lista

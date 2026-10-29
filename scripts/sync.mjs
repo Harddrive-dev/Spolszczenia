@@ -7,7 +7,7 @@ const res=await fetch(URL_+"/rest/v1/rpc/approved_changes",{method:"POST",header
 if(!res.ok){console.error("Błąd Supabase",res.status,await res.text());process.exit(1)}
 const rows=await res.json();
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
-const TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"];
+const TYPES=["Napisy","Pełne","Dubbing","Lektor"],EDIT=["status","ver","author","genre","link"];
 const find=k=>list.find(g=>keyOf(g)===k);
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");

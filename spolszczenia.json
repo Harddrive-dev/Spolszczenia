@@ -5758,7 +5758,11 @@
     "lore": "https://lorespeak.pl/games/blair-witch",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Horror"
+    "genre": "Horror",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/ae983e1129c0d1277f26d091408f1656.jpg"
   },
   {
     "game": "Valor Mortis",

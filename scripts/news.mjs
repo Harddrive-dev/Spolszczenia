@@ -24,6 +24,7 @@ const MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","s
 function parts(iso){const d=new Date(iso);const f=new Intl.DateTimeFormat("pl-PL",{timeZone:"Europe/Warsaw",day:"numeric",month:"numeric",year:"numeric"}).formatToParts(d);const g=t=>+f.find(x=>x.type===t).value;return{d:g("day"),m:g("month"),y:g("year")}}
 const dateLong=iso=>{const p=parts(iso);return p.d+" "+MONTHS[p.m-1]+" "+p.y};
 const cover=r=>!r.cover?"":/^img\//.test(r.cover)?"/"+r.cover:/^https:\/\//.test(r.cover)?r.cover:"";
+const imgOf=r=>!r.image?"":/^img\//.test(r.image)?"/"+r.image:/^https:\/\//.test(r.image)?r.image:"";
 const initials=t=>String(t).replace(/[^\p{L}\p{N} ]/gu,"").trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase()||"G.";
 const coverBox=(r,cls)=>{const c=cover(r);return '<div class="cov">'+(c?'<img src="'+esc(c)+'" alt="" loading="lazy">':esc(initials(r.title)))+'</div>'};
 
@@ -74,12 +75,12 @@ fs.writeFileSync(path.join(OUT,"index.html"),page({title:"Aktualności – GryPo
 // wpisy
 for(const r of rows){
   const dir=path.join(OUT,r.slug);fs.mkdirSync(dir,{recursive:true});
-  const url=SITE+"/aktualnosci/"+r.slug+"/",cc=CATS[r.category]||"c-ogl",c=cover(r);
+  const url=SITE+"/aktualnosci/"+r.slug+"/",cc=CATS[r.category]||"c-ogl",c=imgOf(r),th=cover(r);
   const desc=(r.excerpt||String(r.body).replace(/[#*\[\]()]/g," ").replace(/\s+/g," ").trim()).slice(0,200);
-  const img=c?(c.startsWith("/")?SITE+c:c):DEF_IMG;
+  const ogi=c||th,img=ogi?(ogi.startsWith("/")?SITE+ogi:ogi):DEF_IMG;
   const body='<div class="panel"><a class="back" href="/aktualnosci/">← Aktualności</a><article><span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d"><time datetime="'+esc(r.created_at)+'">'+dateLong(r.created_at)+'</time>'+(r.author?' · '+esc(r.author):'')+'</span><h1>'+esc(r.title)+'</h1>'+(c?'<div class="cover"><img src="'+esc(c)+'" alt="'+esc(r.title)+'"></div>':'')+'<div class="body">'+fmt(r.body)+'</div></article></div>'+
    '<div class="panel" id="komentarze"><h2 class="ch">Komentarze (<span id="ccount">0</span>)</h2><div id="cform"></div><div id="clist"><p class="msg">Wczytywanie komentarzy…</p></div></div>';
-  fs.writeFileSync(path.join(dir,"index.html"),page({title:r.title+" – GryPoPolsku.pl",desc,url,body,og:{type:"article",title:r.title,image:img,big:!!c},pageType:"post",key:"news:"+r.slug,
+  fs.writeFileSync(path.join(dir,"index.html"),page({title:r.title+" – GryPoPolsku.pl",desc,url,body,og:{type:"article",title:r.title,image:img,big:!!ogi},pageType:"post",key:"news:"+r.slug,
    ld:{"@context":"https://schema.org","@type":"NewsArticle",headline:r.title.slice(0,110),description:desc,image:[img],datePublished:r.created_at,dateModified:r.updated_at||r.created_at,inLanguage:"pl",author:{"@type":"Organization",name:r.author||"GryPoPolsku.pl"},publisher:{"@type":"Organization",name:"GryPoPolsku.pl",logo:{"@type":"ImageObject",url:DEF_IMG}},mainEntityOfPage:url}}))}
 // sprzątanie usuniętych wpisów
 const keep=new Set(rows.map(r=>r.slug));

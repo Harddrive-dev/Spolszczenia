@@ -7014,5 +7014,20 @@
     "upd": "2026-10-29",
     "genre": "Horror",
     "opis": "Nowa wersja horroru psychologicznego od Bloober Team. James Sunderland przyjeżdża do mglistego miasta Silent Hill po liście od zmarłej żony i staje twarzą w twarz z własną przeszłością."
+  },
+  {
+    "game": "Phantom Blade Zero",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "W toku",
+    "prog": 100,
+    "ver": "—",
+    "author": "promptowy",
+    "link": "https://promptowy.com/phantom/",
+    "genre": "RPG",
+    "premiera": "2026-10-30",
+    "dodano": "2026-10-29",
+    "img": "https://cdn2.steamgriddb.com/thumb/2470e3a630ce607b21eee976602842dc.jpg",
+    "upd": "2026-10-29"
   }
 ]

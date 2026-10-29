@@ -17,7 +17,7 @@ h2.pt{font-size:26px;margin:0 0 12px}
 .d{color:var(--muted);font-size:13px}
 .hero{display:grid;grid-template-columns:220px 1fr;gap:18px;border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:8px;background:var(--bg)}
 .cov{background:linear-gradient(135deg,#3a2a3f,#5a3320);border-radius:10px;display:grid;place-items:center;font-weight:800;color:#ffffff66;font-size:44px;overflow:hidden;min-height:130px}
-.cov img{width:100%;height:100%;object-fit:cover;display:block}
+.cov{text-decoration:none;cursor:pointer}.cov img{transition:transform .25s}.cov:hover img{transform:scale(1.05)}.hero:hover h3 a{color:var(--accent)}.cov img{width:100%;height:100%;object-fit:cover;display:block}
 .hero h3,.it h3{margin:6px 0 4px;font-size:20px;line-height:1.25}
 .hero h3 a,.it h3 a{color:var(--text);text-decoration:none}.hero h3 a:hover,.it h3 a:hover{color:var(--accent)}
 .ex{color:var(--muted);font-size:15px;margin:0}

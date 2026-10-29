@@ -114,3 +114,25 @@ header{padding-top:56px}
 @media (prefers-reduced-motion:reduce){.hw *,.hw *::after{animation:none!important}}
 .main{max-width:860px;margin:0 auto}
 .btn[disabled]{opacity:.6;cursor:progress}
+
+/* ===== okienko logowania na stronach Aktualności ===== */
+input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+.overlay{overscroll-behavior:contain;position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.overlay.open{display:flex}
+body:has(.overlay.open){overflow:hidden}
+.box{overscroll-behavior:contain;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;max-width:460px;width:100%;max-height:85vh;overflow:auto;padding:18px;position:relative}
+.box h2{margin:0 28px 10px 0;font-size:18px}
+#mclose{position:absolute;top:10px;right:10px}
+.mini{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:6px;font-size:12px;padding:1px 7px;cursor:pointer}
+.mini:hover{color:var(--accent);border-color:var(--accent)}
+.lgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.lgrid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.lgrid input{width:100%}
+.orsep{display:flex;align-items:center;gap:12px;margin:14px 0 12px;color:var(--muted);font-size:13px}
+.orsep::before,.orsep::after{content:"";flex:1;height:1px;background:var(--line)}
+.lbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.linkb{all:unset;cursor:pointer;color:var(--accent);text-decoration:underline}
+/* wątki odpowiedzi */
+.thread{margin:0}
+.thread[hidden]{display:none}
+.rform{margin:8px 0 4px 46px}

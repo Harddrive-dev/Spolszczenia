@@ -5918,7 +5918,11 @@
     "lore": "https://lorespeak.pl/games/onimusha-way-of-the-sword",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/0fd03fb63ec8cb54c699d064f55ff6cb.png"
   },
   {
     "game": "STAR WARS Zero Company",

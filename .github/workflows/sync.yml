@@ -17,10 +17,13 @@ jobs:
       - name: Generuj strony Aktualności
         if: always()
         run: node scripts/news.mjs
+      - name: Generuj strony gier (test)
+        if: always()
+        run: node scripts/gry.mjs
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci sitemap.xml
+          git add -A spolszczenia.json aktualnosci gra sitemap.xml
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "spolszczenia-bot"
             git config user.email "bot@users.noreply.github.com"

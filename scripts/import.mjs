@@ -11,7 +11,7 @@ let add=0,upd=0;
 for(const e of imp){
   const k=norm(e.game),g=map.get(k);
   if(g){let ch=false;
-    for(const f of ["lore","gamereader","yt","ytt","img","genre"]) if(e[f]&&!g[f]){g[f]=e[f];ch=true;}
+    for(const f of ["lore","gamereader","yt","ytt","img","genre","opis"]) if(e[f]&&!g[f]){g[f]=e[f];ch=true;}
     if(ch)upd++;
   }else{list.push(e);map.set(k,e);add++;}
 }

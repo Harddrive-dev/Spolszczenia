@@ -1,10 +1,10 @@
 // Generuje osobne strony gier: gra/<adres>/index.html z katalogu spolszczenia.json.
-// TEST: na razie tylko gry z listy ONLY (zmienna GRY_ONLY="a|b" nadpisuje). Pusta lista = wszystkie gry.
+// Generuje strony wszystkich gier. Zmienna GRY_ONLY="a|b" ogranicza do wybranych (test).
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 const SITE="https://grypopolsku.pl",OUT=process.env.GRY_OUT||"gra",SITEMAP=process.env.GRY_SITEMAP||"sitemap.xml",DATA=process.env.GRY_DATA||"spolszczenia.json",NEWS="aktualnosci";
-const ONLY=(process.env.GRY_ONLY?process.env.GRY_ONLY.split("|"):["Kingdom Come: Deliverance"]).filter(Boolean);
+const ONLY=(process.env.GRY_ONLY?process.env.GRY_ONLY.split("|"):[]).filter(Boolean);
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const slug=t=>String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const safe=u=>/^https?:\/\//i.test(u||"")?u:"#";
@@ -32,18 +32,23 @@ const built=[];
 for(const g of games){
   const s=slug(g.game);if(!s)continue;
   const key=g.id||s,url=SITE+"/gra/"+s+"/",plat=g.platform||"PC";
-  const typ={Napisy:"polskie napisy","Pełne":"pełne polskie spolszczenie",Dubbing:"polski dubbing"}[g.type]||"polskie spolszczenie";
-  const title=g.game+" – "+typ+" ("+plat.split(",")[0].trim()+") | GryPoPolsku.pl";
-  const desc=("Fanowskie "+typ+" do gry "+g.game+" ("+plat+"). Autor: "+(g.author&&g.author!=="—"?g.author:"nieznany")+". Status: "+String(g.status||"").toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania i komentarze.").slice(0,300);
+  const hasSp=!!g.link&&g.pl!=="of",ofi=g.pl==="of",lore=/^https?:\/\//.test(g.lore||"")?g.lore:"",gr=/^https?:\/\//.test(g.gamereader||"")?g.gamereader:"",hasLk=!!(lore||gr);
+  const typ=hasSp?({Napisy:"polskie napisy","Pełne":"pełne polskie spolszczenie",Dubbing:"polski dubbing"}[g.type]||"polskie spolszczenie"):(hasLk?"polski lektor":"polska wersja");
+  const title=g.game+" – "+typ+(hasSp?" ("+plat.split(",")[0].trim()+")":"")+" | GryPoPolsku.pl";
+  const lkNames=[lore?"LoreSpeak":"",gr?"GameReader 2.0":""].filter(Boolean).join(" i ");
+  const desc=(hasSp?("Fanowskie "+typ+" do gry "+g.game+" ("+plat+"). Autor: "+(g.author&&g.author!=="—"?g.author:"nieznany")+". Status: "+String(g.status||"").toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze."):(g.game+(ofi?" ma oficjalną polską wersję językową":" – informacje o polskiej wersji")+(hasLk?". Polski lektor w aplikacji "+lkNames+".":".")+" Komentarze i linki.")).slice(0,300);
   const img=g.img&&/^https:\/\//.test(g.img)?g.img:"";
-  const rows=[["Platforma",plat],["Zakres",g.type||"—"],["Status",g.status||"—"],["Wersja",g.ver||"—"],["Autor",g.author||"—"]];
+  const rows=[["Platforma",plat]];
+  if(hasSp)rows.push(["Zakres",g.type||"—"],["Status",g.status||"—"],["Wersja",g.ver||"—"],["Autor",g.author||"—"]);
+  if(ofi)rows.push(["Polska wersja","Oficjalna (od twórców)"]);
+  if(hasLk)rows.push(["Lektor",lkNames]);
   if(g.genre)rows.splice(1,0,["Gatunek",g.genre]);
   if(g.upd)rows.push(["Ostatnia aktualizacja",dateLong(g.upd)]);
   const body='<div class="panel"><a class="back" href="/">← Wróć do katalogu</a><article><div class="gh"><div class="gc">'+(img?'<img src="'+esc(img)+'" alt="Okładka gry '+esc(g.game)+'">':'<div class="ph">'+esc(g.game.charAt(0).toUpperCase())+'</div>')+'</div><div class="gi"><h1>'+esc(g.game)+' – '+esc(typ)+'</h1>'+
-   '<div class="gp">'+(g.genre?'<span class="etag c-strona">'+esc(g.genre)+'</span>':'')+'<span class="etag c-akt">'+esc(g.type||"Napisy")+'</span><span class="etag c-nowe">'+esc(g.status||"")+'</span></div>'+
+   '<div class="gp">'+(g.genre?'<span class="etag c-strona">'+esc(g.genre)+'</span>':'')+(hasSp?'<span class="etag c-akt">'+esc(g.type||"Napisy")+'</span><span class="etag c-nowe">'+esc(g.status||"")+'</span>':'')+(ofi?'<span class="etag c-akt">Oficjalna PL</span>':'')+(hasLk?'<span class="etag c-premiera">Lektor</span>':'')+'</div>'+
    '<dl class="gl">'+rows.map(r=>'<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>').join("")+'</dl>'+
-   '<div class="gb"><a class="p" href="'+esc(safe(g.link))+'" target="_blank" rel="noopener">Pobierz spolszczenie ↗</a><a href="/#/glosowanie">🗳️ Głosuj na spolszczenie tygodnia</a></div>'+
-   '<p class="gn">Strona nie hostuje plików. Link prowadzi do projektu twórcy, a do działania potrzebna jest własna, legalnie nabyta kopia gry. Instrukcja instalacji jest u autora spolszczenia.</p></div></div></article></div>'+
+   '<div class="gb">'+(hasSp?'<a class="p" href="'+esc(safe(g.link))+'" target="_blank" rel="noopener">Pobierz spolszczenie ↗</a><a href="/#/glosowanie">🗳️ Głosuj na spolszczenie tygodnia</a>':'')+(lore?'<a class="'+(hasSp?'':'p')+'" href="'+esc(lore)+'" target="_blank" rel="noopener">🎙 Odwiedź lektora (LoreSpeak) ↗</a>':'')+(gr?'<a class="'+(hasSp||lore?'':'p')+'" href="'+esc(gr)+'" target="_blank" rel="noopener">🎙 Odwiedź lektora (GameReader 2.0) ↗</a>':'')+'</div>'+
+   '<p class="gn">'+(hasSp?'Strona nie hostuje plików. Link prowadzi do projektu twórcy, a do działania potrzebna jest własna, legalnie nabyta kopia gry. Instrukcja instalacji jest u autora spolszczenia.':'Strona nie hostuje plików ani lektorów, tylko linkuje do aplikacji i projektów twórców.')+'</p></div></div></article></div>'+
    '<div class="panel" id="komentarze"><h2 class="ch">Komentarze (<span id="ccount">0</span>)</h2><div id="cform"></div><div id="clist"><p class="msg">Wczytywanie komentarzy…</p></div></div>';
   const ld={"@context":"https://schema.org","@type":"WebPage",name:title,url,inLanguage:"pl",description:desc,about:{"@type":"VideoGame",name:g.game,gamePlatform:plat,inLanguage:"pl",genre:g.genre||undefined,image:img||undefined},isPartOf:{"@type":"WebSite",name:"GryPoPolsku.pl",url:SITE+"/"}};
   const dir=path.join(OUT,s);fs.mkdirSync(dir,{recursive:true});

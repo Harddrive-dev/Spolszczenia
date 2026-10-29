@@ -45,12 +45,15 @@ function page({title,desc,url,body,og,ld,pageType,key}){
   '<title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+esc(url)+'"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#14120f">\n'+
   '<meta property="og:site_name" content="GryPoPolsku.pl"><meta property="og:locale" content="pl_PL"><meta property="og:type" content="'+(og.type||"website")+'"><meta property="og:title" content="'+esc(og.title||title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(url)+'"><meta property="og:image" content="'+esc(og.image)+'"><meta name="twitter:card" content="'+(og.big?"summary_large_image":"summary")+'"><meta name="twitter:title" content="'+esc(og.title||title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+esc(og.image)+'">\n'+
   (ld?'<script type="application/ld+json">'+JSON.stringify(ld).replace(/</g,"\\u003c")+'</script>\n':'')+
-  '<link rel="stylesheet" href="/aktualnosci/news.css"><script src="/aktualnosci/theme.js"></script></head>\n<body data-page="'+pageType+'"'+(key?' data-key="'+esc(key)+'"':'')+'>\n<div class="uchip" id="uchip"></div>\n'+THEMES_HTML+'\n<div class="wrap">\n'+
+  '<link rel="stylesheet" href="/aktualnosci/news.css?v='+V.css+'"><script src="/aktualnosci/theme.js?v='+V.theme+'"></script></head>\n<body data-page="'+pageType+'"'+(key?' data-key="'+esc(key)+'"':'')+'>\n<div class="uchip" id="uchip"></div>\n'+THEMES_HTML+'\n<div class="wrap">\n'+
   '<header><h1><a href="/" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></h1><p class="tag">Katalog fanowskich polskich wersji językowych gier</p>\n'+
   '<div class="btns"><a class="btn" href="/#/dodaj">Dodaj spolszczenie</a><a class="btn" href="/#/glosowanie">Głosowanie</a><a class="btn on" href="/aktualnosci/">Aktualności</a><a class="btn" href="/#/lektor">Polski Lektor</a></div></header>\n<main class="main">\n'+
   body+'\n</main>\n<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>\n</div>\n'+
-  '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script><script src="/aktualnosci/news.js"></script><script src="/aktualnosci/decor.js"></script>\n</body></html>\n'}
+  '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script><script src="/aktualnosci/news.js?v='+V.js+'"></script><script src="/aktualnosci/decor.js?v='+V.decor+'"></script>\n</body></html>\n'}
 
+import crypto from "node:crypto";
+const ver=f=>{try{return crypto.createHash("md5").update(fs.readFileSync(path.join(OUT,f))).digest("hex").slice(0,8)}catch(e){return "0"}};
+const V={css:ver("news.css"),js:ver("news.js"),theme:ver("theme.js"),decor:ver("decor.js")};
 const DEF_IMG=SITE+"/icon-192.png";
 function item(r,hero){
   const u="/aktualnosci/"+r.slug+"/",cc=CATS[r.category]||"c-ogl";

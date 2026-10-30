@@ -212,5 +212,6 @@ function boot(){
   sb.auth.getSession().then(function(r){session=r.data.session;renderUser();return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
   sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
 }
+try{var mb=document.getElementById("navMem");if(mb){fetch("https://qbozpokxgtspwdxvbevv.supabase.co/rest/v1/rpc/memory_info",{method:"POST",headers:{"apikey":"sb_publishable_0StDDiTyHHv_ZIW0nh590g_ij3wNMTV","Content-Type":"application/json"},body:"{}"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d)return;if(d.state==="open")mb.style.display="";else if(d.state==="ended"){mb.style.display="";mb.className+=" done";mb.textContent="🏆 Wyniki turnieju"}}).catch(function(){})}}catch(e){}
 boot();
 })();

@@ -7043,7 +7043,7 @@
     "link": "https://promptowy.com/phantom/",
     "genre": "RPG",
     "premiera": "2026-10-30",
-    "dodano": "2026-10-29",
+    "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/2470e3a630ce607b21eee976602842dc.jpg",
     "upd": "2026-10-29",
     "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\"."
@@ -7065,13 +7065,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/call-of-duty-black-ops",
-    "link": "https://steamcommunity.com/sharedfiles/filedetails/?l=polish&id=2702339437",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/b9b065288cf8d4eba8b9ac1ad9c52aaf.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b9b065288cf8d4eba8b9ac1ad9c52aaf.jpg",
+    "pl": "of"
   },
   {
     "game": "Nioh 3",
@@ -7343,19 +7338,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/max-payne-2",
-    "link": "https://drive.google.com/file/d/1-dY3obeA8szIQE1WW74YiKqLuIE2swkV/view?usp=sharing",
-    "extra": [
-      {
-        "t": "Widescreen Fix",
-        "u": "https://drive.google.com/file/d/11QxxaC6u9mVTACUTBbngYkS1EAgG_Mq7/view?usp=sharing"
-      }
-    ],
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "Cenega",
-    "img": "https://cdn2.steamgriddb.com/thumb/275a5602cd91a468a0e10c226a03a39c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/275a5602cd91a468a0e10c226a03a39c.jpg",
+    "pl": "of"
   },
   {
     "game": "Fable Anniversary",

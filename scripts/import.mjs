@@ -6,15 +6,17 @@ if(!fs.existsSync(F)){console.log("Brak pliku importu - pomijam.");process.exit(
 const imp=JSON.parse(fs.readFileSync(F,"utf8"));
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8"));
 const norm=s=>String(s).toLowerCase().replace(/\[.*?\]|\(.*?\)/g,"").replace(/[^a-z0-9]/g,"");
-const map=new Map();for(const g of list){const k=norm(g.game);if(!map.has(k))map.set(k,g);}
+const map=new Map();for(const g of list){const k=norm(g.game);if(!map.has(k))map.set(k,[]);map.get(k).push(g);}
 let add=0,upd=0;
 for(const e of imp){
-  const k=norm(e.game),g=map.get(k);
-  if(g){let ch=false;
-    if(e.popraw&&typeof e.popraw==="object"){for(const [f,v] of Object.entries(e.popraw)){if(v===null)delete g[f];else g[f]=v;}ch=true;}
-    for(const f of ["lore","gamereader","yt","ytt","img","genre","opis"]) if(e[f]&&!g[f]){g[f]=e[f];ch=true;}
+  const k=norm(e.game),gs=map.get(k);
+  if(gs){let ch=false;
+    for(const g of gs){
+      if(e.popraw&&typeof e.popraw==="object"){for(const [f,v] of Object.entries(e.popraw)){if(v===null)delete g[f];else g[f]=v;}ch=true;}
+      for(const f of ["lore","gamereader","yt","ytt","img","genre","opis"]) if(e[f]&&!g[f]){g[f]=e[f];ch=true;}
+    }
     if(ch)upd++;
-  }else{list.push(e);map.set(k,e);add++;}
+  }else{list.push(e);map.set(k,[e]);add++;}
 }
 fs.writeFileSync("spolszczenia.json",JSON.stringify(list,null,2)+"\n");
 fs.unlinkSync(F);

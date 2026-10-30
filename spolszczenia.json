@@ -11,7 +11,8 @@
     "upd": "2025-10-28",
     "link": "https://drive.google.com/file/d/1V3Sl-zrqNbT2RgECS18Wk7pKg92kUGI3/view",
     "genre": "Akcja / platformówka",
-    "tygodnia": true
+    "tygodnia": true,
+    "opis": "Luigi wygrywa dom, który okazuje się nawiedzony, a jego brat Mario znika w tajemniczych okolicznościach. Z latarką i odkurzaczem w rękach trzeba oczyścić rezydencję z duchów."
   },
   {
     "game": "Final Fantasy VII Rebirth",
@@ -26,7 +27,8 @@
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
     "genre": "RPG",
     "miesiaca": true,
-    "premiera": "2026-10-31"
+    "premiera": "2026-10-31",
+    "opis": "Środkowa część wielkiego remake'u Final Fantasy VII. Cloud i jego towarzysze opuszczają Midgar i ruszają w świat w pościgu za Sephirothem."
   },
   {
     "game": "Silver Pines",
@@ -52,7 +54,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Squall, uczeń akademii Garden i przyszły najemnik SeeD, trafia w sam środek wojny czarownic. Gra słynie z systemu Junction i karcianki Triple Triad."
   },
   {
     "game": "Final Fantasy IX",
@@ -65,7 +68,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Powrót serii do baśniowej fantasy. Złodziej Zidane i księżniczka Garnet wyruszają w podróż po świecie pełnym zamków, statków powietrznych i tajemnic."
   },
   {
     "game": "Final Fantasy X",
@@ -78,7 +82,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Tidus trafia do świata Spira i dołącza do pielgrzymki Yuny, która ma pokonać potwora zwanego Sin. Pierwsza część serii z w pełni trójwymiarowym światem."
   },
   {
     "game": "Final Fantasy XIII",
@@ -91,7 +96,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Lightning i grupa uciekinierów zostają naznaczeni przez bogów i muszą walczyć z systemem, który ma ich zniszczyć. Szybkie walki oparte są na zmianie ról postaci."
   },
   {
     "game": "Final Fantasy XIII-2",
@@ -104,7 +110,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Serah i podróżnik Noel przemierzają epoki, by naprawić rozdarty czas. Do składu drużyny można zwerbować oswojone potwory."
   },
   {
     "game": "Final Fantasy XV",
@@ -117,7 +124,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Książę Noctis i trzej przyjaciele wyruszają w podróż samochodem przez rozległy świat. Walki toczą się w czasie rzeczywistym."
   },
   {
     "game": "Crisis Core: Final Fantasy VII Reunion",
@@ -130,7 +138,8 @@
     "author": "Ogród Balamb",
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Odnowiona wersja gry opowiadającej o Zacku Fairze, żołnierzu SOLDIER, na kilka lat przed wydarzeniami z Final Fantasy VII."
   },
   {
     "game": "Final Fantasy VII Remake Intergrade",
@@ -144,7 +153,8 @@
     "upd": "2025-10-28",
     "link": "https://www.balamb.pl/132-nasze-projekty/spolszczenie-final-fantasy-vii-rebirth/891-final-fantasy-vii-rebirth-po-polsku-premiera-31-pazdziernika",
     "genre": "RPG",
-    "lore": "https://lorespeak.pl/games/final-fantasy-vii-remake-intergrade"
+    "lore": "https://lorespeak.pl/games/final-fantasy-vii-remake-intergrade",
+    "opis": "Odświeżona wersja pierwszej części remake'u Final Fantasy VII, rozgrywającej się w Midgar. W pakiecie jest też dodatkowy epizod z Yuffie."
   },
   {
     "game": "Kingdom Come: Deliverance",
@@ -159,7 +169,8 @@
     "link": "https://www.nexusmods.com/kingdomcomedeliverance/mods/2357",
     "genre": "RPG",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "yt": "https://www.youtube.com/watch?v=-41ucPsBM-s"
+    "yt": "https://www.youtube.com/watch?v=-41ucPsBM-s",
+    "opis": "Realistyczne RPG z otwartym światem, osadzone w średniowiecznych Czechach w 1403 roku. Syn kowala Henryk próbuje przetrwać po napaści na jego wioskę."
   },
   {
     "game": "Alice: Madness Returns",
@@ -173,7 +184,8 @@
     "upd": "2016-05-25",
     "link": "https://gamesub.pl/spolszczenie-alice-madness-returns/",
     "genre": "Horror",
-    "lore": "https://lorespeak.pl/games/alice-madness-returns"
+    "lore": "https://lorespeak.pl/games/alice-madness-returns",
+    "opis": "Kontynuacja American McGee's Alice. Zniszczona psychicznie Alicja wraca do Krainy Czarów, by odkryć, co dzieje się z jej wspomnieniami."
   },
   {
     "game": "Castlevania: Lords of Shadow",
@@ -186,7 +198,8 @@
     "author": "GameSub",
     "upd": "2016-05-25",
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Restart serii Castlevania w trójwymiarowej odsłonie. Gabriel Belmont rusza do walki z siłami ciemności w mrocznym, gotyckim świecie."
   },
   {
     "game": "Castlevania: Lords of Shadow – Mirror of Fate HD",
@@ -199,7 +212,8 @@
     "author": "GameSub",
     "upd": "2014-08-12",
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow-mirror-of-fate/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Odświeżona wersja przygody z konsoli przenośnej. Opowiada o kolejnych pokoleniach rodu Belmontów i ich walce z Draculą."
   },
   {
     "game": "Castlevania: Lords of Shadow 2",
@@ -212,7 +226,8 @@
     "author": "GameSub",
     "upd": "2014-08-11",
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow-2/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Zakończenie trylogii Lords of Shadow. Dracula budzi się w czasach współczesnych i musi stawić czoła dawnym wrogom."
   },
   {
     "game": "Costume Quest",
@@ -225,7 +240,8 @@
     "author": "GameSub",
     "upd": "2015-11-09",
     "link": "https://gamesub.pl/spolszczenie-costume-quest/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Dzieciaki w Halloween zmieniają się w wielkie bohaterów swoich kostiumów i ruszają na ratunek porwanemu rodzeństwu. Lekkie RPG z turową walką."
   },
   {
     "game": "Enslaved: Odyssey to the West",
@@ -238,7 +254,8 @@
     "author": "GameSub",
     "upd": "2021-09-18",
     "link": "https://gamesub.pl/spolszczenie-enslaved-odyssey-to-the-west-premium-edition/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Postapokaliptyczna przygoda luźno oparta na chińskiej opowieści „Wędrówka na Zachód\". Małpa i Trip muszą razem przebyć niebezpieczną drogę."
   },
   {
     "game": "Hammerwatch",
@@ -251,7 +268,8 @@
     "author": "GameSub",
     "upd": "2016-02-07",
     "link": "https://gamesub.pl/spolszczenie-hammerwatch/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "opis": "Pikselowa gra akcji w lochach, w którą można grać samemu lub ze znajomymi. Trzeba się w niej przebijać przez zamek pełen potworów i pułapek."
   },
   {
     "game": "Papers, Please",
@@ -264,7 +282,8 @@
     "author": "GameSub",
     "upd": "2021-09-18",
     "link": "https://gamesub.pl/spolszczenie-papers-please/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "opis": "Wcielasz się w inspektora na granicy fikcyjnego państwa Arstotzka. Decydujesz, kogo wpuścić, a kogo odesłać, i pilnujesz, żeby starczyło pieniędzy na życie."
   },
   {
     "game": "Shadow Complex Remastered",
@@ -277,7 +296,8 @@
     "author": "GameSub",
     "upd": "2021-09-18",
     "link": "https://gamesub.pl/spolszczenie-shadow-complex/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Platformowa gra akcji w stylu metroidvanii. Główny bohater wpada na ślad tajemniczej organizacji i musi zdemaskować jej plan."
   },
   {
     "game": "Spelunky",
@@ -290,7 +310,8 @@
     "author": "GameSub",
     "upd": "2020-11-29",
     "link": "https://gamesub.pl/spolszczenie-spelunky/",
-    "genre": "Inne"
+    "genre": "Inne",
+    "opis": "Roguelike z elementami platformówki, w którym każda jaskinia jest inna. Badaj podziemia, zbieraj skarby i staraj się nie zginąć."
   },
   {
     "game": "The Darkness II",
@@ -303,7 +324,8 @@
     "author": "GameSub",
     "upd": "2018-04-10",
     "link": "https://gamesub.pl/spolszczenie-darkness-2/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Jackie Estacado wraca do świata zbrodni, uzbrojony w mroczne moce, które pozwalają mu walczyć z wrogami za pomocą macek. Strzelanka z perspektywy pierwszej osoby."
   },
   {
     "game": "Vampire: The Masquerade – Bloodlines",
@@ -316,7 +338,8 @@
     "author": "GameSub",
     "upd": "2026-03-03",
     "link": "https://gamesub.pl/spolszczenie-vampire-the-masquerade-bloodlines/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Kultowe RPG, w którym jako świeżo przemieniony wampir poznajesz mroczny świat Los Angeles. Duży wpływ na przebieg fabuły mają wybory gracza."
   },
   {
     "game": "X-Men Origins: Wolverine",
@@ -329,7 +352,8 @@
     "author": "GameSub",
     "upd": "2015-03-08",
     "link": "https://gamesub.pl/spolszczenie-x-men-origins-wolverine/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gra akcji oparta na filmie. Wolverine mści się na wrogach, wykorzystując pazury i zdolności regeneracji."
   },
   {
     "game": "12 is Better Than 6",
@@ -342,7 +366,8 @@
     "author": "Valthemar",
     "upd": "2024-06-10",
     "link": "https://grajpopolsku.pl/download/12-is-better-than-6/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Dynamiczna strzelanka z widokiem z góry, osadzona w klimatach Dzikiego Zachodu."
   },
   {
     "game": "720°",
@@ -355,7 +380,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/720/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Klasyczna gra zręcznościowa o jeździe na deskorolce, w której wykonujesz triki i zbierasz punkty, zanim skończy się czas."
   },
   {
     "game": "Adventure Time: Explore the Dungeon Because I DON'T KNOW!",
@@ -368,7 +394,8 @@
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-22",
     "link": "https://grajpopolsku.pl/download/adventure-time-explore-the-dungeon-because-i-dont-know/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Finn i Jake wyruszają do lochów w dynamicznej grze akcji w stylu roguelike. Całość opiera się na serialu animowanym."
   },
   {
     "game": "Age of Empires: Definitive Edition",
@@ -381,7 +408,8 @@
     "author": "Kifer71",
     "upd": "2024-06-10",
     "link": "https://grajpopolsku.pl/download/age-of-empires-definitive-edition/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "opis": "Odnowiona wersja klasycznej strategii czasu rzeczywistego, w której prowadzisz cywilizację od epoki kamienia do upadku imperiów."
   },
   {
     "game": "Alice in Wonderland",
@@ -419,7 +447,8 @@
     "author": "Manuel Czaszka, twig, Rael, domen16",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/american-mcgees-alice-wersja-lekka/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Skrócona, lżejsza wersja mrocznej przygody o Alicji, której Kraina Czarów została zepsuta przez jej własne cierpienie."
   },
   {
     "game": "Amnesia Rebirth",
@@ -433,7 +462,8 @@
     "upd": "2024-06-15",
     "link": "https://grajpopolsku.pl/download/amnesia-rebirth/",
     "genre": "Horror",
-    "lore": "https://lorespeak.pl/games/amnesia-rebirth"
+    "lore": "https://lorespeak.pl/games/amnesia-rebirth",
+    "opis": "Horror przygodowy od twórców serii Amnesia. Tasi trafia na pustynię w Algierii i musi przeżyć w ruinach, ścigana przez coś nieznanego."
   },
   {
     "game": "Amnesia: The Bunker",
@@ -446,7 +476,8 @@
     "author": "HydeFromT70s",
     "upd": "2024-06-15",
     "link": "https://grajpopolsku.pl/download/amnesia-the-bunker/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Żołnierz w opuszczonym bunkrze z czasów I wojny światowej próbuje przeżyć. Czai się tu potwór, a generator i latarka mają ograniczone zasoby."
   },
   {
     "game": "Ankh 3: Battle of the Gods",
@@ -459,7 +490,8 @@
     "author": "Raf99, ADV Dream",
     "upd": "2025-10-25",
     "link": "https://grajpopolsku.pl/download/ankh-3-battle-of-the-gods/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Przygodówka point and click, w której Assil trafia do starożytnego Egiptu i staje do konfrontacji z bogami."
   },
   {
     "game": "Argus",
@@ -483,7 +515,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/arx-fatalis/",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "RPG pierwszoosobowe w podziemnym świecie, do którego ludzkość uciekła przed zimą. Pierwsza gra studia Arkane."
   },
   {
     "game": "Asterix & Obelix XXL2 Mission WiFix",
@@ -496,7 +529,8 @@
     "author": "kuzo89",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/asterix-obelix-xxl2-mission-wifix/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Przygodowa gra w świecie Asteriksa i Obeliksa, przeniesiona na przenośną konsolę."
   },
   {
     "game": "Astérix: The Gallic War [PSX]",
@@ -532,7 +566,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/atlantis-iv-evolution/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Czwarta część serii przygodówek, w której rozwiązujesz zagadki i odkrywasz tajemnice Atlantydy."
   },
   {
     "game": "Back to the Future",
@@ -545,7 +580,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/back-to-the-future/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Licencjonowana gra na podstawie filmu „Powrót do przyszłości\", w której Marty McFly próbuje naprawić bieg wydarzeń."
   },
   {
     "game": "Back to the Future: The Game",
@@ -558,7 +594,8 @@
     "author": "Michał „mziab” Ziąbkowski",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bttf/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Epizodowa przygodówka Telltale Games, w której Marty i Doc znów podróżują w czasie i próbują naprawić skutki wcześniejszych zmian."
   },
   {
     "game": "Bad North: Jotunn Edition",
@@ -571,7 +608,8 @@
     "author": "Valthemar",
     "upd": "2024-06-10",
     "link": "https://grajpopolsku.pl/download/bad-north-jotunn-edition/",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "opis": "Strategia z elementami roguelike. Bronisz wysp przed najazdami wikingów, dowodząc małym oddziałem."
   },
   {
     "game": "Batman of the Future: Return of the Joker",
@@ -584,7 +622,8 @@
     "author": "aRPi",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/batman-of-the-future-return-of-the-joker/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Platformowa gra akcji na podstawie serialu „Batman przyszłości\", w której Terry McGinnis staje przeciw Jokerowi."
   },
   {
     "game": "Batman: The Telltale Series",
@@ -597,7 +636,8 @@
     "author": "GameSub, GrajPoPolsku (zespół)",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/batman-tts/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Epizodowa opowieść o Bruce'ie Wayne'ie, w której twoje decyzje wpływają na losy Gotham. Autorem jest Telltale Games."
   },
   {
     "game": "Beneath a Steel Sky",
@@ -610,7 +650,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/beneath-a-steel-sky/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Klasyczna przygodówka point and click w dystopijnym świecie. Robert Foster, wychowany poza miastem, próbuje odkryć spisek w Union City."
   },
   {
     "game": "Big Nose the Caveman",
@@ -623,7 +664,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/big-nose-the-caveman/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Prehistoryczna platformówka z kamiennej epoki. Mały jaskiniowiec o dużym nosie ratuje swoich bliskich."
   },
   {
     "game": "BioShock (Steam/GOG)",
@@ -636,7 +678,8 @@
     "author": "dzaggiel",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bioshock-steam/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Podwodne miasto Rapture, utopia, która upadła. Strzelanka z elementami RPG, słynąca z atmosfery i zwrotu akcji."
   },
   {
     "game": "Bioshock 2 + Minerva's Den (Steam/GOG)",
@@ -649,7 +692,8 @@
     "author": "dzaggiel, Kuczmir",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/minervas_den/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Kontynuacja BioShocka. Jako Big Daddy wracasz do Rapture, a dodatek Minerva's Den przynosi nową, osobną historię."
   },
   {
     "game": "Bioshock 2 Remastered + Minerva's Den (Steam/GOG)",
@@ -662,7 +706,8 @@
     "author": "dzaggiel, Kuczmir",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/minervas_den_remastered/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Odświeżona wersja BioShocka 2 z dodatkiem Minerva's Den. Powrót do Rapture w ulepszonej oprawie."
   },
   {
     "game": "BioShock Remastered (Steam oraz GOG)",
@@ -676,7 +721,8 @@
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bioshock-remastered/",
     "genre": "Strzelanka",
-    "lore": "https://lorespeak.pl/games/bioshock-remastered"
+    "lore": "https://lorespeak.pl/games/bioshock-remastered",
+    "opis": "Odświeżona wersja pierwszego BioShocka. Rapture w lepszej grafice, z tą samą mroczną fabułą."
   },
   {
     "game": "Blacksad: Under the Skin",
@@ -689,7 +735,8 @@
     "author": "bax001, raf001",
     "upd": "2025-09-29",
     "link": "https://grajpopolsku.pl/download/blacksad-under-the-skin/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Kotowaty detektyw John Blacksad bada sprawę w mrocznym, noirowym świecie zwierzęcych bohaterów. Przygodówka według komiksu."
   },
   {
     "game": "Bloodrayne",
@@ -702,7 +749,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bloodrayne/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Rayne, pół wampirzyca, pół człowiek, walczy z nazistami parającymi się okultyzmem. Gra akcji z krwawą walką."
   },
   {
     "game": "Bloodrayne 2 (wersja bez filmów)",
@@ -715,7 +763,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-wersja-bez-filmow/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach."
   },
   {
     "game": "Bloodrayne 2 (wersja z filmami)",
@@ -728,7 +777,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-wersja-z-filmami/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach."
   },
   {
     "game": "BloodRayne 2 Terminal Cut",
@@ -741,7 +791,8 @@
     "author": "Śledziks, Borsuczyca, Wilq i in.",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-terminal-cut/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Rozszerzona wersja BloodRayne 2 z dodatkowymi poprawkami i zawartością. Rayne walczy z klanami wampirów."
   },
   {
     "game": "Borderlands The Zombie Island of Dr. Ned",
@@ -754,7 +805,8 @@
     "author": "Norek, Manuel Czaszka i in.",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/borderlands-the-zombie-island-of-dr-ned/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Dodatek do pierwszego Borderlands. Pandora zostaje opanowana przez zombie, a ty musisz stawić im czoła."
   },
   {
     "game": "Broken Age",
@@ -767,7 +819,8 @@
     "author": "Śledziks, sb8gapi i in.",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/broken-age/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Przygodówka w baśniowej oprawie. Dwoje nastolatków, Vella i Shay, żyją w odmiennych światach, których losy się splatają. Reżyserował Tim Schafer."
   },
   {
     "game": "Broken Sword 2,5",
@@ -780,7 +833,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/broken-sword-25/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Fanowska kontynuacja serii Broken Sword, w której George Stobbart i Nico wracają do rozwiązywania zagadek."
   },
   {
     "game": "Broken Sword: Director's Cut",
@@ -793,7 +847,8 @@
     "author": "Manuel Czaszka, mendosa, goliat i in.",
     "upd": "2024-10-12",
     "link": "https://grajpopolsku.pl/download/broken-sword-directors-cut/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Klasyczna przygodówka. George Stobbart wraz z Nico prowadzi śledztwo w sprawie spisku Templariuszy w Paryżu."
   },
   {
     "game": "Broken Sword: The Shadow of the Templars",
@@ -806,7 +861,8 @@
     "author": "—",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/broken-sword-the-shadow-of-the-templars-pelna-wersja-z-filmami/",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Pierwsza część serii. Turysta George Stobbart trafia w sam środek spisku związanego z Templariuszami i rusza tropem zagadki."
   },
   {
     "game": "Bucky O'Hare",
@@ -819,7 +875,8 @@
     "author": "Markiza",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bucky-ohare/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Platformówka Konami z kosmicznym zającem Buckym O'Hare, który walczy z toadami."
   },
   {
     "game": "C-12: Final Resistance [PSX]",
@@ -832,7 +889,8 @@
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-15",
     "link": "https://grajpopolsku.pl/download/c-12-final-resistance-psx/",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Cyborg Riley Vaughan trafia w sam środek wojny i walczy z wrogą armią w grze akcji z widokiem zza pleców."
   },
   {
     "game": "Cabela's 4×4",
@@ -845,7 +903,8 @@
     "author": "—",
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/cabelas-4x4/",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "opis": "Symulacja jazdy terenowej, w której pokonujesz trudny teren w terenówkach w różnych zakątkach świata."
   },
   {
     "game": "Call of Cthulhu: Prisoner of Ice",
@@ -858,7 +917,8 @@
     "author": "goliat, Van Brok",
     "upd": "2024-07-19",
     "link": "https://grajpopolsku.pl/download/call-of-cthulhu-prisoner-of-ice/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Przygodówka grozy według Lovecrafta. Akcja dzieje się w 1937 roku na Antarktydzie, gdzie trzeba rozwikłać zagadkę zaginionej ekspedycji."
   },
   {
     "game": "Castle of Illusion",
@@ -871,7 +931,8 @@
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-22",
     "link": "https://grajpopolsku.pl/download/castle-of-illusion/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Mickey Mouse wyrusza do zaczarowanego zamku, by uratować Minnie. Platformówka w bajkowej oprawie."
   },
   {
     "game": "Castlevania",
@@ -884,7 +945,8 @@
     "author": "Gaido",
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/castlevania/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Pierwsza część klasycznej serii. Simon Belmont wchodzi do zamku Draculi z biczem w ręku."
   },
   {
     "game": "Castlevania: Aria of Sorrow",
@@ -897,7 +959,8 @@
     "author": "Gaido",
     "upd": "2021-04-02",
     "link": "https://grajpopolsku.pl/download/castlevania-aria-of-sorrow/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Soma Cruz trafia do zamku Draculi w 2035 roku. Klasyczna metroidvania na konsolę przenośną."
   },
   {
     "game": "Castlevania: Lords of Shadow – Ultimate Edition",
@@ -910,7 +973,8 @@
     "author": "GameSub",
     "upd": "2024-07-29",
     "link": "https://grajpopolsku.pl/download/castlevania-lords-of-shadow-ultimate-edition/",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Pełne wydanie gry Castlevania: Lords of Shadow z dodatkowymi rozdziałami fabuły."
   },
   {
     "game": "Celeste",
@@ -923,7 +987,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/celeste/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Madeline wspina się na górę Celeste i mierzy z własnymi lękami. Wymagająca platformówka z przejmującą historią."
   },
   {
     "game": "Chaser",
@@ -936,7 +1001,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chaser/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka pierwszoosobowa o bohaterze, który traci pamięć i krok po kroku odkrywa, kim jest i co się stało."
   },
   {
     "game": "Chicken Run",
@@ -949,7 +1015,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chicken-run/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra na podstawie filmu animowanego, w której kury próbują uciec z farmy."
   },
   {
     "game": "Child of Light",
@@ -962,7 +1029,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/child-of-light/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Aurora, mała księżniczka, trafia do baśniowej krainy Lemuria. RPG z malowaną grafiką i turową walką."
   },
   {
     "game": "Chrono Trigger",
@@ -975,7 +1043,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/chrono-trigger/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne japońskie RPG o podróżach w czasie. Crono i jego przyjaciele próbują zapobiec zagładzie świata."
   },
   {
     "game": "Citadels",
@@ -999,7 +1068,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/clive-bakers-undying/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror pierwszoosobowy według pomysłu Clive'a Barkera. Detektyw zjawisk paranormalnych odkrywa mroczną tajemnicę rodziny."
   },
   {
     "game": "Cognition: An Erica Reed Thriller (GOG)",
@@ -1012,7 +1082,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition-gog/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka kryminalna, w której agentka FBI Erica Reed ściga seryjnego mordercę, wykorzystując zdolność odczytywania śladów z przeszłości."
   },
   {
     "game": "Cognition: An Erica Reed Thriller (Steam)",
@@ -1025,7 +1096,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition-steam/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka kryminalna, w której agentka FBI Erica Reed ściga seryjnego mordercę, wykorzystując zdolność odczytywania śladów z przeszłości."
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (GOG)",
@@ -1038,7 +1110,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition_ep2_gog/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę."
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (Steam)",
@@ -1051,7 +1124,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cognition_ep2_steam/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę."
   },
   {
     "game": "Conarium",
@@ -1064,7 +1138,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/conarium/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror przygodowy inspirowany prozą Lovecrafta. Naukowiec bada tajemniczą wyprawę na Antarktydzie."
   },
   {
     "game": "Condemned: Criminal Origins",
@@ -1077,7 +1152,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/condemned-criminal-origins/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Agent FBI Ethan Thomas ściga seryjnego zabójcę. Walczysz głównie w zwarciu, wykorzystując przedmioty z otoczenia."
   },
   {
     "game": "Constructor",
@@ -1090,7 +1166,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/constructor/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra, w której zakładasz własną firmę budowlaną i zarządzasz nią, wznosząc domy i walcząc z konkurencją."
   },
   {
     "game": "Contra",
@@ -1103,7 +1180,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/contra/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna strzelanka z widokiem z boku. Dwaj komandosi niszczą obcą inwazję."
   },
   {
     "game": "Contra Force",
@@ -1129,7 +1207,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z Crashem Bandicootem w roli głównej, stworzona na przenośną konsolę."
   },
   {
     "game": "Crash Bandicoot Fusion [GBA]",
@@ -1142,7 +1221,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion-2/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z Crashem Bandicootem w roli głównej, stworzona na przenośną konsolę."
   },
   {
     "game": "Crash Team Racing [PSX]",
@@ -1155,7 +1235,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/crash-team-racing-psx/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wyścigi gokartów z postaciami Crash Bandicoot. Zgrabna konkurencja dla Mario Karta."
   },
   {
     "game": "CS: Source",
@@ -1168,7 +1249,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cs-source/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka drużynowa na silniku Source. Terroryści kontra antyterroryści w rundach o ściśle określonych zasadach."
   },
   {
     "game": "Cyber Knight",
@@ -1181,7 +1263,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cyber-knight/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG science fiction na konsolę Super Nintendo."
   },
   {
     "game": "Cyber Knight II",
@@ -1207,7 +1290,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/darkwing-duck/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka Capcom na podstawie serialu o Kaczorze Darkwingu, superbohaterze w pelerynie."
   },
   {
     "game": "Dave Mirra 2 Freestyle BMX",
@@ -1220,7 +1304,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dave-mirra-2-freestyle-bmx/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra sportowa o jeździe na BMX. Wykonuj triki w kilku miejscach, zdobywając punkty."
   },
   {
     "game": "Day of the Tentacle",
@@ -1233,7 +1318,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/day-of-the-tentacle/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna przygodówka LucasArts. Trzech przyjaciół podróżuje w czasie, żeby powstrzymać szalonego Purpurowego Macka."
   },
   {
     "game": "Dead City",
@@ -1257,7 +1343,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-or-alive-psx/",
     "genre": "Bijatyka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bijatyka 3D od Tecmo, w której liczą się szybkie kontrataki i dynamiczne areny."
   },
   {
     "game": "Dead Space 2",
@@ -1270,7 +1357,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-space-2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Isaac Clarke walczy z nekromorfami na Tytanie. Kontynuacja kosmicznego horroru."
   },
   {
     "game": "Dead Space 3",
@@ -1283,7 +1371,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dead-space-3/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Isaac Clarke trafia na lodową planetę, gdzie szuka źródła zagrożenia. Trzecia część kosmicznego horroru."
   },
   {
     "game": "Deadlight",
@@ -1296,7 +1385,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadlight/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z elementami horroru. Bohater przemierza Seattle po apokalipsie zombie."
   },
   {
     "game": "Deadlight: Director's Cut",
@@ -1309,7 +1399,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadlight_dc/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rozszerzona wersja Deadlight z dodatkowymi rozdziałami i trybami."
   },
   {
     "game": "Deadpool",
@@ -1322,7 +1413,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/deadpool/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji z Deadpoolem w roli głównej. Bohater walczy z wrogami, komentując wszystko żartami."
   },
   {
     "game": "Dementium 2",
@@ -1335,7 +1427,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dementium-2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror pierwszoosobowy na DS. Bohater, uwięziony w szpitalu psychiatrycznym, musi przeżyć."
   },
   {
     "game": "Dementium: The Ward",
@@ -1348,7 +1441,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dementium-the-ward/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror pierwszoosobowy na konsolę DS. Bohater budzi się w ponurym szpitalu i próbuje ujść z życiem."
   },
   {
     "game": "Dexter's Laboratory – Mandark's Lab [PSX]",
@@ -1374,7 +1468,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/diablo/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo."
   },
   {
     "game": "Diablo (GOG)",
@@ -1387,7 +1482,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/diablo-gog/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo."
   },
   {
     "game": "Dink Smallwood HD",
@@ -1400,7 +1496,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dink-smallwood-hd/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Akcja RPG w stylu klasycznych gier. Dink wyrusza w przygodę, by ratować świat."
   },
   {
     "game": "Dino Crisis 2 [PSX]",
@@ -1413,7 +1510,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dino-crisis-2-psx/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Regina i Dylan trafiają do świata dinozaurów. Kontynuacja Dino Crisis z większym naciskiem na akcję."
   },
   {
     "game": "Discworld",
@@ -1425,7 +1523,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/discworld/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka point and click w świecie Terry'ego Pratchetta. Rincewind, nieudolny czarodziej, próbuje uratować Świat Dysku."
   },
   {
     "game": "Dizzy The Adventurer",
@@ -1438,7 +1537,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dizzy-the-adventurer/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra z Dizzym, jajkiem, które musi rozwiązać zagadki i zebrać przedmioty."
   },
   {
     "game": "Dizzy Treasure Island",
@@ -1451,7 +1551,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dizzy-treasure-island/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z Dizzym, w której bohater ratuje siebie i przyjaciół na wyspie ze skarbem."
   },
   {
     "game": "Donald Duck Goin' Quackers",
@@ -1477,7 +1578,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/donkey-kong-3/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra zręcznościowa Nintendo, w której Mario znów staje przeciwko Donkey Kongowi."
   },
   {
     "game": "Doom",
@@ -1490,7 +1592,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/doom/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja kultowej strzelanki na konsolę PlayStation. Marines walczą z demonami na Marsie."
   },
   {
     "game": "Downtown – Nekketsu Koushin Kyoku – Soreyuke Daiundoukai",
@@ -1529,7 +1632,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-advanced-adventure/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z uniwersum Dragon Ball na konsolę GBA. Bohaterowie walczą z wrogami i rozwijają swoje moce."
   },
   {
     "game": "Dragon Ball Legacy of Goku",
@@ -1542,7 +1646,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-legacy-of-goku/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygody Goku według mangi Dragon Ball, w którym bohater rozwija umiejętności i walczy z potężnymi przeciwnikami."
   },
   {
     "game": "Dragon Ball Z: Legend of the Super Saiyan",
@@ -1555,7 +1660,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragon-ball-z-legend-of-the-super-saiyan/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bijatyka z postaciami z uniwersum Dragon Ball Z na Super Nintendo."
   },
   {
     "game": "Dragon's Dogma: Dark Arisen",
@@ -1568,7 +1674,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dragons-dogma-dark-arisen/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Akcja RPG w otwartym świecie. Zostajesz Arisenem i mierzysz się z olbrzymimi potworami u boku pionów."
   },
   {
     "game": "Drawn 2: Dark Flight",
@@ -1581,7 +1688,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/drawn-2-dark-flight/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka z zagadkami logicznymi. Pomagasz dziewczynce, która wchodzi w świat obrazów."
   },
   {
     "game": "Drawn: Painted Tower",
@@ -1594,7 +1702,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/drawn-painted-tower/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka z zagadkami i oryginalnym światem, w którym twoje obrazy ożywają."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Linux x86-64]",
@@ -1607,7 +1716,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-linux/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [MacOSX x86-64] (Humble Bundle)",
@@ -1620,7 +1730,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-mac/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Humble Bundle)",
@@ -1633,7 +1744,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-32bit-hb/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Steam, GOG)",
@@ -1646,7 +1758,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-32bit/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Humble Bundle)",
@@ -1659,7 +1772,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-hb/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Steam, GOG)",
@@ -1672,7 +1786,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
   },
   {
     "game": "Driver You Are The Wheelman",
@@ -1685,7 +1800,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/driver-you-are-the-wheelman/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wyścigi i pościgi samochodowe, w których wcielasz się w kierowcę."
   },
   {
     "game": "Dual Orb 2",
@@ -1711,7 +1827,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/duck-tales/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z Kaczorem Donaldem i jego bratankami, szukającymi skarbów w egzotycznych krajach."
   },
   {
     "game": "Duke Nukem Forever",
@@ -1724,7 +1841,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/duke-nukem-forever/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Długo wyczekiwana strzelanka z bezczelnym bohaterem Duke Nukemem, który znów ratuje Ziemię przed kosmitami."
   },
   {
     "game": "Dungeons of Avalon",
@@ -1748,7 +1866,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dust-an-elysian-tail/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dust, tajemniczy wojownik z amnezją, przemierza baśniowy świat. Gra akcji z elementami metroidvanii."
   },
   {
     "game": "Ed, Edd & Eddy: Jawbreakers!",
@@ -1761,7 +1880,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ed-edd-eddy-jawbreakers/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka na podstawie serialu animowanego „Ed, Edd i Eddy\"."
   },
   {
     "game": "Elvenland",
@@ -1785,7 +1905,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/eriksholm-the-stolen-dream/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Skradanka w ponurym, skandynawskim klimacie. Unikasz wrogów i szukasz drogi przez niebezpieczny świat."
   },
   {
     "game": "Escape from Monkey Island",
@@ -1798,7 +1919,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/escape-from-monkey-island/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Czwarta część serii Monkey Island. Guybrush Threepwood znów wpada w tarapaty i staje do walki z LeChuckiem."
   },
   {
     "game": "Evil Twin: Cyprien's Chronicles",
@@ -1811,7 +1933,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/evil-twin-cypriens-chronicles/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra, w której Cyprien trafia do mrocznego świata pełnego potworów."
   },
   {
     "game": "Excitebike",
@@ -1824,7 +1947,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/excitebike/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra wyścigowa na motocyklach, w której pokonujesz tory z przeszkodami."
   },
   {
     "game": "F1 2011",
@@ -1837,7 +1961,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/f1-2011/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra wyścigowa Formuły 1 z sezonu 2011, ze wszystkimi kierowcami i torami."
   },
   {
     "game": "Fantastic Adventures of Dizzy",
@@ -1850,7 +1975,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/908/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z jajkiem Dizzy w roli głównej. Zbierasz przedmioty i rozwiązujesz zagadki."
   },
   {
     "game": "Felix the Cat!",
@@ -1863,7 +1989,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/felix-the-cat/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z kotem Feliksem w roli głównej, który przemierza kolejne krainy."
   },
   {
     "game": "FIFA Manager 12",
@@ -1876,7 +2003,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fifa-manager-12/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Menedżer piłkarski, w którym prowadzisz klub, kupujesz zawodników i budujesz drużynę."
   },
   {
     "game": "Fighting Force 2",
@@ -1889,7 +2017,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fighting-force-2/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji z elementami bijatyki, w której grupa bohaterów walczy z przeciwnikami."
   },
   {
     "game": "Final Fantasy",
@@ -1902,7 +2031,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pierwsza część słynnej serii RPG. Czterech Wojowników Światła wyrusza, by odzyskać cztery kryształy."
   },
   {
     "game": "Final Fantasy (steam)",
@@ -1915,7 +2045,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-pixel-remaster/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pierwsza część słynnej serii RPG. Czterech Wojowników Światła wyrusza, by odzyskać cztery kryształy."
   },
   {
     "game": "Final Fantasy III",
@@ -1928,7 +2059,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-iii/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja klasycznej części, w której czwórka młodych bohaterów odkrywa kryształy i zmienia swoje klasy."
   },
   {
     "game": "Final Fantasy IV",
@@ -1941,7 +2073,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-iv/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Cecil, rycerz ciemności, odrzuca rozkazy króla i staje po stronie światła. Jedno z klasycznych japońskich RPG."
   },
   {
     "game": "Final Fantasy IX (Sony PSX)",
@@ -1954,7 +2087,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-ix/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Powrót serii do baśniowej fantasy. Złodziej Zidane i księżniczka Garnet wyruszają w podróż po świecie pełnym zamków, statków powietrznych i tajemnic."
   },
   {
     "game": "Final Fantasy V",
@@ -1967,7 +2101,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-v/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kryształy wiatru, ziemi, ognia i wody tracą moc. Bohaterowie podejmują się misji, w której ważną rolę odgrywa system klas."
   },
   {
     "game": "Final Fantasy VI",
@@ -1980,7 +2115,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-vi/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wielka drużyna bohaterów buntuje się przeciw imperium. Jedno z najwyżej cenionych RPG na SNES-a."
   },
   {
     "game": "Final Fantasy VII",
@@ -1993,7 +2129,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-vii/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Cloud Strife dołącza do grupy Avalanche, która walczy z korporacją Shinra. Klasyczne RPG, które otworzyło serię na świat."
   },
   {
     "game": "Final Fantasy VIII (Sony PSX)",
@@ -2006,7 +2143,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-viii-psx/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Squall, uczeń akademii Garden i przyszły najemnik SeeD, trafia w sam środek wojny czarownic. Gra słynie z systemu Junction i karcianki Triple Triad."
   },
   {
     "game": "Final Fantasy XII",
@@ -2019,7 +2157,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-xii/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Vaan, młody mieszkaniec Rabanastre, trafia w sam środek konfliktu o tron. RPG z systemem Gambit do programowania zachowań postaci."
   },
   {
     "game": "Final Fantasy XII (PC/Steam)",
@@ -2032,7 +2171,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/final-fantasy-xii-steam/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Vaan, młody mieszkaniec Rabanastre, trafia w sam środek konfliktu o tron. RPG z systemem Gambit do programowania zachowań postaci."
   },
   {
     "game": "Firewatch (GOG)",
@@ -2045,7 +2185,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/firewatch-gog/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Henry zostaje obserwatorem pożarów w Wyoming i próbuje uciec od własnych problemów. Przygodowa gra eksploracyjna z fabułą opartą na rozmowach przez radio."
   },
   {
     "game": "Firewatch (Steam)",
@@ -2058,7 +2199,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/firewatch/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Henry zostaje obserwatorem pożarów w Wyoming i próbuje uciec od własnych problemów. Przygodowa gra eksploracyjna z fabułą opartą na rozmowach przez radio."
   },
   {
     "game": "Fist of Jesus",
@@ -2071,7 +2213,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/fist-of-jesus/",
     "genre": "Bijatyka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Parodia gier bijatyki i kina kopanego, w której Jezus walczy ze złem."
   },
   {
     "game": "FlatOut",
@@ -2084,7 +2227,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/flatout/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wyścigi w stylu destrukcji, w których zderzenia i wypadki to część zabawy."
   },
   {
     "game": "FlatOut 2",
@@ -2097,7 +2241,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/flatout-2/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja FlatOut z nowymi trasami, samochodami i minigrami, w których wyrzucasz kierowcę przez szybę."
   },
   {
     "game": "Ford Racing 2",
@@ -2110,7 +2255,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-racing-2/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra wyścigowa z licencjonowanymi samochodami Forda. Pokonujesz kolejne trasy i odblokowujesz nowe modele."
   },
   {
     "game": "Ford Racing 3",
@@ -2123,7 +2269,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-racing-3/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kolejna część serii wyścigowej z samochodami Forda, z nowymi trasami i trybami."
   },
   {
     "game": "Ford Street Racing",
@@ -2136,7 +2283,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ford-street-racing/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra wyścigowa o ulicznych pościgach samochodami Forda."
   },
   {
     "game": "From Dust",
@@ -2149,7 +2297,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/from-dust/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strategia, w której kształtujesz teren i kierujesz plemieniem, które musi przetrwać kataklizmy."
   },
   {
     "game": "From the Abyss",
@@ -2174,7 +2323,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/front-line/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra zręcznościowa, w której żołnierz przedziera się przez wrogie linie."
   },
   {
     "game": "Front Mission",
@@ -2187,7 +2337,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/front-mission/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Taktyczne RPG, w którym dowodzisz mechami w świecie pełnym konfliktów."
   },
   {
     "game": "Frontier First Encounters",
@@ -2200,7 +2351,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/frontier-first-encounters/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kosmiczna symulacja, kontynuacja kultowej serii Elite. Podróżujesz po Układzie Słonecznym i handlujesz."
   },
   {
     "game": "Furi",
@@ -2213,7 +2365,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/furi/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Intensywna gra akcji z pojedynkami z bossami. Walczysz, unikasz i kontratakujesz w widowiskowych starciach."
   },
   {
     "game": "Fushigi no Umi no Nadia",
@@ -2238,7 +2391,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/g-i-joe/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji na podstawie serii G.I. Joe, w której dowodzisz oddziałem żołnierzy."
   },
   {
     "game": "Gabriel Knight: Grzechy Ojców 2014 (GOG)",
@@ -2251,7 +2405,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grzechy-ojcow-gog/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja klasycznej przygodówki. Pisarz Gabriel Knight bada serię tajemniczych zabójstw związanych z voodoo."
   },
   {
     "game": "Gabriel Knight: Grzechy Ojców 2014 (Steam)",
@@ -2264,7 +2419,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grzechy-ojcow-steam/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja klasycznej przygodówki. Pisarz Gabriel Knight bada serię tajemniczych zabójstw związanych z voodoo."
   },
   {
     "game": "Gabriel Knight: Sins of the Fathers",
@@ -2277,7 +2433,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gabriel-knight-sins-of-the-fathers/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna przygodówka grozy. Pisarz Gabriel Knight bada serię morderstw w Nowym Orleanie, które łączą się z voodoo."
   },
   {
     "game": "Galaxian",
@@ -2290,7 +2447,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/galaxian/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna strzelanka zręcznościowa z kosmitami atakującymi z góry ekranu."
   },
   {
     "game": "Game of Thrones: A Telltale Games Series",
@@ -2303,7 +2461,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/game-of-thrones-a-telltale-games-series/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizodowa przygodówka Telltale w świecie „Gry o tron\". Poznajesz losy rodu Forresterów, a twoje wybory zmieniają bieg wydarzeń."
   },
   {
     "game": "Ghostbusters II",
@@ -2316,7 +2475,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ghostbusters-ii/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra na podstawie filmu „Pogromcy duchów II\". Ekipa łapie duchy w Nowym Jorku."
   },
   {
     "game": "Go! Dizzy Go!",
@@ -2328,7 +2488,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/go-dizzy-go/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kolejna część przygód Dizzy'ego, w której jajko ruszają w nowe przygody."
   },
   {
     "game": "God of War Chains of Olympus",
@@ -2341,7 +2502,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/god-of-war-chains-of-olympus/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kratos stoi w świecie greckiej mitologii. Gra akcji na PSP z widowiskowymi walkami i bossami."
   },
   {
     "game": "Gods Will Be Watching (do testów otwartych)",
@@ -2354,7 +2516,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gwbw-testy/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra o przetrwaniu i trudnych wyborach moralnych. Twoje decyzje decydują o losie załogi i pasażerów."
   },
   {
     "game": "Golden Sun",
@@ -2367,7 +2530,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/golden-sun/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne japońskie RPG na GBA, w którym drużyna młodych bohaterów używa magii żywiołów."
   },
   {
     "game": "Golden Sun: The Lost Age",
@@ -2380,7 +2544,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/golden-sun-the-lost-age/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja Golden Sun. Nowa generacja bohaterów wyrusza, by przywrócić równowagę w świecie."
   },
   {
     "game": "Gore: Ultimate Soldier",
@@ -2393,7 +2558,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gore-ultimate-soldier/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka pierwszoosobowa, w której jako najemnik walczysz z siłami wroga."
   },
   {
     "game": "Grand Theft Auto Advance",
@@ -2406,7 +2572,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-advance/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra na GBA w świecie GTA, z perspektywą z góry i misjami w mieście."
   },
   {
     "game": "Grand Theft Auto IV",
@@ -2419,7 +2586,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-iv/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Niko Bellic przybywa do Liberty City w poszukiwaniu amerykańskiego snu. Czwarta część serii."
   },
   {
     "game": "Grand Theft Auto: London, 1961",
@@ -2432,7 +2600,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-london-1961/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wczesna, klasyczna odsłona serii. Trafiasz do Londynu lat 60. i wykonujesz zlecenia dla gangu."
   },
   {
     "game": "Grim Fandango",
@@ -2445,7 +2614,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/grim-fandango/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Manny Calavera, pracownik biura śmierci, odkrywa spisek w krainie zmarłych. Klasyczna przygodówka LucasArts."
   },
   {
     "game": "Grim Fandango Remastered",
@@ -2458,7 +2628,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gfr/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja Grim Fandango z ulepszoną grafiką."
   },
   {
     "game": "GTA Liberty City Stories",
@@ -2471,7 +2642,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gta-liberty-city-stories/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Liberty City Stories na PSP. Toni Cipriani wraca do miasta i walczy o pozycję w mafii."
   },
   {
     "game": "GTA Vice City Stories",
@@ -2484,7 +2656,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gta-vice-city-stories/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Vice City Stories na PSP. Vic Vance trafia w świat przestępczości Vice City w latach 80."
   },
   {
     "game": "GYLT",
@@ -2510,7 +2683,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hacker-evolution/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra o hakerach, w której wcielasz się w specjalistę walczącego z zagrożeniami w sieci."
   },
   {
     "game": "Half Life 2",
@@ -2523,7 +2697,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/half-life-2/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gordon Freeman trafia do świata przejętego przez kosmiczną korporację. Strzelanka, która zmieniła gatunek."
   },
   {
     "game": "Half Life 2: Episode One",
@@ -2536,7 +2711,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/half-life-2-episode-one/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja Half-Life 2. Gordon Freeman i Alyx Vance uciekają z miasta, którego rdzeń ma wybuchnąć."
   },
   {
     "game": "Harvest Moon",
@@ -2549,7 +2725,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/harvest-moon/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski."
   },
   {
     "game": "Harvest Moon (Nintendo SNES)",
@@ -2562,7 +2739,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/harvest-moon-2/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski."
   },
   {
     "game": "Hollow Knight",
@@ -2575,7 +2753,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hollow-knight/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Metroidvania w uroczo rysowanym świecie pełnym owadów. Hallownest kryje wiele tajemnic i trudnych przeciwników."
   },
   {
     "game": "Horizon Chase Turbo",
@@ -2588,7 +2767,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/2484/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wyścigi w stylu retro, inspirowane klasyką lat 80. i 90. Kolorowe trasy w różnych krajach."
   },
   {
     "game": "Hudson's Adventure Island",
@@ -2600,7 +2780,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hudsons-adventure-island/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka Hudson Soft, w której Master Higgins zbiera owoce i walczy z potworami."
   },
   {
     "game": "Hue",
@@ -2613,7 +2794,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/hue/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka logiczna, w której kolor tła decyduje o tym, jakie przeszkody znikają."
   },
   {
     "game": "I am Alive",
@@ -2626,7 +2808,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-am-alive/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Postapokaliptyczna gra przygodowa o przetrwaniu w zniszczonym mieście."
   },
   {
     "game": "I Have No Mouth, and I Must Scream (GOG)",
@@ -2639,7 +2822,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-have-no-mouth-and-i-must-scream-gog/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna przygodówka, w której pięcioro ocalałych trafia do świata superkomputera, który torturuje ludzi."
   },
   {
     "game": "I Have No Mouth, and I Must Scream (STEAM)",
@@ -2652,7 +2836,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/i-have-no-mouth-and-i-must-scream-steam/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna przygodówka, w której pięcioro ocalałych trafia do świata superkomputera, który torturuje ludzi."
   },
   {
     "game": "Igneous",
@@ -2677,7 +2862,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ike-ike-nekketsu-hockey-bu-subette-koronde-dai-rantou/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra sportowa w stylu klasycznych gier z serii Kunio-kun."
   },
   {
     "game": "Inkheart",
@@ -2690,7 +2876,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inkheart/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra na podstawie powieści „Atramentowe serce\"."
   },
   {
     "game": "Inspector Gadget Crazy Maze [PSX]",
@@ -2716,7 +2903,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inversion/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka z perspektywy trzeciej osoby, w której wykorzystujesz zmiany grawitacji w walce."
   },
   {
     "game": "Inversion [PS3]",
@@ -2729,7 +2917,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inversion-ps3/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka z perspektywy trzeciej osoby, w której wykorzystujesz zmiany grawitacji w walce."
   },
   {
     "game": "Jagged Alliance 2’005",
@@ -2742,7 +2931,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2005/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Fanowska modyfikacja kultowej strategii turowej, która rozszerza grę o nowe zasady i zawartość."
   },
   {
     "game": "Jagged Alliance 2: Renegade Republic",
@@ -2755,7 +2945,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-renegade-republic/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rozszerzenie strategii Jagged Alliance 2 z nową kampanią i nowymi najemnikami."
   },
   {
     "game": "Jagged Alliance 2: Shady Job",
@@ -2768,7 +2959,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-shady-job/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dodatek do Jagged Alliance 2 z nowymi misjami i zmianami w rozgrywce."
   },
   {
     "game": "Jagged Alliance 2: Urban Chaos",
@@ -2781,7 +2973,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-urban-chaos/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rozbudowana modyfikacja strategii Jagged Alliance 2 z nowymi zadaniami i lokacjami."
   },
   {
     "game": "Jagged Alliance 2: Vietnam SOG ’69",
@@ -2794,7 +2987,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-vietnam-sog-69/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Modyfikacja Jagged Alliance 2 osadzona w czasach wojny w Wietnamie."
   },
   {
     "game": "Jisei",
@@ -2819,7 +3013,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jurassic-park-the-game/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka epizodowa od Telltale. Opowiada historię osadzoną w świecie „Parku Jurajskiego\"."
   },
   {
     "game": "Jurassic World Evolution",
@@ -2832,7 +3027,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/jurassic-world-evolution/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Budujesz i zarządzasz parkiem pełnym dinozaurów. Musisz dbać o gości, bezpieczeństwo i zwierzęta."
   },
   {
     "game": "Kao Challengers",
@@ -2845,7 +3041,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/kao-challengers/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra przygodowa z kangurem Kao w roli głównej na PSP."
   },
   {
     "game": "Kick Master",
@@ -2871,7 +3068,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/legend-of-zelda-a-link-to-the-past/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link wyrusza, by ocalić królestwo Hyrule. Klasyka serii Zelda na SNES-a."
   },
   {
     "game": "LEGO Indiana Jones",
@@ -2884,7 +3082,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-indiana-jones/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klockowa gra przygodowa na motywach filmów o Indianie Jonesie."
   },
   {
     "game": "Lego Island 2: The Brickster's Revenge",
@@ -2897,7 +3096,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-island-2-the-bricksters-revenge/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klockowa przygoda, w której zbierasz klocki i pokonujesz złego Brickstera."
   },
   {
     "game": "Lego Star Wars: The Complete Saga",
@@ -2910,7 +3110,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lego-star-wars-cs/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klockowa wersja całej sagi Gwiezdnych Wojen. Przeżywasz wydarzenia z sześciu filmów w humorystycznej formie."
   },
   {
     "game": "Les Adventures de Tintin Le Temple du Soleil",
@@ -2923,7 +3124,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/les-adventures-de-tintin-le-temple-du-soleil/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygoda Tintina i kapitana Baryłki na konsoli przenośnej, oparta na komiksie „Świątynia Słońca\"."
   },
   {
     "game": "Life Is Strange",
@@ -2936,7 +3138,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/life-is-strange/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Max Caulfield odkrywa, że potrafi cofać czas. Epizodowa przygoda, w której twoje wybory mają znaczenie."
   },
   {
     "game": "Life is Strange: Before the Storm",
@@ -2949,7 +3152,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lis_bts/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Prequel Life Is Strange. Opowiada o przyjaźni Chloe Price z Rachel Amber."
   },
   {
     "game": "Life is Strange: True Colors",
@@ -2962,7 +3166,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/life-is-strange-true-colors/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Alex Chen przybywa do spokojnego miasteczka w górach i odkrywa, że ma zdolność odczytywania emocji innych."
   },
   {
     "game": "Lifeless Moon",
@@ -2975,7 +3180,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lifeless-moon/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra science fiction, w której eksplorujesz obce światy."
   },
   {
     "game": "Lifeless Planet",
@@ -2988,7 +3194,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lifeless-planet/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Astronauta ląduje na obcej planecie i próbuje odkryć, co się wydarzyło."
   },
   {
     "game": "Little Nemo – The Dream Master",
@@ -3001,7 +3208,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/little-nemo-the-dream-master/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka na podstawie komiksu. Mały Nemo wkracza do Krainy Snów."
   },
   {
     "game": "Lobotomy Corporation",
@@ -3014,7 +3222,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lobotomy-corporation/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zarządzasz tajną placówką, która przechowuje niebezpieczne istoty. Gra łączy strategię z horrorem."
   },
   {
     "game": "Lord of the Rings: Fellowship of the Ring",
@@ -3027,7 +3236,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/lord-of-the-rings-fellowship-of-the-ring/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra RPG według „Drużyny Pierścienia\" Tolkiena."
   },
   {
     "game": "Love Hina Advance",
@@ -3040,7 +3250,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/love-hina-advance/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra oparta na mandze „Love Hina\", w której bohater próbuje zbliżyć się do bohaterek."
   },
   {
     "game": "Magic Knight Rayearth",
@@ -3053,7 +3264,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/magic-knight-rayearth/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG na SNES-a oparte na mandze „Magic Knight Rayearth\"."
   },
   {
     "game": "Manhunt",
@@ -3067,7 +3279,8 @@
     "link": "https://grajpopolsku.pl/download/manhunt/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "lore": "https://lorespeak.pl/games/manhunt"
+    "lore": "https://lorespeak.pl/games/manhunt",
+    "opis": "Brutalny horror akcji. Skazaniec James Earl Cash zostaje wykorzystany w morderczej grze."
   },
   {
     "game": "Mass Effect 2: Geneza",
@@ -3080,7 +3293,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mass-effect-2-geneza/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dodatek do Mass Effect 2 z nową historią i misjami dla dowódcy Sheparda."
   },
   {
     "game": "Mass Effect 2: Lair of Shadow Broker",
@@ -3093,7 +3307,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mass-effect-2-lair-of-shadow-broker/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dodatek do Mass Effect 2, w którym Shepard rusza na polowanie na Handlarza Cieni."
   },
   {
     "game": "Medal of Honor: Allied Assault – War Chest",
@@ -3106,7 +3321,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medal-of-honor-allied-assault-war-chest/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka z czasów II wojny światowej. Walczysz po stronie aliantów w różnych bitwach."
   },
   {
     "game": "MediEvil",
@@ -3119,7 +3335,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Sir Daniel Fortesque, najgorszy rycerz w królestwie, wstaje z grobu, by pokonać złego czarnoksiężnika. Platformówka z humorem i klimatem horroru."
   },
   {
     "game": "MediEvil [PSX] Dubbing",
@@ -3145,7 +3362,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej."
   },
   {
     "game": "MediEvil 2 [PSX]",
@@ -3158,7 +3376,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-2-psx/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej."
   },
   {
     "game": "MediEvil Resurrection [PSP]",
@@ -3171,7 +3390,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-resurrection-psp/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja klasycznej platformówki o Sir Danielu Fortesque."
   },
   {
     "game": "MediEvil [PSX]",
@@ -3184,7 +3404,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/medievil-psx/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Sir Daniel Fortesque, najgorszy rycerz w królestwie, wstaje z grobu, by pokonać złego czarnoksiężnika. Platformówka z humorem i klimatem horroru."
   },
   {
     "game": "Megaman II",
@@ -3197,7 +3418,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/megaman-ii/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kolejna część przygód Mega Mana. Bohater pokonuje robotów, zdobywając ich moce."
   },
   {
     "game": "Megaman III",
@@ -3210,7 +3432,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/megaman-iii/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Mega Man ponownie staje do walki z doktorem Wily'm i jego robotami."
   },
   {
     "game": "Mental Repairs Inc",
@@ -3234,7 +3457,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/metal-gear/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji ze skradaniem na NES-a. Solid Snake infiltruje bazę wroga."
   },
   {
     "game": "Miami Vice The Game",
@@ -3247,7 +3471,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/miami-vice-the-game/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji na podstawie serialu „Miami Vice\"."
   },
   {
     "game": "Mickey's Speedway USA",
@@ -3260,7 +3485,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mickeys-speedway-usa/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra wyścigowa z kreskówkowymi bohaterami Disneya."
   },
   {
     "game": "Micro Machines",
@@ -3273,7 +3499,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/micro-machines/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne wyścigi miniaturowych samochodzików."
   },
   {
     "game": "Monkey Island 2",
@@ -3286,7 +3513,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monkey-island-2/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Guybrush Threepwood wraca w wielkim stylu. Przygodówka LucasArts, w której walczysz z piratem LeChuckiem."
   },
   {
     "game": "Monkey Island 2 Special Edition: LeChuck's Revenge",
@@ -3299,7 +3527,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monkey-island-2-special-edition-lechucks-revenge/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja Monkey Island 2 z nową grafiką i dźwiękiem. Guybrush znów rusza na poszukiwanie skarbu Big Whoop."
   },
   {
     "game": "Monster In My Pocket",
@@ -3312,7 +3541,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/monster-in-my-pocket/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka, w której mały bohater walczy z potworami z kolekcji zabawek."
   },
   {
     "game": "Moonlight Walks",
@@ -3336,7 +3566,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/mortal-kombat-komplete-edition/",
     "genre": "Bijatyka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna bijatyka z krwawymi zakończeniami. Wersja Komplete zawiera wszystkie postacie."
   },
   {
     "game": "Need For Speed: Underground 2",
@@ -3349,7 +3580,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/need-for-speed-underground-2/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra wyścigowa o tuningu i ulicznych wyścigach z otwartym miastem."
   },
   {
     "game": "Nekketsu Kakutou Densetsu",
@@ -3388,7 +3620,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/new-super-mario-bros/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Mario wraca do dwuwymiarowych przygód. Klasyczna platformówka z nowymi możliwościami."
   },
   {
     "game": "Ni no Kuni II: Revenant Kingdom",
@@ -3401,7 +3634,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nnk2/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Młody król Evan buduje własne królestwo. Japońskie RPG z baśniową oprawą."
   },
   {
     "game": "Nightmare Creatures 2",
@@ -3414,7 +3648,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nightmare-creatures-2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horrorowa gra akcji z potworami w mrocznym świecie."
   },
   {
     "game": "Nintendo World Cup",
@@ -3427,7 +3662,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/nintendo-world-cup/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra sportowa, w której drużyny z różnych krajów rywalizują w piłce nożnej."
   },
   {
     "game": "Obscure",
@@ -3440,7 +3676,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/obscure/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror, w którym uczniowie szkoły przemierzają mroczne korytarze i uciekają przed potworami."
   },
   {
     "game": "Obscure (GOG)",
@@ -3453,7 +3690,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/obscure-gog/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror, w którym uczniowie szkoły przemierzają mroczne korytarze i uciekają przed potworami."
   },
   {
     "game": "Okami",
@@ -3466,7 +3704,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/okami/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bogini słońca Amaterasu wcielona w białego wilka walczy z demonami. Gra akcji w malarskiej, japońskiej oprawie."
   },
   {
     "game": "Okami HD",
@@ -3480,7 +3719,8 @@
     "link": "https://grajpopolsku.pl/download/okami-hd/",
     "genre": "Akcja / platformówka",
     "dodano": "2026-10-28",
-    "lore": "https://lorespeak.pl/games/okami-hd"
+    "lore": "https://lorespeak.pl/games/okami-hd",
+    "opis": "Odświeżona wersja Okami w wyższej rozdzielczości. Amaterasu w pięknie narysowanym świecie."
   },
   {
     "game": "OMORI",
@@ -3493,7 +3733,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/omori/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Chłopiec budzi się w dziwnym, kolorowym świecie. Psychologiczne RPG z mrocznym nastrojem i niebanalną fabułą."
   },
   {
     "game": "One Afternoon",
@@ -3517,7 +3758,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/oneshot/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra przygodowa z zagadkami, w której przez cały czas rozmawiasz z samą grą, a jej decyzje zależą od ciebie."
   },
   {
     "game": "OneShot World Machine Edition",
@@ -3530,7 +3772,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/oneshot-world-machine-edition/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rozszerzona wersja OneShot z dodatkowymi poprawkami."
   },
   {
     "game": "Osmos",
@@ -3543,7 +3786,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/osmos/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra logiczna, w której kierujesz komórką i pochłaniasz mniejsze, unikając większych."
   },
   {
     "game": "Pac-Man",
@@ -3556,7 +3800,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pac-man/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra zręcznościowa, w której zjadasz kropki i uciekasz przed duchami."
   },
   {
     "game": "Papo & Yo",
@@ -3569,7 +3814,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/papo-yo/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Chłopiec ucieka przed rzeczywistością i trafia do świata fantazji, gdzie towarzyszy mu potwór. Przygodówka o trudnej relacji z ojcem."
   },
   {
     "game": "Pathologic",
@@ -3582,7 +3828,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pathologic/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Surowa gra przygodowa w mieście ogarniętym epidemią. Przeżycie wymaga trudnych wyborów."
   },
   {
     "game": "PES 2009",
@@ -3595,7 +3842,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pes-2009/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra piłkarska Konami z licencjonowanymi drużynami."
   },
   {
     "game": "Phantasy Star IV: The End of the Millennium",
@@ -3608,7 +3856,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/phantasy-star-iv-the-end-of-the-millennium/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne RPG na Mega Drive, zamykające cykl Phantasy Star. Chaz i jego przyjaciele walczą ze złem."
   },
   {
     "game": "Pharaoh: A New Era",
@@ -3621,7 +3870,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pharaoh-a-new-era/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strategia, w której budujesz miasto w starożytnym Egipcie."
   },
   {
     "game": "Pięć Magicznych Amuletów",
@@ -3633,7 +3883,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/piec-magicznych-amuletow/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Polska gra przygodowa z zagadkami i poszukiwaniem magicznych artefaktów."
   },
   {
     "game": "Planet Coaster",
@@ -3646,7 +3897,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/planet-coaster/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Budujesz własny park rozrywki. Projektujesz kolejki górskie, ścieżki i atrakcje, a także dbasz o gości."
   },
   {
     "game": "Planetarian HD",
@@ -3659,7 +3911,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/planetarian-hd/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Krótka powieść wizualna o robocie opiekującym się opuszczonym planetarium i człowieku, który je odwiedza."
   },
   {
     "game": "Pocket Mirror – GoldenerTraum",
@@ -3685,7 +3938,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-emerald/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Trzecia generacja Pokémonów. Trener z regionu Hoenn zbiera potwory i rywalizuje o tytuł mistrza."
   },
   {
     "game": "Pokemon Fire Red",
@@ -3698,7 +3952,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-fire-red/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja pierwszych Pokémonów. Młody trener zbiera potwory w regionie Kanto."
   },
   {
     "game": "Pokémon HeartGold",
@@ -3711,7 +3966,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-heartgold/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja drugiej generacji Pokémonów. Wyruszasz w podróż po regionie Johto."
   },
   {
     "game": "Pokémon Mystery Dungeon: Explorers Of Time",
@@ -3724,7 +3980,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-mystery-dungeon-explorers-of-time/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Spin-off serii Pokémon, w którym jako Pokémon eksplorujesz losowo generowane lochy."
   },
   {
     "game": "Pokémon Platinum",
@@ -3737,7 +3994,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-platinum/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rozszerzona wersja gry z regionu Sinnoh, z nowymi lokacjami i poprawkami."
   },
   {
     "game": "Pokémon Red",
@@ -3750,7 +4008,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-red/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pierwsza gra z serii Pokémon. Młody trener zbiera potwory i rywalizuje o tytuł mistrza."
   },
   {
     "game": "Pokémon SoulSilver",
@@ -3763,7 +4022,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pokemon-soulsilver/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja drugiej generacji Pokémonów. Wyruszasz w podróż po regionie Johto i Kanto."
   },
   {
     "game": "Prince of Persia",
@@ -3776,7 +4036,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prince-of-persia/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna platformówka, w której młody bohater ma godzinę, by wydostać się z lochów i uratować księżniczkę."
   },
   {
     "game": "Prince of Persia: The Forgotten Sands",
@@ -3789,7 +4050,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prince-of-persia-the-forgotten-sands/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Książę z Persji walczy o ocalenie królestwa w wersji na konsolę DS."
   },
   {
     "game": "Prison Tycoon 2: Maximum Security",
@@ -3802,7 +4064,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/prison-tycoon-2-maximum-security/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Symulacja zarządzania więzieniem. Budujesz zakład karny, zatrudniasz personel i dbasz o więźniów."
   },
   {
     "game": "Psychonauts",
@@ -3815,7 +4078,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/psychonauts/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Młody Raz trafia do obozu dla ludzi z mocami psychicznymi. Platformówka, w której wchodzisz do umysłów innych bohaterów."
   },
   {
     "game": "Psychotoxic",
@@ -3841,7 +4105,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/pt-boats/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Symulacja walk morskich z czasów II wojny światowej. Dowodzisz kutrami torpedowymi."
   },
   {
     "game": "Quantum Break",
@@ -3854,7 +4119,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/quantum-break/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji, w której kontrolujesz czas i walczysz z korporacją. Całość przeplatana serialem aktorskim."
   },
   {
     "game": "Ranma 1/2: Treasure of The Red Cat Gang",
@@ -3866,7 +4132,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ranma-12-treasure-of-the-red-cat-gang/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bijatyka oparta na mandze „Ranma ½\". Bohater, zmieniający płeć pod wpływem wody, walczy z przeciwnikami."
   },
   {
     "game": "Rayman",
@@ -3879,7 +4146,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rayman/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka, w której Rayman, bezręki bohater, ratuje swoich przyjaciół z rąk Pana Mroku."
   },
   {
     "game": "Real Kanojo",
@@ -3891,7 +4159,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/real-kanojo/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z elementami japońskiej powieści wizualnej, w której nawiązujesz relacje z bohaterkami."
   },
   {
     "game": "RealRTCW",
@@ -3904,7 +4173,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/realrtcw/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka z czasów II wojny światowej, rozwinięcie klasycznego Return to Castle Wolfenstein."
   },
   {
     "game": "Resident Evil 0 HD Remaster",
@@ -3918,7 +4188,8 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-0-hd-remaster/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "lore": "https://lorespeak.pl/games/resident-evil-0-hd-remaster"
+    "lore": "https://lorespeak.pl/games/resident-evil-0-hd-remaster",
+    "opis": "Przedhistoria Resident Evil. Rebecca Chambers i Billy Coen trafiają do pociągu pełnego zombie."
   },
   {
     "game": "Resident Evil Code: Veronica [PS2]",
@@ -3931,7 +4202,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-code-veronica-ps2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Claire Redfield szuka brata Chrisa, trafiając na wyspę Rockfort, a później na Antarktydę."
   },
   {
     "game": "Resident Evil HD Remaster",
@@ -3943,7 +4215,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-hd-remaster/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja pierwszego Resident Evil w rezydencji Spencera. Chris lub Jill muszą przeżyć wśród zombie."
   },
   {
     "game": "Resident Evil Mercenaries 3D [3DS]",
@@ -3956,7 +4229,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-mercenaries-3d-3ds/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji ze świata Resident Evil, w której zdobywasz punkty, eliminując przeciwników na czas."
   },
   {
     "game": "Resident Evil Outbreak File 2 [PS2]",
@@ -3969,7 +4243,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-outbreak-file-2-ps2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zespół ocalałych próbuje uciec z miasta ogarniętego zarazą. Gra akcji w trybie sieciowym."
   },
   {
     "game": "Resident Evil Survivor 2: Code Veronica [PS2]",
@@ -3982,7 +4257,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-2-code-veronica-ps2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Code: Veronica w stylu strzelanki z lekkim pistoletem."
   },
   {
     "game": "Resident Evil Survivor [PSX]",
@@ -3995,7 +4271,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-psx/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Spin-off serii Resident Evil z widokiem pierwszoosobowym. Przeszukujesz tajemniczą posiadłość i strzelasz do wrogów."
   },
   {
     "game": "Return to Monkey Island",
@@ -4008,7 +4285,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/return-to-monkey-island/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Powrót Guybrusha Threepwooda w nowej, ręcznie rysowanej przygodówce. Pirat wraca na Wyspę Małp."
   },
   {
     "game": "Revelations, The Demon Slayer",
@@ -4021,7 +4299,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/revelations-the-demon-slayer/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra RPG, w której walczysz z demonami, a przeciwników można rekrutować do swojej drużyny."
   },
   {
     "game": "Road Fighter",
@@ -4034,7 +4313,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/road-fighter/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra wyścigowa z widokiem z góry."
   },
   {
     "game": "Rockin' Kats",
@@ -4047,7 +4327,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rockin-kats/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z kotem Rockin' Kats, który walczy z bandytami w mieście."
   },
   {
     "game": "ROX [PSX]",
@@ -4073,7 +4354,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rune/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Akcja RPG w świecie wikingów. Bohater przemierza krainę pełną potworów i bogów."
   },
   {
     "game": "Ryse: Son of Rome",
@@ -4086,7 +4368,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ryse-son-of-rome/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Rzymski wojownik Marius Titus walczy w armii Imperium. Gra akcji z widowiskowymi egzekucjami."
   },
   {
     "game": "Safecracker",
@@ -4099,7 +4382,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/safecracker/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra logiczna, w której rozwiązujesz zagadki i otwierasz sejfy."
   },
   {
     "game": "Sailor Moon Dating Sim",
@@ -4111,7 +4395,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-dating-sim/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z elementami powieści wizualnej, w której poznajesz bohaterki z „Czarodziejki z Księżyca\"."
   },
   {
     "game": "Sailor Moon Dating Simulator: Sailor Saturn",
@@ -4123,7 +4408,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-dating-simulator-sailor-saturn/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z elementami powieści wizualnej z udziałem Sailor Saturn."
   },
   {
     "game": "Sailor Moon: Another Story",
@@ -4136,7 +4422,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-moon-another-story/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG na SNES-a oparte na „Czarodziejce z Księżyca\". Wojowniczki ruszają w nową przygodę."
   },
   {
     "game": "Sailor Venus Dating Sim",
@@ -4148,7 +4435,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sailor-venus-dating-sim/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z elementami powieści wizualnej z udziałem Sailor Venus."
   },
   {
     "game": "Sam & Max 201: Ice Station Santa",
@@ -4161,7 +4449,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-201-ice-station-santa/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka epizodowa Telltale Games o parze detektywów-wariatów, psie Samie i króliku Maksie."
   },
   {
     "game": "Sam & Max 202: Czarny Blues Moai (Moai Better Blues)",
@@ -4174,7 +4463,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-202/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów rozwiązuje kolejne dziwne sprawy."
   },
   {
     "game": "Sam & Max 203: Noc żwawych trupów (Night of the Raving Dead)",
@@ -4187,7 +4477,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-203/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizod drugiego sezonu Sam & Max. Dziwaczni detektywi stają przed zombiakowatym zagrożeniem."
   },
   {
     "game": "Sam & Max 204: Powrót do teraźniejszości (Chariots of the Dogs)",
@@ -4200,7 +4491,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-204/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów wraca do teraźniejszości."
   },
   {
     "game": "Sam & Max: Season 2 – What's New, Beelzebub?",
@@ -4213,7 +4505,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sam-max-season-2-whats-new-beelzebub/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Drugi sezon epizodowej przygodówki Sam & Max. Para detektywów wpada w kolejne szalone tarapaty."
   },
   {
     "game": "Sanitarium",
@@ -4226,7 +4519,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sanitarium/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka grozy. Bohater budzi się w szpitalu psychiatrycznym i próbuje odkryć, kim jest."
   },
   {
     "game": "Serious Sam 2",
@@ -4239,7 +4533,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/serious-sam-2/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja Serious Sama. Bohater walczy z hordami potworów w pełnych humoru, ogromnych bitwach."
   },
   {
     "game": "Shadow of Comet",
@@ -4252,7 +4547,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/shadow-of-comet/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodowa gra w klimacie grozy, osadzona w miasteczku nawiedzonym przez kometę."
   },
   {
     "game": "Silent Hill",
@@ -4265,7 +4561,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Harry Mason szuka zaginionej córki w ponurym miasteczku Silent Hill. Klasyczny horror psychologiczny."
   },
   {
     "game": "Silent Hill 2 – Wersja reżyserska",
@@ -4278,7 +4575,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-wr/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja reżyserska Silent Hill 2. James Sunderland przyjeżdża do miasteczka po liście od zmarłej żony."
   },
   {
     "game": "Silent Hill 2 Enhanced Edition",
@@ -4291,7 +4589,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-ee/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Poprawiona wersja Silent Hill 2, w której James Sunderland szuka swojej zmarłej żony w mglistym miasteczku."
   },
   {
     "game": "Silent Hill 2 [x]",
@@ -4304,7 +4603,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-x-2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym."
   },
   {
     "game": "Silent Hill 3",
@@ -4317,7 +4617,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-3/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Heather Mason trafia w sam środek koszmaru. Trzecia część serii Silent Hill."
   },
   {
     "game": "Silent Hill 4: The Room",
@@ -4330,7 +4631,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-4-the-room/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Henry Townshend zostaje uwięziony w swoim mieszkaniu i odkrywa przejście do mrocznych miejsc."
   },
   {
     "game": "Silent Hill: Shattered Memories [PSP]",
@@ -4343,7 +4645,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-shattered-memories-psp/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Shattered Memories na PSP. Harry Mason szuka córki, a rozmowy z psychologiem zmieniają przebieg gry."
   },
   {
     "game": "Snake Pass",
@@ -4356,7 +4659,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/snake-pass/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka z wężem, który przemierza zadziwiające poziomy."
   },
   {
     "game": "Soldier of Fortune",
@@ -4368,7 +4672,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/soldier-of-fortune/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka znana z realistycznego systemu obrażeń. Najemnik walczy z terrorystami."
   },
   {
     "game": "SOMA",
@@ -4381,7 +4686,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/soma/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror science fiction w podwodnej stacji badawczej. Pytanie o to, czym jest świadomość."
   },
   {
     "game": "Spider-Man – Return of the Sinister Six",
@@ -4394,7 +4700,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/spider-man-return-of-the-sinister-six/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka, w której Spider-Man staje do walki z grupą złoczyńców."
   },
   {
     "game": "Star Wars Jedi Knight II: Jedi Outcast",
@@ -4407,7 +4714,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-ii-jedi-outcast/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kyle Katarn wraca do mocy Jedi. Strzelanka z fabułą w świecie Gwiezdnych Wojen."
   },
   {
     "game": "Star Wars Jedi Knight II: Jedi Outcast (z dubbingiem)",
@@ -4420,7 +4728,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-ii-jedi-outcast-z-dubbingiem/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kyle Katarn wraca do mocy Jedi. Strzelanka z fabułą w świecie Gwiezdnych Wojen."
   },
   {
     "game": "Star Wars Jedi Knight: Dark Forces 2",
@@ -4433,7 +4742,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-dark-forces-2/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kyle Katarn staje do walki z Mrocznymi Jedi. Strzelanka z walkami na miecze świetlne."
   },
   {
     "game": "Star Wars Jedi Knight: Mysteries of the Sith",
@@ -4446,7 +4756,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-mysteries-of-the-sith/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dodatek do Jedi Knight z nową historią Kyle'a Katarna i Mary Jade."
   },
   {
     "game": "Stories Untold",
@@ -4459,7 +4770,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/stories-untold/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror psychologiczny, w którym wchodzisz w osobliwe, niepokojące sytuacje."
   },
   {
     "game": "Stubbs the Zombie Rebel Without a Pulse",
@@ -4472,7 +4784,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/stubbs-the-zombie-rebel-without-a-pulse/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zombie Stubbs wraca z grobu i rusza w żartobliwą wędrówkę po mieście. Humorystyczna gra akcji."
   },
   {
     "game": "Suikoden",
@@ -4485,7 +4798,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/suikoden/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne japońskie RPG, w którym zbierasz drużynę 108 bohaterów i walczysz z imperium."
   },
   {
     "game": "Sunblaze",
@@ -4510,7 +4824,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-back-to-the-future-part-2/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra platformowa oparta na filmie „Powrót do przyszłości II\"."
   },
   {
     "game": "Super Contra",
@@ -4523,7 +4838,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-contra/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna strzelanka z widokiem z boku. Komandosi niszczą obcych w kolejnych poziomach."
   },
   {
     "game": "Super Mario Bros.",
@@ -4536,7 +4852,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna platformówka Nintendo. Mario rusza ratować księżniczkę Peach z rąk Bowsera."
   },
   {
     "game": "Super Mario Bros. 2",
@@ -4549,7 +4866,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros-2/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja przygód Mario, w której można grać różnymi postaciami o odmiennych umiejętnościach."
   },
   {
     "game": "Super Mario Bros. 3",
@@ -4562,7 +4880,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/super-mario-bros-3/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Mario przemierza świat pełen przeszkód i bossów. Jedna z najbardziej znanych platformówek wszech czasów."
   },
   {
     "game": "Super Space Pug",
@@ -4601,7 +4920,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/sword-of-mana/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Akcja RPG z serii Mana na konsolę przenośną. Bohater wyrusza w przygodę przez magiczne lasy."
   },
   {
     "game": "Sword&Soldiers",
@@ -4614,7 +4934,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/swordsoldiers/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strategia czasu rzeczywistego w widoku z boku, w której prowadzisz wojska różnych cywilizacji."
   },
   {
     "game": "Syberia",
@@ -4627,7 +4948,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/syberia/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka, w której prawniczka Kate Walker trafia w sam środek tajemniczej podróży. Wersja na DS."
   },
   {
     "game": "Tactics Ogre – The Knight of Lodis",
@@ -4640,7 +4962,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tactics-ogre-the-knight-of-lodis/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Taktyczne RPG na GBA, w którym dowodzisz drużyną na planszy."
   },
   {
     "game": "Tales from the Borderlands",
@@ -4653,7 +4976,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-from-the-borderlands/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizodowa przygoda w świecie Borderlands, opowiedziana przez Telltale Games."
   },
   {
     "game": "Tales of Destiny",
@@ -4666,7 +4990,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-destiny/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczne japońskie RPG z serii Tales of. Bohater wyrusza w podróż pełną magii i walki."
   },
   {
     "game": "Tales of Monkey Island",
@@ -4679,7 +5004,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-monkey-island-rise-of-the-pirate-god/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pięć epizodów przygód Guybrusha Threepwooda. Pirat znów staje do walki z LeChuckiem."
   },
   {
     "game": "Tales of Phantasia",
@@ -4692,7 +5018,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tales-of-phantasia/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wczesna część serii Tales of, w której bohaterowie wyruszają w podróż, by pokonać zło."
   },
   {
     "game": "Tank 1990",
@@ -4705,7 +5032,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tank-1990/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Czołgowa gra zręcznościowa, w której bronisz swojej bazy."
   },
   {
     "game": "Tekken 3 [PSX]",
@@ -4718,7 +5046,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tekken-3-psx/",
     "genre": "Bijatyka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bijatyka 3D z postaciami o różnych stylach walki. Trzecia część serii na PlayStation."
   },
   {
     "game": "Tenchi Muyo RPG",
@@ -4731,7 +5060,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tenchi-muyo-rpg/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG na SNES-a oparte na anime „Tenchi Muyo\"."
   },
   {
     "game": "Tenchu Stealth Assassins",
@@ -4744,7 +5074,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tenchu-stealth-assassins/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra skradanka na PlayStation. Wcielasz się w ninja, który likwiduje wrogów w ciszy."
   },
   {
     "game": "Tennis",
@@ -4757,7 +5088,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tennis/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra sportowa. Pojedynki tenisowe w prostej grafice."
   },
   {
     "game": "Terminator 2 – Judgment Day",
@@ -4770,7 +5102,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/terminator-2-judgment-day/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji na podstawie filmu „Terminator 2\"."
   },
   {
     "game": "Terranigma",
@@ -4783,7 +5116,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/terranigma/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG na SNES-a. Chłopiec Ark wyrusza w podróż, by ożywić świat."
   },
   {
     "game": "Tetris",
@@ -4796,7 +5130,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tetris/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra logiczna, w której układasz spadające klocki."
   },
   {
     "game": "The Addams Family",
@@ -4809,7 +5144,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-addams-family/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka na podstawie „Rodziny Addamsów\"."
   },
   {
     "game": "The Adventures of Rad Gravity",
@@ -4822,7 +5158,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-adventures-of-rad-gravity/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka science fiction o kosmicznym bohaterze."
   },
   {
     "game": "The Awesome Adventures of Captain Spirit",
@@ -4836,7 +5173,8 @@
     "link": "https://grajpopolsku.pl/download/the-awesome-adventures-of-captain-spirit/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "lore": "https://lorespeak.pl/games/the-awesome-adventures-of-captain-spirit"
+    "lore": "https://lorespeak.pl/games/the-awesome-adventures-of-captain-spirit",
+    "opis": "Krótka przygoda ze świata Life is Strange, w której chłopiec wymyśla własną superbohaterską historię."
   },
   {
     "game": "The Beast Within: A Gabriel Knight Mystery",
@@ -4849,7 +5187,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-beast-within-a-gabriel-knight-mystery/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja serii Gabriel Knight, w której bohater zmaga się z wilkołakami w Bawarii."
   },
   {
     "game": "The Count Lucanor",
@@ -4862,7 +5201,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-count-lucanor/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygoda w mrocznej atmosferze, w której chłopiec poznaje mroczne tajemnice zamku."
   },
   {
     "game": "The Dark Eye: Demonicon",
@@ -4875,7 +5215,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-eye-demonicon/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "RPG w świecie Mrocznego Oka z mocnym wpływem wyborów."
   },
   {
     "game": "The Dark Pictures Anthology – House of Ashes",
@@ -4888,7 +5229,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-house-of-ashes/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Horror kooperacyjny od Supermassive Games. Żołnierze i agenci CIA trafiają pod ziemię w Iraku i odkrywają starożytną grozę."
   },
   {
     "game": "The Dark Pictures Anthology – Little Hope",
@@ -4901,7 +5243,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-little-hope/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Interaktywny horror od Supermassive Games. Grupa ludzi utyka w mglistym miasteczku Little Hope, a o ich losach decydują wybory."
   },
   {
     "game": "The Dark Pictures Anthology – Man of Medan",
@@ -4914,7 +5257,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-man-of-medan/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Interaktywny horror od Supermassive Games. Grupa nurków trafia na opuszczony statek widmo, a o życiu bohaterów decydują twoje wybory."
   },
   {
     "game": "The Dark Pictures Anthology: The Devil in Me",
@@ -4927,7 +5271,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-the-devil-in-me/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Interaktywny horror od Supermassive Games. Ekipa dokumentalistów trafia do replik hotelu seryjnego mordercy."
   },
   {
     "game": "The Dig",
@@ -4940,7 +5285,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-dig/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka science fiction, w której grupa astronautów trafia na obcą planetę."
   },
   {
     "game": "The Legend of Zelda",
@@ -4953,7 +5299,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/948/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pierwsza część serii. Link rusza do podziemi, by ocalić księżniczkę Zeldę."
   },
   {
     "game": "The Legend of Zelda Majora's Mask",
@@ -4966,7 +5313,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/616/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link ma trzy dni, by powstrzymać upadający księżyc. Jedna z najlepszych części serii Zelda."
   },
   {
     "game": "The Legend of Zelda Ocarina of Time",
@@ -4979,7 +5327,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-ocarina-of-time/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link podróżuje w czasie, by pokonać Ganondorfa. Klasyka serii Zelda na Nintendo 64."
   },
   {
     "game": "The Legend of Zelda, Link's Awakening DX",
@@ -4992,7 +5341,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-links-awakening-dx/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link budzi się na wyspie Koholint. Zelda na konsolę przenośną."
   },
   {
     "game": "The Legend of Zelda: The Minish Cap",
@@ -5005,7 +5355,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-the-minish-cap/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link i magiczny kapelusz Ezlo przemierzają krainę, by ocalić księżniczkę."
   },
   {
     "game": "The Little Mermaid",
@@ -5017,7 +5368,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-little-mermaid/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka na podstawie filmu Disneya, w której Ariel wyrusza w morskie przygody."
   },
   {
     "game": "The Room",
@@ -5030,7 +5382,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-room/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra logiczna, w której rozwiązujesz zagadki w tajemniczych, ozdobnych skrzyniach."
   },
   {
     "game": "The Room 2",
@@ -5043,7 +5396,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-room-2/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja zagadkowej gry The Room. Bohater odkrywa kolejne tajemnice ukryte w skrzyniach."
   },
   {
     "game": "The Secret of Monkey Island",
@@ -5056,7 +5410,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-secret-of-monkey-island/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Guybrush Threepwood marzy o tym, by zostać piratem. Klasyczna przygodówka LucasArts."
   },
   {
     "game": "The Secret of Monkey Island: Special Edition",
@@ -5069,7 +5424,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-secret-of-monkey-island-special-edition/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja pierwszej części Monkey Island z nową grafiką i dźwiękiem."
   },
   {
     "game": "The Silent Age",
@@ -5082,7 +5438,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-silent-age/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka z elementami podróży w czasie, w której bohater próbuje uratować przyszłość."
   },
   {
     "game": "The Simpsons Hit & Run",
@@ -5095,7 +5452,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-simpsons-hit-run/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji w świecie Simpsonów, w której przemierzasz Springfield i wykonujesz zadania."
   },
   {
     "game": "The Walking Dead Season 1",
@@ -5108,7 +5466,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-season-1/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizodowa przygoda Telltale. Lee Everett i mała Clementine próbują przetrwać wśród zombie."
   },
   {
     "game": "The Walking Dead Season 2",
@@ -5121,7 +5480,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-season-2/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Druga część przygód Clementine, która musi przeżyć w świecie pełnym zombie."
   },
   {
     "game": "The Walking Dead: A New Frontier",
@@ -5134,7 +5494,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-a-new-frontier/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Nowa opowieść ze świata The Walking Dead, w której losy Javiera i jego rodziny się komplikują."
   },
   {
     "game": "The Walking Dead: Michonne",
@@ -5147,7 +5508,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-michonne/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Krótka historia Michonne ze świata The Walking Dead."
   },
   {
     "game": "The Walking Dead: Survival Instinct",
@@ -5160,7 +5522,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/the-walking-dead-survival-instinct/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji z zombie, w której bracia Dixon próbują przetrwać apokalipsę."
   },
   {
     "game": "The Walking Dead: The Final Season",
@@ -5173,7 +5536,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/twdtfs/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zakończenie historii Clementine w serii The Walking Dead od Telltale."
   },
   {
     "game": "The Wolf Among Us Season 1",
@@ -5186,7 +5550,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/twau-season-1/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Bigby Wolf, szeryf z baśniowego świata Fables, rozwiązuje kryminalną zagadkę w Nowym Jorku."
   },
   {
     "game": "The Yakyuuken Special [PSX]",
@@ -5211,7 +5576,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/theme-hospital/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Zarządzasz szpitalem pełnym dziwacznych chorób. Ekonomiczna symulacja z humorem."
   },
   {
     "game": "Thief & Sword: Another Stories – Przygody Raiki",
@@ -5237,7 +5603,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/titp_gog/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra strategiczna, w której jako szef policji w mieście ogarniętym korupcją musisz podejmować trudne decyzje."
   },
   {
     "game": "This is the Police (Steam)",
@@ -5250,7 +5617,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/titp_steam/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra strategiczna, w której jako szef policji w mieście ogarniętym korupcją musisz podejmować trudne decyzje."
   },
   {
     "game": "Time Hollow",
@@ -5263,7 +5631,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/time-hollow/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka na DS, w której bohater wykorzystuje tajemnicze przejścia, by zmienić przeszłość."
   },
   {
     "game": "Tiny Toon Adventures",
@@ -5276,7 +5645,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tiny-toon-adventures/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka na podstawie serialu animowanego „Animki\"."
   },
   {
     "game": "Tom & Jerry",
@@ -5289,7 +5659,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tom-jerry-and-tuffy/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra z Tomem i Jerrym, w której kot goni myszkę w serii zabawnych plansz."
   },
   {
     "game": "Tony Hawk's Pro Skater HD",
@@ -5302,7 +5673,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/tony-hawks-pro-skater-hd/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Odświeżona wersja klasycznej gry o deskorolce."
   },
   {
     "game": "Top Gun",
@@ -5315,7 +5687,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/top-gun/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji na podstawie filmu „Top Gun\", w której pilot walczy w powietrzu."
   },
   {
     "game": "Toy Story 3 The Video Game",
@@ -5328,7 +5701,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/toy-story-3-the-video-game/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji na podstawie filmu „Toy Story 3\"."
   },
   {
     "game": "Ultimate Basketball",
@@ -5341,7 +5715,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/ultimate-basketball/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra sportowa z koszykówką, w której drużyny rywalizują o mistrzostwo."
   },
   {
     "game": "Unreal",
@@ -5354,7 +5729,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka pierwszoosobowa, w której trafiasz na obcą planetę i walczysz z kosmitami."
   },
   {
     "game": "Unreal Tournament",
@@ -5367,7 +5743,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal-tournament/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka nastawiona na sieciowe pojedynki, z nowoczesną bronią i różnymi trybami."
   },
   {
     "game": "Unreal: Return to NaPali",
@@ -5380,7 +5757,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/unreal-return-to-napali/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Dodatek do Unreal z nowymi misjami i przeciwnikami."
   },
   {
     "game": "Urban Chaos",
@@ -5393,7 +5771,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/urban-chaos/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka, w której walczysz z terrorystami w mieście."
   },
   {
     "game": "Velvet Assassin",
@@ -5406,7 +5785,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/velvet-assassin/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra akcji, w której kobieta-szpieg walczy z niemieckimi siłami w czasie II wojny światowej."
   },
   {
     "game": "Vietcong + Fist Alpha + Red Dawn",
@@ -5419,7 +5799,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/vietcong-fist-alpha-red-dawn/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pakiet gier z serii Vietcong, w których walczysz w wietnamskiej dżungli."
   },
   {
     "game": "Vietcong 2",
@@ -5432,7 +5813,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/vietcong-2/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Kontynuacja strzelanki o wojnie w Wietnamie, z nowymi misjami."
   },
   {
     "game": "Villgust",
@@ -5457,7 +5839,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/waking-mars/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Astrobiolog bada Marsa i odkrywa tajemnice ukryte w obcej cywilizacji. Przygoda z elementami platformówki."
   },
   {
     "game": "Wallace & Gromit's Grand Adventures",
@@ -5470,7 +5853,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wallace-gromits-grand-adventures/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epizodowa przygodówka Telltale, w której Wallace i jego pies Gromit wpadają w tarapaty."
   },
   {
     "game": "WarCraft II Battle.net Edition",
@@ -5483,7 +5867,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/warcraft-ii-battle-net-edition/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna strategia czasu rzeczywistego od Blizzarda. Walczysz o panowanie nad światem."
   },
   {
     "game": "Warcraft: Orcs & Humans",
@@ -5496,7 +5881,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/warcraft/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Pierwsza strategia Blizzarda z serii WarCraft. Ludzie walczą z orkami."
   },
   {
     "game": "Wings of Fury",
@@ -5509,7 +5895,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wings-of-fury/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra lotnicza na konsolę przenośną, w której pilotujesz samolot."
   },
   {
     "game": "Wonder Project J",
@@ -5535,7 +5922,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/worms-armageddon/",
     "genre": "Inne",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna gra z uzbrojonymi robakami, które wzajemnie się zwalczają."
   },
   {
     "game": "WRATH: Aeon of Ruin",
@@ -5548,7 +5936,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wrath-aeon-of-ruin/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka w klimacie nowoczesnej fantastyki, utrzymana w stylu klasycznych gier."
   },
   {
     "game": "Xenogears",
@@ -5561,7 +5950,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/xenogears/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Epickie japońskie RPG. Młodzieniec Fei wpada w sam środek konfliktu z boskimi istotami."
   },
   {
     "game": "Xenonauts",
@@ -5574,7 +5964,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/xenonauts/",
     "genre": "Strategia",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strategia taktyczna, w której dowodzisz oddziałami do obrony Ziemi przed kosmitami."
   },
   {
     "game": "Yooka-Laylee",
@@ -5587,7 +5978,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/yooka-laylee/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Platformówka w stylu klasycznych gier 3D. Kameleon Yooka i nietoperz Laylee zbierają strony książek."
   },
   {
     "game": "Yume Nikki",
@@ -5600,7 +5992,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/yume-nikki/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra eksploracyjna, w której śnisz i odkrywasz osobliwe, niepokojące światy."
   },
   {
     "game": "Yuusha kara wa Nigerarenai",
@@ -5625,7 +6018,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zak-mckracken-and-the-alien-mindbenders/",
     "genre": "Przygodowa",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Przygodówka LucasArts. Dziennikarz Zak McKracken odkrywa kosmitów w rządzących elitach."
   },
   {
     "game": "Zelda II – The Adventure of Link",
@@ -5638,7 +6032,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zelda-ii-the-adventure-of-link/",
     "genre": "Akcja / platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Link wyrusza, by odnaleźć trzy kryształy i uwolnić uśpioną księżniczkę."
   },
   {
     "game": "Zero Wing",
@@ -5651,7 +6046,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zero-wing/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Klasyczna strzelanka z widokiem z boku. Znany z memu „All your base are belong to us\"."
   },
   {
     "game": "Zombiez Seeker",
@@ -5677,7 +6073,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-ps2/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym."
   },
   {
     "game": "Silent Hill 2: Director's Cut",
@@ -5690,7 +6087,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/silent-hill-2-directors-cut/",
     "genre": "Horror",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wersja reżyserska Silent Hill 2 na konsolę, z dodatkowymi scenami."
   },
   {
     "game": "Castlevania Belmont's Curse",
@@ -5718,7 +6116,8 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "img": "https://cdn2.steamgriddb.com/thumb/ae758fbcbd5bd841516c53b3c08ebc6f.jpg",
-    "upd": "2026-10-28"
+    "upd": "2026-10-28",
+    "opis": "Link w Hyrule, który obejmuje teraz także niebo i podziemia. Kontynuacja Breath of the Wild z możliwością łączenia przedmiotów."
   },
   {
     "game": "Metro Exodus",
@@ -5739,7 +6138,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/eb7ae212773e953459a3ae1b436decd8.jpg",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Mroczne RPG w świecie legend arturiańskich. Trafiasz na Avalon i próbujesz przetrwać w klimatycznym, niebezpiecznym świecie."
   },
   {
     "game": "South of Midnight",
@@ -5749,7 +6149,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/f7d09ee4e7b2d5f7d700c47286b4525b.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Hazel, młoda kobieta z amerykańskiego Południa, trafia do świata opartego na lokalnych legendach. Gra akcji z baśniowym klimatem."
   },
   {
     "game": "Grand Theft Auto: Vice City",
@@ -5773,7 +6174,8 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn2.steamgriddb.com/thumb/ae983e1129c0d1277f26d091408f1656.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ae983e1129c0d1277f26d091408f1656.jpg",
+    "opis": "Horror psychologiczny z Lasem Black Hills w tle. Były policjant Ellis szuka zaginionego chłopca i walczy z własnymi koszmarami."
   },
   {
     "game": "Valor Mortis",
@@ -5793,7 +6195,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/2c1e71c74beab252aee57342d169293b.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gang Świętych z Ulicy wraca na ulice Steelport. Szalona, przerysowana gra akcji z otwartym światem."
   },
   {
     "game": "Red Dead Redemption",
@@ -5824,7 +6227,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/19ab290d46ddf0ede7f781b5177c657e.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Gra akcji w świecie ogarniętym wojną domową, w którym nie ma mapy ani znaczników zadań. Zagadkę swojego pochodzenia rozwiązujesz sam."
   },
   {
     "game": "Hades",
@@ -5858,7 +6262,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/84bc514df9a307eb6cb2752b5e533170.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Zakazana Strefa wokół Czarnobyla pełna tajemnic i potworów. Gra łączy horror, RPG i elementy survivalu."
   },
   {
     "game": "Gears of War: E-Day",
@@ -5891,7 +6296,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/1a78e0623f2eeb86a5d6eaf36739bedf.jpg",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "opis": "Gra przetrwania na pustynnej planecie Arrakis, osadzona w świecie „Diuny\". Budujesz bazę, zbierasz przyprawę i stajesz do walki z piaskowymi czerwiami."
   },
   {
     "game": "Watch_Dogs 2",
@@ -5932,7 +6338,8 @@
     "lore": "https://lorespeak.pl/games/silent-hill-townfall",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Nowa odsłona serii Silent Hill od studia Screen Burn."
   },
   {
     "game": "Onimusha: Way of the Sword",
@@ -5945,7 +6352,8 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn2.steamgriddb.com/thumb/0fd03fb63ec8cb54c699d064f55ff6cb.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/0fd03fb63ec8cb54c699d064f55ff6cb.png",
+    "opis": "Gra akcji z elementami samurajskimi. Miyamoto Musashi walczy z demonami w feudalnej Japonii."
   },
   {
     "game": "STAR WARS Zero Company",
@@ -5965,7 +6373,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/f56b0fc71e17fa72a6f8463788aae5a1.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Michael Becket, żołnierz, walczy z nadprzyrodzonymi zjawiskami w Armacham. Strzelanka z elementami horroru."
   },
   {
     "game": "The Sinking City Remastered",
@@ -5986,7 +6395,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/836fc55095976e7a7c4df140be0ee93e.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror psychologiczny w Japonii lat 60. Hinako walczy z koszmarem w swoim rodzinnym miasteczku."
   },
   {
     "game": "PAYDAY 3",
@@ -5996,7 +6406,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/13c39f469581695e31fb4ae2fedaef55.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Kooperacyjna strzelanka o skokach na banki, w której cała ekipa wspólnie planuje i wykonuje napady."
   },
   {
     "game": "BLACKTAIL",
@@ -6006,7 +6417,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/dd80ef0436cb2dd91c5e30f4adaaa157.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Gra akcji RPG o młodej dziewczynie, która wchodzi w świat starych bajek i mrocznej magii."
   },
   {
     "game": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
@@ -6059,7 +6471,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/bdc31e3996f71d8f34782dda5ea48511.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Trzecia część serii F.E.A.R., w której można grać kooperacyjnie. Strzelanka z elementami horroru."
   },
   {
     "game": "Mortal Shell II",
@@ -6089,7 +6502,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/4c4e9d5d540537b6b99b0c741f909ecb.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Kontynuacja akcji RPG z wyniszczającymi pojedynkami. Walczysz w futurystycznym mieście, odcinając i zbierając części ciał wrogów."
   },
   {
     "game": "The Surge",
@@ -6099,7 +6513,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/a4ae4b5c818128c1be44da52102a4fd8.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Akcja RPG w świecie przyszłości. Wojownik w egzoszkielecie walczy z potężnymi przeciwnikami i zbiera ich części."
   },
   {
     "game": "Dragon Age II: Ultimate Edition",
@@ -6141,7 +6556,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/5b23077b16d0623100496becc0951c2b.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Wiktoriański Londyn, rodzeństwo Frye walczy o odzyskanie miasta z rąk Templariuszy. Gra akcji z serii Assassin's Creed."
   },
   {
     "game": "Dispatch",
@@ -6151,7 +6567,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/33091a1cbb639483231e7bd0a030d6f9.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Epizodowa gra o superbohaterach, w której zarządzasz zespołem bohaterów i rozwiązujesz kryzysy. Autorem jest AdHoc Studio."
   },
   {
     "game": "Aliens: Dark Descent",
@@ -6161,7 +6578,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/93d36ccef08f96367b2fbba9bd1f6b79.jpg",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "opis": "Taktyczna gra akcji w świecie Obcych. Dowodzisz oddziałem marines w walce z ksenomorfami."
   },
   {
     "game": "CONTROL Ultimate Edition",
@@ -6227,7 +6645,8 @@
     "lore": "https://lorespeak.pl/games/amnesia-a-machine-for-pigs",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror przygodowy w mrocznej rezydencji. Kontynuacja Amnesia, w której bohater odkrywa makabryczną prawdę."
   },
   {
     "game": "Watch_Dogs",
@@ -6237,7 +6656,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/df827da31d664707840bc6c221f22d72.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Aiden Pearce, haker i mściciel, wykorzystuje miasto jako broń. Gra akcji z otwartym światem."
   },
   {
     "game": "RoboCop: Rogue City",
@@ -6247,7 +6667,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/48901f107c6105f69b6aa84d0a277333.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Policjant z Detroit przejmuje ulice. Strzelanka w świecie filmu „RoboCop\"."
   },
   {
     "game": "Screamer",
@@ -6277,7 +6698,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/5aba61339be8c5667aeb08c044e8f59a.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gra akcji w świecie okupowanej Francji. Irlandzki mechanik Sean Devlin walczy z nazistami."
   },
   {
     "game": "DmC: Devil May Cry",
@@ -6287,7 +6709,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/8f9b3e314e064139921b5c1789d73f50.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Restart serii Devil May Cry. Młody Dante walczy z demonami w widowiskowej grze akcji."
   },
   {
     "game": "Crimson Desert",
@@ -6351,7 +6774,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/22a7338a58e71ec0243bd42bf4fc36c2.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Klockowa przygoda z uniwersum DC. Batman i jego sojusznicy zwiedzają kosmos."
   },
   {
     "game": "Ghostrunner 2",
@@ -6361,7 +6785,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/e67c44a7c4f3df5e075ead56ce4939da.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Dynamiczna gra akcji z elementami parkouru. Cybernetyczny wojownik przemierza ruiny świata i pokonuje przeciwników jednym ciosem."
   },
   {
     "game": "Max Payne 3",
@@ -6382,7 +6807,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9cd0f2a7c17876d6721916f09bce496c.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gra akcji z Jamesem Bondem, młodym agentem. Studio IO Interactive pokazuje początki słynnego szpiega."
   },
   {
     "game": "Forza Horizon 6",
@@ -6412,7 +6838,8 @@
     "lore": "https://lorespeak.pl/games/grand-theft-auto-v-enhanced",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Wersja Grand Theft Auto V z ulepszoną grafiką. Trzech przestępców w Los Santos."
   },
   {
     "game": "Sherlock Holmes The Awakened",
@@ -6422,7 +6849,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9086b5853576939d4842e0d25917eb64.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Nowa wersja przygodówki detektywistycznej. Sherlock Holmes bada kolejną tajemniczą sprawę."
   },
   {
     "game": "Baldur's Gate 3",
@@ -6443,7 +6871,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/08a2ea811c931056eaae56b6c8b2baf3.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror science fiction od twórców serii The Dark Pictures. Załoga statku kosmicznego walczy o życie."
   },
   {
     "game": "Assassin's Creed Mirage",
@@ -6453,7 +6882,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/b00be8459cbd14caad11bf6c22c1dc2b.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Powrót do klasycznej serii, w którym zabójca Basim bada sekret Bagdadu w IX wieku."
   },
   {
     "game": "Assassin's Creed Shadows",
@@ -6463,7 +6893,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/fc16eb2e13f50f6905393c474820bbd8.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Nowa odsłona serii osadzona w feudalnej Japonii. Dwójka bohaterów, shinobi i samuraj, walczy o losy kraju."
   },
   {
     "game": "Resident Evil Village",
@@ -6495,7 +6926,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/bed7768f28d91265822e084b6e8bba77.jpg",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "opis": "Strategia w mrocznym świecie fantasy od polskiego studia. Budujesz osadę i dowodzisz wojownikami w świecie pełnym zagrożeń."
   },
   {
     "game": "LEGO City Undercover",
@@ -6505,7 +6937,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/efe0ef8a495f5639a1d2ccc80684f5d8.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Policjant Chase McCain wraca do miasta pełnego przestępców. Klockowa gra akcji z otwartym światem."
   },
   {
     "game": "PRAGMATA",
@@ -6514,7 +6947,8 @@
     "lore": "https://lorespeak.pl/games/pragmata",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gra akcji science fiction od Capcomu. Agent i android zmagają się z niebezpieczeństwem na Księżycu."
   },
   {
     "game": "MOUSE: P.I. For Hire",
@@ -6524,7 +6958,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/479ce9c547f4764aa6bde6eaa4a7e874.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Strzelanka pierwszoosobowa w klimacie kreskówek z lat 30. Mysz detektyw walczy z gangsterami."
   },
   {
     "game": "A Plague Tale: Innocence",
@@ -6545,7 +6980,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/f605461477eb8b7ab10cb504c0b99488.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Strzelanka w otwartym świecie planety Pandora. Walczysz o przetrwanie z korporacją RDA."
   },
   {
     "game": "Assassin's Creed Valhalla",
@@ -6566,7 +7002,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9c13a4c7f0214eedabdaa1dc5b2a3776.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror psychologiczny, w którym bohaterka widzi dwa światy jednocześnie. Twórcy: Bloober Team."
   },
   {
     "game": "Far Cry 3",
@@ -6587,7 +7024,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/19e8eca3844064c94a2f9c838df1541d.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Ajay Ghale wraca do ojczystego Kyratu i trafia w sam środek wojny domowej. Strzelanka z otwartym światem."
   },
   {
     "game": "Far Cry 5",
@@ -6619,7 +7057,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/f0ce59b6bf8e03499c788c348919a196.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Odświeżona wersja gry o amerykańskiej rewolucji. Connor walczy z Templariuszami."
   },
   {
     "game": "Assassin's Creed IV Black Flag",
@@ -6639,7 +7078,8 @@
     "lore": "https://lorespeak.pl/games/assassins-creed-revelations",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Ezio Auditore kończy swoją opowieść w Konstantynopolu. Gra akcji z serii Assassin's Creed."
   },
   {
     "game": "Assassin's Creed Odyssey",
@@ -6671,7 +7111,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/054aa0c776ea3619ab5edbc4f7b819da.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Klockowa gra akcji z superbohaterami DC. Batman i Robin ratują Gotham."
   },
   {
     "game": "Vampyr",
@@ -6702,7 +7143,8 @@
     "lore": "https://lorespeak.pl/games/resident-evil-6",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Kolejna część serii Resident Evil z trzema równoległymi kampaniami i naciskiem na akcję."
   },
   {
     "game": "Resident Evil 5",
@@ -6711,7 +7153,8 @@
     "lore": "https://lorespeak.pl/games/resident-evil-5",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Chris Redfield trafia do Afryki, by walczyć z nową zarazą. Resident Evil z trybem kooperacji."
   },
   {
     "game": "A Way Out",
@@ -6721,7 +7164,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/b4049e3fde920ab9e5af9f47b292a6c5.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Dwóch więźniów ucieka z więzienia. Gra przygodowa przeznaczona tylko do kooperacji."
   },
   {
     "game": "Outlast 2",
@@ -6731,7 +7175,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/0e44b6bfd005143da5862c20405e6bf1.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror, w którym dziennikarz trafia do wsi opanowanej przez fanatyczną sektę. Gra o przetrwaniu bez broni."
   },
   {
     "game": "Red Dead Redemption 2",
@@ -6752,7 +7197,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/0e5d486614a4d913abb4c08b07febbd2.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Dodatek do Wolfenstein: The New Order. B.J. Blazkowicz walczy z nazistami w okultystycznych wydarzeniach."
   },
   {
     "game": "Wolfenstein II: The New Colossus",
@@ -6816,7 +7262,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/cac06e0d8b26e12f2a96dcc103d1dcb4.jpg",
-    "genre": "Symulacja"
+    "genre": "Symulacja",
+    "opis": "Jan Dolski, jedyny ocalały z katastrofy kosmicznej, tworzy własne alternatywne wersje, by przetrwać na obcej planecie. Polska gra o przetrwaniu i trudnych wyborach."
   },
   {
     "game": "Styx: Shards of Darkness",
@@ -6826,7 +7273,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/52518a4adc7d5764d035a7d3eb7a4bdf.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Goblin Styx wraca w kolejnej skradance. Cichy skrytobójca używa bursztynu i sprytu."
   },
   {
     "game": "Styx: Blades of Greed",
@@ -6836,7 +7284,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/04ad1982b823c2cbe9d0f5e1bb79fab1.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Kolejna przygoda goblina Styxa, który próbuje kraść i zabijać po cichu."
   },
   {
     "game": "Stellar Blade",
@@ -6857,7 +7306,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/795de4fee6c66dcef995a6095c626422.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Gra akcji RPG w alternatywnym Paryżu lat 80. XVIII wieku, w którym walczysz z mechanicznymi wrogami."
   },
   {
     "game": "Shadow Warrior 3: Definitive Edition",
@@ -6867,7 +7317,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/dab71c7baf37132c733f9d7611b4a297.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Lo Wang znów staje do walki z demonami. Dynamiczna strzelanka z mieczami i bronią palną."
   },
   {
     "game": "Resident Evil Requiem",
@@ -6897,7 +7348,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/72b37d282fc19df3a1c1784b0ac7c8d2.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror cyberpunkowy w Krakowie 2084 roku. Detektyw wchodzi do umysłów ludzi i odkrywa mroczną prawdę."
   },
   {
     "game": "Nobody Wants to Die",
@@ -6907,7 +7359,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/b581dd59c05105e7dd12cf7c7993e8b8.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Kryminalna przygodówka w Nowym Jorku XXIV wieku. Detektyw bada sprawę w świecie, w którym nieśmiertelność jest dla bogatych."
   },
   {
     "game": "Mirror's Edge Catalyst",
@@ -6961,7 +7414,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/69d286a7168a94675ad0b72e481373f7.jpg",
-    "genre": "Horror"
+    "genre": "Horror",
+    "opis": "Horror science fiction, w którym podróżnik w czasie próbuje przetrwać w zniszczonym świecie."
   },
   {
     "game": "Bulletstorm: Full Clip Edition",
@@ -6971,7 +7425,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/4269dbc2e548ee2a9ebe543790e6ff1d.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Szalona strzelanka, w której zabijanie wrogów w widowiskowy sposób daje punkty. Pełna humoru i przesady."
   },
   {
     "game": "Black Myth: Wukong",
@@ -6992,7 +7447,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/64e68959cd69674a276dee8d610fa74f.jpg",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Gra akcji RPG o duchach i łowcach duchów. Dwoje bohaterów rozwiązuje zagadki nawiedzonych miejsc."
   },
   {
     "game": "A Plague Tale: Requiem",
@@ -7016,7 +7472,8 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn2.steamgriddb.com/thumb/c3aa8c2610fef6e13105549c4a7e4baa.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c3aa8c2610fef6e13105549c4a7e4baa.jpg",
+    "opis": "Garrett, mistrz złodziei, wraca do miasta pełnego zagrożeń. Skradanka w stylu klasycznej serii."
   },
   {
     "game": "Silent Hill 2 Remake",
@@ -7038,7 +7495,7 @@
     "type": "Napisy",
     "status": "Beta",
     "prog": 100,
-    "ver": "—",
+    "ver": "0.1",
     "author": "promptowy",
     "link": "https://promptowy.com/phantom/",
     "genre": "RPG",
@@ -7056,7 +7513,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/tom-clancys-ghost-recon-breakpoint",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/584e1446d13c042b03e60a84cc71859a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/584e1446d13c042b03e60a84cc71859a.jpg",
+    "opis": "Taktyczna strzelanka w otwartym świecie. Żołnierz ścigany przez własnych ludzi próbuje przeżyć."
   },
   {
     "game": "Call of Duty: Black Ops",
@@ -7066,7 +7524,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/call-of-duty-black-ops",
     "img": "https://cdn2.steamgriddb.com/thumb/b9b065288cf8d4eba8b9ac1ad9c52aaf.jpg",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Strzelanka z czasów zimnej wojny. Alex Mason bierze udział w tajnych operacjach CIA."
   },
   {
     "game": "Nioh 3",
@@ -7096,7 +7555,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Prawy",
-    "img": "https://cdn2.steamgriddb.com/thumb/b634e27df731c732fff87874ac83bb48.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b634e27df731c732fff87874ac83bb48.jpg",
+    "opis": "Zbiór wszystkich epizodów przygodowej serii o zombie od Telltale Games, z opowieścią Clementine."
   },
   {
     "game": "Shenmue I & II",
@@ -7111,7 +7571,8 @@
     "prog": 100,
     "ver": "—",
     "author": "VetSpolszczenia",
-    "img": "https://cdn2.steamgriddb.com/thumb/d516165ceb1a5b894093fe13a391e818.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/d516165ceb1a5b894093fe13a391e818.jpg",
+    "opis": "Ryo Hazuki szuka zabójcy swojego ojca. Klasyczna przygoda z otwartym światem i szczegółowo odwzorowanym życiem codziennym."
   },
   {
     "game": "Clive Barker's Hellraiser: Revival",
@@ -7126,7 +7587,8 @@
     "prog": 100,
     "ver": "—",
     "author": "DykuGierkuje",
-    "img": "https://cdn2.steamgriddb.com/thumb/2979eeec451dcd28d06474671b396519.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/2979eeec451dcd28d06474671b396519.jpg",
+    "opis": "Horror w świecie Hellraiser, w którym walczysz z cenobitami. Gra oparta na twórczości Clive'a Barkera."
   },
   {
     "game": "A.I.L.A",
@@ -7151,7 +7613,11 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/mafia-ii-edycja-ostateczna",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/aa169f393c4e588778d07827e3c287e0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/aa169f393c4e588778d07827e3c287e0.png",
+    "opis": "Vito Scaletta wchodzi w świat mafii w latach 40. i 50. Gra akcji z otwartym światem.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Mafia: Edycja Ostateczna",
@@ -7161,7 +7627,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/mafia-edycja-ostateczna",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/edf9ea91fabfb986033870a6c317a7c4.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/edf9ea91fabfb986033870a6c317a7c4.jpg",
+    "opis": "Tommy Angelo wchodzi do świata mafii lat 30. Gra akcji z fabułą w stylu kina gangsterskiego."
   },
   {
     "game": "Alan Wake 2 Deluxe Edition",
@@ -7170,7 +7637,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/alan-wake-2-deluxe-edition",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Alan Wake wraca w horrorze przygodowym. Pisarz próbuje wydostać się z koszmaru, który sam tworzy."
   },
   {
     "game": "Alan Wake Remastered",
@@ -7179,7 +7647,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/alan-wake-remastered",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Odnowiona wersja gry o pisarzu Alanie Wake'u, który szuka zaginionej żony w miasteczku Bright Falls."
   },
   {
     "game": "Remnant: From the Ashes",
@@ -7194,7 +7663,8 @@
     "prog": 100,
     "ver": "—",
     "author": "ozon",
-    "img": "https://cdn2.steamgriddb.com/thumb/11b465ec6e2e00fbe0397fc8f78230d0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/11b465ec6e2e00fbe0397fc8f78230d0.jpg",
+    "opis": "Kooperacyjna strzelanka z elementami RPG w postapokaliptycznym świecie. Walczysz z potworami i zdobywasz losowo generowane lokacje."
   },
   {
     "game": "METAL GEAR SOLID 2: Sons of Liberty - Master Collection Version",
@@ -7209,7 +7679,8 @@
     "prog": 100,
     "ver": "—",
     "author": "kubaskubas4",
-    "img": "https://cdn2.steamgriddb.com/thumb/9dba1b20cf8d0a1b07ced177b4489168.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/9dba1b20cf8d0a1b07ced177b4489168.jpg",
+    "opis": "Raiden i Snake wkraczają do tajnej operacji. Jedna z najbardziej znanych części serii, wzbogacona o dodatki."
   },
   {
     "game": "METAL GEAR RISING: REVENGEANCE",
@@ -7224,7 +7695,8 @@
     "prog": 100,
     "ver": "—",
     "author": "VetSpolszczenia",
-    "img": "https://cdn2.steamgriddb.com/thumb/12f4db557d4f9ab0c8f23bc53f0a58a2.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/12f4db557d4f9ab0c8f23bc53f0a58a2.jpg",
+    "opis": "Raiden wraca jako cyborg z mieczem. Szybka gra akcji, w której można ciąć wrogów na kawałki."
   },
   {
     "game": "Broken Sword - Cień templariuszy: Reforged",
@@ -7234,7 +7706,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/broken-sword-cien-templariuszy-reforged",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/a8f6e2aecad19bdc328824acdf23d124.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a8f6e2aecad19bdc328824acdf23d124.jpg",
+    "opis": "Odświeżona wersja klasycznej przygodówki. George Stobbart rozwiązuje zagadkę związaną z Templariuszami."
   },
   {
     "game": "Metal Gear Solid The Twin Snakes",
@@ -7254,7 +7727,8 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—"
+    "author": "—",
+    "opis": "Nowa wersja pierwszego Metal Gear Solid. Solid Snake infiltruje bazę Shadow Moses."
   },
   {
     "game": "Tormented Souls 2",
@@ -7275,7 +7749,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/04c439653ce5767083586f9b2d7e41ab.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/04c439653ce5767083586f9b2d7e41ab.jpg",
+    "opis": "Kontynuacja horroru w klimacie klasycznych Resident Evil, z kamerą ustawioną pod stałymi kątami i zagadkami w mrocznych wnętrzach."
   },
   {
     "game": "Tom Clancy's Splinter Cell",
@@ -7290,7 +7765,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/f2aa417ab5eec093fb1699b3c789caff.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/f2aa417ab5eec093fb1699b3c789caff.jpg",
+    "opis": "Sam Fisher infiltruje bazy wroga w cieniu. Pierwsza część skradanki od Ubisoftu."
   },
   {
     "game": "Tormented Souls",
@@ -7305,7 +7781,8 @@
     "prog": 100,
     "ver": "—",
     "author": "kofii12345",
-    "img": "https://cdn2.steamgriddb.com/thumb/e0c02ce77c030320e486fac2851e90d5.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e0c02ce77c030320e486fac2851e90d5.jpg",
+    "opis": "Horror w stylu klasycznych gier. Bohaterka trafia do szpitala, w którym czyha na nią zło."
   },
   {
     "game": "Hitman: Blood Money",
@@ -7320,7 +7797,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/947681124aee4951c310b0dab1e91fea.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/947681124aee4951c310b0dab1e91fea.jpg",
+    "opis": "Agent 47 wykonuje zlecenia w różnych miejscach świata. Skradanka z naciskiem na cichy styl pracy."
   },
   {
     "game": "Grand Theft Auto: San Andreas – The Definitive Edition",
@@ -7329,7 +7807,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/grand-theft-auto-san-andreas-the-definitive-edition",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Odświeżona wersja kultowej gry. CJ wraca do Los Santos i walczy o miasto."
   },
   {
     "game": "Max Payne 2",
@@ -7339,7 +7818,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/max-payne-2",
     "img": "https://cdn2.steamgriddb.com/thumb/275a5602cd91a468a0e10c226a03a39c.jpg",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Max Payne wraca w kontynuacji kultowej strzelanki. Policjant ścigany przez przeszłość stawia czoła nowym zagrożeniom."
   },
   {
     "game": "Fable Anniversary",
@@ -7354,7 +7834,8 @@
     "prog": 100,
     "ver": "—",
     "author": "VetSpolszczenia",
-    "img": "https://cdn2.steamgriddb.com/thumb/9fa3de2829c14a18c8c41559fccb36a7.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/9fa3de2829c14a18c8c41559fccb36a7.jpg",
+    "opis": "Odnowiona wersja pierwszej części Fable. Bohater rozwija się w świecie, w którym jego wybory zmieniają wygląd i reputację."
   },
   {
     "game": "Starfield Premium Edition",
@@ -7364,7 +7845,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/starfield-premium-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/a5da7635c3838897d47e0f4e30e7c556.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a5da7635c3838897d47e0f4e30e7c556.jpg",
+    "opis": "Kosmiczne RPG od Bethesdy. Eksplorujesz rozległy wszechświat, zakładasz osady i podróżujesz od planety do planety."
   },
   {
     "game": "The Wolf Among Us",
@@ -7386,7 +7868,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/5fb272a4907bbea419e44c2d624fdb72.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5fb272a4907bbea419e44c2d624fdb72.jpg",
+    "opis": "Bigby Wolf rozwiązuje zagadkę w baśniowym Nowym Jorku. Kryminalna przygoda Telltale."
   },
   {
     "game": "Watch Dogs: Legion Ultimate Edition",
@@ -7396,7 +7879,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/watch-dogs-legion-ultimate-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/69e88cc7a3714f0027e87fcf3bc46813.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/69e88cc7a3714f0027e87fcf3bc46813.jpg",
+    "opis": "Walka z totalitarnym reżimem w Londynie przyszłości. Gra akcji, w której możesz grać każdym mieszkańcem miasta."
   },
   {
     "game": "Resident Evil 3 Remake",
@@ -7406,7 +7890,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/resident-evil-3-remake",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/5aa174ab24983ca1b5c461d99685a407.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5aa174ab24983ca1b5c461d99685a407.jpg",
+    "opis": "Jill Valentine ucieka z miasta opanowanego przez zombie, ścigana przez Nemezis."
   },
   {
     "game": "Hollow Knight: Silksong",
@@ -7428,7 +7913,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/7282feea57f0e6cd89092df704f8e039.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/352b19056ce934568b956d68cbcde3b5.jpg",
+    "opis": "Hornet wyrusza do królestwa Pharloom. Kontynuacja Hollow Knight z nowymi umiejętnościami i wrogami."
   },
   {
     "game": "FINAL FANTASY XVI + 2dlc",
@@ -7438,7 +7924,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/final-fantasy-xvi-2dlc",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/528389d3fa104d48cf5ca7c97cc1b67f.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/528389d3fa104d48cf5ca7c97cc1b67f.jpg",
+    "opis": "Szesnasta część serii RPG z dojrzałą fabułą. Clive Rosfield walczy w świecie, w którym kryształy zasilają krainę."
   },
   {
     "game": "Bully: Scholarship Edition",
@@ -7453,7 +7940,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Zortez",
-    "img": "https://cdn2.steamgriddb.com/thumb/4b6291c280039eefb1bb0bb9c443e0bb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/4b6291c280039eefb1bb0bb9c443e0bb.jpg",
+    "opis": "Młody Jimmy Hopkins trafia do szkoły z internatem. Gra akcji w otwartym świecie o przygodach uczniów."
   },
   {
     "game": "Mass Effect Edycja legendarna",
@@ -7463,7 +7951,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/mass-effect-edycja-legendarna",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/766d032d352fddd0ee78873a1edecaa4.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/766d032d352fddd0ee78873a1edecaa4.jpg",
+    "opis": "Zbiór trzech części Mass Effect w ulepszonej wersji. Dowódca Shepard broni galaktyki przed Żniwiarzami."
   },
   {
     "game": "High On Life",
@@ -7478,7 +7967,8 @@
     "prog": 100,
     "ver": "—",
     "author": "ozon",
-    "img": "https://cdn2.steamgriddb.com/thumb/689471d635e7d524a90ff011dcf7047b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/689471d635e7d524a90ff011dcf7047b.jpg",
+    "opis": "Humorystyczna strzelanka w kosmosie. Pomagają ci gadające bronie w walce z kosmitami."
   },
   {
     "game": "BioShock 2 Remastered",
@@ -7493,7 +7983,8 @@
     "prog": 100,
     "ver": "—",
     "author": "dzaggiel",
-    "img": "https://cdn2.steamgriddb.com/thumb/5d4341b5017f17d05ca411753d923463.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5d4341b5017f17d05ca411753d923463.jpg",
+    "opis": "Odświeżona wersja BioShocka 2 z lepszą grafiką. Big Daddy znów schodzi do Rapture."
   },
   {
     "game": "Legacy of Kain Soul Reaver 1&2 Remastered",
@@ -7508,7 +7999,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Nosgothica",
-    "img": "https://cdn2.steamgriddb.com/thumb/3fa233b53afeebd0a1efd67539db52a0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/3fa233b53afeebd0a1efd67539db52a0.jpg",
+    "opis": "Zbiór pierwszych części Soul Reaver w odnowionej wersji. Raziel walczy z Kainem."
   },
   {
     "game": "Prototype",
@@ -7523,7 +8015,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Manuel Czaszka",
-    "img": "https://cdn2.steamgriddb.com/thumb/b22f88e3aaffe96b7f562526237db167.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b22f88e3aaffe96b7f562526237db167.jpg",
+    "opis": "Alex Mercer, pozbawiony pamięci, wykorzystuje nadludzkie moce, by przetrwać w Nowym Jorku. Gra akcji z otwartym światem."
   },
   {
     "game": "Just Cause 4 Complete Edition",
@@ -7538,7 +8031,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/f87056faf9477c07421e2502f7a0b634.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/f87056faf9477c07421e2502f7a0b634.jpg",
+    "opis": "Rico Rodriguez trafia do Solis i walczy z reżimem. Gra akcji z otwartym światem."
   },
   {
     "game": "Just Cause 2 Complete Edition",
@@ -7548,7 +8042,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/just-cause-2-complete-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/27f6f78fe227d299b12bd3031861913e.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/27f6f78fe227d299b12bd3031861913e.jpg",
+    "opis": "Rico Rodriguez wraca do akcji w tropikalnym kraju. Gra akcji z wieloma zadaniami i wybuchami."
   },
   {
     "game": "Just Cause",
@@ -7569,7 +8064,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Patrxgt",
-    "img": "https://cdn2.steamgriddb.com/thumb/9707fe6c04d0d1a0e611ad54ec908ceb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/9707fe6c04d0d1a0e611ad54ec908ceb.jpg",
+    "opis": "Rico Rodriguez wyrusza na tropikalną wyspę. Pierwsza część serii z szalonymi akcjami."
   },
   {
     "game": "Project I.G.I",
@@ -7583,7 +8079,8 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—"
+    "author": "—",
+    "opis": "Strzelanka taktyczna. Agent Jones infiltruje bazy wroga i likwiduje przeciwników."
   },
   {
     "game": "Beyond Good & Evil - 20th Anniversary Edition",
@@ -7593,7 +8090,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/beyond-good-evil-20th-anniversary-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/197bb0cb279d54c6be344bd9c82f7850.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/197bb0cb279d54c6be344bd9c82f7850.jpg",
+    "opis": "Odświeżona wersja przygodowej gry akcji. Reporterka Jade odkrywa spisek na planecie Hillys."
   },
   {
     "game": "Grand Theft Auto: Vice City – The Definitive Edition",
@@ -7602,7 +8100,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/grand-theft-auto-vice-city-the-definitive-edition",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Odświeżona wersja klasycznej gry w Vice City lat 80. Tommy Vercetti dąży do władzy w mieście."
   },
   {
     "game": "Grand Theft Auto IV: The Complete Edition",
@@ -7617,7 +8116,8 @@
     "prog": 100,
     "ver": "—",
     "author": "IronSquad",
-    "img": "https://cdn2.steamgriddb.com/thumb/a32bc8141e168ff20fdfe3f0fbc72155.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a32bc8141e168ff20fdfe3f0fbc72155.jpg",
+    "opis": "Pełna wersja Grand Theft Auto IV z dodatkami. Niko Bellic wciąż szuka swojego miejsca w Liberty City."
   },
   {
     "game": "Grand Theft Auto III – The Definitive Edition",
@@ -7626,7 +8126,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/grand-theft-auto-iii-the-definitive-edition",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Odświeżona wersja Grand Theft Auto III. Gra osadzona w Liberty City, w której bezimienny bohater szuka zemsty."
   },
   {
     "game": "METAL GEAR SOLID Δ: SNAKE EATER",
@@ -7641,7 +8142,8 @@
     "prog": 100,
     "ver": "—",
     "author": "ozonek",
-    "img": "https://cdn2.steamgriddb.com/thumb/25d91ad7104565c52ceb2f4931e1ab41.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/25d91ad7104565c52ceb2f4931e1ab41.jpg",
+    "opis": "Odświeżona wersja Metal Gear Solid 3. Snake wkracza do dżungli podczas zimnej wojny."
   },
   {
     "game": "L.A. Noire The Complete Edition",
@@ -7656,7 +8158,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Guy who knocked",
-    "img": "https://cdn2.steamgriddb.com/thumb/a551f123e505d4d5d75058aae10e993b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a551f123e505d4d5d75058aae10e993b.jpg",
+    "opis": "Detektyw Cole Phelps rozwiązuje kryminalne zagadki w Los Angeles lat 40. Gra z realistycznym przesłuchiwaniem świadków."
   },
   {
     "game": "Far Cry 6",
@@ -7666,7 +8169,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/far-cry-6",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/a26bf4d0f9774bd59e30003e1dca7bac.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a26bf4d0f9774bd59e30003e1dca7bac.jpg",
+    "opis": "Antón Castillo rządzi wyspą Yara, a ty musisz stawić mu czoła. Strzelanka w otwartym świecie."
   },
   {
     "game": "Styx: Master of Shadows",
@@ -7681,7 +8185,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/48f8d79bf3ea10a2c3f2e70cd059c2f3.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/48f8d79bf3ea10a2c3f2e70cd059c2f3.jpg",
+    "opis": "Goblin Styx rusza po magiczne serce Drzewa Świata. Pierwsza skradanka z serii."
   },
   {
     "game": "Psychonauts 2",
@@ -7696,7 +8201,8 @@
     "prog": 100,
     "ver": "—",
     "author": "ozonek",
-    "img": "https://cdn2.steamgriddb.com/thumb/7296c21d1ffe1314b29c1ff8394c5638.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7296c21d1ffe1314b29c1ff8394c5638.jpg",
+    "opis": "Raz wkracza do umysłów innych bohaterów. Platformówka z humorem i kolorowymi światami."
   },
   {
     "game": "Spec Ops: The Line",
@@ -7711,7 +8217,8 @@
     "prog": 100,
     "ver": "—",
     "author": "IronSquad",
-    "img": "https://cdn2.steamgriddb.com/thumb/e6b3df4b792d9b9ab0e1e9901d68cb0c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e6b3df4b792d9b9ab0e1e9901d68cb0c.jpg",
+    "opis": "Żołnierze trafiają do ogarniętego burzą piaskową Dubaju. Strzelanka z mocnym wątkiem psychologicznym."
   },
   {
     "game": "Batman: Arkham City - Game of the Year Edition",
@@ -7721,7 +8228,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/batman-arkham-city-game-of-the-year-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/3423734808e5824a84f21f2a6f19a380.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/3423734808e5824a84f21f2a6f19a380.jpg",
+    "opis": "Batman wchodzi do więzienia pełnego złoczyńców. Gra akcji w otwartym mieście Arkham City."
   },
   {
     "game": "Batman: Arkham Asylum Game of the Year Edition",
@@ -7731,7 +8239,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/batman-arkham-asylum-game-of-the-year-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/55f6a90e85b282a0798ba2f8321dbe6a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/55f6a90e85b282a0798ba2f8321dbe6a.jpg",
+    "opis": "Batman trafia do Arkham Asylum, opanowanego przez Jokera. Gra akcji z walką wręcz i skradaniem."
   },
   {
     "game": "Dungeon Siege III",
@@ -7740,7 +8249,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dungeon-siege-iii",
-    "pl": "of"
+    "pl": "of",
+    "opis": "Akcja RPG z kooperacją. Bohaterowie bronią Królestwa przed Legionem."
   },
   {
     "game": "Dragon Age: Inkwizycja",
@@ -7750,7 +8260,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dragon-age-inkwizycja",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/6b7e5dd8e735ac7504cd75e04acc097b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/6b7e5dd8e735ac7504cd75e04acc097b.jpg",
+    "opis": "Inkwizytor musi uporządkować świat pogrążony w chaosie i zamknąć wyrwy do Pustki. RPG w otwartym świecie."
   },
   {
     "game": "Dziedzictwo Hogwartu",
@@ -7760,7 +8271,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dziedzictwo-hogwartu",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/b257b2c770d6926678e40ba7c97d070f.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b257b2c770d6926678e40ba7c97d070f.jpg",
+    "opis": "RPG w świecie Harry'ego Pottera. Uczysz się magii w Hogwarcie XIX wieku."
   },
   {
     "game": "Far Cry 2",
@@ -7776,7 +8288,8 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "img": "https://cdn2.steamgriddb.com/thumb/64afb346ce729c37acd43dcabd7648e6.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/64afb346ce729c37acd43dcabd7648e6.jpg",
+    "opis": "Najemnik przemierza afrykańskie państwo ogarnięte wojną domową i szuka handlarza bronią. Strzelanka w otwartym świecie."
   },
   {
     "game": "Assassin's Creed 2",
@@ -7786,7 +8299,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/assassins-creed-2",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/30a53d130bbe822d676ababadbd3fffd.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/30a53d130bbe822d676ababadbd3fffd.jpg",
+    "opis": "Ezio Auditore walczy z Templariuszami w renesansowych Włoszech. Gra akcji z serii Assassin's Creed."
   },
   {
     "game": "The LEGO Movie - Videogame",
@@ -7796,7 +8310,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/the-lego-movie-videogame",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/ae706df4c7f09298b01f6f67bfb6d7e0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ae706df4c7f09298b01f6f67bfb6d7e0.jpg",
+    "opis": "Klockowa gra akcji na motywach filmu „LEGO Przygoda\". Emmet ratuje świat."
   },
   {
     "game": "Vampire: The Masquerade - Bloodlines 2",
@@ -7806,7 +8321,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/vampire-the-masquerade-bloodlines-2",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/1c161429a5475e0f648a935b1adf321a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/1c161429a5475e0f648a935b1adf321a.jpg",
+    "opis": "Mroczne RPG, w którym wcielasz się w wampira w nowoczesnym Seattle. Kontynuacja kultowej gry."
   },
   {
     "game": "Sekiro: Shadows Die Twice - GOTY Edition",
@@ -7816,7 +8332,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/sekiro-shadows-die-twice-goty-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/97771715c7dd7daf009feeb60c49915a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/97771715c7dd7daf009feeb60c49915a.jpg",
+    "opis": "Wojownik shinobi Wilk wyrusza do Japonii okresu Sengoku. Wymagająca gra akcji z precyzyjnymi pojedynkami."
   },
   {
     "game": "Resident Evil 4 Remake + Separate Ways",
@@ -7825,7 +8342,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/fa8469112345cdf93cd402092eb73d5d.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/fa8469112345cdf93cd402092eb73d5d.jpg",
+    "opis": "Remake kultowej gry z Leonem Kennedym. Do pakietu dołączono też dodatek z Adą Wong."
   },
   {
     "game": "Resident Evil 2 Remake",
@@ -7835,7 +8353,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/resident-evil-2-remake",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/fb5b3b5d234aa718062e3b4f6c826e23.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/fb5b3b5d234aa718062e3b4f6c826e23.jpg",
+    "opis": "Odnowiona wersja Resident Evil 2. Leon i Claire próbują uciec z Raccoon City."
   },
   {
     "game": "Mafia: Dawne Strony",
@@ -7845,7 +8364,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/mafia-dawne-strony",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/802bb5d12a44ebb63c0a48a5bf9ba380.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/802bb5d12a44ebb63c0a48a5bf9ba380.jpg",
+    "opis": "Enzo Favara rozpoczyna pracę w mafii na Sycylii. Gra akcji z fabułą w stylu filmów gangsterskich."
   },
   {
     "game": "Dead Island 2 Ultimated Edition",
@@ -7855,7 +8375,8 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dead-island-2-ultimated-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/ad83d8530fdc4b8255bff5a4f3c5ca66.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ad83d8530fdc4b8255bff5a4f3c5ca66.jpg",
+    "opis": "Zombie opanowały Los Angeles. Walczysz o przeżycie w rozbudowanej grze akcji z elementami RPG."
   },
   {
     "game": "Dark Messiah of Might & Magic",
@@ -7870,7 +8391,8 @@
     "prog": 100,
     "ver": "—",
     "author": "Kuziem^'s",
-    "img": "https://cdn2.steamgriddb.com/thumb/acd1bb8f6da1757b4f0a33de53575ed6.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/acd1bb8f6da1757b4f0a33de53575ed6.jpg",
+    "opis": "Młody czarodziej Sareth przemierza świat w grze akcji z perspektywy pierwszej osoby. Walczy mieczem, magią i kopniakami."
   },
   {
     "game": "A Quiet Place: The Road Ahead",
@@ -7885,6 +8407,7 @@
     "prog": 100,
     "ver": "—",
     "author": "ozonek",
-    "img": "https://cdn2.steamgriddb.com/thumb/3544ab420bc3671373195bc5148d2e28.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/3544ab420bc3671373195bc5148d2e28.jpg",
+    "opis": "Horror w świecie „Cichego miejsca\". Ukrywasz się przed potworami reagującymi na dźwięk."
   }
 ]

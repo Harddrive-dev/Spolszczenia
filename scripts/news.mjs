@@ -61,7 +61,7 @@ function item(r,hero){
   const ex=r.excerpt||String(r.body).replace(/[#*\[\]()\-]/g," ").replace(/\s+/g," ").trim().slice(0,160);
   const t=(r.title+" "+ex+" "+r.category).toLowerCase();
   const inner='<span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d">'+dateLong(r.created_at)+'</span><h3><a href="'+u+'">'+esc(r.title)+'</a></h3><p class="ex">'+esc(ex)+'</p><div class="bar"><a class="pb" href="'+u+'#komentarze" data-cnt="'+esc(r.slug)+'">💬 0</a><a class="more" href="'+u+'">Czytaj i komentuj →</a></div>';
-  return hero?'<div class="hero" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+coverBox(r,u)+'<div>'+inner+'</div></div>':'<div class="it" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+inner+'</div>'}
+  return hero?'<div class="hero" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+coverBox(r,u)+'<div>'+inner+'</div></div>':'<div class="it" data-t="'+esc(t)+'" data-c="'+esc(r.category)+'">'+coverBox(r,u)+'<div>'+inner+'</div></div>'}
 
 fs.mkdirSync(OUT,{recursive:true});
 // lista

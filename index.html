@@ -246,6 +246,28 @@ body:has(.overlay.open){overflow:hidden}
 .leader .cd b{color:var(--accent);font-variant-numeric:tabular-nums}
 .leader .cd.urgent{animation:cdp 1.4s ease-in-out infinite}
 @keyframes cdp{50%{opacity:.55}}
+.memi{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin:12px 0;align-items:start}@media(max-width:640px){.memi{grid-template-columns:1fr}}
+.memc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.memc h3{margin:0 0 6px;font-size:17px}.memc p{margin:4px 0;color:var(--muted)}
+.mempr{list-style:none;margin:6px 0 0;padding:0}.mempr li{padding:4px 0;border-bottom:1px solid var(--line)}.mempr li:last-child{border:0}
+.memm{display:block;width:100%;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.memm:hover:not(:disabled){border-color:var(--accent)}.memm:disabled{opacity:.55;cursor:not-allowed}
+.memm b{display:block;font-size:18px;margin-bottom:4px}
+.memh{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:10px 0;font-weight:700}
+.memh .tag{padding:3px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px}
+.memb{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:440px;margin:12px auto}
+.mc{perspective:700px;aspect-ratio:2/3;cursor:pointer;border:0;background:none;padding:0}
+.mi{position:relative;width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d}
+.mc.f .mi{transform:rotateY(180deg)}
+.mb,.mf{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.mb{background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 8px,var(--line) 8px,var(--line) 16px);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--muted)}
+.mf{transform:rotateY(180deg);background:#000;border:2px solid var(--line)}
+.mf img{width:100%;height:100%;object-fit:cover;display:block}
+.mf .mn{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:6px;text-align:center;font-size:11px;font-weight:700;background:var(--surface);color:var(--text)}
+.mc.ok .mf{border-color:var(--ok);box-shadow:0 0 12px var(--ok)}.mc.ok{cursor:default}
+.memr{border:1.5px solid var(--ok);border-radius:14px;padding:14px 16px;margin:12px auto;max-width:520px;text-align:center;background:rgba(116,184,149,.12)}
+.memr b{font-size:20px;display:block;margin-bottom:4px}
+.memt{width:100%;border-collapse:collapse;margin-top:6px;table-layout:fixed}.memt th:nth-child(1),.memt td:nth-child(1){width:44px}.memt th:nth-child(2),.memt td:nth-child(2){width:36%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.memt td,.memt th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}.memt th{color:var(--muted);font-size:12px;font-weight:600}.memt td:nth-child(n+3),.memt th:nth-child(n+3){text-align:right}.memt tr.me td{color:var(--accent);font-weight:700}
 .vconf{display:flex;gap:14px;align-items:center;background:rgba(116,184,149,.14);border:1.5px solid var(--ok);border-radius:14px;padding:12px 16px;margin:12px 0}.vconf .vck{width:34px;height:34px;border-radius:50%;background:var(--ok);color:#0d2418;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}.vconf b{display:block;font-size:16px}.vconf small{color:var(--muted);font-size:14px}.vconf.verr{background:rgba(255,77,100,.12);border-color:#ff4d64}.vconf.verr .vck{background:#ff4d64;color:#2a0a10}.vconf.verr b{color:#ff8a98}
 .vlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .vlink:hover{color:var(--accent);border-bottom-style:solid}
@@ -358,6 +380,7 @@ header{padding-top:56px}
 <div id="subview" style="display:none"></div>
 <div id="modsview" style="display:none"></div>
 <div id="newsview" style="display:none"></div>
+<div id="memview" style="display:none"></div>
 <datalist id="gl_mod"></datalist>
 <div id="addview" style="display:none"><a class="vback" href="#/">← Wróć do katalogu</a>
 <div class="panel open" id="modadd" style="display:none"></div>
@@ -431,7 +454,7 @@ header{padding-top:56px}
 </section>
 </div>
 <noscript><section><h2>Katalog spolszczeń gier</h2><p>GryPoPolsku.pl to katalog fanowskich polskich wersji językowych gier. Włącz JavaScript, aby korzystać z wyszukiwarki i filtrów.</p><ul><li>12 is Better Than 6 (PC)</li><li>720° (Nintendo NES)</li><li>Adventure Time: Explore the Dungeon Because I DON&#x27;T KNOW! (PC)</li><li>Age of Empires: Definitive Edition (PC)</li><li>Alice in Wonderland (Nintendo NDS)</li><li>Alice: Madness Returns (PC)</li><li>Alien Shooter TD (PC)</li><li>American McGee&#x27;s Alice – wersja lekka (PC)</li><li>Amnesia Rebirth (PC)</li><li>Amnesia: The Bunker (PC)</li><li>Ankh 3: Battle of the Gods (PC)</li><li>Argus (Nintendo NES)</li><li>Arx Fatalis (PC)</li><li>Asterix &amp; Obelix XXL2 Mission WiFix (Sony PSP)</li><li>Astro Fang – Super Machine (Nintendo NES)</li><li>Astérix: The Gallic War [PSX] (Sony PSX)</li><li>Atlantis IV Evolution (PC)</li><li>Back to the Future (Nintendo NES)</li><li>Back to the Future: The Game (PC)</li><li>Bad North: Jotunn Edition (PC)</li><li>Batman of the Future: Return of the Joker (Game Boy / GBC)</li><li>Batman: The Telltale Series (PC)</li><li>Beneath a Steel Sky (PC)</li><li>Big Nose the Caveman (Nintendo NES)</li><li>BioShock (Steam/GOG) (PC)</li><li>Bioshock 2 + Minerva&#x27;s Den (Steam/GOG) (PC)</li><li>Bioshock 2 Remastered + Minerva&#x27;s Den (Steam/GOG) (PC)</li><li>BioShock Remastered (Steam oraz GOG) (PC)</li><li>Blacksad: Under the Skin (PC)</li><li>Bloodrayne (PC)</li><li>Bloodrayne 2 (wersja bez filmów) (PC)</li><li>Bloodrayne 2 (wersja z filmami) (PC)</li><li>BloodRayne 2 Terminal Cut (PC)</li><li>Borderlands The Zombie Island of Dr. Ned (PC)</li><li>Broken Age (PC)</li><li>Broken Sword 2,5 (PC)</li><li>Broken Sword: Director&#x27;s Cut (PC)</li><li>Broken Sword: The Shadow of the Templars (PC)</li><li>Bucky O&#x27;Hare (Nintendo NES)</li><li>C-12: Final Resistance [PSX] (Sony PSX)</li><li>Cabela&#x27;s 4×4 (PC)</li><li>Call of Cthulhu: Prisoner of Ice (PC)</li><li>Castle of Illusion (PC)</li><li>Castlevania (Nintendo NES)</li><li>Castlevania: Aria of Sorrow (Game Boy Advance)</li><li>Castlevania: Lords of Shadow (PC)</li><li>Castlevania: Lords of Shadow 2 (PC)</li><li>Castlevania: Lords of Shadow – Mirror of Fate HD (PC)</li><li>Castlevania: Lords of Shadow – Ultimate Edition (PC)</li><li>Celeste (PC)</li><li>Chaser (PC)</li><li>Chicken Run (Sony PSX)</li><li>Child of Light (PC)</li><li>Chrono Trigger (Nintendo SNES)</li><li>Citadels (PC)</li><li>Clive Baker&#x27;s Undying (PC)</li><li>Cognition: An Erica Reed Thriller (GOG) (PC)</li><li>Cognition: An Erica Reed Thriller (Steam) (PC)</li><li>Cognition: An Erica Reed Thriller – epizod II (GOG) (PC)</li><li>Cognition: An Erica Reed Thriller – epizod II (Steam) (PC)</li><li>Conarium (PC)</li><li>Condemned: Criminal Origins (PC)</li><li>Constructor (PC)</li><li>Contra (Nintendo NES)</li><li>Contra Force (Nintendo NES)</li><li>Costume Quest (PC)</li><li>Crash Bandicoot Fusion (Game Boy Advance)</li><li>Crash Bandicoot Fusion [GBA] (Game Boy Advance)</li><li>Crash Team Racing [PSX] (Sony PSX)</li><li>Crisis Core: Final Fantasy VII Reunion (PC, Nintendo Switch)</li><li>CS: Source (PC)</li><li>Cyber Knight (Nintendo SNES)</li><li>Cyber Knight II (Nintendo SNES)</li><li>Darkwing Duck (Nintendo NES)</li><li>Dave Mirra 2 Freestyle BMX (Game Boy Advance)</li><li>Day of the Tentacle (PC)</li><li>Dead City (PC)</li><li>Dead or Alive [PSX] (Sony PSX)</li><li>Dead Space 2 (PC)</li><li>Dead Space 3 (PC)</li><li>Deadlight (PC)</li><li>Deadlight: Director&#x27;s Cut (PC)</li><li>Deadpool (PC)</li><li>Dementium 2 (Nintendo NDS)</li><li>Dementium: The Ward (Nintendo NDS)</li><li>Dexter&#x27;s Laboratory – Mandark&#x27;s Lab [PSX] (Sony PSX)</li><li>Diablo (PC)</li><li>Diablo (GOG) (PC)</li><li>Dink Smallwood HD (PC)</li><li>Dino Crisis 2 [PSX] (Sony PSX)</li><li>Discworld (PC)</li><li>Dizzy The Adventurer (Nintendo NES)</li><li>Dizzy Treasure Island (Nintendo NES)</li><li>Donald Duck Goin&#x27; Quackers (Game Boy / GBC)</li><li>Donkey Kong 3 (Nintendo NES)</li><li>Doom (Sony PSX)</li><li>Downtown – Nekketsu Koushin Kyoku – Soreyuke Daiundoukai (Nintendo NES)</li><li>Dragon Age Początek Pieśń Leliany (PC)</li><li>Dragon Ball Advanced Adventure (Game Boy Advance)</li><li>Dragon Ball Legacy of Goku (Game Boy Advance)</li><li>Dragon Ball Z: Legend of the Super Saiyan (Nintendo SNES)</li><li>Dragon&#x27;s Dogma: Dark Arisen (PC)</li><li>Drawn 2: Dark Flight (PC)</li><li>Drawn: Painted Tower (PC)</li><li>Dreamfall Chapters: The Final Cut [Linux x86-64] (PC)</li><li>Dreamfall Chapters: The Final Cut [MacOSX x86-64] (Humble Bundle) (PC)</li><li>Dreamfall Chapters: The Final Cut [Windows x86-32] (Humble Bundle) (PC)</li><li>Dreamfall Chapters: The Final Cut [Windows x86-32] (Steam, GOG) (PC)</li><li>Dreamfall Chapters: The Final Cut [Windows x86-64] (Humble Bundle) (PC)</li><li>Dreamfall Chapters: The Final Cut [Windows x86-64] (Steam, GOG) (PC)</li><li>Driver You Are The Wheelman (Game Boy / GBC)</li><li>Dual Orb 2 (Nintendo SNES)</li><li>Duck Tales (Nintendo NES)</li><li>Duke Nukem Forever (PC)</li><li>Dungeons of Avalon (Amiga)</li><li>Dust: An Elysian Tail (PC)</li><li>Ed, Edd &amp; Eddy: Jawbreakers! (Game Boy Advance)</li><li>Elvenland (Nintendo NDS)</li><li>Enslaved: Odyssey to the West (PC Steam)</li><li>Eriksholm The Stolen Dream (PC)</li><li>Escape from Monkey Island (PC)</li><li>Evil Twin: Cyprien&#x27;s Chronicles (Dreamcast)</li><li>Excitebike (Nintendo NES)</li><li>F1 2011 (PC)</li><li>Fantastic Adventures of Dizzy (Nintendo NES)</li><li>Felix the Cat! (Nintendo NES)</li><li>FIFA Manager 12 (PC)</li><li>Fighting Force 2 (Dreamcast)</li><li>Final Fantasy (Nintendo NES)</li><li>Final Fantasy (steam) (PC)</li><li>Final Fantasy III (Nintendo NDS)</li><li>Final Fantasy IV (Nintendo SNES)</li><li>Final Fantasy IX (PC Steam)</li><li>Final Fantasy IX (Sony PSX) (Sony PSX)</li><li>Final Fantasy V (Nintendo SNES)</li><li>Final Fantasy VI (Nintendo SNES)</li><li>Final Fantasy VII (Sony PSX)</li><li>Final Fantasy VII Rebirth (PC Steam)</li><li>Final Fantasy VII Remake Intergrade (PC)</li><li>Final Fantasy VIII (PC Steam)</li><li>Final Fantasy VIII (Sony PSX) (Sony PSX)</li><li>Final Fantasy X (PC Steam)</li><li>Final Fantasy XII (Sony PS2)</li><li>Final Fantasy XII (PC/Steam) (PC)</li><li>Final Fantasy XIII (PC Steam)</li><li>Final Fantasy XIII-2 (PC Steam)</li><li>Final Fantasy XV (PC Steam)</li><li>Firewatch (GOG) (PC)</li><li>Firewatch (Steam) (PC)</li><li>Fist of Jesus (PC)</li><li>FlatOut (PC)</li><li>FlatOut 2 (PC)</li><li>Ford Racing 2 (PC)</li><li>Ford Racing 3 (PC)</li><li>Ford Street Racing (PC)</li><li>From Dust (PC)</li><li>From the Abyss (Nintendo NDS)</li><li>Front Line (Nintendo NES)</li><li>Front Mission (Nintendo SNES)</li><li>Frontier First Encounters (PC)</li><li>Furi (PC)</li><li>Fushigi no Umi no Nadia (Nintendo NES)</li><li>G.I. Joe (Nintendo NES)</li><li>Gabriel Knight: Grzechy Ojców 2014 (GOG) (PC)</li><li>Gabriel Knight: Grzechy Ojców 2014 (Steam) (PC)</li><li>Gabriel Knight: Sins of the Fathers (PC)</li><li>Galaxian (Nintendo NES)</li><li>Game of Thrones: A Telltale Games Series (PC)</li><li>Ghostbusters II (Nintendo NES)</li><li>Go! Dizzy Go! (Nintendo NES)</li><li>God of War Chains of Olympus (Sony PSP)</li><li>Gods Will Be Watching (do testów otwartych) (PC)</li><li>Golden Sun (Game Boy Advance)</li><li>Golden Sun: The Lost Age (Game Boy Advance)</li><li>Gore: Ultimate Soldier (PC)</li><li>Grand Theft Auto Advance (Game Boy Advance)</li><li>Grand Theft Auto IV (PC)</li><li>Grand Theft Auto: London, 1961 (PC)</li><li>Grim Fandango (PC)</li><li>Grim Fandango Remastered (PC)</li><li>GTA Liberty City Stories (Sony PSP)</li><li>GTA Vice City Stories (Sony PSP)</li><li>GYLT (PC)</li><li>Hacker Evolution (PC)</li><li>Half Life 2 (PC)</li><li>Half Life 2: Episode One (PC)</li><li>Hammerwatch (PC)</li><li>Harvest Moon (Game Boy / GBC)</li><li>Harvest Moon (Nintendo SNES) (Nintendo SNES)</li><li>Hollow Knight (PC)</li><li>Horizon Chase Turbo (PC)</li><li>Hudson&#x27;s Adventure Island (Nintendo NES)</li><li>Hue (PC)</li><li>I am Alive (PC)</li><li>I Have No Mouth, and I Must Scream (GOG) (PC)</li><li>I Have No Mouth, and I Must Scream (STEAM) (PC)</li><li>Igneous (PC)</li><li>Ike Ike! Nekketsu Hockey Bu – Subette Koronde Dai Rantou (Nintendo NES)</li><li>Inkheart (Nintendo NDS)</li><li>Inspector Gadget Crazy Maze [PSX] (Sony PSX)</li><li>Inversion (PC)</li><li>Inversion [PS3] (Sony PS3)</li><li>Jagged Alliance 2: Renegade Republic (PC)</li><li>Jagged Alliance 2: Shady Job (PC)</li><li>Jagged Alliance 2: Urban Chaos (PC)</li><li>Jagged Alliance 2: Vietnam SOG ’69 (PC)</li><li>Jagged Alliance 2’005 (PC)</li><li>Jisei (PC)</li><li>Jurassic Park: The Game (PC)</li><li>Jurassic World Evolution (PC)</li><li>Kao Challengers (Sony PSP)</li><li>Kick Master (Nintendo NES)</li><li>Kingdom Come: Deliverance (PC Steam)</li><li>Legend of Zelda A Link to the Past (Nintendo SNES)</li><li>LEGO Indiana Jones (PC)</li><li>Lego Island 2: The Brickster&#x27;s Revenge (PC)</li><li>Lego Star Wars: The Complete Saga (PC)</li><li>Les Adventures de Tintin Le Temple du Soleil (Game Boy / GBC)</li><li>Life Is Strange (PC)</li><li>Life is Strange: Before the Storm (PC)</li><li>Life is Strange: True Colors (PC)</li><li>Lifeless Moon (PC)</li><li>Lifeless Planet (PC)</li><li>Little Nemo – The Dream Master (Nintendo NES)</li><li>Lobotomy Corporation (PC)</li><li>Lord of the Rings: Fellowship of the Ring (Game Boy Advance)</li><li>Love Hina Advance (Game Boy Advance)</li><li>Luigi`s Mansion - [Nintendo 3DS] (PC emu- Azahar)</li><li>Magic Knight Rayearth (Nintendo SNES)</li><li>Manhunt (PC)</li><li>Mass Effect 2: Geneza (PC)</li><li>Mass Effect 2: Lair of Shadow Broker (PC)</li><li>Medal of Honor: Allied Assault – War Chest (PC)</li><li>MediEvil (Sony PSX)</li><li>MediEvil 2 (Sony PSX)</li><li>MediEvil 2 [PSX] (Sony PSX)</li><li>MediEvil [PSX] (Sony PSX)</li><li>MediEvil [PSX] Dubbing (Sony PSX)</li><li>MediEvil Resurrection [PSP] (Sony PSP)</li><li>Megaman II (Nintendo NES)</li><li>Megaman III (Nintendo NES)</li><li>Mental Repairs Inc (PC)</li><li>Metal Gear (Nintendo NES)</li><li>Miami Vice The Game (Sony PSP)</li><li>Mickey&#x27;s Speedway USA (Nintendo 64)</li><li>Micro Machines (Nintendo NES)</li><li>Monkey Island 2 (PC)</li><li>Monkey Island 2 Special Edition: LeChuck&#x27;s Revenge (PC)</li><li>Monster In My Pocket (Nintendo NES)</li><li>Moonlight Walks (PC)</li><li>Mortal Kombat Komplete Edition (PC)</li><li>Need For Speed: Underground 2 (PC)</li><li>Nekketsu Kakutou Densetsu (Nintendo NES)</li><li>Nekketsu Kouha – Kunio-kun (Nintendo NES)</li><li>New Super Mario Bros (Nintendo Wii)</li><li>Ni no Kuni II: Revenant Kingdom (PC)</li><li>Nightmare Creatures 2 (Dreamcast)</li><li>Nintendo World Cup (Nintendo NES)</li><li>Obscure (PC)</li><li>Obscure (GOG) (PC)</li><li>Okami (Sony PS2)</li><li>Okami HD (PC)</li><li>OMORI (PC)</li><li>One Afternoon (PC)</li><li>OneShot (PC)</li><li>OneShot World Machine Edition (PC)</li><li>Osmos (PC)</li><li>Pac-Man (Nintendo NES)</li><li>Papers, Please (PC)</li><li>Papo &amp; Yo (PC)</li><li>Pathologic (PC)</li><li>PES 2009 (PC)</li><li>Phantasy Star IV: The End of the Millennium (Sega Mega Drive)</li><li>Pharaoh: A New Era (PC)</li><li>Pięć Magicznych Amuletów (PC)</li><li>Planet Coaster (PC)</li><li>Planetarian HD (PC)</li><li>Pocket Mirror – GoldenerTraum (PC)</li><li>Pokemon Fire Red (Game Boy Advance)</li><li>Pokémon Emerald (Game Boy Advance)</li><li>Pokémon HeartGold (Nintendo NDS)</li><li>Pokémon Mystery Dungeon: Explorers Of Time (Nintendo NDS)</li><li>Pokémon Platinum (Nintendo NDS)</li><li>Pokémon Red (Game Boy / GBC)</li><li>Pokémon SoulSilver (Nintendo NDS)</li><li>Prince of Persia (Nintendo NES)</li><li>Prince of Persia: The Forgotten Sands (Nintendo NDS)</li><li>Prison Tycoon 2: Maximum Security (PC)</li><li>Psychonauts (PC)</li><li>Psychotoxic (PC)</li><li>PT Boats (PC)</li><li>Quantum Break (PC)</li><li>Ranma 1/2: Treasure of The Red Cat Gang (Nintendo SNES)</li><li>Rayman (Sony PSX)</li><li>Real Kanojo (PC)</li><li>RealRTCW (PC)</li><li>Resident Evil 0 HD Remaster (PC)</li><li>Resident Evil Code: Veronica [PS2] (Sony PS2)</li><li>Resident Evil HD Remaster (PC)</li><li>Resident Evil Mercenaries 3D [3DS] (Nintendo 3DS)</li><li>Resident Evil Outbreak File 2 [PS2] (Sony PS2)</li><li>Resident Evil Survivor 2: Code Veronica [PS2] (Sony PS2)</li><li>Resident Evil Survivor [PSX] (Sony PSX)</li><li>Return to Monkey Island (PC)</li><li>Revelations, The Demon Slayer (Game Boy / GBC)</li><li>Road Fighter (Nintendo NES)</li><li>Rockin&#x27; Kats (Nintendo NES)</li><li>ROX [PSX] (Sony PSX)</li><li>Rune (PC)</li><li>Ryse: Son of Rome (PC)</li><li>Safecracker (Nintendo NDS)</li><li>Sailor Moon Dating Sim (PC)</li><li>Sailor Moon Dating Simulator: Sailor Saturn (PC)</li><li>Sailor Moon: Another Story (Nintendo SNES)</li><li>Sailor Venus Dating Sim (PC)</li><li>Sam &amp; Max 201: Ice Station Santa (PC)</li><li>Sam &amp; Max 202: Czarny Blues Moai (Moai Better Blues) (PC)</li><li>Sam &amp; Max 203: Noc żwawych trupów (Night of the Raving Dead) (PC)</li><li>Sam &amp; Max 204: Powrót do teraźniejszości (Chariots of the Dogs) (PC)</li><li>Sam &amp; Max: Season 2 – What&#x27;s New, Beelzebub? (PC)</li><li>Sanitarium (PC)</li><li>Serious Sam 2 (PC)</li><li>Shadow Complex Remastered (PC)</li><li>Shadow of Comet (PC)</li><li>Silent Hill (Sony PSX)</li><li>Silent Hill 2 (Sony PS2)</li><li>Silent Hill 2 [x] (Xbox)</li><li>Silent Hill 2 Enhanced Edition (PC)</li><li>Silent Hill 2 – Wersja reżyserska (PC)</li><li>Silent Hill 2: Director&#x27;s Cut (Sony PS2)</li><li>Silent Hill 3 (PC)</li><li>Silent Hill 4: The Room (PC)</li><li>Silent Hill: Shattered Memories [PSP] (Sony PSP)</li><li>Silver Pines (PC Steam)</li><li>Snake Pass (PC)</li><li>Soldier of Fortune (PC)</li><li>SOMA (PC)</li><li>Spelunky (PC Steam)</li><li>Spider-Man – Return of the Sinister Six (Nintendo NES)</li><li>Star Wars Jedi Knight II: Jedi Outcast (PC)</li><li>Star Wars Jedi Knight II: Jedi Outcast (z dubbingiem) (PC)</li><li>Star Wars Jedi Knight: Dark Forces 2 (PC)</li><li>Star Wars Jedi Knight: Mysteries of the Sith (PC)</li><li>Stories Untold (PC)</li><li>Stubbs the Zombie Rebel Without a Pulse (PC)</li><li>Suikoden (Sony PSX)</li><li>Sunblaze (PC)</li><li>Super Back to the Future Part 2 (Nintendo SNES)</li><li>Super Contra (Nintendo NES)</li><li>Super Mario Bros. (Nintendo NES)</li><li>Super Mario Bros. 2 (Nintendo NES)</li><li>Super Mario Bros. 3 (Nintendo NES)</li><li>Super Space Pug (PC)</li><li>Superbike Racing (PC)</li><li>Sword of Mana (Game Boy Advance)</li><li>Sword&amp;Soldiers (PC)</li><li>Syberia (Nintendo NDS)</li><li>Tactics Ogre – The Knight of Lodis (Game Boy Advance)</li><li>Tales from the Borderlands (PC)</li><li>Tales of Destiny (Sony PSX)</li><li>Tales of Monkey Island (PC)</li><li>Tales of Phantasia (Nintendo SNES)</li><li>Tank 1990 (Nintendo NES)</li><li>Tekken 3 [PSX] (Sony PSX)</li><li>Tenchi Muyo RPG (Nintendo SNES)</li><li>Tenchu Stealth Assassins (Sony PSX)</li><li>Tennis (Nintendo NES)</li><li>Terminator 2 – Judgment Day (Nintendo NES)</li><li>Terranigma (Nintendo SNES)</li><li>Tetris (Nintendo NES)</li><li>The Addams Family (Nintendo NES)</li><li>The Adventures of Rad Gravity (Nintendo NES)</li><li>The Awesome Adventures of Captain Spirit (PC)</li><li>The Beast Within: A Gabriel Knight Mystery (PC)</li><li>The Count Lucanor (PC)</li><li>The Dark Eye: Demonicon (PC)</li><li>The Dark Pictures Anthology – House of Ashes (PC)</li><li>The Dark Pictures Anthology – Little Hope (PC)</li><li>The Dark Pictures Anthology – Man of Medan (PC)</li><li>The Dark Pictures Anthology: The Devil in Me (PC)</li><li>The Darkness II (PC)</li><li>The Dig (PC)</li><li>The Legend of Zelda (Nintendo NES)</li><li>The Legend of Zelda Majora&#x27;s Mask (Nintendo 64)</li><li>The Legend of Zelda Ocarina of Time (Nintendo 64)</li><li>The Legend of Zelda, Link&#x27;s Awakening DX (Game Boy / GBC)</li><li>The Legend of Zelda: The Minish Cap (Game Boy Advance)</li><li>The Little Mermaid (Nintendo NES)</li><li>The Room (PC)</li><li>The Room 2 (PC)</li><li>The Secret of Monkey Island (PC)</li><li>The Secret of Monkey Island: Special Edition (PC)</li><li>The Silent Age (PC)</li><li>The Simpsons Hit &amp; Run (PC)</li><li>The Walking Dead Season 1 (PC)</li><li>The Walking Dead Season 2 (PC)</li><li>The Walking Dead: A New Frontier (PC)</li><li>The Walking Dead: Michonne (PC)</li><li>The Walking Dead: Survival Instinct (PC)</li><li>The Walking Dead: The Final Season (PC)</li><li>The Wolf Among Us Season 1 (PC)</li><li>The Yakyuuken Special [PSX] (Sony PSX)</li><li>Theme Hospital (PC)</li><li>Thief &amp; Sword: Another Stories – Przygody Raiki (PC)</li><li>This is the Police (GOG) (PC)</li><li>This is the Police (Steam) (PC)</li><li>Time Hollow (Nintendo NDS)</li><li>Tiny Toon Adventures (Nintendo NES)</li><li>Tom &amp; Jerry (Nintendo NES)</li><li>Tony Hawk&#x27;s Pro Skater HD (PC)</li><li>Top Gun (Nintendo NES)</li><li>Toy Story 3 The Video Game (Sony PSP)</li><li>Ultimate Basketball (Nintendo NES)</li><li>Unreal (PC)</li><li>Unreal Tournament (PC)</li><li>Unreal: Return to NaPali (PC)</li><li>Urban Chaos (PC)</li><li>Vampire: The Masquerade – Bloodlines (PC)</li><li>Velvet Assassin (PC)</li><li>Vietcong + Fist Alpha + Red Dawn (PC)</li><li>Vietcong 2 (PC)</li><li>Villgust (Nintendo SNES)</li><li>Waking Mars (PC)</li><li>Wallace &amp; Gromit&#x27;s Grand Adventures (PC)</li><li>WarCraft II Battle.net Edition (PC)</li><li>Warcraft: Orcs &amp; Humans (PC)</li><li>Wings of Fury (Game Boy / GBC)</li><li>Wonder Project J (Nintendo SNES)</li><li>Worms Armageddon (Game Boy / GBC)</li><li>WRATH: Aeon of Ruin (PC)</li><li>X-Men Origins: Wolverine (PC)</li><li>Xenogears (Sony PSX)</li><li>Xenonauts (PC)</li><li>Yooka-Laylee (PC)</li><li>Yume Nikki (PC)</li><li>Yuusha kara wa Nigerarenai (PC)</li><li>Zak McKracken and the Alien Mindbenders (PC)</li><li>Zelda II – The Adventure of Link (Nintendo NES)</li><li>Zero Wing (Sega Mega Drive)</li><li>Zombiez Seeker (Nintendo NDS)</li></ul></section></noscript>
-<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 30.10.2026 d</span></footer>
+<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 30.10.2026 f</span></footer>
 </div>
 
 <div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="modedit" id="rmed" style="display:none" role="menuitem">🛠️ Edytuj wpis (moderator)</button><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
@@ -736,7 +759,7 @@ function loginHtml(mode){
 function forgotHtml(email){
   return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
-function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
+function updateAuth(){if(typeof onMem!=="undefined"&&onMem&&typeof memAuth==="function")setTimeout(memAuth,0);var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
@@ -1231,24 +1254,137 @@ setInterval(cdTick,1000);
 var vState={rows:[],mine:null},VCONF=null,VLOGIN=null;
 function loginBox(){if(me()){VLOGIN=null;return''}if(VLOGIN===null)return'';return '<div class="vconf verr" id="vlogin" role="alert"><span class="vck">!</span><div><b>Musisz się zalogować, aby oddać głos</b><small>'+(VLOGIN&&VLOGIN!==" "?'Chcesz zagłosować na „'+esc(VLOGIN)+'”? ':'')+'Kliknij „Zaloguj się” w lewym górnym rogu, a potem „Głosuj” przy grze.</small></div></div>'}
 function confBox(){if(!VCONF)return'';var g=gameByKey(VCONF);if(!g)return'';return '<div class="vconf" id="vconf" role="status"><span class="vck">✓</span><div><b>Twój głos został oddany!</b><small>'+esc(g.game)+' · możesz go zmienić do końca tygodnia</small></div></div>'}
-var onVote=false,onAdd=false,onSubs=false,onMods=false,onNews=false,NHASH="#/wpisy",MHASH="#/moderatorzy",vLoaded=false,homeScroll=0,AHASH="#/dodaj",SHASH="#/zgloszenia",homeTitle=document.title,VHASH="#/glosowanie";
+var onVote=false,onAdd=false,onSubs=false,onMods=false,onNews=false,onMem=false,NHASH="#/wpisy",MHASH="#/moderatorzy",vLoaded=false,homeScroll=0,AHASH="#/dodaj",SHASH="#/zgloszenia",homeTitle=document.title,VHASH="#/glosowanie";
 var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":""}
+/* ===== MEMORY: turniej i trening ===== */
+var MEMHASH="#/memory",MEM={stage:"menu",info:null,infoErr:false,board:null,msg:""},MG=null;
+function memShuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+function memPool(){var seen={},seenI={},p=[];memShuffle(items.slice()).forEach(function(g){if(p.length>=8)return;var k=keyOf(g);if(!imgOk(g.img)||seen[k]||seenI[g.img])return;seen[k]=1;seenI[g.img]=1;p.push({k:k,img:g.img,name:g.game})});return p}
+function memScore(secs,moves){return Math.max(0,Math.round(1000-3*secs-10*moves))}
+function memFmtEnd(iso){try{var d=new Date(new Date(iso).getTime()-60000);return d.toLocaleString("pl-PL",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}catch(e){return""}}
+function memErr(e){var m=(e&&e.message)||"";return m&&m.length<140?m:"Wystąpił błąd. Spróbuj ponownie."}
+async function memLoad(){
+  MEM.infoErr=false;
+  try{
+    var got=await Promise.all([sb.rpc("memory_info"),sb.rpc("memory_board")]);
+    if(got[0].error)throw got[0].error;
+    MEM.info=got[0].data;MEM.board=(got[1]&&!got[1].error)?got[1].data:[];
+  }catch(e){MEM.info=null;MEM.infoErr=true;MEM.board=[]}
+  if(onMem&&MEM.stage==="menu")renderMem();else if(onMem)memBoardRefresh()}
+function memBoardHtml(){
+  var rows=MEM.board||[],mine=nick();
+  if(MEM.infoErr)return'<p class="msg">Tabela wyników pojawi się po uruchomieniu turnieju.</p>';
+  if(!rows.length)return'<p class="msg">Nikt jeszcze nie ma wyniku. Bądź pierwszy!</p>';
+  return'<table class="memt"><thead><tr><th>#</th><th>Gracz</th><th>Punkty</th><th>Czas</th><th>Ruchy</th></tr></thead><tbody>'
+   +rows.map(function(r,i){var me_=me()&&mine&&r.user_name===mine;return'<tr class="'+(me_?"me":"")+'"><td>'+(i<3?["🥇","🥈","🥉"][i]:(+r.pos))+'</td><td>'+esc(r.user_name)+'</td><td>'+(+r.score)+'</td><td>'+(+r.secs).toFixed(1)+' s</td><td>'+(+r.moves)+'</td></tr>'}).join("")+'</tbody></table>'}
+function memBoardRefresh(){var b=$("membd");if(b)b.innerHTML=memBoardHtml()}
+function memPrizes(){return'<ol class="mempr"><li>🥇 <b>1. miejsce:</b> Final Fantasy VII Rebirth – Digital Deluxe Edition</li><li>🥈 <b>2. miejsce:</b> Silent Hill 2</li><li>🥉 <b>3. miejsce:</b> Graveyard Keeper 2</li></ol>'}
+function memRules(){var i=MEM.info,end=i&&i.ends_at?memFmtEnd(i.ends_at):"";return'<div class="memc"><h3>Zasady turnieju</h3><ul style="margin:6px 0 0;padding-left:18px;color:var(--muted)">'
+ +'<li>Znajdź wszystkie 8 par okładek gier z katalogu. Im szybciej i mniej ruchami, tym więcej punktów.</li>'
+ +'<li>Punkty: 1000 − 3 za każdą sekundę − 10 za każdy ruch (minimum 0). Liczy je serwer, a czas mierzony jest od pierwszej odkrytej karty.</li>'
+ +'<li>Masz 3 próby w całym turnieju, a do tabeli wchodzi Twój najlepszy wynik. Przerwanie gry też zużywa próbę.</li>'
+ +'<li>Udział wymaga zalogowania.'+(end?' Turniej trwa do '+esc(end)+'.':'')+'</li>'
+ +'<li>Nagrody zdobywają trzy najlepsze wyniki. Organizator skontaktuje się ze zwycięzcami przez adres powiązany z kontem.</li>'
+ +'<li>Wyniki uzyskane nieuczciwie (boty, skrypty, wykorzystanie błędów) mogą zostać wykluczone, a zwycięzców organizator sprawdza przed wręczeniem nagród.</li></ul></div>'}
+function renderMem(){
+  if(!onMem)return;
+  var i=MEM.info,st=i?i.state:"",logged=!!me(),canT=CM&&!!i&&st==="open",tsub;
+  if(MEM.infoErr||!CM)tsub="Turniej jeszcze nie jest uruchomiony.";
+  else if(!i)tsub="Wczytuję…";
+  else if(st==="soon")tsub="Turniej jeszcze się nie zaczął.";
+  else if(st==="ended")tsub="Turniej już się zakończył.";
+  else if(st==="off")tsub="Turniej jest chwilowo wyłączony.";
+  else if(logged&&i.used>=(i.limit||3)){tsub="Wykorzystałeś wszystkie próby."+(i.mine?" Twój najlepszy wynik: "+(+i.mine.score)+" pkt.":"");canT=false}
+  else tsub=logged?"Do tabeli liczy się najlepszy wynik. Pozostało prób: "+((i.limit||3)-(+i.used||0))+" z "+(i.limit||3)+"."+(i.mine?" Twój najlepszy wynik: "+(+i.mine.score)+" pkt.":""):"Wymaga zalogowania.";
+  var login=(!logged&&MEM.needLogin)?'<div class="vconf verr" role="alert"><span class="vck">!</span><div><b>Musisz się zalogować, aby wziąć udział w turnieju</b><small>Kliknij „Zaloguj się” w lewym górnym rogu, a potem wybierz „Turniej”.</small></div></div>':"";
+  $("memview").innerHTML=VBACK+'<h2>Memory: Okładki gier</h2><p class="msg">Odkrywaj karty i dopasowuj okładki gier z katalogu. Wybierz, czy grasz o nagrody, czy ćwiczysz.</p>'+login
+   +'<div class="memi"><button class="memc memm" id="mem_t" type="button"'+(canT?'':' disabled')+'><b>🏆 Turniej</b><span style="color:var(--muted)">'+esc(tsub)+'</span></button>'
+   +'<button class="memc memm" id="mem_p" type="button"><b>🎯 Trening</b><span style="color:var(--muted)">Ćwicz bez limitów. Wynik nie wchodzi do tabeli.</span></button></div>'
+   +'<div class="memi"><div class="memc"><h3>Nagrody</h3>'+memPrizes()+'</div>'+memRules()+'</div>'
+   +'<div class="memc" style="margin-top:12px"><h3>Tabela wyników</h3><div id="membd">'+memBoardHtml()+'</div></div>';
+  $("mem_p").onclick=function(){memStart("p")};
+  $("mem_t").onclick=function(){if(!me()){MEM.needLogin=true;renderMem();return}memStart("t")}}
+async function memStart(mode){
+  var pool=memPool();if(pool.length<8){MEM.msg="Za mało gier z okładkami.";return}
+  var id=null;
+  if(mode==="t"){
+    var b=$("mem_t");if(b)b.disabled=true;
+    try{var r=await sb.rpc("memory_start",{p_pool:pool.map(function(x){return x.k})});if(r.error)throw r.error;id=r.data}
+    catch(e){if(onMem){MEM.stage="menu";await memLoad();var m=$("membd");if(m)m.insertAdjacentHTML("beforebegin",'<p class="msg err">'+esc(memErr(e))+'</p>')}return}
+  }
+  var map={};pool.forEach(function(x){map[x.k]=x});
+  var local=null;
+  if(mode==="p")local=memShuffle(pool.map(function(x){return x.k}).concat(pool.map(function(x){return x.k})));
+  MG={mode:mode,id:id,map:map,local:local,first:null,lock:false,moves:0,found:0,t0:0,secs:0,timer:null,done:false,busy:false,state:new Array(16).fill(0)};
+  MEM.stage="play";MEM.needLogin=false;drawGame()}
+function drawGame(){
+  var t=MG.mode==="t";
+  $("memview").innerHTML=VBACK+'<h2>Memory: Okładki gier</h2>'
+   +'<div class="memh"><span class="tag">'+(t?"🏆 Turniej":"🎯 Trening")+'</span><span>Czas: <b id="mm_t">0</b> s</span><span>Ruchy: <b id="mm_m">0</b></span><span>Punkty: <b id="mm_s">1000</b></span><button class="btn" id="mm_back" type="button">Zakończ</button></div>'
+   +'<div class="memb" id="mm_b">'+new Array(16).fill(0).map(function(_,i){return'<button class="mc" type="button" data-i="'+i+'" aria-label="Karta '+(i+1)+'"><div class="mi"><div class="mb">?</div><div class="mf"></div></div></button>'}).join("")+'</div>'
+   +'<p class="msg" id="mm_msg" style="text-align:center">Kliknij kartę, żeby zacząć'+(t?'. Czas liczy się od pierwszej odkrytej karty.':'.')+'</p><div id="mm_res"></div>'
+   +'<div class="memc" style="margin-top:12px"><h3>Tabela wyników</h3><div id="membd">'+memBoardHtml()+'</div></div>';
+  $("mm_b").onclick=function(e){var c=e.target.closest(".mc");if(c)memFlip(+c.getAttribute("data-i"))};
+  $("mm_back").onclick=function(){memStop();MEM.stage="menu";renderMem();memLoad()}}
+function memStop(){if(MG&&MG.timer){clearInterval(MG.timer);MG.timer=null}}
+function memCard(i){return $("mm_b")?$("mm_b").children[i]:null}
+function memShow(i,key){var c=memCard(i),g=MG.map[key];if(!c||!g)return;var f=c.querySelector(".mf");
+  f.innerHTML='<img alt="'+esc(g.name)+'" src="'+esc(g.img)+'"><div class="mn">'+esc(g.name)+'</div>';
+  var im=f.querySelector("img");im.onerror=function(){im.style.display="none";f.querySelector(".mn").style.display="flex"};
+  c.classList.add("f");MG.state[i]=1}
+function memHide(i){var c=memCard(i);if(!c)return;c.classList.remove("f");MG.state[i]=0;setTimeout(function(){if(c&&!c.classList.contains("f"))c.querySelector(".mf").innerHTML=""},450)}
+function memHud(){var a=$("mm_t"),b=$("mm_m"),c=$("mm_s");if(a)a.textContent=MG.secs;if(b)b.textContent=MG.moves;if(c)c.textContent=memScore(MG.secs,MG.moves)}
+function memTick(){if(MG.timer)return;MG.t0=Date.now();MG.timer=setInterval(function(){MG.secs=Math.floor((Date.now()-MG.t0)/1000);memHud()},500)}
+async function memFlip(i){
+  if(!MG||MG.done||MG.lock||MG.busy||MG.state[i])return;
+  var second=MG.first!==null,key,match=null,fin=null;
+  if(MG.mode==="t"){
+    MG.busy=true;
+    try{var r=await sb.rpc("memory_flip",{p_game:MG.id,p_idx:i});if(r.error)throw r.error;var d=r.data;key=d.key;match=d.match;fin=d.done?d:null}
+    catch(e){MG.busy=false;var m=$("mm_msg");if(m&&!/szybko/i.test(e.message||""))m.textContent=memErr(e);return}
+    MG.busy=false;
+  }else{key=MG.local[i];if(second)match=(MG.local[MG.first]===key)}
+  memTick();memShow(i,key);
+  if(!second){MG.first=i;return}
+  MG.moves++;memHud();var a=MG.first;MG.first=null;
+  if(match){
+    memCard(a).classList.add("ok");memCard(i).classList.add("ok");MG.state[a]=2;MG.state[i]=2;MG.found++;
+    if(MG.mode==="p"?MG.found===8:!!fin)memFinish(fin)
+  }else{MG.lock=true;setTimeout(function(){memHide(a);memHide(i);MG.lock=false},850)}}
+async function memFinish(srv){
+  MG.done=true;memStop();
+  var secs=srv?+srv.secs:Math.max(1,(Date.now()-MG.t0)/1000),moves=srv?+srv.moves:MG.moves,score=srv?+srv.score:memScore(secs,moves);
+  if(srv){MG.secs=Math.round(secs);MG.moves=moves;memHud();var s=$("mm_s");if(s)s.textContent=score}
+  var t=MG.mode==="t";
+  $("mm_msg").textContent="";
+  $("mm_res").innerHTML='<div class="memr" role="status"><b>'+(t?"Wynik zapisany!":"Trening zakończony!")+'</b>'+score+' pkt · '+secs.toFixed(1)+' s · '+moves+' ruchów'
+   +(t?'<br><small>Do tabeli liczy się Twój najlepszy wynik.</small>':'<br><small>To był tylko trening, wynik nie wchodzi do tabeli.</small>')
+   +'<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px"><button class="btn" id="mm_again" type="button">Zagraj jeszcze raz</button>'+(t?'':'<button class="btn" id="mm_tour" type="button">Przejdź do turnieju</button>')+'<button class="btn" id="mm_menu" type="button">Menu</button></div></div>';
+  var mode=MG.mode;
+  $("mm_again").onclick=function(){memStart(mode)};
+  if($("mm_tour"))$("mm_tour").onclick=function(){MEM.stage="menu";if(!me()){MEM.needLogin=true}renderMem();memLoad()};
+  $("mm_menu").onclick=function(){MEM.stage="menu";renderMem();memLoad()};
+  if(t){try{var r=await sb.rpc("memory_board");if(!r.error){MEM.board=r.data||[];memBoardRefresh()}}catch(e){}}
+}
+function memAuth(){if(onMem&&MEM.stage==="menu"){MEM.needLogin=false;renderMem();memLoad()}}
+function showMem(){var was=curViewName();enterView("mem","Memory: Okładki gier – GryPoPolsku.pl");if(was!=="mem"){MEM.stage="menu";MG=null;MEM.needLogin=false}renderMem();memLoad()}
+
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onMem?"mem":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===MEMHASH)showMem();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("memview").style.display=onMem?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onMem=name==="mem";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onMem=false;setViewUI()}
 var modAddOn=false;
 function renderAdd(){
   var wait=CM&&me()&&!roleLoaded&&!isMod(),asMod=!!(CM&&isMod());
@@ -1366,7 +1502,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===MEMHASH)route();
 if(location.hash==="#/lektor"){history.replaceState(null,"",location.pathname+location.search);setView("lk")}
 var baseItems=[];
 function mergeApproved(rows){

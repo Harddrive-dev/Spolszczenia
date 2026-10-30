@@ -23,6 +23,7 @@ h2.pt{font-size:26px;margin:0 0 12px}
 .ex{color:var(--muted);font-size:15px;margin:0}
 .it{padding:16px 4px;border-top:1px solid var(--line)}
 .it{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:start}.it .cov{min-height:0;aspect-ratio:3/2;font-size:34px}
+.hero{align-items:start}.hero .cov{min-height:0;aspect-ratio:3/2;align-self:start}
 @media (max-width:640px){.it{grid-template-columns:1fr}}
 .it.h,.hero.h{display:none}
 .bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}

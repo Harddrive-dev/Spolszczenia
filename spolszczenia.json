@@ -8375,8 +8375,11 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dead-island-2-ultimated-edition",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/ad83d8530fdc4b8255bff5a4f3c5ca66.jpg",
-    "opis": "Zombie opanowały Los Angeles. Walczysz o przeżycie w rozbudowanej grze akcji z elementami RPG."
+    "img": "https://cdn2.steamgriddb.com/thumb/2985345d049f10ab8f5a81d9b4707a28.jpg",
+    "opis": "Zombie opanowały Los Angeles. Walczysz o przeżycie w rozbudowanej grze akcji z elementami RPG.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Dark Messiah of Might & Magic",
@@ -8409,5 +8412,31 @@
     "author": "ozonek",
     "img": "https://cdn2.steamgriddb.com/thumb/3544ab420bc3671373195bc5148d2e28.jpg",
     "opis": "Horror w świecie „Cichego miejsca\". Ukrywasz się przed potworami reagującymi na dźwięk."
+  },
+  {
+    "game": "Stardew Valley",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "MartinJHN",
+    "link": "https://www.nexusmods.com/stardewvalley/mods/3616",
+    "dodano": "2026-10-31",
+    "img": "https://cdn2.steamgriddb.com/thumb/996e24639b91722571c81723760023e0.jpg",
+    "upd": "2026-10-31"
+  },
+  {
+    "game": "World of Warcraft: Forever",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "WoWPoPolsku",
+    "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
+    "dodano": "2026-10-31",
+    "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
+    "upd": "2026-10-31"
   }
 ]

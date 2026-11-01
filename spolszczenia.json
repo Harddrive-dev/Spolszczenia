@@ -6819,7 +6819,11 @@
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9cd0f2a7c17876d6721916f09bce496c.jpg",
     "genre": "Akcja / platformówka",
-    "opis": "Gra akcji z Jamesem Bondem, młodym agentem. Studio IO Interactive pokazuje początki słynnego szpiega."
+    "opis": "Gra akcji z Jamesem Bondem, młodym agentem. Studio IO Interactive pokazuje początki słynnego szpiega.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "gamereader": "https://www.gamereader.pl/biblioteka"
   },
   {
     "game": "Forza Horizon 6",

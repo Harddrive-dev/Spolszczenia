@@ -6818,7 +6818,7 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9cd0f2a7c17876d6721916f09bce496c.jpg",
-    "genre": "Akcja / platformówka",
+    "genre": "Akcja",
     "opis": "Gra akcji z Jamesem Bondem, młodym agentem. Studio IO Interactive pokazuje początki słynnego szpiega.",
     "type": "Napisy",
     "status": "Gotowe",
@@ -7094,7 +7094,11 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "genre": "Akcja / platformówka",
-    "opis": "Ezio Auditore kończy swoją opowieść w Konstantynopolu. Gra akcji z serii Assassin's Creed."
+    "opis": "Ezio Auditore kończy swoją opowieść w Konstantynopolu. Gra akcji z serii Assassin's Creed.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/105fb0578a9e90c458f69bad63c38709.png"
   },
   {
     "game": "Assassin's Creed Odyssey",
@@ -7103,9 +7107,12 @@
     "lore": "https://lorespeak.pl/games/assassins-creed-odyssey",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/132d16811e7db45a5c501541c275851c.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/ddf36ce0658efd6eaaaddb4aa9de7c7e.jpg",
     "genre": "Akcja / platformówka",
-    "opis": "Gra akcji RPG z serii Assassin's Creed, osadzona w starożytnej Grecji w czasie wojny peloponeskiej. Wcielasz się w Kassandrę albo Alexiosa, a decyzje wpływają na losy bohatera."
+    "opis": "Gra akcji RPG z serii Assassin's Creed, osadzona w starożytnej Grecji w czasie wojny peloponeskiej. Wcielasz się w Kassandrę albo Alexiosa, a decyzje wpływają na losy bohatera.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Assassin's Creed Origins",
@@ -8448,7 +8455,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "0.1.1",
     "author": "WoWPoPolsku",
     "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
     "dodano": "2026-10-31",

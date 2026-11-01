@@ -7504,17 +7504,18 @@
     "game": "Phantom Blade Zero",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Beta",
+    "status": "Gotowe",
     "prog": 100,
     "ver": "0.1",
-    "author": "promptowy",
-    "link": "https://promptowy.com/phantom/",
+    "author": "pogo_pierrot",
+    "link": "https://bazarowespolszczenia.pl/gra/phantom_blade_zero",
     "genre": "RPG",
     "premiera": "2026-10-30",
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/2470e3a630ce607b21eee976602842dc.jpg",
     "upd": "2026-10-29",
-    "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\"."
+    "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\".",
+    "lore": "https://lorespeak.pl/games/phantom-blade-zero"
   },
   {
     "game": "Tom Clancy's Ghost Recon Breakpoint",
@@ -8448,7 +8449,8 @@
     "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
-    "upd": "2026-10-31"
+    "upd": "2026-10-31",
+    "genre": "MMORPG"
   },
   {
     "game": "Getting Over It with Bennett Foddy",

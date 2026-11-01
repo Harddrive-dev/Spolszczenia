@@ -3448,14 +3448,14 @@
   },
   {
     "game": "Metal Gear",
-    "img": "https://cdn2.steamgriddb.com/thumb/ad136431f11b38bc735a247d2eebe286.jpg",
-    "platform": "Nintendo NES",
+    "img": "https://cdn2.steamgriddb.com/thumb/300e886725c1be52bfffc0692c6a656d.png",
+    "platform": "PC",
     "type": "Napisy",
-    "status": "Gotowe",
+    "status": "Testy",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/metal-gear/",
+    "author": "GrzybDev",
+    "link": "https://bazaspolszczen.pl/games/metal-gear/grzybdev",
     "genre": "Akcja / platformówka",
     "dodano": "2026-10-28",
     "opis": "Gra akcji ze skradaniem na NES-a. Solid Snake infiltruje bazę wroga."
@@ -8565,7 +8565,7 @@
     "game": "Baldi's Basics Classic Remastered",
     "platform": "PC",
     "type": "Dubbing",
-    "status": "Gotowe",
+    "status": "Testy",
     "prog": 100,
     "ver": "—",
     "author": "Grupa Karambola",
@@ -8573,6 +8573,34 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/e316e232d20e9f60acad2f8757acc50e.jpg",
+    "upd": "2026-11-01"
+  },
+  {
+    "game": "START AGAIN: a prologue",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 100,
+    "ver": "—",
+    "author": "Grupa Karambola",
+    "link": "https://bazaspolszczen.pl/games/start-again-a-prologue/grupa-karambola",
+    "genre": "Survival Horror",
+    "dodano": "2026-11-01",
+    "img": "https://cdn2.steamgriddb.com/thumb/65c306e10f21f24d5bd0573a5097a27e.jpg",
+    "upd": "2026-11-01"
+  },
+  {
+    "game": "METAL GEAR & METAL GEAR 2: Solid Snake",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 100,
+    "ver": "—",
+    "author": "GrzybDev",
+    "link": "https://bazaspolszczen.pl/games/metal-gear-metal-gear-2-solid-snake/grzybdev",
+    "genre": "Akcja",
+    "dodano": "2026-11-01",
+    "img": "https://cdn2.steamgriddb.com/thumb/ab7f1ca89cc7a550e2285123365eb110.jpg",
     "upd": "2026-11-01"
   }
 ]

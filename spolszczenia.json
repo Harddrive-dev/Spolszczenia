@@ -5219,7 +5219,7 @@
     "opis": "RPG w świecie Mrocznego Oka z mocnym wpływem wyborów."
   },
   {
-    "game": "The Dark Pictures Anthology – House of Ashes",
+    "game": "The Dark Pictures Anthology: House of Ashes",
     "img": "https://cdn2.steamgriddb.com/thumb/725886b2fd31d2e009c532a3f01084d1.jpg",
     "platform": "PC",
     "type": "Napisy",
@@ -5230,10 +5230,11 @@
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-house-of-ashes/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Horror kooperacyjny od Supermassive Games. Żołnierze i agenci CIA trafiają pod ziemię w Iraku i odkrywają starożytną grozę."
+    "opis": "Horror kooperacyjny od Supermassive Games. Żołnierze i agenci CIA trafiają pod ziemię w Iraku i odkrywają starożytną grozę.",
+    "id": "the-dark-pictures-anthology-house-of-ashes"
   },
   {
-    "game": "The Dark Pictures Anthology – Little Hope",
+    "game": "The Dark Pictures Anthology: Little Hope",
     "img": "https://cdn2.steamgriddb.com/thumb/8749231feef8a4b11ae48e7799b2c024.jpg",
     "platform": "PC",
     "type": "Napisy",
@@ -5241,13 +5242,14 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-little-hope/",
+    "link": "https://bazaspolszczen.pl/games/the-dark-pictures-anthology-little-hope/grzybdev",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Interaktywny horror od Supermassive Games. Grupa ludzi utyka w mglistym miasteczku Little Hope, a o ich losach decydują wybory."
+    "opis": "Interaktywny horror od Supermassive Games. Grupa ludzi utyka w mglistym miasteczku Little Hope, a o ich losach decydują wybory.",
+    "id": "the-dark-pictures-anthology-little-hope"
   },
   {
-    "game": "The Dark Pictures Anthology – Man of Medan",
+    "game": "The Dark Pictures Anthology: Man of Medan",
     "img": "https://cdn2.steamgriddb.com/thumb/5bd4ab7d8bd44f22d85fee267d864472.jpg",
     "platform": "PC",
     "type": "Napisy",
@@ -5258,7 +5260,8 @@
     "link": "https://grajpopolsku.pl/download/the-dark-pictures-anthology-man-of-medan/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Interaktywny horror od Supermassive Games. Grupa nurków trafia na opuszczony statek widmo, a o życiu bohaterów decydują twoje wybory."
+    "opis": "Interaktywny horror od Supermassive Games. Grupa nurków trafia na opuszczony statek widmo, a o życiu bohaterów decydują twoje wybory.",
+    "id": "the-dark-pictures-anthology-man-of-medan"
   },
   {
     "game": "The Dark Pictures Anthology: The Devil in Me",

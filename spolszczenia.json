@@ -8708,5 +8708,48 @@
     "dodano": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/21dd037868c44b34bdafb880660faa3d.jpg",
     "upd": "2026-11-02"
+  },
+  {
+    "game": "Sniper: Ghost Warrior",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/sniper-ghost-warrior",
+    "genre": "FPS",
+    "dodano": "2026-11-02",
+    "img": "https://cdn2.steamgriddb.com/thumb/c7a4aa8d2b33e184992e27cd34db39e2.jpg",
+    "upd": "2026-11-02"
+  },
+  {
+    "game": "Borderlands 3",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/borderlands-3",
+    "genre": "FPS",
+    "dodano": "2026-11-02",
+    "img": "https://cdn2.steamgriddb.com/thumb/c039e6496e67fdb3d46e6d5877e01ed2.jpg",
+    "upd": "2026-11-02"
+  },
+  {
+    "game": "Grand Theft Auto",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "TheLaughingMan",
+    "lore": "https://lorespeak.pl/games/grand-theft-auto",
+    "genre": "Akcja",
+    "dodano": "2026-11-02",
+    "img": "https://cdn2.steamgriddb.com/thumb/830d8cfa42c682e73a8b476c2de17134.jpg",
+    "upd": "2026-11-02",
+    "status": "Gotowe",
+    "link": "https://www.gta-mods.pl/pliki/444/spolszczenie-do-gta-1#google_vignette"
   }
 ]

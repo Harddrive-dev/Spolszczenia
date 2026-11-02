@@ -1,0 +1,32 @@
+[
+ {
+  "game": "Zanzarah – The Hidden Portal",
+  "platform": "PC",
+  "genre": "RPG",
+  "type": "Napisy",
+  "status": "Gotowe",
+  "prog": 100,
+  "ver": "—",
+  "author": "Bartłomiej Duda (Ikskoks)",
+  "link": "https://grajpopolsku.pl/download/zanzarah-the-hidden-portal/",
+  "dodano": "2026-11-02",
+  "upd": "2024-06-22",
+  "img": "https://cdn2.steamgriddb.com/thumb/bb6aabb82e3a6f239be141cfc2382c96.png",
+  "opis": "Bohaterka trafia do magicznej krainy Zanzarah, gdzie zbiera i szkoli wróżki, by ocalić ją przed zagładą."
+ },
+ {
+  "game": "Metal Gear NES",
+  "platform": "Nintendo NES",
+  "genre": "Akcja / platformówka",
+  "type": "Napisy",
+  "status": "Gotowe",
+  "prog": 100,
+  "ver": "—",
+  "author": "RPG",
+  "link": "https://grajpopolsku.pl/download/metal-gear/",
+  "dodano": "2026-11-02",
+  "upd": "2021-03-18",
+  "img": "https://cdn2.steamgriddb.com/thumb/afbf3656b3067ecd8fae7649a5bf9dd7.jpg",
+  "opis": "Klasyczna gra akcji z widokiem z góry: Solid Snake infiltruje bazę Outer Heaven i niszczy kroczący czołg Metal Gear."
+ }
+]

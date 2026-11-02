@@ -7009,9 +7009,12 @@
     "lore": "https://lorespeak.pl/games/a-plague-tale-innocence",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/e12999c8d752abf6f612f729e4800e77.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/e52bee9fdf30c1a7b287f6f7b2a3e61b.jpg",
     "genre": "Przygodowa",
-    "opis": "Przygodowa gra akcji od Asobo Studio, osadzona we Francji w XIV wieku. Amicia opiekuje się młodszym bratem Hugonem, a ucieczkę utrudniają armie szczurów i żołnierze Inkwizycji."
+    "opis": "Przygodowa gra akcji od Asobo Studio, osadzona we Francji w XIV wieku. Amicia opiekuje się młodszym bratem Hugonem, a ucieczkę utrudniają armie szczurów i żołnierze Inkwizycji.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Avatar: Frontiers of Pandora",
@@ -7528,9 +7531,12 @@
     "lore": "https://lorespeak.pl/games/a-plague-tale-requiem",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/d35e35d7ff517c25fd855cf08bc95d3c.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/4722b8c91b8eea182c977e7b57781211.jpg",
     "genre": "Przygodowa",
-    "opis": "Kontynuacja przygodowej gry akcji od Asobo Studio. Amicia i Hugo uciekają na południe Francji w poszukiwaniu nowego domu, a rodzeństwu znowu zagrażają szczury i ludzie."
+    "opis": "Kontynuacja przygodowej gry akcji od Asobo Studio. Amicia i Hugo uciekają na południe Francji w poszukiwaniu nowego domu, a rodzeństwu znowu zagrażają szczury i ludzie.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Thief",
@@ -7707,14 +7713,19 @@
     "gamereader": "https://www.gamereader.pl/biblioteka"
   },
   {
-    "game": "Alan Wake 2 Deluxe Edition",
+    "game": "Alan Wake 2",
     "platform": "PC",
     "genre": "Horror",
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/alan-wake-2-deluxe-edition",
     "pl": "of",
-    "opis": "Alan Wake wraca w horrorze przygodowym. Pisarz próbuje wydostać się z koszmaru, który sam tworzy."
+    "opis": "Alan Wake wraca w horrorze przygodowym. Pisarz próbuje wydostać się z koszmaru, który sam tworzy.",
+    "id": "alan-wake-2-deluxe-edition",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/a7147fd59ab64d16e49e819733ad2187.jpg"
   },
   {
     "game": "Alan Wake Remastered",
@@ -7724,7 +7735,11 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/alan-wake-remastered",
     "pl": "of",
-    "opis": "Odnowiona wersja gry o pisarzu Alanie Wake'u, który szuka zaginionej żony w miasteczku Bright Falls."
+    "opis": "Odnowiona wersja gry o pisarzu Alanie Wake'u, który szuka zaginionej żony w miasteczku Bright Falls.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/f25f7b9e7ee973a3720e1261cf3a30c8.jpg"
   },
   {
     "game": "Remnant: From the Ashes",

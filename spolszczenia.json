@@ -8366,7 +8366,11 @@
     "upd": "2026-10-30",
     "pl": "of",
     "img": "https://cdn2.steamgriddb.com/thumb/fa8469112345cdf93cd402092eb73d5d.jpg",
-    "opis": "Remake kultowej gry z Leonem Kennedym. Do pakietu dołączono też dodatek z Adą Wong."
+    "opis": "Remake kultowej gry z Leonem Kennedym. Do pakietu dołączono też dodatek z Adą Wong.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "lore": "https://lorespeak.pl/games/resident-evil-4-remake"
   },
   {
     "game": "Resident Evil 2 Remake",
@@ -8690,5 +8694,19 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-01",
     "opis": "Bliźniacy Tyler i Alyson Ronan wracają do rodzinnego miasteczka na Alasce i dzięki wyjątkowej więzi odkrywają prawdę o swojej przeszłości. Epizodowa przygoda od twórców Life is Strange."
+  },
+  {
+    "game": "Dead Age 2: The Zombie Survival RPG",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "Grupa Baxa",
+    "link": "https://bazaspolszczen.pl/games/dead-age-2-the-zombie-survival-rpg/grupa-baxa",
+    "genre": "RPG",
+    "dodano": "2026-11-02",
+    "img": "https://cdn2.steamgriddb.com/thumb/21dd037868c44b34bdafb880660faa3d.jpg",
+    "upd": "2026-11-02"
   }
 ]

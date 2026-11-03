@@ -8,15 +8,15 @@ if(!res.ok){console.error("Błąd Supabase",res.status,await res.text());process
 const rows=await res.json();
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
 for(const g of list)if(g.status==="W toku")g.status="Beta";
-const TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"];
+const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
-  if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader))||find(slug(name)))continue;
+  if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader)&&!URLOK(d.dub))||find(slug(name)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
-  if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
+  if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
   if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
@@ -24,12 +24,14 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(day)g.upd=day}
  else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
-   if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt"].includes(f))continue;
+   if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].includes(f))continue;
    if(f==="status"){if(v)g.status=v==="W toku"?"Beta":v;continue}
    if(f==="yt"){if(YT(v))g.yt=v;else if(!v)delete g.yt;continue}
    if(f==="ytt"){if(v)g.ytt=v.slice(0,80);else delete g.ytt;continue}
    if(f==="pl"){if(v==="of")g.pl="of";else delete g.pl;continue}
-   if(f==="lore"||f==="gamereader"){if(/^https?:\/\//i.test(v))g[f]=v;else if(!v)delete g[f];continue}
+   if(f==="lore"||f==="gamereader"||f==="dub"){if(/^https?:\/\//i.test(v))g[f]=v;else if(!v)delete g[f];continue}
+   if(f==="dubAuthor"){if(v)g.dubAuthor=v.slice(0,100);else delete g.dubAuthor;continue}
+   if(f==="dubStatus"){if(DUBST.includes(v))g.dubStatus=v;else if(!v)delete g.dubStatus;continue}
    if(f==="game"){if(!v)continue;if(!g.id)g.id=keyOf(g);g.game=v;continue}
    if(f==="link"){if(/^https?:\/\//i.test(v))g.link=v;else if(!v&&((d.changes||[]).some(x=>x.field==="pl"&&x.to==="of")||g.pl==="of"))delete g.link;continue}
    if(f==="img"){if(!v)delete g.img;else if(/^(https?:\/\/|img\/)/i.test(v))g.img=v;continue}

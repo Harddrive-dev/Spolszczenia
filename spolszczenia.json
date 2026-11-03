@@ -2510,8 +2510,8 @@
     "img": "https://cdn2.steamgriddb.com/thumb/7a0a77002f55780b7827cb193b5b31c2.jpg",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Wstrzymane",
-    "prog": 90,
+    "status": "Gotowe",
+    "prog": 100,
     "ver": "—",
     "author": "—",
     "link": "https://grajpopolsku.pl/download/gwbw-testy/",
@@ -13853,7 +13853,7 @@
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
     "dodano": "2026-11-01",
     "upd": "2026-11-02",
-    "img": "https://cdn2.steamgriddb.com/thumb/71dd009ae3ca8e9775eadda65f0ce555.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/5916611a2ec8045849ee52e5048761cc.jpg"
   },
   {
     "game": "Trials of Mana",

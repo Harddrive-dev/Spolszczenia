@@ -12703,7 +12703,7 @@
     "platform": "PC",
     "genre": "Akcja / platformówka",
     "type": "Napisy",
-    "status": "Beta",
+    "status": "W trakcie",
     "prog": 70,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -12870,7 +12870,7 @@
     "platform": "PC",
     "genre": "Akcja / platformówka",
     "type": "Napisy",
-    "status": "Beta",
+    "status": "W trakcie",
     "prog": 70,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -13776,7 +13776,7 @@
     "platform": "PC",
     "genre": "Metroidvania",
     "type": "Napisy",
-    "status": "Beta",
+    "status": "W trakcie",
     "prog": 69,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -13846,8 +13846,8 @@
     "platform": "PC",
     "genre": "RPG",
     "type": "Napisy",
-    "status": "Beta",
-    "prog": 23,
+    "status": "W trakcie",
+    "prog": 24,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
@@ -14095,7 +14095,8 @@
     "dodano": "2026-11-03",
     "upd": "2025-05-12",
     "img": "https://cdn2.steamgriddb.com/thumb/2d92b989deeb771206e2f924073f81cd.jpg",
-    "opis": "Postapokaliptyczna gra RPG z otwartym światem: po 200 latach w krypcie bohater wychodzi na zrujnowane pustkowia Bostonu w poszukiwaniu porwanego syna."
+    "opis": "Postapokaliptyczna gra RPG z otwartym światem: po 200 latach w krypcie bohater wychodzi na zrujnowane pustkowia Bostonu w poszukiwaniu porwanego syna.",
+    "yt": "https://www.youtube.com/watch?v=pTnaw_mwCBo"
   },
   {
     "game": "Fallout: New Vegas",
@@ -14110,7 +14111,8 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/0088f68f9e771f24b774dce80886fc25.jpg",
-    "opis": "Kurier postrzelony i pogrzebany na pustyni Mojave rusza tropem swoich oprawców, a jego wybory decydują o losie Nowego Vegas."
+    "opis": "Kurier postrzelony i pogrzebany na pustyni Mojave rusza tropem swoich oprawców, a jego wybory decydują o losie Nowego Vegas.",
+    "yt": "https://www.youtube.com/watch?v=VEh7nN4zaUk"
   },
   {
     "game": "Star Wars: Knights of the Old Republic",
@@ -14125,7 +14127,8 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/6a0de0c3cc39d88613eac5f05ba6c94f.jpg",
-    "opis": "Klasyczne RPG od BioWare osadzone 4000 lat przed filmami: bohater odkrywa swoją przeszłość i staje między Jasną a Ciemną Stroną Mocy."
+    "opis": "Klasyczne RPG od BioWare osadzone 4000 lat przed filmami: bohater odkrywa swoją przeszłość i staje między Jasną a Ciemną Stroną Mocy.",
+    "yt": "https://www.youtube.com/watch?v=N9VbB4I5QJs"
   },
   {
     "game": "Portal 2",
@@ -14156,10 +14159,11 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/3ede4f910022c657c9d9892052527ca7.jpg",
-    "opis": "Rozbudowana modyfikacja Gothic II: nowe lokacje, zadania, gildie i przebalansowana rozgrywka w świecie Khorinis."
+    "opis": "Rozbudowana modyfikacja Gothic II: nowe lokacje, zadania, gildie i przebalansowana rozgrywka w świecie Khorinis.",
+    "yt": "https://www.youtube.com/watch?v=80nTVSzv0mQ"
   },
   {
-    "game": "Divinity: Original Sin 2 – Definitive Edition",
+    "game": "Divinity: Original Sin 2",
     "platform": "PC",
     "genre": "RPG",
     "type": "Dubbing",
@@ -14171,10 +14175,12 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/0da2115815d3236ab630d84de8924bbe.jpg",
-    "opis": "Taktyczne RPG od Larian Studios z turowymi walkami: drużyna Źródłowych walczy o przetrwanie i boskość w świecie Rivellonu."
+    "opis": "Taktyczne RPG od Larian Studios z turowymi walkami: drużyna Źródłowych walczy o przetrwanie i boskość w świecie Rivellonu.",
+    "id": "divinity-original-sin-2-definitive-edition",
+    "yt": "https://www.youtube.com/watch?v=eWbz4M-uZHg"
   },
   {
-    "game": "Enderal: Forgotten Stories (Special Edition)",
+    "game": "Enderal: Forgotten Stories",
     "platform": "PC",
     "genre": "RPG",
     "type": "Dubbing",
@@ -14186,7 +14192,9 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/e26e118d020b8e7721ce638d569db056.jpg",
-    "opis": "Darmowa, całkowicie nowa gra RPG zbudowana na silniku Skyrima, z własnym światem Enderalu i mroczną, dojrzałą fabułą."
+    "opis": "Darmowa, całkowicie nowa gra RPG zbudowana na silniku Skyrima, z własnym światem Enderalu i mroczną, dojrzałą fabułą.",
+    "id": "enderal-forgotten-stories-special-edition",
+    "yt": "https://www.youtube.com/watch?v=Zh9qItoAY8U"
   },
   {
     "game": "The Elder Scrolls IV: Oblivion",
@@ -14201,7 +14209,8 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/bc8b834c9902258c0ae7064f68219552.jpg",
-    "opis": "Klasyczne RPG z otwartym światem: bohater musi zamknąć bramy Otchłani, przez które demony najeżdżają prowincję Cyrodiil."
+    "opis": "Klasyczne RPG z otwartym światem: bohater musi zamknąć bramy Otchłani, przez które demony najeżdżają prowincję Cyrodiil.",
+    "yt": "https://www.youtube.com/watch?v=8LWe7TWhEnI"
   },
   {
     "game": "South Park: The Stick of Truth",
@@ -14216,7 +14225,8 @@
     "dodano": "2026-11-03",
     "upd": "2025-05-12",
     "img": "https://cdn2.steamgriddb.com/thumb/bfe9c84a2ab31091e06f68aaebaa556b.jpg",
-    "opis": "Turowe RPG w stylu serialu South Park: Nowy Chłopiec dołącza do zabawy w fantasy, która szybko wymyka się spod kontroli."
+    "opis": "Turowe RPG w stylu serialu South Park: Nowy Chłopiec dołącza do zabawy w fantasy, która szybko wymyka się spod kontroli.",
+    "yt": "https://www.youtube.com/watch?v=5fUgwe3jNXU"
   },
   {
     "game": "The Elder Scrolls IV: Oblivion Remastered",

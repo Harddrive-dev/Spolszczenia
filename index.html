@@ -601,15 +601,32 @@ function pagerHtml(pages){
   nums.forEach(function(n){if(n-last>1)h+='<span class="gap">…</span>';h+='<button class="btn'+(n===page?' on':'')+'" data-pg="'+n+'"'+(n===page?' aria-current="page"':'')+'>'+n+'</button>';last=n});
   return h+'<button class="btn" data-pg="'+(page+1)+'"'+(page>=pages?' disabled':'')+'>›</button>'}
 // filtry katalogu pamiętane w obrębie karty przeglądarki (po wejściu w grę i powrocie nic się nie resetuje)
-var FLT_OK=false,FLT_Y=null;
-function saveF(y){if(!FLT_OK)return;try{sessionStorage.setItem("flt",JSON.stringify({v:VIEW,q:$("q").value,fp:$("fp").value,fg:$("fg").value,ft:$("ft").value,fs:$("fs").value,so:$("sort").value,pg:page,y:y==null?(FLT_Y||0):y}))}catch(e){}}
+var FLT_OK=false,FLT_POS=null,FLT_POS_SAVED=null;
+var onCat=function(){var h=location.hash;return !h||h==="#"||h==="#/"};
+try{if(onCat()&&"scrollRestoration" in history)history.scrollRestoration="manual"}catch(e){}
+// zapamiętujemy element z id na górze ekranu i jego przesunięcie, a nie same piksele: treść nad nim (głosowanie, wieści, logowanie)
+// doczytuje się po chwili i zmienia wysokość strony
+function scrollPos(){var y=window.pageYOffset,h=window.innerHeight,best=null,bd=1e9,els=document.querySelectorAll("body [id]");
+  for(var i=0;i<els.length;i++){var el=els[i];if(!el.offsetParent||el.closest(".overlay,#cm"))continue;var r=el.getBoundingClientRect();
+    if(r.height<8||r.height>h*3||r.bottom<0||r.top>h)continue;var d=r.top>=0?r.top:-r.top*1.5;if(d<bd){bd=d;best={y:y,id:el.id,off:Math.round(r.top)}}}
+  return best||{y:y}}
+function saveF(pos){if(!FLT_OK)return;if(pos)FLT_POS_SAVED=pos;try{sessionStorage.setItem("flt",JSON.stringify({v:VIEW,q:$("q").value,fp:$("fp").value,fg:$("fg").value,ft:$("ft").value,fs:$("fs").value,so:$("sort").value,pg:page,pos:FLT_POS_SAVED}))}catch(e){}}
 function loadF(){FLT_OK=true;var d=null;try{d=JSON.parse(sessionStorage.getItem("flt")||"null")}catch(e){}if(!d)return;
   ["q","fp","fg","ft","fs"].forEach(function(i){var el=$(i);if(el&&typeof d[i]==="string"){el.value=d[i];if(el.tagName==="SELECT"&&el.value!==d[i])el.value=""}});
   if(d.so&&$("sort")){$("sort").value=d.so;if($("sort").value!==d.so)$("sort").selectedIndex=0}
   if(d.v==="all"||d.v==="sp"||d.v==="lk"||d.v==="du")VIEW=d.v;["vwlk","vwall"].forEach(function(i){var e=$(i);if(e)e.className="btn"+(i==="vw"+VIEW?" on":"")});if(+d.pg>0)page=+d.pg;
-  var h=location.hash;if(+d.y>0&&(!h||h==="#"||h==="#/"))FLT_Y=+d.y}
-window.addEventListener("pagehide",function(){var h=location.hash;if(!h||h==="#"||h==="#/")saveF(window.pageYOffset)});
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#tb a.g,#cards a.g");if(a)saveF(window.pageYOffset)},true);
+  FLT_POS_SAVED=d.pos||(d.y?{y:+d.y}:null);if(FLT_POS_SAVED&&(FLT_POS_SAVED.y>0||FLT_POS_SAVED.id)&&onCat())FLT_POS=FLT_POS_SAVED}
+// przywracanie: ustawiamy widok od razu i poprawiamy go, gdy strona jeszcze rośnie (do 6 s), aż użytkownik sam przewinie
+function restoreScroll(){var pos=FLT_POS;FLT_POS=null;if(!pos)return;var stop=false,t0=Date.now(),ro=null;
+  function quit(){stop=true;["wheel","touchstart","keydown","mousedown"].forEach(function(ev){window.removeEventListener(ev,quit,true)});if(ro)ro.disconnect()}
+  function align(){if(stop)return;if(Date.now()-t0>6000)return quit();var el=pos.id&&document.getElementById(pos.id);
+    if(el){var d=el.getBoundingClientRect().top-pos.off;if(Math.abs(d)>1)window.scrollBy(0,d)}else if(Math.abs(window.pageYOffset-pos.y)>1)window.scrollTo(0,pos.y)}
+  ["wheel","touchstart","keydown","mousedown"].forEach(function(ev){window.addEventListener(ev,quit,true)});
+  align();requestAnimationFrame(align);setTimeout(align,60);
+  if(window.ResizeObserver){ro=new ResizeObserver(function(){align()});ro.observe(document.body)}
+  [300,800,1500,3000,5000].forEach(function(ms){setTimeout(align,ms)});setTimeout(quit,6100)}
+window.addEventListener("pagehide",function(){if(onCat())saveF(scrollPos())});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#tb a.g,#cards a.g");if(a)saveF(scrollPos())},true);
 function render(){
   var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;saveF();
   var r=all.slice((page-1)*PS,page*PS);
@@ -651,7 +668,7 @@ function renderHome(){
   $("wiesci").style.display=wiesci.length?"":"none";
   $("home").style.display=(nw.length||tp.length||wiesci.length)?"":"none";
 }
-function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(FLT_Y){var y=FLT_Y;FLT_Y=null;setTimeout(function(){window.scrollTo(0,y)},60)}renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
+function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
 $("cancel").onclick=function(){location.hash="#/"};

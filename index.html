@@ -251,43 +251,6 @@ body:has(.overlay.open){overflow:hidden}
 .leader .cd b{color:var(--accent);font-variant-numeric:tabular-nums}
 .leader .cd.urgent{animation:cdp 1.4s ease-in-out infinite}
 @keyframes cdp{50%{opacity:.55}}
-.navmem{position:relative;border-color:var(--accent);animation:memPulse 2.8s ease-in-out infinite}
-.navmem.done{animation:none;border-color:var(--line)}.navmem.done::after{display:none}
-.navmem::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
-@keyframes memPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,154,31,0)}50%{box-shadow:0 0 0 5px rgba(255,154,31,.28)}}
-@media(prefers-reduced-motion:reduce){.navmem{animation:none}}
-.memcd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;text-align:center;margin:0}
-.memcd .cl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--or,#ff9a1f);font-weight:700}
-.memcd .cn{display:flex;gap:6px;justify-content:center;margin:6px 0 4px}
-.memcd .cn div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:4px 0;min-width:46px}
-.memcd .cn b{display:block;font-size:20px;font-variant-numeric:tabular-nums}.memcd .cn span{font-size:10px;color:var(--muted)}
-.memcd small{color:var(--muted);display:block}
-.memv{display:flex;align-items:center;gap:12px;margin:0 0 12px;border-color:rgba(255,154,31,.35);background:linear-gradient(90deg,rgba(255,154,31,.12),var(--surface))}
-.memv .ic{font-size:22px}.memv b{font-size:15px}.memv .mvb{margin-left:auto;white-space:nowrap;background:var(--or,#ff9a1f);color:#1a1209;font-weight:700;border-radius:10px;padding:8px 14px;text-decoration:none;font-size:14px}
-@media(max-width:560px){.memv{flex-wrap:wrap}.memv .mvb{margin-left:0}}
-.memi{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin:12px 0;align-items:stretch}.memi .memc.memm{display:flex;flex-direction:column;justify-content:center}.memi.cd{grid-template-columns:1fr 1fr 210px}.memi .memc.memm{padding:10px 14px}.memi .memm b{font-size:16px;margin-bottom:2px}.memi .memm span{font-size:13px;line-height:1.35;display:block}@media(max-width:900px){.memi.cd{grid-template-columns:1fr 1fr}.memi.cd .memcd{grid-column:1/-1;order:-1}}@media(max-width:640px){.memi,.memi.cd{grid-template-columns:1fr}}
-.memc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.memp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}.mpz{text-align:center}.mpc{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;border:2px solid var(--line);background:var(--surface);max-width:180px;margin:0 auto}.mpc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}.mpc span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:8px;font-size:12px;font-weight:700}.mpz:first-child .mpc{border-color:#e8b923;box-shadow:0 0 14px rgba(232,185,35,.45)}.mpt{margin-top:8px;font-size:13px}.mpt b{display:block;font-size:14px}.mpt span{color:var(--muted)}@media(max-width:520px){.memp{gap:8px}.mpt{font-size:11px}.mpt b{font-size:12px}}
-.memc h3{margin:0 0 6px;font-size:17px}.memc p{margin:4px 0;color:var(--muted)}
-.mempr{list-style:none;margin:6px 0 0;padding:0}.mempr li{padding:4px 0;border-bottom:1px solid var(--line)}.mempr li:last-child{border:0}
-.memm{display:block;width:100%;text-align:left;cursor:pointer;color:inherit;font:inherit}
-.memm:hover:not(:disabled){border-color:var(--accent)}.memm:disabled{opacity:.55;cursor:not-allowed}
-.memm b{display:block;font-size:18px;margin-bottom:4px}
-.memh{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:10px 0;font-weight:700}
-.memh .tag{padding:3px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px}
-.memb{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:440px;margin:12px auto}
-.mc{perspective:700px;aspect-ratio:2/3;cursor:pointer;border:0;background:none;padding:0}
-.mi{position:relative;width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d}
-.mc.f .mi{transform:rotateY(180deg)}
-.mb,.mf{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
-.mb{background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 8px,var(--line) 8px,var(--line) 16px);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--muted)}
-.mf{transform:rotateY(180deg);background:#000;border:2px solid var(--line)}
-.mf img{width:100%;height:100%;object-fit:cover;display:block}
-.mf .mn{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:6px;text-align:center;font-size:11px;font-weight:700;background:var(--surface);color:var(--text)}
-.mc.ok .mf{border-color:var(--ok);box-shadow:0 0 12px var(--ok)}.mc.ok{cursor:default}
-.memr{border:1.5px solid var(--ok);border-radius:14px;padding:14px 16px;margin:12px auto;max-width:520px;text-align:center;background:rgba(116,184,149,.12)}
-.memr b{font-size:20px;display:block;margin-bottom:4px}
-.memt{width:100%;min-width:0;border-collapse:collapse;margin-top:6px;table-layout:fixed;font-size:14px}.memt thead th:first-child,.memt tbody td:first-child{min-width:0}.memt th:nth-child(1),.memt td:nth-child(1){width:44px}.memt th:nth-child(2),.memt td:nth-child(2){width:36%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.memt td,.memt th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}.memt th{color:var(--muted);font-size:12px;font-weight:600}.memt td:nth-child(n+3),.memt th:nth-child(n+3){text-align:right}.memt tr.me td{color:var(--accent);font-weight:700}
 .vconf{display:flex;gap:14px;align-items:center;background:rgba(116,184,149,.14);border:1.5px solid var(--ok);border-radius:14px;padding:12px 16px;margin:12px 0}.vconf .vck{width:34px;height:34px;border-radius:50%;background:var(--ok);color:#0d2418;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}.vconf b{display:block;font-size:16px}.vconf small{color:var(--muted);font-size:14px}.vconf.verr{background:rgba(255,77,100,.12);border-color:#ff4d64}.vconf.verr .vck{background:#ff4d64;color:#2a0a10}.vconf.verr b{color:#ff8a98}
 .vlink{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .vlink:hover{color:var(--accent);border-bottom-style:solid}
@@ -416,7 +379,6 @@ header{padding-top:56px}
     <button class="btn" id="navVote" type="button">Głosowanie</button>
     <button class="btn" id="navNews" type="button">Aktualności</button>
     <button class="btn" id="navLektor" type="button">Polski Lektor</button>
-    <button class="btn navmem" id="navMem" type="button" style="display:none">🏆 Turniej</button>
   </div>
 </header>
 
@@ -424,7 +386,6 @@ header{padding-top:56px}
 <div id="subview" style="display:none"></div>
 <div id="modsview" style="display:none"></div>
 <div id="newsview" style="display:none"></div>
-<div id="memview" style="display:none"></div>
 <datalist id="gl_mod"></datalist>
 <div id="addview" style="display:none"><a class="vback" href="#/">← Wróć do katalogu</a>
 <div class="panel open" id="modadd" style="display:none"></div>
@@ -832,7 +793,7 @@ function loginHtml(mode){
 function forgotHtml(email){
   return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
-function updateAuth(){if(typeof onMem!=="undefined"&&onMem&&typeof memAuth==="function")setTimeout(memAuth,0);var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
+function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";return}
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
@@ -1335,163 +1296,25 @@ setInterval(cdTick,1000);
 var vState={rows:[],mine:null},VCONF=null,VLOGIN=null;
 function loginBox(){if(me()){VLOGIN=null;return''}if(VLOGIN===null)return'';return '<div class="vconf verr" id="vlogin" role="alert"><span class="vck">!</span><div><b>Musisz się zalogować, aby oddać głos</b><small>'+(VLOGIN&&VLOGIN!==" "?'Chcesz zagłosować na „'+esc(VLOGIN)+'”? ':'')+'Kliknij „Zaloguj się” w lewym górnym rogu, a potem „Głosuj” przy grze.</small></div></div>'}
 function confBox(){if(!VCONF)return'';var g=gameByKey(VCONF);if(!g)return'';return '<div class="vconf" id="vconf" role="status"><span class="vck">✓</span><div><b>Twój głos został oddany!</b><small>'+esc(g.game)+' · możesz go zmienić do końca tygodnia</small></div></div>'}
-var onVote=false,onAdd=false,onSubs=false,onMods=false,onNews=false,onMem=false,NHASH="#/wpisy",MHASH="#/moderatorzy",vLoaded=false,homeScroll=0,AHASH="#/dodaj",SHASH="#/zgloszenia",homeTitle=document.title,VHASH="#/glosowanie";
+var onVote=false,onAdd=false,onSubs=false,onMods=false,onNews=false,NHASH="#/wpisy",MHASH="#/moderatorzy",vLoaded=false,homeScroll=0,AHASH="#/dodaj",SHASH="#/zgloszenia",homeTitle=document.title,VHASH="#/glosowanie";
 var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
-/* ===== MEMORY: turniej i trening ===== */
-var MEMHASH="#/memory",MEM={stage:"menu",info:null,infoErr:false,board:null,msg:""},MG=null;
-function memShuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
-function memPool(){var seen={},seenI={},p=[];memShuffle(items.slice()).forEach(function(g){if(p.length>=8)return;var k=keyOf(g);if(!imgOk(g.img)||seen[k]||seenI[g.img])return;seen[k]=1;seenI[g.img]=1;p.push({k:k,img:g.img,name:g.game})});return p}
-function memScore(secs,moves){return Math.max(0,Math.round(1000-3*secs-10*moves))}
-function memFmtEnd(iso){try{var d=new Date(new Date(iso).getTime()-60000);return d.toLocaleDateString("pl-PL",{day:"numeric",month:"long"})+" (godz. "+d.toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"})+")"}catch(e){return""}}
-function memShortEnd(iso){try{var d=new Date(new Date(iso).getTime()-60000);return d.toLocaleDateString("pl-PL",{day:"numeric",month:"numeric"})+", "+d.toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"})}catch(e){return""}}
-function memCd(){var el=$("memcd");if(!el)return;var i=MEM.info,ok=false;
-  if(onMem&&i&&i.state==="open"&&i.ends_at){var d=Math.floor((new Date(i.ends_at).getTime()-Date.now())/1000);if(d>0){ok=true;var dd=Math.floor(d/86400),h=Math.floor(d%86400/3600),m=Math.floor(d%3600/60),sc=d%60;function p(n){return(n<10?"0":"")+n}
-   el.innerHTML='<div class="cl">⏳ Do końca turnieju</div><div class="cn">'+(dd?'<div><b>'+dd+'</b><span>dni</span></div>':'')+'<div><b>'+p(h)+'</b><span>godz.</span></div><div><b>'+p(m)+'</b><span>min</span></div><div><b>'+p(sc)+'</b><span>sek</span></div></div><small>Koniec: '+esc(memShortEnd(i.ends_at))+'</small>'}}
-  el.style.display=ok?"":"none";if(el.parentNode)el.parentNode.classList.toggle("cd",ok)}
-setInterval(memCd,1000);
-function memRuch(n){n=+n;var l=n%10,t=n%100;return n+" "+(n===1?"ruch":(l>=2&&l<=4&&!(t>=12&&t<=14))?"ruchy":"ruchów")}
-function memTrained(){if(MEM.trained)return true;try{if(localStorage.getItem("memTrain")==="1"){MEM.trained=true;return true}}catch(e){}return false}
-function memSetTrained(){MEM.trained=true;try{localStorage.setItem("memTrain","1")}catch(e){}}
-function memErr(e){var m=(e&&e.message)||"";return m&&m.length<140?m:"Wystąpił błąd. Spróbuj ponownie."}
-async function memLoad(){
-  MEM.infoErr=false;
-  try{
-    var got=await Promise.all([sb.rpc("memory_info"),sb.rpc("memory_board")]);
-    if(got[0].error)throw got[0].error;
-    MEM.info=got[0].data;MEM.board=(got[1]&&!got[1].error)?got[1].data:[];
-  }catch(e){MEM.info=null;MEM.infoErr=true;MEM.board=[]}
-  if(onMem&&MEM.stage==="menu")renderMem();else if(onMem)memBoardRefresh()}
-var MEM_NOTE='<p class="msg" style="margin:8px 0 0;font-size:13px">W tabeli są tylko gracze, którzy wykorzystali wszystkie 3 próby.</p>';
-function memBoardHtml(){
-  var rows=MEM.board||[],mine=nick();
-  if(MEM.infoErr)return'<p class="msg">Tabela wyników pojawi się po uruchomieniu turnieju.</p>';
-  if(!rows.length)return'<p class="msg">Nikt jeszcze nie wykorzystał wszystkich 3 prób. Bądź pierwszy!</p>'+MEM_NOTE;
-  return'<table class="memt"><thead><tr><th>#</th><th>Gracz</th><th>Punkty</th><th>Czas</th><th>Ruchy</th></tr></thead><tbody>'
-   +rows.slice(0,MEM.all?rows.length:10).map(function(r,i){var me_=me()&&mine&&r.user_name===mine;return'<tr class="'+(me_?"me":"")+'"><td>'+(i<3?["🥇","🥈","🥉"][i]:(+r.pos))+'</td><td>'+esc(r.user_name)+'</td><td>'+(+r.score)+'</td><td>'+(+r.secs).toFixed(1)+' s</td><td>'+(+r.moves)+'</td></tr>'}).join("")+'</tbody></table>'
-   +(rows.length>10?'<div style="text-align:center;margin-top:10px"><button class="btn" id="mem_more" type="button">'+(MEM.all?"Zwiń tabelę":"Pokaż więcej wyników ("+(rows.length-10)+")")+'</button></div>':"")+MEM_NOTE}
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#mem_more");if(b){MEM.all=!MEM.all;memBoardRefresh()}});
-function memBoardRefresh(){var b=$("membd");if(b)b.innerHTML=memBoardHtml()}
-function memPrizes(){var P=[["🥇","1. miejsce","Final Fantasy VII Rebirth – Digital Deluxe Edition","https://cdn2.steamgriddb.com/thumb/01639920c81fcc08b5b7a8db3d55723a.jpg",""],["🥈","2. miejsce","Silent Hill 2","https://cdn2.steamgriddb.com/thumb/4f05f9e047d07998ddcf3e95fb6fd675.jpg","Remake"],["🥉","3. miejsce","Graveyard Keeper 2","https://cdn2.steamgriddb.com/thumb/fa682304439f281a39eea6daca1e8cec.jpg",""]];
-  return'<div class="memp">'+P.map(function(x){return'<div class="mpz"><div class="mpc"><img src="'+x[3]+'" alt="'+esc(x[2])+'" loading="lazy" onerror="this.style.display=\'none\'"><span>'+esc(x[2])+'</span></div><div class="mpt"><b>'+x[0]+' '+x[1]+'</b><span>'+esc(x[2])+(x[4]?' <em>('+x[4]+')</em>':'')+'</span></div></div>'}).join("")+'</div>'}
-function memRules(){var i=MEM.info,end=i&&i.ends_at?memFmtEnd(i.ends_at):"";return'<div class="memc"><h3>Zasady turnieju</h3><ul style="margin:6px 0 0;padding-left:18px;color:var(--muted)">'
- +'<li>Znajdź wszystkie 8 par okładek gier z katalogu. Im szybciej i przy mniejszej liczbie ruchów, tym więcej punktów.</li>'
- +'<li>Punkty: 1000 − 3 za każdą sekundę − 10 za każdy ruch (minimum 0). Liczy je serwer, a czas mierzony jest od pierwszej odkrytej karty.</li>'
- +'<li>Masz 3 próby w całym turnieju, a do tabeli wchodzi Twój najlepszy wynik. Przerwanie gry też zużywa próbę.</li>'
- +'<li><b>Aby zaliczyć się do turnieju i móc wygrać nagrodę, musisz wykorzystać wszystkie 3 próby.</b></li>'
- +'<li>Jedna osoba może mieć w turnieju jedno konto. Dodatkowe konta tej samej osoby zostaną wykluczone.</li>'
- +'<li>Udział wymaga zalogowania i ukończenia jednego treningu.'+(end?' Turniej trwa do '+esc(end)+'.':'')+'</li>'
- +'<li>Nagrody otrzymują trzy osoby z najlepszymi wynikami. Organizator skontaktuje się ze zwycięzcami przez adres e-mail lub konto użyte do logowania. Kody do gier zostaną rozesłane 1 listopada 2026 do godz. 12:00.</li>'
- +'<li>Wyniki uzyskane nieuczciwie (boty, skrypty, wykorzystywanie błędów) mogą zostać wykluczone, a zwycięzców organizator sprawdza przed wręczeniem nagród.</li></ul></div>'}
-function renderMem(){
-  if(!onMem)return;
-  var i=MEM.info,st=i?i.state:"",logged=!!me(),canT=CM&&!!i&&st==="open",tsub;
-  if(MEM.infoErr||!CM)tsub="Turniej jeszcze nie jest uruchomiony.";
-  else if(!i)tsub="Wczytuję…";
-  else if(st==="soon")tsub="Turniej jeszcze się nie zaczął.";
-  else if(st==="ended")tsub="Turniej już się zakończył.";
-  else if(st==="off")tsub="Turniej jest chwilowo wyłączony.";
-  else if(logged&&i.used>=(i.limit||3)){tsub="Wykorzystałeś wszystkie próby."+(i.mine?" Twój najlepszy wynik: "+(+i.mine.score)+" pkt.":"");canT=false}
-  else tsub=logged?"Do tabeli trafisz po wykorzystaniu wszystkich 3 prób, a liczy się najlepszy wynik. Pozostało prób: "+((i.limit||3)-(+i.used||0))+" z "+(i.limit||3)+"."+(i.mine?" Twój najlepszy wynik: "+(+i.mine.score)+" pkt.":""):"Wymaga zalogowania.";
-  if(canT&&!memTrained()){tsub="Najpierw ukończ jeden trening, żeby poznać zasady.";canT=false}
-  var login=(!logged&&MEM.needLogin)?'<div class="vconf verr" role="alert"><span class="vck">!</span><div><b>Musisz się zalogować, aby wziąć udział w turnieju</b><small>Kliknij „Zaloguj się” w lewym górnym rogu, a potem wybierz „Turniej”.</small></div></div>':"";
-  $("memview").innerHTML=VBACK+'<p class="msg">Odkrywaj karty i dopasowuj okładki gier z katalogu. Wybierz, czy grasz o nagrody, czy ćwiczysz.</p>'+login
-   +'<div class="memi"><button class="memc memm" id="mem_t" type="button"'+(canT?'':' disabled')+'><b>🏆 Turniej</b><span style="color:var(--muted)">'+esc(tsub)+'</span></button>'
-   +'<button class="memc memm" id="mem_p" type="button"><b>🎯 Trening</b><span style="color:var(--muted)">Ćwicz bez limitów. Wynik nie wchodzi do tabeli.</span></button><div id="memcd" class="memcd" style="display:none"></div></div>'
-   +'<div class="memc memv"><span class="ic">🗳️</span><b>Pomóż wybrać kolejną grę tygodnia</b><a class="mvb" href="#/glosowanie">Przejdź do głosowania →</a></div>'
-   +'<div class="memc" style="margin-top:12px"><h3>Nagrody (klucze Steam)</h3>'+memPrizes()+'</div>'
-   +'<div class="memc" style="margin-top:12px"><h3>'+(st==="ended"?"Ostateczne wyniki turnieju":"Tabela wyników")+'</h3><div id="membd">'+memBoardHtml()+'</div></div>'
-   +'<div style="margin-top:12px">'+memRules()+'</div>';memCd();
-  $("mem_p").onclick=function(){memStart("p")};
-  $("mem_t").onclick=function(){if(!memTrained())return;if(!me()){MEM.needLogin=true;renderMem();return}memStart("t")}}
-async function memPreload(pool){MEM.pre=[];return new Promise(function(res){var n=pool.length,d=0,t=setTimeout(res,5000);
-  pool.forEach(function(x){var im=new Image(),f=function(){if(++d>=n){clearTimeout(t);res()}};im.onload=im.onerror=f;im.decoding="sync";im.src=x.img;MEM.pre.push(im)})})}
-async function memStart(mode){
-  var pool=memPool();if(pool.length<8){MEM.msg="Za mało gier z okładkami.";return}
-  if(MEM.starting)return;MEM.starting=true;
-  try{await memPreload(pool)}catch(e){}
-  MEM.starting=false;if(!onMem)return;
-  var id=null;
-  if(mode==="t"){
-    var b=$("mem_t");if(b)b.disabled=true;
-    try{var r=await sb.rpc("memory_start",{p_pool:pool.map(function(x){return x.k})});if(r.error)throw r.error;id=r.data}
-    catch(e){if(onMem){MEM.stage="menu";await memLoad();var m=$("membd");if(m)m.insertAdjacentHTML("beforebegin",'<p class="msg err">'+esc(memErr(e))+'</p>')}return}
-  }
-  var map={};pool.forEach(function(x){map[x.k]=x});
-  var local=null;
-  if(mode==="p")local=memShuffle(pool.map(function(x){return x.k}).concat(pool.map(function(x){return x.k})));
-  MG={mode:mode,id:id,map:map,local:local,first:null,lock:false,moves:0,found:0,t0:0,secs:0,timer:null,done:false,busy:false,state:new Array(16).fill(0)};
-  MEM.stage="play";MEM.needLogin=false;drawGame()}
-function drawGame(){
-  var t=MG.mode==="t";
-  $("memview").innerHTML=VBACK
-   +'<div class="memh"><span class="tag">'+(t?"🏆 Turniej":"🎯 Trening")+'</span><span>Czas: <b id="mm_t">0</b> s</span><span>Ruchy: <b id="mm_m">0</b></span><span>Punkty: <b id="mm_s">1000</b></span><button class="btn" id="mm_back" type="button">Zakończ</button></div>'
-   +'<div class="memb" id="mm_b">'+new Array(16).fill(0).map(function(_,i){return'<button class="mc" type="button" data-i="'+i+'" aria-label="Karta '+(i+1)+'"><div class="mi"><div class="mb">?</div><div class="mf"></div></div></button>'}).join("")+'</div>'
-   +'<p class="msg" id="mm_msg" style="text-align:center">Kliknij kartę, żeby zacząć'+(t?'. Czas liczy się od pierwszej odkrytej karty.':'.')+'</p><div id="mm_res"></div>'
-   +'<div class="memc" style="margin-top:12px"><h3>Tabela wyników</h3><div id="membd">'+memBoardHtml()+'</div></div>';
-  $("mm_b").onclick=function(e){var c=e.target.closest(".mc");if(c)memFlip(+c.getAttribute("data-i"))};
-  $("mm_back").onclick=function(){memStop();MEM.stage="menu";renderMem();memLoad()}}
-function memStop(){if(MG&&MG.timer){clearInterval(MG.timer);MG.timer=null}}
-function memCard(i){return $("mm_b")?$("mm_b").children[i]:null}
-function memShow(i,key){var c=memCard(i),g=MG.map[key];if(!c||!g)return;var f=c.querySelector(".mf");
-  f.innerHTML='<img alt="'+esc(g.name)+'" decoding="sync" src="'+esc(g.img)+'"><div class="mn">'+esc(g.name)+'</div>';
-  var im=f.querySelector("img");im.onerror=function(){im.style.display="none";f.querySelector(".mn").style.display="flex"};
-  c.classList.add("f");MG.state[i]=1}
-function memHide(i){var c=memCard(i);if(!c)return;c.classList.remove("f");MG.state[i]=0;setTimeout(function(){if(c&&!c.classList.contains("f"))c.querySelector(".mf").innerHTML=""},450)}
-function memHud(){var a=$("mm_t"),b=$("mm_m"),c=$("mm_s");if(a)a.textContent=MG.secs;if(b)b.textContent=MG.moves;if(c)c.textContent=memScore(MG.secs,MG.moves)}
-function memTick(){if(MG.timer)return;MG.t0=Date.now();MG.timer=setInterval(function(){MG.secs=Math.floor((Date.now()-MG.t0)/1000);memHud()},500)}
-async function memFlip(i){
-  if(!MG||MG.done||MG.lock||MG.busy||MG.state[i])return;
-  var second=MG.first!==null,key,match=null,fin=null;
-  if(MG.mode==="t"){
-    MG.busy=true;
-    try{var r=await sb.rpc("memory_flip",{p_game:MG.id,p_idx:i});if(r.error)throw r.error;var d=r.data;key=d.key;match=d.match;fin=d.done?d:null}
-    catch(e){MG.busy=false;var m=$("mm_msg");if(m&&!/szybko/i.test(e.message||""))m.textContent=memErr(e);return}
-    MG.busy=false;
-  }else{key=MG.local[i];if(second)match=(MG.local[MG.first]===key)}
-  memTick();memShow(i,key);
-  if(!second){MG.first=i;return}
-  MG.moves++;memHud();var a=MG.first;MG.first=null;
-  if(match){
-    memCard(a).classList.add("ok");memCard(i).classList.add("ok");MG.state[a]=2;MG.state[i]=2;MG.found++;
-    if(MG.mode==="p"?MG.found===8:!!fin)memFinish(fin)
-  }else{MG.lock=true;setTimeout(function(){memHide(a);memHide(i);MG.lock=false},850)}}
-async function memFinish(srv){
-  MG.done=true;memStop();
-  var secs=srv?+srv.secs:Math.max(1,(Date.now()-MG.t0)/1000),moves=srv?+srv.moves:MG.moves,score=srv?+srv.score:memScore(secs,moves);
-  if(srv){MG.secs=Math.round(secs);MG.moves=moves;memHud();var s=$("mm_s");if(s)s.textContent=score}
-  var t=MG.mode==="t";
-  $("mm_msg").textContent="";
-  $("mm_res").innerHTML='<div class="memr" role="status"><b>'+(t?"Wynik zapisany!":"Trening zakończony!")+'</b>'+score+' pkt · '+secs.toFixed(1)+' s · '+memRuch(moves)
-   +(t?'<br><small>Do tabeli liczy się Twój najlepszy wynik. Do tabeli trafisz po wykorzystaniu wszystkich 3 prób.</small>':'<br><small>To był tylko trening, wynik nie wchodzi do tabeli.</small>')
-   +'<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px"><button class="btn" id="mm_again" type="button">Zagraj jeszcze raz</button>'+(t?'':'<button class="btn" id="mm_tour" type="button">Przejdź do turnieju</button>')+'<button class="btn" id="mm_menu" type="button">Menu</button></div></div>';
-  var mode=MG.mode;if(!t)memSetTrained();
-  $("mm_again").onclick=function(){memStart(mode)};
-  if($("mm_tour"))$("mm_tour").onclick=function(){MEM.stage="menu";if(!me()){MEM.needLogin=true}renderMem();memLoad()};
-  $("mm_menu").onclick=function(){MEM.stage="menu";renderMem();memLoad()};
-  if(t){try{var r=await sb.rpc("memory_board");if(!r.error){MEM.board=r.data||[];memBoardRefresh()}}catch(e){}}
-}
-function memNavInit(){if(!CM)return;try{sb.rpc("memory_info").then(function(r){var b=$("navMem");if(!b||!r||r.error||!r.data)return;var st=r.data.state;if(st==="open")b.style.display="";else if(st==="ended"){b.style.display="";b.classList.add("done");b.textContent="🏆 Wyniki turnieju"}}).catch(function(){})}catch(e){}}
-$("navMem").onclick=function(){if(onMem){window.scrollTo(0,0);return}goView(MEMHASH)};
-memNavInit();
-function memAuth(){if(onMem&&MEM.stage==="menu"){MEM.needLogin=false;renderMem();memLoad()}}
-function showMem(){var was=curViewName();enterView("mem","Memory: Okładki gier – GryPoPolsku.pl");if(was!=="mem"){MEM.stage="menu";MG=null;MEM.needLogin=false}renderMem();memLoad()}
 
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onMem?"mem":""}
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===MEMHASH)showMem();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onMem));$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("memview").style.display=onMem?"":"none";if(typeof memCd==="function")memCd();$("navVote").classList.toggle("on",onVote);if($("navMem"))$("navMem").classList.toggle("on",onMem);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews));$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onMem=name==="mem";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onMem=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;setViewUI()}
 var modAddOn=false;
 function renderAdd(){
   var wait=CM&&me()&&!roleLoaded&&!isMod(),asMod=!!(CM&&isMod());
@@ -1609,7 +1432,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===MEMHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH)route();
 if(location.hash==="#/lektor"){history.replaceState(null,"",location.pathname+location.search);setView("lk")}
 var baseItems=[];
 function mergeApproved(rows){

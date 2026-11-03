@@ -371,8 +371,10 @@ header{padding-top:56px}
 .jes .btn,.jes .fbtn,.jes .fbadge,.jes .pill,.jes .lkb{border-radius:999px}
 .jes .btns .btn{color:var(--accent);font-weight:600}
 #jcozy,#jlvs{display:none}
-.jes #jcozy{display:block;position:static;margin:0 auto 44px;width:252px;height:138px;image-rendering:pixelated;z-index:0}
+.jes #jcozy{display:block;position:absolute;left:calc(50% + 190px);top:0;width:252px;height:138px;image-rendering:pixelated;z-index:0}
 .jes #jlvs{display:block;position:absolute;image-rendering:pixelated;pointer-events:none;z-index:2}
+@media (max-width:1099px){.jes #jcozy{left:calc(50% + 150px);width:168px;height:92px;top:16px}}
+@media (max-width:799px){.jes #jcozy{position:static;margin:0 auto 44px;width:252px;height:138px}}
 .pill.gen{background:var(--surface);border:1px solid var(--accent);color:var(--accent)}
 </style>
 <script>

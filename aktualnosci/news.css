@@ -168,3 +168,18 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .navmem.done{animation:none;border-color:var(--line)}.navmem.done::after{display:none}
 @keyframes memPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,154,31,0)}50%{box-shadow:0 0 0 5px rgba(255,154,31,.28)}}
 @media(prefers-reduced-motion:reduce){.navmem{animation:none}}
+
+/* ===== Motyw „Jesień” (jeż pod jabłonią) ===== */
+.tb[data-t="autumn"]{background:#2e1f1b;display:none}
+.auev .tb[data-t="autumn"]{display:inline-flex}
+:root.jes,:root.jes[data-theme="light"],:root.jes[data-theme="dark"]{--bg:#1f1513;--surface:#2e1f1b;--text:#f7ece0;--muted:#c8b3a4;--line:#473029;--accent:#e8905f;--ok:#4fcf8a;--warn:#f0b04a;--bad:#a8998f;--pur:#b57cff;--blue:#4fb3ff;--onacc:#1f1513;color-scheme:dark}
+.jes body{position:relative;background:radial-gradient(ellipse 60% 420px at 78% 0,rgba(232,144,95,.18),rgba(31,21,19,0) 70%) no-repeat,var(--bg)}
+.jes .wrap{position:relative;z-index:1}
+.jes header{position:relative}
+.jes .btn,.jes .pill,.jes .chip{border-radius:999px}
+.jes .btns .btn{color:var(--accent);font-weight:600}
+#jcozy,#jlvs{display:none}
+.jes #jcozy{display:block;position:absolute;left:calc(50% + 190px);top:0;width:252px;height:138px;image-rendering:pixelated;z-index:0}
+.jes #jlvs{display:block;position:absolute;image-rendering:pixelated;pointer-events:none;z-index:2}
+@media (max-width:1099px){.jes #jcozy{left:calc(50% + 150px);width:168px;height:92px;top:16px}}
+@media (max-width:799px){.jes #jcozy{position:static;margin:0 auto 44px;width:252px;height:138px}}

@@ -6902,12 +6902,11 @@
     "yt": "https://www.youtube.com/watch?v=7RBoPw5zfmE",
     "dub": "https://voxalter.io/games/BaldursGate3",
     "dubAuthor": "VOXALTER",
-    "dubStatus": "Beta",
+    "dubStatus": "Gotowe",
     "type": "Dubbing",
     "status": "Gotowe",
     "prog": 0,
-    "author": "VOXALTER",
-    "link": "https://voxalter.io/games/BaldursGate3"
+    "author": "VOXALTER"
   },
   {
     "game": "Directive 8020",
@@ -14141,7 +14140,8 @@
     "dodano": "2026-11-03",
     "upd": "2026-11-03",
     "img": "https://cdn2.steamgriddb.com/thumb/7668636048c4fbe8df8ffb388679e933.jpg",
-    "opis": "Logiczna gra z perspektywy pierwszej osoby: Chell wraca do laboratoriów Aperture Science i z pomocą działa portalowego rozwiązuje kolejne komory testowe."
+    "opis": "Logiczna gra z perspektywy pierwszej osoby: Chell wraca do laboratoriów Aperture Science i z pomocą działa portalowego rozwiązuje kolejne komory testowe.",
+    "yt": "https://www.youtube.com/watch?v=wln19NZjFV4"
   },
   {
     "game": "Gothic II Returning: New Balance",

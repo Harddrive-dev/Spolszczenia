@@ -136,7 +136,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .lkw{display:inline-grid;grid-template-columns:max-content;gap:4px;vertical-align:middle}.lkw .lkb.lkl{margin:0;justify-content:center}
 .lkrow .lkw{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px}
 @media (max-width:420px){.lkrow .lkw{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:max-content;gap:4px}}
-.pill.ofi{border-color:#2f7de1;color:#2f7de1}
+.pill.ofi{border-color:#2f7de1;color:#2f7de1}.pill.dub{border-color:#c2569a;color:#c2569a}
 .ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:900px){.ngrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ngrid{grid-template-columns:1fr}}
 .ncard{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--text);text-decoration:none}
 .ncard:hover{border-color:var(--accent);color:var(--text)}
@@ -563,6 +563,8 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return
 function safe(u){return /^https?:\/\//i.test(u||"")?u:"#"}
 function ytId(u){var m=String(u||"").trim().match(/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/);return m?m[1]:""}
 function hasSp(g){return !!g.link&&g.pl!=="of"}
+function hasDub(g){return /^https?:\/\//i.test(g.dub||"")||(hasSp(g)&&g.type==="Dubbing")}
+function dubPill(g){return /^https?:\/\//i.test(g.dub||"")&&!(hasSp(g)&&g.type==="Dubbing")?' <span class="pill dub">Dubbing</span>':""}
 function hasLk(g){return !!(g.lore||g.gamereader)}
 function lkHtml(g){var h="";if(g.lore)h+='<a class="lkb lkl" title="LoreSpeak" target="_blank" rel="noopener" href="'+esc(safe(g.lore))+'"><img src="/img/lorespeak.png" alt="LoreSpeak"></a>';if(g.gamereader)h+='<a class="lkb lkl" title="GameReader 2.0" target="_blank" rel="noopener" href="'+esc(safe(g.gamereader))+'"><img src="/img/gamereader.png" alt="GameReader 2.0"></a>';return (g.lore&&g.gamereader)?'<span class="lkw">'+h+'</span>':(h||"—")}
 var VIEW="all";
@@ -587,7 +589,7 @@ function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=doc
 function nk(g){var u=String(g.upd||""),d=String(g.dodano||"");return u>d?u:d}
 function filtered(){
   var q=$("q").value.toLowerCase().trim(),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?g.type==="Dubbing":hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
+  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
@@ -604,16 +606,16 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td>'+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author||"—")+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?'':' · '+esc(g.author||"—"))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td>'+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author||(g.dub&&g.dubAuthor)||"—")+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(g.author||"—"))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
 function stats(){
-  var sp=items.filter(hasSp).length,lk=items.filter(hasLk).length,du=items.filter(function(g){return g.type==="Dubbing"}).length;
+  var sp=items.filter(hasSp).length,lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#stats .stat");if(!b)return;var v=b.getAttribute("data-v");setView(VIEW===v&&v!=="all"?"all":v);var q=$("q");if(q&&q.scrollIntoView)q.scrollIntoView({behavior:"smooth",block:"center"})});
 var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
 function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
   return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
-function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')}return (g.type||'—')+' · '+(g.author||'—')}
+function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')+(g.dub?' · Dubbing: '+(g.dubAuthor||'fanowski'):'')}return (g.type||'—')+' · '+(g.author||'—')}
 function renderHome(){
   function feat(el,f,badge,when){
     if(!f){el.style.display="none";el.innerHTML="";return}
@@ -693,7 +695,7 @@ function pick(){
   lastPick=g;
   var lt=esc((g.game||"?").charAt(0).toUpperCase());
   var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="flex:none;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;background:none">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
-  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+''+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px">'+(hasSp(g)?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a>':'')+(hasLk(g)?'<span class="lkrow" style="display:inline-flex;gap:6px;flex-wrap:wrap;align-items:center">'+lkHtml(g)+'</span>':'')+'<a class="fbtn" href="/gra/'+esc(keyOf(g))+'/">Strona gry</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+''+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px">'+(hasSp(g)?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a>':'')+(hasLk(g)?'<span class="lkrow" style="display:inline-flex;gap:6px;flex-wrap:wrap;align-items:center">'+lkHtml(g)+'</span>':'')+'<a class="fbtn" href="/gra/'+esc(keyOf(g))+'/">Strona gry</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
   $("again").onclick=roll}
 $("rbody").addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="rfclr"){RF.forEach(function(x){RV[x[0]]=""});rfApply();return}
@@ -1048,6 +1050,9 @@ function addFormHtml(){
    '<label style="grid-column:1/-1">Link do spolszczenia lub artykułu (wymagany dla fanowskiego spolszczenia, https://…)<input id="a_link" type="url" maxlength="500"></label>'+
    '<label>🎙 Lektor w LoreSpeak (link, opcjonalnie)<input id="a_lore" type="url" maxlength="500"></label>'+
    '<label>🎙 Lektor w GameReader 2.0 (link, opcjonalnie)<input id="a_gr" type="url" maxlength="500"></label>'+
+   '<label style="grid-column:1/-1">🎭 Fanowski dubbing (link, opcjonalnie). Do gier z oficjalnym PL albo spolszczeniem, które mają osobny dubbing<input id="a_dub" type="url" maxlength="500"></label>'+
+   '<label>Autor dubbingu<input id="a_dubauthor" maxlength="100"></label>'+
+   '<label>Status dubbingu<select id="a_dubstatus">'+opt(["Gotowe","Beta","Testy"],"Gotowe")+'</select></label>'+
    '<label>🎬 Film z YouTube (link, opcjonalnie)<input id="a_yt" type="url" maxlength="300"></label>'+
    '<label>Podpis filmu (opcjonalnie)<input id="a_ytt" maxlength="80"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (opcjonalnie: https://… lub img/nazwa.jpg)<input id="a_img" maxlength="500"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Skąd wziąć: wejdź na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a>, wyszukaj grę i otwórz zakładkę „Grids”. Kliknij wybraną okładkę prawym przyciskiem myszy i wybierz „Kopiuj adres obrazu”, a potem wklej go tutaj. Zwykle są to adresy zaczynające się od <code>https://cdn2.steamgriddb.com/…</code></small></label>'+
@@ -1060,16 +1065,17 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var v=function(i){return $(i).value.trim()},m=$("a_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
   var game=v("a_game"),link=v("a_link"),img=v("a_img");
   if(!game)return bad("Podaj nazwę gry.");
-  var apl=v("a_pl"),alore=v("a_lore"),agr=v("a_gr");
+  var apl=v("a_pl"),alore=v("a_lore"),agr=v("a_gr"),adub=v("a_dub");
   if(apl!=="of"&&!/^https?:\/\//i.test(link))return bad("Podaj poprawny link zaczynający się od https://");
   if(link&&!/^https?:\/\//i.test(link))return bad("Link musi zaczynać się od https://");
   if((alore&&!/^https?:\/\//i.test(alore))||(agr&&!/^https?:\/\//i.test(agr)))return bad("Linki do lektora muszą zaczynać się od https://");
-  if(apl==="of"&&!alore&&!agr)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora.");
+  if(adub&&!/^https?:\/\//i.test(adub))return bad("Link do dubbingu musi zaczynać się od https://");
+  if(apl==="of"&&!alore&&!agr&&!adub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(v("a_yt")&&!ytId(v("a_yt")))return bad("Link do filmu musi być linkiem z YouTube (youtube.com lub youtu.be).");
   if(img&&!/^(https?:\/\/|img\/)/i.test(img))return bad("Okładka musi zaczynać się od https:// albo img/");
   if(items.some(function(g){return slug(g.game)===slug(game)}))return bad("Gra „"+game+"” jest już w katalogu.");
   var data={game:game,platform:platGet("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",upd:new Date().toISOString().slice(0,10)};
-  if(link)data.link=link;if(apl==="of")data.pl="of";if(alore)data.lore=alore;if(agr)data.gamereader=agr;if(v("a_yt"))data.yt=v("a_yt");if(v("a_ytt"))data.ytt=v("a_ytt");
+  if(link)data.link=link;if(apl==="of")data.pl="of";if(alore)data.lore=alore;if(agr)data.gamereader=agr;if(adub){data.dub=adub;if(v("a_dubauthor"))data.dubAuthor=v("a_dubauthor");data.dubStatus=v("a_dubstatus")}if(v("a_yt"))data.yt=v("a_yt");if(v("a_ytt"))data.ytt=v("a_ytt");
   if(genreNorm(v("a_genre")))data.genre=genreNorm(v("a_genre"));if(v("a_premiera"))data.premiera=v("a_premiera");if(img)data.img=img;if(v("a_opis"))data.opis=v("a_opis");
   busy(t,"Dodaję…");
   var res=await sb.from("submissions").insert({kind:"new",game:game,data:data,status:"done",user_name:nick()||null});
@@ -1193,6 +1199,9 @@ function openModEdit(g){
    '<label style="grid-column:1/-1">Link do spolszczenia lub artykułu (wymagany dla fanowskiego spolszczenia, https://…)<input id="e_link" type="url" maxlength="500" value="'+v("link")+'"></label>'+
    '<label>🎙 Lektor w LoreSpeak (link; puste = brak)<input id="e_lore" type="url" maxlength="500" value="'+v("lore")+'"></label>'+
    '<label>🎙 Lektor w GameReader 2.0 (link; puste = brak)<input id="e_gr" type="url" maxlength="500" value="'+v("gamereader")+'"></label>'+
+   '<label style="grid-column:1/-1">🎭 Fanowski dubbing (link; puste = brak). Do gier z oficjalnym PL albo spolszczeniem, które mają osobny dubbing<input id="e_dub" type="url" maxlength="500" value="'+v("dub")+'"></label>'+
+   '<label>Autor dubbingu<input id="e_dubauthor" maxlength="100" value="'+v("dubAuthor")+'"></label>'+
+   '<label>Status dubbingu<select id="e_dubstatus">'+opt(["Gotowe","Beta","Testy"],g.dubStatus||"Gotowe")+'</select></label>'+
    '<label>🎬 Film z YouTube (link; puste = brak)<input id="e_yt" type="url" maxlength="300" value="'+v("yt")+'"></label>'+
    '<label>Podpis filmu (opcjonalnie)<input id="e_ytt" maxlength="80" value="'+v("ytt")+'"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
@@ -1204,13 +1213,14 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.id==="e_close"){closeModal();return}
   if(t.id!=="e_go"||!editG)return;
   var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
-  var nv={game:val("e_game"),platform:platGet("e_platform"),genre:genreNorm(val("e_genre")),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis"),premiera:val("e_premiera"),pl:val("e_pl"),lore:val("e_lore"),gamereader:val("e_gr"),yt:val("e_yt"),ytt:val("e_ytt")};
+  var nv={game:val("e_game"),platform:platGet("e_platform"),genre:genreNorm(val("e_genre")),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis"),premiera:val("e_premiera"),pl:val("e_pl"),lore:val("e_lore"),gamereader:val("e_gr"),yt:val("e_yt"),ytt:val("e_ytt"),dub:val("e_dub")};nv.dubAuthor=nv.dub?val("e_dubauthor"):"";nv.dubStatus=nv.dub?val("e_dubstatus"):"";
   if(!nv.game)return bad("Podaj nazwę gry.");
   if(nv.pl!=="of"&&!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
   if(nv.link&&!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
   if((nv.lore&&!/^https?:\/\//i.test(nv.lore))||(nv.gamereader&&!/^https?:\/\//i.test(nv.gamereader)))return bad("Linki do lektora muszą zaczynać się od https://");
   if(nv.yt&&!ytId(nv.yt))return bad("Link do filmu musi być linkiem z YouTube (youtube.com lub youtu.be).");
-  if(nv.pl==="of"&&!nv.lore&&!nv.gamereader)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora.");
+  if(nv.dub&&!/^https?:\/\//i.test(nv.dub))return bad("Link do dubbingu musi zaczynać się od https://");
+  if(nv.pl==="of"&&!nv.lore&&!nv.gamereader&&!nv.dub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(nv.img&&!/^(https?:\/\/|img\/)/i.test(nv.img))return bad("Okładka musi zaczynać się od https:// albo img/");
   if(slug(nv.game)!==slug(g.game)&&items.some(function(x){return slug(x.game)===slug(nv.game)}))return bad("Gra o takiej nazwie już jest w katalogu.");
   var changes=[];Object.keys(nv).forEach(function(k){var old=g[k]==null?"":String(g[k]);if(nv[k]!==old)changes.push({field:k,from:old,to:nv[k]})});
@@ -1576,14 +1586,14 @@ if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHAS
 if(location.hash==="#/lektor"){history.replaceState(null,"",location.pathname+location.search);setView("lk")}
 var baseItems=[];
 function mergeApproved(rows){
-  var list=baseItems.map(function(g){return Object.assign({},g)}),TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"];
+  var list=baseItems.map(function(g){return Object.assign({},g)}),TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"],DUBST=["Gotowe","Beta","Testy"];
   function find(k){return list.filter(function(g){return keyOf(g)===k})[0]}
   rows.forEach(function(r){var d=r.data||{},day=String(r.created_at||"").slice(0,10);
     if(r.kind==="new"){var name=String(d.game||r.game||"").trim(),link=String(d.link||"");
-      var gOf=d.pl==="of",gLk=/^https?:\/\//i.test(d.lore||"")||/^https?:\/\//i.test(d.gamereader||"");
+      var gOf=d.pl==="of",gLk=/^https?:\/\//i.test(d.lore||"")||/^https?:\/\//i.test(d.gamereader||"")||/^https?:\/\//i.test(d.dub||"");
       if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk)||find(slug(name)))return;
       var e={game:name,platform:d.platform||"PC",type:TYPES.indexOf(d.type)>-1?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
-      if(/^https?:\/\//i.test(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(/^https?:\/\//i.test(d.lore||""))e.lore=d.lore;if(/^https?:\/\//i.test(d.gamereader||""))e.gamereader=d.gamereader;if(ytId(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
+      if(/^https?:\/\//i.test(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(/^https?:\/\//i.test(d.lore||""))e.lore=d.lore;if(/^https?:\/\//i.test(d.gamereader||""))e.gamereader=d.gamereader;if(/^https?:\/\//i.test(d.dub||"")){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.indexOf(d.dubStatus)>-1)e.dubStatus=d.dubStatus}if(ytId(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
       if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
     else if(r.kind==="edit"){var g=find(d.key);if(!g)return;
       (d.changes||[]).forEach(function(c){if(EDIT.indexOf(c.field)<0)return;var v=String(c.to==null?"":c.to).trim();
@@ -1591,11 +1601,13 @@ function mergeApproved(rows){
       if(day)g.upd=day}
     else if(r.kind==="modedit"){var gm=find(d.key);if(!gm)return;
       (d.changes||[]).forEach(function(c){var f=c.field,v=String(c.to==null?"":c.to).trim();
-        if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt"].indexOf(f)<0)return;
+        if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].indexOf(f)<0)return;
         if(f==="yt"){if(ytId(v))gm.yt=v;else if(!v)delete gm.yt;return}
         if(f==="ytt"){if(v)gm.ytt=v.slice(0,80);else delete gm.ytt;return}
         if(f==="pl"){if(v==="of")gm.pl="of";else delete gm.pl;return}
-        if(f==="lore"||f==="gamereader"){if(/^https?:\/\//i.test(v))gm[f]=v;else if(!v)delete gm[f];return}
+        if(f==="lore"||f==="gamereader"||f==="dub"){if(/^https?:\/\//i.test(v))gm[f]=v;else if(!v)delete gm[f];return}
+        if(f==="dubAuthor"){if(v)gm.dubAuthor=v.slice(0,100);else delete gm.dubAuthor;return}
+        if(f==="dubStatus"){if(DUBST.indexOf(v)>-1)gm.dubStatus=v;else if(!v)delete gm.dubStatus;return}
         if(f==="game"){if(!v)return;if(!gm.id)gm.id=keyOf(gm);gm.game=v;return}
         if(f==="link"){if(/^https?:\/\//i.test(v))gm.link=v;else if(!v&&((d.changes||[]).some(function(x){return x.field==="pl"&&x.to==="of"})||gm.pl==="of"))delete gm.link;return}
         if(f==="img"){if(!v)delete gm.img;else if(/^(https?:\/\/|img\/)/i.test(v))gm.img=v;return}

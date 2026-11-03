@@ -1,0 +1,30 @@
+[
+ {
+  "game": "Baldur's Gate 3",
+  "popraw": {
+   "link": null,
+   "type": null,
+   "status": null,
+   "prog": null,
+   "author": null,
+   "ver": null,
+   "dub": "https://voxalter.io/games/BaldursGate3",
+   "dubAuthor": "VOXALTER",
+   "dubStatus": "Beta"
+  }
+ },
+ {
+  "game": "Nobody Wants to Die",
+  "popraw": {
+   "link": null,
+   "type": null,
+   "status": null,
+   "prog": null,
+   "author": null,
+   "ver": null,
+   "dub": "https://bazarowespolszczenia.pl/gra/nobody_wants_to_die",
+   "dubAuthor": "kofii12345",
+   "dubStatus": "Gotowe"
+  }
+ }
+]

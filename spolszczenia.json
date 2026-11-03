@@ -6898,7 +6898,12 @@
     "img": "https://cdn2.steamgriddb.com/thumb/b122b82883a834cbcec5c2d2f5c0585c.jpg",
     "genre": "RPG",
     "opis": "Turowa gra fabularna od Larian Studios oparta na zasadach Dungeons & Dragons. Tworzysz drużynę, podejmujesz decyzje, które mają realne skutki, i możesz grać samodzielnie lub w kooperacji.",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "type": "Dubbing",
+    "status": "Gotowe",
+    "prog": 0,
+    "author": "VOXALTER",
+    "yt": "https://www.youtube.com/watch?v=7RBoPw5zfmE"
   },
   {
     "game": "Directive 8020",
@@ -7665,7 +7670,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "DykuGierkuje",
     "img": "https://cdn2.steamgriddb.com/thumb/2979eeec451dcd28d06474671b396519.jpg",
     "opis": "Horror w świecie Hellraiser, w którym walczysz z cenobitami. Gra oparta na twórczości Clive'a Barkera."
@@ -12847,7 +12852,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 10,
-    "ver": "—",
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=daymare-1998",
     "dodano": "2026-10-25",

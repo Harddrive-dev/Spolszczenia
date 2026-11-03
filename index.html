@@ -62,7 +62,7 @@ tr:last-child td{border-bottom:0}
 td a.g{color:var(--text);font-weight:600;text-decoration:none}
 td a.g:hover{color:var(--accent)}
 .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.st-done{color:var(--ok);border-color:var(--ok)}.st-wip{color:var(--warn);border-color:var(--warn)}.st-stop{color:var(--bad)}.st-soon{color:var(--accent);border-color:var(--accent)}.fprem{margin:2px 0;font-weight:700;font-size:16px;color:var(--accent)}
+.st-done{color:var(--ok);border-color:var(--ok)}.st-wip{color:var(--warn);border-color:var(--warn)}.st-stop{color:var(--bad)}.st-soon{color:var(--accent);border-color:var(--accent)}.st-prog{color:#6fa8dc;border-color:#6fa8dc}.fprem{margin:2px 0;font-weight:700;font-size:16px;color:var(--accent)}
 .cards{display:none;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
 .card h3{margin:0;font-size:17px}
@@ -396,8 +396,8 @@ header{padding-top:56px}
     <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
     <label>Gatunek<select id="f_genre"><option value="">— brak —</option><option>RPG</option><option>Przygodowa</option><option>Horror</option><option>Akcja / platformówka</option><option>Strzelanka</option><option>Strategia</option><option>Symulacja</option><option>Sportowa / wyścigi</option><option>Bijatyka</option><option>Inne</option></select></label>
     <label>Zakres<select id="f_type"><option>Napisy</option><option>Pełne</option><option>Dubbing</option></select></label>
-    <label>Status<select id="f_status"><option>Gotowe</option><option>Beta</option></select></label>
-    <label style="display:none">Postęp (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
+    <label>Status<select id="f_status"><option>Gotowe</option><option>W trakcie</option><option>Beta</option></select></label>
+    <label id="f_progl" style="display:none">Ukończono (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
     <label>Wersja<input id="f_ver" maxlength="30"></label>
     <label>Autor / grupa<input id="f_author" maxlength="80"></label>
     <label class="wide">Link do spolszczenia lub artykułu * (https://…)<input id="f_link" type="url" maxlength="400"></label>
@@ -453,7 +453,7 @@ header{padding-top:56px}
   <h2>Zakresy tłumaczenia</h2>
   <p><b>Napisy</b>: przetłumaczone teksty interfejsu i dialogów. <b>Pełne</b>: napisy plus grafiki, menu i filmy. <b>Dubbing</b>: polskie głosy. <b>Lektor</b>: polski głos czytający tekst gry (aplikacje LoreSpeak i GameReader 2.0).</p>
   <h2>Statusy</h2>
-  <p><b>Gotowe</b>: kompletne tłumaczenie. <b>Beta</b>: wersja testowa, prace trwają. <b>Testy</b>: spolszczenie jest testowane przed wydaniem. <b>Premiera</b>: spolszczenie ma ustaloną datę premiery.</p>
+  <p><b>Gotowe</b>: kompletne tłumaczenie. <b>W trakcie</b>: tłumaczenie powstaje, obok podany jest procent ukończenia. <b>Beta</b>: wersja testowa do pobrania, prace trwają. <b>Testy</b>: spolszczenie jest testowane przed wydaniem. <b>Premiera</b>: spolszczenie ma ustaloną datę premiery.</p>
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
@@ -535,11 +535,15 @@ function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());
   return imgOk(g.img)?'<img class="thumb" loading="lazy" alt="" data-l="'+l+'" src="'+esc(g.img)+'">':'<span class="thumb ph">'+l+'</span>'}
 document.addEventListener("error",function(e){var t=e.target;if(!t||!t.classList)return;if(t.tagName==="IMG"&&t.closest&&t.closest(".pod")){var pi=document.createElement("div");pi.className="pimg";pi.textContent=(t.parentNode.querySelector("b")||{textContent:"?"}).textContent.charAt(0).toUpperCase();t.replaceWith(pi);return}if(t.tagName==="IMG"&&t.classList.contains("vth")){var vp=document.createElement("div");vp.className="vth";vp.textContent=t.getAttribute("data-l")||"?";t.replaceWith(vp);return}if(t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}else if(t.classList.contains("fimg")){var q=document.createElement("div");q.className="fcover";q.textContent=t.getAttribute("data-l")||"?";t.replaceWith(q)}},true);
 function pct(n){return Math.max(0,Math.min(100,+n||0))}
-function cls(s){return s==="Gotowe"?"st-done":(s==="Beta"||s==="Testy"||s==="W toku")?"st-wip":s==="Premiera"?"st-soon":"st-stop"}
+// pole „Ukończono (%)” widać tylko przy statusie „W trakcie”
+document.addEventListener("change",function(e){var t=e.target,m=t&&t.id&&/^([fae])_status$/.exec(t.id);if(!m)return;var l=$(m[1]+"_progl"),i=$(m[1]+"_prog");if(!l||!i)return;
+  var on=t.value==="W trakcie";l.style.display=on?"":"none";if(on&&+i.value>=100)i.value=0;if(!on&&t.value==="Gotowe")i.value=100;if(on)i.focus()});
+function cls(s){return s==="Gotowe"?"st-done":s==="W trakcie"?"st-prog":(s==="Beta"||s==="Testy"||s==="W toku")?"st-wip":s==="Premiera"?"st-soon":"st-stop"}
+function progPct(g){var p=Math.round(+g.prog);return isFinite(p)&&p<100?Math.max(0,p):null}
 function plDate(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||""));return m?(+m[3])+"."+m[2]+"."+m[1]:""}
 function plDateLong(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||""));return m?(+m[3])+" "+MONTHS[+m[2]-1]+" "+m[1]:""}
 function daysTo(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||""));if(!m)return null;var n=new Date();return Math.round((Date.UTC(+m[1],+m[2]-1,+m[3])-Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()))/86400000)}
-function stText(g){return g.status==="Premiera"&&g.premiera?"Premiera · "+plDate(g.premiera):g.status}
+function stText(g){if(g.status==="W trakcie"){var p=progPct(g);return p===null?"W trakcie":"W trakcie · "+p+"%"}return g.status==="Premiera"&&g.premiera?"Premiera · "+plDate(g.premiera):g.status}
 function premLine(g){if(!g.premiera)return "";var d=daysTo(g.premiera),t=plDateLong(g.premiera);if(!t)return "";
   return '<p class="fprem">📅 Premiera: '+t+(d===null?"":d>1?' · za '+d+' dni':d===1?' · jutro':d===0?' · dziś!':'')+'</p>'}
 function pcats(g){var o=[];String(g.platform||"").split(",").forEach(function(t){t=t.trim();if(!t)return;if(/^pc\b/i.test(t))t="PC";if(o.indexOf(t)<0)o.push(t)});return o}
@@ -932,7 +936,7 @@ var subAll=false;
 var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"};
 (function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.pp{position:relative}.pps{width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 32px 9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text);cursor:pointer;position:relative;min-height:40px}.pps::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}.ppl{display:none;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:6px;max-height:240px;overflow:auto}.ppl.open{display:block}.ppl label.pi{display:flex;flex-direction:row;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;color:var(--text);font-size:14px;cursor:pointer}.ppl label.pi:hover{background:var(--line)}.ppl label.pi input{width:auto}.ppo{display:flex;gap:6px;margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}.ppo input{flex:1}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
 var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","g"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"]];
-function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","Beta","Testy","Premiera"];if(cur&&a.indexOf(cur)<0)a.push(cur);
+function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W trakcie","Beta","Testy","Premiera"];if(cur&&a.indexOf(cur)<0)a.push(cur);
   return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
 function editRows(x){var d=x.data||{};if(!d.game)d=Object.assign({},d,{game:x.game});
   return '<div class="sfg">'+SF.map(function(f){var v=d[f[0]]==null?"":String(d[f[0]]);
@@ -1029,9 +1033,9 @@ function addFormHtml(){
    '<div class="rpw">Platforma'+platPicker("a_platform",addMem("platform")||"PC")+'</div>'+
    '<label>Gatunek<input id="a_genre" list="gl_mod" maxlength="40" autocomplete="off" placeholder="wybierz z listy lub wpisz własny"></label>'+
    '<label>Zakres<select id="a_type">'+opt(["Napisy","Pełne","Dubbing"],addMem("type")||"Napisy")+'</select></label>'+
-   '<label>Status<select id="a_status">'+opt(["Gotowe","Beta","Testy","Premiera"],addMem("status")||"Gotowe")+'</select></label>'+
+   '<label>Status<select id="a_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera"],addMem("status")||"Gotowe")+'</select></label>'+
    '<label>Data premiery (dla statusu Premiera)<input id="a_premiera" type="date"></label>'+
-   '<label style="display:none">Postęp (%)<input id="a_prog" type="number" min="0" max="100" value="100"></label>'+
+   '<label id="a_progl"'+(addMem("status")==="W trakcie"?'':' style="display:none"')+'>Ukończono (%)<input id="a_prog" type="number" min="0" max="100" value="'+(addMem("status")==="W trakcie"?0:100)+'"></label>'+
    '<label>Wersja<input id="a_ver" maxlength="40"></label>'+
    '<label style="grid-column:1/-1">Autor / grupa<input id="a_author" maxlength="100" value="'+esc(addMem("author"))+'"></label>'+
    '<label>Polska wersja<select id="a_pl"><option value="">Fanowskie spolszczenie</option><option value="of">Oficjalna (od twórców), bez spolszczenia</option></select></label>'+
@@ -1061,6 +1065,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(apl==="of"&&!alore&&!agr&&!adub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(v("a_yt")&&!ytId(v("a_yt")))return bad("Link do filmu musi być linkiem z YouTube (youtube.com lub youtu.be).");
   if(img&&!/^(https?:\/\/|img\/)/i.test(img))return bad("Okładka musi zaczynać się od https:// albo img/");
+  if(v("a_status")==="W trakcie"&&!(+v("a_prog")<100))return bad("Przy statusie „W trakcie” podaj, ile procent jest ukończone (0–99).");
   if(items.some(function(g){return slug(g.game)===slug(game)}))return bad("Gra „"+game+"” jest już w katalogu.");
   var data={game:game,platform:platGet("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",upd:new Date().toISOString().slice(0,10)};
   if(link)data.link=link;if(apl==="of")data.pl="of";if(alore)data.lore=alore;if(agr)data.gamereader=agr;if(adub){data.dub=adub;if(v("a_dubauthor"))data.dubAuthor=v("a_dubauthor");data.dubStatus=v("a_dubstatus")}if(v("a_yt"))data.yt=v("a_yt");if(v("a_ytt"))data.ytt=v("a_ytt");
@@ -1178,9 +1183,9 @@ function openModEdit(g){
    '<div class="rpw">Platforma'+platPicker("e_platform",g.platform||"")+'</div>'+
    '<label>Gatunek<input id="e_genre" list="gl_mod" maxlength="40" autocomplete="off" placeholder="wybierz z listy lub wpisz własny" value="'+v("genre")+'"></label>'+
    '<label>Zakres<select id="e_type">'+opt(["Napisy","Pełne","Dubbing"],g.type||"Napisy")+'</select></label>'+
-   '<label>Status<select id="e_status">'+opt(["Gotowe","Beta","Testy","Premiera"],g.status||"Gotowe")+'</select></label>'+
+   '<label>Status<select id="e_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera"],g.status||"Gotowe")+'</select></label>'+
    '<label>Data premiery (dla statusu Premiera)<input id="e_premiera" type="date" value="'+v("premiera")+'"></label>'+
-   '<label style="display:none">Postęp (%)<input id="e_prog" type="number" min="0" max="100" value="'+v("prog")+'"></label>'+
+   '<label id="e_progl"'+(g.status==="W trakcie"?'':' style="display:none"')+'>Ukończono (%)<input id="e_prog" type="number" min="0" max="100" value="'+v("prog")+'"></label>'+
    '<label>Wersja<input id="e_ver" maxlength="40" value="'+v("ver")+'"></label>'+
    '<label style="grid-column:1/-1">Autor / grupa<input id="e_author" maxlength="100" value="'+v("author")+'"></label>'+
    '<label>Polska wersja<select id="e_pl"><option value=""'+(g.pl==="of"?'':' selected')+'>Fanowskie spolszczenie</option><option value="of"'+(g.pl==="of"?' selected':'')+'>Oficjalna (od twórców), bez spolszczenia</option></select></label>'+
@@ -1203,6 +1208,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
   var nv={game:val("e_game"),platform:platGet("e_platform"),genre:genreNorm(val("e_genre")),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis"),premiera:val("e_premiera"),pl:val("e_pl"),lore:val("e_lore"),gamereader:val("e_gr"),yt:val("e_yt"),ytt:val("e_ytt"),dub:val("e_dub")};nv.dubAuthor=nv.dub?val("e_dubauthor"):"";nv.dubStatus=nv.dub?val("e_dubstatus"):"";
   if(!nv.game)return bad("Podaj nazwę gry.");
+  if(nv.status==="W trakcie"&&!(+nv.prog<100))return bad("Przy statusie „W trakcie” podaj, ile procent jest ukończone (0–99).");
   if(nv.pl!=="of"&&!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
   if(nv.link&&!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
   if((nv.lore&&!/^https?:\/\//i.test(nv.lore))||(nv.gamereader&&!/^https?:\/\//i.test(nv.gamereader)))return bad("Linki do lektora muszą zaczynać się od https://");

@@ -8552,7 +8552,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.1.1",
+    "ver": "0.1.4",
     "author": "WoWPoPolsku",
     "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
     "dodano": "2026-10-31",
@@ -14255,7 +14255,8 @@
     "link": "https://bazaspolszczen.pl/games/humanitz/grupa-baxa",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/895416fe6633c23da9654e7a5a8c97d9.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "genre": "Survival"
   },
   {
     "game": "Lost Records: Bloom & Rage",

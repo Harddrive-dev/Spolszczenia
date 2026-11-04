@@ -14146,7 +14146,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 31,
+    "prog": 33,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
@@ -14614,6 +14614,20 @@
     "dodano": "2026-11-04",
     "img": "https://voicepack.gamereader.pl/voice-packs/gta-san-andreas-dos-owne-t-umaczenie-edycja-parodystyczna/cover.jpg",
     "opis": "Stworzona przez ArtKoval modyfikacja „GTA San Andreas: Dosłowne Tłumaczenie” to bezkompromisowe i pełne humoru spolszczenie, które przekłada angielski tekst słowo w słowo, tworząc całkowicie absurdalne zdania.",
+    "upd": "2026-11-04"
+  },
+  {
+    "game": "Monster Train",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/monster_train",
+    "genre": "Strategia",
+    "dodano": "2026-11-04",
+    "img": "https://cdn2.steamgriddb.com/thumb/2e8ccdc7f732df236a48a9e3076f36f3.jpg",
     "upd": "2026-11-04"
   }
 ]

@@ -578,9 +578,13 @@ function uniq(k){if(k==="platform"){var a=[];items.forEach(function(g){pcats(g).
 function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=document.createElement("option");o.value="";o.textContent=label;el.appendChild(o);
   (k==="type"?uniq(k).concat(["Napisy","Pełne","Dubbing"].filter(function(v){return uniq(k).indexOf(v)<0})):uniq(k)).forEach(function(v){var x=document.createElement("option");x.value=v;x.textContent=v;el.appendChild(x)});el.value=cur}
 function nk(g){var u=String(g.upd||""),d=String(g.dodano||"");return u>d?u:d}
+// Wyszukiwanie ignoruje wielkość liter, polskie znaki i interpunkcję; wszystkie słowa muszą wystąpić, w dowolnej kolejności.
+function srchNorm(t){return String(t||"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim()}
+function srchWords(t){return srchNorm(t).split(" ").filter(Boolean)}
+function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(g.author||""));return w.every(function(x){return h.indexOf(x)>-1})}
 function filtered(){
-  var q=$("q").value.toLowerCase().trim(),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)});
+  var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
+  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&srchHit(g,q)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
@@ -696,8 +700,8 @@ $("ftog").onclick=function(){$("fbar").classList.toggle("fopen");$("cline").clas
 if(FMOB.addEventListener)FMOB.addEventListener("change",syncBar);
 var lastPick=null;
 var RV={fp:"",fg:"",ft:"",fs:""};
-function rpool(){var q=$("q").value.toLowerCase().trim();
-  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||g.type===RV.ft)&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||g.status===RV.fs)&&(!q||((g.game||"")+" "+(g.author||"")).toLowerCase().indexOf(q)>-1)})}
+function rpool(){var q=srchWords($("q").value);
+  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||g.type===RV.ft)&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||g.status===RV.fs)&&srchHit(g,q)})}
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
   var act=RF.filter(function(x){return RV[x[0]]}),n=rpool().length;

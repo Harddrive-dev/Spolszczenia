@@ -57,6 +57,7 @@ tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .g{flex:1 1 auto;min-width:0}
 .gcell .cbtn{flex:none;white-space:nowrap}.cbtn.cic{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:13px}.cbtn.cic b{color:var(--accent);font-weight:600}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+td.au{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}
 td a.g{color:var(--text);font-weight:600;text-decoration:none}
@@ -443,7 +444,7 @@ header{padding-top:56px}
 
 <div id="out">
   <div class="scroll"><table>
-    <thead><tr><th>Gra</th><th>Platforma</th><th>Gatunek</th><th>Zakres</th><th>Status</th><th>Lektor</th><th>Wersja</th><th>Autor</th></tr></thead>
+    <thead><tr><th>Gra</th><th>Autor</th><th>Platforma</th><th>Zakres</th><th>Status</th><th>Lektor</th><th>Wersja</th><th>Gatunek</th></tr></thead>
     <tbody id="tb"></tbody></table></div>
   <div class="cards" id="cards"></div>
 </div>
@@ -598,7 +599,7 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td>'+esc(g.platform)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+esc(g.author||(g.dub&&g.dubAuthor)||"—")+'</td></tr>'}).join("");
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(g.author||(g.dub&&g.dubAuthor)||"")+'">'+esc(g.author||(g.dub&&g.dubAuthor)||"—")+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
   $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(g.author||"—"))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
 function stats(){
   var sp=items.filter(hasSp).length,lk=items.filter(hasLk).length,du=items.filter(hasDub).length;

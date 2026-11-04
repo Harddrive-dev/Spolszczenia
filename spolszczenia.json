@@ -6788,7 +6788,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/a2ea3ea9d01c17b87a65bc8e885015b5.jpg",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Gra akcji w otwartym świecie od twórców Black Desert. Kliff i jego najemnicy z Greymanów walczą o przetrwanie na kontynencie Pywel."
   },
   {
     "game": "BioShock Infinite",
@@ -6891,7 +6892,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/5b8613b547316cf7808db044637edb1c.jpg",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "opis": "Kolejna odsłona wyścigów w otwartym świecie z serii Forza Horizon, której akcja przenosi się do Japonii."
   },
   {
     "game": "Ghostrunner",
@@ -7339,7 +7341,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/8831080c91dd4aac058dbc02296bc42e.jpg",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Kontynuacja RPG Obsidian Entertainment, tym razem w kolonii Arkadia. Jako agent Ziemskiego Dyrektoriatu badasz groźne pęknięcia w przestrzeni, a wybory zmieniają historię."
   },
   {
     "game": "The Evil Within 2",
@@ -7440,7 +7443,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/956adefb0eb473d0cd054107659ab6fd.jpg",
     "genre": "Horror",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "opis": "Nowa odsłona serii survival horrorów Capcomu. Analityczka FBI Grace Ashcroft bada tajemnicze zgony związane z własną przeszłością."
   },
   {
     "game": "Of Ash and Steel",
@@ -7693,7 +7697,8 @@
         "ver": "1.4",
         "upd": "2026-11-03"
       }
-    ]
+    ],
+    "opis": "Kolejna odsłona wymagającej serii akcji Team Ninja w Japonii okresu Sengoku. Bohater może przełączać się między stylem samuraja i ninja."
   },
   {
     "game": "The Walking Dead: The Telltale Definitive Series",
@@ -8643,7 +8648,8 @@
     "link": "https://www.nexusmods.com/stardewvalley/mods/3616",
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/996e24639b91722571c81723760023e0.jpg",
-    "upd": "2026-10-31"
+    "upd": "2026-10-31",
+    "opis": "Bohater porzuca pracę w korporacji i przejmuje zaniedbaną farmę po dziadku. Uprawiasz ziemię, hodujesz zwierzęta, eksplorujesz kopalnie i poznajesz mieszkańców miasteczka Pelican Town."
   },
   {
     "game": "World of Warcraft: Forever",
@@ -8682,7 +8688,8 @@
     "link": "https://bazaspolszczen.pl/games/getting-over-it-with-bennett-foddy/grzybdev",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/ef2e83d7af305391f3ffa6618660513e.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Mężczyzna w kotle, uzbrojony tylko w młot, wspina się na górę ze śmieci i przypadkowych przedmiotów. Jeden błąd może cofnąć Cię o wiele minut, a narrator komentuje każdą porażkę."
   },
   {
     "game": "Five Nights at Freddy's 4",
@@ -8696,7 +8703,8 @@
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/12cc97842f39de60ed91cd3740d551b2.jpg",
     "upd": "2026-11-01",
-    "genre": "Survival Horror"
+    "genre": "Survival Horror",
+    "opis": "Tym razem grasz dzieckiem uwięzionym nocą w sypialni. Nasłuchujesz kroków koszmarnych animatroników za drzwiami i w szafie, bo słuch jest tu ważniejszy niż wzrok."
   },
   {
     "game": "ULTRAKILL",
@@ -8710,7 +8718,8 @@
     "genre": "FPS",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/3f1a853f014c11ba9c3e17ab78decaac.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Szybka strzelanka w stylu lat 90., w której maszyna napędzana krwią przebija się przez piekło. Akcja nagradza agresję, efektowne kombinacje broni i ciągły ruch."
   },
   {
     "game": "Touhou Luna Nights",
@@ -8738,7 +8747,8 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/33423050f5d813ff6285ef04171ec4dc.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Trzydzieści lat po zamknięciu pizzerii powstaje atrakcja grozy oparta na jej historii. Pilnujesz systemów budynku i stawiasz czoła Springtrapowi, który krąży po korytarzach."
   },
   {
     "game": "Five Nights at Freddy's 2",
@@ -8752,7 +8762,8 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/89b80e69d47933b3b13f3526d10baeb2.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Kolejne nocne zmiany w pizzerii Freddy Fazbear's, tym razem bez drzwi do zamknięcia. Przed animatronikami chroni Cię maska, latarka i pozytywka, którą trzeba stale nakręcać."
   },
   {
     "game": "Five Nights at Freddy's",
@@ -8766,7 +8777,8 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/c7e30c4f80e9452d40245385c6572936.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Pracujesz jako nocny ochroniarz w pizzerii, w której animatroniczne maskotki po zmroku zaczynają się poruszać. Pilnujesz kamer i drzwi, oszczędzając prąd, żeby dotrwać do szóstej rano."
   },
   {
     "game": "Five Nights at Freddy's: Sister Location",
@@ -8780,7 +8792,8 @@
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/025076303acf29757d0657488de2ab8e.jpg",
     "upd": "2026-11-01",
-    "genre": "Survival Horror"
+    "genre": "Survival Horror",
+    "opis": "Nowy pracownik firmy Circus Baby's Rentals wykonuje polecenia głosu z głośnika w podziemnym kompleksie. Każda noc to inne zadanie, a animatroniki skrywają mroczną tajemnicę."
   },
   {
     "game": "Baldi's Basics Classic Remastered",
@@ -8939,7 +8952,8 @@
     "genre": "FPS",
     "dodano": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/c039e6496e67fdb3d46e6d5877e01ed2.jpg",
-    "upd": "2026-11-02"
+    "upd": "2026-11-02",
+    "opis": "Kooperacyjny looter shooter, w którym Łowcy Krypty ścigają bliźniaków Calypso. Akcja wykracza poza Pandorę na inne planety, a głównym łupem są miliardy kombinacji broni."
   },
   {
     "game": "Grand Theft Auto",
@@ -8955,7 +8969,8 @@
     "upd": "2026-11-02",
     "status": "Gotowe",
     "link": "https://www.gta-mods.pl/pliki/444/spolszczenie-do-gta-1#google_vignette",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "opis": "Pierwsza odsłona słynnej serii, oglądana z góry. Jako przestępca kradniesz auta i wykonujesz zlecenia w trzech miastach: Liberty City, San Andreas i Vice City."
   },
   {
     "game": "Late Shift",
@@ -9237,7 +9252,8 @@
         "ver": "Alfa",
         "upd": "2026-10-16"
       }
-    ]
+    ],
+    "opis": "Luminary, bohater przepowiedni, z dnia na dzień zostaje uznany za wroga świata. Razem z drużyną odkrywa prawdę o sobie w klasycznym jRPG w turowym stylu serii."
   },
   {
     "game": "Trails in The Sky 2nd Chapter",
@@ -9376,7 +9392,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/what_remains_of_edith_finch",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/afff5dfa65950302eb10894f8d37eb80.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/afff5dfa65950302eb10894f8d37eb80.jpg",
+    "opis": "Edith wraca do rodzinnego domu, by poznać historię krewnych naznaczonych klątwą. Każdy pokój opowiada o innym członku rodziny w formie krótkiej, odmiennej rozgrywki."
   },
   {
     "game": "Shin Megami Tensei: Persona",
@@ -9579,7 +9596,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/octopath_traveler_ii",
     "dodano": "2026-04-21",
     "upd": "2026-10-20",
-    "img": "https://cdn2.steamgriddb.com/thumb/506f92056efcdb4572f2f31f1e6ed0bf.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/506f92056efcdb4572f2f31f1e6ed0bf.jpg",
+    "opis": "Nowych ośmioro bohaterów przemierza krainę Solistia, w której wprowadzono cykl dnia i nocy. Styl HD-2D i turowe walki pozostały, a historie częściej się przeplatają."
   },
   {
     "game": "Twisted Tower",
@@ -9635,7 +9653,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/monster_train_2",
     "dodano": "2026-10-19",
     "upd": "2026-10-19",
-    "img": "https://cdn2.steamgriddb.com/thumb/20d5807d74c2505b897c2aebe9122b7e.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/20d5807d74c2505b897c2aebe9122b7e.jpg",
+    "opis": "Kontynuacja karcianego roguelike'a o pociągu i walce o los niebios. Więcej klanów, nowe mechaniki i pociąg przemierzający kolejne krainy."
   },
   {
     "game": "Unicorn Overlord",
@@ -9815,7 +9834,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/lost_judgement",
     "dodano": "2026-09-18",
     "upd": "2026-10-13",
-    "img": "https://cdn2.steamgriddb.com/thumb/273e6665d6cda7e921a5b0084e99ef24.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/273e6665d6cda7e921a5b0084e99ef24.jpg",
+    "opis": "Detektyw Takayuki Yagami bada sprawę morderstwa, które prowadzi go do szkoły w Yokohamie. Śledztwo porusza temat prześladowania, a walki czerpią z trzech stylów bojowych."
   },
   {
     "game": "SIMULACRA",
@@ -9857,7 +9877,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/chained_echoes",
     "dodano": "2026-08-01",
     "upd": "2026-10-12",
-    "img": "https://cdn2.steamgriddb.com/thumb/eedd58319d7ef99ac86726096dca164c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/eedd58319d7ef99ac86726096dca164c.jpg",
+    "opis": "Klasyczne jRPG w stylu pikselowym, w którym grupa bohaterów próbuje zakończyć wojnę na kontynencie Valandis. Walki turowe i mechy nawiązują do gier z ery SNES-a."
   },
   {
     "game": "Bluey's Quest for the Gold Pen",
@@ -9885,7 +9906,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/disney_dreamlight_valley",
     "dodano": "2026-08-09",
     "upd": "2026-10-11",
-    "img": "https://cdn2.steamgriddb.com/thumb/64609dbe7a4a89ce46cd05803918afe4.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/64609dbe7a4a89ce46cd05803918afe4.jpg",
+    "opis": "Wracasz do magicznej doliny dotkniętej Zapomnieniem i pomagasz postaciom Disneya i Pixara. Gra łączy uprawę ziemi i wystrój domu z przygodą."
   },
   {
     "game": "Retrospace",
@@ -9913,7 +9935,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/yakuza_0",
     "dodano": "2026-10-09",
     "upd": "2026-10-09",
-    "img": "https://cdn2.steamgriddb.com/thumb/c9d5550cc5ee1be86bea08e3ffc43926.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c9d5550cc5ee1be86bea08e3ffc43926.jpg",
+    "opis": "Tokio i Osaka lat 80., czasy bańki gospodarczej. Kazuma Kiryu i Goro Majima wplątują się w walkę o niewielką działkę, a między bijatykami czeka mnóstwo zabawnych zajęć pobocznych."
   },
   {
     "game": "Terminator Dark Fate - Defiance",
@@ -9969,7 +9992,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/inscryption",
     "dodano": "2026-02-17",
     "upd": "2026-10-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/0e8db479ccde6f74f7e23d2bd71c47bb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/0e8db479ccde6f74f7e23d2bd71c47bb.jpg",
+    "opis": "Mroczna gra karciana, w której tajemniczy gospodarz chatki zmusza Cię do pojedynków na zwierzęce karty. Z czasem rozgrywka odkrywa kolejne warstwy i zaskakuje zwrotami."
   },
   {
     "game": "Eastward",
@@ -9983,7 +10007,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/eastward",
     "dodano": "2026-10-07",
     "upd": "2026-10-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/27f1c23506167836c2afe9fdbd458060.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/27f1c23506167836c2afe9fdbd458060.jpg",
+    "opis": "Górnik John i tajemnicza dziewczynka Sam podróżują pociągiem przez upadający świat. Pikselowa przygodówka akcji z ciepłą opowieścią."
   },
   {
     "game": "Assassin's Creed Nexus VR",
@@ -10079,7 +10104,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/bravely_default_ii",
     "dodano": "2026-10-06",
     "upd": "2026-10-06",
-    "img": "https://cdn2.steamgriddb.com/thumb/11b85f4a508bf2fa4db48a6e530c2a5b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/11b85f4a508bf2fa4db48a6e530c2a5b.jpg",
+    "opis": "Czworo Bohaterów Światła zbiera żywiołowe kryształy, by ocalić świat Excillant. Klasyczne turowe jRPG, w którym system pozwala gromadzić i wydawać tury."
   },
   {
     "game": "Luigi's Mansion 2 HD",
@@ -10093,7 +10119,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/luigi_mansion_2_hd",
     "dodano": "2026-10-06",
     "upd": "2026-10-06",
-    "img": "https://cdn2.steamgriddb.com/thumb/33e18a78cf393b438a7d1a6e7f77f5ff.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/33e18a78cf393b438a7d1a6e7f77f5ff.jpg",
+    "opis": "Profesor E. Gadd wysyła Luigiego do Evershade Valley, by odzyskać odłamki Mrocznego Księżyca. Z latarką i odkurzaczem przeszukujesz kilka nawiedzonych posiadłości."
   },
   {
     "game": "Fire Emblem: Three Houses",
@@ -10107,7 +10134,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/fire_emblem_three_houses",
     "dodano": "2026-09-28",
     "upd": "2026-10-05",
-    "img": "https://cdn2.steamgriddb.com/thumb/849460026d42c840faab34d4d3b9fc33.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/849460026d42c840faab34d4d3b9fc33.jpg",
+    "opis": "Jako nauczyciel w klasztorze Garreg Mach wybierasz jeden z trzech domów i szkolisz uczniów. Część taktyczna łączy się tu z życiem akademii, a wybór decyduje o przebiegu wojny."
   },
   {
     "game": "Sovereign Tower",
@@ -10135,7 +10163,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/super_mario_odyssey",
     "dodano": "2026-10-04",
     "upd": "2026-10-04",
-    "img": "https://cdn2.steamgriddb.com/thumb/505870c8848f2d550944bf64008c9472.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/505870c8848f2d550944bf64008c9472.jpg",
+    "opis": "Mario i Cappy ruszają w podróż po krainach, by powstrzymać ślub Bowsera i Peach. Rzucana czapka pozwala przejmować kontrolę nad postaciami i przedmiotami."
   },
   {
     "game": "Paper Mario: The Thousand-Year Door",
@@ -10149,7 +10178,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/paper_mario_the_thousand_year_door",
     "dodano": "2026-08-25",
     "upd": "2026-10-04",
-    "img": "https://cdn2.steamgriddb.com/thumb/44f26075c7393838535d77f42fcf6714.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/44f26075c7393838535d77f42fcf6714.jpg",
+    "opis": "Papierowy Mario szuka Gwiezdnych Kryształów, by odnaleźć Peach i otworzyć tysiącletnie wrota. Humorystyczna gra RPG z turową walką rozgrywaną na scenie teatralnej."
   },
   {
     "game": "Luigi's Mansion 3",
@@ -10163,7 +10193,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/luigi_mansion_3",
     "dodano": "2026-10-04",
     "upd": "2026-10-04",
-    "img": "https://cdn2.steamgriddb.com/thumb/f09a201b4e265d204352b00b8b174b15.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/f09a201b4e265d204352b00b8b174b15.jpg",
+    "opis": "Luigi i jego przyjaciele trafiają do hotelu pełnego duchów, a bracia i Peach znikają. Odkurzacz Poltergust i zielony Gooigi pomagają oczyścić kolejne piętra."
   },
   {
     "game": "Catherine Classic",
@@ -10287,7 +10318,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/the_legend_of_zelda_echoes_of_wisdom",
     "dodano": "2026-09-27",
     "upd": "2026-10-01",
-    "img": "https://cdn2.steamgriddb.com/thumb/e488d6f4064e1584c115f2cd7bed74f0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e488d6f4064e1584c115f2cd7bed74f0.jpg",
+    "opis": "Tym razem główną bohaterką jest Zelda, która musi uratować Hyrule po zniknięciu Linka. Magiczna różdżka tworzy kopie przedmiotów i potworów, co pozwala rozwiązywać zagadki po swojemu."
   },
   {
     "game": "The Legend of Zelda: Link's Awakening",
@@ -10301,7 +10333,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/the_legend_of_zelda_links_awakening",
     "dodano": "2026-09-27",
     "upd": "2026-09-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/0e89ccedef7fdb65b6d529e2ee33fc56.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/0e89ccedef7fdb65b6d529e2ee33fc56.jpg",
+    "opis": "Po sztormie Link trafia na wyspę Koholint i dowiaduje się, że aby ją opuścić, musi obudzić Wietrzną Rybę. To odświeżona wersja klasyka z Game Boya z uroczą oprawą."
   },
   {
     "game": "SKALD: Against the Black Priory",
@@ -10344,7 +10377,8 @@
     "dodano": "2026-09-10",
     "upd": "2026-09-30",
     "yt": "https://www.youtube.com/watch?v=al_PkAxlwjw",
-    "img": "https://cdn2.steamgriddb.com/thumb/727d89c97ccaa39b9f2b848bdce6aca5.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/727d89c97ccaa39b9f2b848bdce6aca5.jpg",
+    "opis": "Venom Snake budzi się ze śpiączki i rusza w Afganistanie i Afryce po zemstę. To otwarta skradanka, w której sam wybierasz sposób wykonania misji i rozbudowujesz bazę Mother Base."
   },
   {
     "game": "Dressmaker",
@@ -10372,7 +10406,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/kingdom_hearts_hd_1_5_2_5",
     "dodano": "2026-08-22",
     "upd": "2026-09-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/bc1dba18530dcba2b3117b5b375a15eb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/bc1dba18530dcba2b3117b5b375a15eb.jpg",
+    "opis": "Zbiór pierwszych odsłon serii, w tym Kingdom Hearts i Kingdom Hearts II. Sora z postaciami Disneya walczy z Bezserduszymi i poznaje początek historii."
   },
   {
     "game": "Grand Theft Auto: Chinatown Wars",
@@ -10386,7 +10421,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/gta_chinatown_wars",
     "dodano": "2026-09-30",
     "upd": "2026-09-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/edcbb16417f7a00253240c23ef93dfb6.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/edcbb16417f7a00253240c23ef93dfb6.jpg",
+    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami."
   },
   {
     "game": "Unavowed",
@@ -10513,7 +10549,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/judgement",
     "dodano": "2026-09-18",
     "upd": "2026-09-27",
-    "img": "https://cdn2.steamgriddb.com/thumb/0a72388b0596ed10659ffd28bae2197e.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/0a72388b0596ed10659ffd28bae2197e.jpg",
+    "opis": "Były prawnik Takayuki Yagami zostaje prywatnym detektywem w tokijskiej dzielnicy Kamurocho. Tropi seryjnego mordercę, łącząc śledztwo z efektownymi bijatykami."
   },
   {
     "game": "Yoshi's Woolly World",
@@ -10541,7 +10578,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/zelda_breath_of_the_wild",
     "dodano": "2026-09-24",
     "upd": "2026-09-26",
-    "img": "https://cdn2.steamgriddb.com/thumb/121b81f7d167ca2c24fdab4f044048f8.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/121b81f7d167ca2c24fdab4f044048f8.jpg",
+    "opis": "Link budzi się po stu latach i odkrywa zrujnowane Hyrule. Ogromny otwarty świat można przemierzać w dowolnej kolejności, a celem jest pokonanie Calamity Ganona."
   },
   {
     "game": "Warhammer 40,000: Mechanicus II",
@@ -10597,7 +10635,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/zelda_skyward_sword_hd_nie_ai",
     "dodano": "2026-09-03",
     "upd": "2026-09-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/7618c8abfa8fd1fad7373a8797aa304a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7618c8abfa8fd1fad7373a8797aa304a.jpg",
+    "opis": "Początek historii Zeldy, w którym Link wyrusza z podniebnego Skyloft na ziemię, by odnaleźć zaginioną przyjaciółkę. Walka mieczem opiera się na precyzyjnych cięciach."
   },
   {
     "game": "Shroom and Gloom (Early Access)",
@@ -10625,7 +10664,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/the_forgotten_city",
     "dodano": "2026-01-23",
     "upd": "2026-09-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/3b2bfbb9096fe09ac2c3c9410deb696c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/3b2bfbb9096fe09ac2c3c9410deb696c.jpg",
+    "opis": "Trafiasz do rzymskiego miasta, w którym jeden grzech wszystkich mieszkańców skazuje na śmierć. Pętla czasu pozwala powtarzać dzień i odkrywać prawdę."
   },
   {
     "game": "SiN Reloaded",
@@ -10653,7 +10693,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/state_of_decay_2",
     "dodano": "2026-08-14",
     "upd": "2026-09-24",
-    "img": "https://cdn2.steamgriddb.com/thumb/e47e4f02688d488ac15fe5d7e20ff2b4.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e47e4f02688d488ac15fe5d7e20ff2b4.jpg",
+    "opis": "Kooperacyjna gra o przetrwaniu po apokalipsie zombie. Zakładasz bazę, zbierasz zapasy i dbasz o członków społeczności, których śmierć jest ostateczna."
   },
   {
     "game": "Bye Sweet Carole",
@@ -10734,7 +10775,8 @@
         "ver": "1.1",
         "upd": "2026-09-26"
       }
-    ]
+    ],
+    "opis": "Starzejący się Solid Snake rusza na ostatnią misję przeciw Liquid Ocelotowi. To wielki finał sagi, w którym skradanie miesza się z długimi filmowymi przerywnikami."
   },
   {
     "game": "The Seance of Blake Manor",
@@ -10790,7 +10832,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/yakuza_like_a_dragon",
     "dodano": "2026-09-18",
     "upd": "2026-09-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/a74232d6687fbbe43fab56cc11eafe64.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a74232d6687fbbe43fab56cc11eafe64.jpg",
+    "opis": "Ichiban Kasuga po 18 latach w więzieniu odkrywa, że został zdradzony przez swój klan. Seria przechodzi tu na turowe walki RPG, zachowując humor i dramat."
   },
   {
     "game": "Flesh Made Fear",
@@ -11008,7 +11051,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/metal_gear_solid_v_ground_zeroes",
     "dodano": "2026-09-09",
     "upd": "2026-09-09",
-    "img": "https://cdn2.steamgriddb.com/thumb/3d5cbcad747c5477f33557043b62bbeb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/3d5cbcad747c5477f33557043b62bbeb.jpg",
+    "opis": "Prolog do The Phantom Pain. Snake przenika do czarnego ośrodka na Kubie, by odbić więźniów, a jedna otwarta mapa pozwala podejść do zadania na wiele sposobów."
   },
   {
     "game": "Mewgenics",
@@ -11077,7 +11121,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/spiritfarer_port",
     "dodano": "2026-09-04",
     "upd": "2026-09-08",
-    "img": "https://cdn2.steamgriddb.com/thumb/9886fa29a60248f2ab8b5f4ab4710177.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/9886fa29a60248f2ab8b5f4ab4710177.jpg",
+    "opis": "Stella zostaje przewoźniczką dusz i pływa statkiem, pomagając duchom pogodzić się z odejściem. Ciepła gra o zarządzaniu i pożegnaniach."
   },
   {
     "game": "Deadly Premonition 2: A Blessing in Disguise",
@@ -11147,7 +11192,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/triangle_strategy",
     "dodano": "2026-08-13",
     "upd": "2026-09-03",
-    "img": "https://cdn2.steamgriddb.com/thumb/2830a65af0d754f4081be07c6159c197.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/2830a65af0d754f4081be07c6159c197.jpg",
+    "opis": "Taktyczne RPG, w którym książę Serenoa Wolffort próbuje ocalić swój ród w wojnie o sól i żelazo. Ważne decyzje podejmowane są przez głosowanie towarzyszy."
   },
   {
     "game": "Sudeki",
@@ -11217,7 +11263,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/death_s_door",
     "dodano": "2026-08-27",
     "upd": "2026-08-27",
-    "img": "https://cdn2.steamgriddb.com/thumb/6085d683ebb12ecbb87d4fa024983174.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/6085d683ebb12ecbb87d4fa024983174.jpg",
+    "opis": "Grasz krukiem, który zbiera dusze dla biurokratycznej instytucji, aż jedna z nich zostaje skradziona. Izometryczna gra akcji o śmierci i jej konsekwencjach."
   },
   {
     "game": "Tactics Ogre: Reborn",
@@ -11231,7 +11278,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/tactics_ogre_reborn",
     "dodano": "2026-08-27",
     "upd": "2026-08-27",
-    "img": "https://cdn2.steamgriddb.com/thumb/7ca98d9016122089a85643760b0da314.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/7ca98d9016122089a85643760b0da314.png",
+    "opis": "Odświeżona wersja klasycznego taktycznego RPG. Denam Pavel walczy o wolność swojego ludu na wyspach Walister, a wybory moralne zmieniają przebieg historii."
   },
   {
     "game": "Dark Rites of Arkham",
@@ -11272,7 +11320,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/battletech",
     "dodano": "2026-08-25",
     "upd": "2026-08-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/407fae8977d8785405f9ef63d5d90404.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/407fae8977d8785405f9ef63d5d90404.jpg",
+    "opis": "Turowa taktyka, w której dowodzisz oddziałem najemników w wielkich mechach. Decyzje zapadają na polu walki i w zarządzaniu kompanią."
   },
   {
     "game": "Maseylia: Echoes of The Past",
@@ -11299,7 +11348,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/kingdom_hearts_iii",
     "dodano": "2026-08-18",
     "upd": "2026-08-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/b1fcb6f17d92c4076dec509a4e0f5405.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b1fcb6f17d92c4076dec509a4e0f5405.jpg",
+    "opis": "Sora, Donald i Goofy odwiedzają światy Disneya i Pixara, a seria Xehanorta zmierza do finału. Efektowne walki łączą się z bajkową przygodą."
   },
   {
     "game": "999: Nine Hours, Nine Persons, Nine Doors",
@@ -11505,7 +11555,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/final_fantasy_tactics_the_ivalice_chronicles",
     "dodano": "2026-08-11",
     "upd": "2026-08-11",
-    "img": "https://cdn2.steamgriddb.com/thumb/f1cf1ecf003ece4d9f24eb3f4a2d2fce.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/f1cf1ecf003ece4d9f24eb3f4a2d2fce.jpg",
+    "opis": "Odnowione wydanie klasycznego taktycznego RPG ze świata Ivalice. Ramza Beoulve trafia w sam środek Wojny Lwów, pełnej politycznych intryg i zdrad."
   },
   {
     "game": "Agent 64: Spies Never Die",
@@ -11748,7 +11799,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/citizen_sleeper",
     "dodano": "2026-08-05",
     "upd": "2026-08-05",
-    "img": "https://cdn2.steamgriddb.com/thumb/bcf627d1efb7216807f3d5015832bc36.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/bcf627d1efb7216807f3d5015832bc36.jpg",
+    "opis": "Jesteś emulacją ludzkiego umysłu w sztucznym ciele, zbiegłą na stację kosmiczną Erlin's Eye. Rzuty kośćmi decydują o tym, co zrobisz każdego dnia, by przetrwać."
   },
   {
     "game": "Kill The Shadow",
@@ -11789,7 +11841,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/wuchang_fallen_feathers",
     "dodano": "2026-08-05",
     "upd": "2026-08-05",
-    "img": "https://cdn2.steamgriddb.com/thumb/2d82924f978dda9bfc00f94e350dd9b2.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/2d82924f978dda9bfc00f94e350dd9b2.jpg",
+    "opis": "Soulslike osadzony w Chinach u schyłku dynastii Ming. Wuchang, dotknięta Chorobą Pierza, walczy o życie w mrocznym świecie pełnym potworów."
   },
   {
     "game": "Dragon Quest VIII",
@@ -11803,7 +11856,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/dragon_quest_viii",
     "dodano": "2026-08-03",
     "upd": "2026-08-03",
-    "img": "https://cdn2.steamgriddb.com/thumb/4e65af0726d49e19453f04a8d481b990.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/4e65af0726d49e19453f04a8d481b990.jpg",
+    "opis": "Bohater wyrusza z królem przemienionym w ropuchę, by pokonać szalonego błazna Dhoulmagusa. Klasyczne jRPG z rysunkami Akiry Toriyamy."
   },
   {
     "game": "Foghorns Drown",
@@ -12021,7 +12075,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/fire_emblem_awakening",
     "dodano": "2026-07-12",
     "upd": "2026-07-12",
-    "img": "https://cdn2.steamgriddb.com/thumb/7961f44653b3a08379349e2c8e1ff14d.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7961f44653b3a08379349e2c8e1ff14d.jpg",
+    "opis": "Książę Chrom i jego straż stają do walki, gdy z przyszłości przybywa tajemnicza wojowniczka. Taktyczne RPG, w którym relacje między postaciami wpływają na siłę drużyny."
   },
   {
     "game": "Dragon Quest III HD-2D Remake",
@@ -12035,7 +12090,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/dragon_quest_iii_hd_2d_remake",
     "dodano": "2026-07-04",
     "upd": "2026-07-04",
-    "img": "https://cdn2.steamgriddb.com/thumb/082b0de7b83e1560f1b72cd386c286c5.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/082b0de7b83e1560f1b72cd386c286c5.jpg",
+    "opis": "Odświeżenie klasyka, który zapoczątkował sagę Erdrick. Syn lub córka legendarnego Ortegi rusza, by pokonać Baramosa, w pięknym stylu HD-2D."
   },
   {
     "game": "Shadowrun Returns",
@@ -12118,7 +12174,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/visions_of_mana",
     "dodano": "2026-06-09",
     "upd": "2026-06-09",
-    "img": "https://cdn2.steamgriddb.com/thumb/b033242bf7a7e78f774ce6fc5ca276fb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b033242bf7a7e78f774ce6fc5ca276fb.jpg",
+    "opis": "Val towarzyszy Hinnie w pielgrzymce do Drzewa Many i poznaje prawdę o ofiarach składanych światu. Barwne jRPG akcji z szybką walką."
   },
   {
     "game": "Fatekepeer",
@@ -12158,7 +12215,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/suikoden_ii_hd_remaster",
     "dodano": "2026-05-18",
     "upd": "2026-05-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/ef4b2655b2f620f88c103bf168722663.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ef4b2655b2f620f88c103bf168722663.jpg",
+    "opis": "Dwóch przyjaciół trafia na przeciwne strony wojny. Ceniony jRPG, w którym zbierasz 108 Gwiazd Przeznaczenia i budujesz własny zamek."
   },
   {
     "game": "Haven",
@@ -12200,7 +12258,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/subnautica_2",
     "dodano": "2026-05-14",
     "upd": "2026-05-14",
-    "img": "https://cdn2.steamgriddb.com/thumb/e9cce15bddae428c79dcf69bd8dc9e97.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e9cce15bddae428c79dcf69bd8dc9e97.jpg",
+    "opis": "Kontynuacja podwodnej gry o przetrwaniu, tym razem także w kooperacji. Eksplorujesz nowy obcy ocean, zbierasz surowce i budujesz bazy."
   },
   {
     "game": "A Fisherman's Tale 2",
@@ -12283,7 +12342,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/dave_the_diver",
     "dodano": "2026-04-24",
     "upd": "2026-04-24",
-    "img": "https://cdn2.steamgriddb.com/thumb/1d50a96e0e3d7b721de8aafbb246067d.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/1d50a96e0e3d7b721de8aafbb246067d.jpg",
+    "opis": "Nurek Dave za dnia łowi ryby w tajemniczej Niebieskiej Dziurze, a wieczorem prowadzi restaurację sushi. Pikselowa gra łączy eksplorację, zarządzanie i mnóstwo humoru."
   },
   {
     "game": "Nocturnal",
@@ -12339,7 +12399,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/signalis",
     "dodano": "2026-04-14",
     "upd": "2026-04-14",
-    "img": "https://cdn2.steamgriddb.com/thumb/7af2a888e0734af735d8bab0a5b1b5d2.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7af2a888e0734af735d8bab0a5b1b5d2.jpg",
+    "opis": "Horror survival o Replikance poszukującej ukochanej na mroźnej planecie. Klimat retro, zagadki i ograniczone zasoby tworzą duszącą atmosferę."
   },
   {
     "game": "Banquet for Fools",
@@ -12603,7 +12664,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/octopath_traveler",
     "dodano": "2026-03-04",
     "upd": "2026-03-04",
-    "img": "https://cdn2.steamgriddb.com/thumb/e522d9f3e8c056b74f05e8f9fd249fc5.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e522d9f3e8c056b74f05e8f9fd249fc5.jpg",
+    "opis": "Ośmioro podróżników o różnych zawodach wyrusza w świat Orsterry, a każdy ma własną historię. Styl HD-2D łączy pikselową grafikę z nowoczesnymi efektami i turową walką."
   },
   {
     "game": "Coral Island",
@@ -12701,7 +12763,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/marvel_s_iron_man_vr",
     "dodano": "2026-01-24",
     "upd": "2026-01-24",
-    "img": "https://cdn2.steamgriddb.com/thumb/323cf0264d094b28b648e41ee15d3c41.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/323cf0264d094b28b648e41ee15d3c41.jpg",
+    "opis": "Wcielasz się w Tony'ego Starka i latasz w zbroi Iron Mana w wirtualnej rzeczywistości. Walczysz z Ghost, która atakuje jego firmę."
   },
   {
     "game": "This Bed We Made",
@@ -12729,7 +12792,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/still_wakes_the_deep",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/bee8b1f84aa71967767bfea00248fa96.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/bee8b1f84aa71967767bfea00248fa96.jpg",
+    "opis": "Rok 1975, platforma wiertnicza na Morzu Północnym. Elektryk Caz próbuje uciec, gdy załogę opanowuje niepojęta istota, a platformą miotają sztormy."
   },
   {
     "game": "Ball x Pit",
@@ -12756,7 +12820,8 @@
     "author": "kofii12345",
     "link": "https://bazarowespolszczenia.pl/gra/marvel_s_deadpool_vr",
     "dodano": "2026-01-23",
-    "upd": "2026-01-23"
+    "upd": "2026-01-23",
+    "opis": "Gra akcji VR z Deadpoolem, pełna absurdalnego humoru i brutalnych walk. Bohater trafia do Mojoverse i musi walczyć dla rozrywki widzów."
   },
   {
     "game": "Killer Frequency",
@@ -12799,7 +12864,8 @@
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
     "yt": "https://www.youtube.com/watch?v=DRuz7GvwQ5o",
-    "img": "https://cdn2.steamgriddb.com/thumb/740b1fbada78be045e34f1755c18f43a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/740b1fbada78be045e34f1755c18f43a.jpg",
+    "opis": "Kontynuacja na Meta Quest, w której jako kosmiczne bóstwo podróżujesz przez egipskie, nordyckie i inne krainy, by walczyć ze złem. Ogromna gra RPG w VR."
   },
   {
     "game": "Ghost Town",
@@ -12827,7 +12893,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/trover_saves_the_universe",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/48cc6a9f8001fceb808743bb8684fd70.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/48cc6a9f8001fceb808743bb8684fd70.jpg",
+    "opis": "Komediowa przygodówka twórcy Ricka i Morty'ego. Pomagasz fioletowemu stworowi Troverowi odzyskać psy porwane przez kosmicznego złoczyńcę."
   },
   {
     "game": "Medal of Honor: Above and Beyond",
@@ -12841,7 +12908,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/medal_of_honor_above_and_beyond",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/1c9936e9d51640244ce7bbc813e63afd.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/1c9936e9d51640244ce7bbc813e63afd.jpg",
+    "opis": "Strzelanka VR o II wojnie światowej. Jako agent OSS bierzesz udział w misjach w okupowanej Europie, a gra zawiera też dokumentalne wspomnienia weteranów."
   },
   {
     "game": "The Walking Dead Saints & Sinners",
@@ -12855,7 +12923,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/the_walking_dead_saints_sinners",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/5848b84e5718149831a51c14e52c6e1f.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5848b84e5718149831a51c14e52c6e1f.jpg",
+    "opis": "Gra VR osadzona w zalanym Nowym Orleanie. Zbierasz zapasy, walczysz z szwendaczami i podejmujesz trudne decyzje między frakcjami."
   },
   {
     "game": "The Midnight Walk",
@@ -12911,7 +12980,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/moss_2",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/d3a81460ad7ecda854f570d4bd0d600b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/d3a81460ad7ecda854f570d4bd0d600b.jpg",
+    "opis": "Dalszy ciąg przygód myszki Quill w VR, która walczy z Arkasą i rozwija swoje umiejętności w nowych krainach."
   },
   {
     "game": "Maestro",
@@ -12953,7 +13023,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/moss",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/f2c7e86f56d59f8cd8cbbb35106df78b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/f2c7e86f56d59f8cd8cbbb35106df78b.jpg",
+    "opis": "Mysz Quill przemierza baśniowy świat, a Ty pomagasz jej jako tajemniczy Czytelnik w VR. Łączy platformówkę, zagadki i ciepłą opowieść."
   },
   {
     "game": "Red Matter",
@@ -12995,7 +13066,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/asgard_s_wrath",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/5853ccb92475e15bb4042e784701feb1.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5853ccb92475e15bb4042e784701feb1.jpg",
+    "opis": "Epicka gra akcji VR ze świata mitologii nordyckiej. Jako kosmiczne bóstwo wpływasz na losy śmiertelników i walczysz z ogromnymi potworami."
   },
   {
     "game": "Amenti",
@@ -13050,7 +13122,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=bayonetta",
     "dodano": "2026-09-17",
     "upd": "2026-09-17",
-    "img": "https://cdn2.steamgriddb.com/thumb/a933c92fed6971b3ef2e2349020b005d.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a933c92fed6971b3ef2e2349020b005d.jpg",
+    "opis": "Czarownica Bayonetta budzi się po latach bez pamięci i walczy z zastępami aniołów. Efektowny slasher, w którym unik w ostatniej chwili spowalnia czas."
   },
   {
     "game": "Bayonetta 2",
@@ -13064,7 +13137,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=bayonetta-2",
     "dodano": "2026-10-11",
     "upd": "2026-10-11",
-    "img": "https://cdn2.steamgriddb.com/thumb/db76ba9f1aadf1434c1d08a590f41fde.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/db76ba9f1aadf1434c1d08a590f41fde.jpg",
+    "opis": "Bayonetta rusza do piekła, by uratować duszę przyjaciółki Jeanne. Kontynuacja jeszcze szybszej i bardziej widowiskowej walki znanej z pierwszej części."
   },
   {
     "game": "Bayonetta 3",
@@ -13078,7 +13152,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=bayonetta-3-nintendo-switch",
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
-    "img": "https://cdn2.steamgriddb.com/thumb/578bbd1499e31f043f3be76f243c0650.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/578bbd1499e31f043f3be76f243c0650.png",
+    "opis": "Bayonetta podróżuje przez alternatywne światy, by powstrzymać zagrażający wszechświatu byt. Do walki wchodzą wielkie przyzywane demony i nowa bohaterka, Viola."
   },
   {
     "game": "Black Desert",
@@ -13092,7 +13167,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=black-desert",
     "dodano": "2026-10-09",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/8f6ddc62bb62bbe27113466799a6de78.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/8f6ddc62bb62bbe27113466799a6de78.png",
+    "opis": "Koreańskie MMORPG z dynamiczną walką akcji i rozbudowanym życiem w otwartym świecie. Oprócz potworów możesz handlować, hodować konie i łowić ryby."
   },
   {
     "game": "Blades of Fire",
@@ -13106,7 +13182,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=blades-of-fire",
     "dodano": "2026-07-05",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/022a8493b9bd30065064c9e72f1d66a3.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/022a8493b9bd30065064c9e72f1d66a3.png",
+    "opis": "Gra akcji od twórców Metroid Dread, w której samodzielnie kujesz broń i walczysz z królową, która zamieniła stal w kamień. Mechanika kuźni jest tu kluczowa."
   },
   {
     "game": "Blades of Time",
@@ -13134,7 +13211,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=bloodstained-ritual-of-the-night",
     "dodano": "2026-10-02",
     "upd": "2026-10-02",
-    "img": "https://cdn2.steamgriddb.com/thumb/fa19a984cf061b702adcc78b5157792a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/fa19a984cf061b702adcc78b5157792a.jpg",
+    "opis": "Duchowy spadkobierca Castlevanii od Kojiego Igarashiego. Miriam, naznaczona klątwą kryształów, przemierza zamek pełen demonów w stylu metroidvanii."
   },
   {
     "game": "Crown Siege",
@@ -13217,7 +13295,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=devil-may-cry-4-special-edition",
     "dodano": "2026-10-22",
     "upd": "2026-10-22",
-    "img": "https://cdn2.steamgriddb.com/thumb/13a665447d5e703923e47e7e851ef2a0.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/13a665447d5e703923e47e7e851ef2a0.jpg",
+    "opis": "Młody Nero i Dante stają naprzeciw siebie w mieście Fortuna. To rozszerzone wydanie z dodatkowymi grywalnymi postaciami, w tym Vergilem."
   },
   {
     "game": "Devil May Cry HD Collection",
@@ -13231,7 +13310,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=devil-may-cry-hd-collection",
     "dodano": "2026-09-09",
     "upd": "2026-10-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/e193592df746a2689d57cfd2978e67a5.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/e193592df746a2689d57cfd2978e67a5.png",
+    "opis": "Zbiór trzech pierwszych części przygód łowcy demonów Dantego. Odświeżone klasyki slasherów, w których liczy się styl i płynne kombinacje."
   },
   {
     "game": "Digimon Story: Time Stranger",
@@ -13327,7 +13407,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=eve-online",
     "dodano": "2026-10-26",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/8c7e2af9de1f4a4b88854ac78e384e5e.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/8c7e2af9de1f4a4b88854ac78e384e5e.png",
+    "opis": "Kosmiczne MMO z jednym wspólnym wszechświatem, w którym gospodarkę i wojny tworzą sami gracze. Pilotujesz statki, handlujesz i dołączasz do wielkich korporacji."
   },
   {
     "game": "Evil Genius 2: World Domination",
@@ -13397,7 +13478,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=final-fantasy-type-0-hd",
     "dodano": "2026-11-01",
     "upd": "2026-11-01",
-    "img": "https://cdn2.steamgriddb.com/thumb/4e6203e180716b510496bdd7f665a8e9.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/4e6203e180716b510496bdd7f665a8e9.jpg",
+    "opis": "Kadeci klasy Zero z akademii Vermilion Bird walczą w wojnie o kryształy krainy Orience. Bardziej mroczna odsłona serii z walką w czasie rzeczywistym."
   },
   {
     "game": "Fire Emblem Engage",
@@ -13411,7 +13493,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=fire-emblem-engage",
     "dodano": "2026-10-27",
     "upd": "2026-10-27",
-    "img": "https://cdn2.steamgriddb.com/thumb/db74f0c73f794f1f2edac2daabdef927.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/db74f0c73f794f1f2edac2daabdef927.jpg",
+    "opis": "Smoczy bohater Alear budzi się po tysiącu lat i zbiera pierścienie z duchami postaci z dawnych części serii. Taktyczne RPG z efektownymi walkami na siatce."
   },
   {
     "game": "Forager",
@@ -13425,7 +13508,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=forager",
     "dodano": "2026-10-27",
     "upd": "2026-10-27",
-    "img": "https://cdn2.steamgriddb.com/thumb/112bdd033ab9ec38b9bd83877fe95799.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/112bdd033ab9ec38b9bd83877fe95799.png",
+    "opis": "Pikselowa gra, w której zbierasz surowce, budujesz fabryki i wykupujesz kolejne wyspy. Prosta pętla szybko zamienia się w rozbudowane zarządzanie."
   },
   {
     "game": "Forspoken",
@@ -13439,7 +13523,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=forspoken",
     "dodano": "2026-10-15",
     "upd": "2026-10-15",
-    "img": "https://cdn2.steamgriddb.com/thumb/6efcc1bf4aaefb2983adebf1ace80584.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/6efcc1bf4aaefb2983adebf1ace80584.jpg",
+    "opis": "Nowojorczanka Frey trafia do magicznej krainy Athia i odkrywa w sobie moce. Gra akcji w otwartym świecie z szybkim poruszaniem się."
   },
   {
     "game": "GRIME",
@@ -13481,7 +13566,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=hitman-world-of-assassination",
     "dodano": "2026-08-16",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/b42bd86f53cd60c0f587b5be7d95c216.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/b42bd86f53cd60c0f587b5be7d95c216.jpg",
+    "opis": "Agent 47 podróżuje po świecie i eliminuje cele w rozbudowanych, otwartych lokacjach. Zbiór trylogii, w której sam wybierasz przebranie, narzędzia i sposób wykonania zlecenia."
   },
   {
     "game": "Halo: The Master Chief Collection",
@@ -13495,7 +13581,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=halo-the-master-chief-collection",
     "dodano": "2026-09-28",
     "upd": "2026-10-09",
-    "img": "https://cdn2.steamgriddb.com/thumb/53494c797a3431c193eb52bfb2f0787e.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/53494c797a3431c193eb52bfb2f0787e.jpg",
+    "opis": "Zbiór głównych odsłon przygód Master Chiefa, od Halo: Combat Evolved po Halo 4, wraz z Halo: Reach i ODST. Kultowe kampanie i tryb wieloosobowy w jednym miejscu."
   },
   {
     "game": "Hearth and Hamlet",
@@ -13565,7 +13652,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=kingdoms-of-amalur-re-reckoning",
     "dodano": "2026-10-18",
     "upd": "2026-10-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/7ceec2144a5e25658c3398e0e240b02b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7ceec2144a5e25658c3398e0e240b02b.jpg",
+    "opis": "Bohater wskrzeszony przez Studnię Dusz jako jedyny może zmienić przeznaczenie w świecie, gdzie los wszystkich jest z góry znany. Remaster RPG akcji z dynamiczną walką."
   },
   {
     "game": "Lightning Returns: Final Fantasy XIII",
@@ -13579,7 +13667,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=lightning-returns-final-fantasy-xiii",
     "dodano": "2026-10-06",
     "upd": "2026-10-06",
-    "img": "https://cdn2.steamgriddb.com/thumb/c65a344f47845d723ea399b592d60e42.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c65a344f47845d723ea399b592d60e42.jpg",
+    "opis": "Finał trylogii Final Fantasy XIII. Lightning ma trzynaście dni, by ocalić dusze ludzi przed końcem świata, a czas w grze płynie nieubłaganie."
   },
   {
     "game": "Lake",
@@ -13635,7 +13724,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=lost-ark",
     "dodano": "2026-09-28",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/c49f506a3aadd5d7646e24adf2969fd5.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c49f506a3aadd5d7646e24adf2969fd5.jpg",
+    "opis": "Izometryczne MMORPG akcji od Smilegate. Przemierzasz kontynenty Arkesii, walczysz z ogromnymi bossami w rajdach i szukasz Arki, by powstrzymać demony."
   },
   {
     "game": "Lost in Random",
@@ -13691,7 +13781,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=ninja-gaiden-2-black",
     "dodano": "2026-07-13",
     "upd": "2026-07-13",
-    "img": "https://cdn2.steamgriddb.com/thumb/838edd16b28f7e40c8cf77de3c8e39eb.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/838edd16b28f7e40c8cf77de3c8e39eb.jpg",
+    "opis": "Odświeżona wersja Ninja Gaiden 2. Ryu Hayabusa walczy z Czarnym Pająkiem i demonami w szybkich, brutalnych starciach."
   },
   {
     "game": "Ninja Gaiden 4",
@@ -13705,7 +13796,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=ninja-gaiden-4",
     "dodano": "2026-09-17",
     "upd": "2026-09-21",
-    "img": "https://cdn2.steamgriddb.com/thumb/dbbc0a17a8f1441cce1572c48f0c9046.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/dbbc0a17a8f1441cce1572c48f0c9046.png",
+    "opis": "Nowa odsłona serii o wymagającej walce ninja, z nowym bohaterem Yakumo i powrotem Ryu Hayabusy. Akcja dzieje się w mrocznej, futurystycznej wersji Tokio."
   },
   {
     "game": "New Super Lucky's Tale",
@@ -13733,7 +13825,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=ni-no-kuni-wrath-of-the-white-witch-remastered",
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
-    "img": "https://cdn2.steamgriddb.com/thumb/c6d7a57aa27581d124bc29ed12f63abd.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c6d7a57aa27581d124bc29ed12f63abd.jpg",
+    "opis": "Oliver po stracie matki trafia do magicznego świata i próbuje ją uratować. Baśniowe jRPG z oprawą studia Ghibli."
   },
   {
     "game": "Outcast - Second Contact",
@@ -13775,7 +13868,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=oxygen-not-included",
     "dodano": "2026-10-18",
     "upd": "2026-10-18",
-    "img": "https://cdn2.steamgriddb.com/thumb/130968b87ae8bd8c59bc280d7f583f25.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/130968b87ae8bd8c59bc280d7f583f25.png",
+    "opis": "Symulator kolonii w asteroidzie, gdzie grupa duplikantów musi przeżyć bez tlenu i jedzenia. Zarządzasz gazem, ciepłem i zasobami."
   },
   {
     "game": "Palia",
@@ -13817,7 +13911,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=persona-5-strikers",
     "dodano": "2026-10-25",
     "upd": "2026-10-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/c5472c58bc69ae8f5593503ddec61acc.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/c5472c58bc69ae8f5593503ddec61acc.png",
+    "opis": "Złodzieje Widmowi ruszają w wakacyjną podróż po Japonii, ale wpadają w nową intrygę. Kontynuacja Persony 5 z dynamiczną walką z wieloma przeciwnikami."
   },
   {
     "game": "Pumpkin Jack",
@@ -13859,7 +13954,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=risk-of-rain-2",
     "dodano": "2026-10-09",
     "upd": "2026-10-17",
-    "img": "https://cdn2.steamgriddb.com/thumb/7aa0fdfb891d1403467f81ed9886b874.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7aa0fdfb891d1403467f81ed9886b874.jpg",
+    "opis": "Trzecioosobowy roguelike, w którym po rozbiciu statku walczysz na obcej planecie. Im dłużej grasz, tym silniejsi przeciwnicy, a przedmioty kumulują swoje efekty."
   },
   {
     "game": "Rock Bottom",
@@ -13887,7 +13983,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=scarlet-nexus",
     "dodano": "2026-08-07",
     "upd": "2026-08-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/ca3c4a0ebc7e1db0d5a08d56ac35bde1.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ca3c4a0ebc7e1db0d5a08d56ac35bde1.jpg",
+    "opis": "W przyszłości pełnej mutantów młodzi żołnierze walczą dzięki mocom psychokinezy. Efektowne jRPG akcji z dwoma bohaterami do wyboru."
   },
   {
     "game": "SoulCalibur VI",
@@ -13901,7 +13998,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=soulcalibur-vi",
     "dodano": "2026-07-23",
     "upd": "2026-07-23",
-    "img": "https://cdn2.steamgriddb.com/thumb/35fba23314296a9e49bd5084ce8e179c.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/35fba23314296a9e49bd5084ce8e179c.png",
+    "opis": "Bijatyka z bronią białą, która wraca do wydarzeń z pierwszej części serii. Znani wojownicy walczą o miecz Soul Edge."
   },
   {
     "game": "Soulstice",
@@ -13915,7 +14013,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=soulstice",
     "dodano": "2026-07-20",
     "upd": "2026-10-16",
-    "img": "https://cdn2.steamgriddb.com/thumb/8a8a0d4a28b26bba1cdf484817aec214.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/8a8a0d4a28b26bba1cdf484817aec214.png",
+    "opis": "Dwie siostry, Briar i duch Lute, walczą z Upiorami w gotyckim świecie. Slasher z ładną oprawą, w którym obie bohaterki współpracują w walce."
   },
   {
     "game": "Space Hulk: Deathwing Enhanced Edition",
@@ -13957,7 +14056,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=stranger-of-paradise-final-fantasy-origin",
     "dodano": "2026-09-17",
     "upd": "2026-10-17",
-    "img": "https://cdn2.steamgriddb.com/thumb/6d91a927a81c14cef341304a644d4c3c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/6d91a927a81c14cef341304a644d4c3c.jpg",
+    "opis": "Mroczne spojrzenie na początki Final Fantasy z szybką walką w stylu Nioh. Jack i jego towarzysze chcą pokonać Chaos, ale nie wszystko jest takie, jak się wydaje."
   },
   {
     "game": "The Bureau: XCOM Declassified",
@@ -14081,7 +14181,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=valkyria-chronicles",
     "dodano": "2026-10-25",
     "upd": "2026-10-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/c8996c90d5af62ec721994672fbdbb0c.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/c8996c90d5af62ec721994672fbdbb0c.jpg",
+    "opis": "Taktyczne RPG o fikcyjnej wojnie w Europie, z oprawą stylizowaną na akwarelę. Oddział Welkina Guntera broni księstwa Gallia przed Imperium."
   },
   {
     "game": "Vigil: The Longest Night",
@@ -14109,7 +14210,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=wildfrost",
     "dodano": "2026-10-19",
     "upd": "2026-10-19",
-    "img": "https://cdn2.steamgriddb.com/thumb/c86593475e38b7d16ec386d2020dcfa1.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/c86593475e38b7d16ec386d2020dcfa1.png",
+    "opis": "Karciany roguelike o śnieżnym świecie skutym wieczną zimą. Prowadzisz karawanę i układasz talię, a licznik ataku każdej karty wymusza planowanie."
   },
   {
     "game": "Yooka-Replaylee",
@@ -14165,7 +14267,8 @@
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
     "dodano": "2026-11-01",
     "upd": "2026-11-02",
-    "img": "https://cdn2.steamgriddb.com/thumb/5916611a2ec8045849ee52e5048761cc.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/5916611a2ec8045849ee52e5048761cc.jpg",
+    "opis": "RPG oparte na systemie Pathfinder. Dostajesz kawałek ziemi w Skradzionych Krainach i budujesz własne królestwo, podejmując decyzje polityczne."
   },
   {
     "game": "Trials of Mana",
@@ -14179,7 +14282,8 @@
     "link": "https://dykugierkuje.pl/spolszczenie/trials-of-mana",
     "dodano": "2026-09-10",
     "upd": "2026-09-17",
-    "img": "https://cdn2.steamgriddb.com/thumb/a182db7e16deceb0729df5423d5044c3.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a182db7e16deceb0729df5423d5044c3.jpg",
+    "opis": "Odświeżenie klasycznego jRPG z 1995 roku. Wybierasz drużynę spośród sześciu bohaterów i ratujesz świat przed zgasnięciem Drzewa Many."
   },
   {
     "game": "Scavland",
@@ -14221,7 +14325,8 @@
     "link": "https://dykugierkuje.pl/spolszczenie/tekken-7",
     "dodano": "2026-09-05",
     "upd": "2026-09-12",
-    "img": "https://cdn2.steamgriddb.com/thumb/e06cf96ad48264f9dbf3470d2daa8e66.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/e06cf96ad48264f9dbf3470d2daa8e66.png",
+    "opis": "Bijatyka 3D kończąca konflikt rodu Mishima, z rozbudowaną listą wojowników. Nowa mechanika Rage dodaje dramatyczne ciosy pod koniec starć."
   },
   {
     "game": "Valkyrie Elysium",
@@ -14277,7 +14382,8 @@
     "link": "https://dykugierkuje.pl/spolszczenie/wo-long",
     "dodano": "2026-08-22",
     "upd": "2026-09-12",
-    "img": "https://cdn2.steamgriddb.com/thumb/1f3387d3c4c38410b4d101f0e3f30849.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/1f3387d3c4c38410b4d101f0e3f30849.jpg",
+    "opis": "Wymagająca gra akcji osadzona w Chinach okresu Trzech Królestw. Młody milicjant walczy z demonami w szybkich starciach opartych na parowaniu."
   },
   {
     "game": "The Relic: First Guardian",
@@ -14595,7 +14701,8 @@
     "genre": "Akcja",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/c336e823d31280b5ded5f32cdaa0fe0c.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "opis": "Akcja dzieje się w Anywhere City, mieście podzielonym między gangi. Widok z góry został, a zlecenia poszczególnych grup wpływają na to, jak traktują Cię rywale."
   },
   {
     "game": "Far Cry Blood Dragon",
@@ -14641,7 +14748,8 @@
     "genre": "Strategia",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/2e8ccdc7f732df236a48a9e3076f36f3.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "opis": "Karciany roguelike, w którym bronisz pociągu jadącego do piekła. Rozmieszczasz potwory i czary na trzech poziomach, by ochronić serce piekielnego pieca."
   },
   {
     "game": "World of Warcraft Retail",

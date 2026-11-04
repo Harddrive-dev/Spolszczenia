@@ -1334,7 +1334,7 @@
   },
   {
     "game": "Day of the Tentacle Remastered",
-    "platform": "PC, Steam Deck",
+    "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
@@ -1344,7 +1344,8 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-04",
     "upd": "2026-10-23",
-    "opis": "Odświeżona wersja klasycznej przygodówki LucasArts z nową oprawą graficzną i dźwiękową."
+    "opis": "Odświeżona wersja klasycznej przygodówki LucasArts z nową oprawą graficzną i dźwiękową.",
+    "img": "https://cdn2.steamgriddb.com/thumb/610aadcea7db9f5077f31c9368247920.jpg"
   },
   {
     "game": "Dead City",
@@ -14628,6 +14629,20 @@
     "genre": "Strategia",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/2e8ccdc7f732df236a48a9e3076f36f3.jpg",
+    "upd": "2026-11-04"
+  },
+  {
+    "game": "World of Warcraft Retail",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "2.0.5",
+    "author": "WoWPoPolsku",
+    "link": "https://www.curseforge.com/wow/addons/wowpopolsku-2-0",
+    "genre": "MMORPG",
+    "dodano": "2026-11-04",
+    "img": "https://cdn2.steamgriddb.com/thumb/91f6724a042707c376bb508c436665ef.jpg",
     "upd": "2026-11-04"
   }
 ]

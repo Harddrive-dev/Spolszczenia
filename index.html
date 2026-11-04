@@ -182,7 +182,25 @@ body:has(.overlay.open){overflow:hidden}
 .umenu.open{display:block}
 .umenu .btn{width:100%;white-space:nowrap}
 @media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
-.bar .brk{flex-basis:100%;height:0}
+.bar{display:block;margin-bottom:10px}
+.barr{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.barr+.barr{margin-top:8px}
+#q{height:48px;font-size:16px}
+.barr .sp{flex:1 1 auto}
+.bar:not(.fopen) .fx{display:none}
+.fm2{display:none}
+.cline{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cline .count{margin:0}
+.copts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copts label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.copts select{padding:5px 8px;font-size:13px}
+@media (max-width:640px){
+.bar:not(.fopen) #fp,.bar:not(.fopen) #fs,.cline:not(.fopen) .copts{display:none}
+.fm1{display:none}.fm2{display:inline}
+#ftog,.barr .vgrp{order:-1}
+.barr .sp{display:none}
+.barr select{flex:1 1 140px;min-width:0}
+}
 .rndb{--rc:#7a3fe0;background:var(--bg);border:2px solid var(--rc);color:var(--rc);font-weight:700}
 :root[data-theme="dark"] .rndb,:root.hw .rndb{--rc:#a56bff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rndb{--rc:#a56bff}}
@@ -425,22 +443,29 @@ header{padding-top:56px}
 
 <div class="stats" id="stats"></div>
 
-<div class="bar">
-  <input type="search" id="q" placeholder="Szukaj gry lub autora…" aria-label="Szukaj">
-  <select id="fp" aria-label="Platforma"></select>
-  <select id="fg" aria-label="Gatunek"></select>
-  <select id="ft" aria-label="Zakres tłumaczenia"></select>
-  <select id="fs" aria-label="Status"></select>
-  <select id="ps" aria-label="Liczba na stronie"><option value="25">25 na stronę</option><option value="50">50 na stronę</option><option value="100">100 na stronę</option></select>
-  <select id="sort" aria-label="Sortowanie">
-    <option value="game">A–Z</option><option value="upd">Najnowsze</option>
-  </select>
-  <button class="btn" id="clr">Wyczyść</button>
-  <span class="brk"></span>
-  <button class="btn rndb" id="rnd" type="button">🎲 Wylosuj</button>
-  <span class="vgrp" id="vwg"><button class="btn on" id="vwall">Wszystkie</button><button class="btn" id="vwlk">Z lektorem</button></span>
+<div class="bar" id="fbar">
+  <div class="barr">
+    <input type="search" id="q" placeholder="Szukaj gry lub autora…" aria-label="Szukaj">
+    <button class="btn rndb" id="rnd" type="button">🎲 Wylosuj</button>
+  </div>
+  <div class="barr">
+    <select id="fp" aria-label="Platforma"></select>
+    <select id="fs" aria-label="Status"></select>
+    <button class="btn" id="ftog" type="button" aria-expanded="false"><span class="fm1">Więcej filtrów</span><span class="fm2">Filtry</span><span id="fn"></span> <span id="far">▾</span></button>
+    <select id="fg" class="fx" aria-label="Gatunek"></select>
+    <select id="ft" class="fx" aria-label="Zakres tłumaczenia"></select>
+    <button class="btn" id="clr" type="button" style="display:none">Wyczyść</button>
+    <span class="sp"></span>
+    <span class="vgrp" id="vwg"><button class="btn on" id="vwall">Wszystkie</button><button class="btn" id="vwlk">Z lektorem</button></span>
+  </div>
 </div>
-<p class="count" id="count"></p>
+<div class="cline" id="cline">
+  <p class="count" id="count"></p>
+  <div class="copts">
+    <label>Sortuj: <select id="sort" aria-label="Sortowanie"><option value="game">A–Z</option><option value="upd">Najnowsze</option></select></label>
+    <label>Na stronie: <select id="ps" aria-label="Liczba na stronie"><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label>
+  </div>
+</div>
 
 <div id="out">
   <div class="scroll"><table>
@@ -594,7 +619,7 @@ function restoreScroll(){var pos=FLT_POS;FLT_POS=null;if(!pos)return;var stop=fa
 window.addEventListener("pagehide",function(){if(onCat())saveF(scrollPos())});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#tb a.g,#cards a.g");if(a)saveF(scrollPos())},true);
 function render(){
-  var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;saveF();
+  syncBar();var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;saveF();
   var r=all.slice((page-1)*PS,page*PS);
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
@@ -661,6 +686,14 @@ $("ps").value=String(PS);
 $("ps").addEventListener("input",function(){PS=+$("ps").value;page=1;try{localStorage.setItem("ps",PS)}catch(e){}render()});
 $("pager").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-pg]");if(!b||b.disabled)return;page=+b.getAttribute("data-pg");render();var o=$("out");window.scrollTo({top:o.getBoundingClientRect().top+window.pageYOffset-70,behavior:"smooth"})});
 $("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
+// Pasek filtrów: "Wyczyść" tylko gdy jest co czyścić, licznik pokazuje aktywne filtry schowane pod przyciskiem.
+var FMOB=window.matchMedia("(max-width:640px)");
+function syncBar(){var hid=FMOB.matches?["fp","fs","fg","ft"]:["fg","ft"],o=$("fbar").classList.contains("fopen");
+  var n=hid.filter(function(i){return $(i).value}).length;
+  $("fn").textContent=n?" ("+n+")":"";$("far").textContent=o?"▴":"▾";$("ftog").setAttribute("aria-expanded",o?"true":"false");
+  $("clr").style.display=($("q").value||$("fp").value||$("fg").value||$("ft").value||$("fs").value)?"":"none"}
+$("ftog").onclick=function(){$("fbar").classList.toggle("fopen");$("cline").classList.toggle("fopen");syncBar()};
+if(FMOB.addEventListener)FMOB.addEventListener("change",syncBar);
 var lastPick=null;
 var RV={fp:"",fg:"",ft:"",fs:""};
 function rpool(){var q=$("q").value.toLowerCase().trim();

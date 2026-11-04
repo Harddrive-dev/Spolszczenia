@@ -8657,7 +8657,19 @@
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
     "upd": "2026-10-31",
-    "genre": "MMORPG"
+    "genre": "MMORPG",
+    "spolszczenia": [
+      {
+        "id": "world-of-warcraft-forever--wowpopolsku",
+        "author": "WoWPoPolsku",
+        "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-10-31"
+      }
+    ]
   },
   {
     "game": "Getting Over It with Bennett Foddy",

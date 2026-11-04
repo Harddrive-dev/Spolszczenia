@@ -58,6 +58,7 @@ tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .cbtn{flex:none;white-space:nowrap}.cbtn.cic{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:13px}.cbtn.cic b{color:var(--accent);font-weight:600}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 td.au{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+td.au .au1{display:block;line-height:1.3;overflow:hidden;text-overflow:ellipsis}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}
 td a.g{color:var(--text);font-weight:600;text-decoration:none}
@@ -182,6 +183,7 @@ body:has(.overlay.open){overflow:hidden}
 .umenu.open{display:block}
 .umenu .btn{width:100%;white-space:nowrap}
 @media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
+.sprow{display:grid;grid-template-columns:1.2fr 1.6fr .9fr .9fr 64px .7fr auto;gap:6px;align-items:center;margin-bottom:6px}.sprow input,.sprow select{width:100%;min-width:0}@media (max-width:640px){.sprow{grid-template-columns:1fr 1fr;padding:8px 0;border-bottom:1px solid var(--line)}.sprow .sp_l{grid-column:1/-1;grid-row:2}}
 .bar{display:block;margin-bottom:10px}
 .barr{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .barr+.barr{margin-top:8px}
@@ -550,6 +552,18 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return
 function safe(u){return /^https?:\/\//i.test(u||"")?u:"#"}
 function ytId(u){var m=String(u||"").trim().match(/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/);return m?m[1]:""}
 function hasSp(g){return !!g.link&&g.pl!=="of"}
+function spExtra(g){return Array.isArray(g.spolszczenia)?g.spolszczenia.filter(function(s){return s&&/^https?:\/\//i.test(s.link||"")}):[]}
+function authorsOf(g){var ex=spExtra(g),m=g.author&&g.author!=="—"?g.author:(g.dub&&g.dubAuthor)||"",a=[];
+  if(m)a.push(m);else if(ex.length&&g.link)a.push("nieznany autor");
+  ex.forEach(function(s){var n=s.author&&s.author!=="—"?s.author:"nieznany autor";if(a.indexOf(n)<0)a.push(n)});
+  return a.sort(function(x,y){return x.localeCompare(y,"pl")})}
+function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
+function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+'</span>'}).join("")}
+function spHas(g,f,v){return g[f]===v||spExtra(g).some(function(s){return s[f]===v})}
+function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
+function spAdd(g,d,link,day,kf){if(g.link===link||spExtra(g).some(function(s){return s.link===link}))return;var a=Array.isArray(g.spolszczenia)?g.spolszczenia:(g.spolszczenia=[]),base=kf(g)+"--"+(kf({game:d.author||""})||"autor"),id=base,n=2;
+  while(a.some(function(s){return s.id===id}))id=base+"-"+(n++);
+  a.push(spNorm([{id:id,author:d.author,link:link,type:d.type,status:d.status,prog:d.prog,ver:d.ver,upd:d.upd||day}])[0])}
 function hasDub(g){return /^https?:\/\//i.test(g.dub||"")||(hasSp(g)&&g.type==="Dubbing")}
 function dubPill(g){return /^https?:\/\//i.test(g.dub||"")&&!(hasSp(g)&&g.type==="Dubbing")?' <span class="pill dub">Dubbing</span>':""}
 function hasLk(g){return !!(g.lore||g.gamereader)}
@@ -581,10 +595,10 @@ function nk(g){var u=String(g.upd||""),d=String(g.dodano||"");return u>d?u:d}
 // Wyszukiwanie ignoruje wielkość liter, polskie znaki i interpunkcję; wszystkie słowa muszą wystąpić, w dowolnej kolejności.
 function srchNorm(t){return String(t||"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim()}
 function srchWords(t){return srchNorm(t).split(" ").filter(Boolean)}
-function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(g.author||""));return w.every(function(x){return h.indexOf(x)>-1})}
+function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(g.author||"")+" "+authorsOf(g).join(" "));return w.every(function(x){return h.indexOf(x)>-1})}
 function filtered(){
   var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||g.type===t)&&(!gn||g.genre===gn)&&(!s||g.status===s)&&srchHit(g,q)});
+  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spHas(g,"type",t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&srchHit(g,q)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
@@ -628,8 +642,8 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" spolszczeń":"Wyświetlono 0 z "+items.length+" spolszczeń";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(g.author||(g.dub&&g.dubAuthor)||"")+'">'+esc(g.author||(g.dub&&g.dubAuthor)||"—")+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(g.author||"—"))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
 function stats(){
   var sp=items.filter(hasSp).length,lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
@@ -637,13 +651,13 @@ document.addEventListener("click",function(e){var b=e.target.closest&&e.target.c
 var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
 function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
   return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
-function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')+(g.dub?' · Dubbing: '+(g.dubAuthor||'fanowski'):'')}return (g.type||'—')+' · '+(g.author||'—')}
+function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')+(g.dub?' · Dubbing: '+(g.dubAuthor||'fanowski'):'')}return (g.type||'—')+' · '+authorsTxt(g)}
 function renderHome(){
   function feat(el,f,badge,when){
     if(!f){el.style.display="none";el.innerHTML="";return}
     var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
     var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
-    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" href="/gra/'+esc(keyOf(f))+'/">'+esc(f.game)+'</a></h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(stText(f))+'</span></div>'+premLine(f)+'<p class="fmeta">Autor: '+esc(f.author||"—")+'.</p>'+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
+    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" href="/gra/'+esc(keyOf(f))+'/">'+esc(f.game)+'</a></h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(stText(f))+'</span></div>'+premLine(f)+'<p class="fmeta">Autor: '+esc(authorsTxt(f))+'.</p>'+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
     el.style.display=""}
   var fw=(winnerKey&&gameByKey(winnerKey))||items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
   if(!weekReady){fw=null;fm=null}
@@ -701,7 +715,7 @@ if(FMOB.addEventListener)FMOB.addEventListener("change",syncBar);
 var lastPick=null;
 var RV={fp:"",fg:"",ft:"",fs:""};
 function rpool(){var q=srchWords($("q").value);
-  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||g.type===RV.ft)&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||g.status===RV.fs)&&srchHit(g,q)})}
+  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||spHas(g,"type",RV.ft))&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||spHas(g,"status",RV.fs))&&srchHit(g,q)})}
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
   var act=RF.filter(function(x){return RV[x[0]]}),n=rpool().length;
@@ -725,7 +739,7 @@ function pick(){
   lastPick=g;
   var lt=esc((g.game||"?").charAt(0).toUpperCase());
   var cover=imgOk(g.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(g.img)+'" style="flex:none;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;background:none">':'<div class="fcover" style="width:140px;height:180px;font-size:52px">'+lt+'</div>';
-  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+''+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div><p class="fmeta">Autor: '+esc(g.author||"—")+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px">'+(hasSp(g)?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a>':'')+(hasLk(g)?'<span class="lkrow" style="display:inline-flex;gap:6px;flex-wrap:wrap;align-items:center">'+lkHtml(g)+'</span>':'')+'<a class="fbtn" href="/gra/'+esc(keyOf(g))+'/">Strona gry</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
+  $("rbody").innerHTML='<h2>Zagraj w coś po polsku</h2><div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">'+cover+'<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:24px;line-height:1.2">'+esc(g.game)+'</h3><div class="fpills"><span class="pill">'+esc(g.platform)+'</span>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'')+''+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div><p class="fmeta">Autor: '+esc(authorsTxt(g))+'</p>'+(g.opis?'<p class="fdesc">'+esc(g.opis)+'</p>':"")+'</div></div><div class="fbtns" style="margin-top:16px">'+(hasSp(g)?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">Zobacz spolszczenie</a>':'')+(hasLk(g)?'<span class="lkrow" style="display:inline-flex;gap:6px;flex-wrap:wrap;align-items:center">'+lkHtml(g)+'</span>':'')+'<a class="fbtn" href="/gra/'+esc(keyOf(g))+'/">Strona gry</a><button class="btn" id="again" type="button">Losuj jeszcze raz</button></div>'+rfBox();
   $("again").onclick=roll}
 $("rbody").addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="rfclr"){RF.forEach(function(x){RV[x[0]]=""});rfApply();return}
@@ -1104,7 +1118,10 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(v("a_yt")&&!ytId(v("a_yt")))return bad("Link do filmu musi być linkiem z YouTube (youtube.com lub youtu.be).");
   if(img&&!/^(https?:\/\/|img\/)/i.test(img))return bad("Okładka musi zaczynać się od https:// albo img/");
   if(v("a_status")==="W trakcie"&&!(+v("a_prog")<100))return bad("Przy statusie „W trakcie” podaj, ile procent jest ukończone (0–99).");
-  if(items.some(function(g){return slug(g.game)===slug(game)}))return bad("Gra „"+game+"” jest już w katalogu.");
+  var dupG=items.filter(function(g){return slug(g.game)===slug(game)})[0];
+  if(dupG){if(!link)return bad("Gra „"+game+"” jest już w katalogu. Żeby dodać kolejne spolszczenie, podaj jego link.");
+    if(dupG.link===link||spExtra(dupG).some(function(s){return s.link===link}))return bad("To spolszczenie jest już przy tej grze.");
+    if(!confirm("Gra „"+dupG.game+"” jest już w katalogu. Dodać to jako kolejne spolszczenie tej gry?"))return}
   var data={game:game,platform:platGet("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",upd:new Date().toISOString().slice(0,10)};
   if(link)data.link=link;if(apl==="of")data.pl="of";if(alore)data.lore=alore;if(agr)data.gamereader=agr;if(adub){data.dub=adub;if(v("a_dubauthor"))data.dubAuthor=v("a_dubauthor");data.dubStatus=v("a_dubstatus")}if(v("a_yt"))data.yt=v("a_yt");if(v("a_ytt"))data.ytt=v("a_ytt");
   if(genreNorm(v("a_genre")))data.genre=genreNorm(v("a_genre"));if(v("a_premiera"))data.premiera=v("a_premiera");if(img)data.img=img;if(v("a_opis"))data.opis=v("a_opis");
@@ -1114,7 +1131,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(res.error)return bad("Nie udało się dodać: "+plMsg(res.error.message)+" (czy uruchomiłeś dodawanie-na-stronie.sql w Supabase?)");
   addMem("platform",data.platform);addMem("type",data.type);addMem("status",data.status);addMem("author",data.author==="—"?"":data.author);
   ["a_game","a_ver","a_link","a_lore","a_gr","a_yt","a_ytt","a_img","a_opis","a_premiera"].forEach(function(i){$(i).value=""});$("a_prog").value=100;
-  m.textContent="Dodano: "+game+". Możesz wpisać kolejne.";m.className="msg ok";$("a_game").focus();
+  m.textContent=(dupG?"Dodano kolejne spolszczenie: ":"Dodano: ")+game+". Możesz wpisać kolejne.";m.className="msg ok";$("a_game").focus();
   loadCatalog()});
 // ====== AKTUALNOŚCI: wpisy (tylko administrator) ======
 var NCATS=["Ogłoszenie","Premiera","Nowe spolszczenie","Aktualizacja","Strona"],nEdit=null,nRows=[];
@@ -1221,6 +1238,9 @@ document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=
 
 // ====== EDYCJA ISTNIEJĄCEGO WPISU (moderator / administrator) ======
 var editG=null;
+function spRow(s){var o=function(a,c){return a.map(function(x){return '<option'+(x===c?' selected':'')+'>'+x+'</option>'}).join("")};s=s||{};
+  return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'"><input class="sp_a" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Beta","Testy"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
+function spRead(){return [].slice.call(document.querySelectorAll("#e_sp .sprow")).map(function(r){var q=function(c){return r.querySelector(c).value.trim()};return{id:r.getAttribute("data-id"),author:q(".sp_a")||"—",link:q(".sp_l"),type:q(".sp_t"),status:q(".sp_s"),prog:+q(".sp_p")||0,ver:q(".sp_v")||"—",upd:r.getAttribute("data-upd")}})}
 function openModEdit(g){
   if(!CM||!isMod()||!g)return;editG=g;curKey=null;
   var opt=function(a,cur){a=a.slice();if(cur&&a.indexOf(cur)<0)a.push(cur);return a.map(function(x){return '<option value="'+esc(x)+'"'+(x===cur?' selected':'')+'>'+esc(x||"— brak —")+'</option>'}).join("")};
@@ -1247,11 +1267,14 @@ function openModEdit(g){
    '<label>Podpis filmu (opcjonalnie)<input id="e_ytt" maxlength="80" value="'+v("ytt")+'"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
+   '<div style="grid-column:1/-1"><b>Dodatkowe spolszczenia tej gry</b><p class="msg" style="margin:2px 0 8px">Główne spolszczenie jest w polach powyżej. Tutaj dodajesz inne, np. od drugiej grupy.</p><div id="e_sp">'+spNorm(spExtra(g)).map(spRow).join("")+'</div><button class="btn" type="button" id="e_spadd">➕ Dodaj kolejne spolszczenie</button></div>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
    '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button></p>');
   setTimeout(function(){var f=$("e_game");if(f)f.focus()},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="e_close"){closeModal();return}
+  if(t.id==="e_spadd"){$("e_sp").insertAdjacentHTML("beforeend",spRow());return}
+  if(t.getAttribute("data-spdel")){t.closest(".sprow").remove();return}
   if(t.id!=="e_go"||!editG)return;
   var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
   var nv={game:val("e_game"),platform:platGet("e_platform"),genre:genreNorm(val("e_genre")),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis"),premiera:val("e_premiera"),pl:val("e_pl"),lore:val("e_lore"),gamereader:val("e_gr"),yt:val("e_yt"),ytt:val("e_ytt"),dub:val("e_dub")};nv.dubAuthor=nv.dub?val("e_dubauthor"):"";nv.dubStatus=nv.dub?val("e_dubstatus"):"";
@@ -1265,7 +1288,10 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(nv.pl==="of"&&!nv.lore&&!nv.gamereader&&!nv.dub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(nv.img&&!/^(https?:\/\/|img\/)/i.test(nv.img))return bad("Okładka musi zaczynać się od https:// albo img/");
   if(slug(nv.game)!==slug(g.game)&&items.some(function(x){return slug(x.game)===slug(nv.game)}))return bad("Gra o takiej nazwie już jest w katalogu.");
+  var spRows=spRead();if(spRows.some(function(s){return !/^https?:\/\//i.test(s.link)}))return bad("Każde dodatkowe spolszczenie musi mieć link zaczynający się od https://");
+  var spOld=spNorm(spExtra(g)),spNew=spNorm(spRows).map(function(s){if(s.id)return s;var b=keyOf(g)+"--"+(slug(s.author==="—"?"":s.author)||"autor"),id=b,n=2,all=spOld.concat(spRows);while(all.some(function(x){return x.id===id}))id=b+"-"+(n++);s.id=id;s.upd=new Date().toISOString().slice(0,10);spRows.push(s);return s});
   var changes=[];Object.keys(nv).forEach(function(k){var old=g[k]==null?"":String(g[k]);if(nv[k]!==old)changes.push({field:k,from:old,to:nv[k]})});
+  if(JSON.stringify(spNew)!==JSON.stringify(spOld))changes.push({field:"spolszczenia",from:JSON.stringify(spOld),to:JSON.stringify(spNew)});
   if($("e_upd").checked)changes.push({field:"upd",from:String(g.upd||""),to:new Date().toISOString().slice(0,10)});
   if(!changes.length)return bad("Nic nie zmieniono.");
   busy(t,"Zapisuję…");
@@ -1495,7 +1521,7 @@ function mergeApproved(rows){
   rows.forEach(function(r){var d=r.data||{},day=String(r.created_at||"").slice(0,10);
     if(r.kind==="new"){var name=String(d.game||r.game||"").trim(),link=String(d.link||"");
       var gOf=d.pl==="of",gLk=/^https?:\/\//i.test(d.lore||"")||/^https?:\/\//i.test(d.gamereader||"")||/^https?:\/\//i.test(d.dub||"");
-      if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk)||find(slug(name)))return;
+      var exG=find(slug(name));if(exG){if(/^https?:\/\//i.test(link))spAdd(exG,d,link,day,keyOf);return}if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk))return;
       var e={game:name,platform:d.platform||"PC",type:TYPES.indexOf(d.type)>-1?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
       if(/^https?:\/\//i.test(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(/^https?:\/\//i.test(d.lore||""))e.lore=d.lore;if(/^https?:\/\//i.test(d.gamereader||""))e.gamereader=d.gamereader;if(/^https?:\/\//i.test(d.dub||"")){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.indexOf(d.dubStatus)>-1)e.dubStatus=d.dubStatus}if(ytId(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
       if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
@@ -1505,6 +1531,7 @@ function mergeApproved(rows){
       if(day)g.upd=day}
     else if(r.kind==="modedit"){var gm=find(d.key);if(!gm)return;
       (d.changes||[]).forEach(function(c){var f=c.field,v=String(c.to==null?"":c.to).trim();
+        if(f==="spolszczenia"){var spv=[];try{spv=spNorm(JSON.parse(String(c.to||"[]")))}catch(e){return}if(spv.length)gm.spolszczenia=spv;else delete gm.spolszczenia;return}
         if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].indexOf(f)<0)return;
         if(f==="yt"){if(ytId(v))gm.yt=v;else if(!v)delete gm.yt;return}
         if(f==="ytt"){if(v)gm.ytt=v.slice(0,80);else delete gm.ytt;return}

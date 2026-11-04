@@ -55,7 +55,7 @@ input[type=search]{flex:1 1 140px;min-width:140px}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .g{flex:1 1 auto;min-width:0}
-.gcell .cbtn{flex:none;white-space:nowrap}
+.gcell .cbtn{flex:none;white-space:nowrap}.cbtn.cic{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:13px}.cbtn.cic b{color:var(--accent);font-weight:600}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}
@@ -725,7 +725,7 @@ function keyOf(g){return g.id||slug(g.game||"")}
 var counts=Object.create(null),wiesci=[];
 async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}
 function rowBtn(g){return '<button class="mini rowmenu" type="button" data-rk="'+esc(keyOf(g))+'" aria-label="Więcej akcji" aria-haspopup="true">⋯</button>'}
-function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0;return '<button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze'+(n?' ('+n+')':'')+'</button>'}
+function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0,t=n?"Komentarze ("+n+")":"Komentarze";return '<button class="mini cbtn cic" data-k="'+esc(keyOf(g))+'" title="'+t+'" aria-label="'+t+'"><span aria-hidden="true">💬</span><b>'+n+'</b></button>'}
 async function loadCounts(){
   try{var c=Object.create(null),from=0;
     for(var i=0;i<10;i++){

@@ -1330,19 +1330,21 @@
     "link": "https://grajpopolsku.pl/download/day-of-the-tentacle/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna przygodówka LucasArts. Trzech przyjaciół podróżuje w czasie, żeby powstrzymać szalonego Purpurowego Macka.",
-    "spolszczenia": [
-      {
-        "id": "day-of-the-tentacle--bearded1305",
-        "author": "bearded1305",
-        "link": "https://bazarowespolszczenia.pl/gra/day_of_the_tentacle_remastered",
-        "type": "Napisy",
-        "status": "Gotowe",
-        "prog": 100,
-        "ver": "—",
-        "upd": "2026-10-23"
-      }
-    ]
+    "opis": "Klasyczna przygodówka LucasArts. Trzech przyjaciół podróżuje w czasie, żeby powstrzymać szalonego Purpurowego Macka."
+  },
+  {
+    "game": "Day of the Tentacle Remastered",
+    "platform": "PC, Steam Deck",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/day_of_the_tentacle_remastered",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-04",
+    "upd": "2026-10-23",
+    "opis": "Odświeżona wersja klasycznej przygodówki LucasArts z nową oprawą graficzną i dźwiękową."
   },
   {
     "game": "Dead City",

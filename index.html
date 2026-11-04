@@ -1087,8 +1087,17 @@ function renderNews(){
   if(!me()){box.innerHTML=nHead()+nFmt("Ta strona jest tylko dla administratora. Zaloguj się (prawy górny róg).");return}
   if(!roleLoaded&&!isAdmin()){box.innerHTML=nHead()+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!isAdmin()){box.innerHTML=nHead()+nFmt("Ta strona jest tylko dla administratora.",1);return}
-  if(nEdit){box.innerHTML=nHead()+nFormHtml(nEdit);return}
+  // Odświeżenie sesji po powrocie do karty też tu trafia: otwartego formularza nie przebudowujemy, bo skasowałoby to wpisany tekst.
+  if(!nEdit)nEdit=nDraftGet();
+  if(nEdit){if(!$("nw_title"))box.innerHTML=nHead()+nFormHtml(nEdit);return}
   openNewsList()}
+// Roboczy tekst wpisu: trzymany w nEdit i w localStorage, więc przetrwa też przeładowanie lub uśpienie karty.
+function nDraftGet(){try{return JSON.parse(localStorage.getItem("news.draft")||"null")}catch(e){return null}}
+function nDraftClear(){try{localStorage.removeItem("news.draft")}catch(e){}}
+function nSync(){if(!nEdit||!$("nw_title"))return;
+  if(nEdit.image)nEdit.hadImg=true;
+  nEdit.title=$("nw_title").value;nEdit.slug=$("nw_slug").value;nEdit.man=$("nw_slug").hasAttribute("data-man");nEdit.category=$("nw_cat").value;nEdit.cover=$("nw_cover").value;nEdit.image=$("nw_image").value;nEdit.excerpt=$("nw_ex").value;nEdit.body=$("nw_body").value;nEdit.published=$("nw_pub").checked;
+  try{localStorage.setItem("news.draft",JSON.stringify(nEdit))}catch(e){}}
 async function openNewsList(){
   var box=$("newsview");box.innerHTML=nHead()+'<p class="msg"><span class="spn"></span>Wczytywanie…</p>';
   try{var r=await sb.from("news").select("id,slug,title,category,published,created_at").order("created_at",{ascending:false}).limit(200);if(r.error)throw r.error;nRows=r.data;
@@ -1098,7 +1107,7 @@ async function openNewsList(){
 function nFormHtml(x){var isNew=!x.id;
   return '<h3 style="margin:8px 0">'+(isNew?'Nowy wpis':'Edycja wpisu')+'</h3><div class="rpf" style="grid-template-columns:1fr">'+
    '<label>Tytuł<input id="nw_title" maxlength="140" value="'+esc(x.title||"")+'"></label>'+
-   '<label>Adres strony (tylko litery bez polskich znaków, cyfry i myślniki)<input id="nw_slug" maxlength="90" value="'+esc(x.slug||"")+'" placeholder="uzupełni się z tytułu"></label>'+
+   '<label>Adres strony (tylko litery bez polskich znaków, cyfry i myślniki)<input id="nw_slug" maxlength="90"'+(x.man?' data-man="1"':'')+' value="'+esc(x.slug||"")+'" placeholder="uzupełni się z tytułu"></label>'+
    '<label>Kategoria<select id="nw_cat">'+NCATS.map(function(c){return '<option'+(c===(x.category||"Ogłoszenie")?' selected':'')+'>'+c+'</option>'}).join("")+'</select></label>'+
    '<label>Miniatura na liście (adres https://… lub img/nazwa.jpg, nieobowiązkowo)<input id="nw_cover" maxlength="500" value="'+esc(x.cover||"")+'"></label>'+
    '<label>Obraz w treści artykułu (osobny od miniatury; zostaw puste, jeśli artykuł ma być bez dużego obrazu)<input id="nw_image" maxlength="500" value="'+esc(x.image||"")+'"></label>'+
@@ -1110,7 +1119,7 @@ function nFormHtml(x){var isNew=!x.id;
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t||!onNews)return;
   try{
   if(t.id==="nw_new"){nEdit={};renderNews();return}
-  if(t.id==="nw_cancel"){nEdit=null;renderNews();return}
+  if(t.id==="nw_cancel"){nEdit=null;nDraftClear();renderNews();return}
   if(t.getAttribute("data-nedit")){var r=await sb.from("news").select("*").eq("id",t.getAttribute("data-nedit")).single();if(r.error)return alert("Błąd: "+plMsg(r.error.message));nEdit=r.data;renderNews();return}
   if(t.getAttribute("data-ndel")){if(!confirm("Usunąć ten wpis razem z jego stroną? Komentarze pod wpisem też znikną z widoku."))return;
     var d=await sb.from("news").delete().eq("id",t.getAttribute("data-ndel")).select("id");if(d.error||!d.data||!d.data.length)alert("Nie udało się usunąć: "+(d.error?plMsg(d.error.message):"brak uprawnień"));openNewsList();return}
@@ -1124,16 +1133,17 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     if(im&&!/^(https:\/\/|img\/)/.test(im))return fail("Obraz w artykule musi zaczynać się od https:// albo img/.");
     if(!body)return fail("Wpisz treść wpisu.");
     var row={title:title,slug:sl,category:$("nw_cat").value,cover:cv||null,excerpt:$("nw_ex").value.trim(),body:body,published:$("nw_pub").checked};
-    if(im||(nEdit&&nEdit.image))row.image=im||null;
+    if(im||(nEdit&&(nEdit.image||nEdit.hadImg)))row.image=im||null;
     busy(t,"Zapisuję…");
     var w=nEdit&&nEdit.id?await sb.from("news").update(row).eq("id",nEdit.id).select("id"):await sb.from("news").insert(row).select("id");
     busy(t,0);
     if(w.error)return fail(/duplicate|unique/i.test(w.error.message)?"Wpis z takim adresem już istnieje. Zmień adres strony.":/image/i.test(w.error.message)?"Brakuje kolumny na obraz w artykule. Uruchom w Supabase plik aktualnosci-obraz.sql.":"Nie udało się zapisać: "+plMsg(w.error.message));
     if(!w.data||!w.data.length)return fail("Zapis się nie powiódł (brak uprawnień administratora).");
-    nEdit=null;await openNewsList();$("newsview").insertAdjacentHTML("afterbegin",'<p class="msg" style="color:var(--ok)">Zapisano. Strona wpisu pojawi się w ciągu ok. 30 minut.</p>')}
+    nEdit=null;nDraftClear();await openNewsList();$("newsview").insertAdjacentHTML("afterbegin",'<p class="msg" style="color:var(--ok)">Zapisano. Strona wpisu pojawi się w ciągu ok. 30 minut.</p>')}
   }catch(er){alert("Błąd: "+((er&&er.message)||er))}});
 document.addEventListener("input",function(e){if(!e.target||e.target.id!=="nw_title")return;var sl=$("nw_slug");if(sl&&!sl.getAttribute("data-man")&&!(nEdit&&nEdit.id))sl.value=slug(e.target.value).slice(0,90)});
 document.addEventListener("input",function(e){if(e.target&&e.target.id==="nw_slug")e.target.setAttribute("data-man","1")});
+document.addEventListener("input",function(e){if(e.target&&/^nw_/.test(e.target.id||""))nSync()});
 // ====== ZARZĄDZANIE MODERATORAMI ======
 async function openMods(){
   if(!CM||!isAdmin()||!onMods)return;curKey=null;var box=$("modsview");box.innerHTML=SBACK+'<h2>Moderatorzy</h2><p class="msg"><span class="spn"></span>Wczytywanie…</p>';

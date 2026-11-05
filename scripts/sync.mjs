@@ -12,8 +12,10 @@ const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=[
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
 // Kilka spolszczeń jednej gry: pierwsze zostaje w polach wpisu, kolejne trafiają do listy „spolszczenia”. Każde ma stałe id (przyda się do ocen).
-const spNorm=a=>{const seen=new Set();return (Array.isArray(a)?a:[]).map(s=>({id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:TYPES.includes(s.type)?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy"].includes(s.status)?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10)})).filter(s=>{if(!/^https?:\/\//i.test(s.link)||seen.has(s.link))return false;seen.add(s.link);return true})};
-const spAdd=(g,d,link,day)=>{const a=Array.isArray(g.spolszczenia)?g.spolszczenia:[];if(g.link===link||a.some(s=>s.link===link))return;const base=keyOf(g)+"--"+(slug(d.author||"")||"autor");let id=base,n=2;while(a.some(s=>s.id===id))id=base+"-"+(n++);a.push(spNorm([{id,author:d.author,link,type:d.type,status:d.status==="W toku"?"Beta":d.status,prog:d.prog,ver:d.ver,upd:d.upd||day}])[0]);g.spolszczenia=a};
+const spNorm=a=>{const seen=new Set();return (Array.isArray(a)?a:[]).map(s=>({id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:TYPES.includes(s.type)?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy"].includes(s.status)?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)})).filter(s=>{if(!/^https?:\/\//i.test(s.link)||seen.has(s.link))return false;seen.add(s.link);return true})};
+// Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
+const spUpd=(o,n)=>!!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Beta","Testy"].includes(o.status)&&n.status==="Gotowe")));
+const spAdd=(g,d,link,day)=>{const a=Array.isArray(g.spolszczenia)?g.spolszczenia:[];if(g.link===link||a.some(s=>s.link===link))return;const base=keyOf(g)+"--"+(slug(d.author||"")||"autor");let id=base,n=2;while(a.some(s=>s.id===id))id=base+"-"+(n++);a.push(spNorm([{id,author:d.author,link,type:d.type,status:d.status==="W toku"?"Beta":d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0]);g.spolszczenia=a};
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
@@ -22,13 +24,13 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
   if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
- else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;
+ else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
-  if(day)g.upd=day}
- else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;
+  if(day&&spUpd(przed,g))g.upd=day}
+ else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
-   if(f==="spolszczenia"){let a=null;try{a=spNorm(JSON.parse(v||"[]"))}catch{continue}if(a.length)g.spolszczenia=a;else delete g.spolszczenia;continue}
+   if(f==="spolszczenia"){let a=null;try{a=spNorm(JSON.parse(v||"[]"))}catch{continue}for(const s of a){const o=(g.spolszczenia||[]).find(x=>x.id===s.id);if(o&&spUpd(o,s))s.upd=day}if(a.length)g.spolszczenia=a;else delete g.spolszczenia;continue}
    if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].includes(f))continue;
    if(f==="status"){if(v)g.status=v==="W toku"?"Beta":v;continue}
    if(f==="yt"){if(YT(v))g.yt=v;else if(!v)delete g.yt;continue}
@@ -44,7 +46,8 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="genre"||f==="opis"){if(v)g[f]=f==="opis"?v.slice(0,500):v;else delete g[f];continue}
    if(f==="type"){if(TYPES.includes(v))g.type=v;continue}
    if(f==="prog"){g.prog=Math.max(0,Math.min(100,+v||0));continue}
-   if(v)g[f]=v}}
+   if(v)g[f]=v}
+  if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
 const after=JSON.stringify(list,null,2);
 if(after===before){console.log("Brak zmian");process.exit(0)}

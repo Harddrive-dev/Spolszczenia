@@ -183,3 +183,4 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .jes #jlvs{display:block;position:absolute;image-rendering:pixelated;pointer-events:none;z-index:2}
 @media (max-width:1099px){.jes #jcozy{left:calc(50% + 150px);width:168px;height:92px;top:16px}}
 @media (max-width:799px){.jes #jcozy{position:static;margin:0 auto 44px;width:252px;height:138px}}
+.btns .btn.pri{color:#1f1513!important}

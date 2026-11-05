@@ -129,6 +129,11 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .news{flex:999 1 560px;min-width:0;display:flex;flex-direction:column}
 .news .ngrid{flex:1;grid-auto-rows:1fr}
 .wiesci{flex:1;display:flex;flex-direction:column}
+.navkat{background:var(--accent)!important;border-color:var(--accent)!important;color:#1f1513!important;font-weight:700}
+.wtabs{display:flex;gap:6px;margin:0 0 12px;align-items:center;flex-wrap:wrap}.wtabs .lb{font-weight:700;font-size:17px}
+.wtabs button{font:inherit;font-weight:700;font-size:13.5px;white-space:nowrap;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}.wtabs button.on{color:var(--text);border-color:var(--accent)}.wtabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wtabs .dot{display:inline-block;margin-left:5px;min-width:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:#1f1513;font-size:11px;line-height:18px;text-align:center}
+.cmr .thumb{width:44px;height:44px;flex:0 0 44px;object-fit:cover}.cmr .wtx{flex:1}.cmr b,.cmr q{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cmr q{quotes:none;font-size:13px;opacity:.9}.cmr small{display:block;font-size:12px;color:var(--muted)}
 .wiesci .wrow{flex:1}
 .wiesci .wrow:last-child{margin-bottom:0}
 .side{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:26px}
@@ -402,6 +407,7 @@ header{padding-top:56px}
   <h1><a href="./" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></h1>
   <p class="tag">Katalog fanowskich polskich wersji językowych gier</p>
   <div class="btns">
+    <button class="btn navkat" id="navKat" type="button">Katalog gier</button>
     <button class="btn" id="openForm">Dodaj spolszczenie</button>
     <button class="btn" id="navVote" type="button">Głosowanie</button>
     <button class="btn" id="navNews" type="button">Aktualności</button>
@@ -685,9 +691,8 @@ function renderHome(){
   $("toprank").innerHTML=tp.length?'<h2>Najczęściej komentowane</h2><ol class="rlist">'+tp.map(function(g,i){return '<li><span class="rank">'+(i+1)+'</span><a target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a><button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze ('+counts[keyOf(g)]+')</button></li>'}).join("")+'</ol>':"";
   $("toprank").style.display=tp.length?"":"none";
   var WN=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
-  $("wiesci").innerHTML=wiesci.length?'<h2>📰 Ostatnie wieści <a href="/aktualnosci/">Wszystkie →</a></h2>'+wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="wrow" href="/aktualnosci/'+esc(r.slug)+'/"><span class="wdt">'+d.getDate()+'<small>'+WN[d.getMonth()]+'</small></span><span class="wtx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):"";
-  $("wiesci").style.display=wiesci.length?"":"none";
-  $("home").style.display=(nw.length||tp.length||wiesci.length)?"":"none";
+  renderSide();
+  $("home").style.display=(nw.length||tp.length||wiesci.length||komRows().length)?"":"none";
 }
 function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
@@ -786,7 +791,19 @@ google:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style
 
 function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function keyOf(g){return g.id||slug(g.game||"")}
-var counts=Object.create(null),wiesci=[];
+var counts=Object.create(null),wiesci=[],kom=[],sideTab="w",komBase=null,KM=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
+// Prawa kolumna: zakładki Wieści i Komentarze. Kolejne wejście pokazuje liczbę komentarzy nowszych niż ostatnie otwarcie zakładki.
+function komSeen(v){try{if(v===undefined)return localStorage.getItem("kom.widz")||"";localStorage.setItem("kom.widz",v)}catch(e){}return ""}
+function komRows(){var seen={};return kom.filter(function(c){var g=gameByKey(c.game_key);if(!g||seen[c.game_key])return false;seen[c.game_key]=1;c.g=g;return true}).slice(0,3)}
+function komAgo(t){var d=new Date(t),m=Math.floor((Date.now()-d.getTime())/6e4);if(m<1)return "przed chwilą";if(m<60)return m+" min temu";if(m<1440)return Math.floor(m/60)+" godz. temu";if(m<2880)return "wczoraj";return d.getDate()+" "+KM[d.getMonth()]}
+function renderSide(){var el=$("wiesci"),k=komRows(),ok=wiesci.length||k.length;el.style.display=ok?"":"none";if(!ok){el.innerHTML="";return}
+  if(komBase===null)komBase=komSeen();
+  var nowe=komBase?kom.filter(function(c){return c.created_at>komBase&&gameByKey(c.game_key)}).length:0;
+  var tabs='<div class="wtabs" role="tablist"><span class="lb">Ostatnie:</span><button type="button" role="tab" data-st="w" aria-selected="'+(sideTab==="w")+'" class="'+(sideTab==="w"?"on":"")+'">Wieści</button><button type="button" role="tab" data-st="k" aria-selected="'+(sideTab==="k")+'" class="'+(sideTab==="k"?"on":"")+'">Komentarze'+(nowe&&sideTab!=="k"?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':"")+'</button></div>';
+  if(sideTab==="k"){el.innerHTML=tabs+(k.length?k.map(function(c){return '<a class="wrow cmr" href="/gra/'+esc(keyOf(c.g))+'/#komentarze">'+thumb(c.g)+'<span class="wtx"><b>'+esc(c.g.game)+'</b><q>„'+esc(c.body)+'”</q><small>'+esc(c.author||"Gracz")+' · '+esc(komAgo(c.created_at))+'</small></span></a>'}).join(""):'<p class="msg">Nie ma jeszcze komentarzy.</p>');return}
+  el.innerHTML=tabs+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="wrow" href="/aktualnosci/'+esc(r.slug)+'/"><span class="wdt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="wtx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="msg">Nie ma jeszcze wieści.</p>')}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-st]");if(!b)return;sideTab=b.getAttribute("data-st");if(sideTab==="k"){komBase=new Date().toISOString();komSeen(komBase)}renderSide()});
+async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
 async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}
 function rowBtn(g){return '<button class="mini rowmenu" type="button" data-rk="'+esc(keyOf(g))+'" aria-label="Więcej akcji" aria-haspopup="true">⋯</button>'}
 function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0,t=n?"Komentarze ("+n+")":"Komentarze";return '<button class="mini cbtn cic" data-k="'+esc(keyOf(g))+'" title="'+t+'" aria-label="'+t+'"><span aria-hidden="true">💬</span><b>'+n+'</b></button>'}
@@ -812,6 +829,7 @@ function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
   return String(n).trim().slice(0,30)}
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
 $("navNews").onclick=function(){location.href="/aktualnosci/"};
+$("navKat").onclick=function(){var go=function(){var o=$("fbar");if(o)o.scrollIntoView({behavior:"smooth",block:"start"})};if(typeof curViewName==="function"&&curViewName()){location.hash="#/";setTimeout(go,80)}else go()};
 $("navLektor").onclick=function(){var go=function(){setView("lk");var o=$("out");if(o)o.scrollIntoView({behavior:"smooth",block:"start"})};if(typeof curViewName==="function"&&curViewName()){location.hash="#/";setTimeout(go,80)}else go()};
 function busy(t,txt){if(txt){t._o=t.textContent;t.textContent=txt;t.disabled=true;t.classList.add("busy")}else{t.disabled=false;if(t._o!=null)t.textContent=t._o;t.classList.remove("busy")}}
 var TS_KEY="0x4AAAAAAFlm4-HEqU2giO-W",tsTok="",tsId=null;
@@ -964,7 +982,7 @@ if(CM){
         armedC=null;var d=await sb.from("comments").delete().eq("id",id);if(d.error)alert("Błąd: "+d.error.message);else{loadComments(curKey);loadCounts()}}
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
-  loadCounts();loadWiesci();
+  loadCounts();loadWiesci();loadKom();
   sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole();loginFromLink()});
   sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();

@@ -6261,7 +6261,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/c54a7dc5c4c4703eade452013234d53b.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Soulslike FPP od twórców Ghostrunnera, osadzony w mrocznej Europie epoki napoleońskiej. Walka łączy broń białą i palną z nadnaturalnymi przeciwnikami."
   },
   {
     "game": "Saints Row: The Third",
@@ -6294,7 +6295,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/a592d9fe5ade10553913fb1b94f1175c.jpg",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "opis": "Wyścigowa gra studia Fuse Games, założonego przez byłych twórców z Criterion. To szybkie wyścigi w uniwersum Gwiezdnych Wojen po upadku Imperium."
   },
   {
     "game": "Hell is Us",
@@ -6352,7 +6354,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/d839a87d3f483f784d8e1e93710b41a6.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Prequel serii Gears of War. Młodzi Marcus Fenix i Dominic Santiago przeżywają Dzień Wyjścia, czyli pierwszy atak Szarańczy na planetę Sera."
   },
   {
     "game": "Minecraft Dungeons II",
@@ -6365,7 +6368,8 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn2.steamgriddb.com/thumb/e01fa640a8b7840f1950b0610ae713c4.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e01fa640a8b7840f1950b0610ae713c4.jpg",
+    "opis": "Kontynuacja gry akcji RPG ze świata Minecrafta. Wyruszasz samotnie lub w kooperacji do lochów, walcząc z hordami potworów i zdobywając ekwipunek."
   },
   {
     "game": "Dune: Awakening",
@@ -6410,7 +6414,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/d7d5d27ed9b44f4646def6eccd765991.jpg",
     "genre": "Przygodowa",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "opis": "Kontynuacja Control od Remedy. Tym razem bohaterem jest Dylan Faden, brat Jesse, który walczy z nadnaturalnym zagrożeniem na Manhattanie."
   },
   {
     "game": "SILENT HILL: Townfall",
@@ -6445,7 +6450,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/2bc35270fc9c07fb4a8ee99b7f049bc2.jpg",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "opis": "Turowa gra taktyczna z czasów Wojen Klonów. Dowodzisz oddziałem złożonym z postaci o różnych umiejętnościach."
   },
   {
     "game": "F.E.A.R. 2: Project Origin",
@@ -6523,7 +6529,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9eecc11edb1a8dfa66274a410081fd85.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Gra akcji ze świata A Plague Tale, której bohaterką jest Sophia. Fabuła przenosi się do antycznej Grecji, dużo wcześniej niż historia Amicii i Hugona."
   },
   {
     "game": "Grand Theft Auto: San Andreas",
@@ -6567,7 +6574,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/de51c41f2ede1364ca77c2818c875cf5.jpg",
-    "genre": "Akcja / platformówka"
+    "genre": "Akcja / platformówka",
+    "opis": "Kontynuacja mrocznego soulslike'a od Cold Symmetry. Trzecioosobowa gra akcji stawia na brutalne starcia w ponurym świecie."
   },
   {
     "game": "The Sinking City 2",
@@ -6577,7 +6585,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/0943a43c67fd2432d87b268099c231c3.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Survival horror studia Frogwares inspirowany Lovecraftem. Akcja dzieje się w zatopionym Arkham, gdzie trzeba przetrwać wśród nadnaturalnych zagrożeń."
   },
   {
     "game": "The Surge 2",
@@ -6620,7 +6629,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/9e00a3de909a5e4ada9324bc7aa1fea2.jpg",
-    "genre": "Strzelanka"
+    "genre": "Strzelanka",
+    "opis": "Odświeżona kampania z pierwszego Halo, stworzona od nowa na Unreal Engine 5. Master Chief znów walczy z Przymierzem na tajemniczym pierścieniu."
   },
   {
     "game": "GreedFall",
@@ -6694,7 +6704,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/7ff496ba05f37cd70781b0303c1fccd9.jpg",
     "genre": "Akcja / platformówka",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "opis": "Nowa wersja Assassin's Creed IV: Black Flag. Edward Kenway znów rusza na piracką przygodę po Karaibach, a gra dostaje odświeżoną oprawę."
   },
   {
     "game": "Grim Dawn",
@@ -6772,7 +6783,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/55a16942785f0ff9824a42c4fe48ff61.jpg",
-    "genre": "Sportowa / wyścigi"
+    "genre": "Sportowa / wyścigi",
+    "opis": "Nowa odsłona klasycznej serii wyścigów od Milestone. Arcade'owe wyścigi łączą się z fabułą i oprawą inspirowaną anime."
   },
   {
     "game": "Alien: Isolation",
@@ -7480,7 +7492,8 @@
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
     "img": "https://cdn2.steamgriddb.com/thumb/6420b83bd0511eff2a3147bfb1c44f91.jpg",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Fabularna gra akcji w duchu serii Gothic. Tristan, kartograf bez doświadczenia w walce, trafia na odciętą wyspę Grayshaft, gdzie musi zdobyć pozycję i przetrwać."
   },
   {
     "game": "Observer: System Redux",
@@ -7800,7 +7813,8 @@
     "prog": 100,
     "ver": "—",
     "author": "kofii12345",
-    "img": "https://cdn2.steamgriddb.com/thumb/823aa41e8eaef0c6364ad74b74f24cd3.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/823aa41e8eaef0c6364ad74b74f24cd3.jpg",
+    "opis": "Horror, w którym testujesz gry tworzone przez sztuczną inteligencję. Kolejne scenariusze przenoszą Cię w różne przerażające światy, a granica między grą i rzeczywistością zaczyna się zacierać."
   },
   {
     "game": "Mafia II: Edycja Ostateczna",
@@ -8701,7 +8715,8 @@
         "ver": "—",
         "upd": "2026-10-31"
       }
-    ]
+    ],
+    "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft."
   },
   {
     "game": "Getting Over It with Bennett Foddy",
@@ -8759,7 +8774,8 @@
     "genre": "Metroidvania",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/cafa15283343a35d96ddb6e123359b20.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Metroidvania ze świata Touhou. Pokojówka Sakuya Izayoi trafia do innej rzeczywistości i walczy, wykorzystując zdolność zatrzymywania czasu."
   },
   {
     "game": "Five Nights at Freddy's 3",
@@ -8833,7 +8849,8 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/e316e232d20e9f60acad2f8757acc50e.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Parodia edukacyjnych gier z lat 90., która szybko zmienia się w horror. Zbierasz zeszyty w szkole, rozwiązujesz zadania, a za każdy błąd Baldi goni Cię coraz szybciej."
   },
   {
     "game": "START AGAIN: a prologue",
@@ -8847,7 +8864,8 @@
     "genre": "Survival Horror",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/65c306e10f21f24d5bd0573a5097a27e.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Prototyp RPG In Stars and Time. Bohater utknął w pętli czasowej, a kolejne powtórzenia tego samego dnia zaczynają mu ciążyć."
   },
   {
     "game": "METAL GEAR & METAL GEAR 2: Solid Snake",
@@ -8861,7 +8879,8 @@
     "genre": "Akcja",
     "dodano": "2026-11-01",
     "img": "https://cdn2.steamgriddb.com/thumb/ab7f1ca89cc7a550e2285123365eb110.jpg",
-    "upd": "2026-11-01"
+    "upd": "2026-11-01",
+    "opis": "Dwie pierwsze części serii Hideo Kojimy, które dały początek skradankom. Solid Snake samotnie przenika do wrogich baz i walczy z potężnymi maszynami Metal Gear."
   },
   {
     "game": "Alisa",
@@ -8950,7 +8969,8 @@
     "genre": "RPG",
     "dodano": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/21dd037868c44b34bdafb880660faa3d.jpg",
-    "upd": "2026-11-02"
+    "upd": "2026-11-02",
+    "opis": "Fabularna gra o przetrwaniu po apokalipsie zombie. Kierujesz grupą ocalałych, podejmujesz trudne decyzje i toczysz turowe walki."
   },
   {
     "game": "Sniper: Ghost Warrior",
@@ -8964,7 +8984,8 @@
     "genre": "FPS",
     "dodano": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/c7a4aa8d2b33e184992e27cd34db39e2.jpg",
-    "upd": "2026-11-02"
+    "upd": "2026-11-02",
+    "opis": "Strzelanka, w której jako snajper działasz na terenie fikcyjnego państwa w Ameryce Łacińskiej. Celowanie uwzględnia wiatr i grawitację, a kluczowe jest skradanie."
   },
   {
     "game": "Borderlands 3",
@@ -9088,7 +9109,8 @@
     "dodano": "2026-11-02",
     "upd": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/2a5984ed5a4b2fbea39eeaa5bddc71e2.jpg",
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Przygodówka Annapurna Interactive o starszym mężczyźnie i jego psie w podróży samochodem. Opowiada o stracie, żałobie i wspomnieniach."
   },
   {
     "game": "Two Worlds Epic Edition",
@@ -9307,7 +9329,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/metal_slug_tactics",
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/ad02f9ff2a3e4b5251ee335816367cac.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/ad02f9ff2a3e4b5251ee335816367cac.jpg",
+    "opis": "Taktyczna gra turowa ze świata Metal Slug. Pikselowa oprawa i humor serii łączą się tu z walką na siatce i elementami roguelike."
   },
   {
     "game": "Roots of Pacha",
@@ -9321,7 +9344,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/roots_of_pacha",
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/4756d40fb9b86637b8ec1a17f4c5c7da.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/4756d40fb9b86637b8ec1a17f4c5c7da.jpg",
+    "opis": "Symulator życia w epoce kamienia. Razem z klanem uprawiasz ziemię, oswajasz zwierzęta i odkrywasz nowe wynalazki w pikselowym świecie."
   },
   {
     "game": "Bug Fables: The Everlasting Sapling",
@@ -9335,7 +9359,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/bug_fables_the_everlasting_sapling",
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/baeeb312ad597cd0f32566e0a4a3e53a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/baeeb312ad597cd0f32566e0a4a3e53a.jpg",
+    "opis": "RPG inspirowane serią Paper Mario. Trzej odkrywcy, Vi, Kabbu i Leif, przemierzają królestwo owadów Bugaria w poszukiwaniu legendarnego skarbu."
   },
   {
     "game": "TOEM",
@@ -9349,7 +9374,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/toem",
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/da0ba3dfddd3b42653f4496c3213e11a.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/da0ba3dfddd3b42653f4496c3213e11a.jpg",
+    "opis": "Spokojna przygoda w czarno-białym świecie. Młody fotograf podróżuje autobusem i pomaga napotkanym postaciom, robiąc im zdjęcia."
   },
   {
     "game": "Queen's Domain",
@@ -9377,7 +9403,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/batman_the_enemy_within",
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/7e35a2d2d02e7c4a57a7fa7c0e1f004b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/7e35a2d2d02e7c4a57a7fa7c0e1f004b.jpg",
+    "opis": "Druga część przygodowej serii Telltale o Batmanie. Bruce Wayne staje przed trudnymi wyborami, a jego relacja z Johnem Doe rzutuje na dalszy los bohatera."
   },
   {
     "game": "Astral Chain",
@@ -9391,7 +9418,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/astral_chain",
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/e9571c97ad8514c0aa6bb199bda1427b.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/e9571c97ad8514c0aa6bb199bda1427b.jpg",
+    "opis": "Gra akcji PlatinumGames. Dwoje policjantów z futurystycznego miasta Ark walczy z istotami z innego wymiaru, współpracując z przykutymi łańcuchem Legionami."
   },
   {
     "game": "Order of the Sinking Star",
@@ -13308,7 +13336,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=dementium-ii",
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/a0d8e019ffb80a10e71de748f7a5b6b1.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a0d8e019ffb80a10e71de748f7a5b6b1.jpg",
+    "opis": "Odświeżony horror z Nintendo DS. Bohater budzi się w szpitalu psychiatrycznym po operacji mózgu i musi uciec przed koszmarnymi istotami."
   },
   {
     "game": "Devil May Cry 4 Special Edition",
@@ -13492,7 +13521,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=fatal-frame-project-zero-mask-of-the-lunar-eclipse",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/9cc0eae5e009e6fea5e2e6fd44cd606e.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/9cc0eae5e009e6fea5e2e6fd44cd606e.png",
+    "opis": "Japoński survival horror. Trzy dziewczyny wracają na wyspę Rogetsu, by odzyskać utracone wspomnienia, a z duchami walczą specjalnym aparatem Camera Obscura."
   },
   {
     "game": "Final Fantasy Type-0 HD",
@@ -13767,7 +13797,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=lost-in-random",
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
-    "img": "https://cdn2.steamgriddb.com/thumb/d6ef27d140fa29d1bfd3c74d6d8e1161.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/d6ef27d140fa29d1bfd3c74d6d8e1161.png",
+    "opis": "Baśniowa gra akcji w świecie, gdzie wszystkim rządzą kości. Even wyrusza na ratunek siostrze Odd z pomocą żywej kostki Dicey, łącząc walkę z kartami."
   },
   {
     "game": "Lucius II",
@@ -13839,7 +13870,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=new-super-lucky-s-tale",
     "dodano": "2026-11-01",
     "upd": "2026-11-01",
-    "img": "https://cdn2.steamgriddb.com/thumb/73d9997d939b44ddad2d51de7cf89da5.png"
+    "img": "https://cdn2.steamgriddb.com/thumb/73d9997d939b44ddad2d51de7cf89da5.png",
+    "opis": "Pogodna platformówka 3D o lisku Luckym, który szuka stron Księgi Wieków. Odświeżona i poprawiona wersja Super Lucky's Tale."
   },
   {
     "game": "Ni no Kuni: Wrath of the White Witch Remastered",
@@ -14701,7 +14733,8 @@
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/895416fe6633c23da9654e7a5a8c97d9.jpg",
     "upd": "2026-11-04",
-    "genre": "Survival"
+    "genre": "Survival",
+    "opis": "Gra o przetrwaniu w otwartym świecie opanowanym przez zombie. Zbierasz zapasy, budujesz bazę i walczysz sam lub w kooperacji."
   },
   {
     "game": "Lost Records: Bloom & Rage",
@@ -14715,7 +14748,8 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/6c679fa5ec5389c136419d732deac280.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "opis": "Przygodówka od twórców Life is Strange. Cztery przyjaciółki spędzają lato 1995 roku w Velvet Cove, a po 27 latach spotykają się, by zmierzyć się z tym, co wtedy ukryły."
   },
   {
     "game": "Grand Theft Auto 2",
@@ -14745,7 +14779,8 @@
     "dodano": "2026-11-04",
     "upd": "2026-11-04",
     "status": "Gotowe",
-    "img": "https://cdn2.steamgriddb.com/thumb/84aaa84129e365590aeb86b57697edb9.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/84aaa84129e365590aeb86b57697edb9.jpg",
+    "opis": "Samodzielny dodatek do Far Cry 3, utrzymany w stylu neonowych filmów akcji z lat 80. Cybernetyczny komandos Rex Colt walczy na wyspie pełnej żołnierzy i smoków strzelających laserami."
   },
   {
     "game": "GTA San Andreas: Dosłowne Tłumaczenie (Edycja Parodystyczna)",
@@ -14791,7 +14826,8 @@
     "genre": "MMORPG",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/91f6724a042707c376bb508c436665ef.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "opis": "Aktualna wersja słynnego MMORPG Blizzarda, rozwijana od 2004 roku. Tworzysz postać, wybierasz stronę Przymierza lub Hordy i przemierzasz Azeroth oraz kolejne dodatki."
   },
   {
     "game": "Where Winds Meet",
@@ -14805,7 +14841,8 @@
     "genre": "MMORPG",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/f217b5bc102a5c703c61f4ea3f1fd064.jpg",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "opis": "RPG akcji w otwartym świecie, osadzone w Chinach z czasów X wieku. Jako młody wojownik poznajesz sztuki walki wuxia i odkrywasz tajemnice swojej przeszłości."
   },
   {
     "game": "Call of Duty®: Modern Warfare® 4",
@@ -14820,7 +14857,8 @@
     "img": "https://cdn2.steamgriddb.com/thumb/e2f7edb9b36aaae9f1fff80c0cb3d42d.jpg",
     "upd": "2026-11-05",
     "genre": "Strzelanka",
-    "status": "Gotowe"
+    "status": "Gotowe",
+    "opis": "Nowa odsłona serii Modern Warfare przenosi konflikt na Półwysep Koreański. Kapitan Price i jego oddział walczą w kampanii rozgrywanej w wielu miejscach świata."
   },
   {
     "game": "The Elder Scrolls Online",
@@ -14834,7 +14872,8 @@
     "genre": "MMORPG",
     "dodano": "2026-11-05",
     "img": "https://cdn2.steamgriddb.com/thumb/3ab733195f6ea3efbbb262bb2ae37b40.jpg",
-    "upd": "2026-11-05"
+    "upd": "2026-11-05",
+    "opis": "MMORPG osadzone w świecie serii The Elder Scrolls, tysiąc lat przed wydarzeniami ze Skyrima. Przemierzasz Tamriel samotnie lub ze znajomymi, walcząc w lochach i wojnie o Cesarskie Miasto."
   },
   {
     "game": "God of War (2005)",
@@ -14849,6 +14888,7 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-05",
     "img": "https://cdn2.steamgriddb.com/thumb/d43dd8fd30f32a8b07b4d981b89860de.jpg",
-    "upd": "2026-11-05"
+    "upd": "2026-11-05",
+    "opis": "Kratos, spartański wojownik w służbie bogów Olimpu, chce uwolnić się od koszmarów przeszłości. By to zrobić, rusza pokonać boga wojny Aresa w brutalnej grze akcji inspirowanej mitologią grecką."
   }
 ]

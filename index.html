@@ -694,7 +694,9 @@ function renderHome(){
   renderSide();
   $("home").style.display=(nw.length||tp.length||wiesci.length||komRows().length)?"":"none";
 }
-function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
+// Przycisk „Katalog gier” z podstron: /#katalog przewija do wyszukiwarki po wczytaniu katalogu.
+function goKatalog(){if(location.hash!=="#katalog")return;history.replaceState(null,"",location.pathname+location.search);FLT_POS=null;var stop=false,q=function(){stop=true;["wheel","touchstart","keydown"].forEach(function(ev){window.removeEventListener(ev,q,true)})},go=function(){var o=$("fbar");if(!stop&&o)o.scrollIntoView({block:"start"})};["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,q,true)});[0,300,900,1800].forEach(function(ms){setTimeout(go,ms)});setTimeout(q,2200)}
+function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
 $("cancel").onclick=function(){location.hash="#/"};

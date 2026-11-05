@@ -5282,7 +5282,8 @@
         "status": "Gotowe",
         "prog": 100,
         "ver": "1.0",
-        "upd": "2026-11-05"
+        "upd": "2026-11-05",
+        "dodano": ""
       }
     ]
   },
@@ -5327,7 +5328,8 @@
         "status": "Gotowe",
         "prog": 100,
         "ver": "1.0",
-        "upd": "2026-11-05"
+        "upd": "2026-11-05",
+        "dodano": ""
       }
     ]
   },
@@ -8686,7 +8688,7 @@
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
-    "upd": "2026-10-31",
+    "upd": "2026-11-05",
     "genre": "MMORPG",
     "spolszczenia": [
       {
@@ -11115,7 +11117,8 @@
         "status": "Gotowe",
         "prog": 100,
         "ver": "1.1",
-        "upd": "2026-10-31"
+        "upd": "2026-10-31",
+        "dodano": ""
       }
     ]
   },
@@ -13399,11 +13402,12 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.1",
+    "ver": "1.2",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=e-shop-tycoon",
     "dodano": "2026-08-12",
-    "upd": "2026-10-31"
+    "upd": "2026-11-05",
+    "img": "https://shared.steamstatic.com/store_item_assets/steam/apps/2871960/logo.png?t=1765254466"
   },
   {
     "game": "Eternal Strands",
@@ -13743,11 +13747,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.6",
+    "ver": "1.7",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=lost-ark",
     "dodano": "2026-09-28",
-    "upd": "2026-10-29",
+    "upd": "2026-11-05",
     "img": "https://cdn2.steamgriddb.com/thumb/c49f506a3aadd5d7646e24adf2969fd5.jpg",
     "opis": "Izometryczne MMORPG akcji od Smilegate. Przemierzasz kontynenty Arkesii, walczysz z ogromnymi bossami w rajdach i szukasz Arki, by powstrzymać demony."
   },
@@ -14285,7 +14289,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 33,
+    "prog": 43,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
@@ -14817,5 +14821,19 @@
     "upd": "2026-11-05",
     "genre": "Strzelanka",
     "status": "Gotowe"
+  },
+  {
+    "game": "The Elder Scrolls Online",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "Skrybowie Tamriel",
+    "link": "https://eso-spolszczenie.eu/",
+    "genre": "MMORPG",
+    "dodano": "2026-11-05",
+    "img": "https://cdn2.steamgriddb.com/thumb/3ab733195f6ea3efbbb262bb2ae37b40.jpg",
+    "upd": "2026-11-05"
   }
 ]

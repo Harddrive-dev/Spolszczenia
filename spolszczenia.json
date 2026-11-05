@@ -5272,7 +5272,19 @@
     "dodano": "2026-10-28",
     "opis": "Horror kooperacyjny od Supermassive Games. Żołnierze i agenci CIA trafiają pod ziemię w Iraku i odkrywają starożytną grozę.",
     "id": "the-dark-pictures-anthology-house-of-ashes",
-    "yt": "https://www.youtube.com/watch?v=_lT6BNeuboQ"
+    "yt": "https://www.youtube.com/watch?v=_lT6BNeuboQ",
+    "spolszczenia": [
+      {
+        "id": "the-dark-pictures-anthology-house-of-ashes--dykugierkuje",
+        "author": "DykuGierkuje",
+        "link": "https://dykugierkuje.pl/spolszczenie/the-dark-pictures-house-of-ashes",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-05"
+      }
+    ]
   },
   {
     "game": "The Dark Pictures Anthology: Little Hope",
@@ -5305,7 +5317,19 @@
     "opis": "Interaktywny horror od Supermassive Games. Grupa nurków trafia na opuszczony statek widmo, a o życiu bohaterów decydują twoje wybory.",
     "id": "the-dark-pictures-anthology-man-of-medan",
     "yt": "https://www.youtube.com/watch?v=PZIfXpHwPcE",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "spolszczenia": [
+      {
+        "id": "the-dark-pictures-anthology-man-of-medan--vetspolszczenia",
+        "author": "VetSpolszczenia",
+        "link": "https://vetspolszczenia.pl/projekt.html?id=the-dark-pictures-anthology-man-of-medan",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-05"
+      }
+    ]
   },
   {
     "game": "The Dark Pictures Anthology: The Devil in Me",
@@ -8657,7 +8681,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.1.4",
+    "ver": "0.1.5",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
@@ -11090,7 +11114,7 @@
         "type": "Napisy",
         "status": "Gotowe",
         "prog": 100,
-        "ver": "1.0",
+        "ver": "1.1",
         "upd": "2026-10-31"
       }
     ]
@@ -14306,7 +14330,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.1",
+    "ver": "1.2",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/incursion-red-river",
     "dodano": "2026-09-06",
@@ -14406,7 +14430,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.2",
+    "ver": "1.4",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/road-to-vostok",
     "dodano": "2026-08-17",
@@ -14778,5 +14802,20 @@
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/f217b5bc102a5c703c61f4ea3f1fd064.jpg",
     "upd": "2026-11-04"
+  },
+  {
+    "game": "Call of Duty®: Modern Warfare® 4",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/call-of-duty-modern-warfare-4",
+    "dodano": "2026-11-05",
+    "img": "https://cdn2.steamgriddb.com/thumb/e2f7edb9b36aaae9f1fff80c0cb3d42d.jpg",
+    "upd": "2026-11-05",
+    "genre": "Strzelanka",
+    "status": "Gotowe"
   }
 ]

@@ -13430,11 +13430,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.1",
+    "ver": "1.2",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=eve-online",
     "dodano": "2026-10-26",
-    "upd": "2026-10-29",
+    "upd": "2026-11-05",
     "img": "https://cdn2.steamgriddb.com/thumb/8c7e2af9de1f4a4b88854ac78e384e5e.png",
     "opis": "Kosmiczne MMO z jednym wspólnym wszechświatem, w którym gospodarkę i wojny tworzą sami gracze. Pilotujesz statki, handlujesz i dołączasz do wielkich korporacji."
   },
@@ -14289,7 +14289,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 43,
+    "prog": 46,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
@@ -14834,6 +14834,21 @@
     "genre": "MMORPG",
     "dodano": "2026-11-05",
     "img": "https://cdn2.steamgriddb.com/thumb/3ab733195f6ea3efbbb262bb2ae37b40.jpg",
+    "upd": "2026-11-05"
+  },
+  {
+    "game": "God of War (2005)",
+    "platform": "PC, Sony PS2",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=god-of-war-2005-ps2",
+    "lore": "https://lorespeak.pl/games/god-of-war",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-05",
+    "img": "https://cdn2.steamgriddb.com/thumb/d43dd8fd30f32a8b07b4d981b89860de.jpg",
     "upd": "2026-11-05"
   }
 ]

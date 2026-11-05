@@ -565,6 +565,7 @@ function authorsOf(g){var ex=spExtra(g),m=g.author&&g.author!=="—"?g.author:(g
   return a.sort(function(x,y){return x.localeCompare(y,"pl")})}
 function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+'</span>'}).join("")}
+function spTyp(g,t){if(t==="Oficjalna PL")return g.pl==="of";if(spExtra(g).some(function(s){return s.type===t}))return true;return g.type===t&&(g.pl!=="of"||t==="Dubbing")}
 function spHas(g,f,v){return g[f]===v||spExtra(g).some(function(s){return s[f]===v})}
 function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
 function spAdd(g,d,link,day,kf){if(g.link===link||spExtra(g).some(function(s){return s.link===link}))return;var a=Array.isArray(g.spolszczenia)?g.spolszczenia:(g.spolszczenia=[]),base=kf(g)+"--"+(kf({game:d.author||""})||"autor"),id=base,n=2;
@@ -596,7 +597,7 @@ function pcats(g){var o=[];String(g.platform||"").split(",").forEach(function(t)
 function uniq(k){if(k==="platform"){var a=[];items.forEach(function(g){pcats(g).forEach(function(c){if(a.indexOf(c)<0)a.push(c)})});return a.sort(function(x,y){return x==="PC"?-1:y==="PC"?1:x.localeCompare(y,"pl")})}
   return items.map(function(g){return g[k]}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort()}
 function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=document.createElement("option");o.value="";o.textContent=label;el.appendChild(o);
-  (k==="type"?uniq(k).concat(["Napisy","Pełne","Dubbing"].filter(function(v){return uniq(k).indexOf(v)<0})):uniq(k)).forEach(function(v){var x=document.createElement("option");x.value=v;x.textContent=v;el.appendChild(x)});el.value=cur}
+  (k==="type"?uniq(k).concat(["Napisy","Pełne","Dubbing"].filter(function(v){return uniq(k).indexOf(v)<0}),["Oficjalna PL"]):uniq(k)).forEach(function(v){var x=document.createElement("option");x.value=v;x.textContent=v;el.appendChild(x)});el.value=cur}
 function nwEvent(g){var d=String(g.dodano||""),u=String(g.upd||""),e={date:u>d?u:d,typ:u>d?"Aktualizacja":"Nowe",aut:"",ver:g.ver,type:g.type};
   spExtra(g).forEach(function(s){var x=String(s.upd||"");if(x>e.date)e={date:x,typ:s.dodano&&x>s.dodano?"Aktualizacja":"Nowe spolszczenie",aut:s.author,ver:s.ver,type:s.type}});return e}
 function nk(g){return nwEvent(g).date}
@@ -609,7 +610,7 @@ function srchWords(t){return srchNorm(t).split(" ").filter(Boolean)}
 function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(g.author||"")+" "+authorsOf(g).join(" "));return w.every(function(x){return h.indexOf(x)>-1})}
 function filtered(){
   var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spHas(g,"type",t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&srchHit(g,q)});
+  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spTyp(g,t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&srchHit(g,q)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
@@ -726,7 +727,7 @@ if(FMOB.addEventListener)FMOB.addEventListener("change",syncBar);
 var lastPick=null;
 var RV={fp:"",fg:"",ft:"",fs:""};
 function rpool(){var q=srchWords($("q").value);
-  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||spHas(g,"type",RV.ft))&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||spHas(g,"status",RV.fs))&&srchHit(g,q)})}
+  return items.filter(function(g){return(VIEW!=="lk"||hasLk(g))&&(!RV.fp||pcats(g).indexOf(RV.fp)>-1)&&(!RV.ft||spTyp(g,RV.ft))&&(!RV.fg||g.genre===RV.fg)&&(!RV.fs||spHas(g,"status",RV.fs))&&srchHit(g,q)})}
 var rfOpen=false,RF=[["fp","Platforma"],["fg","Gatunek"],["ft","Zakres"],["fs","Status"]];
 function rfBox(forceOpen){
   var act=RF.filter(function(x){return RV[x[0]]}),n=rpool().length;

@@ -464,7 +464,7 @@ header{padding-top:56px}
   </div>
   <div class="fsec">O grze</div>
   <div class="fg2">
-    <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
+    <label>Platforma<select id="f_platform"><option selected>PC</option><option>Nintendo NES</option><option>Nintendo SNES</option><option>Nintendo 64</option><option>Nintendo NDS</option><option>Nintendo 3DS</option><option>Nintendo Switch</option><option>Nintendo Wii</option><option>Game Boy Advance</option><option>Game Boy / GBC</option><option>Sony PSX</option><option>Sony PS2</option><option>Sony PS3</option><option>Sony PSP</option><option>Xbox</option><option>Dreamcast</option><option>Sega Mega Drive</option><option>Amiga</option></select></label>
     <label>Gatunek<select id="f_genre"><option value="">— brak —</option><option>Akcja</option><option>Platformówka</option><option>Przygodowa</option><option>RPG</option><option>Strzelanka</option><option>Horror</option><option>Strategia</option><option>Symulacja</option><option>Sportowa / wyścigi</option><option>Bijatyka</option><option>Logiczna</option><option>Metroidvania</option><option>Inne</option></select></label>
   </div>
   <button class="fmore" type="button" id="f_lekb" aria-expanded="false">＋ Dodaj link do lektora (LoreSpeak / GameReader 2.0) – opcjonalnie</button>
@@ -738,7 +738,7 @@ function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
 var FDRAFT="gp_adddraft",FIDS=["f_game","f_link","f_author","f_type","f_status","f_ver","f_prog","f_prem","f_platform","f_genre","f_lore","f_gr","f_note"];
 function fSave(){try{var o={};FIDS.forEach(function(i){o[i]=$(i).value});localStorage.setItem(FDRAFT,JSON.stringify(o))}catch(e){}}
-function fLoad(){try{var o=JSON.parse(localStorage.getItem(FDRAFT)||"null");if(o)FIDS.forEach(function(i){if(o[i]!=null&&$(i))$(i).value=o[i]})}catch(e){}fUI()}
+function fLoad(){try{var o=JSON.parse(localStorage.getItem(FDRAFT)||"null");if(o)FIDS.forEach(function(i){if(o[i]!=null&&$(i))$(i).value=o[i]})}catch(e){}if(!$("f_platform").value)$("f_platform").value="PC";fUI()}
 function fPl(n){return n===1?"1 spolszczenie":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?n+" spolszczenia":n+" spolszczeń"}
 function fCnt(g){return (g.link?1:0)+(Array.isArray(g.spolszczenia)?g.spolszczenia.length:0)}
 function fFind(name){var k=slug(name||"");if(!k)return null;return (items||[]).find(function(g){return keyOf(g)===k||slug(g.game||"")===k})||null}

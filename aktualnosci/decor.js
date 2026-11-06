@@ -156,7 +156,7 @@ window.COZY={render:render,W:W,H:H,T:T,
 (function(){var H=document.documentElement,hd=document.querySelector("header");if(!hd)return;
 if(!document.getElementById("jcozy"))hd.insertAdjacentHTML("afterbegin",'<canvas id="jcozy" aria-hidden="true"></canvas><canvas id="jlvs" aria-hidden="true"></canvas>');
 var mq=matchMedia("(prefers-reduced-motion: reduce)").matches,cv=null,lc=null,lg=null,LV=[],K=3,LW=0,LH=0,tt=0,tm=null,ready=false;
-function place(){if(!ready||!H.classList.contains("jes"))return;var t=document.querySelector("header h1 a")||document.querySelector("header h1"),hr=hd.getBoundingClientRect(),tr=t.getBoundingClientRect(),pad=64;
+function place(){if(!ready||!H.classList.contains("jes"))return;var t=document.querySelector("header h1 a")||document.querySelector("header .lh a")||document.querySelector("header h1")||document.querySelector("header .lh"),hr=hd.getBoundingClientRect(),tr=t.getBoundingClientRect(),pad=64;
  lc.style.left=(tr.left-hr.left-pad)+"px";lc.style.top=(tr.top-hr.top-pad)+"px";lc.style.width=(tr.width+pad*2)+"px";lc.style.height=(tr.height+pad*2)+"px";
  LW=Math.round((tr.width+pad*2)/K);LH=Math.round((tr.height+pad*2)/K);lc.width=LW;lc.height=LH;lg.imageSmoothingEnabled=false;
  LV.forEach(function(l){l.x=Math.round((pad+(l.fx<=-1?l.fx:tr.width*l.fx))/K);l.y=Math.round((pad+l.fy)/K)});draw(mq?10:tt)}

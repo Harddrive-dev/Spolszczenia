@@ -7,7 +7,8 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 .btn.pri{background:var(--accent);border-color:var(--accent);color:var(--onacc);font-weight:700}.btn.pri:hover{filter:brightness(1.08);color:var(--onacc)}
 .btn[disabled]{opacity:.6;cursor:progress}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
-h2.pt{font-size:26px;margin:0 0 12px}
+h2.pt,h1.pt{font-size:26px;margin:0 0 12px;letter-spacing:normal}
+.hw h1.pt{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:26px;line-height:1.2}
 .srch{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--text);font:inherit;font-size:15px;margin-bottom:12px}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:4px 13px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer}

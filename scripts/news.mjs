@@ -47,7 +47,7 @@ function page({title,desc,url,body,og,ld,pageType,key}){
   '<meta property="og:site_name" content="GryPoPolsku.pl"><meta property="og:locale" content="pl_PL"><meta property="og:type" content="'+(og.type||"website")+'"><meta property="og:title" content="'+esc(og.title||title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(url)+'"><meta property="og:image" content="'+esc(og.image)+'"><meta name="twitter:card" content="'+(og.big?"summary_large_image":"summary")+'"><meta name="twitter:title" content="'+esc(og.title||title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+esc(og.image)+'">\n'+
   (ld?'<script type="application/ld+json">'+JSON.stringify(ld).replace(/</g,"\\u003c")+'</script>\n':'')+
   '<link rel="stylesheet" href="/aktualnosci/news.css?v='+V.css+'"><script src="/aktualnosci/theme.js?v='+V.theme+'"></script></head>\n<body data-page="'+pageType+'"'+(key?' data-key="'+esc(key)+'"':'')+'>\n<div class="uchip" id="uchip"></div>\n'+THEMES_HTML+'\n<div class="wrap">\n'+
-  '<header><h1><a href="/" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></h1><p class="tag">Katalog fanowskich polskich wersji językowych gier</p>\n'+
+  '<header><div class="lh"><a href="/" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></div><p class="tag">Katalog fanowskich polskich wersji językowych gier</p>\n'+
   '<div class="btns"><a class="btn pri" href="/#katalog">Katalog gier</a><a class="btn" href="/#/dodaj">Dodaj spolszczenie</a><a class="btn" href="/#/glosowanie">Głosowanie</a><a class="btn on" href="/aktualnosci/">Aktualności</a><a class="btn" href="/#/lektor">Polski Lektor</a></div></header>\n<main class="main">\n'+
   body+'\n</main>\n<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>\n</div>\n'+
   '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script><script src="/aktualnosci/news.js?v='+V.js+'"></script><script src="/aktualnosci/decor.js?v='+V.decor+'"></script>\n</body></html>\n'}
@@ -66,7 +66,7 @@ function item(r,hero){
 fs.mkdirSync(OUT,{recursive:true});
 // lista
 const cats=[...new Set(rows.map(r=>r.category))];
-const listBody='<div class="panel"><h2 class="pt">Aktualności</h2>'+
+const listBody='<div class="panel"><h1 class="pt">Aktualności</h1>'+
   (rows.length?'<input class="srch" id="q" type="search" placeholder="🔍 Szukaj w aktualnościach…" aria-label="Szukaj w aktualnościach"><div class="chips"><button type="button" class="chip on" data-c="">Wszystko</button>'+cats.map(c=>'<button type="button" class="chip" data-c="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>'+item(rows[0],true)+rows.slice(1).map(r=>item(r,false)).join("")+'<p class="empty" id="empty" style="display:none">Brak wpisów pasujących do wyszukiwania.</p>'
   :'<p class="empty">Na razie nie ma jeszcze żadnych aktualności. Zajrzyj tu wkrótce!</p><input id="q" type="hidden"><span id="empty" style="display:none"></span>')+'</div>';
 const listDesc="Aktualności ze świata polskich wersji językowych gier: premiery, nowe spolszczenia, aktualizacje i ogłoszenia GryPoPolsku.pl.";

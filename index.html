@@ -493,7 +493,7 @@ header{padding-top:56px}
   <h2>Zakresy tłumaczenia</h2>
   <p><b>Napisy</b>: przetłumaczone teksty interfejsu i dialogów. <b>Pełne</b>: napisy plus grafiki, menu i filmy. <b>Dubbing</b>: polskie głosy. <b>Lektor</b>: polski głos czytający tekst gry (aplikacje LoreSpeak i GameReader 2.0).</p>
   <h2>Statusy</h2>
-  <p><b>Gotowe</b>: kompletne tłumaczenie. <b>W trakcie</b>: tłumaczenie powstaje, obok podany jest procent ukończenia. <b>Beta</b>: wersja testowa do pobrania, prace trwają. <b>Testy</b>: spolszczenie jest testowane przed wydaniem. <b>Premiera</b>: spolszczenie ma ustaloną datę premiery.</p>
+  <p><b>Gotowe</b>: kompletne tłumaczenie. <b>W trakcie</b>: tłumaczenie powstaje, obok podany jest procent ukończenia. <b>Beta</b>: wersja testowa do pobrania, prace trwają. <b>Testy</b>: spolszczenie jest testowane przed wydaniem. <b>Premiera</b>: spolszczenie ma ustaloną datę premiery. <b>Zapowiedź</b>: autor zapowiedział spolszczenie, ale prace jeszcze nie ruszyły albo nie podano daty.</p>
   <h2>Zgłoszenia</h2>
   <p>Zgłoszenie trafia do moderatora. Wysłać je mogą tylko zalogowani użytkownicy. Moderator sprawdza zgłoszenie i dopiero wtedy dodaje wpis do listy.</p>
 </section>
@@ -573,7 +573,7 @@ function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+'</span>'}).join("")}
 function spTyp(g,t){if(t==="Oficjalna PL")return g.pl==="of";if(spExtra(g).some(function(s){return s.type===t}))return true;return g.type===t&&(g.pl!=="of"||t==="Dubbing")}
 function spHas(g,f,v){return g[f]===v||spExtra(g).some(function(s){return s[f]===v})}
-function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
+function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy","Zapowiedź"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
 function spAdd(g,d,link,day,kf){if(g.link===link||spExtra(g).some(function(s){return s.link===link}))return;var a=Array.isArray(g.spolszczenia)?g.spolszczenia:(g.spolszczenia=[]),base=kf(g)+"--"+(kf({game:d.author||""})||"autor"),id=base,n=2;
   while(a.some(function(s){return s.id===id}))id=base+"-"+(n++);
   a.push(spNorm([{id:id,author:d.author,link:link,type:d.type,status:d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0])}
@@ -591,7 +591,7 @@ function pct(n){return Math.max(0,Math.min(100,+n||0))}
 // pole „Ukończono (%)” widać tylko przy statusie „W trakcie”
 document.addEventListener("change",function(e){var t=e.target,m=t&&t.id&&/^([fae])_status$/.exec(t.id);if(!m)return;var l=$(m[1]+"_progl"),i=$(m[1]+"_prog");if(!l||!i)return;
   var on=t.value==="W trakcie";l.style.display=on?"":"none";if(on&&+i.value>=100)i.value=0;if(!on&&t.value==="Gotowe")i.value=100;if(on)i.focus()});
-function cls(s){return s==="Gotowe"?"st-done":s==="W trakcie"?"st-prog":(s==="Beta"||s==="Testy"||s==="W toku")?"st-wip":s==="Premiera"?"st-soon":"st-stop"}
+function cls(s){return s==="Gotowe"?"st-done":s==="W trakcie"?"st-prog":(s==="Beta"||s==="Testy"||s==="W toku")?"st-wip":(s==="Premiera"||s==="Zapowiedź")?"st-soon":"st-stop"}
 function progPct(g){var p=Math.round(+g.prog);return isFinite(p)&&p<100?Math.max(0,p):null}
 function plDate(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||""));return m?(+m[3])+"."+m[2]+"."+m[1]:""}
 function plDateLong(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||""));return m?(+m[3])+" "+MONTHS[+m[2]-1]+" "+m[1]:""}
@@ -609,7 +609,7 @@ function nwEvent(g){var d=String(g.dodano||""),u=String(g.upd||""),e={date:u>d?u
 function nk(g){return nwEvent(g).date}
 function nwDay(d){var t=new Date(),p=function(x){return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")},y=new Date(t.getTime()-864e5);if(d===p(t))return "dziś";if(d===p(y))return "wczoraj";var m=d.match(/^\d{4}-(\d\d)-(\d\d)$/);return m?(+m[2])+" "+["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"][+m[1]-1]:""}
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
-function spUpdKey(o,n){return !!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Beta","Testy"].indexOf(o.status)>-1&&n.status==="Gotowe")))}
+function spUpdKey(o,n){return !!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Beta","Testy","Zapowiedź"].indexOf(o.status)>-1&&n.status==="Gotowe")))}
 // Wyszukiwanie ignoruje wielkość liter, polskie znaki i interpunkcję; wszystkie słowa muszą wystąpić, w dowolnej kolejności.
 function srchNorm(t){return String(t||"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim()}
 function srchWords(t){return srchNorm(t).split(" ").filter(Boolean)}
@@ -1022,7 +1022,7 @@ var subAll=false;
 var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"};
 (function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.pp{position:relative}.pps{width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 32px 9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text);cursor:pointer;position:relative;min-height:40px}.pps::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}.ppl{display:none;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:6px;max-height:240px;overflow:auto}.ppl.open{display:block}.ppl label.pi{display:flex;flex-direction:row;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;color:var(--text);font-size:14px;cursor:pointer}.ppl label.pi:hover{background:var(--line)}.ppl label.pi input{width:auto}.ppo{display:flex;gap:6px;margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}.ppo input{flex:1}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
 var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","g"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"]];
-function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W trakcie","Beta","Testy","Premiera"];if(cur&&a.indexOf(cur)<0)a.push(cur);
+function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?["Napisy","Pełne","Dubbing"]:["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"];if(cur&&a.indexOf(cur)<0)a.push(cur);
   return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
 function editRows(x){var d=x.data||{};if(!d.game)d=Object.assign({},d,{game:x.game});
   return '<div class="sfg">'+SF.map(function(f){var v=d[f[0]]==null?"":String(d[f[0]]);
@@ -1119,7 +1119,7 @@ function addFormHtml(){
    '<div class="rpw">Platforma'+platPicker("a_platform",addMem("platform")||"PC")+'</div>'+
    '<label>Gatunek<input id="a_genre" list="gl_mod" maxlength="40" autocomplete="off" placeholder="wybierz z listy lub wpisz własny"></label>'+
    '<label>Zakres<select id="a_type">'+opt(["Napisy","Pełne","Dubbing"],addMem("type")||"Napisy")+'</select></label>'+
-   '<label>Status<select id="a_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera"],addMem("status")||"Gotowe")+'</select></label>'+
+   '<label>Status<select id="a_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"],addMem("status")||"Gotowe")+'</select></label>'+
    '<label>Data premiery (dla statusu Premiera)<input id="a_premiera" type="date"></label>'+
    '<label id="a_progl"'+(addMem("status")==="W trakcie"?'':' style="display:none"')+'>Ukończono (%)<input id="a_prog" type="number" min="0" max="100" value="'+(addMem("status")==="W trakcie"?0:100)+'"></label>'+
    '<label>Wersja<input id="a_ver" maxlength="40"></label>'+
@@ -1273,7 +1273,7 @@ document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=
 // ====== EDYCJA ISTNIEJĄCEGO WPISU (moderator / administrator) ======
 var editG=null;
 function spRow(s){var o=function(a,c){return a.map(function(x){return '<option'+(x===c?' selected':'')+'>'+x+'</option>'}).join("")};s=s||{};
-  return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'" data-dodano="'+esc(s.dodano||"")+'"><input class="sp_a" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Beta","Testy"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
+  return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'" data-dodano="'+esc(s.dodano||"")+'"><input class="sp_a" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Beta","Testy","Zapowiedź"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
 function spRead(){return [].slice.call(document.querySelectorAll("#e_sp .sprow")).map(function(r){var q=function(c){return r.querySelector(c).value.trim()};return{id:r.getAttribute("data-id"),author:q(".sp_a")||"—",link:q(".sp_l"),type:q(".sp_t"),status:q(".sp_s"),prog:+q(".sp_p")||0,ver:q(".sp_v")||"—",upd:r.getAttribute("data-upd"),dodano:r.getAttribute("data-dodano")}})}
 function openModEdit(g){
   if(!CM||!isMod()||!g)return;editG=g;curKey=null;
@@ -1285,7 +1285,7 @@ function openModEdit(g){
    '<div class="rpw">Platforma'+platPicker("e_platform",g.platform||"")+'</div>'+
    '<label>Gatunek<input id="e_genre" list="gl_mod" maxlength="40" autocomplete="off" placeholder="wybierz z listy lub wpisz własny" value="'+v("genre")+'"></label>'+
    '<label>Zakres<select id="e_type">'+opt(["Napisy","Pełne","Dubbing"],g.type||"Napisy")+'</select></label>'+
-   '<label>Status<select id="e_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera"],g.status||"Gotowe")+'</select></label>'+
+   '<label>Status<select id="e_status">'+opt(["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"],g.status||"Gotowe")+'</select></label>'+
    '<label>Data premiery (dla statusu Premiera)<input id="e_premiera" type="date" value="'+v("premiera")+'"></label>'+
    '<label id="e_progl"'+(g.status==="W trakcie"?'':' style="display:none"')+'>Ukończono (%)<input id="e_prog" type="number" min="0" max="100" value="'+v("prog")+'"></label>'+
    '<label>Wersja<input id="e_ver" maxlength="40" value="'+v("ver")+'"></label>'+

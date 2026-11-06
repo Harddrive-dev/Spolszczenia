@@ -8690,18 +8690,6 @@
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
     "upd": "2026-11-06",
     "genre": "MMORPG",
-    "spolszczenia": [
-      {
-        "id": "world-of-warcraft-forever--wowpopolsku",
-        "author": "WoWPoPolsku",
-        "link": "https://wowpopolsku.pl/wiesci/forever-0-1-1/",
-        "type": "Napisy",
-        "status": "Gotowe",
-        "prog": 100,
-        "ver": "—",
-        "upd": "2026-10-31"
-      }
-    ],
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft."
   },
   {
@@ -14308,7 +14296,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 50,
+    "prog": 53,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",

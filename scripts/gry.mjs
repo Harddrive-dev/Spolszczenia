@@ -44,7 +44,7 @@ const lgBtn=(u,name,f)=>{const t="🎙 Odwiedź lektora ("+name+") ↗";return '
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return ""}};
 // seria gry: część tytułu przed dwukropkiem/myślnikiem albo bez numeru na końcu („The Elder Scrolls IV: Oblivion” -> „the elder scrolls”)
 const series=t=>{const w=String(t).toLowerCase().replace(/\s*[\[(][^\])]*[\])]/g,"").split(/\s*[:–—]\s+|\s+-\s+/)[0].replace(/[^a-z0-9ąćęłńóśźż' ]+/g," ").trim().split(/\s+/);while(w.length>1&&/^(?:[ivx]+|\d+)$/.test(w[w.length-1]))w.pop();const x=w.slice(0,3).join(" ");return w.length>=2||x.length>=6?x:""};
-const RELG={"MMORPG":["RPG"],"RPG":["MMORPG"],"Horror":["Survival Horror"],"Survival Horror":["Horror"],"FPS":["Strzelanka"],"Strzelanka":["FPS"],"Akcja":["Akcja / platformówka"],"Akcja / platformówka":["Akcja","Metroidvania"],"Metroidvania":["Akcja / platformówka"]};
+const RELG={"Akcja":["Platformówka","Metroidvania","Bijatyka"],"Platformówka":["Metroidvania","Akcja"],"Metroidvania":["Platformówka","Akcja"],"RPG":["Akcja"],"Horror":["Przygodowa"],"Przygodowa":["Logiczna","Horror"],"Logiczna":["Przygodowa"],"Strzelanka":["Akcja"],"Bijatyka":["Akcja"],"Strategia":["Symulacja"],"Symulacja":["Strategia"]};
 const hash=t=>{let h=0;for(const c of String(t))h=(h*31+c.charCodeAt(0))>>>0;return h%1000000};
 const BYGENRE={};for(const g of all){if(!g.game||!g.genre)continue;const sl=slug(g.game);if(!sl)continue;(BYGENRE[g.genre]=BYGENRE[g.genre]||[]).push({s:sl,g})}
 const ALLG=[];for(const g of all){const sl=g.game&&slug(g.game);if(sl)ALLG.push({s:sl,g})}
@@ -78,7 +78,7 @@ for(const g of games){
   const opisSec=g.opis?'<div class="panel opis"><h2 class="ch">O grze</h2>'+String(g.opis).split(/\n\s*\n/).map(p=>'<p>'+esc(p.trim())+'</p>').join("")+'</div>':"";
   // podobne gry: ta sama seria, ten sam autor, ten sam lub pokrewny gatunek; dopiero potem losowe z okładką
   const ser=series(g.game),relg=RELG[g.genre]||[];
-  const score=o=>(ser&&series(o.g.game)===ser?100:0)+(autor1&&o.g.author===autor1?60:0)+(g.genre&&o.g.genre===g.genre?40:relg.includes(o.g.genre)?20:0);
+  const score=o=>(ser&&series(o.g.game)===ser?100:0)+(g.genre&&o.g.genre===g.genre?50:relg.includes(o.g.genre)?25:0)+(autor1&&o.g.author===autor1?30:0);
   let sim=ALLG.filter(o=>o.s!==s).map(o=>({o,sc:score(o),h:hash(key+o.s)})).filter(x=>x.sc>0).sort((x,y)=>y.sc-x.sc||((y.o.g.img?1:0)-(x.o.g.img?1:0))||x.h-y.h).slice(0,6).map(x=>x.o);
   if(sim.length<6){const have=new Set(sim.map(o=>o.s));have.add(s);const rest=ALLG.filter(o=>!have.has(o.s)&&o.g.img).map(o=>({o,h:hash(key+o.s)+(((!!o.g.lore||!!o.g.gamereader)===hasLk)?0:1e9)+((o.g.pl==="of")===ofi?0:5e8)})).sort((x,y)=>x.h-y.h).slice(0,6-sim.length).map(x=>x.o);sim=sim.concat(rest)}
   // inne spolszczenia tego samego autora

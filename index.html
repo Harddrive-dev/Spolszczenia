@@ -427,7 +427,7 @@ header{padding-top:56px}
   <div class="grid">
     <label>Gra *<input id="f_game" maxlength="120"></label>
     <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
-    <label>Gatunek<select id="f_genre"><option value="">— brak —</option><option>RPG</option><option>Przygodowa</option><option>Horror</option><option>Akcja / platformówka</option><option>Strzelanka</option><option>Strategia</option><option>Symulacja</option><option>Sportowa / wyścigi</option><option>Bijatyka</option><option>Inne</option></select></label>
+    <label>Gatunek<select id="f_genre"><option value="">— brak —</option><option>Akcja</option><option>Platformówka</option><option>Przygodowa</option><option>RPG</option><option>Strzelanka</option><option>Horror</option><option>Strategia</option><option>Symulacja</option><option>Sportowa / wyścigi</option><option>Bijatyka</option><option>Logiczna</option><option>Metroidvania</option><option>Inne</option></select></label>
     <label>Zakres<select id="f_type"><option>Napisy</option><option>Pełne</option><option>Dubbing</option></select></label>
     <label>Status<select id="f_status"><option>Gotowe</option><option>W trakcie</option><option>Beta</option></select></label>
     <label id="f_progl" style="display:none">Ukończono (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
@@ -1106,7 +1106,7 @@ document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=
 function genreList(){var a=GENRES.slice(),low=a.map(function(x){return x.toLowerCase()});(items||[]).forEach(function(g){var x=String(g.genre||"").trim();if(x&&low.indexOf(x.toLowerCase())<0){a.push(x);low.push(x.toLowerCase())}});return a}
 function genreNorm(v){v=String(v||"").replace(/\s+/g," ").trim();if(!v)return "";var l=genreList(),k=l.filter(function(x){return x.toLowerCase()===v.toLowerCase()})[0];return k||(v.charAt(0).toUpperCase()+v.slice(1))}
 function fillGenreDl(){var d=$("gl_mod");if(d)d.innerHTML=genreList().map(function(x){return '<option value="'+esc(x)+'"></option>'}).join("")}
-var GENRES=["RPG","Przygodowa","Horror","Akcja / platformówka","Strzelanka","Strategia","Symulacja","Sportowa / wyścigi","Bijatyka","Inne"];
+var GENRES=["Akcja","Platformówka","Przygodowa","RPG","Strzelanka","Horror","Strategia","Symulacja","Sportowa / wyścigi","Bijatyka","Logiczna","Metroidvania","Inne"];
 function addMem(k,v){try{if(v===undefined)return localStorage.getItem("add."+k)||"";localStorage.setItem("add."+k,v)}catch(e){return ""}}
 function openAdd(){if(!CM||!isMod())return;curKey=null;openAddView()}
 function addFormHtml(){

@@ -49,6 +49,9 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(v)g[f]=v}
   if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
+// dawne nazwy gatunków (np. z wcześniejszych edycji w panelu, które automat nanosi przy każdym przebiegu) -> obecne
+const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
+for(const g of list)if(GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre];
 const after=JSON.stringify(list,null,2);
 if(after===before){console.log("Brak zmian");process.exit(0)}
 fs.writeFileSync("spolszczenia.json",after+"\n");console.log("Zaktualizowano spolszczenia.json, wpisów:",list.length);

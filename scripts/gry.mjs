@@ -61,10 +61,10 @@ for(const g of games){
   const spAut=s=>s.author&&s.author!=="—"?s.author:"nieznany autor",spAll=[...new Set(spList.map(spAut))].join(", ");
   const spSec=multi?'<div class="spl"><h2>Dostępne spolszczenia ('+spList.length+')</h2>'+spList.map(s=>'<div class="spr"><div class="sx"><b>'+esc(spAut(s))+'</b><small>'+esc([s.type||"Napisy",spTxt(s),s.ver&&s.ver!=="—"?"wersja "+s.ver:""].filter(Boolean).join(" · "))+'</small></div><a href="'+esc(safe(s.link))+'" target="_blank" rel="noopener">Pobierz ↗</a></div>').join("")+'</div>':"";
   const pr=Math.round(+g.prog),wip=g.status==="W trakcie"&&isFinite(pr)&&pr<100,stTxt=wip?"W trakcie ("+Math.max(0,pr)+"% ukończone)":(g.status||"—");
-  const plat1=plat.split(",")[0].trim(),autor1=g.author&&g.author!=="—"?g.author:"";
+  const plat1=plat.split(",")[0].trim(),naPl=String(g.game).toLowerCase().includes(plat1.toLowerCase())?"":" na "+plat1,autor1=g.author&&g.author!=="—"?g.author:"";
   const title=(hasSp?g.game+" – "+(g.type==="Dubbing"?"dubbing PL ("+plat1+")":"spolszczenie ("+typ+", "+plat1+")"):dub?g.game+" – dubbing PL ("+plat1+")":g.game+" – "+typ)+" | GryPoPolsku.pl";
   const lkNames=[lore?"LoreSpeak":"",gr?"GameReader 2.0":""].filter(Boolean).join(" i ");
-  let desc=(multi?(spList.length+" spolszczenia do gry "+g.game+" ("+plat+"). Autorzy: "+spAll+". Linki do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze."):hasSp?("Fanowskie "+typ+" do gry "+g.game+" ("+plat+"). Autor: "+(g.author&&g.author!=="—"?g.author:"nieznany")+". Status: "+stTxt.toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze."):(g.game+(ofi?" ma oficjalną polską wersję językową":" – informacje o polskiej wersji")+(hasLk?". Polski lektor w aplikacji "+lkNames+".":".")+(dub?" Fanowski dubbing"+(dubA?": "+dubA:"")+".":"")+" Komentarze i linki.")).slice(0,300);
+  let desc=(multi?(spList.length+" spolszczenia do gry "+g.game+naPl+". Autorzy: "+spAll+". Linki do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze."):hasSp?("Fanowskie "+typ+" do gry "+g.game+naPl+". Autor: "+(g.author&&g.author!=="—"?g.author:"nieznany")+". Status: "+stTxt.toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze."):(g.game+(ofi?" ma oficjalną polską wersję językową":" – informacje o polskiej wersji")+(hasLk?". Polski lektor w aplikacji "+lkNames+".":".")+(dub?" Fanowski dubbing"+(dubA?": "+dubA:"")+".":"")+" Komentarze i linki.")).slice(0,300);
   const img=g.img&&/^https:\/\//.test(g.img)?g.img:"";
   const rows=[["Platforma",plat]];
   if(hasSp&&!multi)rows.push(["Zakres",g.type||"—"],["Status",stTxt]);if(g.ver&&g.ver!=="—")rows.push(["Wersja",g.ver]);rows.push(["Autor",g.author||"—"]);
@@ -73,7 +73,7 @@ for(const g of games){
   if(dub)rows.push(["Dubbing",(dubA||"fanowski")+(dubA?" (fanowski"+(dubS?", "+dubS:"")+")":(dubS?" ("+dubS+")":""))]);
   if(g.genre)rows.splice(1,0,["Gatunek",g.genre]);
   if(g.upd)rows.push(["Ostatnia aktualizacja",dateLong(g.upd)]);
-  if(hasSp&&!multi)desc=((g.type==="Dubbing"?"Dubbing PL do gry ":"Spolszczenie ")+g.game+" ("+plat1+")"+(autor1?" od "+autor1:"")+": "+typ+", status: "+stTxt.toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze.").slice(0,300);
+  if(hasSp&&!multi)desc=((g.type==="Dubbing"?"Dubbing PL do gry ":"Spolszczenie ")+g.game+naPl+(autor1?" od "+autor1:"")+": "+typ+", status: "+stTxt.toLowerCase()+(g.ver&&g.ver!=="—"?", wersja "+g.ver:"")+". Link do pobrania"+(hasLk?", lektor ("+lkNames+")":"")+" i komentarze.").slice(0,300);
   else if(g.opis){const o=String(g.opis).replace(/\s+/g," ").trim();const tail=hasSp?(g.type==="Dubbing"?" Dubbing do pobrania.":" Spolszczenie do pobrania."):(ofi?" Oficjalna polska wersja"+(hasLk?", lektor "+lkNames:"")+".":(hasLk?" Polski lektor: "+lkNames+".":""));const mx=Math.max(60,155-tail.length);desc=(o.length>mx?o.slice(0,mx-1).replace(/\s+\S*$/,"")+"…":o)+tail}
   const opisSec=g.opis?'<div class="panel opis"><h2 class="ch">O grze</h2>'+String(g.opis).split(/\n\s*\n/).map(p=>'<p>'+esc(p.trim())+'</p>').join("")+'</div>':"";
   // podobne gry: ta sama seria, ten sam autor, ten sam lub pokrewny gatunek; dopiero potem losowe z okładką

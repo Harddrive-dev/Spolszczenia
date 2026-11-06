@@ -8979,14 +8979,15 @@
     "type": "Napisy",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "pl": "of",
+    "author": "aiWastelander",
     "lore": "https://lorespeak.pl/games/borderlands-3",
     "genre": "FPS",
     "dodano": "2026-11-02",
     "img": "https://cdn2.steamgriddb.com/thumb/c039e6496e67fdb3d46e6d5877e01ed2.jpg",
     "upd": "2026-11-02",
-    "opis": "Kooperacyjny looter shooter, w którym Łowcy Krypty ścigają bliźniaków Calypso. Akcja wykracza poza Pandorę na inne planety, a głównym łupem są miliardy kombinacji broni."
+    "opis": "Kooperacyjny looter shooter, w którym Łowcy Krypty ścigają bliźniaków Calypso. Akcja wykracza poza Pandorę na inne planety, a głównym łupem są miliardy kombinacji broni.",
+    "status": "Gotowe",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4190"
   },
   {
     "game": "Grand Theft Auto",
@@ -14307,7 +14308,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 46,
+    "prog": 50,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",

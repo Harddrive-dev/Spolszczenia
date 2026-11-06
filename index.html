@@ -84,6 +84,29 @@ a{color:var(--accent)}
 .grid input,.grid select,.grid textarea{width:100%}
 textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);resize:vertical}
 .wide{grid-column:1/-1}
+#form label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px;position:relative;min-width:0}
+#form input,#form select,#form textarea{width:100%;min-width:0;box-sizing:border-box}
+#form input::placeholder,#form textarea::placeholder{color:var(--muted);opacity:.7}
+#form .fg2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#form .fg4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:640px){#form .fg2{grid-template-columns:1fr}#form .fg4{grid-template-columns:1fr 1fr}}
+#form .fsec{font-size:13px;font-weight:700;color:var(--text);margin:16px 0 8px;text-transform:uppercase;letter-spacing:.04em;opacity:.75}
+#form .fnote{margin-top:12px}
+.lgbox{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);border-radius:12px;padding:12px 14px;margin:0 0 6px}
+.lgbox span{flex:1 1 220px;font-size:14px;color:var(--text)}.lgbox b{display:block;font-size:15px}
+.lgbox button{background:var(--accent);color:#1f1513;border:0;border-radius:999px;font:inherit;font-weight:700;padding:9px 18px;cursor:pointer}
+.fsugg{position:absolute;top:62px;left:0;right:0;z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.4);overflow:hidden}
+.fsugg button{display:flex;width:100%;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;font:inherit;font-size:14px;color:var(--text);background:none;border:0;text-align:left;cursor:pointer}
+.fsugg button+button{border-top:1px solid var(--line)}
+.fsugg button.on,.fsugg button:hover{background:color-mix(in srgb,var(--accent) 15%,transparent)}
+.fsugg small{color:var(--muted);font-size:12px;white-space:nowrap}
+@media(max-width:640px){.fsugg button{flex-direction:column;align-items:flex-start;gap:2px}.fsugg small{white-space:normal}}
+.fhint{font-size:13px;line-height:1.45;border-radius:10px;padding:9px 12px;margin-top:6px;color:var(--text)}
+.fhint.i{background:#6fa8dc22;border:1px solid #6fa8dc66}.fhint.w{background:#e8905f22;border:1px solid #e8905f88}
+.fhint a{color:var(--accent);font-weight:700}
+.fmore{background:none;border:1px dashed var(--line);color:var(--accent);border-radius:10px;padding:10px 14px;font:inherit;font-weight:700;font-size:14px;width:100%;text-align:left;margin-top:14px;cursor:pointer}
+.fmore:hover{border-color:var(--accent)}
+#form .fsend{background:var(--accent);color:#1f1513;border-color:var(--accent);padding:0 26px;min-height:46px;font-size:15px}
 .msg{font-size:14px;margin:10px 0 0;color:var(--muted)}
 .msg.err{color:var(--accent)}
 .pend{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
@@ -424,24 +447,36 @@ header{padding-top:56px}
 <div class="panel open" id="modadd" style="display:none"></div>
 <div class="panel open" id="form">
   <h2 id="formTitle">Dodaj spolszczenie</h2>
-  <div class="grid">
-    <label>Gra *<input id="f_game" maxlength="120"></label>
+  <div class="lgbox" id="f_login" style="display:none"><span><b>Aby wysłać zgłoszenie, zaloguj się</b>Formularz możesz wypełnić już teraz, nic się nie skasuje.</span><button type="button" id="f_loginb">Zaloguj się</button></div>
+  <div class="fsec">Najważniejsze</div>
+  <div class="fg2">
+    <label>Gra *<input id="f_game" maxlength="120" placeholder="Zacznij pisać nazwę gry…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="f_sugg"><div class="fsugg" id="f_sugg" role="listbox" style="display:none"></div><div class="fhint i" id="f_ghint" style="display:none"></div></label>
+    <label><span><span id="f_linkt">Link do spolszczenia lub artykułu</span> *</span><input id="f_link" type="url" maxlength="400" placeholder="https://…"><div class="fhint w" id="f_lhint" style="display:none"></div></label>
+  </div>
+  <div class="fsec">Spolszczenie</div>
+  <div class="fg4">
+    <label>Autor / grupa<input id="f_author" maxlength="80" placeholder="nick lub nazwa grupy"></label>
+    <label>Zakres<select id="f_type"><option>Napisy</option><option>Pełne</option><option>Dubbing</option></select></label>
+    <label>Status<select id="f_status"><option>Gotowe</option><option>W trakcie</option><option>Beta</option><option>Testy</option><option>Premiera</option><option>Zapowiedź</option></select></label>
+    <label id="f_verl">Wersja<input id="f_ver" maxlength="30" placeholder="np. 1.2"></label>
+    <label id="f_progl" style="display:none">Ukończono (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
+    <label id="f_preml" style="display:none">Data premiery<input id="f_prem" type="date"></label>
+  </div>
+  <div class="fsec">O grze</div>
+  <div class="fg2">
     <label>Platforma<input id="f_platform" list="plist" value="PC" maxlength="40"></label>
     <label>Gatunek<select id="f_genre"><option value="">— brak —</option><option>Akcja</option><option>Platformówka</option><option>Przygodowa</option><option>RPG</option><option>Strzelanka</option><option>Horror</option><option>Strategia</option><option>Symulacja</option><option>Sportowa / wyścigi</option><option>Bijatyka</option><option>Logiczna</option><option>Metroidvania</option><option>Inne</option></select></label>
-    <label>Zakres<select id="f_type"><option>Napisy</option><option>Pełne</option><option>Dubbing</option></select></label>
-    <label>Status<select id="f_status"><option>Gotowe</option><option>W trakcie</option><option>Beta</option></select></label>
-    <label id="f_progl" style="display:none">Ukończono (%)<input id="f_prog" type="number" min="0" max="100" value="100"></label>
-    <label>Wersja<input id="f_ver" maxlength="30"></label>
-    <label>Autor / grupa<input id="f_author" maxlength="80"></label>
-    <label class="wide">Link do spolszczenia lub artykułu * (https://…)<input id="f_link" type="url" maxlength="400"></label>
-    <label class="wide">🎙 Link do lektora w LoreSpeak (opcjonalnie)<input id="f_lore" type="url" maxlength="400"></label>
-    <label class="wide">🎙 Link do lektora w GameReader 2.0 (opcjonalnie)<input id="f_gr" type="url" maxlength="400"></label>
-    <label class="wide">Uwagi dla weryfikującego (opcjonalnie)<textarea id="f_note" rows="2" maxlength="400"></textarea></label>
   </div>
+  <button class="fmore" type="button" id="f_lekb" aria-expanded="false">＋ Dodaj link do lektora (LoreSpeak / GameReader 2.0) – opcjonalnie</button>
+  <div class="fg2" id="f_lekw" style="display:none;margin-top:10px">
+    <label>🎙 Link do lektora w LoreSpeak<input id="f_lore" type="url" maxlength="400" placeholder="https://…"></label>
+    <label>🎙 Link do lektora w GameReader 2.0<input id="f_gr" type="url" maxlength="400" placeholder="https://…"></label>
+  </div>
+  <label class="fnote">Uwagi dla moderatora (opcjonalnie)<textarea id="f_note" rows="2" maxlength="400" placeholder="np. skąd wiesz o spolszczeniu, co zawiera"></textarea></label>
   <datalist id="plist"><option>PC</option><option>Nintendo NES</option><option>Nintendo SNES</option><option>Nintendo 64</option><option>Nintendo NDS</option><option>Nintendo 3DS</option><option>Nintendo Switch</option><option>Nintendo Wii</option><option>Game Boy Advance</option><option>Game Boy / GBC</option><option>Sony PSX</option><option>Sony PS2</option><option>Sony PS3</option><option>Sony PSP</option><option>Xbox</option><option>Dreamcast</option><option>Sega Mega Drive</option><option>Amiga</option></datalist>
-  <p class="btns" style="justify-content:flex-start;margin-top:12px"><button class="btn on" id="send">Wyślij</button><button class="btn" id="cancel">Wróć do katalogu</button></p>
+  <p class="btns" style="justify-content:flex-start;margin-top:14px"><button class="btn on fsend" id="send">Wyślij zgłoszenie</button></p>
   <p class="msg" id="fmsg"></p>
-  <p class="msg" style="margin-top:6px">Pola oznaczone * są obowiązkowe. Pozostałe nie muszą być wypełnione.</p>
+  <p class="msg" style="margin-top:6px">Pola oznaczone * są obowiązkowe. Zgłoszenie sprawdzi moderator, zanim pojawi się w katalogu.</p>
 </div>
 </div>
 <div id="homeview">
@@ -573,7 +608,7 @@ function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+'</span>'}).join("")}
 function spTyp(g,t){if(t==="Oficjalna PL")return g.pl==="of";if(spExtra(g).some(function(s){return s.type===t}))return true;return g.type===t&&(g.pl!=="of"||t==="Dubbing")}
 function spHas(g,f,v){return g[f]===v||spExtra(g).some(function(s){return s[f]===v})}
-function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy","Zapowiedź"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
+function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){return{id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:["Napisy","Pełne","Dubbing"].indexOf(s.type)>-1?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"].indexOf(s.status)>-1?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)}}).filter(function(s){if(!/^https?:\/\//i.test(s.link)||seen[s.link])return false;seen[s.link]=1;return true})}
 function spAdd(g,d,link,day,kf){if(g.link===link||spExtra(g).some(function(s){return s.link===link}))return;var a=Array.isArray(g.spolszczenia)?g.spolszczenia:(g.spolszczenia=[]),base=kf(g)+"--"+(kf({game:d.author||""})||"autor"),id=base,n=2;
   while(a.some(function(s){return s.id===id}))id=base+"-"+(n++);
   a.push(spNorm([{id:id,author:d.author,link:link,type:d.type,status:d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0])}
@@ -701,7 +736,36 @@ var GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","S
 function refresh(){(items||[]).forEach(function(g){if(g&&GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre]});if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
-$("cancel").onclick=function(){location.hash="#/"};
+var FDRAFT="gp_adddraft",FIDS=["f_game","f_link","f_author","f_type","f_status","f_ver","f_prog","f_prem","f_platform","f_genre","f_lore","f_gr","f_note"];
+function fSave(){try{var o={};FIDS.forEach(function(i){o[i]=$(i).value});localStorage.setItem(FDRAFT,JSON.stringify(o))}catch(e){}}
+function fLoad(){try{var o=JSON.parse(localStorage.getItem(FDRAFT)||"null");if(o)FIDS.forEach(function(i){if(o[i]!=null&&$(i))$(i).value=o[i]})}catch(e){}fUI()}
+function fPl(n){return n===1?"1 spolszczenie":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?n+" spolszczenia":n+" spolszczeń"}
+function fCnt(g){return (g.link?1:0)+(Array.isArray(g.spolszczenia)?g.spolszczenia.length:0)}
+function fFind(name){var k=slug(name||"");if(!k)return null;return (items||[]).find(function(g){return keyOf(g)===k||slug(g.game||"")===k})||null}
+function fLinkOwner(u){u=String(u||"").trim().replace(/\/+$/,"");if(!/^https?:\/\//i.test(u))return null;var n=function(x){return String(x||"").trim().replace(/\/+$/,"")};
+  for(var i=0;i<(items||[]).length;i++){var g=items[i];if(n(g.link)===u)return {g:g,a:g.author};if(n(g.dub)===u)return {g:g,a:g.dubAuthor||"dubbing"};var sp=g.spolszczenia||[];for(var j=0;j<sp.length;j++)if(n(sp[j].link)===u)return {g:g,a:sp[j].author}}return null}
+function fUI(){var st=$("f_status").value;$("f_progl").style.display=st==="W trakcie"?"":"none";$("f_preml").style.display=st==="Premiera"?"":"none";$("f_verl").style.display=(st==="W trakcie"||st==="Premiera")?"none":"";
+  $("f_linkt").textContent=$("f_type").value==="Dubbing"?"Link do dubbingu":"Link do spolszczenia lub artykułu";
+  if($("f_lore").value||$("f_gr").value){$("f_lekw").style.display="";$("f_lekb").style.display="none"}
+  var g=fFind($("f_game").value),h=$("f_ghint");if(g){var n=fCnt(g);h.innerHTML="Ta gra jest już w katalogu"+(n?" (<b>"+fPl(n)+"</b>)":"")+". Twoje zgłoszenie zostanie dodane jako kolejne spolszczenie. <a href=\"/gra/"+esc(keyOf(g))+"/\" target=\"_blank\" rel=\"noopener\">Zobacz stronę gry ↗</a>";h.style.display=""}else h.style.display="none";
+  var o=fLinkOwner($("f_link").value),lh=$("f_lhint");if(o){lh.innerHTML="⚠ Ten link jest już w katalogu ("+esc(o.g.game)+(o.a&&o.a!=="—"?", "+esc(o.a):"")+"). Jeśli to nowa wersja, nie musisz go zgłaszać, wystarczy „Zaproponuj zmianę” przy grze.";lh.style.display=""}else lh.style.display="none"}
+var fSugIdx=-1;
+function fSugg(){var box=$("f_sugg"),q=srchWords($("f_game").value),inp=$("f_game");if(!q.length||document.activeElement!==inp){box.style.display="none";inp.setAttribute("aria-expanded","false");return}
+  var r=(items||[]).filter(function(g){var t=srchNorm(g.game);return q.every(function(w){return t.indexOf(w)>-1})});
+  r.sort(function(a,b){var ta=srchNorm(a.game),tb=srchNorm(b.game),qa=q.join(" ");return (ta.indexOf(qa)===0?0:1)-(tb.indexOf(qa)===0?0:1)||ta.length-tb.length});r=r.slice(0,6);
+  if(!r.length||(r.length===1&&slug(r[0].game)===slug(inp.value))){box.style.display="none";inp.setAttribute("aria-expanded","false");return}
+  fSugIdx=-1;box.innerHTML=r.map(function(g,i){var n=fCnt(g);return '<button type="button" role="option" data-i="'+i+'" data-g="'+esc(g.game)+'">'+esc(g.game)+'<small>w katalogu'+(n?' · '+fPl(n):'')+(g.platform&&g.platform!=="PC"?' · '+esc(g.platform):'')+'</small></button>'}).join("");box.style.display="";inp.setAttribute("aria-expanded","true")}
+function fPick(b){if(!b)return;$("f_game").value=b.getAttribute("data-g");$("f_sugg").style.display="none";$("f_game").setAttribute("aria-expanded","false");fUI();fSave();$("f_link").focus()}
+$("f_sugg").addEventListener("mousedown",function(e){e.preventDefault()});
+$("f_sugg").addEventListener("click",function(e){fPick(e.target.closest("button"))});
+$("f_game").addEventListener("input",fSugg);$("f_game").addEventListener("focus",fSugg);
+$("f_game").addEventListener("blur",function(){setTimeout(function(){$("f_sugg").style.display="none";$("f_game").setAttribute("aria-expanded","false")},120)});
+$("f_game").addEventListener("keydown",function(e){var bs=$("f_sugg").querySelectorAll("button");if($("f_sugg").style.display==="none"||!bs.length)return;
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();fSugIdx=(fSugIdx+(e.key==="ArrowDown"?1:-1)+bs.length)%bs.length;bs.forEach(function(b,i){b.classList.toggle("on",i===fSugIdx)})}
+  else if(e.key==="Enter"&&fSugIdx>-1){e.preventDefault();fPick(bs[fSugIdx])}else if(e.key==="Escape"){$("f_sugg").style.display="none"}});
+FIDS.forEach(function(i){var el=$(i);if(!el)return;el.addEventListener("input",function(){fUI();fSave()});el.addEventListener("change",function(){fUI();fSave()})});
+$("f_lekb").onclick=function(){$("f_lekw").style.display="";this.style.display="none";this.setAttribute("aria-expanded","true");$("f_lore").focus()};
+$("f_loginb").onclick=function(){fSave();curKey=null;openModal(loginHtml())};
 async function submitReport(kind,game,data,note){
   if(!me()){curKey=null;openModal(loginHtml());return {err:"Aby wysłać zgłoszenie, zaloguj się."}}
   var row={kind:kind,game:game,data:data,note:note||null,user_name:nick()||null};
@@ -715,10 +779,13 @@ $("send").onclick=async function(){
   if((v("f_lore")&&!/^https?:\/\//i.test(v("f_lore")))||(v("f_gr")&&!/^https?:\/\//i.test(v("f_gr"))))return say("Linki do lektora muszą zaczynać się od https://",1);
   if(!CM)return say("Wysyłanie zgłoszeń jest chwilowo niedostępne.",1);
   if(!me()){say("Aby wysłać zgłoszenie, zaloguj się (ikona w lewym górnym rogu).",1);curKey=null;openModal(loginHtml());return}
-  var data={game:v("f_game"),platform:v("f_platform")||"PC",genre:v("f_genre"),type:v("f_type"),status:v("f_status"),prog:+v("f_prog")||0,ver:v("f_ver"),author:v("f_author"),upd:new Date().toISOString().slice(0,10),link:v("f_link")};
+  var st=v("f_status");if(st==="Premiera"&&v("f_prem")&&!/^\d{4}-\d{2}-\d{2}$/.test(v("f_prem")))return say("Podaj poprawną datę premiery.",1);
+  var data={game:v("f_game"),platform:v("f_platform")||"PC",genre:v("f_genre"),type:v("f_type"),status:st,prog:st==="W trakcie"?Math.max(0,Math.min(100,+v("f_prog")||0)):100,ver:(st==="W trakcie"||st==="Premiera")?"":v("f_ver"),author:v("f_author"),upd:new Date().toISOString().slice(0,10),link:v("f_link")};
+  if(st==="Premiera"&&v("f_prem"))data.premiera=v("f_prem");
   if(v("f_lore"))data.lore=v("f_lore");if(v("f_gr"))data.gamereader=v("f_gr");
-  $("send").disabled=true;var r=await submitReport("new",data.game,data,v("f_note"));$("send").disabled=false;
-  if(r.ok){say("Dziękujemy! Zgłoszenie trafiło do moderacji.");["f_game","f_ver","f_author","f_link","f_lore","f_gr","f_note"].forEach(function(i){$(i).value=""})}else say(r.err,1)
+  var note=v("f_note");if(data.premiera&&fFind(data.game))note=(note?note+"\n":"")+"Data premiery: "+data.premiera;
+  $("send").disabled=true;var r=await submitReport("new",data.game,data,note);$("send").disabled=false;
+  if(r.ok){say("Dziękujemy! Zgłoszenie trafiło do moderacji.");["f_game","f_ver","f_author","f_link","f_lore","f_gr","f_note","f_prem"].forEach(function(i){$(i).value=""});$("f_status").value="Gotowe";$("f_prog").value="100";try{localStorage.removeItem(FDRAFT)}catch(e){}fUI()}else say(r.err,1)
 };
 ["q","fp","fg","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",function(){page=1;render()})});
 $("ps").value=String(PS);
@@ -861,7 +928,7 @@ function afterConfirm(){
 // Enter zatwierdza formularze w całej stronie (w polu tekstowym: Ctrl+Enter)
 document.addEventListener("keydown",function(e){
   if(e.key!=="Enter"||e.shiftKey||e.altKey||e.isComposing)return;var t=e.target;
-  if(!t||!t.tagName||!t.closest)return;var tag=t.tagName;
+  if(e.defaultPrevented||!t||!t.tagName||!t.closest)return;var tag=t.tagName;
   if(tag==="TEXTAREA"){if(!(e.ctrlKey||e.metaKey))return}
   else if(tag==="INPUT"){var ty=(t.type||"").toLowerCase();if(ty==="checkbox"||ty==="radio"||ty==="button"||ty==="submit"||ty==="file")return}
   else return;
@@ -1273,7 +1340,7 @@ document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=
 // ====== EDYCJA ISTNIEJĄCEGO WPISU (moderator / administrator) ======
 var editG=null;
 function spRow(s){var o=function(a,c){return a.map(function(x){return '<option'+(x===c?' selected':'')+'>'+x+'</option>'}).join("")};s=s||{};
-  return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'" data-dodano="'+esc(s.dodano||"")+'"><input class="sp_a" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Beta","Testy","Zapowiedź"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
+  return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'" data-dodano="'+esc(s.dodano||"")+'"><input class="sp_a" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
 function spRead(){return [].slice.call(document.querySelectorAll("#e_sp .sprow")).map(function(r){var q=function(c){return r.querySelector(c).value.trim()};return{id:r.getAttribute("data-id"),author:q(".sp_a")||"—",link:q(".sp_l"),type:q(".sp_t"),status:q(".sp_s"),prog:+q(".sp_p")||0,ver:q(".sp_v")||"—",upd:r.getAttribute("data-upd"),dodano:r.getAttribute("data-dodano")}})}
 function openModEdit(g){
   if(!CM||!isMod()||!g)return;editG=g;curKey=null;
@@ -1436,6 +1503,7 @@ function renderAdd(){
   if(!asMod&&modAddOn){$("modadd").innerHTML="";modAddOn=false}
   $("modadd").style.display=asMod?"":"none";
   $("form").style.display=(asMod||wait)?"none":"";
+  if(!asMod&&!wait){$("f_login").style.display=me()?"none":"";if(!$("f_game").value)fLoad();else fUI()}
   if(wait){$("modadd").style.display="";$("modadd").innerHTML='<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';modAddOn=false}
   setTimeout(function(){var g=$(asMod?"a_game":"f_game");if(g&&!wait&&!/Mobi|Android/i.test(navigator.userAgent))g.focus()},50)}
 function showAdd(){

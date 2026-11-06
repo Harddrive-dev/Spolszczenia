@@ -8697,12 +8697,12 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.1.6",
+    "ver": "0.1.7",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
-    "upd": "2026-11-05",
+    "upd": "2026-11-06",
     "genre": "MMORPG",
     "spolszczenia": [
       {
@@ -14890,5 +14890,19 @@
     "img": "https://cdn2.steamgriddb.com/thumb/d43dd8fd30f32a8b07b4d981b89860de.jpg",
     "upd": "2026-11-05",
     "opis": "Kratos, spartański wojownik w służbie bogów Olimpu, chce uwolnić się od koszmarów przeszłości. By to zrobić, rusza pokonać boga wojny Aresa w brutalnej grze akcji inspirowanej mitologią grecką."
+  },
+  {
+    "game": "The Wolf Among Us Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Beta",
+    "prog": 100,
+    "ver": "0.9",
+    "author": "GrzybDev",
+    "link": "https://grajpopolsku.pl/download/the-wolf-among-us-remastered/",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-06",
+    "img": "https://cdn2.steamgriddb.com/thumb/5fb272a4907bbea419e44c2d624fdb72.jpg",
+    "upd": "2026-11-06"
   }
 ]

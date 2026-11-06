@@ -696,7 +696,9 @@ function renderHome(){
 }
 // Przycisk „Katalog gier” z podstron: /#katalog przewija do wyszukiwarki po wczytaniu katalogu.
 function goKatalog(){if(location.hash!=="#katalog")return;history.replaceState(null,"",location.pathname+location.search);FLT_POS=null;var stop=false,q=function(){stop=true;["wheel","touchstart","keydown"].forEach(function(ev){window.removeEventListener(ev,q,true)})},go=function(){var o=$("fbar");if(!stop&&o)o.scrollIntoView({block:"start"})};["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,q,true)});[0,300,900,1800].forEach(function(ms){setTimeout(go,ms)});setTimeout(q,2200)}
-function refresh(){if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
+// dawne nazwy gatunków (z wcześniejszych edycji w panelu, nanoszonych także w przeglądarce) -> obecne
+var GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
+function refresh(){(items||[]).forEach(function(g){if(g&&GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre]});if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"")}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
 $("cancel").onclick=function(){location.hash="#/"};

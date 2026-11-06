@@ -641,17 +641,18 @@
   },
   {
     "game": "Batman: The Telltale Series",
-    "img": "https://cdn2.steamgriddb.com/thumb/e5cef2ea2f171ae6fd7f61de26b8441d.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/e7a8db7c810c992a1e04accb20a96d8d.jpg",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "GameSub, GrajPoPolsku (zespół)",
-    "upd": "2021-03-18",
-    "link": "https://grajpopolsku.pl/download/batman-tts/",
+    "ver": "1.2",
+    "author": "JANKUSH",
+    "upd": "2026-11-06",
+    "link": "https://steamcommunity.com/app/498240/discussions/0/572678538884343247/",
     "genre": "Przygodowa",
-    "opis": "Epizodowa opowieść o Bruce'ie Wayne'ie, w której twoje decyzje wpływają na losy Gotham. Autorem jest Telltale Games."
+    "opis": "Epizodowa opowieść o Bruce'ie Wayne'ie, w której twoje decyzje wpływają na losy Gotham. Autorem jest Telltale Games.",
+    "premiera": "2026-11-06"
   },
   {
     "game": "Beneath a Steel Sky",

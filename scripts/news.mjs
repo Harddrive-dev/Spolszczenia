@@ -76,7 +76,7 @@ fs.writeFileSync(path.join(OUT,"index.html"),page({title:"Aktualności – GryPo
 // wpisy
 // gry z katalogu wymienione w tytule wpisu (ramka „Gra z tego wpisu” + plik dla stron gier)
 let KAT=[];try{const d=JSON.parse(fs.readFileSync(process.env.NEWS_DATA||"spolszczenia.json","utf8"));KAT=Array.isArray(d)?d:(d.items||[])}catch(e){console.log("Brak katalogu do powiązań:",e.message)}
-const POW={};
+const POW=Object.create(null);
 const ofi=g=>g.pl==="of";
 function gameBox(list){if(!list.length)return"";
   return '<div class="panel ngame"><h2 class="ch">'+(list.length>1?"Gry z tego wpisu":"Gra z tego wpisu")+'</h2>'+list.map(({s,g})=>{

@@ -180,3 +180,23 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 @media (max-width:1099px){.jes #jcozy{left:calc(50% + 150px);width:168px;height:92px;top:16px}}
 @media (max-width:799px){.jes #jcozy{position:static;margin:0 auto 44px;width:252px;height:138px}}
 .btns .btn.pri{color:#1f1513!important}
+/* Aktualności ↔ strony gier: ramka „Gra z tego wpisu” i lista „Wiadomości o tej grze” */
+.ngc{display:flex;gap:18px;align-items:center}
+.ngc+.ngc{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.ngi{flex:0 0 96px;width:96px;height:144px;border-radius:10px;overflow:hidden;background:var(--line);display:grid;place-items:center;font-size:40px;font-weight:800;color:var(--muted);text-decoration:none}
+.ngi img{width:100%;height:100%;object-fit:cover;display:block}
+.ngt{min-width:0;display:flex;flex-direction:column;gap:8px}
+.ngn{font-size:20px;font-weight:700;color:var(--text);text-decoration:none;line-height:1.25}
+.ngn:hover{color:var(--accent)}
+.ngm{margin:0;color:var(--muted);font-size:14px}
+.ngame .gp{display:flex;gap:8px;flex-wrap:wrap}
+.ngame .gb{display:flex;gap:10px;flex-wrap:wrap;margin-top:2px}
+.ngame .gb a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;font-weight:700;padding:0 18px;border-radius:12px;border:2px solid var(--accent);color:var(--accent);text-decoration:none}
+.ngame .gb a.p{background:var(--accent);color:var(--onacc,#fff)}
+.ngame .gb a:hover{opacity:.9}
+@media(max-width:520px){.ngc{align-items:flex-start;gap:14px}.ngi{flex-basis:72px;width:72px;height:108px;font-size:30px}.ngn{font-size:18px}.ngame .gb a{flex:1 1 100%}}
+.nwl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.nwl a{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none;transition:border-color .15s}
+.nwl a:hover,.nwl a:focus-visible{border-color:var(--accent)}
+.nwl b{flex-basis:100%;font-size:15px;line-height:1.35}
+.nwd{font-size:13px;color:var(--muted)}

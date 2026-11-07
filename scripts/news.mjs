@@ -3,6 +3,7 @@
 // Uruchamiany przez GitHub Action razem z sync.mjs. Zmienna NEWS_FILE (test): czyta wpisy z pliku JSON zamiast z Supabase.
 import fs from "node:fs";
 import path from "node:path";
+import {gryWTytule} from "./powiazania.mjs";
 const SB="https://qbozpokxgtspwdxvbevv.supabase.co",KEY="sb_publishable_0StDDiTyHHv_ZIW0nh590g_ij3wNMTV";
 const SITE="https://grypopolsku.pl",OUT=process.env.NEWS_OUT||"aktualnosci",SITEMAP=process.env.NEWS_SITEMAP||"sitemap.xml";
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -73,15 +74,28 @@ const listDesc="Aktualności ze świata polskich wersji językowych gier: premie
 fs.writeFileSync(path.join(OUT,"index.html"),page({title:"Aktualności – GryPoPolsku.pl",desc:listDesc,url:SITE+"/aktualnosci/",body:listBody,og:{title:"Aktualności – GryPoPolsku.pl",image:DEF_IMG},pageType:"list",
   ld:{"@context":"https://schema.org","@type":"CollectionPage",name:"Aktualności – GryPoPolsku.pl",url:SITE+"/aktualnosci/",inLanguage:"pl"}}));
 // wpisy
+// gry z katalogu wymienione w tytule wpisu (ramka „Gra z tego wpisu” + plik dla stron gier)
+let KAT=[];try{const d=JSON.parse(fs.readFileSync(process.env.NEWS_DATA||"spolszczenia.json","utf8"));KAT=Array.isArray(d)?d:(d.items||[])}catch(e){console.log("Brak katalogu do powiązań:",e.message)}
+const POW={};
+const ofi=g=>g.pl==="of";
+function gameBox(list){if(!list.length)return"";
+  return '<div class="panel ngame"><h2 class="ch">'+(list.length>1?"Gry z tego wpisu":"Gra z tego wpisu")+'</h2>'+list.map(({s,g})=>{
+    const img=g.img&&/^https:\/\//.test(g.img)?g.img:"",u="/gra/"+s+"/",hasSp=!!(g.link&&g.status),dl=hasSp&&/^https?:\/\//i.test(g.link)?g.link:"";
+    const tags=(g.genre?'<span class="etag c-strona">'+esc(g.genre)+'</span>':'')+(hasSp?'<span class="etag c-akt">'+esc(g.type||"Napisy")+'</span><span class="etag c-nowe">'+esc(g.status)+'</span>':'')+(ofi(g)?'<span class="etag c-akt">Oficjalna PL</span>':'');
+    const meta=[g.author&&g.author!=="—"?"Autor: "+g.author:"",g.platform||"PC"].filter(Boolean).join(" · ");
+    return '<div class="ngc"><a class="ngi" href="'+u+'" tabindex="-1" aria-hidden="true">'+(img?'<img src="'+esc(img)+'" alt="" loading="lazy" width="96" height="144">':'<span>'+esc(g.game.charAt(0).toUpperCase())+'</span>')+'</a><div class="ngt"><a class="ngn" href="'+u+'">'+esc(g.game)+'</a><div class="gp">'+tags+'</div><p class="ngm">'+esc(meta)+'</p><div class="gb"><a class="p" href="'+u+'">Zobacz stronę gry</a>'+(dl?'<a href="'+esc(dl)+'" target="_blank" rel="noopener">'+(g.type==="Dubbing"?"Pobierz dubbing":"Pobierz spolszczenie")+' ↗</a>':'')+'</div></div></div>'}).join("")+'</div>'}
 for(const r of rows){
+  const gry=gryWTytule(r.title,KAT);
+  for(const {s} of gry)(POW[s]=POW[s]||[]).push({slug:r.slug,title:r.title,category:r.category||"",date:String(r.created_at||"").slice(0,10)});
   const dir=path.join(OUT,r.slug);fs.mkdirSync(dir,{recursive:true});
   const url=SITE+"/aktualnosci/"+r.slug+"/",cc=CATS[r.category]||"c-ogl",c=imgOf(r),th=cover(r);
   const desc=(r.excerpt||String(r.body).replace(/[#*\[\]()]/g," ").replace(/\s+/g," ").trim()).slice(0,200);
   const ogi=c||th,img=ogi?(ogi.startsWith("/")?SITE+ogi:ogi):DEF_IMG;
-  const body='<div class="panel"><a class="back" href="/aktualnosci/">← Aktualności</a><article><span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d"><time datetime="'+esc(r.created_at)+'">'+dateLong(r.created_at)+'</time>'+(r.author?' · '+esc(r.author):'')+'</span><h1>'+esc(r.title)+'</h1>'+(c?'<div class="cover"><img src="'+esc(c)+'" alt="'+esc(r.title)+'"></div>':'')+'<div class="body">'+fmt(r.body)+'</div></article></div>'+
+  const body='<div class="panel"><a class="back" href="/aktualnosci/">← Aktualności</a><article><span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d"><time datetime="'+esc(r.created_at)+'">'+dateLong(r.created_at)+'</time>'+(r.author?' · '+esc(r.author):'')+'</span><h1>'+esc(r.title)+'</h1>'+(c?'<div class="cover"><img src="'+esc(c)+'" alt="'+esc(r.title)+'"></div>':'')+'<div class="body">'+fmt(r.body)+'</div></article></div>'+gameBox(gry)+
    '<div class="panel" id="komentarze"><h2 class="ch">Komentarze (<span id="ccount">0</span>)</h2><div id="cform"></div><div id="clist"><p class="msg">Wczytywanie komentarzy…</p></div></div>';
   fs.writeFileSync(path.join(dir,"index.html"),page({title:r.title+" – GryPoPolsku.pl",desc,url,body,og:{type:"article",title:r.title,image:img,big:!!ogi},pageType:"post",key:"news:"+r.slug,
    ld:{"@context":"https://schema.org","@type":"NewsArticle",headline:r.title.slice(0,110),description:desc,image:[img],datePublished:r.created_at,dateModified:r.updated_at||r.created_at,inLanguage:"pl",author:{"@type":"Organization",name:r.author||"GryPoPolsku.pl"},publisher:{"@type":"Organization",name:"GryPoPolsku.pl",logo:{"@type":"ImageObject",url:DEF_IMG}},mainEntityOfPage:url}}))}
+fs.writeFileSync(path.join(OUT,"powiazania.json"),JSON.stringify(POW,null,1)+"\n");
 // sprzątanie usuniętych wpisów
 const keep=new Set(rows.map(r=>r.slug));
 for(const e of fs.readdirSync(OUT,{withFileTypes:true}))if(e.isDirectory()&&!keep.has(e.name))fs.rmSync(path.join(OUT,e.name),{recursive:true,force:true});

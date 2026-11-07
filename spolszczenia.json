@@ -5364,7 +5364,20 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Interaktywny horror od Supermassive Games. Ekipa dokumentalistów trafia do replik hotelu seryjnego mordercy.",
-    "yt": "https://www.youtube.com/watch?v=WIo5865MweA"
+    "yt": "https://www.youtube.com/watch?v=WIo5865MweA",
+    "spolszczenia": [
+      {
+        "id": "the-dark-pictures-anthology-the-devil-in-me--vetspolszczenia",
+        "author": "VetSpolszczenia",
+        "link": "https://vetspolszczenia.pl/projekt.html?id=the-dark-pictures-anthology-the-devil-in-me",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-07",
+        "dodano": "2026-11-07"
+      }
+    ]
   },
   {
     "game": "The Dig",
@@ -14364,11 +14377,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.2",
+    "ver": "1.3",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/incursion-red-river",
     "dodano": "2026-09-06",
-    "upd": "2026-09-11",
+    "upd": "2026-11-07",
     "img": "https://cdn2.steamgriddb.com/thumb/e196b9cee6343706b66251dbbf7cd32a.jpg"
   },
   {
@@ -14902,5 +14915,47 @@
     "dodano": "2026-11-06",
     "img": "https://cdn2.steamgriddb.com/thumb/5fb272a4907bbea419e44c2d624fdb72.jpg",
     "upd": "2026-11-06"
+  },
+  {
+    "game": "Islets",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/islets",
+    "genre": "Metroidvania",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/65b7e9a6537aaf6cd20c4d3b75cb6309.jpg",
+    "upd": "2026-11-07"
+  },
+  {
+    "game": "Garfield - Escape from Monday",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=garfield-escape-from-monday",
+    "genre": "Platformówka",
+    "dodano": "2026-11-07",
+    "img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3932790/4969712a29cab096dbde9f232ee78e4c7c1cffab/header.jpg?t=1792507651",
+    "upd": "2026-11-07"
+  },
+  {
+    "game": "METAL GEAR SOLID - Master Collection Version",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Zapowiedź",
+    "prog": 100,
+    "ver": "—",
+    "author": "GrzybDev",
+    "link": "https://bazaspolszczen.pl/games/metal-gear-solid-master-collection-version/grzybdev",
+    "genre": "Akcja",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/8b6c630eff72792687d944412cf61edc.jpg",
+    "upd": "2026-11-07"
   }
 ]

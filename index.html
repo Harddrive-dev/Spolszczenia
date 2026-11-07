@@ -1696,7 +1696,7 @@ function renderSteam(){
   box.innerHTML=back+h}
 function showSteam(){enterView("steam","Twoje gry ze Steam – GryPoPolsku.pl");try{localStorage.setItem("steam.tip","1")}catch(e){}steamUI();renderSteam()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;var id=t.id;
-  if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){curKey=null;openModal(loginHtml());return}if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
+  if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){try{localStorage.setItem("steam.tip","1")}catch(e2){}goView(STHASH);return}if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
   if(id==="usteam"){$("umenu").className="umenu";if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
   if(id==="steamtipgo"){try{localStorage.setItem("steam.tip","1")}catch(e2){}steamUI();if(!me()){curKey=null;openModal(loginHtml())}else steamConnect();return}
   if(id==="steamtipno"){try{localStorage.setItem("steam.tip","1")}catch(e2){}steamUI();return}

@@ -1664,6 +1664,7 @@ function steamUI(){
   b.style.display=show?"":"none";
   var m=steamMatches(),lbl,cnt="";
   if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):""}else{lbl="Połącz Steam"}
+  try{if(me()&&STEAM.st==="linked")localStorage.setItem("steam.c",JSON.stringify({n:cnt}));else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
   $("steamlbl").textContent=lbl;var sn=$("steamn");sn.textContent=cnt;sn.style.display=cnt?"":"none";
   b.title=lbl+(cnt?" ("+cnt+")":"");b.setAttribute("aria-label",b.title);
   var us=$("usteam");if(us){us.style.display=me()&&show?"":"none";us.textContent=STEAM.st==="linked"?"🎮 Moje gry ze Steam"+(cnt?" ("+cnt+")":""):"🎮 Połącz konto Steam"}

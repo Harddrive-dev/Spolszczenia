@@ -18,11 +18,18 @@ function plErr(m){m=String(m||"");if(/Zbyt szybko/i.test(m))return "Zbyt szybko,
 
 // ---- chip użytkownika (taki sam jak na stronie głównej) ----
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
+// Przycisk konta Steam obok nicku (jak na stronie głównej). Liczbę gier zapamiętuje strona główna (localStorage „steam.c”).
+var STEAM_ICON='<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg>',steamChecked=null;
+function steamChip(){var u=me(),c=null;try{c=JSON.parse(localStorage.getItem("steam.c")||"null")}catch(e){}
+  if(u&&steamChecked===false)c=null;
+  var lbl=!u?"Twoje gry ze Steam":(c||steamChecked===true)?"Moje gry Steam":"Połącz Steam",n=u&&c&&c.n?String(c.n):"";
+  return '<a class="sbtn" id="steamchip" href="/#/steam" title="'+lbl+(n?" ("+n+")":"")+'">'+STEAM_ICON+'<span class="st">'+lbl+'</span>'+(n?'<span class="sn">'+esc(n)+'</span>':'')+'</a>'}
+async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=await sb.from("steam_links").select("steam_id").maybeSingle();if(r.error)return;steamChecked=!!r.data;if(!r.data){try{localStorage.removeItem("steam.c")}catch(e){}}renderUser()}catch(e){}}
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
-  if(!u){c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>';$("ulogin").onclick=openLogin;return}
+  if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
   var menu=(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
-  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span></button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>';
+  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span></button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   $("ulo").onclick=function(){sb.auth.signOut()}}
 document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});

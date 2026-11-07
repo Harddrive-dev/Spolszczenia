@@ -14957,5 +14957,33 @@
     "dodano": "2026-11-07",
     "img": "https://cdn2.steamgriddb.com/thumb/8b6c630eff72792687d944412cf61edc.jpg",
     "upd": "2026-11-07"
+  },
+  {
+    "game": "METAL GEAR SOLID",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Zapowiedź",
+    "prog": 100,
+    "ver": "—",
+    "author": "GrzybDev",
+    "link": "https://bazaspolszczen.pl/games/metal-gear-solid/grzybdev",
+    "genre": "Akcja",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/da2c9b4ce3910da210c419517ee72bf0.jpg",
+    "upd": "2026-11-07"
+  },
+  {
+    "game": "White Whisper",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Zapowiedź",
+    "prog": 100,
+    "ver": "—",
+    "author": "GrzybDev",
+    "link": "https://bazaspolszczen.pl/games/white-whisper/grzybdev",
+    "genre": "Akcja",
+    "dodano": "2026-11-07",
+    "img": "https://cdn1.epicgames.com/spt-assets/46fc27a8d34142878ee99f5499c61ae2/white-whisper-bukmw.png",
+    "upd": "2026-11-07"
   }
 ]

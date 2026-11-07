@@ -828,11 +828,11 @@ function renderHome(){
   $("home").style.display=(nw.length||tp.length||wiesci.length||komRows().length||CM)?"":"none";
 }
 // „Katalog gier” i „Polski Lektor”: czyszczą wyszukiwarkę i filtry, ustawiają widok (wszystkie / z lektorem)
-// i przewijają tak, żeby liczniki były na górze ekranu. Z podstron: /#katalog i /#/lektor.
+// „Katalog gier” zostaje na górze strony, a „Polski Lektor” przewija tak, żeby liczniki były na górze ekranu. Z podstron: /#katalog i /#/lektor.
 function clearFlt(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";$("sort").value="game";page=1;if(typeof syncBar==="function")syncBar()}
 function catTop(){var o=$("stats");return o?Math.max(0,o.getBoundingClientRect().top+window.pageYOffset-12):0}
-function goCat(view,smooth){FLT_POS=null;clearFlt();setView(view);window.scrollTo({top:catTop(),behavior:smooth?"smooth":"auto"})}
-function slideCat(view,d0){FLT_POS=null;clearFlt();setView(view);var stop=false,q=function(){stop=true;["wheel","touchstart","keydown"].forEach(function(ev){window.removeEventListener(ev,q,true)})},go=function(last){if(stop)return;var t=catTop();if(Math.abs(window.pageYOffset-t)>4)window.scrollTo(last?{top:t}:{top:t,behavior:"smooth"})};setTimeout(function(){["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,q,true)})},50);setTimeout(function(){go()},d0);setTimeout(function(){go()},d0+950);setTimeout(function(){go(1)},d0+2050);setTimeout(q,d0+2650)}
+function goCat(view,smooth){FLT_POS=null;clearFlt();setView(view);window.scrollTo({top:view==="all"?0:catTop(),behavior:smooth?"smooth":"auto"})}
+function slideCat(view,d0){FLT_POS=null;clearFlt();setView(view);if(view==="all"){window.scrollTo(0,0);return}var stop=false,q=function(){stop=true;["wheel","touchstart","keydown"].forEach(function(ev){window.removeEventListener(ev,q,true)})},go=function(last){if(stop)return;var t=catTop();if(Math.abs(window.pageYOffset-t)>4)window.scrollTo(last?{top:t}:{top:t,behavior:"smooth"})};setTimeout(function(){["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,q,true)})},50);setTimeout(function(){go()},d0);setTimeout(function(){go()},d0+950);setTimeout(function(){go(1)},d0+2050);setTimeout(q,d0+2650)}
 function goKatalog(){var h=location.hash;if(h!=="#katalog"&&h!=="#/lektor")return;var view=h==="#/lektor"?"lk":"all";history.replaceState(null,"",location.pathname+location.search);slideCat(view,350)}
 // dawne nazwy gatunków (z wcześniejszych edycji w panelu, nanoszonych także w przeglądarce) -> obecne
 var GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};

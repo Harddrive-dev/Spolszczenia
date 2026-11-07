@@ -8690,7 +8690,11 @@
     "pl": "of",
     "opis": "Odświeżona wersja Grand Theft Auto III. Gra osadzona w Liberty City, w której bezimienny bohater szuka zemsty.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 1546970
+    "steam": 1546970,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/8326041b51f3b452fb48dbb940d4a116.jpg"
   },
   {
     "game": "METAL GEAR SOLID Δ: SNAKE EATER",
@@ -8857,10 +8861,13 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/dziedzictwo-hogwartu",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/b257b2c770d6926678e40ba7c97d070f.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/6a88e8216b7627c700d928f1344e2270.jpg",
     "opis": "RPG w świecie Harry'ego Pottera. Uczysz się magii w Hogwarcie XIX wieku.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 990080
+    "steam": 990080,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Far Cry 2",

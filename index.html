@@ -1623,7 +1623,7 @@ function steamMatches(){var row=STEAM.row;if(!row||!Array.isArray(row.games))ret
 var STEAM_NEW_DAYS=30;
 // Daty sprzed 31.10.2026 to w większości jednorazowe dodanie całego katalogu przy starcie strony, więc ich nie liczymy jako nowości.
 function steamNewSince(){var d=new Date(Date.now()-STEAM_NEW_DAYS*864e5),x=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");return x>"2026-10-31"?x:"2026-10-31"}
-function steamCat(g){var r=[];if(nwEvent(g).date>=steamNewSince())r.push("new");if(g.pl==="of")r.push("of");if(g.status==="Gotowe")r.push("ready");if(/^(W trakcie|Beta|Testy|Premiera|Zapowiedź)$/.test(g.status||""))r.push("wip");if(g.type==="Dubbing"||g.dub)r.push("dub");if(g.lore||g.gamereader)r.push("lk");return r}
+function steamCat(g){var r=[];if(g.pl!=="of")r.push("fan");if(nwEvent(g).date>=steamNewSince())r.push("new");if(g.pl==="of")r.push("of");if(g.status==="Gotowe")r.push("ready");if(/^(W trakcie|Beta|Testy|Premiera|Zapowiedź)$/.test(g.status||""))r.push("wip");if(g.type==="Dubbing"||g.dub)r.push("dub");if(g.lore||g.gamereader)r.push("lk");return r}
 async function steamLoad(force){
   if(!CM){return}
   if(!me()){STEAM.st="out";STEAM.row=null;steamUI();return}
@@ -1697,7 +1697,7 @@ function renderSteam(){
   if(STEAM.st==="off"){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2><p class="msg">Funkcja jest w przygotowaniu.</p></div>';return}
   if(STEAM.st!=="linked"||!STEAM.row){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p>Połącz konto Steam, a pokażemy, które gry z Twojej biblioteki mają polską wersję w naszym katalogu.</p><p><button class="stbtn" type="button" id="stconnect">'+SI+'Połącz konto Steam</button></p><p class="msg">Logowanie odbywa się na stronie Steama – nie widzimy Twojego hasła. Zapisujemy tylko numer konta Steam, nazwę profilu i listę gier.</p></div>';return}
   var row=STEAM.row,m=steamMatches(),all=Array.isArray(row.games)?row.games.length:0;
-  var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["dub","Dubbing"],["lk","Z lektorem"],["of","Oficjalna PL"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+'</button>':""}).join("");
+  var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["fan","Fanowskie"],["lk","Z lektorem"],["dub","Dubbing"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+'</button>':""}).join("");
   var list=STEAM.tab==="all"?m:m.filter(function(g){return steamCat(g).indexOf(STEAM.tab)>-1});
   if(STEAM.tab==="new")list=list.slice().sort(function(a,b){return nwEvent(b).date.localeCompare(nwEvent(a).date)});
   STEAM.list=list;

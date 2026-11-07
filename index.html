@@ -1595,8 +1595,12 @@ var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
 function stNorm2(t){return stNorm(t).replace(/ (game of the year|goty|definitive|complete|enhanced|deluxe|ultimate|gold|premium|standard)( edition)?$/,"").trim()}
 function steamMatches(){var row=STEAM.row;if(!row||!Array.isArray(row.games))return[];
-  var idx=Object.create(null);items.forEach(function(g){if(!/pc/i.test(g.platform||"PC"))return;var a=stNorm(g.game),b=stNorm2(g.game);if(a&&!idx[a])idx[a]=g;if(b&&!idx[b])idx[b]=g});
-  var seen=Object.create(null),out=[];row.games.forEach(function(x){var n=Array.isArray(x)?x[1]:(x&&x.name);var g=idx[stNorm(n)]||idx[stNorm2(n)];if(g&&!seen[keyOf(g)]){seen[keyOf(g)]=1;out.push(g)}});
+  // Najpierw po numerze gry na Steamie (pole „steam” w katalogu), a gry bez numeru po nazwie.
+  var byId=Object.create(null),idx=Object.create(null);items.forEach(function(g){if(!/pc/i.test(g.platform||"PC"))return;var sid=g.steam;sid=Array.isArray(sid)?sid:(sid?[sid]:[]);
+    if(sid.length){sid.forEach(function(i){(byId[i]=byId[i]||[]).push(g)});return}
+    var a=stNorm(g.game),b=stNorm2(g.game);if(a&&!idx[a])idx[a]=g;if(b&&!idx[b])idx[b]=g});
+  var seen=Object.create(null),out=[];function add(g){if(g&&!seen[keyOf(g)]){seen[keyOf(g)]=1;out.push(g)}}
+  row.games.forEach(function(x){var id=Array.isArray(x)?x[0]:(x&&x.appid),n=Array.isArray(x)?x[1]:(x&&x.name);if(byId[id]){byId[id].forEach(add);return}add(idx[stNorm(n)]||idx[stNorm2(n)])});
   return out.sort(function(a,b){return String(a.game).localeCompare(String(b.game),"pl")})}
 function steamCat(g){var r=[];if(g.pl==="of")r.push("of");if(g.status==="Gotowe")r.push("ready");if(/^(W trakcie|Beta|Testy|Premiera|Zapowiedź)$/.test(g.status||""))r.push("wip");if(g.type==="Dubbing"||g.dub)r.push("dub");if(g.lore||g.gamereader)r.push("lk");return r}
 async function steamLoad(force){

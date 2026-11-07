@@ -777,7 +777,7 @@ function renderHome(){
   feat($("week"),fw,"Gra tygodnia",weekRange());
   renderLeader();
   $("featrow").className="featrow"+(fw&&$("leader").style.display!=="none"?" two":"");
-  var nw=items.filter(function(g){return g.upd||g.dodano}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)}).slice(0,8);
+  var nw=items.filter(function(g){return (g.upd||g.dodano)&&!(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)}).slice(0,8);
   $("news").innerHTML=nw.length?'<h2>Nowości i aktualizacje</h2><div class="ngrid">'+nw.map(function(g){var e=nwEvent(g),when=nwDay(e.date),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,when].filter(Boolean).join(" · "))+'</span></span></a>'}).join("")+'</div>':"";
   $("news").style.display=nw.length?"":"none";
   var TOPRANK_ON=false,tp=(TOPRANK_ON&&CM)?items.filter(function(g){return counts[keyOf(g)]>0}).sort(function(a,b){return counts[keyOf(b)]-counts[keyOf(a)]}).slice(0,5):[];

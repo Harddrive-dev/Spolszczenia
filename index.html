@@ -394,6 +394,65 @@ header{padding-top:56px}
 @media (max-width:1099px){.jes #jcozy{left:calc(50% + 150px);width:168px;height:92px;top:16px}}
 @media (max-width:799px){.jes #jcozy{position:static;margin:0 auto 44px;width:252px;height:138px}}
 .pill.gen{background:var(--surface);border:1px solid var(--accent);color:var(--accent)}
+/* Strona główna – wariant B (7.11.2026): Gra tygodnia + głosowanie, Nowości 4×2, trzy kolumny */
+.featrow{margin-bottom:14px}
+.featrow.two{grid-template-columns:1fr 1fr}
+@media (max-width:900px){.featrow.two{grid-template-columns:1fr}}
+.featrow.two .feat{padding:14px 16px;gap:16px}
+.featrow.two .fcover{flex:0 0 120px;width:120px;height:168px;font-size:44px}
+.featrow.two .ftitle{font-size:clamp(20px,2.1vw,27px)}
+.featrow.two .fbody{gap:9px}
+.mpanel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.mpanel h3{margin:0 0 1px;font-size:16px;display:flex;align-items:center;gap:8px}
+.mpanel h3 small{font-size:12px;font-weight:500;color:var(--muted)}
+.mpanel h3 .dot{display:inline-block;min-width:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:#1f1513;font-size:11px;line-height:18px;text-align:center}
+.vbox{justify-content:space-between}
+.vhead{display:flex;align-items:center;gap:10px;margin-bottom:2px}
+.vht{min-width:0;display:flex;flex-direction:column;gap:2px}
+.vbox .cd{font-size:13px;color:var(--muted)}
+.vbox .cd b{color:var(--accent);font-variant-numeric:tabular-nums}
+.vbox .cd.urgent{animation:cdp 1.4s ease-in-out infinite}
+.vbox .votebtn{margin-left:auto;flex:none;border:0;border-radius:10px;padding:9px 18px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--bg);background:var(--accent);box-shadow:0 2px 0 rgba(0,0,0,.35);box-shadow:0 2px 0 color-mix(in srgb,var(--accent) 55%,#000);transition:transform .12s,filter .12s,box-shadow .12s}
+.vbox .votebtn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.vbox .votebtn:active{transform:translateY(1px);box-shadow:none}
+.vbox .votebtn:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+.vrow{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:4px 12px;background:var(--bg)}
+.vrow .md{flex:none;font-size:17px;width:22px;text-align:center}
+.vrow .vt{min-width:0;flex:1;display:flex;flex-direction:column}
+.vrow b{font-size:14.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vrow .bar{display:block;height:3px;border-radius:2px;background:var(--accent);opacity:.7;margin-top:3px}
+.vrow .vv{margin-left:auto;flex:none;font-size:13px;color:var(--muted);white-space:nowrap}
+.vnone{margin:auto 0}
+.mitem,.vrow{transition:border-color .15s,background-color .15s}
+.mitem:hover,.vrow:hover,.mitem:focus-visible,.vrow:focus-visible{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--bg));color:var(--text)}
+.home{display:block;margin-bottom:16px}
+.home .news{margin:0 0 12px}
+.home .ncard{padding-top:8px;padding-bottom:8px}
+.home .news h2{margin:0 0 10px}
+.home .ngrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.home .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.home .ngrid{grid-template-columns:1fr}.home .ngrid>.ncard:nth-child(n+5){display:none}}
+.m3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.m3{grid-template-columns:1fr}}
+.mitem{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:4px 12px;background:var(--bg);min-height:42px}
+.mitem .dt{flex:none;width:30px;text-align:center;font-weight:800;font-size:17px;line-height:1}
+.mitem .dt small{display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.mitem .thumb{width:34px;height:34px;flex:0 0 34px}
+.mitem .tx{min-width:0;flex:1;display:flex;flex-direction:column;gap:1px}
+.mitem .tx i{font-style:normal;font-size:10.5px;font-weight:700;text-transform:uppercase;color:var(--accent)}
+.mitem .tx>b{font-size:14.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mitem .tx>span{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mitem .who{font-size:13px;color:var(--text)}
+.mitem .ago{flex:none;margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+.mnote{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+.mall{margin-top:auto;padding-top:2px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none}
+.mall:hover{text-decoration:underline}
+.home .ncard .ntxt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home .ncard .ntxt{min-width:0}
+@media (max-width:900px){#ocbox{display:none}}
+.stats{margin:2px 0 12px}
+.stat{padding:8px 14px}
+.stat b{font-size:22px}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),
@@ -482,12 +541,12 @@ header{padding-top:56px}
 <div id="homeview">
 
 
-<div class="featrow" id="featrow"><section class="feat" id="week" aria-label="Gra tygodnia" style="display:none"></section><section class="feat" id="month" aria-label="Premiera miesiąca" style="display:none"></section></div>
-<div class="leader" id="leader" style="display:none"></div>
+<div class="featrow" id="featrow"><section class="feat" id="week" aria-label="Gra tygodnia" style="display:none"></section><section class="mpanel vbox" id="leader" aria-label="Głosuj na grę tygodnia" style="display:none"></section></div>
 
 <div class="home" id="home" style="display:none">
   <section class="news" id="news" aria-label="Nowości" style="display:none"></section>
-  <div class="side"><section class="wiesci" id="wiesci" aria-label="Ostatnie wieści" style="display:none"></section><section class="toprank" id="toprank" aria-label="Najczęściej komentowane" style="display:none"></section></div>
+  <div class="m3" id="m3"><section class="mpanel" id="wiesci" aria-label="Ostatnie wieści"></section><section class="mpanel" id="kombox" aria-label="Ostatnie komentarze"></section><section class="mpanel" id="ocbox" aria-label="Ostatnio ocenione"></section></div>
+  <section class="toprank" id="toprank" aria-label="Najczęściej komentowane" style="display:none"></section>
 </div>
 
 <div class="stats" id="stats"></div>
@@ -716,18 +775,17 @@ function renderHome(){
   if(!weekReady){fw=null;fm=null}
   var MN=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],now=new Date();
   feat($("week"),fw,"Gra tygodnia",weekRange());
-  feat($("month"),fm,"★ Premiera miesiąca",MN[now.getMonth()]+" "+now.getFullYear());
-  $("featrow").className="featrow"+(fw&&fm?" two":"");
   renderLeader();
-  var nw=items.filter(function(g){return g.upd||g.dodano}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)}).slice(0,9);
-  $("news").innerHTML=nw.length?'<h2>Nowości i aktualizacje</h2><div class="ngrid">'+nw.map(function(g){var e=nwEvent(g),when=nwDay(e.date),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,when].filter(Boolean).join(" · "))+'</span></span></a>'}).join("")+'</div>':"";
+  $("featrow").className="featrow"+(fw&&$("leader").style.display!=="none"?" two":"");
+  var nw=items.filter(function(g){return g.upd||g.dodano}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)}).slice(0,8);
+  $("news").innerHTML=nw.length?'<h2>Nowości i aktualizacje</h2><div class="ngrid">'+nw.map(function(g){var e=nwEvent(g),when=nwDay(e.date),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,when].filter(Boolean).join(" · "))+'</span></span></a>'}).join("")+'</div>':"";
   $("news").style.display=nw.length?"":"none";
   var TOPRANK_ON=false,tp=(TOPRANK_ON&&CM)?items.filter(function(g){return counts[keyOf(g)]>0}).sort(function(a,b){return counts[keyOf(b)]-counts[keyOf(a)]}).slice(0,5):[];
   $("toprank").innerHTML=tp.length?'<h2>Najczęściej komentowane</h2><ol class="rlist">'+tp.map(function(g,i){return '<li><span class="rank">'+(i+1)+'</span><a target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a><button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze ('+counts[keyOf(g)]+')</button></li>'}).join("")+'</ol>':"";
   $("toprank").style.display=tp.length?"":"none";
   var WN=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
   renderSide();
-  $("home").style.display=(nw.length||tp.length||wiesci.length||komRows().length)?"":"none";
+  $("home").style.display=(nw.length||tp.length||wiesci.length||komRows().length||CM)?"":"none";
 }
 // „Katalog gier” i „Polski Lektor”: czyszczą wyszukiwarkę i filtry, ustawiają widok (wszystkie / z lektorem)
 // i przewijają tak, żeby liczniki były na górze ekranu. Z podstron: /#katalog i /#/lektor.
@@ -872,13 +930,15 @@ var counts=Object.create(null),wiesci=[],kom=[],sideTab="w",komBase=null,KM=["st
 function komSeen(v){try{if(v===undefined)return localStorage.getItem("kom.widz")||"";localStorage.setItem("kom.widz",v)}catch(e){}return ""}
 function komRows(){var seen={};return kom.filter(function(c){var g=gameByKey(c.game_key);if(!g||seen[c.game_key])return false;seen[c.game_key]=1;c.g=g;return true}).slice(0,3)}
 function komAgo(t){var d=new Date(t),m=Math.floor((Date.now()-d.getTime())/6e4);if(m<1)return "przed chwilą";if(m<60)return m+" min temu";if(m<1440)return Math.floor(m/60)+" godz. temu";if(m<2880)return "wczoraj";return d.getDate()+" "+KM[d.getMonth()]}
-function renderSide(){var el=$("wiesci"),k=komRows(),ok=wiesci.length||k.length;el.style.display=ok?"":"none";if(!ok){el.innerHTML="";return}
+function renderSide(){
+  var k=komRows(),w=$("wiesci"),kb=$("kombox"),ob=$("ocbox");
   if(komBase===null)komBase=komSeen();
   var nowe=komBase?kom.filter(function(c){return c.created_at>komBase&&gameByKey(c.game_key)}).length:0;
-  var tabs='<div class="wtabs" role="tablist"><span class="lb">Ostatnie:</span><button type="button" role="tab" data-st="w" aria-selected="'+(sideTab==="w")+'" class="'+(sideTab==="w"?"on":"")+'">Wieści</button><button type="button" role="tab" data-st="k" aria-selected="'+(sideTab==="k")+'" class="'+(sideTab==="k"?"on":"")+'">Komentarze'+(nowe&&sideTab!=="k"?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':"")+'</button></div>';
-  if(sideTab==="k"){el.innerHTML=tabs+(k.length?k.map(function(c){return '<a class="wrow cmr" href="/gra/'+esc(keyOf(c.g))+'/#komentarze">'+thumb(c.g)+'<span class="wtx"><b>'+esc(c.g.game)+'</b><q>„'+esc(c.body)+'”</q><small>'+esc(c.author||"Gracz")+' · '+esc(komAgo(c.created_at))+'</small></span></a>'}).join(""):'<p class="msg">Nie ma jeszcze komentarzy.</p>');return}
-  el.innerHTML=tabs+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="wrow" href="/aktualnosci/'+esc(r.slug)+'/"><span class="wdt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="wtx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="msg">Nie ma jeszcze wieści.</p>')}
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-st]");if(!b)return;sideTab=b.getAttribute("data-st");if(sideTab==="k"){komBase=new Date().toISOString();komSeen(komBase)}renderSide()});
+  w.innerHTML='<h3>📰 Ostatnie wieści</h3>'+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="mitem" href="/aktualnosci/'+esc(r.slug)+'/"><span class="dt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="tx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze wieści.</p>')+'';
+  kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'</h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
+  ob.innerHTML='<h3>⭐ Ostatnio ocenione<small>wkrótce</small></h3><p class="mnote">Już niedługo będzie można oceniać spolszczenia w skali 1–5 gwiazdek. Tutaj pokażą się najnowsze oceny graczy.</p>';
+}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
 async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
 async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}
 function rowBtn(g){return '<button class="mini rowmenu" type="button" data-rk="'+esc(keyOf(g))+'" aria-label="Więcej akcji" aria-haspopup="true">⋯</button>'}
@@ -1468,10 +1528,12 @@ function podium(rows,mine){
 var leadRows=[];
 function plVotes(v){return v+' głos'+(v===1?'':(v%10>=2&&v%10<=4&&(v%100<12||v%100>14)?'y':'ów'))}
 function renderLeader(){var el=$("leader");if(!el)return;
-  var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"];
-  if(!CM||!leadReady){el.style.display="none";el.innerHTML="";return}
+  var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"],mx=Math.max.apply(null,top.map(function(x){return x.v}).concat([1]));
+  if(!CM||!leadReady){el.style.display="none";el.innerHTML="";var fr=$("featrow");if(fr)fr.className="featrow";return}
   el.style.display="";
-  el.innerHTML='<span class="lbl">🗳️ Głosuj na grę tygodnia</span><span class="ltop">'+(top.length||!leadReady?"":'<span class="lpl">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</span>')+top.map(function(x,i){return '<span class="lpl">'+med[i]+' <b><a class="vlink" href="/gra/'+esc(keyOf(x.g))+'/">'+esc(x.g.game)+'</a></b> <span class="lv">('+plVotes(x.v)+')</span></span>'}).join("")+'</span><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span><button class="votebtn" id="leadgo" type="button">Oddaj głos</button>';cdTick()}
+  el.innerHTML='<div class="vhead"><div class="vht"><h3>🗳️ Głosuj na grę tygodnia</h3><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span></div><button class="votebtn" id="leadgo" type="button">Oddaj głos</button></div>'+
+    (top.length?top.map(function(x,i){return '<a class="vrow" href="/gra/'+esc(keyOf(x.g))+'/"><span class="md">'+med[i]+'</span><span class="vt"><b>'+esc(x.g.game)+'</b><span class="bar" style="width:'+Math.round(x.v/mx*100)+'%"></span></span><span class="vv">'+plVotes(x.v)+'</span></a>'}).join(""):'<p class="mnote vnone">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</p>');
+  var fr=$("featrow"),w=$("week");if(fr)fr.className="featrow"+(w&&w.style.display!=="none"?" two":"");cdTick()}
 function weekLeft(){var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Warsaw",hour12:false,hour:"2-digit",minute:"2-digit",second:"2-digit",weekday:"short"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
   var wd={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[o.weekday],sec=wd*86400+(+o.hour%24)*3600+(+o.minute)*60+(+o.second);return 7*86400-sec}
 function cdTick(){var v=$("cdv");if(!v)return;var r=weekLeft(),d=Math.floor(r/86400),h=Math.floor(r%86400/3600),m=Math.floor(r%3600/60),sc=r%60,t2=function(n){return n<10?"0"+n:""+n};

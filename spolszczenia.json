@@ -15703,22 +15703,6 @@
     "upd": "2026-11-07"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07"
-  },
-  {
     "game": "Star Wars Outlaws",
     "platform": "PC",
     "type": "Napisy",
@@ -15732,6 +15716,22 @@
     "img": "https://cdn2.steamgriddb.com/thumb/9cddcc96feade261665f0a3ef5dbe6ea.jpg",
     "opis": "Star Wars Outlaws to pierwsza w historii franczyzy przygodowa gra akcji w całkowicie otwartym świecie, osadzona w uniwersum Gwiezdnych Wojen.\n\nWcielasz się w rolę Kay Vess – sprytnej łotrzycy, która wraz ze swoim małym kompanem Nixem próbuje przeprowadzić jeden z największych skoków w historii Zewnętrznych Rubieży. Gra skupia się na przestępczym podziemiu Galaktyki, oferując dynamiczne strzelaniny, skradanie się, eksplorację różnorodnych planet na ścigaczu oraz kosmiczne walki na pokładzie statk",
     "steam": 2842040,
+    "upd": "2026-11-07"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
     "upd": "2026-11-07"
   }
 ]

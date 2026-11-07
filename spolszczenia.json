@@ -8754,9 +8754,12 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/far-cry-6",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/a26bf4d0f9774bd59e30003e1dca7bac.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/2707b2f06a3967105746389278bdf01d.jpg",
     "opis": "Antón Castillo rządzi wyspą Yara, a ty musisz stawić mu czoła. Strzelanka w otwartym świecie.",
-    "steam": 2369390
+    "steam": 2369390,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Styx: Master of Shadows",
@@ -13820,7 +13823,7 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=black-desert",
     "dodano": "2026-10-09",
     "upd": "2026-10-31",
-    "img": "https://cdn2.steamgriddb.com/thumb/8f6ddc62bb62bbe27113466799a6de78.png",
+    "img": "https://cdn2.steamgriddb.com/thumb/a1e19f4b3b361936e8f079cb77c7edd4.jpg",
     "opis": "Koreańskie MMORPG z dynamiczną walką akcji i rozbudowanym życiem w otwartym świecie. Oprócz potworów możesz handlować, hodować konie i łowić ryby.",
     "steam": 582660
   },
@@ -13911,8 +13914,10 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=daymare-1998",
     "dodano": "2026-10-25",
     "upd": "2026-10-25",
-    "img": "https://cdn2.steamgriddb.com/thumb/5302d2189ac3608705e7a0cd7938403f.jpg",
-    "steam": 842100
+    "img": "https://cdn2.steamgriddb.com/thumb/b761c0237639f01545ae49fd0ddbb1c2.jpg",
+    "steam": 842100,
+    "opis": "Daymare: 1998 to klasyczny survival horror z widokiem z trzeciej osoby (TPP), stanowiący duchowego spadkobiercę zombijowych serii z lat 90. (szczególnie Resident Evil 2).\n\nGra przenosi cię do małego miasteczka opanowanego przez śmiertelny wirus zmieniający ludzi w krwiożercze potwory. Rozgrywka ukazuje historię z perspektywy trzech różnych postaci i stawia na mroczną atmosferę, twarde zarządzanie mocno ograniczoną amunicją i zasobami, wymagające zagadki środowiskowe oraz bezkompromisowy poziom t",
+    "lore": "https://lorespeak.pl/games/daymare-1998"
   },
   {
     "game": "Dead Rising 3",
@@ -14841,11 +14846,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-legend-of-heroes-trails-beyond-the-horizon",
     "dodano": "2026-09-09",
-    "upd": "2026-09-09",
+    "upd": "2026-11-07",
     "img": "https://cdn2.steamgriddb.com/thumb/b661bb8b1094d2b7838598cabdce9fdf.jpg",
     "steam": 3316940
   },
@@ -15682,6 +15687,22 @@
     "steam": 3994800
   },
   {
+    "game": "Huntdown",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/huntdown",
+    "genre": "Platformówka",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/ea0c2bb7edb648ccb1ba86949b75fed7.jpg",
+    "opis": "Huntdown to dynamiczna, cyberpunkowa strzelanka platformowa 2D w stylu retro (run and gun), która w pełni oddaje hołd kinowi akcji lat 80.\n\nW świecie opanowanym przez bezwzględne gangi wcielasz się w rolę bezkompromisowego łowcy nagród. Gra zachwyca fenomenalną grafiką pikselową, klimatyczną ścieżką dźwiękową synthwave oraz niezwykle płynną, arcade'ową rozgrywką. To idealna pozycja dla fanów klasycznych wyzwań – zarówno solo, jak i w lokalnym trybie kooperacji.",
+    "steam": 598550,
+    "upd": "2026-11-07"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -15698,19 +15719,19 @@
     "upd": "2026-11-07"
   },
   {
-    "game": "Huntdown",
+    "game": "Star Wars Outlaws",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "kofii12345",
-    "link": "https://bazarowespolszczenia.pl/gra/huntdown",
-    "genre": "Platformówka",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/star-wars-outlaws",
+    "genre": "Akcja",
     "dodano": "2026-11-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/ea0c2bb7edb648ccb1ba86949b75fed7.jpg",
-    "opis": "Huntdown to dynamiczna, cyberpunkowa strzelanka platformowa 2D w stylu retro (run and gun), która w pełni oddaje hołd kinowi akcji lat 80.\n\nW świecie opanowanym przez bezwzględne gangi wcielasz się w rolę bezkompromisowego łowcy nagród. Gra zachwyca fenomenalną grafiką pikselową, klimatyczną ścieżką dźwiękową synthwave oraz niezwykle płynną, arcade'ową rozgrywką. To idealna pozycja dla fanów klasycznych wyzwań – zarówno solo, jak i w lokalnym trybie kooperacji.",
-    "steam": 598550,
+    "img": "https://cdn2.steamgriddb.com/thumb/9cddcc96feade261665f0a3ef5dbe6ea.jpg",
+    "opis": "Star Wars Outlaws to pierwsza w historii franczyzy przygodowa gra akcji w całkowicie otwartym świecie, osadzona w uniwersum Gwiezdnych Wojen.\n\nWcielasz się w rolę Kay Vess – sprytnej łotrzycy, która wraz ze swoim małym kompanem Nixem próbuje przeprowadzić jeden z największych skoków w historii Zewnętrznych Rubieży. Gra skupia się na przestępczym podziemiu Galaktyki, oferując dynamiczne strzelaniny, skradanie się, eksplorację różnorodnych planet na ścigaczu oraz kosmiczne walki na pokładzie statk",
+    "steam": 2842040,
     "upd": "2026-11-07"
   }
 ]

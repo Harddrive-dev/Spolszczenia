@@ -477,6 +477,7 @@ header{padding-top:56px}
 .stsum{font-size:16px;margin:14px 0 10px}
 .stsum b{color:var(--accent);font-size:20px}
 .sttabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+#steamview .stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:16px;margin:0 0 12px}
 .sttabs button{font:inherit;font-size:13.5px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:transparent;color:var(--text);cursor:pointer}
 .sttabs button.on{background:var(--accent);border-color:var(--accent);color:#1f1513;font-weight:700}
 #steamview .ngrid{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -1607,7 +1608,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
 var STHASH="#/steam",onSteam=false,steamBooted=false;
-var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false};
+var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
 function stNorm2(t){return stNorm(t).replace(/ (game of the year|goty|definitive|complete|enhanced|deluxe|ultimate|gold|premium|standard)( edition)?$/,"").trim()}
@@ -1678,6 +1679,11 @@ function steamUI(){
   if(onSteam)renderSteam()}
 function steamCardHtml(g,ev){if(ev){var e=nwEvent(g),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,nwDay(e.date)].filter(Boolean).join(" · "))+'</span></span></a>'}
   var t=g.pl==="of"?"Oficjalna PL":[g.type||"",g.status?stText(g):""].filter(Boolean).join(" · ");if(g.lore||g.gamereader)t+=(t?" · ":"")+"Lektor";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(t||"Polska wersja")+'</small></span></a>'}
+// Siatka gier w „Moich grach Steam” z filtrem wyszukiwania (po nazwie gry i autorze), odświeżana bez przerysowania całego widoku.
+function steamGrid(list){var q=stNorm(STEAM.q),l=q?list.filter(function(g){return stNorm(g.game).indexOf(q)>-1||stNorm(authorsTxt(g)).indexOf(q)>-1}):list;
+  if(!l.length)return q?'<p class="msg">Nie ma tu gry pasującej do „'+esc(STEAM.q)+'”.'+(STEAM.tab!=="all"?' Spróbuj w zakładce „Wszystkie”.':'')+'</p>':'';
+  return (q?'<p class="msg" style="margin:0 0 10px">Znaleziono: '+l.length+'</p>':'')+'<div class="ngrid">'+l.map(function(g){return steamCardHtml(g,STEAM.tab==="new")}).join("")+'</div>'}
+document.addEventListener("input",function(e){if(e.target&&e.target.id==="stq"){STEAM.q=e.target.value;var g=$("stgrid");if(g)g.innerHTML=steamGrid(STEAM.list)}});
 function renderSteam(){
   var box=$("steamview");if(!box)return;var back='<a class="vback" href="#/">← Wróć do katalogu</a>',h="",msg=STEAM.msg?'<div class="stbox'+(STEAM.msg.err?" err":STEAM.msg.ok?" ok":"")+'">'+esc(STEAM.msg.t)+'</div>':"";
   var SI=$("steambtn").querySelector("svg").outerHTML;
@@ -1690,12 +1696,12 @@ function renderSteam(){
   var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["dub","Dubbing"],["lk","Z lektorem"],["of","Oficjalna PL"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+'</button>':""}).join("");
   var list=STEAM.tab==="all"?m:m.filter(function(g){return steamCat(g).indexOf(STEAM.tab)>-1});
   if(STEAM.tab==="new")list=list.slice().sort(function(a,b){return nwEvent(b).date.localeCompare(nwEvent(a).date)});
-  var lim=list.length;
+  STEAM.list=list;
   var av=/^https:\/\//.test(row.avatar||"")?'<img alt="" src="'+esc(row.avatar)+'" referrerpolicy="no-referrer">':"";
   h='<div class="stw"><div class="sthead">'+av+'<div class="sti"><h2>Twoje gry ze Steam</h2><p class="stsub">Konto Steam <b>'+esc(row.persona||row.steam_id)+'</b> jest połączone'+(row.games_at?' · lista z '+esc(new Date(row.games_at).toLocaleString("pl-PL",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})):"")+'</p></div><div class="acts"><button class="btn" type="button" id="strefresh"'+(STEAM.loading?" disabled":"")+'>'+(STEAM.loading?"Odświeżanie…":"Odśwież listę")+'</button><button class="btn" type="button" id="stunlink">'+(STEAM.armed?"Na pewno odłączyć?":"Odłącz Steam")+'</button></div></div>'+msg;
   if(row.is_private){h+='<div class="stbox err"><b>Nie widzimy Twoich gier.</b> Lista gier w profilu Steam jest ukryta. Wejdź na Steamie w <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">Profil → Edytuj profil → Ustawienia prywatności</a>, ustaw <b>„Szczegóły gier: publiczne”</b>, a potem kliknij tutaj „Odśwież listę”.</div></div>';box.innerHTML=back+h;return}
   h+='<p class="stsum">Na Twoim koncie '+(all===1?"jest 1 gra":(all%10>=2&&all%10<=4&&(all%100<10||all%100>=20)?"są "+all+" gry":"jest "+all+" gier"))+'. <b>'+m.length+'</b> '+(m.length===1?"ma":"ma")+' polską wersję w katalogu.</p>';
-  if(m.length){h+='<div class="sttabs">'+tabs+'</div>'+(STEAM.tab==="new"?'<p class="msg" style="margin:-4px 0 12px">Gry z Twojej biblioteki, które w ostatnich '+STEAM_NEW_DAYS+' dniach dostały nowe spolszczenie albo aktualizację. Najnowsze na górze.</p>':'')+(STEAM.tab==="new"&&!list.length?'<p class="msg">W ostatnich '+STEAM_NEW_DAYS+' dniach nic nowego nie wyszło do Twoich gier. Zajrzyj tu za jakiś czas.</p>':'')+'<div class="ngrid">'+list.slice(0,lim).map(function(g){return steamCardHtml(g,STEAM.tab==="new")}).join("")+'</div>'+(list.length>lim?'<p class="stmore"><button class="btn" type="button" id="stmore">Pokaż wszystkie ('+list.length+')</button></p>':"")}
+  if(m.length){h+='<input id="stq" class="stq" type="search" autocomplete="off" placeholder="Szukaj gry lub autora…" aria-label="Szukaj w swoich grach" value="'+esc(STEAM.q)+'"><div class="sttabs">'+tabs+'</div>'+(STEAM.tab==="new"?'<p class="msg" style="margin:-4px 0 12px">Gry z Twojej biblioteki, które w ostatnich '+STEAM_NEW_DAYS+' dniach dostały nowe spolszczenie albo aktualizację. Najnowsze na górze.</p>':'')+(STEAM.tab==="new"&&!list.length?'<p class="msg">W ostatnich '+STEAM_NEW_DAYS+' dniach nic nowego nie wyszło do Twoich gier. Zajrzyj tu za jakiś czas.</p>':'')+'<div id="stgrid">'+steamGrid(list)+'</div>'}
   else h+='<p class="msg">Nie znaleźliśmy jeszcze żadnej z Twoich gier w katalogu (sprawdzamy wersje na PC).</p>';
   h+='<p class="msg" style="margin-top:12px">Gry dopasowujemy po numerze gry na Steamie, a te bez numeru po nazwie (tylko wersje na PC). Jeśli brakuje gry, która u nas jest, daj znać w komentarzu.</p></div>';
   box.innerHTML=back+h}

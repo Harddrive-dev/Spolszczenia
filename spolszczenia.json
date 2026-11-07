@@ -6398,9 +6398,12 @@
     "lore": "https://lorespeak.pl/games/grand-theft-auto-vice-city",
     "dodano": "2026-10-29",
     "upd": "2026-10-29",
-    "img": "https://cdn2.steamgriddb.com/thumb/342e53bf4b503227619083031dc27f48.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/c35f96e6c46a58248ab0ca39bae23039.jpg",
     "genre": "Akcja",
-    "opis": "Gra akcji od Rockstar Games z 2002 roku, osadzona w nadmorskim Vice City w latach 80. Tommy Vercetti buduje tam swoje przestępcze imperium."
+    "opis": "Gra akcji od Rockstar Games z 2002 roku, osadzona w nadmorskim Vice City w latach 80. Tommy Vercetti buduje tam swoje przestępcze imperium.",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Blair Witch",
@@ -7177,7 +7180,11 @@
     "genre": "Akcja",
     "opis": "Wersja Grand Theft Auto V z ulepszoną grafiką. Trzech przestępców w Los Santos.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 3240220
+    "steam": 3240220,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/a300cda08d24b7cf1cf45bd4eba1ae0b.jpg"
   },
   {
     "game": "Sherlock Holmes The Awakened",
@@ -8346,7 +8353,11 @@
     "pl": "of",
     "opis": "Odświeżona wersja kultowej gry. CJ wraca do Los Santos i walczy o miasto.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 1547000
+    "steam": 1547000,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/4b7890d268495230ee3f9bcd05ce3365.png"
   },
   {
     "game": "Max Payne 2",
@@ -8660,7 +8671,11 @@
     "pl": "of",
     "opis": "Odświeżona wersja klasycznej gry w Vice City lat 80. Tommy Vercetti dąży do władzy w mieście.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 1546990
+    "steam": 1546990,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0,
+    "img": "https://cdn2.steamgriddb.com/thumb/342e53bf4b503227619083031dc27f48.jpg"
   },
   {
     "game": "Grand Theft Auto IV: The Complete Edition",
@@ -15680,6 +15695,22 @@
     "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
+    "upd": "2026-11-07"
+  },
+  {
+    "game": "Huntdown",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/huntdown",
+    "genre": "Platformówka",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/ea0c2bb7edb648ccb1ba86949b75fed7.jpg",
+    "opis": "Huntdown to dynamiczna, cyberpunkowa strzelanka platformowa 2D w stylu retro (run and gun), która w pełni oddaje hołd kinowi akcji lat 80.\n\nW świecie opanowanym przez bezwzględne gangi wcielasz się w rolę bezkompromisowego łowcy nagród. Gra zachwyca fenomenalną grafiką pikselową, klimatyczną ścieżką dźwiękową synthwave oraz niezwykle płynną, arcade'ową rozgrywką. To idealna pozycja dla fanów klasycznych wyzwań – zarówno solo, jak i w lokalnym trybie kooperacji.",
+    "steam": 598550,
     "upd": "2026-11-07"
   }
 ]

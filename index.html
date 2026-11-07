@@ -1280,6 +1280,11 @@ function genreList(){var a=GENRES.slice(),low=a.map(function(x){return x.toLower
 function genreNorm(v){v=String(v||"").replace(/\s+/g," ").trim();if(!v)return "";var l=genreList(),k=l.filter(function(x){return x.toLowerCase()===v.toLowerCase()})[0];return k||(v.charAt(0).toUpperCase()+v.slice(1))}
 function fillGenreDl(){var d=$("gl_mod");if(d)d.innerHTML=genreList().map(function(x){return '<option value="'+esc(x)+'"></option>'}).join("")}
 var GENRES=["Akcja","Platformówka","Przygodowa","RPG","Strzelanka","Horror","Strategia","Symulacja","Sportowa / wyścigi","Bijatyka","Logiczna","Metroidvania","Inne"];
+// Numer gry na Steamie: sam numer albo link do sklepu (store.steampowered.com/app/123/...). Kilka numerów po przecinku.
+function steamParse(v){v=String(v||"").trim();if(!v)return[];var out=[],ok=true;v.split(/[\s,;]+/).forEach(function(x){if(!x)return;var m=/^(\d{1,8})$/.exec(x)||/steam(?:powered|community)\.com\/(?:app|agecheck\/app)\/(\d{1,8})/i.exec(x);if(m){var n=+m[1];if(out.indexOf(n)<0)out.push(n)}else ok=false});return ok?out:null}
+function steamStr(g){var s=g&&g.steam;return (Array.isArray(s)?s:(s?[s]:[])).join(", ")}
+function steamSet(g,ids){if(ids&&ids.length)g.steam=ids.length===1?ids[0]:ids;else delete g.steam}
+var STEAM_HINT='<small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Wklej adres gry ze sklepu Steam (np. <code>https://store.steampowered.com/app/1030840/…</code>) albo sam numer. Dzięki temu gra pokaże się w „Moich grach Steam” u graczy, którzy ją mają. Kilka numerów (np. oryginał i remaster) oddziel przecinkami.</small>';
 function addMem(k,v){try{if(v===undefined)return localStorage.getItem("add."+k)||"";localStorage.setItem("add."+k,v)}catch(e){return ""}}
 function openAdd(){if(!CM||!isMod())return;curKey=null;openAddView()}
 function addFormHtml(){
@@ -1306,6 +1311,7 @@ function addFormHtml(){
    '<label>Podpis filmu (opcjonalnie)<input id="a_ytt" maxlength="80"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (opcjonalnie: https://… lub img/nazwa.jpg)<input id="a_img" maxlength="500"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Skąd wziąć: wejdź na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a>, wyszukaj grę i otwórz zakładkę „Grids”. Kliknij wybraną okładkę prawym przyciskiem myszy i wybierz „Kopiuj adres obrazu”, a potem wklej go tutaj. Zwykle są to adresy zaczynające się od <code>https://cdn2.steamgriddb.com/…</code></small></label>'+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="a_opis" rows="2" maxlength="500" style="width:100%;display:block"></textarea></label>'+
+   '<label style="grid-column:1/-1">Numer Steam albo link do sklepu Steam (opcjonalnie)<input id="a_steam" maxlength="300" autocomplete="off" placeholder="np. 1030840 albo https://store.steampowered.com/app/1030840/">'+STEAM_HINT+'</label>'+
    '</div><p class="msg" id="a_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="a_go">Dodaj do katalogu</button><button class="btn nob" type="button" id="a_close">Wróć do katalogu</button></p>')}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="uadd"){$("umenu").className="umenu";openAdd();return}
@@ -1322,6 +1328,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(apl==="of"&&!alore&&!agr&&!adub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(v("a_yt")&&!ytId(v("a_yt")))return bad("Link do filmu musi być linkiem z YouTube (youtube.com lub youtu.be).");
   if(img&&!/^(https?:\/\/|img\/)/i.test(img))return bad("Okładka musi zaczynać się od https:// albo img/");
+  var asteam=steamParse(v("a_steam"));if(asteam===null)return bad("Numer Steam: wpisz sam numer albo link do gry w sklepie Steam (store.steampowered.com/app/…).");
   if(v("a_status")==="W trakcie"&&!(+v("a_prog")<100))return bad("Przy statusie „W trakcie” podaj, ile procent jest ukończone (0–99).");
   var dupG=items.filter(function(g){return slug(g.game)===slug(game)})[0];
   if(dupG){if(!link)return bad("Gra „"+game+"” jest już w katalogu. Żeby dodać kolejne spolszczenie, podaj jego link.");
@@ -1329,13 +1336,13 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     if(!confirm("Gra „"+dupG.game+"” jest już w katalogu. Dodać to jako kolejne spolszczenie tej gry?"))return}
   var data={game:game,platform:platGet("a_platform")||"PC",type:v("a_type"),status:v("a_status"),prog:Math.max(0,Math.min(100,+v("a_prog")||0)),ver:v("a_ver")||"—",author:v("a_author")||"—",upd:new Date().toISOString().slice(0,10)};
   if(link)data.link=link;if(apl==="of")data.pl="of";if(alore)data.lore=alore;if(agr)data.gamereader=agr;if(adub){data.dub=adub;if(v("a_dubauthor"))data.dubAuthor=v("a_dubauthor");data.dubStatus=v("a_dubstatus")}if(v("a_yt"))data.yt=v("a_yt");if(v("a_ytt"))data.ytt=v("a_ytt");
-  if(genreNorm(v("a_genre")))data.genre=genreNorm(v("a_genre"));if(v("a_premiera"))data.premiera=v("a_premiera");if(img)data.img=img;if(v("a_opis"))data.opis=v("a_opis");
+  if(genreNorm(v("a_genre")))data.genre=genreNorm(v("a_genre"));if(v("a_premiera"))data.premiera=v("a_premiera");if(img)data.img=img;if(v("a_opis"))data.opis=v("a_opis");if(asteam.length)data.steam=asteam;
   busy(t,"Dodaję…");
   var res=await sb.from("submissions").insert({kind:"new",game:game,data:data,status:"done",user_name:nick()||null});
   busy(t,0);
   if(res.error)return bad("Nie udało się dodać: "+plMsg(res.error.message)+" (czy uruchomiłeś dodawanie-na-stronie.sql w Supabase?)");
   addMem("platform",data.platform);addMem("type",data.type);addMem("status",data.status);addMem("author",data.author==="—"?"":data.author);
-  ["a_game","a_ver","a_link","a_lore","a_gr","a_yt","a_ytt","a_img","a_opis","a_premiera"].forEach(function(i){$(i).value=""});$("a_prog").value=100;
+  ["a_game","a_ver","a_link","a_lore","a_gr","a_yt","a_ytt","a_img","a_opis","a_premiera","a_steam"].forEach(function(i){$(i).value=""});$("a_prog").value=100;
   m.textContent=(dupG?"Dodano kolejne spolszczenie: ":"Dodano: ")+game+". Możesz wpisać kolejne.";m.className="msg ok";$("a_game").focus();
   loadCatalog()});
 // ====== AKTUALNOŚCI: wpisy (tylko administrator) ======
@@ -1472,12 +1479,19 @@ function openModEdit(g){
    '<label>Podpis filmu (opcjonalnie)<input id="e_ytt" maxlength="80" value="'+v("ytt")+'"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
+   '<label style="grid-column:1/-1">Numer Steam albo link do sklepu Steam (puste = brak)<input id="e_steam" maxlength="300" autocomplete="off" value="'+esc(steamStr(g))+'" placeholder="np. 1030840 albo https://store.steampowered.com/app/1030840/">'+STEAM_HINT+'</label>'+
    '<div style="grid-column:1/-1"><b>Dodatkowe spolszczenia tej gry</b><p class="msg" style="margin:2px 0 8px">Główne spolszczenie jest w polach powyżej. Tutaj dodajesz inne, np. od drugiej grupy.</p><div id="e_sp">'+spNorm(spExtra(g)).map(spRow).join("")+'</div><button class="btn" type="button" id="e_spadd">➕ Dodaj kolejne spolszczenie</button></div>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
-   '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button></p>');
+   '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button>'+(isAdmin()?'<button class="btn nob" type="button" id="e_del" style="margin-left:auto">🗑 Usuń z katalogu</button>':'')+'</p>');
   setTimeout(function(){var f=$("e_game");if(f)f.focus()},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="e_close"){closeModal();return}
+  if(t.id==="e_del"&&editG&&isAdmin()){var gd=editG,md=$("e_msg");
+    if(!t.getAttribute("data-armed")){t.setAttribute("data-armed","1");t.textContent="Na pewno usunąć? Kliknij jeszcze raz";md.textContent="Gra „"+gd.game+"” zniknie z katalogu razem ze swoją stroną. Komentarze i głosy zostaną w bazie. Kliknij jeszcze raz, żeby potwierdzić.";md.className="msg err";setTimeout(function(){if(t.isConnected&&t.getAttribute("data-armed")){t.removeAttribute("data-armed");t.textContent="🗑 Usuń z katalogu"}},6000);return}
+    busy(t,"Usuwam…");
+    var rd=await sb.from("submissions").insert({kind:"modedit",game:gd.game,data:{key:keyOf(gd),changes:[{field:"usun",from:"",to:"1"}]},status:"done",user_name:nick()||null});
+    busy(t,0);if(rd.error){md.textContent="Nie udało się usunąć: "+plMsg(rd.error.message);md.className="msg err";return}
+    closeModal();editG=null;await loadCatalog();return}
   if(t.id==="e_spadd"){$("e_sp").insertAdjacentHTML("beforeend",spRow());return}
   if(t.getAttribute("data-spdel")){t.closest(".sprow").remove();return}
   if(t.id!=="e_go"||!editG)return;
@@ -1492,10 +1506,12 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(nv.dub&&!/^https?:\/\//i.test(nv.dub))return bad("Link do dubbingu musi zaczynać się od https://");
   if(nv.pl==="of"&&!nv.lore&&!nv.gamereader&&!nv.dub)return bad("Gra bez spolszczenia musi mieć choć jeden link do lektora albo dubbingu.");
   if(nv.img&&!/^(https?:\/\/|img\/)/i.test(nv.img))return bad("Okładka musi zaczynać się od https:// albo img/");
+  var esteam=steamParse(val("e_steam"));if(esteam===null)return bad("Numer Steam: wpisz sam numer albo link do gry w sklepie Steam (store.steampowered.com/app/…).");
   if(slug(nv.game)!==slug(g.game)&&items.some(function(x){return slug(x.game)===slug(nv.game)}))return bad("Gra o takiej nazwie już jest w katalogu.");
   var spRows=spRead();if(spRows.some(function(s){return !/^https?:\/\//i.test(s.link)}))return bad("Każde dodatkowe spolszczenie musi mieć link zaczynający się od https://");
   var spOld=spNorm(spExtra(g)),spNew=spNorm(spRows).map(function(s){if(s.id)return s;var b=keyOf(g)+"--"+(slug(s.author==="—"?"":s.author)||"autor"),id=b,n=2,all=spOld.concat(spRows);while(all.some(function(x){return x.id===id}))id=b+"-"+(n++);s.id=id;s.upd=s.dodano=new Date().toISOString().slice(0,10);spRows.push(s);return s});
   var changes=[];Object.keys(nv).forEach(function(k){var old=g[k]==null?"":String(g[k]);if(nv[k]!==old)changes.push({field:k,from:old,to:nv[k]})});
+  if(esteam.join(", ")!==steamStr(g))changes.push({field:"steam",from:steamStr(g),to:esteam.join(", ")});
   if(JSON.stringify(spNew)!==JSON.stringify(spOld))changes.push({field:"spolszczenia",from:JSON.stringify(spOld),to:JSON.stringify(spNew)});
   if($("e_upd").checked)changes.push({field:"upd",from:String(g.upd||""),to:new Date().toISOString().slice(0,10)});
   if(!changes.length)return bad("Nic nie zmieniono.");
@@ -1835,13 +1851,15 @@ function mergeApproved(rows){
       var exG=find(slug(name));if(exG){if(/^https?:\/\//i.test(link))spAdd(exG,d,link,day,keyOf);return}if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk))return;
       var e={game:name,platform:d.platform||"PC",type:TYPES.indexOf(d.type)>-1?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
       if(/^https?:\/\//i.test(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(/^https?:\/\//i.test(d.lore||""))e.lore=d.lore;if(/^https?:\/\//i.test(d.gamereader||""))e.gamereader=d.gamereader;if(/^https?:\/\//i.test(d.dub||"")){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.indexOf(d.dubStatus)>-1)e.dubStatus=d.dubStatus}if(ytId(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
-      if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
+      if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);var est=steamParse(Array.isArray(d.steam)?d.steam.join(","):d.steam);if(est&&est.length)steamSet(e,est);e.upd=d.upd||day;list.push(e)}
     else if(r.kind==="edit"){var g=find(d.key);if(!g)return;var przedE={ver:g.ver,status:g.status};
       (d.changes||[]).forEach(function(c){if(EDIT.indexOf(c.field)<0)return;var v=String(c.to==null?"":c.to).trim();
         if(c.field==="link"&&!/^https?:\/\//i.test(v))return;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre});
       if(day&&spUpdKey(przedE,g))g.upd=day}
     else if(r.kind==="modedit"){var gm=find(d.key);if(!gm)return;var przedM={ver:gm.ver,status:gm.status};
       (d.changes||[]).forEach(function(c){var f=c.field,v=String(c.to==null?"":c.to).trim();
+        if(f==="usun"){if(v==="1")gm._usun=1;return}
+        if(f==="steam"){var sv=steamParse(v);if(sv)steamSet(gm,sv);return}
         if(f==="spolszczenia"){var spv=[];try{spv=spNorm(JSON.parse(String(c.to||"[]")))}catch(e){return}spv.forEach(function(s){var o=spExtra(gm).filter(function(x){return x.id===s.id})[0];if(o&&spUpdKey(o,s))s.upd=day});if(spv.length)gm.spolszczenia=spv;else delete gm.spolszczenia;return}
         if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].indexOf(f)<0)return;
         if(f==="yt"){if(ytId(v))gm.yt=v;else if(!v)delete gm.yt;return}
@@ -1857,7 +1875,7 @@ function mergeApproved(rows){
         if(f==="genre"||f==="opis"){if(v)gm[f]=f==="opis"?v.slice(0,500):v;else delete gm[f];return}
         if(f==="type"){if(TYPES.indexOf(v)>-1)gm.type=v;return}
         if(f==="prog"){gm.prog=Math.max(0,Math.min(100,+v||0));return}
-        if(v)gm[f]=v});if(day&&!(d.changes||[]).some(function(c){return c.field==="upd"})&&spUpdKey(przedM,gm))gm.upd=day}
+        if(v)gm[f]=v});if(day&&!(d.changes||[]).some(function(c){return c.field==="upd"})&&spUpdKey(przedM,gm))gm.upd=day;if(gm._usun)list.splice(list.indexOf(gm),1)}
     else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
   return list}
 function loadCatalog(){

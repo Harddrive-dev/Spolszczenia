@@ -11,6 +11,9 @@ for(const g of list)if(g.status==="W toku")g.status="Beta";
 const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
+// Numer gry na Steamie: sam numer, link do sklepu albo kilka po przecinku. Zwraca listę numerów albo null, gdy coś jest nie tak.
+const steamParse=v=>{v=String(Array.isArray(v)?v.join(","):v??"").trim();if(!v)return[];const out=[];for(const x of v.split(/[\s,;]+/)){if(!x)continue;const m=/^(\d{1,8})$/.exec(x)||/steam(?:powered|community)\.com\/(?:app|agecheck\/app)\/(\d{1,8})/i.exec(x);if(!m)return null;if(!out.includes(+m[1]))out.push(+m[1])}return out};
+const steamSet=(g,ids)=>{if(ids&&ids.length)g.steam=ids.length===1?ids[0]:ids;else delete g.steam};
 // Kilka spolszczeń jednej gry: pierwsze zostaje w polach wpisu, kolejne trafiają do listy „spolszczenia”. Każde ma stałe id (przyda się do ocen).
 const spNorm=a=>{const seen=new Set();return (Array.isArray(a)?a:[]).map(s=>({id:String(s.id||""),author:String(s.author||"—").slice(0,100),link:String(s.link||"").trim(),type:TYPES.includes(s.type)?s.type:"Napisy",status:["Gotowe","W trakcie","Beta","Testy","Premiera","Zapowiedź"].includes(s.status)?s.status:"Gotowe",prog:Math.max(0,Math.min(100,+s.prog||0)),ver:String(s.ver||"—").slice(0,40),upd:String(s.upd||"").slice(0,10),dodano:String(s.dodano||"").slice(0,10)})).filter(s=>{if(!/^https?:\/\//i.test(s.link)||seen.has(s.link))return false;seen.add(s.link);return true})};
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
@@ -23,13 +26,15 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader)&&!URLOK(d.dub)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
-  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);e.upd=d.upd||day;list.push(e)}
+  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}e.upd=d.upd||day;list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
   if(day&&spUpd(przed,g))g.upd=day}
  else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
+   if(f==="usun"){if(v==="1")g._usun=1;continue}
+   if(f==="steam"){const st=steamParse(v);if(st)steamSet(g,st);continue}
    if(f==="spolszczenia"){let a=null;try{a=spNorm(JSON.parse(v||"[]"))}catch{continue}for(const s of a){const o=(g.spolszczenia||[]).find(x=>x.id===s.id);if(o&&spUpd(o,s))s.upd=day}if(a.length)g.spolszczenia=a;else delete g.spolszczenia;continue}
    if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].includes(f))continue;
    if(f==="status"){if(v)g.status=v==="W toku"?"Beta":v;continue}
@@ -47,7 +52,8 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="type"){if(TYPES.includes(v))g.type=v;continue}
    if(f==="prog"){g.prog=Math.max(0,Math.min(100,+v||0));continue}
    if(v)g[f]=v}
-  if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day}
+  if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day;
+  if(g._usun)list.splice(list.indexOf(g),1)}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
 // dawne nazwy gatunków (np. z wcześniejszych edycji w panelu, które automat nanosi przy każdym przebiegu) -> obecne
 const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};

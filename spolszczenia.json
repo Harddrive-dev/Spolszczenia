@@ -14985,5 +14985,20 @@
     "dodano": "2026-11-07",
     "img": "https://cdn1.epicgames.com/spt-assets/46fc27a8d34142878ee99f5499c61ae2/white-whisper-bukmw.png",
     "upd": "2026-11-07"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
+    "upd": "2026-11-07",
+    "genre": "Horror",
+    "status": "Gotowe"
   }
 ]

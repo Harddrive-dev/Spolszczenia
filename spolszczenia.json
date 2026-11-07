@@ -9075,7 +9075,20 @@
     "img": "https://cdn2.steamgriddb.com/thumb/3424833620274341ce7ac3b243be9b8a.jpg",
     "upd": "2026-11-06",
     "genre": "RPG",
-    "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft."
+    "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
+    "spolszczenia": [
+      {
+        "id": "world-of-warcraft-forever--rustykey",
+        "author": "rustykey",
+        "link": "https://www.curseforge.com/wow/addons/spoken",
+        "type": "Dubbing",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-07",
+        "dodano": "2026-11-07"
+      }
+    ]
   },
   {
     "game": "Getting Over It with Bennett Foddy",

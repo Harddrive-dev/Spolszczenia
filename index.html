@@ -1643,7 +1643,8 @@ function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").n
 function stNorm2(t){return stNorm(t).replace(/ (game of the year|goty|definitive|complete|enhanced|deluxe|ultimate|gold|premium|standard)( edition)?$/,"").trim()}
 function steamMatches(){var row=STEAM.row;if(!row||!Array.isArray(row.games))return[];
   // Najpierw po numerze gry na Steamie (pole „steam” w katalogu), a gry bez numeru po nazwie.
-  var byId=Object.create(null),idx=Object.create(null);items.forEach(function(g){if(!/pc/i.test(g.platform||"PC"))return;var sid=g.steam;sid=Array.isArray(sid)?sid:(sid?[sid]:[]);
+  // Gry tylko „Zapowiedź” (bez gotowego spolszczenia) nie trafiają do „Moich gier Steam” – tak samo jak w Nowościach na stronie głównej.
+  var byId=Object.create(null),idx=Object.create(null);items.forEach(function(g){if(!/pc/i.test(g.platform||"PC"))return;if(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))return;var sid=g.steam;sid=Array.isArray(sid)?sid:(sid?[sid]:[]);
     if(sid.length){sid.forEach(function(i){(byId[i]=byId[i]||[]).push(g)});return}
     var a=stNorm(g.game),b=stNorm2(g.game);if(a&&!idx[a])idx[a]=g;if(b&&!idx[b])idx[b]=g});
   var seen=Object.create(null),out=[];function add(g){if(g&&!seen[keyOf(g)]){seen[keyOf(g)]=1;out.push(g)}}

@@ -517,6 +517,8 @@ table tbody tr{transition:background-color .18s ease}
 table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
 @media (hover:none){.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{transform:none;box-shadow:none}}
 @media (prefers-reduced-motion:reduce){a,button,.btn,.ubtn,.sbtn,.tb,.chip,.mini,.ncard,.mitem,.vrow,.wrow,.stat,.sg,.nwl a,.sfres .sfpick,table tbody tr{transition:none}.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{transform:none}}
+/* Bez niebieskiej poświaty po dotknięciu na telefonie (Android/Chrome); obwódka przy obsłudze klawiaturą zostaje */
+html{-webkit-tap-highlight-color:transparent}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),

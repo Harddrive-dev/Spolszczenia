@@ -221,3 +221,5 @@ table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)
 .snew{position:absolute;top:-7px;right:-6px;min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#e5484d;color:#fff;font-size:11.5px;font-weight:800;line-height:20px;text-align:center;border:2px solid var(--bg);animation:snew 2.4s ease-out infinite}
 @keyframes snew{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55)}70%{box-shadow:0 0 0 9px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
 @media (prefers-reduced-motion:reduce){.snew{animation:none}}
+/* Bez niebieskiej poświaty po dotknięciu na telefonie (Android/Chrome); obwódka przy obsłudze klawiaturą zostaje */
+html{-webkit-tap-highlight-color:transparent}

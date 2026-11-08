@@ -8481,9 +8481,12 @@
     "upd": "2026-10-30",
     "lore": "https://lorespeak.pl/games/final-fantasy-xvi-2dlc",
     "pl": "of",
-    "img": "https://cdn2.steamgriddb.com/thumb/528389d3fa104d48cf5ca7c97cc1b67f.jpg",
+    "img": "https://cdn2.steamgriddb.com/thumb/9245c6b6ad413336553235bfbb257ef6.png",
     "opis": "Szesnasta część serii RPG z dojrzałą fabułą. Clive Rosfield walczy w świecie, w którym kryształy zasilają krainę.",
-    "steam": 2515020
+    "steam": 2515020,
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Bully: Scholarship Edition",
@@ -10035,7 +10038,8 @@
     "author": "pogo_pierrot",
     "link": "https://bazarowespolszczenia.pl/gra/final_fantasy_resonance_port",
     "dodano": "2026-10-22",
-    "upd": "2026-10-22"
+    "upd": "2026-10-22",
+    "img": "https://cdn2.steamgriddb.com/thumb/4c112afc9b1ebde9d311cca23e8eb2b8.jpg"
   },
   {
     "game": "Phoenix Wright: Ace Attorney Trilogy",
@@ -15746,5 +15750,37 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Arco",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/arco",
+    "genre": "RPG",
+    "dodano": "2026-11-08",
+    "img": "https://cdn2.steamgriddb.com/thumb/a9246bf3f51cda272f4778a45c3e420c.jpg",
+    "opis": "Arco to niezwykła, taktyczna gra RPG w klimacie mezoamerykańskiego fantasy, łącząca unikalny system walki z przepiękną, artystyczną oprawą w stylu pixel art.",
+    "steam": 2366970,
+    "upd": "2026-11-08"
+  },
+  {
+    "game": "Shenmue III",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=shenmue-iii",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-08",
+    "img": "https://cdn2.steamgriddb.com/thumb/4d33fdd79d41192040b3becf8244f991.jpg",
+    "opis": "Shenmue III to kultowa przygodowa gra akcji z elementami sztuk walki i symulatora życia, stanowiąca bezpośrednią kontynuację legendarnych odsłon z konsoli Sega Dreamcast.",
+    "steam": 878670,
+    "upd": "2026-11-08"
   }
 ]

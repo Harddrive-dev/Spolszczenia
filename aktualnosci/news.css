@@ -207,3 +207,12 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .nwl a:hover,.nwl a:focus-visible{border-color:var(--accent)}
 .nwl b{flex-basis:100%;font-size:15px;line-height:1.35}
 .nwd{font-size:13px;color:var(--muted)}
+/* Płynne podświetlenie po najechaniu myszką – wszędzie tak samo (8.11.2026) */
+a,button,.btn,.ubtn,.sbtn,.tb,.chip,.mini{transition:border-color .18s ease,background-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease,filter .18s ease,opacity .18s ease}
+.chip:hover{border-color:var(--accent);color:var(--text)}
+.ncard,.mitem,.vrow,.wrow,.stat,.sg,.nwl a,.sfres .sfpick{transition:border-color .18s ease,background-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+table tbody tr{transition:background-color .18s ease}
+table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+@media (hover:none){.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{transform:none;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){a,button,.btn,.ubtn,.sbtn,.tb,.chip,.mini,.ncard,.mitem,.vrow,.wrow,.stat,.sg,.nwl a,.sfres .sfpick,table tbody tr{transition:none}.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{transform:none}}

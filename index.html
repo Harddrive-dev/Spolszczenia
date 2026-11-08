@@ -1683,14 +1683,14 @@ function stSeen(){var u=me();if(!u)return[];var k=[];try{var o=JSON.parse(localS
 function stUnread(m){var k=stSeen();return m.filter(function(g){return steamCat(g).indexOf("new")>-1&&k.indexOf(stNewKey(g))<0})}
 function stMarkSeen(m){var u=me();if(!u)return;var k=m.filter(function(g){return steamCat(g).indexOf("new")>-1}).map(stNewKey);try{localStorage.setItem("steam.seen",JSON.stringify({u:u.id,k:k}))}catch(e){}
   STEAM.srvSeen={u:u.id,k:k};try{sb.from("steam_seen").upsert({user_id:u.id,keys:k.slice(0,2000),updated_at:new Date().toISOString()}).then(function(){},function(){})}catch(e){}}
-async function stSeenLoad(){var u=me();if(!u||!sb)return;try{var r=await sb.from("steam_seen").select("keys").maybeSingle();if(!r.error&&r.data&&Array.isArray(r.data.keys)){STEAM.srvSeen={u:u.id,k:r.data.keys};steamUI()}}catch(e){}}
+async function stSeenLoad(){var u=me();if(!u||!sb){STEAM.seenOk=true;return}try{var r=await sb.from("steam_seen").select("keys").maybeSingle();if(!r.error&&r.data&&Array.isArray(r.data.keys)){STEAM.srvSeen={u:u.id,k:r.data.keys};steamUI()}}catch(e){}STEAM.seenOk=true}
 function stIsUnr(g){var k=stNewKey(g);return (STEAM.fresh&&STEAM.fresh.indexOf(k)>-1)||(steamCat(g).indexOf("new")>-1&&stSeen().indexOf(k)<0)}
 async function steamLoad(force){
   if(!CM){return}
   if(!me()){STEAM.st="out";STEAM.row=null;steamUI();return}
   try{var r=await sb.from("steam_links").select("steam_id,persona,avatar,games,is_private,games_at").maybeSingle();
     if(r.error){STEAM.st="off";steamUI();return}
-    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";if(r.data)await stSeenLoad();steamUI();
+    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";if(r.data){STEAM.seenOk=false;await stSeenLoad()}steamUI();
     if(r.data&&(force||!r.data.games_at||Date.now()-new Date(r.data.games_at).getTime()>12*3600e3))await steamFetch(!!force)}
   catch(e){STEAM.st="off"}
   steamUI()}
@@ -1730,8 +1730,8 @@ function steamUI(){
   b.style.display=show?"":"none";
   var m=steamMatches(),lbl,cnt="";
   var un=0;
-  if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):"";if(cnt&&!STEAM.row.is_private)un=stUnread(m).length}else{lbl="Połącz Steam"}
-  try{if(me()&&STEAM.st==="linked")localStorage.setItem("steam.c",JSON.stringify({n:cnt,u:un}));else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
+  if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):"";if(cnt&&!STEAM.row.is_private&&STEAM.seenOk)un=stUnread(m).length}else{lbl="Połącz Steam"}
+  try{if(me()&&STEAM.st==="linked"){if(STEAM.seenOk)localStorage.setItem("steam.c",JSON.stringify({n:cnt,u:un}))}else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
   $("steamlbl").textContent=lbl;var sn=$("steamn");sn.textContent=cnt;sn.style.display=cnt?"":"none";
   var su=$("steamu");su.textContent=un>99?"99+":String(un);su.style.display=un?"":"none";
   b.title=lbl+(cnt?" ("+cnt+")":"")+(un?" – "+un+" "+(un===1?"nowość":(un%10>=2&&un%10<=4&&(un%100<10||un%100>=20)?"nowości":"nowości"))+" do Twoich gier":"");b.setAttribute("aria-label",b.title);

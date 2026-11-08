@@ -9082,7 +9082,7 @@
     "spolszczenia": [
       {
         "id": "world-of-warcraft-forever--rustykey",
-        "author": "rustykey",
+        "author": "Spoken",
         "link": "https://www.curseforge.com/wow/addons/spoken",
         "type": "Dubbing",
         "status": "Gotowe",
@@ -15736,22 +15736,6 @@
     "upd": "2026-11-07"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07"
-  },
-  {
     "game": "Arco",
     "platform": "PC",
     "type": "Napisy",
@@ -15781,6 +15765,23 @@
     "img": "https://cdn2.steamgriddb.com/thumb/4d33fdd79d41192040b3becf8244f991.jpg",
     "opis": "Shenmue III to kultowa przygodowa gra akcji z elementami sztuk walki i symulatora życia, stanowiąca bezpośrednią kontynuację legendarnych odsłon z konsoli Sega Dreamcast.",
     "steam": 878670,
-    "upd": "2026-11-08"
+    "upd": "2026-11-08",
+    "lore": "https://lorespeak.pl/games/shenmue-iii"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07"
   }
 ]

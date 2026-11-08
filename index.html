@@ -519,6 +519,11 @@ table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)
 @media (prefers-reduced-motion:reduce){a,button,.btn,.ubtn,.sbtn,.tb,.chip,.mini,.ncard,.mitem,.vrow,.wrow,.stat,.sg,.nwl a,.sfres .sfpick,table tbody tr{transition:none}.ncard:hover,.mitem:hover,.vrow:hover,.wrow:hover,.stat:hover,.sg:hover,.nwl a:hover,.sfres .sfpick:hover{transform:none}}
 /* Bez niebieskiej poświaty po dotknięciu na telefonie (Android/Chrome); obwódka przy obsłudze klawiaturą zostaje */
 html{-webkit-tap-highlight-color:transparent}
+/* Kafelek Gra tygodnia: oficjalne PL i lektor (9.11.2026) */
+.feat .pill.ofi{border-color:var(--ok);color:var(--ok)}
+.feat .pill.lkp{border-color:#8e5cd9;color:#c4a0ff}
+.flk{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+.flk .lkl{margin:0}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),
@@ -832,12 +837,24 @@ var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sie
 function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
   return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
 function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')+(g.dub?' · Dubbing: '+(g.dubAuthor||'fanowski'):'')}return (g.type||'—')+' · '+authorsTxt(g)}
+// Kafelek „Gra tygodnia/miesiąca”: działa też dla gier z oficjalnym PL (bez autora i linku do spolszczenia) – pokazuje lektora i dubbing.
+function featPills(f){var h='<span class="pill">'+esc(f.platform||"PC")+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"");
+  if(f.pl==="of")h+='<span class="pill ofi">Oficjalna PL</span>';
+  else{if(f.type)h+='<span class="pill">'+esc(f.type)+'</span>';if(f.status&&hasSp(f))h+='<span class="pill '+cls(f.status)+'">'+esc(stText(f))+'</span>'}
+  if(hasLk(f))h+='<span class="pill lkp">🎙️ Polski lektor</span>';
+  if(dubPill(f))h+=dubPill(f);return h}
+function featMeta(f){var h="",au=authorsOf(f);
+  if(f.pl==="of"&&!f.link)h+='<p class="fmeta">Polska wersja od wydawcy – w grze wystarczy wybrać język polski.</p>';
+  else if(au.length)h+='<p class="fmeta">Autor: '+esc(au.join(", "))+'.</p>';
+  if(hasLk(f))h+='<div class="flk"><span>Polski lektor:</span>'+lkHtml(f).replace(/^<span class="lkw">|<\/span>$/g,"")+'</div>';
+  if(/^https?:\/\//i.test(f.dub||"")&&!(hasSp(f)&&f.type==="Dubbing"))h+='<p class="fmeta">Dubbing: <a href="'+esc(safe(f.dub))+'" target="_blank" rel="noopener">'+esc(f.dubAuthor||"fanowski")+'</a></p>';
+  return h}
 function renderHome(){
   function feat(el,f,badge,when){
     if(!f){el.style.display="none";el.innerHTML="";return}
     var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
     var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
-    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" href="/gra/'+esc(keyOf(f))+'/">'+esc(f.game)+'</a></h2><div class="fpills"><span class="pill">'+esc(f.platform)+'</span>'+(f.genre?'<span class="pill gen">'+esc(f.genre)+'</span>':"")+'<span class="pill">'+esc(f.type)+'</span><span class="pill '+cls(f.status)+'">'+esc(stText(f))+'</span></div>'+premLine(f)+'<p class="fmeta">Autor: '+esc(authorsTxt(f))+'.</p>'+'<div class="fbtns"><a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>'+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
+    el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" href="/gra/'+esc(keyOf(f))+'/">'+esc(f.game)+'</a></h2><div class="fpills">'+featPills(f)+'</div>'+premLine(f)+featMeta(f)+'<div class="fbtns">'+(f.link?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>':'<a class="fbtn" href="/gra/'+esc(keyOf(f))+'/">Zobacz grę</a>')+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
     el.style.display=""}
   var fw=(winnerKey&&gameByKey(winnerKey))||items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
   if(!weekReady){fw=null;fm=null}

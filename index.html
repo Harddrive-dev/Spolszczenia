@@ -1291,17 +1291,23 @@ var GENRES=["Akcja","Platformówka","Przygodowa","RPG","Strzelanka","Horror","St
 // Numer gry na Steamie: sam numer albo link do sklepu (store.steampowered.com/app/123/...). Kilka numerów po przecinku.
 function steamParse(v){v=String(v||"").trim();if(!v)return[];var out=[],ok=true;v.split(/[\s,;]+/).forEach(function(x){if(!x)return;var m=/^(\d{1,8})$/.exec(x)||/steam(?:powered|community)\.com\/(?:app|agecheck\/app)\/(\d{1,8})/i.exec(x);if(m){var n=+m[1];if(out.indexOf(n)<0)out.push(n)}else ok=false});return ok?out:null}
 // „Znajdź na Steamie”: szuka po nazwie gry z formularza (funkcja „steam”, akcja „szukaj”) i wpisuje wybrany numer.
-function steamFindHtml(p){return '<div style="grid-column:1/-1;margin-top:-4px"><div class="sfbar"><input id="'+p+'_sfq" maxlength="100" autocomplete="off" placeholder="Szukaj na Steamie (puste = nazwa gry z formularza)" aria-label="Nazwa gry do wyszukania na Steamie"><button class="btn" type="button" data-sfind="'+p+'">🔎 Znajdź na Steamie</button></div><div class="sfres" id="'+p+'_sfres" aria-live="polite"></div></div>'}
+function steamFindHtml(p){return '<div style="grid-column:1/-1;margin-top:-4px"><div class="sfbar"><input id="'+p+'_sfq" maxlength="100" autocomplete="off" placeholder="🔎 Inna nazwa do szukania na Steamie (opcjonalnie)" aria-label="Nazwa gry do wyszukania na Steamie"></div><div class="sfres" id="'+p+'_sfres" aria-live="polite"></div></div>'}
+var SF_CACHE=Object.create(null),SF_TOK={},SF_T={};
 async function steamFind(p){var box=$(p+"_sfres"),q=(($(p+"_sfq")||{}).value||"").trim()||(($(p+"_game")||{}).value||"").trim();if(!box)return;
-  if(q.length<2){box.innerHTML='<p class="msg err">Najpierw wpisz nazwę gry.</p>';return}
-  box.innerHTML='<p class="msg">Szukam „'+esc(q)+'” na Steamie…</p>';
-  try{var r=await sb.functions.invoke("steam",{body:{action:"szukaj",q:q}});var it=r.data&&r.data.items;
+  if(q.length<3){box.innerHTML="";return}
+  var tok=SF_TOK[p]=(SF_TOK[p]||0)+1;
+  if(!SF_CACHE[q])box.innerHTML='<p class="msg">Szukam „'+esc(q)+'” na Steamie…</p>';
+  try{var r=SF_CACHE[q]||await sb.functions.invoke("steam",{body:{action:"szukaj",q:q}});if(tok!==SF_TOK[p])return;var it=r.data&&r.data.items;
     if(r.error||!it){box.innerHTML='<p class="msg err">Nie udało się połączyć ze Steamem. Spróbuj za chwilę.</p>';return}
+    SF_CACHE[q]=r;
     if(!it.length){box.innerHTML='<p class="msg">Steam nic nie znalazł dla „'+esc(q)+'”. Wpisz w polu obok nazwę angielską albo krótszą (np. „Mafia” zamiast „Mafia: Edycja Ostateczna”).</p>';return}
     box.innerHTML='<p class="msg" style="margin:6px 0 4px">Kliknij właściwą grę (↗ otwiera ją na Steamie do sprawdzenia):</p>'+it.map(function(x){return '<div class="sfrow"><button type="button" class="sfpick" data-sid="'+(+x.id)+'" data-sp="'+p+'"><b>'+esc(x.name)+'</b><span>'+(+x.id)+'</span></button><a href="https://store.steampowered.com/app/'+(+x.id)+'/" target="_blank" rel="noopener" title="Otwórz na Steamie">↗</a></div>'}).join("")}
-  catch(e){box.innerHTML='<p class="msg err">Nie udało się połączyć ze Steamem. Spróbuj za chwilę.</p>'}}
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-sfind],[data-sid]");if(!b)return;
-  if(b.hasAttribute("data-sfind")){steamFind(b.getAttribute("data-sfind"));return}
+  catch(e){if(tok===SF_TOK[p])box.innerHTML='<p class="msg err">Nie udało się połączyć ze Steamem. Spróbuj za chwilę.</p>'}}
+// Podpowiedzi same: po wpisaniu nazwy gry (gdy numer Steam jest jeszcze pusty) albo w polu „inna nazwa”.
+document.addEventListener("input",function(e){var id=e.target&&e.target.id;var m=/^([ae])_(game|sfq)$/.exec(id||"");if(!m)return;var p=m[1];
+  if(m[2]==="game"&&((($(p+"_steam")||{}).value||"").trim()||(($(p+"_sfq")||{}).value||"").trim()))return;
+  clearTimeout(SF_T[p]);SF_T[p]=setTimeout(function(){steamFind(p)},600)});
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-sid]");if(!b)return;
   var p=b.getAttribute("data-sp"),inp=$(p+"_steam");if(inp){inp.value=b.getAttribute("data-sid");inp.dispatchEvent(new Event("input",{bubbles:true}))}
   var box=$(p+"_sfres");if(box)box.innerHTML='<p class="msg ok">Wpisano numer '+esc(b.getAttribute("data-sid"))+'. Pamiętaj, żeby zapisać formularz.</p>'});
 function steamStr(g){var s=g&&g.steam;return (Array.isArray(s)?s:(s?[s]:[])).join(", ")}
@@ -1505,7 +1511,7 @@ function openModEdit(g){
    '<div style="grid-column:1/-1"><b>Dodatkowe spolszczenia tej gry</b><p class="msg" style="margin:2px 0 8px">Główne spolszczenie jest w polach powyżej. Tutaj dodajesz inne, np. od drugiej grupy.</p><div id="e_sp">'+spNorm(spExtra(g)).map(spRow).join("")+'</div><button class="btn" type="button" id="e_spadd">➕ Dodaj kolejne spolszczenie</button></div>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
    '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button>'+(isAdmin()?'<button class="btn nob" type="button" id="e_del" style="margin-left:auto">🗑 Usuń z katalogu</button>':'')+'</p>');
-  setTimeout(function(){var f=$("e_game");if(f)f.focus()},50)}
+  setTimeout(function(){var f=$("e_game");if(f)f.focus();if(!steamStr(g)&&/pc/i.test(g.platform||"")&&!/emu/i.test(g.platform||""))steamFind("e")},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="e_close"){closeModal();return}
   if(t.id==="e_del"&&editG&&isAdmin()){var gd=editG,md=$("e_msg");

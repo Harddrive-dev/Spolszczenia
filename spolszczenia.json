@@ -15793,5 +15793,21 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Death's Gambit: Afterlife",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/death_s_gambit_afterlife",
+    "genre": "Metroidvania",
+    "dodano": "2026-11-08",
+    "img": "https://cdn2.steamgriddb.com/thumb/49ce4fe6942d35a74640cf784b94e5d2.jpg",
+    "opis": "Death's Gambit: Afterlife to rozbudowana, dwuwymiarowa gra z gatunku Metroidvania z silnymi elementami Soulslike, osadzona w mrocznym świecie dark fantasy.",
+    "steam": 356650,
+    "upd": "2026-11-08"
   }
 ]

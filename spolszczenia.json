@@ -13938,7 +13938,8 @@
     "img": "https://cdn2.steamgriddb.com/thumb/b761c0237639f01545ae49fd0ddbb1c2.jpg",
     "steam": 842100,
     "opis": "Daymare: 1998 to klasyczny survival horror z widokiem z trzeciej osoby (TPP), stanowiący duchowego spadkobiercę zombijowych serii z lat 90. (szczególnie Resident Evil 2).\n\nGra przenosi cię do małego miasteczka opanowanego przez śmiertelny wirus zmieniający ludzi w krwiożercze potwory. Rozgrywka ukazuje historię z perspektywy trzech różnych postaci i stawia na mroczną atmosferę, twarde zarządzanie mocno ograniczoną amunicją i zasobami, wymagające zagadki środowiskowe oraz bezkompromisowy poziom t",
-    "lore": "https://lorespeak.pl/games/daymare-1998"
+    "lore": "https://lorespeak.pl/games/daymare-1998",
+    "yt": "https://www.youtube.com/watch?v=c31w7JwlqHI"
   },
   {
     "game": "Dead Rising 3",
@@ -14135,7 +14136,8 @@
     "dodano": "2026-09-25",
     "upd": "2026-09-25",
     "img": "https://cdn2.steamgriddb.com/thumb/e6d943aa3107524ac73316658f2adb0a.jpg",
-    "steam": 1330470
+    "steam": 1330470,
+    "yt": "https://www.youtube.com/watch?v=PuTJxOmZg0w"
   },
   {
     "game": "Fantasy Life i: The Girl Who Steals Time",
@@ -15779,22 +15781,6 @@
     "lore": "https://lorespeak.pl/games/shenmue-iii"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07"
-  },
-  {
     "game": "Death's Gambit: Afterlife",
     "platform": "PC",
     "type": "Napisy",
@@ -15809,5 +15795,21 @@
     "opis": "Death's Gambit: Afterlife to rozbudowana, dwuwymiarowa gra z gatunku Metroidvania z silnymi elementami Soulslike, osadzona w mrocznym świecie dark fantasy.",
     "steam": 356650,
     "upd": "2026-11-08"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07"
   }
 ]

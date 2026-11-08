@@ -9,6 +9,7 @@ import { execSync } from "node:child_process";
 const SITE = "https://grypopolsku.pl";
 const HOOK = process.env.DISCORD_WEBHOOK || "";               // kanał z katalogiem (#nowe-spolszczenia)
 const HOOK_NEWS = process.env.DISCORD_WEBHOOK_NEWS || HOOK;     // kanał z wpisami (#aktualności); bez sekretu – ten sam co katalog
+const BOT = process.env.DISCORD_BOT_TOKEN || "";                // bot „GryPoPolsku Ogłoszenia”: klika „Opublikuj” na kanałach ogłoszeń (dla obserwujących serwerów)
 const DRY = process.env.DRY === "1";
 const TEST = process.env.DISCORD_TEST === "true";
 const PRE = process.env.PRE || "";
@@ -98,14 +99,27 @@ function newsEvents() {
   return ev;
 }
 
+// „Opublikuj” – tylko na kanałach ogłoszeń i tylko z tokenem bota. Discord pozwala na 10 publikacji na godzinę na kanał;
+// powyżej limitu wiadomość zostaje tylko na naszym serwerze (bez błędu).
+async function publish(ch, id) {
+  if (!BOT) return;
+  const r = await fetch(`https://discord.com/api/v10/channels/${ch}/messages/${id}/crosspost`, { method: "POST", headers: { Authorization: "Bot " + BOT } });
+  if (r.ok) return;
+  const t = (await r.text()).slice(0, 200);
+  if (r.status === 429) console.log("Publikacja pominięta (limit Discorda 10/godz. na kanał).");
+  else if (!/40033|not.*announcement|Cannot execute action on this channel type/i.test(t)) console.log("Publikacja:", r.status, t);
+}
+
 async function send(embeds, content, hook = HOOK) {
   const body = { username: "GryPoPolsku.pl", avatar_url: SITE + "/icon-192.png", embeds, allowed_mentions: { parse: [] } };
   if (content) body.content = content;
   if (DRY || !HOOK) { console.log(JSON.stringify(body, null, 1)); return; }
   for (let i = 0; i < 3; i++) {
-    const r = await fetch(hook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const r = await fetch(hook + (hook.includes("?") ? "&" : "?") + "wait=true", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     if (r.status === 429) { const j = await r.json().catch(() => ({})); await new Promise(z => setTimeout(z, ((j.retry_after || 2) + 0.5) * 1000)); continue; }
-    if (!r.ok) console.log("Discord:", r.status, (await r.text()).slice(0, 200));
+    if (!r.ok) { console.log("Discord:", r.status, (await r.text()).slice(0, 200)); return; }
+    const msg = await r.json().catch(() => null);
+    if (msg && msg.id && msg.channel_id) await publish(msg.channel_id, msg.id);
     return;
   }
 }

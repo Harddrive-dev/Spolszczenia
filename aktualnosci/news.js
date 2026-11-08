@@ -22,8 +22,8 @@ var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColo
 var STEAM_ICON='<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg>',steamChecked=null;
 function steamChip(){var u=me(),c=null;try{c=JSON.parse(localStorage.getItem("steam.c")||"null")}catch(e){}
   if(u&&steamChecked===false)c=null;
-  var lbl=!u?"Twoje gry ze Steam":(c||steamChecked===true)?"Moje gry Steam":"Połącz Steam",n=u&&c&&c.n?String(c.n):"";
-  return '<a class="sbtn" id="steamchip" href="/#/steam" title="'+lbl+(n?" ("+n+")":"")+'">'+STEAM_ICON+'<span class="st">'+lbl+'</span>'+(n?'<span class="sn">'+esc(n)+'</span>':'')+'</a>'}
+  var lbl=!u?"Twoje gry ze Steam":(c||steamChecked===true)?"Moje gry Steam":"Połącz Steam",n=u&&c&&c.n?String(c.n):"",un=u&&c&&c.u>0?c.u:0;
+  return '<a class="sbtn" id="steamchip" href="/#/steam" title="'+lbl+(n?" ("+n+")":"")+(un?" – nowości do Twoich gier: "+un:"")+'">'+STEAM_ICON+'<span class="st">'+lbl+'</span>'+(n?'<span class="sn">'+esc(n)+'</span>':'')+(un?'<span class="snew">'+(un>99?"99+":un)+'</span>':'')+'</a>'}
 async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=await sb.from("steam_links").select("steam_id").maybeSingle();if(r.error)return;steamChecked=!!r.data;if(!r.data){try{localStorage.removeItem("steam.c")}catch(e){}}renderUser()}catch(e){}}
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}

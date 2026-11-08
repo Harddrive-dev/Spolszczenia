@@ -461,6 +461,15 @@ header{padding-top:56px}
 .sbtn svg{color:#66c0f4;flex:none}
 .sbtn:hover,.sbtn.on{border-color:var(--accent)}
 .sbtn .sn{background:var(--accent);color:#1f1513;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:700}
+.sbtn{position:relative}
+.snew{position:absolute;top:-7px;right:-6px;min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#e5484d;color:#fff;font-size:11.5px;font-weight:800;line-height:20px;text-align:center;border:2px solid var(--bg);animation:snew 2.4s ease-out infinite}
+@keyframes snew{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55)}70%{box-shadow:0 0 0 9px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+.sttabs .tnew{display:inline-block;margin-left:6px;background:#e5484d;color:#fff;border-radius:999px;padding:0 7px;font-size:11.5px;font-weight:800;line-height:18px}
+.ncard{position:relative}
+.ncard.unr{border-color:color-mix(in srgb,#e5484d 70%,var(--line));background:color-mix(in srgb,#e5484d 7%,var(--surface))}
+.ncard.unr .ntxt{padding-right:10px}
+.ncard .unrd{position:absolute;top:8px;right:8px;width:10px;height:10px;border-radius:50%;background:#e5484d;box-shadow:0 0 0 3px color-mix(in srgb,#e5484d 25%,transparent)}
+@media (prefers-reduced-motion:reduce){.snew{animation:none}}
 @media (max-width:600px){.sbtn .st{display:none}.sbtn{padding:0 10px}}
 .stip{position:absolute;top:52px;left:0;z-index:30;width:280px;max-width:calc(100vw - 32px);background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.45;color:var(--text);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .stip b{display:block;font-size:14.5px;margin-bottom:3px}
@@ -531,7 +540,7 @@ table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -1665,12 +1674,23 @@ var STEAM_NEW_DAYS=30;
 // Daty sprzed 31.10.2026 to w większości jednorazowe dodanie całego katalogu przy starcie strony, więc ich nie liczymy jako nowości.
 function steamNewSince(){var d=new Date(Date.now()-STEAM_NEW_DAYS*864e5),x=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");return x>"2026-10-31"?x:"2026-10-31"}
 function steamCat(g){var r=[];if(g.pl!=="of")r.push("fan");if(nwEvent(g).date>=steamNewSince())r.push("new");if(g.pl==="of")r.push("of");if(g.status==="Gotowe")r.push("ready");if(/^(W trakcie|Beta|Testy|Premiera|Zapowiedź)$/.test(g.status||""))r.push("wip");if(g.type==="Dubbing"||g.dub)r.push("dub");if(g.lore||g.gamereader)r.push("lk");return r}
+// Nieprzeczytane nowości w „Moich grach Steam”. Pamiętane w tej przeglądarce (localStorage „steam.seen”, osobno dla każdego konta).
+// Klucz = gra + data zmiany, więc kolejna aktualizacja tej samej gry znowu jest nieprzeczytana. Znikają po kliknięciu zakładki „Nowości”.
+function stNewKey(g){return keyOf(g)+"|"+nwEvent(g).date}
+function stSeen(){var u=me();if(!u)return[];var k=[];try{var o=JSON.parse(localStorage.getItem("steam.seen")||"null");if(o&&o.u===u.id&&Array.isArray(o.k))k=o.k}catch(e){}
+  // + to, co zapisano na koncie (tabela steam_seen) – żeby przeczytane nowości znikały też na innych urządzeniach
+  if(STEAM.srvSeen&&STEAM.srvSeen.u===u.id)k=k.concat(STEAM.srvSeen.k);return k}
+function stUnread(m){var k=stSeen();return m.filter(function(g){return steamCat(g).indexOf("new")>-1&&k.indexOf(stNewKey(g))<0})}
+function stMarkSeen(m){var u=me();if(!u)return;var k=m.filter(function(g){return steamCat(g).indexOf("new")>-1}).map(stNewKey);try{localStorage.setItem("steam.seen",JSON.stringify({u:u.id,k:k}))}catch(e){}
+  STEAM.srvSeen={u:u.id,k:k};try{sb.from("steam_seen").upsert({user_id:u.id,keys:k.slice(0,2000),updated_at:new Date().toISOString()}).then(function(){},function(){})}catch(e){}}
+async function stSeenLoad(){var u=me();if(!u||!sb)return;try{var r=await sb.from("steam_seen").select("keys").maybeSingle();if(!r.error&&r.data&&Array.isArray(r.data.keys)){STEAM.srvSeen={u:u.id,k:r.data.keys};steamUI()}}catch(e){}}
+function stIsUnr(g){var k=stNewKey(g);return (STEAM.fresh&&STEAM.fresh.indexOf(k)>-1)||(steamCat(g).indexOf("new")>-1&&stSeen().indexOf(k)<0)}
 async function steamLoad(force){
   if(!CM){return}
   if(!me()){STEAM.st="out";STEAM.row=null;steamUI();return}
   try{var r=await sb.from("steam_links").select("steam_id,persona,avatar,games,is_private,games_at").maybeSingle();
     if(r.error){STEAM.st="off";steamUI();return}
-    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";steamUI();
+    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";if(r.data)await stSeenLoad();steamUI();
     if(r.data&&(force||!r.data.games_at||Date.now()-new Date(r.data.games_at).getTime()>12*3600e3))await steamFetch(!!force)}
   catch(e){STEAM.st="off"}
   steamUI()}
@@ -1709,21 +1729,24 @@ function steamUI(){
   var show=CM&&STEAM.st!=="off"&&STEAM.st!==null||(CM&&!me()&&STEAM.st!=="off");
   b.style.display=show?"":"none";
   var m=steamMatches(),lbl,cnt="";
-  if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):""}else{lbl="Połącz Steam"}
-  try{if(me()&&STEAM.st==="linked")localStorage.setItem("steam.c",JSON.stringify({n:cnt}));else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
+  var un=0;
+  if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):"";if(cnt&&!STEAM.row.is_private)un=stUnread(m).length}else{lbl="Połącz Steam"}
+  try{if(me()&&STEAM.st==="linked")localStorage.setItem("steam.c",JSON.stringify({n:cnt,u:un}));else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
   $("steamlbl").textContent=lbl;var sn=$("steamn");sn.textContent=cnt;sn.style.display=cnt?"":"none";
-  b.title=lbl+(cnt?" ("+cnt+")":"");b.setAttribute("aria-label",b.title);
-  var us=$("usteam");if(us){us.style.display=me()&&show?"":"none";us.textContent=STEAM.st==="linked"?"🎮 Moje gry ze Steam"+(cnt?" ("+cnt+")":""):"🎮 Połącz konto Steam"}
+  var su=$("steamu");su.textContent=un>99?"99+":String(un);su.style.display=un?"":"none";
+  b.title=lbl+(cnt?" ("+cnt+")":"")+(un?" – "+un+" "+(un===1?"nowość":(un%10>=2&&un%10<=4&&(un%100<10||un%100>=20)?"nowości":"nowości"))+" do Twoich gier":"");b.setAttribute("aria-label",b.title);
+  var us=$("usteam");if(us){us.style.display=me()&&show?"":"none";us.textContent=STEAM.st==="linked"?"🎮 Moje gry ze Steam"+(cnt?" ("+cnt+")":"")+(un?" · "+un+" nowe":""):"🎮 Połącz konto Steam"}
   var tip=$("steamtip"),seen="1";try{seen=localStorage.getItem("steam.tip")||""}catch(e){}
   tip.style.display=(show&&!seen&&STEAM.st!=="linked"&&!onSteam)?"":"none";
   if(tip.style.display===""){$("steamtipgo").textContent=me()?"Połącz Steam":"Zaloguj się";var r1=b.getBoundingClientRect(),r0=$("uchip").getBoundingClientRect();tip.style.left=Math.max(0,Math.min(r1.left-r0.left,window.innerWidth-300-r0.left))+"px"}
   if(onSteam)renderSteam()}
-function steamCardHtml(g,ev){if(ev){var e=nwEvent(g),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,nwDay(e.date)].filter(Boolean).join(" · "))+'</span></span></a>'}
+var STUNR='<span class="unrd" title="Nowość, której jeszcze nie widziałeś"></span>';
+function steamCardHtml(g,ev){var ur=stIsUnr(g);if(ev){var e=nwEvent(g),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard'+(ur?" unr":"")+'" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+(ur?STUNR:"")+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,nwDay(e.date)].filter(Boolean).join(" · "))+'</span></span></a>'}
   var t=g.pl==="of"?"Oficjalna PL":[g.type||"",g.status?stText(g):""].filter(Boolean).join(" · ");if(g.lore||g.gamereader)t+=(t?" · ":"")+"Lektor";
   // Trzecia linijka: autor spolszczenia (albo lektor przy oficjalnym PL) i autor dubbingu.
   var au=authorsOf(g),lk=[];if(g.lore)lk.push("LoreSpeak");if(g.gamereader)lk.push("GameReader");
   var a3=[au.length?"Autor: "+au.join(", "):(lk.length?"Lektor: "+lk.join(", "):""),g.dub&&g.dubAuthor?"Dubbing: "+g.dubAuthor:""].filter(Boolean).join(" · ");
-  return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game+(a3?" – "+a3:""))+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(t||"Polska wersja")+'</small>'+(a3?'<small class="sta">'+esc(a3)+'</small>':'')+'</span></a>'}
+  return '<a class="ncard'+(ur?" unr":"")+'" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game+(a3?" – "+a3:""))+'">'+(ur?STUNR:"")+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(t||"Polska wersja")+'</small>'+(a3?'<small class="sta">'+esc(a3)+'</small>':'')+'</span></a>'}
 // Siatka gier w „Moich grach Steam” z filtrem wyszukiwania (po nazwie gry i autorze), odświeżana bez przerysowania całego widoku.
 function steamGrid(list){var q=stNorm(STEAM.q),l=q?list.filter(function(g){return stNorm(g.game).indexOf(q)>-1||stNorm(authorsTxt(g)).indexOf(q)>-1}):list;
   if(!l.length)return q?'<p class="msg">Nie ma tu gry pasującej do „'+esc(STEAM.q)+'”.'+(STEAM.tab!=="all"?' Spróbuj w zakładce „Wszystkie”.':'')+'</p>':'';
@@ -1738,9 +1761,10 @@ function renderSteam(){
   if(STEAM.st==="off"){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2><p class="msg">Funkcja jest w przygotowaniu.</p></div>';return}
   if(STEAM.st!=="linked"||!STEAM.row){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p>Połącz konto Steam, a pokażemy, które gry z Twojej biblioteki mają polską wersję w naszym katalogu.</p><p><button class="stbtn" type="button" id="stconnect">'+SI+'Połącz konto Steam</button></p><p class="msg">Logowanie odbywa się na stronie Steama – nie widzimy Twojego hasła. Zapisujemy tylko numer konta Steam, nazwę profilu i listę gier.</p></div>';return}
   var row=STEAM.row,m=steamMatches(),all=Array.isArray(row.games)?row.games.length:0;
-  var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["fan","Fanowskie"],["lk","Z lektorem"],["dub","Dubbing"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+'</button>':""}).join("");
+  var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["fan","Fanowskie"],["lk","Z lektorem"],["dub","Dubbing"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;var un=t[0]==="new"?stUnread(m).length:0;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+(un?'<span class="tnew">'+un+' '+(un===1?"nowa":(un%10>=2&&un%10<=4&&(un%100<10||un%100>=20)?"nowe":"nowych"))+'</span>':'')+'</button>':""}).join("");
   var list=STEAM.tab==="all"?m:m.filter(function(g){return steamCat(g).indexOf(STEAM.tab)>-1});
   if(STEAM.tab==="new")list=list.slice().sort(function(a,b){return nwEvent(b).date.localeCompare(nwEvent(a).date)});
+  else{var ua=list.filter(stIsUnr);if(ua.length)list=ua.concat(list.filter(function(g){return ua.indexOf(g)<0}))} // nieprzeczytane nowości na górze
   STEAM.list=list;
   var av=/^https:\/\//.test(row.avatar||"")?'<img alt="" src="'+esc(row.avatar)+'" referrerpolicy="no-referrer">':"";
   h='<div class="stw"><div class="sthead">'+av+'<div class="sti"><h2>Twoje gry ze Steam</h2><p class="stsub">Konto Steam <b>'+esc(row.persona||row.steam_id)+'</b> jest połączone'+(row.games_at?' · lista z '+esc(new Date(row.games_at).toLocaleString("pl-PL",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})):"")+'</p></div><div class="acts"><button class="btn" type="button" id="strefresh"'+(STEAM.loading?" disabled":"")+'>'+(STEAM.loading?"Odświeżanie…":"Odśwież listę")+'</button><button class="btn" type="button" id="stunlink">'+(STEAM.armed?"Na pewno odłączyć?":"Odłącz Steam")+'</button></div></div>'+msg;
@@ -1750,7 +1774,7 @@ function renderSteam(){
   else h+='<p class="msg">Nie znaleźliśmy jeszcze żadnej z Twoich gier w katalogu (sprawdzamy wersje na PC).</p>';
   h+='<p class="msg" style="margin-top:12px">Gry dopasowujemy po numerze gry na Steamie, a te bez numeru po nazwie (tylko wersje na PC). Jeśli brakuje gry, która u nas jest, daj znać w komentarzu.</p></div>';
   box.innerHTML=back+h}
-function showSteam(){enterView("steam","Twoje gry ze Steam – GryPoPolsku.pl");try{localStorage.setItem("steam.tip","1")}catch(e){}steamUI();renderSteam()}
+function showSteam(){if(!onSteam)STEAM.fresh=null;enterView("steam","Twoje gry ze Steam – GryPoPolsku.pl");try{localStorage.setItem("steam.tip","1")}catch(e){}steamUI();renderSteam()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;var id=t.id;
   if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){try{localStorage.setItem("steam.tip","1")}catch(e2){}goView(STHASH);return}if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
   if(id==="usteam"){$("umenu").className="umenu";if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
@@ -1761,7 +1785,7 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
   if(id==="strefresh"){STEAM.msg=null;steamLoad(true);return}
   if(id==="stunlink"){steamUnlink();return}
   if(id==="stmore"){STEAM.more=true;renderSteam();return}
-  var tb=t.getAttribute("data-sttab");if(tb){STEAM.tab=tb;STEAM.more=false;renderSteam()}});
+  var tb=t.getAttribute("data-sttab");if(tb){STEAM.tab=tb;STEAM.more=false;if(tb==="new"){var mm=steamMatches(),fr=stUnread(mm).map(stNewKey);STEAM.fresh=(STEAM.fresh||[]).concat(fr);stMarkSeen(mm);steamUI()}renderSteam()}});
 if(!CM){var _sb=$("steambtn");if(_sb)_sb.style.display="none"}
 function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":""}
 var PEND=null;

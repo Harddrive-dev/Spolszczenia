@@ -8156,7 +8156,10 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn2.steamgriddb.com/thumb/a7147fd59ab64d16e49e819733ad2187.jpg"
+    "img": "https://cdn2.steamgriddb.com/thumb/a7147fd59ab64d16e49e819733ad2187.jpg",
+    "aliasy": [
+      "alan-wake-2-deluxe-edition"
+    ]
   },
   {
     "game": "Alan Wake Remastered",
@@ -9079,6 +9082,7 @@
     "upd": "2026-11-06",
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
+    "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
     "spolszczenia": [
       {
         "id": "world-of-warcraft-forever--rustykey",
@@ -9091,8 +9095,7 @@
         "upd": "2026-11-07",
         "dodano": "2026-11-07"
       }
-    ],
-    "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)"
+    ]
   },
   {
     "game": "Getting Over It with Bennett Foddy",
@@ -15369,7 +15372,10 @@
     "opis": "Taktyczne RPG od Larian Studios z turowymi walkami: drużyna Źródłowych walczy o przetrwanie i boskość w świecie Rivellonu.",
     "id": "divinity-original-sin-2-definitive-edition",
     "yt": "https://www.youtube.com/watch?v=eWbz4M-uZHg",
-    "steam": 435150
+    "steam": 435150,
+    "aliasy": [
+      "divinity-original-sin-2-definitive-edition"
+    ]
   },
   {
     "game": "Enderal: Forgotten Stories",
@@ -15386,7 +15392,10 @@
     "img": "https://cdn2.steamgriddb.com/thumb/e26e118d020b8e7721ce638d569db056.jpg",
     "opis": "Darmowa, całkowicie nowa gra RPG zbudowana na silniku Skyrima, z własnym światem Enderalu i mroczną, dojrzałą fabułą.",
     "id": "enderal-forgotten-stories-special-edition",
-    "yt": "https://www.youtube.com/watch?v=Zh9qItoAY8U"
+    "yt": "https://www.youtube.com/watch?v=Zh9qItoAY8U",
+    "aliasy": [
+      "enderal-forgotten-stories-special-edition"
+    ]
   },
   {
     "game": "The Elder Scrolls IV: Oblivion",

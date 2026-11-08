@@ -19,7 +19,9 @@ const spNorm=a=>{const seen=new Set();return (Array.isArray(a)?a:[]).map(s=>({id
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
 const spUpd=(o,n)=>!!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Beta","Testy","Zapowiedź"].includes(o.status)&&n.status==="Gotowe")));
 const spAdd=(g,d,link,day)=>{const a=Array.isArray(g.spolszczenia)?g.spolszczenia:[];if(g.link===link||a.some(s=>s.link===link))return;const base=keyOf(g)+"--"+(slug(d.author||"")||"autor");let id=base,n=2;while(a.some(s=>s.id===id))id=base+"-"+(n++);a.push(spNorm([{id,author:d.author,link,type:d.type,status:d.status==="W toku"?"Beta":d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0]);g.spolszczenia=a};
+const renames=[];// [stary adres, nowy adres] z każdej zmiany nazwy gry – do przekierowań starych adresów stron gier
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
+ if(r.kind==="modedit")for(const c of d.changes||[])if(c.field==="game"&&c.from&&c.to){const a=slug(c.from),b=slug(String(c.to).trim());if(a&&b&&a!==b)renames.push([a,b])}
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
   const exG=name&&find(slug(name));if(exG){if(URLOK(link))spAdd(exG,d,link,day);continue}
@@ -56,6 +58,11 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day;
   if(g._usun)list.splice(list.indexOf(g),1)}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
+// Dawne adresy stron gier (po zmianie nazwy): pole „aliasy”, z którego gry.mjs robi przekierowania na obecną stronę.
+{const cur=new Map(list.map(g=>[slug(g.game||""),g])),nxt=new Map(renames);
+ for(const [a,b] of renames){let t=b,n=0;while(!cur.has(t)&&nxt.has(t)&&n++<10)t=nxt.get(t);const g=cur.get(t);if(!g||cur.has(a))continue;
+  const al=new Set(g.aliasy||[]);al.add(a);g.aliasy=[...al].sort()}
+ for(const g of list)if(g.aliasy){const me=slug(g.game||"");g.aliasy=g.aliasy.filter(a=>a&&a!==me&&!cur.has(a));if(!g.aliasy.length)delete g.aliasy}}
 // dawne nazwy gatunków (np. z wcześniejszych edycji w panelu, które automat nanosi przy każdym przebiegu) -> obecne
 const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
 for(const g of list)if(GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre];

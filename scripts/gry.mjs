@@ -118,8 +118,14 @@ for(const g of games){
   fs.writeFileSync(path.join(dir,"index.html"),page({title,desc,url,body:body+(yid?YTJS:""),image:img||SITE+"/icon-192.png",ld,key}));
   built.push({s,upd:g.upd});
 }
+// przekierowania z dawnych adresów (po zmianie nazwy gry) na obecną stronę gry; nie trafiają do sitemap.xml
+const redir=[];{const real=new Set(built.map(b=>b.s));
+ for(const g of games)for(const a of g.aliasy||[]){const s=slug(g.game),to=SITE+"/gra/"+s+"/";if(!a||real.has(a)||!/^[a-z0-9-]+$/.test(a))continue;
+  const dir=path.join(OUT,a);fs.mkdirSync(dir,{recursive:true});
+  fs.writeFileSync(path.join(dir,"index.html"),'<!doctype html><html lang="pl"><head><meta charset="utf-8"><title>'+esc(g.game)+' – GryPoPolsku.pl</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="'+to+'"><meta http-equiv="refresh" content="0;url='+to+'"><script>location.replace("'+to+'"+location.hash)</script></head><body><p>Strona gry jest pod nowym adresem: <a href="'+to+'">'+esc(g.game)+'</a></p></body></html>\n');
+  redir.push(a)}}
 // sprzątanie stron gier spoza listy
-if(fs.existsSync(OUT)){const keep=new Set(built.map(b=>b.s));for(const e of fs.readdirSync(OUT,{withFileTypes:true}))if(e.isDirectory()&&!keep.has(e.name))fs.rmSync(path.join(OUT,e.name),{recursive:true,force:true})}
+if(fs.existsSync(OUT)){const keep=new Set(built.map(b=>b.s).concat(redir));for(const e of fs.readdirSync(OUT,{withFileTypes:true}))if(e.isDirectory()&&!keep.has(e.name))fs.rmSync(path.join(OUT,e.name),{recursive:true,force:true})}
 // sitemap
 let sm=fs.existsSync(SITEMAP)?fs.readFileSync(SITEMAP,"utf8"):'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n</urlset>\n';
 sm=sm.replace(/<url>\s*<loc>[^<]*\/gra\/[^<]*<\/loc>[\s\S]*?<\/url>\s*/g,"");

@@ -530,6 +530,11 @@ html{-webkit-tap-highlight-color:transparent}
 .vbox .vrow.vfree b{font-weight:500;color:var(--muted)}
 .vbox .vrow.vfree .md{filter:grayscale(1);opacity:.6}
 .vbox .vrow.vfree:hover{opacity:1}
+/* Stopka panelu głosowania – wypełnia pusty dół na komputerze (9.11.2026) */
+.vbox .vfoot{display:none}
+@media (min-width:901px){.vbox .vfoot{display:flex;align-items:center;gap:10px;margin-top:auto;padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--accent) 9%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));font-size:13.5px;color:var(--muted)}
+.vbox .vfoot .vfi{font-size:18px;flex:none}.vbox .vfoot .vft{flex:1;line-height:1.4}.vbox .vfoot b{color:var(--text);font-weight:600}
+.vbox .vfoot .vfl{flex:none;color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}.vbox .vfoot .vfl:hover{text-decoration:underline}}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),
@@ -844,6 +849,8 @@ function stats(){
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#stats .stat");if(!b)return;var v=b.getAttribute("data-v");setView(VIEW===v&&v!=="all"?"all":v);var q=$("q");if(q&&q.scrollIntoView)q.scrollIntoView({behavior:"smooth",block:"center"})});
 var MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
+function nextWeekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k+7),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
+  return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
 function weekRange(){var d=new Date(),k=(d.getDay()+6)%7,a=new Date(d.getFullYear(),d.getMonth(),d.getDate()-k),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
   return a.getMonth()===b.getMonth()?a.getDate()+"-"+b.getDate()+" "+MONTHS[b.getMonth()]:a.getDate()+" "+MONTHS[a.getMonth()]+" - "+b.getDate()+" "+MONTHS[b.getMonth()]}
 function nwMeta(g){if(g.pl==='of'&&!g.link){var l=[];if(g.lore)l.push('LoreSpeak');if(g.gamereader)l.push('GameReader');return 'Oficjalne PL'+(l.length?' · Lektor: '+l.join(', '):'')+(g.dub?' · Dubbing: '+(g.dubAuthor||'fanowski'):'')}return (g.type||'—')+' · '+authorsTxt(g)}
@@ -1669,7 +1676,9 @@ function renderLeader(){var el=$("leader");if(!el)return;
   el.innerHTML='<div class="vhead"><div class="vht"><h3>🗳️ Głosuj na grę tygodnia</h3><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span></div><button class="votebtn" id="leadgo" type="button">Oddaj głos</button></div>'+
     (top.length?top.map(function(x,i){return '<a class="vrow" href="/gra/'+esc(keyOf(x.g))+'/"><span class="md">'+med[i]+'</span><span class="vt"><b>'+esc(x.g.game)+'</b><span class="bar" style="width:'+Math.round(x.v/mx*100)+'%"></span></span><span class="vv">'+plVotes(x.v)+'</span></a>'}).join(""):'<p class="mnote vnone">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</p>')+
     // puste miejsca na podium – lista zaczyna się zawsze od góry, a wolne miejsca zachęcają do głosowania
-    [0,1,2].slice(top.length).map(function(i){return '<a class="vrow vfree" href="#/glosowanie"><span class="md">'+med[i]+'</span><span class="vt"><b>Wolne miejsce – zagłosuj na swoją grę</b></span><span class="vv">0 głosów</span></a>'}).join("");
+    [0,1,2].slice(top.length).map(function(i){return '<a class="vrow vfree" href="#/glosowanie"><span class="md">'+med[i]+'</span><span class="vt"><b>Wolne miejsce – zagłosuj na swoją grę</b></span><span class="vv">0 głosów</span></a>'}).join("")+
+    // stopka panelu (tylko na komputerze, gdy panel stoi obok „Gry tygodnia” i ma wolne miejsce na dole)
+    '<div class="vfoot"><span class="vfi">🏆</span><span class="vft">Zwycięzca zostanie <b>Grą tygodnia '+esc(nextWeekRange())+'</b> i trafi na stronę główną.</span><a class="vfl" href="#/glosowanie">Pełny ranking →</a></div>';
   var fr=$("featrow"),w=$("week");if(fr)fr.className="featrow"+(w&&w.style.display!=="none"?" two":"");cdTick()}
 function weekLeft(){var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Warsaw",hour12:false,hour:"2-digit",minute:"2-digit",second:"2-digit",weekday:"short"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
   var wd={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[o.weekday],sec=wd*86400+(+o.hour%24)*3600+(+o.minute)*60+(+o.second);return 7*86400-sec}

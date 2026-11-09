@@ -116,7 +116,9 @@ for(const g of games){
   const ld={"@context":"https://schema.org","@type":"WebPage",name:title,url,inLanguage:"pl",description:desc,breadcrumb:{"@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"GryPoPolsku.pl",item:SITE+"/"},{"@type":"ListItem",position:2,name:"Katalog gier",item:SITE+"/#katalog"},{"@type":"ListItem",position:3,name:g.game,item:url}]},about:{"@type":"VideoGame",name:g.game,gamePlatform:plat,inLanguage:"pl",genre:g.genre||undefined,image:img||undefined},isPartOf:{"@type":"WebSite",name:"GryPoPolsku.pl",url:SITE+"/"}};
   const dir=path.join(OUT,s);fs.mkdirSync(dir,{recursive:true});
   fs.writeFileSync(path.join(dir,"index.html"),page({title,desc,url,body:body+(yid?YTJS:""),image:img||SITE+"/icon-192.png",ld,key}));
-  built.push({s,upd:g.upd});
+  // lastmod w sitemap: data ostatniej zmiany gry (też dodatkowych spolszczeń), a nie „dziś” – inaczej setki stron co dzień udają zmienione i Google przestaje wierzyć tej dacie
+  const lm=[g.upd,g.dodano,...(g.spolszczenia||[]).map(x=>x&&(x.upd||x.dodano))].filter(d=>/^\d{4}-\d\d-\d\d$/.test(d||"")).sort().pop();
+  built.push({s,upd:lm||"2026-10-29"});
 }
 // przekierowania z dawnych adresów (po zmianie nazwy gry) na obecną stronę gry; nie trafiają do sitemap.xml
 const redir=[];{const real=new Set(built.map(b=>b.s));

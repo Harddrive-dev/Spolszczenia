@@ -223,3 +223,5 @@ table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)
 @media (prefers-reduced-motion:reduce){.snew{animation:none}}
 /* Bez niebieskiej poświaty po dotknięciu na telefonie (Android/Chrome); obwódka przy obsłudze klawiaturą zostaje */
 html{-webkit-tap-highlight-color:transparent}
+/* Komentarz wskazany linkiem z „Dyskusji” – krótkie podświetlenie */
+.cmt.chl{outline:2px solid var(--accent);outline-offset:4px;border-radius:10px;transition:outline-color 1s}

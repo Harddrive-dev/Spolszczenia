@@ -155,12 +155,16 @@ function threadHtml(c,reps){
 function renderList(){
   document.querySelectorAll("textarea[id^=rb]").forEach(function(t){drafts[t.id]=t.value});
   var byId={};rows.forEach(function(c){byId[c.id]=c});
+  // link z „Dyskusji” (#komentarze-c123): rozwiń wątek, w którym jest ten komentarz (widać też pole odpowiedzi)
+  var jm0=!renderList.j&&/^#komentarze-c(\d+)$/.exec(location.hash),jc=jm0&&byId[jm0[1]];if(jc){var jr=jc,jk=0;while(jr.parent_id&&byId[jr.parent_id]&&jk++<5)jr=byId[jr.parent_id];openT[jr.id]=true}
   function root(c){var n=0;while(c.parent_id&&byId[c.parent_id]&&n++<5)c=byId[c.parent_id];return c}
   var roots=rows.filter(function(c){return !c.parent_id||!byId[c.parent_id]}),rep={};
   rows.forEach(function(c){if(c.parent_id&&byId[c.parent_id]){var r=root(c);(rep[r.id]=rep[r.id]||[]).push(c)}});
   $("ccount").textContent=rows.length;
   $("clist").innerHTML=roots.length?roots.map(function(c){var rs=rep[c.id]||[];return cHtml(c,false,rs.length)+threadHtml(c,rs)}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
-  Object.keys(drafts).forEach(function(k){var t=$(k);if(t&&drafts[k])t.value=drafts[k]})}
+  Object.keys(drafts).forEach(function(k){var t=$(k);if(t&&drafts[k])t.value=drafts[k]});
+  // link ze strony „Dyskusje”: #komentarze-c123 → przewiń do tego komentarza i na chwilę go podświetl
+  var jm=!renderList.j&&/^#komentarze-c(\d+)$/.exec(location.hash);if(jm){renderList.j=1;var je=document.querySelector('.cmt[data-id="'+jm[1]+'"]')||$("komentarze");if(je){je.scrollIntoView({block:"center"});je.classList.add("chl");setTimeout(function(){je.classList.remove("chl")},2600)}}}
 async function loadComments(){
   try{
     var cols="id,user_id,author,body,created_at,avatar_url,is_mod,parent_id";

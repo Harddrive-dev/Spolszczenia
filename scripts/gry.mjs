@@ -22,7 +22,7 @@ const STY='<style>.inst .ih{font-size:16px;margin:14px 0 6px}.inst .ih:first-of-
 const SUPA_JS="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js";
 const LAZY_HEAD='<script>(function(){var l=0;try{for(var i=0;i<localStorage.length;i++)if(/^sb-.*-auth-token$/.test(localStorage.key(i))){l=1;break}}catch(e){}window.__gpLogged=l;if(!l){var c=document.getElementById("uchip");if(c)c.innerHTML=\'<button class="ubtn" id="ulogin" type="button" onclick="window.__gpWantLogin=1;window.__gpLoad&&window.__gpLoad()"><span class="uav"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg></span><span class="unm">Zaloguj się</span></button><a class="sbtn" href="/#/steam" title="Twoje gry ze Steam"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st">Twoje gry ze Steam</span></a>\'}})()</script>';
 let LAZY_JS="";
-function page({title,desc,url,body,image,ld,key}){
+function page({title,desc,url,body,image,ld,key,pg}){
   if(!LAZY_JS)LAZY_JS='<script>(function(){var done=0;function add(src,cb){var s=document.createElement("script");s.src=src;s.onload=s.onerror=cb;document.body.appendChild(s)}'+
    'function go(){if(done)return;done=1;add("'+SUPA_JS+'",function(){add("/aktualnosci/news.js?v='+V.js+'",function(){if(window.__gpWantLogin){var t=0,iv=setInterval(function(){var b=document.getElementById("ulogin");var ok=b&&b.onclick&&!b.getAttribute("onclick");if(ok||++t>40){clearInterval(iv);if(ok)b.click()}},75)}})})}'+
    'window.__gpLoad=go;if(window.__gpLogged||/komentarze/.test(location.hash)){go();return}'+
@@ -33,10 +33,10 @@ function page({title,desc,url,body,image,ld,key}){
   '<title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+esc(url)+'"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#14120f">\n'+
   '<meta property="og:site_name" content="GryPoPolsku.pl"><meta property="og:locale" content="pl_PL"><meta property="og:type" content="website"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(url)+'"><meta property="og:image" content="'+esc(image)+'"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(desc)+'"><meta name="twitter:image" content="'+esc(image)+'">\n'+
   '<script type="application/ld+json">'+JSON.stringify(ld).replace(/</g,"\\u003c")+'</script>\n'+
-  '<link rel="stylesheet" href="/aktualnosci/news.css?v='+V.css+'"><script src="/aktualnosci/theme.js?v='+V.theme+'"></script>'+STY+'</head>\n<body data-page="post" data-key="'+esc(key)+'">\n<div class="uchip" id="uchip"></div>'+LAZY_HEAD+'\n'+THEMES_HTML+'\n<div class="wrap">\n'+
+  '<link rel="stylesheet" href="/aktualnosci/news.css?v='+V.css+'"><script src="/aktualnosci/theme.js?v='+V.theme+'"></script>'+STY+'</head>\n<body data-page="'+(pg||"post")+'" data-key="'+esc(key)+'">\n<div class="uchip" id="uchip"></div>'+LAZY_HEAD+'\n'+THEMES_HTML+'\n<div class="wrap">\n'+
   '<header><div class="lh"><a href="/" class="logo" aria-label="GryPoPolsku – strona główna">GryPoPolsku<span>.pl</span></a></div><p class="tag">Katalog fanowskich polskich wersji językowych gier</p>\n'+
   '<div class="btns"><a class="btn pri" href="/#katalog">Katalog gier</a><a class="btn" href="/#/lektor">Polski Lektor</a><a class="btn" href="/aktualnosci/">Aktualności</a><a class="btn" href="/#/glosowanie">Głosowanie</a><a class="btn" href="/#/dodaj">Dodaj spolszczenie</a><a class="btn dc" href="https://discord.gg/jdvGKAy3v" target="_blank" rel="noopener" title="Dołącz do serwera GryPoPolsku.pl na Discordzie"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Discord</a></div></header>\n<main class="main">\n'+
-  body+'\n</main>\n<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>\n</div>\n'+
+  body+'\n</main>\n<footer>Strona nie hostuje plików gier ani spolszczeń, tylko linkuje do projektów. Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/gra/">Wszystkie gry A–Z</a> · <a href="/polityka-prywatnosci.html">Polityka prywatności</a></footer>\n</div>\n'+
   LAZY_JS+'<script src="/aktualnosci/decor.js?v='+V.decor+'"></script>\n</body></html>\n'}
 const ytId=u=>{const m=String(u||"").trim().match(/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/);return m?m[1]:""};
 const YTJS='<script>function ytGo(b){if(!b||b.classList.contains("on"))return;var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.setAttribute("allowfullscreen","");f.title="Film z YouTube";b.innerHTML="";b.appendChild(f);b.style.cursor="default";b.removeAttribute("role");b.classList.add("on")}document.addEventListener("click",function(e){ytGo(e.target.closest&&e.target.closest(".yt"))});document.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var b=e.target.closest&&e.target.closest(".yt");if(b&&b===e.target){e.preventDefault();ytGo(b)}}});</script>';
@@ -120,6 +120,30 @@ for(const g of games){
   const lm=[g.upd,g.dodano,...(g.spolszczenia||[]).map(x=>x&&(x.upd||x.dodano))].filter(d=>/^\d{4}-\d\d-\d\d$/.test(d||"")).sort().pop();
   built.push({s,upd:lm||"2026-10-29"});
 }
+// Strona „Wszystkie gry A–Z” (/gra/): zwykłe linki do każdej strony gry – Google łatwiej je znajduje niż w katalogu budowanym w przeglądarce
+if(!ONLY.length||process.env.GRY_AZ){
+  const firstL=t=>{const c=slug(t).charAt(0).toUpperCase();return /[A-Z]/.test(c)?c:"0–9"};
+  const tags=g=>{const t=[],sp=(g.link&&g.pl!=="of")||(g.spolszczenia||[]).some(x=>x&&x.link);
+    if(sp)t.push('<i class="a-sp">spolszczenie</i>');if(g.pl==="of")t.push('<i class="a-of">oficjalne PL</i>');
+    if(g.lore||g.gamereader)t.push('<i class="a-lk">lektor</i>');if(/^https?:\/\//i.test(g.dub||"")||g.type==="Dubbing")t.push('<i class="a-du">dubbing</i>');return t.join("")};
+  const list=games.slice().sort((x,y)=>x.game.localeCompare(y.game,"pl",{sensitivity:"base"}));
+  const grp={};for(const g of list)(grp[firstL(g.game)]=grp[firstL(g.game)]||[]).push(g);
+  const L=Object.keys(grp).sort((x,y)=>x==="0–9"?-1:y==="0–9"?1:x.localeCompare(y));
+  const azCss='<style>.azi{color:var(--muted);margin:6px 0 14px}.azn{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;position:sticky;top:0;z-index:2;background:var(--surface);padding:8px 0;border-bottom:1px solid var(--line)}'+
+   '.azn a{min-width:34px;text-align:center;padding:4px 8px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--accent);font-weight:700;font-size:14px}.azn a:hover{border-color:var(--accent)}'+
+   '.azh{font-size:22px;margin:22px 0 8px;scroll-margin-top:64px}.azh small{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px}'+
+   '.azl{list-style:none;margin:0;padding:0;columns:3 260px;column-gap:28px}.azl li{break-inside:avoid;padding:4px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}'+
+   '.azl a{color:var(--text);text-decoration:none}.azl a:hover{color:var(--accent)}.azl i{font-style:normal;font-size:11px;border-radius:999px;padding:0 6px;margin-left:5px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;vertical-align:1px}'+
+   '.azl i.a-sp{border-color:var(--accent);color:var(--accent)}.azl i.a-of{border-color:var(--ok,#74b895);color:var(--ok,#74b895)}.azl i.a-lk{border-color:#8e5cd9;color:#c4a0ff}.azl i.a-du{border-color:#e8905f;color:#f0b48a}</style>';
+  const body=azCss+'<div class="panel"><nav class="bc" aria-label="Ścieżka"><a href="/">GryPoPolsku.pl</a><span>›</span><b>Wszystkie gry A–Z</b></nav>'+
+   '<h1>Wszystkie gry po polsku (A–Z)</h1><p class="azi">'+list.length+' gier z polską wersją: fanowskie spolszczenia, oficjalne polskie wersje, polski lektor i dubbing. Kliknij grę, aby zobaczyć szczegóły, linki i instrukcję.</p>'+
+   '<nav class="azn" aria-label="Litery">'+L.map(l=>'<a href="#l-'+(l==="0–9"?"0":l)+'">'+l+'</a>').join("")+'</nav>'+
+   L.map(l=>'<h2 class="azh" id="l-'+(l==="0–9"?"0":l)+'">'+l+'<small>'+grp[l].length+'</small></h2><ul class="azl">'+grp[l].map(g=>'<li><a href="/gra/'+slug(g.game)+'/">'+esc(g.game)+'</a>'+tags(g)+'</li>').join("")+'</ul>').join("")+'</div>';
+  const url=SITE+"/gra/",title="Wszystkie gry po polsku A–Z – spolszczenia, lektor, dubbing | GryPoPolsku.pl";
+  const desc="Lista "+list.length+" gier z polską wersją językową od A do Z: fanowskie spolszczenia, oficjalne PL, polski lektor i dubbing.";
+  const ld={"@context":"https://schema.org","@type":"CollectionPage",name:"Wszystkie gry po polsku (A–Z)",url,inLanguage:"pl",description:desc};
+  fs.mkdirSync(OUT,{recursive:true});fs.writeFileSync(path.join(OUT,"index.html"),page({title,desc,url,body,image:SITE+"/icon-192.png",ld,key:"lista-a-z",pg:"az"}));
+  built.az=true}
 // przekierowania z dawnych adresów (po zmianie nazwy gry) na obecną stronę gry; nie trafiają do sitemap.xml
 const redir=[];{const real=new Set(built.map(b=>b.s));
  for(const g of games)for(const a of g.aliasy||[]){const s=slug(g.game),to=SITE+"/gra/"+s+"/";if(!a||real.has(a)||!/^[a-z0-9-]+$/.test(a))continue;
@@ -131,6 +155,7 @@ if(fs.existsSync(OUT)){const keep=new Set(built.map(b=>b.s).concat(redir));for(c
 // sitemap
 let sm=fs.existsSync(SITEMAP)?fs.readFileSync(SITEMAP,"utf8"):'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n</urlset>\n';
 sm=sm.replace(/<url>\s*<loc>[^<]*\/gra\/[^<]*<\/loc>[\s\S]*?<\/url>\s*/g,"");
+if(built.az)sm=sm.replace("</urlset>",'<url><loc>'+SITE+'/gra/</loc><lastmod>'+built.map(b=>b.upd).sort().pop()+'</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n</urlset>');
 sm=sm.replace("</urlset>",built.map(b=>'<url><loc>'+SITE+'/gra/'+b.s+'/</loc><lastmod>'+(b.upd||new Date().toISOString().slice(0,10))+'</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n').join("")+"</urlset>");
 fs.writeFileSync(SITEMAP,sm);
 console.log("Strony gier: "+built.length);

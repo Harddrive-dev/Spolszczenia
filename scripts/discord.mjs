@@ -31,7 +31,7 @@ function gameEmbed(g, typ, extra) {
   const au = authors(g);
   if (au.length) fields.push({ name: "Autor", value: au.join(", ").slice(0, 200), inline: true });
   fields.push({ name: "Zakres", value: kind(g), inline: true });
-  if (g.status && g.pl !== "of") fields.push({ name: "Status", value: g.status + (g.status === "W trakcie" && g.prog ? ` (${g.prog}%)` : ""), inline: true });
+  if (g.status && g.pl !== "of") fields.push({ name: "Status", value: g.status + ((g.status === "W trakcie" || g.status === "Korekta") && g.prog ? ` (${g.prog}%)` : ""), inline: true });
   if (g.ver && g.ver !== "—") fields.push({ name: "Wersja", value: String(g.ver).slice(0, 40), inline: true });
   if (g.platform) fields.push({ name: "Platforma", value: String(g.platform).slice(0, 80), inline: true });
   const head = { nowa: "🆕 Nowe w katalogu", sp: "🆕 Nowe spolszczenie", dub: "🎭 Nowy dubbing", aktualizacja: "🔄 Aktualizacja", test: "🧪 Test ogłoszeń" }[typ];

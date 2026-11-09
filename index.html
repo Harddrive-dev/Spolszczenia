@@ -524,6 +524,12 @@ html{-webkit-tap-highlight-color:transparent}
 .feat .pill.lkp{border-color:#8e5cd9;color:#c4a0ff}
 .flk{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px}
 .flk .lkl{margin:0}
+/* Panel „Głosuj na grę tygodnia”: wyniki od góry, wolne miejsca na podium (9.11.2026) */
+.vbox{justify-content:flex-start}
+.vbox .vrow.vfree{border-style:dashed;opacity:.7}
+.vbox .vrow.vfree b{font-weight:500;color:var(--muted)}
+.vbox .vrow.vfree .md{filter:grayscale(1);opacity:.6}
+.vbox .vrow.vfree:hover{opacity:1}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),
@@ -1660,7 +1666,9 @@ function renderLeader(){var el=$("leader");if(!el)return;
   if(!CM||!leadReady){el.style.display="none";el.innerHTML="";var fr=$("featrow");if(fr)fr.className="featrow";return}
   el.style.display="";
   el.innerHTML='<div class="vhead"><div class="vht"><h3>🗳️ Głosuj na grę tygodnia</h3><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span></div><button class="votebtn" id="leadgo" type="button">Oddaj głos</button></div>'+
-    (top.length?top.map(function(x,i){return '<a class="vrow" href="/gra/'+esc(keyOf(x.g))+'/"><span class="md">'+med[i]+'</span><span class="vt"><b>'+esc(x.g.game)+'</b><span class="bar" style="width:'+Math.round(x.v/mx*100)+'%"></span></span><span class="vv">'+plVotes(x.v)+'</span></a>'}).join(""):'<p class="mnote vnone">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</p>');
+    (top.length?top.map(function(x,i){return '<a class="vrow" href="/gra/'+esc(keyOf(x.g))+'/"><span class="md">'+med[i]+'</span><span class="vt"><b>'+esc(x.g.game)+'</b><span class="bar" style="width:'+Math.round(x.v/mx*100)+'%"></span></span><span class="vv">'+plVotes(x.v)+'</span></a>'}).join(""):'<p class="mnote vnone">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</p>')+
+    // puste miejsca na podium – lista zaczyna się zawsze od góry, a wolne miejsca zachęcają do głosowania
+    [0,1,2].slice(top.length).map(function(i){return '<a class="vrow vfree" href="#/glosowanie"><span class="md">'+med[i]+'</span><span class="vt"><b>Wolne miejsce – zagłosuj na swoją grę</b></span><span class="vv">0 głosów</span></a>'}).join("");
   var fr=$("featrow"),w=$("week");if(fr)fr.className="featrow"+(w&&w.style.display!=="none"?" two":"");cdTick()}
 function weekLeft(){var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Warsaw",hour12:false,hour:"2-digit",minute:"2-digit",second:"2-digit",weekday:"short"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
   var wd={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[o.weekday],sec=wd*86400+(+o.hour%24)*3600+(+o.minute)*60+(+o.second);return 7*86400-sec}

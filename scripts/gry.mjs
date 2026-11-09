@@ -144,6 +144,11 @@ if(!ONLY.length||process.env.GRY_AZ){
   const ld={"@context":"https://schema.org","@type":"CollectionPage",name:"Wszystkie gry po polsku (A–Z)",url,inLanguage:"pl",description:desc};
   fs.mkdirSync(OUT,{recursive:true});fs.writeFileSync(path.join(OUT,"index.html"),page({title,desc,url,body,image:SITE+"/icon-192.png",ld,key:"lista-a-z",pg:"az"}));
   built.az=true}
+// Liczba gier w opisie linku na stronie głównej (podgląd przy udostępnianiu w Messengerze, WhatsAppie, na Discordzie):
+// zaokrąglona w dół do pełnej setki – „Ponad 1000 gier”, a po przekroczeniu 1100 samo zmieni się na „Ponad 1100 gier”.
+if(!ONLY.length&&fs.existsSync("index.html")){const n=Math.floor(games.length/100)*100,ih=fs.readFileSync("index.html","utf8");
+  const nh=ih.replace(/(<meta (?:property="og:description"|name="twitter:description"|name="description") content="Ponad )\d+( gier)/g,"$1"+n+"$2");
+  if(n>=100&&nh!==ih){fs.writeFileSync("index.html",nh);console.log("Opis linku: Ponad "+n+" gier")}}
 // przekierowania z dawnych adresów (po zmianie nazwy gry) na obecną stronę gry; nie trafiają do sitemap.xml
 const redir=[];{const real=new Set(built.map(b=>b.s));
  for(const g of games)for(const a of g.aliasy||[]){const s=slug(g.game),to=SITE+"/gra/"+s+"/";if(!a||real.has(a)||!/^[a-z0-9-]+$/.test(a))continue;

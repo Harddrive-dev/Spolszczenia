@@ -545,7 +545,7 @@ html{-webkit-tap-highlight-color:transparent}
 .dtabs button:not(.on):hover{border-color:var(--accent);color:var(--text)}
 #dq{flex:1;min-width:200px;border-radius:999px}
 .dday{margin:16px 0 6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.dc{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.dkm{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
 .dg{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--text);min-width:0}
 .dg .thumb,.hc .thumb{width:44px;height:66px;flex:0 0 44px;border-radius:6px;object-fit:cover}
 .dnth{display:grid;place-items:center;font-size:20px}
@@ -563,7 +563,7 @@ html{-webkit-tap-highlight-color:transparent}
 .ht{flex:1;min-width:0}.ht>b{display:block}.ht small{color:var(--muted);font-size:12px}.ht i{display:block;font-style:normal;color:var(--muted);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.ht i b{color:var(--text)}
 .hcnt{text-align:center;flex:none}.hcnt b{display:block;font-size:22px;color:var(--accent);line-height:1}.hcnt small{font-size:11px;color:var(--muted);line-height:1.2}
 .mpanel h3 .mall{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}.mpanel h3 .mall:hover{text-decoration:underline}
-@media (max-width:700px){.dc{grid-template-columns:minmax(0,1fr);gap:8px}.db{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:8px}.dg .thumb{width:34px;height:50px;flex-basis:34px}.hcnt small{display:none}}
+@media (max-width:700px){.dkm{grid-template-columns:minmax(0,1fr);gap:8px}.db{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:8px}.dg .thumb{width:34px;height:50px;flex-basis:34px}.hcnt small{display:none}}
 </style>
 <script>
 // Motyw: jasny / ciemny / Halloween / Jesień. Halloween jest domyślny 24.10–2.11 (podgląd: ?halloween=1, wyłączenie: ?halloween=0),
@@ -1875,7 +1875,7 @@ function dysTarget(c){var m=/^news:(.+)$/.exec(c.game_key||"");
   var g=gameByKey(c.game_key);return g?{g:g,href:"/gra/"+keyOf(g)+"/",title:g.game,meta:dysMeta(g),th:thumb(g),n:counts[c.game_key]||0}:null}
 function dysDay(t){var d=new Date(t),p=function(x){return x.getFullYear()+"-"+x.getMonth()+"-"+x.getDate()},n=new Date(),y=new Date(Date.now()-864e5);
   return p(d)===p(n)?"Dziś":p(d)===p(y)?"Wczoraj":d.getDate()+" "+MONTHS[d.getMonth()]+(d.getFullYear()!==n.getFullYear()?" "+d.getFullYear():"")}
-function dysItem(c,x){return '<article class="dc"><a class="dg" href="'+esc(x.href)+'">'+x.th+'<span><b>'+esc(x.title)+'</b><small>'+esc(x.meta)+'</small></span></a><div class="db"><div class="dw">'+avHtml(c.avatar_url,c.author)+'<b>'+esc(c.author||"Gracz")+'</b>'+(c.is_mod?'<span class="dmod">MOD</span>':'')+(c.parent_id?'<span class="drep">↪ odpowiedź</span>':'')+'<span class="ago">· '+esc(komAgo(c.created_at))+'</span></div><p>'+esc(c.body)+'</p><div class="da"><a href="'+esc(x.href)+'#komentarze-c'+(+c.id||0)+'">Odpowiedz</a><a href="'+esc(x.href)+'#komentarze">Cała dyskusja'+(x.n?' ('+x.n+')':'')+' →</a></div></div></article>'}
+function dysItem(c,x){return '<article class="dkm"><a class="dg" href="'+esc(x.href)+'">'+x.th+'<span><b>'+esc(x.title)+'</b><small>'+esc(x.meta)+'</small></span></a><div class="db"><div class="dw">'+avHtml(c.avatar_url,c.author)+'<b>'+esc(c.author||"Gracz")+'</b>'+(c.is_mod?'<span class="dmod">MOD</span>':'')+(c.parent_id?'<span class="drep">↪ odpowiedź</span>':'')+'<span class="ago">· '+esc(komAgo(c.created_at))+'</span></div><p>'+esc(c.body)+'</p><div class="da"><a href="'+esc(x.href)+'#komentarze-c'+(+c.id||0)+'">Odpowiedz</a><a href="'+esc(x.href)+'#komentarze">Cała dyskusja'+(x.n?' ('+x.n+')':'')+' →</a></div></div></article>'}
 function renderDysList(){var box=$("dyslist");if(!box)return;
   if(!CM){box.innerHTML='<p class="msg">Komentarze są chwilowo niedostępne.</p>';return}
   if(!DYS.rows.length&&(DYS.loading||!DYS.done)&&!DYS.err){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję komentarze…</p>';return}

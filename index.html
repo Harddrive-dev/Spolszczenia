@@ -568,6 +568,44 @@ html{-webkit-tap-highlight-color:transparent}
 .ht{flex:1;min-width:0}.ht>b{display:block}.ht small{color:var(--muted);font-size:12px}.ht i{display:block;font-style:normal;color:var(--muted);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.ht i b{color:var(--text)}
 .hcnt{text-align:center;flex:none}.hcnt b{display:block;font-size:22px;color:var(--accent);line-height:1}.hcnt small{font-size:11px;color:var(--muted);line-height:1.2}
 .home .news h2.nwh,#nwview h2{display:flex;align-items:baseline;gap:12px}.nwh .mall{margin:0 0 0 auto;padding:0;font-size:14px;font-weight:700;white-space:nowrap}
+/* Moje ulubione (11.2026) */
+.mini.hrt{display:inline-grid;place-items:center;flex:none;width:32px;height:28px;padding:0;border-radius:999px}
+.mini.hrt:hover{color:#e0566b;border-color:#e0566b}
+.mini.hrt.on{color:#e0566b;border-color:color-mix(in srgb,#e0566b 60%,var(--line));background:color-mix(in srgb,#e0566b 14%,var(--surface))}
+.mini.hrt.on svg,.fvx svg{fill:currentColor}
+.hrti{display:inline-grid;vertical-align:-3px;color:#e0566b}
+#umenu .fvn{opacity:.7}
+#favview{max-width:1180px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+@media(max-width:600px){#favview{padding:14px 12px;border-radius:12px}}
+#favview h2{margin:6px 0 2px}#favview .dsub{margin:0 0 12px}
+#favview .ngrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){#favview .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){#favview .ngrid{grid-template-columns:minmax(0,1fr)}}
+#favview .ncard{background:var(--bg);height:100%;box-sizing:border-box;padding-right:34px}
+#favview .ncard .ntxt{min-width:0}
+#favview .ncard .ntxt b,#favview .ncard small,#favview .ncard .nev{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#favview .ncard small{display:block}
+#favview .ncard.unr{border-color:#e0566b}
+#favview .unrd{right:auto;left:8px}
+#favq{flex:1;min-width:180px;border-radius:999px}
+.fvc{position:relative;min-width:0}
+.fvx{position:absolute;top:8px;right:8px;width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:999px;background:none;color:#e0566b;cursor:pointer;padding:0}
+.fvx:hover{background:color-mix(in srgb,#e0566b 16%,transparent)}
+.fvtag{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;margin-top:5px}
+.fvtag.ok{background:color-mix(in srgb,var(--ok,#4caf7d) 18%,transparent);color:var(--ok,#4caf7d)}
+.fvtag.wip{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.fvtag.wait{background:color-mix(in srgb,var(--muted) 16%,transparent);color:var(--muted)}
+.fvnote{display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,#e0566b 9%,transparent);border:1px solid color-mix(in srgb,#e0566b 35%,var(--line));border-radius:12px;padding:10px 12px;margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.5}
+.fvnote b{color:var(--text)}
+.fvsort{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 12px;font-size:13px;color:var(--muted)}
+.fvsort button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:3px 11px;font:inherit;cursor:pointer}
+.fvsort button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.lnk{border:0;background:none;padding:0;color:#e0566b;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+.favtoast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,20px);opacity:0;pointer-events:none;width:max-content;max-width:min(calc(100vw - 32px),460px);box-sizing:border-box;background:var(--surface);color:var(--text);border:1px solid #e0566b;border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:opacity .2s ease,transform .2s ease}
+.favtoast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.favtoast.err{border-color:#ff3b30}
+.favtoast a{color:#e0566b}
+@media(max-width:600px){.favtoast{bottom:16px;font-size:13px;padding:10px 12px}}
 /* Wszystkie nowości (#/nowosci, 10.11.2026) */
 #nwview{max-width:1180px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
 @media(max-width:600px){#nwview{padding:14px 12px;border-radius:12px}}
@@ -604,7 +642,7 @@ html{-webkit-tap-highlight-color:transparent}
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -633,6 +671,7 @@ html{-webkit-tap-highlight-color:transparent}
 <div id="steamview" style="display:none" aria-live="polite"></div>
 <div id="dysview" style="display:none"></div>
 <div id="nwview" style="display:none"></div>
+<div id="favview" style="display:none"></div>
 <datalist id="gl_mod"></datalist>
 <div id="addview" style="display:none"><a class="vback" href="#/">← Wróć do katalogu</a>
 <div class="panel open" id="modadd" style="display:none"></div>
@@ -893,8 +932,8 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" gier":"Wyświetlono 0 z "+items.length+" gier";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td>'+esc(g.ver||"—")+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
+  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">Wersja '+esc(g.ver||"—")+'</div>')+'</div>'}).join("")}
 function stats(){
   var sp=items.filter(hasSp).length+items.reduce(function(n,g){return n+spExtra(g).length},0),lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
@@ -933,6 +972,7 @@ function renderHome(){
   var nw=nwAll().slice(0,8);
   $("news").innerHTML=nw.length?'<h2 class="nwh">Nowości i aktualizacje<a class="mall" href="#/nowosci">Wszystkie →</a></h2><div class="ngrid">'+nw.map(nwCard).join("")+'</div>':"";
   if(typeof onNw!=="undefined"&&onNw)renderNwList();
+  if(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())favUI();
   $("news").style.display=nw.length?"":"none";
   var TOPRANK_ON=false,tp=(TOPRANK_ON&&CM)?items.filter(function(g){return counts[keyOf(g)]>0}).sort(function(a,b){return counts[keyOf(b)]-counts[keyOf(a)]}).slice(0,5):[];
   $("toprank").innerHTML=tp.length?'<h2>Najczęściej komentowane</h2><ol class="rlist">'+tp.map(function(g,i){return '<li><span class="rank">'+(i+1)+'</span><a target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a><button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze ('+counts[keyOf(g)]+')</button></li>'}).join("")+'</ol>':"";
@@ -1170,6 +1210,7 @@ function forgotHtml(email){
   return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
+  if(typeof FAV!=="undefined"&&FAV)favLoad();
   if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
@@ -1282,11 +1323,11 @@ if(CM){
 }
 // Logowanie z podstron Aktualności: /?zaloguj=1&wroc=/aktualnosci/adres/ -> po zalogowaniu wracamy na tę stronę
 function backUrl(){var v=null;try{v=JSON.parse(sessionStorage.getItem("wroc")||"null")}catch(e){}
-  return v&&typeof v.w==="string"&&/^\/aktualnosci\/[a-z0-9\/-]*$/.test(v.w)&&Date.now()-(+v.t||0)<600000?v.w:""}
+  return v&&typeof v.w==="string"&&/^\/(aktualnosci|gra)\/[a-z0-9\/-]*$/.test(v.w)&&Date.now()-(+v.t||0)<600000?v.w:""}
 function loginFromLink(){var q=location.search;if(!/[?&]zaloguj=1(&|$)/.test(q))return;
   var m=q.match(/[?&]wroc=([^&]*)/),w="";try{w=decodeURIComponent(m?m[1]:"")}catch(e){}
   history.replaceState(null,"",location.pathname+location.hash);
-  if(!/^\/aktualnosci\/[a-z0-9\/-]*$/.test(w))w="";
+  if(!/^\/(aktualnosci|gra)\/[a-z0-9\/-]*$/.test(w))w="";
   if(me()){if(w)location.replace(w);return}
   if(w){try{sessionStorage.setItem("wroc",JSON.stringify({w:w,t:Date.now()}))}catch(e){}}
   var tm=q.match(/[?&]tryb=(reg|forgot)/);
@@ -1298,7 +1339,10 @@ async function loadSubCount(){
   try{var r=await sb.from("submissions").select("id",{count:"exact",head:true}).eq("status","new");if(!r.error&&typeof r.count==="number")subCnt=r.count}catch(e){}
   showSubCount()}
 function showSubCount(){var n=subCnt>99?"99+":String(subCnt),on=isMod()&&subCnt>0;
-  ["ubn","ubd"].forEach(function(i){var el=$(i);if(el){el.textContent=n;el.style.display=on?"":"none"}})}
+  var d=$("ubd");if(d){d.textContent=n;d.style.display=on?"":"none"}
+  // Odznaka przy nicku = nowe zgłoszenia (moderator) + nowości w ulubionych grach
+  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu,b=$("ubn");
+  if(b){b.textContent=tot>99?"99+":String(tot);b.style.display=tot?"":"none"}}
 document.addEventListener("visibilitychange",function(){if(!document.hidden&&isMod())loadSubCount()});
 setInterval(function(){if(!document.hidden&&isMod())loadSubCount()},120000);
 function loadMod(){}
@@ -1748,7 +1792,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -1927,6 +1971,93 @@ function showDys(){var was=curViewName();enterView("dys","Dyskusje – GryPoPols
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-dtab],#dmore");if(!t||!onDys)return;
   if(t.id==="dmore"){if(DYS.n<DYS.rows.length)DYS.n+=30;else{DYS.n+=30;dysLoad()}renderDysList();return}
   DYS.tab=t.getAttribute("data-dtab");DYS.n=30;renderDysList()});
+// ====== MOJE ULUBIONE (#/ulubione) – tabela favorites w Supabase, tylko dla zalogowanych (11.2026) ======
+// FAV.m i FAV.busy bez prototypu (Object.create(null)), bo gra o kluczu np. „constructor” myliłaby się z wbudowanymi polami obiektu.
+// FAV.m[klucz gry] = {c: dzień dodania, t: czas dodania, s: data ostatniej obejrzanej nowości}.
+// Gra ma „nowość”, gdy jej ostatnia zmiana (nwEvent) jest późniejsza niż dodanie do ulubionych i niż ostatnio obejrzana nowość.
+var FAV={ok:false,u:null,m:Object.create(null),busy:Object.create(null)},FAVV={tab:"all",q:"",sort:"add",fresh:null},favTT=null;
+var HRT='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8.1 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.6 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
+function favDay(iso){var d=new Date(iso);if(isNaN(d))return "";return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function isFav(k){return !!FAV.m[k]}
+function favUnr(g){var f=FAV.m[keyOf(g)];if(!f)return false;var b=f.s&&f.s>f.c?f.s:f.c;return nwEvent(g).date>b}
+function favGames(){return items.filter(function(g){return FAV.m[keyOf(g)]})}
+function favUnread(){return favGames().filter(favUnr)}
+function hrtBtn(g){if(!CM)return "";var k=keyOf(g),on=isFav(k),t=on?"Usuń z ulubionych":"Dodaj do ulubionych";return '<button class="mini hrt'+(on?" on":"")+'" type="button" data-fk="'+esc(k)+'" aria-pressed="'+on+'" title="'+t+'" aria-label="'+t+'">'+HRT+'</button>'}
+async function favLoad(){var u=me();
+  if(!u||!CM){FAV={ok:!u,u:null,m:Object.create(null),busy:Object.create(null)};favUI();return}
+  if(FAV.u===u.id&&(FAV.ok||FAV.loading))return;
+  FAV={ok:false,u:u.id,m:Object.create(null),busy:Object.create(null),loading:true};favUI();
+  var m=Object.create(null),err=false;
+  try{var r=await sb.from("favorites").select("game_key,created_at,seen").limit(2000);
+    if(r.error)err=true;else(r.data||[]).forEach(function(x){m[x.game_key]={c:favDay(x.created_at),t:x.created_at,s:x.seen||""}})}catch(e){err=true}
+  var u2=me();if(!u2||u2.id!==u.id)return;
+  FAV={ok:true,u:u.id,m:m,busy:Object.create(null),err:err};favUI()}
+function favUI(){var u=me(),n=0,un=0;if(u&&FAV.ok){n=favGames().length;un=favUnread().length}
+  var b=$("ufav");if(b){b.style.display=u&&CM?"":"none";b.innerHTML='♥ Moje ulubione'+(n?' <span class="fvn">('+n+')</span>':'')+(un?'<span class="bd">'+un+' nowe</span>':'')}
+  try{if(u&&FAV.ok&&!FAV.err)localStorage.setItem("fav.c",JSON.stringify({u:u.id,n:n,un:un}));else if(!u)localStorage.removeItem("fav.c")}catch(e){}
+  document.querySelectorAll(".hrt[data-fk]").forEach(function(h){var on=isFav(h.getAttribute("data-fk")),t=on?"Usuń z ulubionych":"Dodaj do ulubionych";h.classList.toggle("on",on);h.setAttribute("aria-pressed",on);h.title=t;h.setAttribute("aria-label",t)});
+  showSubCount();
+  if(onFav)renderFav()}
+function favToast(h,err){var t=$("favtoast");if(!t){t=document.createElement("div");t.id="favtoast";t.setAttribute("role","status");document.body.appendChild(t)}
+  t.className="favtoast show"+(err?" err":"");t.innerHTML=h;clearTimeout(favTT);favTT=setTimeout(function(){t.className="favtoast"},5000)}
+async function favToggle(k){
+  if(!me()){curKey=null;openModal(loginHtml());return}
+  if(!CM)return;
+  if(!FAV.ok){favToast("Chwila, wczytuję Twoje ulubione…");return}
+  if(FAV.busy[k])return;FAV.busy[k]=1;
+  var was=FAV.m[k],on=!was,g=gameByKey(k),ev=g?nwEvent(g).date:"",now=new Date().toISOString();if(!/^\d{4}-\d{2}-\d{2}$/.test(ev))ev="";
+  if(on)FAV.m[k]={c:favDay(now),t:now,s:ev};else delete FAV.m[k];
+  favUI();
+  try{var r=on?await sb.from("favorites").insert({game_key:k,seen:ev||null}):await sb.from("favorites").delete().eq("game_key",k);
+    if(r.error)throw r.error;
+    favToast(on?'♥ Dodano do ulubionych. Dostaniesz znak, gdy pojawi się aktualizacja. <a href="#/ulubione">Moje ulubione →</a>':'Usunięto z ulubionych. <button type="button" class="lnk" data-fundo="'+esc(k)+'">Cofnij</button>')}
+  catch(e){if(on)delete FAV.m[k];else FAV.m[k]=was;favUI();favToast("Nie udało się zapisać. Spróbuj ponownie za chwilę.",1)}
+  delete FAV.busy[k]}
+function favMarkSeen(){var L=favUnread();if(!L.length)return;FAVV.fresh=(FAVV.fresh||[]).concat(L.map(keyOf));
+  L.forEach(function(g){var k=keyOf(g),ev=nwEvent(g).date;FAV.m[k].s=ev;try{sb.from("favorites").update({seen:ev}).eq("game_key",k).then(function(){},function(){})}catch(e){}})}
+function favReady(g){return g.pl==="of"||g.status==="Gotowe"||g.status==="Beta"}
+function favTag(g){var s=g.status||"";if(g.pl==="of"||s==="Gotowe")return["ok","✓ Można grać po polsku"];if(s==="Beta")return["ok","✓ Można grać (wersja beta)"];
+  if(s==="Zapowiedź"||s==="Premiera")return["wait","📅 "+s];return["wip","⏳ "+(s||"W przygotowaniu")+(s==="W trakcie"&&g.prog?" "+g.prog+"%":"")]}
+function favIsNew(g){return favUnr(g)||!!(FAVV.fresh&&FAVV.fresh.indexOf(keyOf(g))>-1)}
+function favCard(g){var t=favTag(g),k=keyOf(g),ur=favIsNew(g);
+  var c=nwCard(g).replace('<a class="ncard"','<a class="ncard'+(ur?' unr':'')+'"').replace(/<\/span><\/span><\/a>$/,'</span><span class="fvtag '+t[0]+'">'+esc(t[1])+'</span></span></a>');
+  if(ur)c=c.replace(/^(<a [^>]*>)/,"$1"+STUNR);
+  return '<div class="fvc">'+c+'<button class="fvx" type="button" data-fk="'+esc(k)+'" title="Usuń z ulubionych" aria-label="Usuń '+esc(g.game)+' z ulubionych">'+HRT+'</button></div>'}
+function favPl(n,a,b,c){return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c}
+function renderFavList(){var box=$("favlist");if(!box)return;
+  var w=srchWords(FAVV.q),all=favGames().filter(function(g){return !w.length||srchHit(g,w)});
+  var c={all:all.length,ready:0,wip:0,"new":0};all.forEach(function(g){c[favReady(g)?"ready":"wip"]++;if(favIsNew(g))c["new"]++});
+  ["all","ready","wip","new"].forEach(function(t){var b=document.querySelector('#favview .dtabs [data-fvtab="'+t+'"]');if(b){b.classList.toggle("on",FAVV.tab===t);b.querySelector(".tn").textContent=c[t]}});
+  document.querySelectorAll("#favview [data-fvsort]").forEach(function(b){b.classList.toggle("on",FAVV.sort===b.getAttribute("data-fvsort"))});
+  var un=favUnread(),nt=$("favnote");
+  if(nt)nt.innerHTML=un.length&&FAVV.tab!=="new"?'<div class="fvnote">🔔 <span><b>'+un.length+' '+favPl(un.length,"ulubiona gra ma nowość","ulubione gry mają nowości","ulubionych gier ma nowości")+':</b> '+un.slice(0,3).map(function(g){var e=nwEvent(g);return esc(g.game)+' – '+(e.typ==="Aktualizacja"?"aktualizacja"+(e.ver&&e.ver!=="—"?" (wersja "+esc(e.ver)+")":""):"nowe spolszczenie")}).join(", ")+(un.length>3?" i "+(un.length-3)+" "+favPl(un.length-3,"inna","inne","innych"):"")+'. <button type="button" class="lnk" data-fvtab="new">Pokaż</button></span></div>':'';
+  var L=all.filter(function(g){return FAVV.tab==="all"||(FAVV.tab==="new"?favIsNew(g):(favReady(g)?"ready":"wip")===FAVV.tab)});
+  var srt=FAVV.tab==="new"?"upd":FAVV.sort;
+  L.sort(srt==="az"?function(a,b){return a.game.localeCompare(b.game,"pl")}:srt==="upd"?function(a,b){return nk(b).localeCompare(nk(a))}:function(a,b){return String(FAV.m[keyOf(b)].t).localeCompare(String(FAV.m[keyOf(a)].t))});
+  if(FAVV.tab!=="new"){var ua=L.filter(favUnr);if(ua.length)L=ua.concat(L.filter(function(g){return ua.indexOf(g)<0}))} // nowości na górze
+  box.innerHTML=L.length?'<div class="ngrid">'+L.map(favCard).join("")+'</div>':'<p class="msg">'+(w.length?'Nic nie znaleziono.':FAVV.tab==="new"?'Brak nowości w Twoich ulubionych grach. Gdy któraś dostanie nowe spolszczenie albo aktualizację, pokaże się tutaj.':'Nic tu nie ma.')+'</p>'}
+function renderFav(){var v=$("favview");if(!v)return;var hd=VBACK+'<h2>♥ Moje ulubione</h2>',mode;
+  if(!CM){mode="off";if(v.getAttribute("data-mode")!==mode)v.innerHTML=hd+'<p class="msg">Funkcja jest chwilowo niedostępna.</p>'}
+  else if(!me()){mode="out";v.innerHTML=hd+'<p class="msg dsub">Zapisuj gry, w które chcesz zagrać, i miej je pod ręką na komputerze i telefonie. Dostaniesz też znak, gdy pojawi się nowe spolszczenie albo aktualizacja.</p><p><button class="btn on" type="button" id="favlogin">Zaloguj się</button></p>'}
+  else if(!FAV.ok){mode="load";v.innerHTML=hd+'<p class="msg"><span class="spn"></span>Wczytywanie…</p>'}
+  else if(FAV.err){mode="err";v.innerHTML=hd+'<p class="msg">Nie udało się wczytać ulubionych. Odśwież stronę za chwilę.</p>'}
+  else if(!favGames().length){mode="empty";v.innerHTML=hd+'<p class="msg dsub">Nie masz jeszcze ulubionych gier. Kliknij serduszko <span class="hrti">'+HRT+'</span> przy grze w katalogu albo obok nazwy gry na jej stronie – gra zapisze się tutaj.</p><p><a class="btn" href="#/">Przejdź do katalogu</a></p>'}
+  else{mode="list";if(v.getAttribute("data-mode")!==mode){
+    v.innerHTML=hd+'<p class="msg dsub">Gry, w które chcesz zagrać. Zapisane na Twoim koncie – widać je na komputerze i telefonie.</p><div id="favnote"></div>'+
+     '<div class="dtabs"><button type="button" data-fvtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-fvtab="ready">Gotowe do grania<span class="tn"></span></button><button type="button" data-fvtab="wip">W przygotowaniu<span class="tn"></span></button><button type="button" data-fvtab="new">Nowości<span class="tn"></span></button><input id="favq" type="search" placeholder="Szukaj w ulubionych…" autocomplete="off" aria-label="Szukaj w ulubionych"></div>'+
+     '<div class="fvsort">Sortuj: <button type="button" data-fvsort="add">ostatnio dodane</button><button type="button" data-fvsort="upd">ostatnia aktualizacja</button><button type="button" data-fvsort="az">A–Z</button></div><div id="favlist"></div>';
+    $("favq").value=FAVV.q;$("favq").addEventListener("input",function(){FAVV.q=this.value;renderFavList()})}
+    renderFavList()}
+  v.setAttribute("data-mode",mode)}
+function showFav(){var was=curViewName();enterView("fav","Moje ulubione – GryPoPolsku.pl");if(was!=="fav"){FAVV.fresh=null;FAVV.tab="all"}$("favview").removeAttribute("data-mode");if(me()&&!FAV.ok)favLoad();renderFav()}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-fk],[data-fundo],[data-fvtab],[data-fvsort],#ufav,#favlogin");if(!t)return;
+  if(t.hasAttribute("data-fk")){e.preventDefault();e.stopPropagation();favToggle(t.getAttribute("data-fk"));return}
+  if(t.hasAttribute("data-fundo")){var k=t.getAttribute("data-fundo");if(!isFav(k))favToggle(k);return}
+  if(t.id==="ufav"){$("umenu").className="umenu";goView(FHASH);return}
+  if(t.id==="favlogin"){curKey=null;openModal(loginHtml());return}
+  if(t.hasAttribute("data-fvsort")){FAVV.sort=t.getAttribute("data-fvsort");renderFavList();return}
+  FAVV.tab=t.getAttribute("data-fvtab");if(FAVV.tab==="new"){favMarkSeen();favUI()}else renderFavList();
+  var f=$("favview");if(f&&t.classList.contains("lnk"))f.scrollIntoView({block:"start"})},true);
 // ====== WSZYSTKIE NOWOŚCI (#/nowosci): pełna lista „Nowości i aktualizacje”, według dni ======
 var NWV={tab:"all",n:60,q:"",built:false};
 function nwSince(){var d=new Date(Date.now()-30*864e5);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")} // widok pokazuje ostatnie 30 dni
@@ -1951,22 +2082,22 @@ function showNw(){var was=curViewName();enterView("nw","Nowości i aktualizacje 
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-nwtab],#nwmore");if(!t||!onNw)return;
   if(t.id==="nwmore"){NWV.n+=60;renderNwList();return}
   NWV.tab=t.getAttribute("data-nwtab");NWV.n=60;renderNwList()});
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":""}
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw));$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav));$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;setViewUI()}
 var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
@@ -2089,7 +2220,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH)route();
 
 var baseItems=[];
 function mergeApproved(rows){

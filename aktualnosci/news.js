@@ -28,11 +28,37 @@ async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
-  var menu=(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
-  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span></button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();
+  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
+  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   $("ulo").onclick=function(){sb.auth.signOut()}}
 document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});
+
+// ---- „Moje ulubione”: serduszko przy nazwie gry (tabela favorites; lista jest na stronie głównej #/ulubione) ----
+// Liczby w menu bierzemy z localStorage „fav.c”, które zapisuje strona główna (tak jak „steam.c”).
+function favC(){var u=me(),c=null;try{c=JSON.parse(localStorage.getItem("fav.c")||"null")}catch(e){}return u&&c&&c.u===u.id?{n:+c.n||0,un:+c.un||0}:{n:0,un:0}}
+function favCAdd(d,unr){var u=me();if(!u)return;var c=favC();c.n=Math.max(0,c.n+d);if(unr)c.un=Math.max(0,c.un-1);try{localStorage.setItem("fav.c",JSON.stringify({u:u.id,n:c.n,un:c.un}))}catch(e){}renderUser()}
+var favOn=false,favReady=false,favBusy=false,favTT=null;window.__gpFav=1;
+function favEvDate(){var b=$("gfav"),e=b&&b.getAttribute("data-ev")||"";return /^\d{4}-\d{2}-\d{2}$/.test(e)?e:null}
+function favBtn(){var b=$("gfav");if(!b)return;var t=favOn?"Usuń z ulubionych":"Dodaj do ulubionych";b.hidden=false;b.classList.toggle("on",favOn);b.setAttribute("aria-pressed",String(favOn));b.title=t;b.setAttribute("aria-label",t);var l=b.querySelector(".l");if(l)l.textContent=favOn?"W ulubionych":"Do ulubionych"}
+function favToast(h,err){var t=$("favtoast");if(!t){t=document.createElement("div");t.id="favtoast";t.setAttribute("role","status");document.body.appendChild(t)}
+  t.className="favtoast show"+(err?" err":"");t.innerHTML=h;clearTimeout(favTT);favTT=setTimeout(function(){t.className="favtoast"},5000)}
+async function favCheck(){var b=$("gfav"),k=document.body.getAttribute("data-key")||"";if(!b||!k||!sb)return;favReady=false;favOn=false;
+  if(me()){try{var r=await sb.from("favorites").select("seen,created_at").eq("game_key",k).maybeSingle();
+    if(!r.error&&r.data){favOn=true;var ev=favEvDate(),d=new Date(r.data.created_at),cd=isNaN(d)?"":d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"),sn=r.data.seen||"";
+      // wejście na stronę gry = nowość obejrzana (znika z „Nowości” w ulubionych)
+      if(ev&&ev>sn&&ev>cd){sb.from("favorites").update({seen:ev}).eq("game_key",k).then(function(x){if(!x.error)favCAdd(0,true)},function(){})}}}catch(e){}}
+  favReady=true;favBtn();
+  // klik w serduszko, zanim skrypt strony się wczytał (strona gry ładuje go dopiero po pierwszym dotknięciu)
+  if(window.__gpFavClick){window.__gpFavClick=0;var b2=$("gfav");if(b2)b2.click()}}
+document.addEventListener("click",async function(e){var b=e.target.closest&&e.target.closest("#gfav");if(!b)return;
+  if(!me()){openLogin();return}
+  if(!favReady||favBusy)return;favBusy=true;var k=document.body.getAttribute("data-key")||"",on=!favOn;favOn=on;favBtn();
+  try{var r=on?await sb.from("favorites").insert({game_key:k,seen:favEvDate()}):await sb.from("favorites").delete().eq("game_key",k);if(r.error)throw r.error;
+    favCAdd(on?1:-1,false);
+    favToast(on?'♥ Dodano do ulubionych. Dostaniesz znak, gdy pojawi się aktualizacja. <a href="/#/ulubione">Moje ulubione →</a>':'Usunięto z ulubionych.')}
+  catch(err){favOn=!on;favBtn();favToast("Nie udało się zapisać. Spróbuj ponownie za chwilę.",1)}
+  favBusy=false});
 async function loadRole(){myRole=null;if(!sb||!me())return;try{var r=await sb.rpc("my_role");if(!r.error)myRole=r.data||null}catch(e){}renderUser()}
 
 // ---- okienko logowania i rejestracji (kod skopiowany z index.html, żeby wyglądało i działało tak samo) ----
@@ -220,8 +246,8 @@ function boot(){
   var pg=document.body.getAttribute("data-page");
   if(pg==="list")initList();
   if(!sb){renderUser();if(pg==="post")initPost();return}
-  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
-  sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
+  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();favCheck();return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
+  sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me())favCheck();loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
 }
 boot();
 })();

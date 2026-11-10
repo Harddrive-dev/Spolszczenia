@@ -225,3 +225,18 @@ table tbody tr:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)
 html{-webkit-tap-highlight-color:transparent}
 /* Komentarz wskazany linkiem z „Dyskusji” – krótkie podświetlenie */
 .cmt.chl{outline:2px solid var(--accent);outline-offset:4px;border-radius:10px;transition:outline-color 1s}
+
+/* Moje ulubione: serduszko przy nazwie gry + dymek (11.2026) */
+.gtt{display:flex;align-items:flex-start;gap:14px}
+.gfav{flex:none;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px 0 12px;margin-top:6px;border-radius:999px;border:1.5px solid #e0566b;background:transparent;color:#e0566b;font:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.gfav[hidden]{display:none}
+.gfav:hover{background:color-mix(in srgb,#e0566b 12%,transparent)}
+.gfav.on{background:#e0566b;color:#fff}
+.gfav.on svg{fill:currentColor}
+@media(max-width:600px){.gfav{height:36px;padding:0 10px;margin-top:2px}.gfav .l{display:none}}
+.favtoast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,20px);opacity:0;pointer-events:none;width:max-content;max-width:min(calc(100vw - 32px),460px);box-sizing:border-box;background:var(--surface);color:var(--text);border:1px solid #e0566b;border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:opacity .2s ease,transform .2s ease}
+.favtoast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.favtoast.err{border-color:#ff3b30}
+.favtoast a{color:#e0566b}
+@media(max-width:600px){.favtoast{bottom:16px;font-size:13px;padding:10px 12px}}
+@media (prefers-reduced-motion:reduce){.favtoast,.gfav{transition:none}}

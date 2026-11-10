@@ -9,7 +9,9 @@ import { execSync } from "node:child_process";
 const SITE = "https://grypopolsku.pl";
 const HOOK = process.env.DISCORD_WEBHOOK || "";               // kanał z katalogiem (#nowe-spolszczenia)
 const HOOK_NEWS = process.env.DISCORD_WEBHOOK_NEWS || HOOK;     // kanał z wpisami (#aktualności); bez sekretu – ten sam co katalog
-const BOT = process.env.DISCORD_BOT_TOKEN || "";                // bot „GryPoPolsku Ogłoszenia”: klika „Opublikuj” na kanałach ogłoszeń (dla obserwujących serwerów)
+const BOT = process.env.DISCORD_BOT_TOKEN || "";
+const HOOK_KOM = process.env.DISCORD_WEBHOOK_COMMENTS || "";      // kanał #komentarze: nowe komentarze ze strony (bez sekretu – pomijamy)
+const SB = "https://qbozpokxgtspwdxvbevv.supabase.co", SBKEY = "sb_publishable_0StDDiTyHHv_ZIW0nh590g_ij3wNMTV"; // publiczny klucz strony (tylko odczyt)                // bot „GryPoPolsku Ogłoszenia”: klika „Opublikuj” na kanałach ogłoszeń (dla obserwujących serwerów)
 const DRY = process.env.DRY === "1";
 const TEST = process.env.DISCORD_TEST === "true";
 const PRE = process.env.PRE || "";
@@ -124,12 +126,73 @@ async function send(embeds, content, hook = HOOK) {
   }
 }
 
+
+// ---- Komentarze ze strony na kanał #komentarze ----
+// Bez pliku ze stanem: ostatni wysłany komentarz odczytujemy z kanału (link w ogłoszeniu kończy się na #komentarze-c<id>).
+// Gdy kanału nie da się odczytać (bot bez dostępu), wysyłamy tylko komentarze z ostatnich 31 minut (automat działa co 30 min).
+const sbGet = async q => { const r = await fetch(SB + "/rest/v1/" + q, { headers: { apikey: SBKEY, Authorization: "Bearer " + SBKEY } }); if (!r.ok) throw new Error("Supabase " + r.status); return r.json(); };
+async function lastPostedComment() {
+  if (!BOT) return null;
+  try {
+    const w = await (await fetch(HOOK_KOM.split("?")[0])).json();
+    if (!w.channel_id) return null;
+    const r = await fetch(`https://discord.com/api/v10/channels/${w.channel_id}/messages?limit=50`, { headers: { Authorization: "Bot " + BOT } });
+    if (!r.ok) return null;
+    let max = 0;
+    for (const m of await r.json()) for (const e of m.embeds || []) { const k = /#komentarze-c(\d+)$/.exec(e.url || ""); if (k) max = Math.max(max, +k[1]); }
+    return max;
+  } catch { return null; }
+}
+async function commentEvents() {
+  const last = await lastPostedComment();
+  const cols = "id,game_key,author,body,created_at,parent_id,avatar_url,is_mod";
+  let rows;
+  if (last === null) rows = await sbGet(`comments?select=${cols}&created_at=gt.${new Date(Date.now() - 31 * 60000).toISOString()}&order=id.asc&limit=30`);
+  else if (last === 0) rows = (await sbGet(`comments?select=${cols}&order=id.desc&limit=3`)).reverse(); // pierwsze uruchomienie: 3 ostatnie na start
+  else rows = await sbGet(`comments?select=${cols}&id=gt.${last}&order=id.asc&limit=30`);
+  if (!rows.length) return [];
+  const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")), byKey = new Map(list.map(g => [g.id || slug(g.game || ""), g]));
+  const newsSlugs = [...new Set(rows.map(c => (/^news:(.+)$/.exec(c.game_key || "") || [])[1]).filter(Boolean))];
+  const titles = new Map();
+  if (newsSlugs.length) { try { for (const n of await sbGet(`news?select=slug,title&published=eq.true&slug=in.(${newsSlugs.map(encodeURIComponent).join(",")})`)) titles.set(n.slug, n.title); } catch {} }
+  const ev = [];
+  for (const c of rows) {
+    const ns = (/^news:(.+)$/.exec(c.game_key || "") || [])[1];
+    let title, url, thumb;
+    if (ns) { if (!titles.has(ns)) continue; title = titles.get(ns); url = `${SITE}/aktualnosci/${ns}/`; }
+    else { const g = byKey.get(c.game_key); if (!g) continue; title = g.game; url = `${SITE}/gra/${slug(g.game)}/`; thumb = img(g.img); }
+    const body = String(c.body || "").replace(/\s+\n/g, "\n").trim();
+    const e = {
+      author: { name: (c.author || "Gracz").slice(0, 80) + (c.is_mod ? " · moderator" : ""), ...(/^https:\/\//.test(c.avatar_url || "") ? { icon_url: c.avatar_url } : {}) },
+      title: ((c.parent_id ? "↪ Odpowiedź: " : "💬 ") + title).slice(0, 250),
+      url: url + "#komentarze-c" + c.id,
+      description: (body.length > 400 ? body.slice(0, 397) + "…" : body) + `\n\n[Odpowiedz na stronie](${url}#komentarze-c${c.id})`,
+      color: c.parent_id ? 0x8e5cd9 : 0xe8905f,
+      footer: { text: ns ? "Komentarz pod wpisem · GryPoPolsku.pl" : "Komentarz · GryPoPolsku.pl" },
+      timestamp: c.created_at,
+    };
+    if (thumb) e.thumbnail = { url: thumb };
+    ev.push(e);
+  }
+  return ev;
+}
+async function postComments() {
+  if (!HOOK_KOM) return;
+  try {
+    const ev = await commentEvents();
+    for (let i = 0; i < ev.length; i += 10) await send(ev.slice(i, i + 10), null, HOOK_KOM);
+    console.log("Komentarze na Discordzie: " + ev.length);
+  } catch (e) { console.log("Komentarze na Discordzie – błąd: " + e.message); }
+}
+
+if (!TEST) await postComments(); // komentarze nie zależą od zmian w repozytorium – idą przy każdym przebiegu
 if (!HOOK && !DRY) { console.log("Brak sekretu DISCORD_WEBHOOK – pomijam ogłoszenia."); process.exit(0); }
 
 if (TEST) {
   const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")).filter(g => !onlyZap(g));
   const last = list.slice().sort((a, b) => String(b.upd || b.dodano || "").localeCompare(String(a.upd || a.dodano || "")))[0];
   await send([gameEmbed(last, "test", "To jest wiadomość testowa dla kanału z katalogiem. Jeśli ją widzisz, ogłoszenia działają.")]);
+  if (HOOK_KOM) await send([{ title: "🧪 Test: komentarze ze strony", url: SITE + "/#/dyskusje", color: COLORS.test, description: "To jest wiadomość testowa dla kanału z komentarzami. Nowe komentarze ze strony będą tu trafiać co około 30 minut.", footer: { text: "GryPoPolsku.pl – Dyskusje" } }], null, HOOK_KOM);
   if (HOOK_NEWS !== HOOK) await send([{ title: "🧪 Test ogłoszeń: Aktualności", url: SITE + "/aktualnosci/", color: COLORS.wpis, description: "To jest wiadomość testowa dla kanału z Aktualnościami. Jeśli ją widzisz, nowe wpisy będą trafiać tutaj.", footer: { text: "GryPoPolsku.pl – Aktualności" } }], null, HOOK_NEWS);
   console.log("Wysłano wiadomość testową.");
   process.exit(0);

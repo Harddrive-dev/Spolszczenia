@@ -15813,22 +15813,6 @@
     "upd": "2026-11-09"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07"
-  },
-  {
     "game": "Shovel Knight: Treasure Trove",
     "platform": "PC",
     "type": "Napisy",
@@ -15874,5 +15858,21 @@
     "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
     "steam": 2581410,
     "upd": "2026-11-10"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn2.steamgriddb.com/thumb/9831da264824dd88ec7cff1ddc005877.jpg",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07"
   }
 ]

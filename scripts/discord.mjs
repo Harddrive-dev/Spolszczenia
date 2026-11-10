@@ -115,7 +115,7 @@ async function publish(ch, id) {
 async function send(embeds, content, hook = HOOK) {
   const body = { username: "GryPoPolsku.pl", avatar_url: SITE + "/icon-192.png", embeds, allowed_mentions: { parse: [] } };
   if (content) body.content = content;
-  if (DRY || !HOOK) { console.log(JSON.stringify(body, null, 1)); return; }
+  if (DRY || !hook) { console.log(JSON.stringify(body, null, 1)); return; }
   for (let i = 0; i < 3; i++) {
     const r = await fetch(hook + (hook.includes("?") ? "&" : "?") + "wait=true", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     if (r.status === 429) { const j = await r.json().catch(() => ({})); await new Promise(z => setTimeout(z, ((j.retry_after || 2) + 0.5) * 1000)); continue; }
@@ -128,28 +128,19 @@ async function send(embeds, content, hook = HOOK) {
 
 
 // ---- Komentarze ze strony na kanał #komentarze ----
-// Bez pliku ze stanem: ostatni wysłany komentarz odczytujemy z kanału (link w ogłoszeniu kończy się na #komentarze-c<id>).
-// Gdy kanału nie da się odczytać (bot bez dostępu), wysyłamy tylko komentarze z ostatnich 31 minut (automat działa co 30 min).
+// Numer ostatniego wysłanego komentarza trzymamy w pliku scripts/discord-komentarze.json (zapisuje go automat razem z resztą zmian).
+// Odczyt z kanału przez bota nie działa: bez uprawnienia „Message Content” Discord zwraca puste treści wiadomości.
 const sbGet = async q => { const r = await fetch(SB + "/rest/v1/" + q, { headers: { apikey: SBKEY, Authorization: "Bearer " + SBKEY } }); if (!r.ok) throw new Error("Supabase " + r.status); return r.json(); };
-async function lastPostedComment() {
-  if (!BOT) return null;
-  try {
-    const w = await (await fetch(HOOK_KOM.split("?")[0])).json();
-    if (!w.channel_id) return null;
-    const r = await fetch(`https://discord.com/api/v10/channels/${w.channel_id}/messages?limit=50`, { headers: { Authorization: "Bot " + BOT } });
-    if (!r.ok) return null;
-    let max = 0;
-    for (const m of await r.json()) for (const e of m.embeds || []) { const k = /#komentarze-c(\d+)$/.exec(e.url || ""); if (k) max = Math.max(max, +k[1]); }
-    return max;
-  } catch { return null; }
-}
+const KOM_STATE = "scripts/discord-komentarze.json";
+function lastPostedComment() { try { const j = JSON.parse(fs.readFileSync(KOM_STATE, "utf8")); return Number.isFinite(+j.last) ? +j.last : 0; } catch { return 0; } }
+function saveLastComment(id) { if (DRY) { console.log("(DRY) zapisałbym ostatni komentarz: " + id); return; } fs.writeFileSync(KOM_STATE, JSON.stringify({ last: id }) + "\n"); }
 async function commentEvents() {
-  const last = await lastPostedComment();
+  const last = lastPostedComment();
   const cols = "id,game_key,author,body,created_at,parent_id,avatar_url,is_mod";
   let rows;
-  if (last === null) rows = await sbGet(`comments?select=${cols}&created_at=gt.${new Date(Date.now() - 31 * 60000).toISOString()}&order=id.asc&limit=30`);
-  else if (last === 0) rows = (await sbGet(`comments?select=${cols}&order=id.desc&limit=3`)).reverse(); // pierwsze uruchomienie: 3 ostatnie na start
+  if (!last) rows = (await sbGet(`comments?select=${cols}&order=id.desc&limit=3`)).reverse(); // pierwsze uruchomienie: 3 ostatnie na start
   else rows = await sbGet(`comments?select=${cols}&id=gt.${last}&order=id.asc&limit=30`);
+  commentEvents.maxId = rows.reduce((m, c) => Math.max(m, +c.id || 0), last);
   if (!rows.length) return [];
   const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")), byKey = new Map(list.map(g => [g.id || slug(g.game || ""), g]));
   const newsSlugs = [...new Set(rows.map(c => (/^news:(.+)$/.exec(c.game_key || "") || [])[1]).filter(Boolean))];
@@ -181,11 +172,13 @@ async function postComments() {
   try {
     const ev = await commentEvents();
     for (let i = 0; i < ev.length; i += 10) await send(ev.slice(i, i + 10), null, HOOK_KOM);
+    if (commentEvents.maxId && commentEvents.maxId !== lastPostedComment()) saveLastComment(commentEvents.maxId);
     console.log("Komentarze na Discordzie: " + ev.length);
   } catch (e) { console.log("Komentarze na Discordzie – błąd: " + e.message); }
 }
 
-if (!TEST) await postComments(); // komentarze nie zależą od zmian w repozytorium – idą przy każdym przebiegu
+// KOM_ONLY=1 – osobny krok automatu przed „Zapisz zmiany”: tylko komentarze (plik ze stanem trafia do commita)
+if (process.env.KOM_ONLY === "1") { if (!TEST) await postComments(); process.exit(0); }
 if (!HOOK && !DRY) { console.log("Brak sekretu DISCORD_WEBHOOK – pomijam ogłoszenia."); process.exit(0); }
 
 if (TEST) {

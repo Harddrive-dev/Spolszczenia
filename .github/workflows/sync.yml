@@ -27,10 +27,17 @@ jobs:
       - name: Generuj strony gier (test)
         if: always()
         run: node scripts/gry.mjs
+      - name: Komentarze na Discordzie
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_COMMENTS: ${{ secrets.DISCORD_WEBHOOK_COMMENTS }}
+          DISCORD_TEST: ${{ github.event.inputs.discord_test }}
+          KOM_ONLY: "1"
+        run: node scripts/discord.mjs
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html
+          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json
           git rm -q --cached --ignore-unmatch import-lektor.json
           echo "PRE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           if [ -n "$(git status --porcelain)" ]; then

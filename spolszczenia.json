@@ -15827,5 +15827,52 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Shovel Knight: Treasure Trove",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/shovel_knight_treasure_trove",
+    "genre": "Platformówka",
+    "dodano": "2026-11-10",
+    "img": "https://cdn2.steamgriddb.com/thumb/8f4ebd821e868cdbc25e3113de80d08c.jpg",
+    "opis": "Shovel Knight: Treasure Trove to ostateczna, pełna kolekcja kultowej retro platformówki 2D, stworzona przez studio Yacht Club Games. Gra garściami czerpie z klasyków ery 8-bitowych konsol (takich jak Mega Man, Castlevania czy DuckTales), łącząc nostalgiczny pikselart i chwytliwą muzykę z nowoczesnym, dopracowanym sterowaniem.",
+    "steam": 250760,
+    "upd": "2026-11-10"
+  },
+  {
+    "game": "Dungeons & Dragons: Dark Alliance",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=dungeons-dragons-dark-alliance",
+    "genre": "RPG",
+    "dodano": "2026-11-10",
+    "img": "https://cdn2.steamgriddb.com/thumb/edb6f1a08c4bf56a0f562989afb16a1d.png",
+    "opis": "Dungeons & Dragons: Dark Alliance (2021) to kooperacyjna gra akcji TPP z elementami hack and slash, stworzona przez studio Tuque Games i wydana przez Wizards of the Coast. Akcja gry toczy się w mrocznym, zaśnieżonym regionie Icewind Dale, dobrze znanym z uniwersum Dungeons & Dragons.",
+    "upd": "2026-11-10"
+  },
+  {
+    "game": "Stygian Outer Gods",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=stygian-outer-gods",
+    "genre": "Horror",
+    "dodano": "2026-11-10",
+    "img": "https://cdn2.steamgriddb.com/thumb/9b66508018bc1f39f7bf7301a796c4ae.jpg",
+    "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
+    "steam": 2581410,
+    "upd": "2026-11-10"
   }
 ]

@@ -39,12 +39,18 @@ document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.
 function favC(){var u=me(),c=null;try{c=JSON.parse(localStorage.getItem("fav.c")||"null")}catch(e){}return u&&c&&c.u===u.id?{n:+c.n||0,un:+c.un||0}:{n:0,un:0}}
 function favCAdd(d,unr){var u=me();if(!u)return;var c=favC();c.n=Math.max(0,c.n+d);if(unr)c.un=Math.max(0,c.un-1);try{localStorage.setItem("fav.c",JSON.stringify({u:u.id,n:c.n,un:c.un}))}catch(e){}renderUser()}
 var favOn=false,favReady=false,favBusy=false,favTT=null;window.__gpFav=1;
+// Kopia listy ulubionych w tej przeglądarce (localStorage „fav.k”, zapisuje ją też strona główna) – serduszko zaznaczone od razu, bez mignięcia.
+function favKRead(){var u=me();try{var c=JSON.parse(localStorage.getItem("fav.k")||"null");if(u&&c&&c.u===u.id&&c.m&&typeof c.m==="object")return c}catch(e){}return null}
+function favKSet(k,on,row){var u=me();if(!u)return;var c=favKRead()||{u:u.id,m:{}};if(on)c.m[k]=row||c.m[k]||{c:"",t:"",s:""};else delete c.m[k];try{localStorage.setItem("fav.k",JSON.stringify(c))}catch(e){}}
 function favEvDate(){var b=$("gfav"),e=b&&b.getAttribute("data-ev")||"";return /^\d{4}-\d{2}-\d{2}$/.test(e)?e:null}
 function favBtn(){var b=$("gfav");if(!b)return;var t=favOn?"Usuń z ulubionych":"Dodaj do ulubionych";b.hidden=false;b.classList.toggle("on",favOn);b.setAttribute("aria-pressed",String(favOn));b.title=t;b.setAttribute("aria-label",t);var l=b.querySelector(".l");if(l)l.textContent=favOn?"W ulubionych":"Do ulubionych"}
 function favToast(h,err){var t=$("favtoast");if(!t){t=document.createElement("div");t.id="favtoast";t.setAttribute("role","status");document.body.appendChild(t)}
   t.className="favtoast show"+(err?" err":"");t.innerHTML=h;clearTimeout(favTT);favTT=setTimeout(function(){t.className="favtoast"},5000)}
-async function favCheck(){var b=$("gfav"),k=document.body.getAttribute("data-key")||"";if(!b||!k||!sb)return;favReady=false;favOn=false;
+async function favCheck(){var b=$("gfav"),k=document.body.getAttribute("data-key")||"";if(!b||!k||!sb)return;favReady=false;
+  var kc=favKRead();favOn=!!(kc&&Object.prototype.hasOwnProperty.call(kc.m,k));favBtn();
+  if(!me()){try{localStorage.removeItem("fav.k")}catch(e){}}
   if(me()){try{var r=await sb.from("favorites").select("seen,created_at").eq("game_key",k).maybeSingle();
+    if(!r.error){favOn=!!r.data;favKSet(k,favOn,r.data?{c:"",t:String(r.data.created_at||""),s:String(r.data.seen||"")}:null)}
     if(!r.error&&r.data){favOn=true;var ev=favEvDate(),d=new Date(r.data.created_at),cd=isNaN(d)?"":d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"),sn=r.data.seen||"";
       // wejście na stronę gry = nowość obejrzana (znika z „Nowości” w ulubionych)
       if(ev&&ev>sn&&ev>cd){sb.from("favorites").update({seen:ev}).eq("game_key",k).then(function(x){if(!x.error)favCAdd(0,true)},function(){})}}}catch(e){}}
@@ -55,7 +61,7 @@ document.addEventListener("click",async function(e){var b=e.target.closest&&e.ta
   if(!me()){openLogin();return}
   if(!favReady||favBusy)return;favBusy=true;var k=document.body.getAttribute("data-key")||"",on=!favOn;favOn=on;favBtn();
   try{var r=on?await sb.from("favorites").insert({game_key:k,seen:favEvDate()}):await sb.from("favorites").delete().eq("game_key",k);if(r.error)throw r.error;
-    favCAdd(on?1:-1,false);
+    favCAdd(on?1:-1,false);favKSet(k,on,on?{c:"",t:new Date().toISOString(),s:favEvDate()||""}:null);
     favToast(on?'♥ Dodano do ulubionych. Dostaniesz znak, gdy pojawi się aktualizacja. <a href="/#/ulubione">Moje ulubione →</a>':'Usunięto z ulubionych.')}
   catch(err){favOn=!on;favBtn();favToast("Nie udało się zapisać. Spróbuj ponownie za chwilę.",1)}
   favBusy=false});

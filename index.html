@@ -567,6 +567,18 @@ html{-webkit-tap-highlight-color:transparent}
 .hn{width:26px;text-align:center;font-size:20px;font-weight:800;color:var(--accent);flex:none}
 .ht{flex:1;min-width:0}.ht>b{display:block}.ht small{color:var(--muted);font-size:12px}.ht i{display:block;font-style:normal;color:var(--muted);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.ht i b{color:var(--text)}
 .hcnt{text-align:center;flex:none}.hcnt b{display:block;font-size:22px;color:var(--accent);line-height:1}.hcnt small{font-size:11px;color:var(--muted);line-height:1.2}
+.home .news h2.nwh,#nwview h2{display:flex;align-items:baseline;gap:12px}.nwh .mall{margin:0 0 0 auto;padding:0;font-size:14px;font-weight:700;white-space:nowrap}
+/* Wszystkie nowości (#/nowosci, 10.11.2026) */
+#nwview{max-width:1180px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+@media(max-width:600px){#nwview{padding:14px 12px;border-radius:12px}}
+#nwview h2{margin:6px 0 2px}#nwview .dsub{margin:0 0 12px}
+#nwview .ncard{background:var(--bg)}
+#nwview .ncard .ntxt{min-width:0}#nwview .ncard .ntxt b,#nwview .ncard small,#nwview .ncard .nev{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#nwview .ncard small{display:block}
+#nwview .ngrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){#nwview .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){#nwview .ngrid{grid-template-columns:minmax(0,1fr)}}
+.dtabs button .tn{opacity:.7;font-weight:600;margin-left:4px}
+#nwq{flex:1;min-width:200px;border-radius:999px}
 .mpanel h3 .mall{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}.mpanel h3 .mall:hover{text-decoration:underline}
 @media (max-width:700px){.dkm{grid-template-columns:minmax(0,1fr);gap:8px}.db{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:8px}.dg .thumb{width:34px;height:50px;flex-basis:34px}.hcnt small{display:none}}
 </style>
@@ -620,6 +632,7 @@ html{-webkit-tap-highlight-color:transparent}
 <div id="newsview" style="display:none"></div>
 <div id="steamview" style="display:none" aria-live="polite"></div>
 <div id="dysview" style="display:none"></div>
+<div id="nwview" style="display:none"></div>
 <datalist id="gl_mod"></datalist>
 <div id="addview" style="display:none"><a class="vback" href="#/">← Wróć do katalogu</a>
 <div class="panel open" id="modadd" style="display:none"></div>
@@ -821,6 +834,9 @@ function fillSel(id,k,label){var el=$(id),cur=el.value;el.innerHTML="";var o=doc
 function nwEvent(g){var d=String(g.dodano||""),u=String(g.upd||""),e={date:u>d?u:d,typ:u>d?"Aktualizacja":"Nowe",aut:"",ver:g.ver,type:g.type};
   spExtra(g).forEach(function(s){var x=String(s.upd||"");if(x>e.date)e={date:x,typ:s.dodano&&x>s.dodano?"Aktualizacja":"Nowe spolszczenie",aut:s.author,ver:s.ver,type:s.type}});return e}
 function nk(g){return nwEvent(g).date}
+// Lista „Nowości i aktualizacje” (strona główna: 8 pierwszych, widok #/nowosci: wszystkie). Bez gier tylko w „Zapowiedzi”.
+function nwAll(){return items.filter(function(g){return (g.upd||g.dodano)&&!(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)})}
+function nwCard(g){var e=nwEvent(g),when=nwDay(e.date),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,when].filter(Boolean).join(" · "))+'</span></span></a>'}
 function nwDay(d){var t=new Date(),p=function(x){return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")},y=new Date(t.getTime()-864e5);if(d===p(t))return "dziś";if(d===p(y))return "wczoraj";var m=d.match(/^\d{4}-(\d\d)-(\d\d)$/);return m?(+m[2])+" "+["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"][+m[1]-1]:""}
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
 function spUpdKey(o,n){return !!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Korekta","Beta","Testy","Zapowiedź"].indexOf(o.status)>-1&&n.status==="Gotowe")))}
@@ -914,8 +930,9 @@ function renderHome(){
   feat($("week"),fw,"Gra tygodnia",weekRange());
   renderLeader();
   $("featrow").className="featrow"+(fw&&$("leader").style.display!=="none"?" two":"");
-  var nw=items.filter(function(g){return (g.upd||g.dodano)&&!(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))}).sort(function(a,b){return nk(b).localeCompare(nk(a))||String(b.dodano||"").localeCompare(String(a.dodano||""))||items.indexOf(b)-items.indexOf(a)}).slice(0,8);
-  $("news").innerHTML=nw.length?'<h2>Nowości i aktualizacje</h2><div class="ngrid">'+nw.map(function(g){var e=nwEvent(g),when=nwDay(e.date),v=e.typ==="Aktualizacja"&&e.ver&&e.ver!=="—"?"wersja "+e.ver:"";return '<a class="ncard" href="/gra/'+esc(keyOf(g))+'/" title="'+esc(g.game)+'">'+thumb(g)+'<span class="ntxt"><b>'+esc(g.game)+'</b><small>'+esc(e.aut?(e.type||"Napisy")+' · '+e.aut:nwMeta(g))+'</small><span class="nev"><i class="'+(e.typ==="Aktualizacja"?"u":"n")+'">'+esc(e.typ)+'</i>'+esc([v,when].filter(Boolean).join(" · "))+'</span></span></a>'}).join("")+'</div>':"";
+  var nw=nwAll().slice(0,8);
+  $("news").innerHTML=nw.length?'<h2 class="nwh">Nowości i aktualizacje<a class="mall" href="#/nowosci">Wszystkie →</a></h2><div class="ngrid">'+nw.map(nwCard).join("")+'</div>':"";
+  if(typeof onNw!=="undefined"&&onNw)renderNwList();
   $("news").style.display=nw.length?"":"none";
   var TOPRANK_ON=false,tp=(TOPRANK_ON&&CM)?items.filter(function(g){return counts[keyOf(g)]>0}).sort(function(a,b){return counts[keyOf(b)]-counts[keyOf(a)]}).slice(0,5):[];
   $("toprank").innerHTML=tp.length?'<h2>Najczęściej komentowane</h2><ol class="rlist">'+tp.map(function(g,i){return '<li><span class="rank">'+(i+1)+'</span><a target="_blank" rel="noopener" href="'+esc(safe(g.link))+'">'+esc(g.game)+'</a><button class="mini cbtn" data-k="'+esc(keyOf(g))+'">Komentarze ('+counts[keyOf(g)]+')</button></li>'}).join("")+'</ol>':"";
@@ -1731,7 +1748,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -1910,22 +1927,46 @@ function showDys(){var was=curViewName();enterView("dys","Dyskusje – GryPoPols
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-dtab],#dmore");if(!t||!onDys)return;
   if(t.id==="dmore"){if(DYS.n<DYS.rows.length)DYS.n+=30;else{DYS.n+=30;dysLoad()}renderDysList();return}
   DYS.tab=t.getAttribute("data-dtab");DYS.n=30;renderDysList()});
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":""}
+// ====== WSZYSTKIE NOWOŚCI (#/nowosci): pełna lista „Nowości i aktualizacje”, według dni ======
+var NWV={tab:"all",n:60,q:"",built:false};
+function nwSince(){var d=new Date(Date.now()-30*864e5);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")} // widok pokazuje ostatnie 30 dni
+function nwKind(g){return nwEvent(g).typ==="Aktualizacja"?"upd":"new"}
+function renderNwList(){var box=$("nwlist");if(!box)return;
+  var since=nwSince(),all=nwAll().filter(function(g){return nk(g)>=since}),w=srchWords(NWV.q),c={all:0,"new":0,upd:0},L=[];
+  all.forEach(function(g){if(w.length&&!srchHit(g,w))return;var k=nwKind(g);c.all++;c[k]++;if(NWV.tab==="all"||NWV.tab===k)L.push(g)}); // te same zasady wyszukiwania co katalog (też skróty: wow, gta)
+  ["all","new","upd"].forEach(function(t){var b=document.querySelector('[data-nwtab="'+t+'"]');if(b){b.classList.toggle("on",NWV.tab===t);b.querySelector(".tn").textContent=c[t]}});
+  var vis=L.slice(0,NWV.n),h="",last="";
+  vis.forEach(function(g){var d=nk(g),lab=dysDay(d+"T12:00:00");if(lab!==last){if(last)h+='</div>';h+='<div class="dday">'+esc(lab)+'</div><div class="ngrid">';last=lab}h+=nwCard(g)});
+  if(last)h+='</div>';
+  if(!vis.length)h='<p class="msg">'+(w.length?'Nic nie znaleziono.':'W ostatnich 30 dniach nie było nowości.')+'</p>';
+  if(L.length>NWV.n)h+='<button class="btn dmore" id="nwmore" type="button">Pokaż starsze ('+(L.length-NWV.n)+')</button>';
+  box.innerHTML=h}
+function renderNw(){var v=$("nwview");
+  if(!NWV.built){NWV.built=true;
+    v.innerHTML=VBACK+'<h2>🆕 Nowości i aktualizacje</h2><p class="msg dsub">Wszystkie nowe spolszczenia i aktualizacje w katalogu z ostatnich 30 dni – od najnowszych.</p>'+
+     '<div class="dtabs"><button type="button" data-nwtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-nwtab="new">Nowe<span class="tn"></span></button><button type="button" data-nwtab="upd">Aktualizacje<span class="tn"></span></button><input id="nwq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w nowościach"></div><div id="nwlist"></div>';
+    $("nwq").addEventListener("input",function(){NWV.q=this.value;NWV.n=60;renderNwList()})}
+  renderNwList()}
+function showNw(){var was=curViewName();enterView("nw","Nowości i aktualizacje – GryPoPolsku.pl");if(was!=="nw")NWV.n=60;renderNw()}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-nwtab],#nwmore");if(!t||!onNw)return;
+  if(t.id==="nwmore"){NWV.n+=60;renderNwList();return}
+  NWV.tab=t.getAttribute("data-nwtab");NWV.n=60;renderNwList()});
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys));$("dysview").style.display=onDys?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw));$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;setViewUI()}
 var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
@@ -2048,7 +2089,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH)route();
 
 var baseItems=[];
 function mergeApproved(rows){

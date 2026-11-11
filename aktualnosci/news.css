@@ -233,7 +233,8 @@ html{-webkit-tap-highlight-color:transparent}
 .gfav:hover{background:color-mix(in srgb,#e0566b 12%,transparent)}
 .gfav.on{background:#e0566b;color:#fff}
 .gfav.on svg{fill:currentColor}
-@media(max-width:600px){.gfav{height:36px;padding:0 10px;margin-top:2px}.gfav .l{display:none}}
+/* telefon: mniejsze okrągłe serduszko (28 px) przy pierwszej linijce tytułu (11.11) */
+@media(max-width:600px){.gi .gtt{gap:10px}.gi .gfav{width:28px;height:28px;padding:0;justify-content:center;margin-top:4px;border-width:1.5px}.gi .gfav svg{width:14px;height:14px}.gfav .l{display:none}}
 .favtoast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,20px);opacity:0;pointer-events:none;width:max-content;max-width:min(calc(100vw - 32px),460px);box-sizing:border-box;background:var(--surface);color:var(--text);border:1px solid #e0566b;border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:opacity .2s ease,transform .2s ease}
 .favtoast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 .favtoast.err{border-color:#ff3b30}

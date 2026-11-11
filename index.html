@@ -1862,16 +1862,19 @@ async function steamUnlink(){
   steamUI()}
 function steamUI(){
   var b=$("steambtn");if(!b)return;
-  var show=CM&&STEAM.st!=="off"&&STEAM.st!==null||(CM&&!me()&&STEAM.st!=="off");
+  // Zapamiętany stan z poprzedniej wizyty (localStorage „steam.c”, z numerem konta „uid”) – przycisk widać od razu po odświeżeniu, zanim odpowie baza.
+  var sc=null;try{sc=JSON.parse(localStorage.getItem("steam.c")||"null")}catch(e){}if(!(sc&&me()&&sc.uid===me().id))sc=null;
+  var early=!!(sc&&STEAM.st===null);
+  var show=CM&&STEAM.st!=="off"&&STEAM.st!==null||(CM&&!me()&&STEAM.st!=="off")||(CM&&early);
   b.style.display=show?"":"none";
   var m=steamMatches(),lbl,cnt="";
   var un=0;
-  if(!me()){lbl="Twoje gry ze Steam"}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):"";if(cnt&&!STEAM.row.is_private&&STEAM.seenOk)un=stUnread(m).length}else{lbl="Połącz Steam"}
-  try{if(me()&&STEAM.st==="linked"){if(STEAM.seenOk)localStorage.setItem("steam.c",JSON.stringify({n:cnt,u:un}))}else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
+  if(!me()){lbl="Twoje gry ze Steam"}else if(early){lbl="Moje gry Steam";cnt=sc.n?String(sc.n):"";un=+sc.u||0}else if(STEAM.st==="linked"){lbl="Moje gry Steam";cnt=STEAM.row&&STEAM.row.games?String(m.length):"";if(cnt&&!STEAM.row.is_private){if(STEAM.seenOk)un=stUnread(m).length;else if(sc)un=+sc.u||0}}else{lbl="Połącz Steam"}
+  try{if(me()&&STEAM.st==="linked"){if(STEAM.seenOk)localStorage.setItem("steam.c",JSON.stringify({n:cnt,u:un,uid:me().id}))}else if(STEAM.st==="none"||!me())localStorage.removeItem("steam.c")}catch(e){}
   $("steamlbl").textContent=lbl;var sn=$("steamn");sn.textContent=cnt;sn.style.display=cnt?"":"none";
   var su=$("steamu");su.textContent=un>99?"99+":String(un);su.style.display=un?"":"none";
   b.title=lbl+(cnt?" ("+cnt+")":"")+(un?" – "+un+" "+(un===1?"nowość":(un%10>=2&&un%10<=4&&(un%100<10||un%100>=20)?"nowości":"nowości"))+" do Twoich gier":"");b.setAttribute("aria-label",b.title);
-  var us=$("usteam");if(us){us.style.display=me()&&show?"":"none";us.textContent=STEAM.st==="linked"?"🎮 Moje gry ze Steam"+(cnt?" ("+cnt+")":"")+(un?" · "+un+" nowe":""):"🎮 Połącz konto Steam"}
+  var us=$("usteam");if(us){us.style.display=me()&&show?"":"none";us.textContent=(STEAM.st==="linked"||early)?"🎮 Moje gry ze Steam"+(cnt?" ("+cnt+")":"")+(un?" · "+un+" nowe":""):"🎮 Połącz konto Steam"}
   var tip=$("steamtip"),seen="1";try{seen=localStorage.getItem("steam.tip")||""}catch(e){}
   tip.style.display=(show&&!seen&&STEAM.st!=="linked"&&!onSteam)?"":"none";
   if(tip.style.display===""){$("steamtipgo").textContent=me()?"Połącz Steam":"Zaloguj się";var r1=b.getBoundingClientRect(),r0=$("uchip").getBoundingClientRect();tip.style.left=Math.max(0,Math.min(r1.left-r0.left,window.innerWidth-300-r0.left))+"px"}
@@ -1912,8 +1915,8 @@ function renderSteam(){
   box.innerHTML=back+h}
 function showSteam(){if(!onSteam)STEAM.fresh=null;enterView("steam","Twoje gry ze Steam – GryPoPolsku.pl");try{localStorage.setItem("steam.tip","1")}catch(e){}steamUI();renderSteam()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;var id=t.id;
-  if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){try{localStorage.setItem("steam.tip","1")}catch(e2){}goView(STHASH);return}if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
-  if(id==="usteam"){$("umenu").className="umenu";if(STEAM.st==="linked")goView(STHASH);else steamConnect();return}
+  if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){try{localStorage.setItem("steam.tip","1")}catch(e2){}goView(STHASH);return}if(STEAM.st==="linked"||STEAM.st===null)goView(STHASH);else steamConnect();return}
+  if(id==="usteam"){$("umenu").className="umenu";if(STEAM.st==="linked"||STEAM.st===null)goView(STHASH);else steamConnect();return}
   if(id==="steamtipgo"){try{localStorage.setItem("steam.tip","1")}catch(e2){}steamUI();if(!me()){curKey=null;openModal(loginHtml())}else steamConnect();return}
   if(id==="steamtipno"){try{localStorage.setItem("steam.tip","1")}catch(e2){}steamUI();return}
   if(id==="stconnect"){steamConnect();return}

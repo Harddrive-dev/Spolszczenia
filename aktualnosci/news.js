@@ -31,7 +31,7 @@ function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
   c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
-  $("ulo").onclick=function(){sb.auth.signOut()}}
+  $("ulo").onclick=function(){sb.auth.signOut({scope:"local"})}} // tylko to urządzenie
 document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});
 
 // ---- „Moje ulubione”: serduszko przy nazwie gry (tabela favorites; lista jest na stronie głównej #/ulubione) ----
@@ -252,7 +252,10 @@ function boot(){
   var pg=document.body.getAttribute("data-page");
   if(pg==="list")initList();
   if(!sb){renderUser();if(pg==="post")initPost();return}
-  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();favCheck();return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
+  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();favCheck();
+    // sesja zamknięta na serwerze (np. „Wyloguj” na innym urządzeniu) → wylogowanie tylko tutaj, żeby strona nie udawała zalogowania
+    if(session)setTimeout(function(){sb.auth.getUser().then(function(u){var m=String(u.error&&(u.error.code||u.error.message)||"");if(u.error&&/session|jwt|not.found|expired|missing|invalid/i.test(m))sb.auth.signOut({scope:"local"})}).catch(function(){})},1500);
+    return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
   sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me())favCheck();loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
 }
 boot();

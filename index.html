@@ -1265,7 +1265,7 @@ $("mclose").onclick=closeModal;
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
 if(CM){
   $("ubtn").onclick=function(e){e.stopPropagation();if(!me()){curKey=null;openModal(loginHtml());return}$("umenu").classList.toggle("open")};
-  $("ulogout").onclick=function(){$("umenu").className="umenu";sb.auth.signOut()};
+  $("ulogout").onclick=function(){$("umenu").className="umenu";sb.auth.signOut({scope:"local"})}; // tylko to urządzenie (domyślnie Supabase wylogowuje wszędzie)
   document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest("#uchip"))$("umenu").className="umenu"});
   document.addEventListener("click",async function(ev){
     var t=ev.target.closest&&ev.target.closest("button");if(!t)return;
@@ -1315,7 +1315,7 @@ if(CM){
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
   loadCounts();loadWiesci();loadKom();
-  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole();loginFromLink();steamBoot()});
+  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole();loginFromLink();steamBoot();setTimeout(sessCheck,1500)});
   sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();
     if(ev==="PASSWORD_RECOVERY"){showNewPass();return}
@@ -1832,7 +1832,7 @@ async function steamLoad(force){
   steamUI()}
 async function steamFetch(force){STEAM.loading=true;steamUI();
   try{var r=await sb.functions.invoke("steam",{body:{action:"games",refresh:force}});
-    if(r.data&&r.data.row){STEAM.row=r.data.row;STEAM.st="linked"}else if(r.data&&r.data.linked===false){STEAM.row=null;STEAM.st="none"}else if(r.error){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}}
+    if(r.data&&r.data.row){STEAM.row=r.data.row;STEAM.st="linked"}else if(r.data&&r.data.linked===false){STEAM.row=null;STEAM.st="none"}else if(is401(r)){sessCheck()}else if(r.error){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}}
   catch(e){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}
   STEAM.loading=false;steamUI()}
 function steamConnect(){
@@ -1841,6 +1841,10 @@ function steamConnect(){
   var site=location.origin+"/",q={"openid.ns":"http://specs.openid.net/auth/2.0","openid.mode":"checkid_setup","openid.return_to":site+"?steam=cb&n="+n,"openid.realm":site,"openid.identity":"http://specs.openid.net/auth/2.0/identifier_select","openid.claimed_id":"http://specs.openid.net/auth/2.0/identifier_select"};
   try{localStorage.setItem("steam.tip","1")}catch(e){}
   location.href="https://steamcommunity.com/openid/login?"+new URLSearchParams(q).toString()}
+// Sprawdzenie, czy sesja logowania nadal istnieje na serwerze (np. po „Wyloguj” na innym urządzeniu albo wygaśnięciu).
+// Jeśli nie – wylogowanie tylko w tej przeglądarce, żeby strona nie udawała zalogowania (wtedy Steam i ulubione dostają błąd 401).
+function sessCheck(){if(!sb)return;sb.auth.getSession().then(function(r){if(!r.data||!r.data.session)return;return sb.auth.getUser().then(function(u){var m=String(u.error&&(u.error.code||u.error.message)||"");if(u.error&&/session|jwt|not.found|expired|missing|invalid/i.test(m))return sb.auth.signOut({scope:"local"})})}).catch(function(){})}
+function is401(r){return !!(r&&r.error&&((r.error.context&&r.error.context.status===401)||/401/.test(String(r.error.message||""))))}
 async function steamBoot(){steamBooted=true;
   if(!STEAM_CB){steamLoad();return}
   var cb=STEAM_CB;STEAM_CB=null;var n0="";try{n0=sessionStorage.getItem("steam.n")||"";sessionStorage.removeItem("steam.n")}catch(e){}
@@ -1850,9 +1854,12 @@ async function steamBoot(){steamBooted=true;
   if(!cb.n||cb.n!==n0){STEAM.msg={t:"Łączenie z kontem Steam wygasło albo zostało przerwane. Spróbuj jeszcze raz.",err:1};steamLoad();return}
   STEAM.loading=true;steamUI();
   try{var r=await sb.functions.invoke("steam",{body:{action:"verify",params:cb.p}});
+    // 401 = sesja logowania na stronie wygasła albo została zamknięta na innym urządzeniu: odświeżamy ją i próbujemy raz jeszcze
+    if(is401(r)){var rf=await sb.auth.refreshSession();if(!rf.error&&rf.data&&rf.data.session){session=rf.data.session;r=await sb.functions.invoke("steam",{body:{action:"verify",params:cb.p}})}}
     var e=r.data&&r.data.error;
     if(r.data&&r.data.ok){STEAM.row=r.data.row||null;STEAM.st="linked";STEAM.msg={t:"Gotowe! Konto Steam "+((r.data.row&&r.data.row.persona)||"")+" jest połączone.",ok:1}}
     else if(e==="taken"||(r.error&&/409/.test(String(r.error.message||r.error))))STEAM.msg={t:"To konto Steam jest już połączone z innym kontem na GryPoPolsku.pl. Jedno konto Steam można połączyć tylko z jednym kontem na stronie.",err:1};
+    else if(is401(r)){STEAM.msg={t:"Twoje logowanie na stronie wygasło. Zaloguj się ponownie (lewy górny róg), a potem jeszcze raz kliknij „Połącz konto Steam”.",err:1};sb.auth.signOut({scope:"local"}).catch(function(){})}
     else STEAM.msg={t:"Steam nie potwierdził logowania. Spróbuj jeszcze raz.",err:1}}
   catch(e){STEAM.msg={t:"Nie udało się połączyć z kontem Steam. Spróbuj ponownie za chwilę.",err:1}}
   STEAM.loading=false;steamLoad()}

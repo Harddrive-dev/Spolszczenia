@@ -2025,7 +2025,8 @@ function favTag(g){var s=g.status||"";if(g.pl==="of"||s==="Gotowe")return["ok","
   if(s==="Zapowiedź"||s==="Premiera")return["wait","📅 "+s];return["wip","⏳ "+(s||"W przygotowaniu")+(s==="W trakcie"&&g.prog?" "+g.prog+"%":"")]}
 function favIsNew(g){return favUnr(g)||!!(FAVV.fresh&&FAVV.fresh.indexOf(keyOf(g))>-1)}
 function favCard(g){var t=favTag(g),k=keyOf(g),ur=favIsNew(g);
-  var c=nwCard(g).replace('<a class="ncard"','<a class="ncard'+(ur?' unr':'')+'"').replace(/<\/span><\/span><\/a>$/,'</span><span class="fvtag '+t[0]+'">'+esc(t[1])+'</span></span></a>');
+  // etykieta tylko dla gier jeszcze nie gotowych (W trakcie / Korekta / Zapowiedź…); „Można grać po polsku” nie pokazujemy (prośba właściciela 11.11)
+  var c=nwCard(g).replace('<a class="ncard"','<a class="ncard'+(ur?' unr':'')+'"');if(t[0]!=="ok")c=c.replace(/<\/span><\/span><\/a>$/,'</span><span class="fvtag '+t[0]+'">'+esc(t[1])+'</span></span></a>');
   if(ur)c=c.replace(/^(<a [^>]*>)/,"$1"+STUNR);
   return '<div class="fvc">'+c+'<button class="fvx" type="button" data-fk="'+esc(k)+'" title="Usuń z ulubionych" aria-label="Usuń '+esc(g.game)+' z ulubionych">'+HRT+'</button></div>'}
 function favPl(n,a,b,c){return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c}

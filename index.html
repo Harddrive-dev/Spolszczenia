@@ -587,7 +587,7 @@ html{-webkit-tap-highlight-color:transparent}
 #favview .ncard small{display:block}
 #favview .ncard.unr{border-color:#e0566b}
 #favview .unrd{right:auto;left:8px}
-#favq{flex:1;min-width:180px;border-radius:999px}
+#favview .stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:16px;margin:0 0 12px}
 .fvc{position:relative;min-width:0}
 .fvx{position:absolute;top:8px;right:8px;width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:999px;background:none;color:#e0566b;cursor:pointer;padding:0}
 .fvx:hover{background:color-mix(in srgb,#e0566b 16%,transparent)}
@@ -2034,6 +2034,9 @@ function favReady(g){return g.pl==="of"||g.status==="Gotowe"||g.status==="Beta"}
 function favTag(g){var s=g.status||"";if(g.pl==="of"||s==="Gotowe")return["ok","✓ Można grać po polsku"];if(s==="Beta")return["ok","✓ Można grać (wersja beta)"];
   if(s==="Zapowiedź"||s==="Premiera")return["wait","📅 "+s];return["wip","⏳ "+(s||"W przygotowaniu")+(s==="W trakcie"&&g.prog?" "+g.prog+"%":"")]}
 function favIsNew(g){return favUnr(g)||!!(FAVV.fresh&&FAVV.fresh.indexOf(keyOf(g))>-1)}
+// Zakładki jak w „Moich grach Steam” (12.11): Nowości = zmiana w ostatnich 30 dniach albo nieprzeczytana nowość; gry z oficjalnym PL liczą się jako „Gotowe”.
+var FAV_TABS=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["fan","Fanowskie"],["lk","Z lektorem"],["dub","Dubbing"]];
+function favCat(g){var r=steamCat(g).filter(function(x){return x!=="new"});if(g.pl==="of"&&r.indexOf("ready")<0)r.push("ready");if(nwEvent(g).date>=steamNewSince()||favIsNew(g))r.push("new");return r}
 function favCard(g){var t=favTag(g),k=keyOf(g),ur=favIsNew(g);
   // etykieta tylko dla gier jeszcze nie gotowych (W trakcie / Korekta / Zapowiedź…); „Można grać po polsku” nie pokazujemy (prośba właściciela 11.11)
   var c=nwCard(g).replace('<a class="ncard"','<a class="ncard'+(ur?' unr':'')+'"');if(t[0]!=="ok")c=c.replace(/<\/span><\/span><\/a>$/,'</span><span class="fvtag '+t[0]+'">'+esc(t[1])+'</span></span></a>');
@@ -2041,17 +2044,20 @@ function favCard(g){var t=favTag(g),k=keyOf(g),ur=favIsNew(g);
   return '<div class="fvc">'+c+'<button class="fvx" type="button" data-fk="'+esc(k)+'" title="Usuń z ulubionych" aria-label="Usuń '+esc(g.game)+' z ulubionych">'+HRT+'</button></div>'}
 function favPl(n,a,b,c){return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c}
 function renderFavList(){var box=$("favlist");if(!box)return;
-  var w=srchWords(FAVV.q),all=favGames().filter(function(g){return !w.length||srchHit(g,w)});
-  var c={all:all.length,ready:0,wip:0,"new":0};all.forEach(function(g){c[favReady(g)?"ready":"wip"]++;if(favIsNew(g))c["new"]++});
-  ["all","ready","wip","new"].forEach(function(t){var b=document.querySelector('#favview .dtabs [data-fvtab="'+t+'"]');if(b){b.classList.toggle("on",FAVV.tab===t);b.querySelector(".tn").textContent=c[t]}});
+  var fav=favGames(),w=srchWords(FAVV.q),all=fav.filter(function(g){return !w.length||srchHit(g,w)}),un=favUnread();
+  var tb=$("favtabs");if(tb)tb.innerHTML=FAV_TABS.map(function(t){var n=t[0]==="all"?fav.length:fav.filter(function(g){return favCat(g).indexOf(t[0])>-1}).length;var u=t[0]==="new"?un.length:0;
+    return (n||t[0]==="all"||t[0]==="new"||FAVV.tab===t[0])?'<button type="button" data-fvtab="'+t[0]+'" class="'+(FAVV.tab===t[0]?"on":"")+'">'+t[1]+' '+n+(u?'<span class="tnew">'+u+' '+favPl(u,"nowa","nowe","nowych")+'</span>':'')+'</button>':""}).join("");
   document.querySelectorAll("#favview [data-fvsort]").forEach(function(b){b.classList.toggle("on",FAVV.sort===b.getAttribute("data-fvsort"))});
-  var un=favUnread(),nt=$("favnote");
+  var srb=document.querySelector("#favview .fvsort");if(srb)srb.style.display=FAVV.tab==="new"?"none":"";
+  var nt=$("favnote");
   if(nt)nt.innerHTML=un.length&&FAVV.tab!=="new"?'<div class="fvnote">🔔 <span><b>'+un.length+' '+favPl(un.length,"ulubiona gra ma nowość","ulubione gry mają nowości","ulubionych gier ma nowości")+':</b> '+un.slice(0,3).map(function(g){var e=nwEvent(g);return esc(g.game)+' – '+(e.typ==="Aktualizacja"?"aktualizacja"+(e.ver&&e.ver!=="—"?" (wersja "+esc(e.ver)+")":""):"nowe spolszczenie")}).join(", ")+(un.length>3?" i "+(un.length-3)+" "+favPl(un.length-3,"inna","inne","innych"):"")+'. <button type="button" class="lnk" data-fvtab="new">Pokaż</button></span></div>':'';
-  var L=all.filter(function(g){return FAVV.tab==="all"||(FAVV.tab==="new"?favIsNew(g):(favReady(g)?"ready":"wip")===FAVV.tab)});
+  var L=FAVV.tab==="all"?all.slice():all.filter(function(g){return favCat(g).indexOf(FAVV.tab)>-1});
   var srt=FAVV.tab==="new"?"upd":FAVV.sort;
   L.sort(srt==="az"?function(a,b){return a.game.localeCompare(b.game,"pl")}:srt==="upd"?function(a,b){return nk(b).localeCompare(nk(a))}:function(a,b){return String(FAV.m[keyOf(b)].t).localeCompare(String(FAV.m[keyOf(a)].t))});
   if(FAVV.tab!=="new"){var ua=L.filter(favUnr);if(ua.length)L=ua.concat(L.filter(function(g){return ua.indexOf(g)<0}))} // nowości na górze
-  box.innerHTML=L.length?'<div class="ngrid">'+L.map(favCard).join("")+'</div>':'<p class="msg">'+(w.length?'Nic nie znaleziono.':FAVV.tab==="new"?'Brak nowości w Twoich ulubionych grach. Gdy któraś dostanie nowe spolszczenie albo aktualizację, pokaże się tutaj.':'Nic tu nie ma.')+'</p>'}
+  box.innerHTML=(FAVV.tab==="new"&&L.length?'<p class="msg" style="margin:-4px 0 12px">Ulubione gry, które w ostatnich '+STEAM_NEW_DAYS+' dniach dostały nowe spolszczenie albo aktualizację. Najnowsze na górze.</p>':'')+
+    (w.length&&L.length?'<p class="msg" style="margin:0 0 10px">Znaleziono: '+L.length+'</p>':'')+
+    (L.length?'<div class="ngrid">'+L.map(favCard).join("")+'</div>':'<p class="msg">'+(w.length?'Nie ma tu gry pasującej do „'+esc(FAVV.q)+'”.'+(FAVV.tab!=="all"?' Spróbuj w zakładce „Wszystkie”.':''):FAVV.tab==="new"?'W ostatnich '+STEAM_NEW_DAYS+' dniach nic nowego nie wyszło do Twoich ulubionych gier. Gdy któraś dostanie nowe spolszczenie albo aktualizację, pokaże się tutaj.':'Nic tu nie ma.')+'</p>')}
 function renderFav(){var v=$("favview");if(!v)return;var hd=VBACK+'<h2>♥ Moje ulubione</h2>',mode;
   if(!CM){mode="off";if(v.getAttribute("data-mode")!==mode)v.innerHTML=hd+'<p class="msg">Funkcja jest chwilowo niedostępna.</p>'}
   else if(!me()){mode="out";v.innerHTML=hd+'<p class="msg dsub">Zapisuj gry, w które chcesz zagrać, i miej je pod ręką na komputerze i telefonie. Dostaniesz też znak, gdy pojawi się nowe spolszczenie albo aktualizacja.</p><p><button class="btn on" type="button" id="favlogin">Zaloguj się</button></p>'}
@@ -2060,7 +2066,7 @@ function renderFav(){var v=$("favview");if(!v)return;var hd=VBACK+'<h2>♥ Moje 
   else if(!favGames().length){mode="empty";v.innerHTML=hd+'<p class="msg dsub">Nie masz jeszcze ulubionych gier. Kliknij serduszko <span class="hrti">'+HRT+'</span> przy grze w katalogu albo obok nazwy gry na jej stronie – gra zapisze się tutaj.</p><p><a class="btn" href="#/">Przejdź do katalogu</a></p>'}
   else{mode="list";if(v.getAttribute("data-mode")!==mode){
     v.innerHTML=hd+'<p class="msg dsub">Gry, w które chcesz zagrać. Zapisane na Twoim koncie – widać je na komputerze i telefonie.</p><div id="favnote"></div>'+
-     '<div class="dtabs"><button type="button" data-fvtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-fvtab="ready">Gotowe do grania<span class="tn"></span></button><button type="button" data-fvtab="wip">W przygotowaniu<span class="tn"></span></button><button type="button" data-fvtab="new">Nowości<span class="tn"></span></button><input id="favq" type="search" placeholder="Szukaj w ulubionych…" autocomplete="off" aria-label="Szukaj w ulubionych"></div>'+
+     '<input id="favq" class="stq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w ulubionych"><div class="sttabs" id="favtabs"></div>'+
      '<div class="fvsort">Sortuj: <button type="button" data-fvsort="add">ostatnio dodane</button><button type="button" data-fvsort="upd">ostatnia aktualizacja</button><button type="button" data-fvsort="az">A–Z</button></div><div id="favlist"></div>';
     $("favq").value=FAVV.q;$("favq").addEventListener("input",function(){FAVV.q=this.value;renderFavList()})}
     renderFavList()}

@@ -9827,7 +9827,8 @@
     "dodano": "2026-10-31",
     "upd": "2026-10-31",
     "img": "https://cdn2.steamgriddb.com/thumb/1a9740b36fcc6898943cdd5295f3e45e.jpg",
-    "steam": 1799840
+    "steam": 1799840,
+    "opis": "Queen's Domain to mroczna gra Action-RPG w stylu retro dark fantasy, mocno inspirowana kultową serią King’s Field od studia FromSoftware oraz klasycznymi produkcjami z epoki pierwszego PlayStation."
   },
   {
     "game": "Batman: The Enemy Within",
@@ -19496,5 +19497,21 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Homura Hime",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "Kayber",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4976#p49648",
+    "genre": "Akcja",
+    "dodano": "2026-11-12",
+    "img": "https://cdn2.steamgriddb.com/thumb/6c45a23bc7fe566935c0e76327890662.jpg",
+    "opis": "Homura Hime to niezwykle dynamiczna, trójwymiarowa gra akcji w stylu anime, która widowiskowo łączy gatunki hack and slash oraz 3D bullet hell.",
+    "steam": 1820000,
+    "upd": "2026-11-12"
   }
 ]

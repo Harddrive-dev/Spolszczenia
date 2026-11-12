@@ -2272,7 +2272,20 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Vaan, młody mieszkaniec Rabanastre, trafia w sam środek konfliktu o tron. RPG z systemem Gambit do programowania zachowań postaci.",
-    "steam": 595520
+    "steam": 595520,
+    "spolszczenia": [
+      {
+        "id": "final-fantasy-xii-pc-steam--vetspolszczenia",
+        "author": "VetSpolszczenia",
+        "link": "https://vetspolszczenia.pl/projekt.html?id=final-fantasy-ii",
+        "type": "Napisy",
+        "status": "Testy",
+        "prog": 10,
+        "ver": "—",
+        "upd": "2026-11-12",
+        "dodano": "2026-11-12"
+      }
+    ]
   },
   {
     "game": "Firewatch (GOG)",
@@ -15019,7 +15032,7 @@
     "genre": "RPG",
     "type": "Napisy",
     "status": "W trakcie",
-    "prog": 53,
+    "prog": 99,
     "ver": "—",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/pathfinder-kingmaker",
@@ -15067,11 +15080,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.3",
+    "ver": "1.4",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/incursion-red-river",
     "dodano": "2026-09-06",
-    "upd": "2026-11-07",
+    "upd": "2026-11-12",
     "img": "https://cdn2.steamgriddb.com/thumb/e196b9cee6343706b66251dbbf7cd32a.jpg",
     "steam": 2116120
   },
@@ -15552,13 +15565,13 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "2.0.5",
+    "ver": "2.0.6",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/wowpopolsku-2-0",
     "genre": "RPG",
     "dodano": "2026-11-04",
     "img": "https://cdn2.steamgriddb.com/thumb/91f6724a042707c376bb508c436665ef.jpg",
-    "upd": "2026-11-04",
+    "upd": "2026-11-12",
     "opis": "Aktualna wersja słynnego MMORPG Blizzarda, rozwijana od 2004 roku. Tworzysz postać, wybierasz stronę Przymierza lub Hordy i przemierzasz Azeroth oraz kolejne dodatki."
   },
   {
@@ -19214,5 +19227,53 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Biped 2",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=biped-2",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-12",
+    "img": "https://cdn2.steamgriddb.com/thumb/b566fab0f60f7669f51f8ad1e791e818.png",
+    "opis": "Biped 2 to urocza, kooperacyjna gra przygodowo-logiczna z elementami platformówki 3D, będąca bezpośrednią kontynuacją przebojowego tytułu z 2020 roku, w którym sterujesz dwunożnymi robotami za pomocą nietypowego, opartego na fizyce schematu kontroli.",
+    "steam": 2560240,
+    "upd": "2026-11-12"
+  },
+  {
+    "game": "CarX Street",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=carx-street",
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-11-12",
+    "img": "https://cdn2.steamgriddb.com/thumb/d69f13938a56eb93a35705e17d34064b.jpg",
+    "opis": "CarX Street to dynamiczna gra wyścigowa w otwartym świecie, skupiająca się na nielegalnych wyścigach ulicznych, drifcie oraz zaawansowanym tuningu samochodów.",
+    "steam": 1114150,
+    "upd": "2026-11-12"
+  },
+  {
+    "game": "The Necromancer’s Tale",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/the_necromancer_s_tale",
+    "genre": "RPG",
+    "dodano": "2026-11-12",
+    "img": "https://cdn2.steamgriddb.com/thumb/49da5edb970f507f01fb09e010bd6d8d.jpg",
+    "opis": "The Necromancer’s Tale to mroczna, narracyjna gra cRPG (izometryczne RPG) w klimacie gotyckiego horroru historycznego, w której wcielasz się w adepta zakazanej sztuki nekromancji.",
+    "steam": 1315320,
+    "upd": "2026-11-12"
   }
 ]

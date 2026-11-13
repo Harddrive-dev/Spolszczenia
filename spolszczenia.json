@@ -19658,6 +19658,23 @@
     "upd": "2026-11-13"
   },
   {
+    "game": "Forsaken Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68, Mr.Blue Phantom",
+    "link": "https://drive.google.com/file/d/11G416zrCPpHJgB7OJy-8wHgWBVhHMBKN/view",
+    "yt": "https://www.youtube.com/watch?v=65Rs4JXVXAI",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-13",
+    "img": "https://cdn2.steamgriddb.com/thumb/96ed8bbf3bb0e91b02851dec55d0b609.jpg",
+    "opis": "Forsaken Remastered to klasyczna strzelanka pierwszoosobowa (FPS) z pełną swobodą ruchu w trzech wymiarach (tzw. 6DoF – Six Degrees of Freedom), będąca odświeżoną wersją kultowej gry z 1998 roku (często porównywanej do serii Descent).",
+    "steam": 668980,
+    "upd": "2026-11-13"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -19672,22 +19689,5 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
-  },
-  {
-    "game": "Forsaken Remastered",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "SneakiestDuke68",
-    "link": "https://drive.google.com/file/d/11G416zrCPpHJgB7OJy-8wHgWBVhHMBKN/view",
-    "yt": "https://www.youtube.com/watch?v=65Rs4JXVXAI",
-    "genre": "Strzelanka",
-    "dodano": "2026-11-13",
-    "img": "https://cdn2.steamgriddb.com/thumb/96ed8bbf3bb0e91b02851dec55d0b609.jpg",
-    "opis": "Forsaken Remastered to klasyczna strzelanka pierwszoosobowa (FPS) z pełną swobodą ruchu w trzech wymiarach (tzw. 6DoF – Six Degrees of Freedom), będąca odświeżoną wersją kultowej gry z 1998 roku (często porównywanej do serii Descent).",
-    "steam": 668980,
-    "upd": "2026-11-13"
   }
 ]

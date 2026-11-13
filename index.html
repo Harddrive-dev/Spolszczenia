@@ -1146,7 +1146,15 @@ async function loadCounts(){
       if(r.data.length<1000)break;from+=1000}
     counts=c;render();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
 function me(){return recov?null:(session&&session.user)}
-var myRole=null,roleLoaded=false;
+var myRole=null,roleLoaded=false,authReady=false;
+// Zanim Supabase odtworzy sesję (ułamek sekundy po wejściu) nie wiadomo, czy ktoś jest zalogowany.
+// Zapamiętany token logowania w przeglądarce mówi, że pewnie tak – wtedy zamiast „zaloguj się” pokazujemy „Sprawdzam…”.
+// Tak samo rozpoznają to strony gier (LAZY_HEAD w scripts/gry.mjs).
+function authTok(){try{for(var i=0;i<localStorage.length;i++)if(/^sb-.*-auth-token$/.test(localStorage.key(i)))return true}catch(e){}return false}
+function authWait(){return !!(CM&&!authReady&&authTok())}
+// Gdy sesja już się odtworzy, rysujemy widok jeszcze raz (dla niezalogowanych nie robi tego loadRole).
+function refreshView(){if(!CM)return;
+  if(onAdd)renderAdd();else if(onSubs)renderSubs();else if(onMods)renderMods();else if(onNews)renderNews();else if(onSteam)renderSteam();else if(onFav)renderFav()}
 function emailIsOwner(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function isMod(){return roleLoaded?!!myRole:emailIsOwner()}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
@@ -1315,8 +1323,8 @@ if(CM){
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
   loadCounts();loadWiesci();loadKom();
-  sb.auth.getSession().then(function(r){session=r.data.session;updateAuth();loadRole();loginFromLink();steamBoot();setTimeout(sessCheck,1500)});
-  sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;
+  sb.auth.getSession().then(function(r){session=r.data.session;authReady=true;updateAuth();refreshView();loadRole();loginFromLink();steamBoot();setTimeout(sessCheck,1500)});
+  sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;authReady=true;
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();
     if(ev==="PASSWORD_RECOVERY"){showNewPass();return}
     if(curKey){renderForm();loadComments(curKey)}else if(!recov&&!wasIn&&$("cm").className.indexOf("open")>-1&&s)closeModal();if(onVote&&(wasIn!==!!(s&&s.user)))loadVote();if(steamBooted&&wasIn!==!!(s&&s.user))steamLoad()},0)});
@@ -1532,6 +1540,7 @@ function nHead(){return VBACK+'<h2>Aktualności – wpisy</h2>'}
 function nFmt(t,e){return '<p class="msg'+(e?' err':'')+'">'+t+'</p>'}
 function renderNews(){
   var box=$("newsview");if(!CM)return;
+  if(authWait()){box.innerHTML=nHead()+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!me()){box.innerHTML=nHead()+nFmt("Ta strona jest tylko dla administratora. Zaloguj się (prawy górny róg).");return}
   if(!roleLoaded&&!isAdmin()){box.innerHTML=nHead()+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!isAdmin()){box.innerHTML=nHead()+nFmt("Ta strona jest tylko dla administratora.",1);return}
@@ -1902,6 +1911,7 @@ function renderSteam(){
   var box=$("steamview");if(!box)return;var back='<a class="vback" href="#/">← Wróć do katalogu</a>',h="",msg=STEAM.msg?'<div class="stbox'+(STEAM.msg.err?" err":STEAM.msg.ok?" ok":"")+'">'+esc(STEAM.msg.t)+'</div>':"";
   var SI=$("steambtn").querySelector("svg").outerHTML;
   if(!CM){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2><p class="msg">Funkcja jest chwilowo niedostępna.</p></div>';return}
+  if(authWait()){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p class="msg"><span class="spn"></span>Wczytywanie…</p></div>';return}
   if(!me()){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p>Zaloguj się, połącz konto Steam, a pokażemy, które gry z Twojej biblioteki mają polską wersję w naszym katalogu.</p><p><button class="btn on" type="button" id="stlogin">Zaloguj się</button></p></div>';return}
   if(STEAM.st===null||(STEAM.loading&&!STEAM.row)){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p class="msg"><span class="spn"></span>Wczytywanie…</p></div>';return}
   if(STEAM.st==="off"){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2><p class="msg">Funkcja jest w przygotowaniu.</p></div>';return}
@@ -2124,7 +2134,8 @@ var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
 function renderAdd(first){
-  var wait=CM&&me()&&!roleLoaded&&!isMod(),asMod=!!(CM&&isMod());
+  // „Sprawdzam uprawnienia…” także zanim Supabase odtworzy sesję – inaczej mignęłaby ramka „Aby wysłać zgłoszenie, zaloguj się”.
+  var wait=authWait()||!!(CM&&me()&&!roleLoaded&&!isMod()),asMod=!!(CM&&isMod());
   if(asMod&&!modAddOn){$("modadd").innerHTML=addFormHtml();modAddOn=true}
   if(!asMod&&modAddOn){$("modadd").innerHTML="";modAddOn=false}
   $("modadd").style.display=asMod?"":"none";
@@ -2151,6 +2162,7 @@ var SBACK=VBACK;
 function renderSubs(){
   var box=$("subview"),h='<h2>Zgłoszenia</h2>';
   if(!CM)return;
+  if(authWait()){box.innerHTML=SBACK+h+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!me()){box.innerHTML=SBACK+h+'<p class="msg">Ta strona jest tylko dla moderatorów. Zaloguj się (lewy górny róg).</p>';return}
   if(!roleLoaded&&!isMod()){box.innerHTML=SBACK+h+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!isMod()){box.innerHTML=SBACK+h+'<p class="msg err">Ta strona jest tylko dla moderatorów.</p>';return}
@@ -2158,6 +2170,7 @@ function renderSubs(){
 function renderMods(){
   var box=$("modsview"),h='<h2>Moderatorzy</h2>';
   if(!CM)return;
+  if(authWait()){box.innerHTML=SBACK+h+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!me()){box.innerHTML=SBACK+h+'<p class="msg">Ta strona jest tylko dla administratora. Zaloguj się (lewy górny róg).</p>';return}
   if(!roleLoaded&&!isAdmin()){box.innerHTML=SBACK+h+'<p class="msg"><span class="spn"></span>Sprawdzam uprawnienia…</p>';return}
   if(!isAdmin()){box.innerHTML=SBACK+h+'<p class="msg err">Ta strona jest tylko dla administratora.</p>';return}

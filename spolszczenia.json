@@ -6366,7 +6366,20 @@
     "img": "https://cdn2.steamgriddb.com/thumb/ae758fbcbd5bd841516c53b3c08ebc6f.jpg",
     "upd": "2026-10-28",
     "opis": "Link w Hyrule, który obejmuje teraz także niebo i podziemia. Kontynuacja Breath of the Wild z możliwością łączenia przedmiotów.",
-    "yt": "https://www.youtube.com/watch?v=7F0aqDB39lw"
+    "yt": "https://www.youtube.com/watch?v=7F0aqDB39lw",
+    "spolszczenia": [
+      {
+        "id": "the-legend-of-zelda-tears-of-the-kingdom--autor",
+        "author": "—",
+        "link": "https://drive.google.com/drive/folders/1_RWpHVPf3gY0ZrVGkHQ36RmjSwAJgPzT?usp=sharing",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.4.3",
+        "upd": "2026-10-28",
+        "dodano": "2026-10-28"
+      }
+    ]
   },
   {
     "game": "Metro Exodus",

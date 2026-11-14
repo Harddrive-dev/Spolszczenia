@@ -6,7 +6,15 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){retur
 var sb=null,session=null,myRole=null;
 try{if(window.supabase)sb=window.supabase.createClient(SB_URL,SB_KEY)}catch(e){sb=null}
 function me(){return session&&session.user?session.user:null}
+// Własny nick z tabeli profiles (ustawia się go na stronie głównej: okno „Wybierz swój nick” albo #/konto).
+// Kopię zapisuje strona główna w localStorage „prof.c” – dzięki niej nick widać od razu, bez mignięcia.
+var profNick=null,profFor=null;
+function profC(){var u=me();try{var c=JSON.parse(localStorage.getItem("prof.c")||"null");if(u&&c&&c.u===u.id)return c.n||""}catch(e){}return ""}
+async function profLoad(){var u=me();if(!sb||!u||profFor===u.id)return;profFor=u.id;
+  try{var r=await sb.from("profiles").select("nick").maybeSingle();if(r.error||profFor!==u.id)return;profNick=r.data&&r.data.nick||null;
+    try{localStorage.setItem("prof.c",JSON.stringify({u:u.id,n:profNick||""}))}catch(e){}renderUser();if(typeof renderForm==="function"&&$("cform")&&!($("cbody")&&$("cbody").value))try{renderForm()}catch(e){}}catch(e){}}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
+  if(u&&profFor===u.id&&profNick)return profNick;var pc=profC();if(pc)return pc;
   var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
   return String(n).trim().slice(0,30)}
 function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
@@ -28,8 +36,8 @@ async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
-  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"");
-  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();
+  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+L("/#/konto","⚙️ Ustawienia konta");
+  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();profLoad();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   $("ulo").onclick=function(){sb.auth.signOut({scope:"local"})}} // tylko to urządzenie
 document.addEventListener("click",function(e){var m=$("umenu");if(m&&(!e.target.closest||!e.target.closest("#uchip")))m.classList.remove("open")});
@@ -103,7 +111,7 @@ function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
   var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';
   var form=mode==="reg"
-   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
+   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nick na stronie<input id="rnick" maxlength="20" autocomplete="username" placeholder="3–20 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
    :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   var alt=p?'<div class="orsep"><span>lub</span></div><div class="btns" style="justify-content:flex-start">'+p+'</div>':"";
   return '<h2>Logowanie</h2>'+tabs+form+'<p class="msg" id="lmsg"></p>'+alt}
@@ -142,7 +150,7 @@ document.addEventListener("click",async function(ev){
         return r.error?cmsg(/Email not confirmed/i.test(r.error.message)?"Najpierw potwierdź adres e-mail (link w mailu).":/Invalid login/i.test(r.error.message)?"Nieprawidłowy e-mail lub hasło.":"Nie udało się zalogować: "+r.error.message,1):closeModal()}
       if(t.id==="rsend"){
         var nk2=$("rnick").value.trim(),em2=$("remail").value.trim(),pw2=$("rpass").value;
-        if(nk2.length<3)return cmsg("Nazwa użytkownika musi mieć co najmniej 3 znaki.",1);
+        if(nk2.length<3||nk2.length>20)return cmsg("Nick musi mieć od 3 do 20 znaków.",1);if(!/^[A-Za-z0-9ĄĆĘŁŃÓŚŹŻąćęłńóśźż _.\-]+$/.test(nk2))return cmsg("Nick może zawierać litery, cyfry, spację oraz znaki _ . -",1);
         if(!/^\S+@\S+\.\S+$/.test(em2))return cmsg("Podaj poprawny adres e-mail.",1);
         if(pw2.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);

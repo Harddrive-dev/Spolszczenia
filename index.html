@@ -579,6 +579,15 @@ html{-webkit-tap-highlight-color:transparent}
 #favview{max-width:1180px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
 @media(max-width:600px){#favview{padding:14px 12px;border-radius:12px}}
 #favview h2{margin:6px 0 2px}#favview .dsub{margin:0 0 12px}
+#kontoview{max-width:720px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+@media(max-width:600px){#kontoview{padding:14px 12px;border-radius:12px}}
+#kontoview h2{margin:6px 0 4px}#kontoview .dsub{margin:0 0 14px}
+.ksec{border-top:1px solid var(--line);padding:16px 0 4px}.ksec h3{margin:0 0 8px;font-size:1.05rem}
+.ksec label{display:block;max-width:360px;margin-bottom:8px}.ksec label input{display:block;width:100%;margin-top:4px}
+.ksec .btns{justify-content:flex-start;margin-top:6px}.kcur{font-size:1.15rem;font-weight:700}
+.kinfo{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.95rem}.kinfo span:nth-child(odd){opacity:.7}
+.nickbox{text-align:left;max-width:380px;margin:14px auto 0}.nickbox label input{display:block;width:100%;margin-top:4px;font-size:1.05rem}
+.nickbox .nkhint{font-size:.85rem;margin:8px 0}.nickbox .btns{justify-content:center}
 #favview .ngrid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:1100px){#favview .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){#favview .ngrid{grid-template-columns:minmax(0,1fr)}}
@@ -643,7 +652,7 @@ html{-webkit-tap-highlight-color:transparent}
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button><button class="btn" id="ukonto" type="button" style="margin-bottom:6px">⚙️ Ustawienia konta</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -673,6 +682,7 @@ html{-webkit-tap-highlight-color:transparent}
 <div id="dysview" style="display:none"></div>
 <div id="nwview" style="display:none"></div>
 <div id="favview" style="display:none"></div>
+<div id="kontoview" style="display:none"></div>
 <datalist id="gl_mod"></datalist><datalist id="al_mod"></datalist>
 <div id="addview" style="display:none"><a class="vback" href="#/">← Wróć do katalogu</a>
 <div class="panel open" id="modadd" style="display:none"></div>
@@ -1166,7 +1176,7 @@ function authTok(){try{for(var i=0;i<localStorage.length;i++)if(/^sb-.*-auth-tok
 function authWait(){return !!(CM&&!authReady&&authTok())}
 // Gdy sesja już się odtworzy, rysujemy widok jeszcze raz (dla niezalogowanych nie robi tego loadRole).
 function refreshView(){if(!CM)return;
-  if(onAdd)renderAdd();else if(onSubs)renderSubs();else if(onMods)renderMods();else if(onNews)renderNews();else if(onSteam)renderSteam();else if(onFav)renderFav()}
+  if(onAdd)renderAdd();else if(onSubs)renderSubs();else if(onMods)renderMods();else if(onNews)renderNews();else if(onSteam)renderSteam();else if(onFav)renderFav();else if(onKonto)renderKonto()}
 function emailIsOwner(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
 function isMod(){return roleLoaded?!!myRole:emailIsOwner()}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
@@ -1174,7 +1184,41 @@ async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;roleLoaded=true}catch(e){roleLoaded=false}
   updateAuth();if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews()}
+// ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
+// PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
+var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;
+function profCache(){var u=me();try{var c=JSON.parse(localStorage.getItem("prof.c")||"null");if(u&&c&&c.u===u.id)return c}catch(e){}return null}
+function profSave(){var u=me();if(!u)return;try{localStorage.setItem("prof.c",JSON.stringify({u:u.id,n:(PROF.row&&PROF.row.nick)||""}))}catch(e){}}
+async function loadProfile(){var u=me();if(!CM||!u)return;if(PROF.u===u.id)return;PROF={ok:null,row:null,u:u.id};
+  try{var r=await sb.from("profiles").select("nick,nick_changed_at,nick_prompted").maybeSingle();if(r.error)throw r.error;if(PROF.u!==u.id)return;PROF.ok=true;PROF.row=r.data||null;profSave()}
+  catch(e){if(PROF.u!==u.id)return;PROF.ok=false;PROF.row=null}
+  updateAuth();if(onKonto)renderKonto();if(curKey&&$("cform"))renderForm();nickAsk()}
+function nickNext(){var r=PROF.row;if(!r||!r.nick_changed_at)return null;var t=Date.parse(r.nick_changed_at);return isNaN(t)?null:t+90*864e5}
+function plDate(t){var d=new Date(t);return String(d.getDate()).padStart(2,"0")+"."+String(d.getMonth()+1).padStart(2,"0")+"."+d.getFullYear()}
+function nickPre(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};if(PROF.row&&PROF.row.nick)return PROF.row.nick;
+  var n=m.nick||cc.global_name||m.user_name||m.preferred_username||"";return String(n).trim().slice(0,20)} // imienia i nazwiska z Google nie podpowiadamy
+function nickCheck(v){if(v.length<3||v.length>20)return "Nick musi mieć od 3 do 20 znaków.";if(!/^[A-Za-z0-9ĄĆĘŁŃÓŚŹŻąćęłńóśźż _.\-]+$/.test(v))return "Nick może zawierać litery, cyfry, spację oraz znaki _ . -";return ""}
+function nickForm(){return '<div id="nickbox" class="nickbox"><label>Twój nick na stronie<input id="nknew" maxlength="20" autocomplete="nickname" placeholder="3–20 znaków" value="'+esc(nickPre())+'"></label>'+
+  '<p class="msg nkhint">Tym nickiem będziesz podpisany przy komentarzach i zgłoszeniach. Nie musi to być imię i nazwisko. Zmienisz go później w „Ustawieniach konta” (raz na 3 miesiące).</p>'+
+  '<p class="btns"><button class="btn on" id="nksave" type="button">Zapisz nick</button><button class="btn" id="nklater" type="button">Nie teraz</button></p><p class="msg" id="lmsg"></p></div>'}
+// Okno „Wybierz swój nick”: po potwierdzeniu e-maila (razem z gratulacjami), po pierwszym logowaniu przez Google/Discord
+// i jednorazowo dla kont, które istniały wcześniej. Raz zamknięte („Nie teraz”) już nie wraca – nick można zmienić w Ustawieniach konta.
+function nickAsk(){var u=me();if(!u||recov||PROF.ok===null||PROF.u!==u.id)return;
+  var need=PROF.ok&&!(PROF.row&&PROF.row.nick_prompted);
+  if(CONFIRM){CONFIRM=false;NICKASKED=true;
+    if(need)partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony i jesteś już zalogowany. Na koniec wybierz nick, którym będziesz podpisany na stronie.",null,null,nickForm());
+    else partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony i jesteś już zalogowany.","Super!",closeModal);
+    return}
+  if(!need||NICKASKED||$("cm").className.indexOf("open")>-1)return;
+  NICKASKED=true;curKey=null;openModal('<h2>Wybierz swój nick</h2><p class="msg">Na stronie pojawiła się możliwość ustawienia własnego nicku – zamiast nazwy z Google, Discorda czy adresu e-mail.</p>'+nickForm());
+  var i=$("nknew");if(i&&!i.value)i.focus()}
+async function nickSave(btn,v,msg){var e=nickCheck(v);if(e){msg(e,1);return false}
+  busy(btn,"Zapisuję…");var r=await sb.rpc("set_nick",{p_nick:v});busy(btn,0);
+  if(r.error){var m=String(r.error.message||"");msg(/function|schema cache/i.test(m)?"Zmiana nicku jest chwilowo niedostępna.":/Failed to fetch|NetworkError|Load failed/i.test(m)?"Brak połączenia z serwerem.":m,1);return false}
+  var old=PROF.row&&PROF.row.nick;PROF.ok=true;PROF.row={nick:v.replace(/\s+/g," ").trim(),nick_changed_at:(old&&old.toLowerCase()===v.trim().toLowerCase()&&PROF.row.nick_changed_at)||new Date().toISOString(),nick_prompted:true};
+  profSave();updateAuth();if(curKey)loadComments(curKey);return true}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
+  if(u&&PROF.u===u.id&&PROF.row&&PROF.row.nick)return PROF.row.nick;var pc=profCache();if(pc&&pc.n)return pc.n;
   var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
   return String(n).trim().slice(0,30)}
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
@@ -1189,21 +1233,22 @@ function mountCaptcha(n){var el=$("cft");tsTok="";tsId=null;if(!el)return;
 function resetCaptcha(){tsTok="";try{if(window.turnstile&&tsId!==null)turnstile.reset(tsId)}catch(e){}}
 function captchaWait(){return !!window.turnstile&&tsId!==null&&!tsTok}
 function openModal(h){$("mbody").innerHTML=h;$("cm").className="overlay open";mountCaptcha()}
-function partyView(title,text,btn,onok){
+function partyView(title,text,btn,onok,extra){
   var cols=["#ff9a3c","#ff4d64","#f0b04a","#4fcf8a","#8b6cf0","#4fb3ff"],c="";
   for(var i=0;i<28;i++){var l=Math.random()*100,d=(Math.random()*.5).toFixed(2),du=(1.6+Math.random()*1.4).toFixed(2),sz=6+Math.floor(Math.random()*7),rot=Math.floor(Math.random()*360);
     c+='<i style="left:'+l.toFixed(1)+'%;width:'+sz+'px;height:'+(sz*1.6).toFixed(0)+'px;background:'+cols[i%cols.length]+';animation-delay:'+d+'s;animation-duration:'+du+'s;transform:rotate('+rot+'deg)"></i>'}
-  curKey=null;openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>'+title+'</h2><p class="msg">'+text+'</p><p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">'+btn+'</button></p></div></div>');
-  $("partyok").onclick=onok}
+  curKey=null;openModal('<div class="party"><div class="confetti" aria-hidden="true">'+c+'</div><div class="partyin"><div class="partyemo" aria-hidden="true">🎉</div><h2>'+title+'</h2><p class="msg">'+text+'</p>'+(extra||'')+(btn?'<p class="btns" style="justify-content:center"><button class="btn on" type="button" id="partyok">'+btn+'</button></p>':'')+'</div></div>');
+  if(btn)$("partyok").onclick=onok}
 function celebrate(email){
   partyView("Konto utworzone!","Wysłaliśmy link potwierdzający na adres <b>"+esc(email)+"</b>. Kliknij go (sprawdź też spam), a potem się zaloguj.","Rozumiem",closeModal)}
-// po kliknięciu linku z maila: nie zostawiamy użytkownika zalogowanego, tylko pokazujemy komunikat
+// po kliknięciu linku z maila: użytkownik zostaje zalogowany, a w oknie z gratulacjami od razu wybiera nick (nickAsk).
+// Gdy link otwarto tam, gdzie logowanie się nie udało (np. inna przeglądarka) – prosimy o zalogowanie, jak dawniej.
 function afterConfirm(){
   var h=location.hash||"",q=location.search||"";
   if(!(/[?&]potwierdzono=1/.test(q)||/type=signup/.test(h)))return;
-  history.replaceState(null,"",location.pathname);
-  var done=function(){partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony. Możesz się teraz zalogować.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})};
-  sb.auth.getSession().then(function(){return sb.auth.signOut()}).then(done,done)}
+  history.replaceState(null,"",location.pathname);CONFIRM=true;
+  var old=function(){CONFIRM=false;partyView("Konto zostało utworzone!","Adres e-mail został potwierdzony. Możesz się teraz zalogować.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})};
+  sb.auth.getSession().then(function(r){if(r&&r.data&&r.data.session)nickAsk();else old()},old)}
 // Enter zatwierdza formularze w całej stronie (w polu tekstowym: Ctrl+Enter)
 document.addEventListener("keydown",function(e){
   if(e.key!=="Enter"||e.shiftKey||e.altKey||e.isComposing)return;var t=e.target;
@@ -1217,12 +1262,13 @@ document.addEventListener("keydown",function(e){
   if(b){e.preventDefault();b.click()}});
 var recov=false;
 function showNewPass(){recov=true;updateAuth();curKey=null;openModal('<h2>Nowe hasło</h2><div class="grid" style="grid-template-columns:1fr"><label>Nowe hasło (min. 8 znaków)<input type="password" id="pnew" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="pnew2" maxlength="72" autocomplete="new-password"></label></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="psend">Zmień hasło</button></p><p class="msg" id="lmsg"></p>');var pn=$("pnew");if(pn)pn.focus()}
-function closeModal(){var was=recov;recov=false;$("cm").className="overlay";curKey=null;if(was&&sb){sb.auth.signOut().then(function(){updateAuth()},function(){updateAuth()})}}
+function closeModal(){if($("nickbox")&&PROF.ok&&!(PROF.row&&PROF.row.nick_prompted)){PROF.row=PROF.row||{nick:null,nick_changed_at:null};PROF.row.nick_prompted=true;sb.rpc("nick_prompt_done").then(function(){},function(){})} // okno nicku zamknięte (X, Esc, „Nie teraz”) – więcej się nie pokaże
+  var was=recov;recov=false;$("cm").className="overlay";curKey=null;if(was&&sb){sb.auth.signOut().then(function(){updateAuth()},function(){updateAuth()})}}
 function loginHtml(mode){
   var p=PROVIDERS.map(function(x){return '<button class="btn" data-oauth="'+esc(x)+'" style="display:inline-flex;align-items:center;gap:8px">'+(PICON[x]||"")+'Kontynuuj przez '+esc(PNAME[x]||x)+'</button>'}).join(" ");
   var tabs='<div class="btns" style="justify-content:flex-start;margin-bottom:10px"><button class="btn'+(mode==="reg"?'':' on')+'" data-mode="login">Logowanie</button><button class="btn'+(mode==="reg"?' on':'')+'" data-mode="reg">Załóż konto</button></div>';
   var form=mode==="reg"
-   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nazwa użytkownika<input id="rnick" maxlength="30" autocomplete="username" placeholder="3–30 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
+   ?'<div class="grid" style="grid-template-columns:1fr"><label>Nick na stronie<input id="rnick" maxlength="20" autocomplete="username" placeholder="3–20 znaków"></label><label>Adres e-mail<input type="email" id="remail" maxlength="200" autocomplete="email"></label><label>Hasło (min. 8 znaków)<input type="password" id="rpass" maxlength="72" autocomplete="new-password"></label><label>Powtórz hasło<input type="password" id="rpass2" maxlength="72" autocomplete="new-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="rsend">Załóż konto</button></p>'
    :'<div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="lemail" maxlength="200" autocomplete="email"></label><label>Hasło<input type="password" id="lpass" maxlength="72" autocomplete="current-password"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="lsend">Zaloguj się</button><button class="btn" id="lforgot" type="button">Nie pamiętam hasła</button></p>';
   var alt=p?'<div class="orsep"><span>lub</span></div><div class="btns" style="justify-content:flex-start">'+p+'</div>':"";
   return '<h2>Logowanie</h2>'+tabs+form+'<p class="msg" id="lmsg"></p>'+alt}
@@ -1231,7 +1277,8 @@ function forgotHtml(email){
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){PROF={ok:null,row:null,u:null};NICKASKED=false;$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
   $("unm").textContent=n;box.innerHTML="";
@@ -1299,7 +1346,7 @@ if(CM){
         return r.error?cmsg(/Email not confirmed/i.test(r.error.message)?"Najpierw potwierdź adres e-mail (link w mailu).":/Invalid login/i.test(r.error.message)?"Nieprawidłowy e-mail lub hasło.":"Nie udało się zalogować: "+r.error.message,1):closeModal()}
       if(t.id==="rsend"){
         var nk2=$("rnick").value.trim(),em2=$("remail").value.trim(),pw2=$("rpass").value;
-        if(nk2.length<3)return cmsg("Nazwa użytkownika musi mieć co najmniej 3 znaki.",1);
+        var nke=nickCheck(nk2);if(nke)return cmsg(nke,1);
         if(!/^\S+@\S+\.\S+$/.test(em2))return cmsg("Podaj poprawny adres e-mail.",1);
         if(pw2.length<8)return cmsg("Hasło musi mieć co najmniej 8 znaków.",1);
         if(pw2!==$("rpass2").value)return cmsg("Hasła nie są takie same.",1);
@@ -1319,6 +1366,8 @@ if(CM){
         busy(t,"Zapisuję…");var r4=await sb.auth.updateUser({password:np});busy(t,0);
         return r4.error?cmsg("Nie udało się zmienić hasła: "+r4.error.message,1):(recov=false,sb.auth.signOut().then(function(){return 0},function(){return 0}).then(function(){partyView("Hasło zostało zmienione!","Możesz się teraz zalogować nowym hasłem.","Zaloguj się",function(){curKey=null;openModal(loginHtml("login"))})}))}
       if(t.getAttribute("data-oauth")){var o=await sb.auth.signInWithOAuth({provider:t.getAttribute("data-oauth"),options:{redirectTo:REDIR}});if(o.error)cmsg(o.error.message,1);return}
+      if(t.id==="nksave"){var ok=await nickSave(t,$("nknew").value.trim(),cmsg);if(ok)closeModal();return}
+      if(t.id==="nklater"){closeModal();return}
       if(t.id==="csend"){
         var nk=nick(),bd=$("cbody").value.trim();
         if(!nk)return cmsg("Nie udało się ustalić nazwy konta.",1);if(!bd)return cmsg("Napisz komentarz.",1);
@@ -1339,7 +1388,7 @@ if(CM){
   sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;authReady=true;
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();
     if(ev==="PASSWORD_RECOVERY"){showNewPass();return}
-    if(curKey){renderForm();loadComments(curKey)}else if(!recov&&!wasIn&&$("cm").className.indexOf("open")>-1&&s)closeModal();if(onVote&&(wasIn!==!!(s&&s.user)))loadVote();if(steamBooted&&wasIn!==!!(s&&s.user))steamLoad()},0)});
+    if(curKey){renderForm();loadComments(curKey)}else if(!recov&&!wasIn&&$("cm").className.indexOf("open")>-1&&s&&!$("nickbox"))closeModal();if(onVote&&(wasIn!==!!(s&&s.user)))loadVote();if(steamBooted&&wasIn!==!!(s&&s.user))steamLoad()},0)});
 }
 // Logowanie z podstron Aktualności: /?zaloguj=1&wroc=/aktualnosci/adres/ -> po zalogowaniu wracamy na tę stronę
 function backUrl(){var v=null;try{v=JSON.parse(sessionStorage.getItem("wroc")||"null")}catch(e){}
@@ -1816,7 +1865,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -2129,22 +2178,53 @@ function showNw(){var was=curViewName();enterView("nw","Nowości i aktualizacje 
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-nwtab],#nwmore");if(!t||!onNw)return;
   if(t.id==="nwmore"){NWV.n+=60;renderNwList();return}
   NWV.tab=t.getAttribute("data-nwtab");NWV.n=60;renderNwList()});
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":""}
+// ====== USTAWIENIA KONTA (#/konto): nick na stronie (raz na 3 miesiące), hasło, dane konta ======
+function kProv(){var u=me(),a=(u&&u.app_metadata)||{},L=a.providers||(a.provider?[a.provider]:[]);return L}
+var PNM={email:"e-mail i hasło",google:"Google",discord:"Discord"};
+function renderKonto(){var v=$("kontoview");if(!v)return;var hd=VBACK+'<h2>⚙️ Ustawienia konta</h2>';
+  if(!CM){v.innerHTML=hd+'<p class="msg">Funkcja jest chwilowo niedostępna.</p>';return}
+  if(authWait()){v.innerHTML=hd+'<p class="msg"><span class="spn"></span>Sprawdzam logowanie…</p>';return}
+  if(!me()){v.innerHTML=hd+'<p class="msg dsub">Zaloguj się, aby zmienić swój nick na stronie albo hasło.</p><p><button class="btn on" type="button" id="gologin">Zaloguj się</button></p>';return}
+  var u=me(),pv=kProv(),ns;
+  if(PROF.ok===null)ns='<p class="msg"><span class="spn"></span>Wczytywanie…</p>';
+  else if(!PROF.ok)ns='<p class="msg">Zmiana nicku będzie dostępna wkrótce.</p>';
+  else{var nx=nickNext(),wait=nx&&nx>Date.now(),cur=PROF.row&&PROF.row.nick;
+    ns='<p>Teraz: <span class="kcur">'+esc(nick()||"—")+'</span>'+(cur?'':' <span class="msg">(nazwa z konta '+esc(pv.indexOf("email")>-1?"przy rejestracji":pv.map(function(x){return PNM[x]||x}).join(", "))+' – możesz ustawić własny nick)</span>')+'</p>'+
+      (wait?'<p class="msg">Nick można zmieniać raz na 3 miesiące. Następna zmiana będzie możliwa od <b>'+plDate(nx)+'</b>.</p>'
+        :'<label>Nowy nick<input id="knick" maxlength="20" autocomplete="nickname" placeholder="3–20 znaków" value="'+esc(cur?"":nickPre())+'"></label><p class="msg nkhint">Litery, cyfry, spacja oraz znaki _ . - · Po zmianie Twoje dotychczasowe komentarze też pokażą nowy nick. Kolejna zmiana będzie możliwa za 3 miesiące.</p><p class="btns"><button class="btn on" type="button" id="knsave">Zapisz nick</button></p>')+'<p class="msg" id="knmsg"></p>'}
+  var ps=pv.indexOf("email")>-1
+    ?'<label>Obecne hasło<input type="password" id="kp0" maxlength="72" autocomplete="current-password"></label><label>Nowe hasło (min. 8 znaków)<input type="password" id="kp1" maxlength="72" autocomplete="new-password"></label><label>Powtórz nowe hasło<input type="password" id="kp2" maxlength="72" autocomplete="new-password"></label><p class="btns"><button class="btn on" type="button" id="kpsave">Zmień hasło</button></p><p class="msg" id="kpmsg"></p>'
+    :'<p class="msg">Logujesz się przez '+esc(pv.map(function(x){return PNM[x]||x}).join(", ")||"zewnętrzne konto")+' – hasło zmieniasz na tamtej stronie, u nas nie ma osobnego hasła.</p>';
+  v.innerHTML=hd+'<p class="msg dsub">Tu zmienisz nick widoczny na stronie i hasło do konta.</p>'+
+    '<div class="ksec"><h3>Nick na stronie</h3>'+ns+'</div>'+
+    '<div class="ksec"><h3>Hasło</h3>'+ps+'</div>'+
+    '<div class="ksec"><h3>Konto</h3><div class="kinfo"><span>E-mail</span><span>'+esc(u.email||"—")+'</span><span>Logowanie</span><span>'+esc(pv.map(function(x){return PNM[x]||x}).join(", ")||"—")+'</span></div></div>'}
+function showKonto(){enterView("konto","Ustawienia konta – GryPoPolsku.pl");if(me()&&PROF.u!==me().id)loadProfile();renderKonto()}
+function kMsg(id){return function(t,err){var m=$(id);if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}}
+document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("#ukonto,#knsave,#kpsave");if(!t)return;
+  if(t.id==="ukonto"){$("umenu").className="umenu";goView(KHASH);return}
+  if(!me())return;
+  if(t.id==="knsave"){var ok=await nickSave(t,$("knick").value.trim(),kMsg("knmsg"));if(ok){renderKonto();kMsg("knmsg")("Zapisano. Twój nick to teraz „"+nick()+"”.")}return}
+  if(t.id==="kpsave"){var m=kMsg("kpmsg"),p0=$("kp0").value,p1=$("kp1").value;if(!p0)return m("Wpisz obecne hasło.",1);if(p1.length<8)return m("Hasło musi mieć co najmniej 8 znaków.",1);if(p1!==$("kp2").value)return m("Hasła nie są takie same.",1);
+    busy(t,"Zapisuję…");var r=await sb.auth.updateUser({password:p1,current_password:p0});busy(t,0); // obecne hasło sprawdza Supabase (ustawienie „Require current password when updating”)
+    if(r.error){var em=String(r.error.message||"");return m(/current password|invalid.*password|password.*(incorrect|invalid)/i.test(em)&&!/different from the old/i.test(em)?"Obecne hasło jest nieprawidłowe.":/different from the old/i.test(em)?"Nowe hasło musi być inne niż obecne.":/reauthenticat|recent/i.test(em)?"Ze względów bezpieczeństwa wyloguj się, zaloguj ponownie i od razu zmień hasło.":/weak|pwned|characters/i.test(em)?"To hasło jest za słabe – wybierz dłuższe lub trudniejsze.":"Nie udało się zmienić hasła: "+plMsg(em),1)}
+    $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav));$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav||onKonto));$("kontoview").style.display=onKonto?"":"none";$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";onKonto=name==="konto";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;onKonto=false;setViewUI()}
 var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
@@ -2270,7 +2350,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH)route();
 
 var baseItems=[];
 function mergeApproved(rows){

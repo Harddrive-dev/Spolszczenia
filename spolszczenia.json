@@ -9362,7 +9362,20 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-01",
     "opis": "Max Caulfield wraca w nowej historii: po śmierci przyjaciółki odkrywa, że potrafi przeskakiwać między dwiema wersjami rzeczywistości, i próbuje rozwiązać zagadkę morderstwa.",
-    "steam": 1874000
+    "steam": 1874000,
+    "spolszczenia": [
+      {
+        "id": "life-is-strange-double-exposure--dykugierkuje",
+        "author": "DykuGierkuje",
+        "link": "https://dykugierkuje.pl/spolszczenie/life-is-strange-double-exposure",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-14",
+        "dodano": "2026-11-14"
+      }
+    ]
   },
   {
     "game": "Tell Me Why",
@@ -15171,11 +15184,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.1",
+    "ver": "1.4",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/wo-long",
     "dodano": "2026-08-22",
-    "upd": "2026-09-12",
+    "upd": "2026-11-14",
     "img": "https://cdn2.steamgriddb.com/thumb/1f3387d3c4c38410b4d101f0e3f30849.jpg",
     "opis": "Wymagająca gra akcji osadzona w Chinach okresu Trzech Królestw. Młody milicjant walczy z demonami w szybkich starciach opartych na parowaniu.",
     "steam": 1448440
@@ -19689,5 +19702,21 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Crimson Moon",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "DykuGierkuje",
+    "link": "https://dykugierkuje.pl/spolszczenie/crimson-moon",
+    "genre": "Akcja",
+    "dodano": "2026-11-14",
+    "img": "https://cdn2.steamgriddb.com/thumb/f746ed1a17fdcfc1382a56ec0667526f.jpg",
+    "opis": "Crimson Moon to dynamiczna gra action RPG osadzona w mrocznym świecie fantasy, w której wcielasz się w łowcę polującego na potwory pod tytułowym Krwawym Księżycem.",
+    "steam": 4317690,
+    "upd": "2026-11-14"
   }
 ]

@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "17 3 * * 0"
   workflow_dispatch:
+    inputs:
+      dni:
+        description: "Po ilu dniach nieużywania usuwać (0 = od razu, wszystkie nieużywane)"
+        default: "30"
 permissions:
   contents: write
 concurrency:
@@ -23,6 +27,7 @@ jobs:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          DNI: ${{ github.event.inputs.dni }}
         run: python scripts/okladki-r2-sprzataj.py
       - name: Zapisz stan
         run: |

@@ -19832,7 +19832,21 @@
     "img": "https://cdn.grypopolsku.pl/okladki/twin-mirror-5f54e4e1.webp",
     "opis": "Twin Mirror to mroczny thriller psychologiczny i narracyjna gra przygodowa od twórców serii Life is Strange, której akcja toczy się w niewielkim, górniczym miasteczku Basswood w Wirginii Zachodniej.",
     "steam": 1552810,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/1.webp?v=7c980f31",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/1-miniatura.webp?v=cf1e7d51"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/2.webp?v=f9c1a79f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/2-miniatura.webp?v=7d6739a4"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/3.webp?v=b36f7fff",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/3-miniatura.webp?v=3637312b"
+      }
+    ]
   },
   {
     "game": "Forsaken Remastered",

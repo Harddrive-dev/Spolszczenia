@@ -29,10 +29,32 @@ var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColo
 // Przycisk konta Steam obok nicku (jak na stronie głównej). Liczbę gier zapamiętuje strona główna (localStorage „steam.c”).
 var STEAM_ICON='<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg>',steamChecked=null;
 function steamChip(){var u=me(),c=null;try{c=JSON.parse(localStorage.getItem("steam.c")||"null")}catch(e){}
-  if(u&&steamChecked===false)c=null;
+  if(c&&u&&c.uid&&c.uid!==u.id)c=null;if(u&&steamChecked===false)c=null;
   var lbl=!u?"Twoje gry ze Steam":(c||steamChecked===true)?"Moje gry Steam":"Połącz Steam",n=u&&c&&c.n?String(c.n):"",un=u&&c&&c.u>0?c.u:0;
   return '<a class="sbtn" id="steamchip" href="/#/steam" title="'+lbl+(n?" ("+n+")":"")+(un?" – nowości do Twoich gier: "+un:"")+'">'+STEAM_ICON+'<span class="st">'+lbl+'</span>'+(n?'<span class="sn">'+esc(n)+'</span>':'')+(un?'<span class="snew">'+(un>99?"99+":un)+'</span>':'')+'</a>'}
-async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=await sb.from("steam_links").select("steam_id").maybeSingle();if(r.error)return;steamChecked=!!r.data;if(!r.data){try{localStorage.removeItem("steam.c")}catch(e){}}renderUser()}catch(e){}}
+async function steamCheck(){if(!sb||!me()||steamChecked!==null)return;try{var r=await sb.from("steam_links").select("steam_id").maybeSingle();if(r.error)return;steamChecked=!!r.data;if(!r.data){try{localStorage.removeItem("steam.c")}catch(e){}}renderUser();
+  if(r.data){var c=null;try{c=JSON.parse(localStorage.getItem("steam.c")||"null")}catch(e){}if(!(c&&c.uid===me().id)||(c.t&&Date.now()-c.t>30*60e3))steamCount()}}catch(e){}}
+// Liczba „Moich gier Steam”, gdy strona główna jeszcze jej nie zapisała (np. ktoś zalogował się na stronie gry albo w Aktualnościach).
+// Te same zasady dopasowania co steamMatches() w index.html: najpierw numer gry na Steamie, potem nazwa; tylko PC; bez samych „Zapowiedzi”.
+// Liczy też nieprzeczytane nowości (czerwona plakietka) – jak stUnread() w index.html: gra z nowym spolszczeniem/aktualizacją w ostatnich 30 dniach
+// (nie wcześniej niż 31.10.2026), której klucz „gra|data” nie jest zapisany jako przeczytany (localStorage „steam.seen” + tabela steam_seen).
+// Liczymy, gdy nie ma zapamiętanej liczby albo ma ponad 30 minut.
+function stSlug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function stEvDate(g){var d=String(g.dodano||""),u=String(g.upd||""),e=u>d?u:d;(Array.isArray(g.spolszczenia)?g.spolszczenia:[]).forEach(function(x){if(x&&/^https?:\/\//i.test(x.link||"")){var y=String(x.upd||"");if(y>e)e=y}});return e}
+function stSince(){var d=new Date(Date.now()-30*864e5),x=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");return x>"2026-10-31"?x:"2026-10-31"}
+function stN(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
+function stN2(t){return stN(t).replace(/ (game of the year|goty|definitive|complete|enhanced|deluxe|ultimate|gold|premium|standard)( edition)?$/,"").trim()}
+async function steamCount(){var u=me();if(!u)return;try{var r=await sb.from("steam_links").select("games").maybeSingle();if(r.error||!r.data||!Array.isArray(r.data.games))return;
+  var items=await fetch("/spolszczenia.json").then(function(x){return x.json()});if(!Array.isArray(items)||!me()||me().id!==u.id)return;
+  var byId=Object.create(null),idx=Object.create(null);items.forEach(function(g){if(!g||!/pc/i.test(g.platform||"PC"))return;if(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))return;
+    var sid=g.steam;sid=Array.isArray(sid)?sid:(sid?[sid]:[]);if(sid.length){sid.forEach(function(i){(byId[i]=byId[i]||[]).push(g)});return}
+    var a=stN(g.game),b=stN2(g.game);if(a&&!idx[a])idx[a]=g;if(b&&!idx[b])idx[b]=g});
+  var seen=new Set();r.data.games.forEach(function(x){var id=Array.isArray(x)?x[0]:(x&&x.appid),n=Array.isArray(x)?x[1]:(x&&x.name);if(byId[id]){byId[id].forEach(function(g){seen.add(g)});return}var g=idx[stN(n)]||idx[stN2(n)];if(g)seen.add(g)});
+  var k=[];try{var o=JSON.parse(localStorage.getItem("steam.seen")||"null");if(o&&o.u===u.id&&Array.isArray(o.k))k=o.k}catch(e){}
+  try{var sv=await sb.from("steam_seen").select("keys").maybeSingle();if(!sv.error&&sv.data&&Array.isArray(sv.data.keys))k=k.concat(sv.data.keys)}catch(e){}
+  var since=stSince(),un=0;seen.forEach(function(g){var d=stEvDate(g);if(d>=since&&k.indexOf((g.id||stSlug(g.game||""))+"|"+d)<0)un++});
+  if(!me()||me().id!==u.id)return;
+  try{localStorage.setItem("steam.c",JSON.stringify({n:String(seen.size),u:un,uid:u.id,t:Date.now()}))}catch(e){}renderUser()}catch(e){}}
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};

@@ -45,6 +45,15 @@ jobs:
         run: |
           [ -x /tmp/okl/bin/python ] || { python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q pillow boto3; }
           /tmp/okl/bin/python scripts/zrzuty-r2.py
+      - name: Pliki z folderu do-r2/ na R2 (np. obrazki do Aktualności)
+        if: hashFiles('do-r2/**') != ''
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          [ -x /tmp/okl/bin/python ] || { python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q pillow boto3; }
+          /tmp/okl/bin/python scripts/do-r2.py
       - name: Generuj strony Aktualności
         if: always()
         run: node scripts/news.mjs
@@ -63,6 +72,7 @@ jobs:
         run: |
           git add -A spolszczenia.json katalog-czas.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json
           git rm -q --cached --ignore-unmatch import-lektor.json
+          git add -A do-r2 2>/dev/null || true   # folder do-r2/ znika po wgraniu plików na R2
           echo "PRE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "spolszczenia-bot"

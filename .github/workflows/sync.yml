@@ -52,7 +52,7 @@ jobs:
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json
+          git add -A spolszczenia.json katalog-czas.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json
           git rm -q --cached --ignore-unmatch import-lektor.json
           echo "PRE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           if [ -n "$(git status --porcelain)" ]; then

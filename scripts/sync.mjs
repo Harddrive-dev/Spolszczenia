@@ -10,6 +10,7 @@ const r2img=v=>R2MAP[v]||v;
 const res=await fetch(URL_+"/rest/v1/rpc/approved_changes",{method:"POST",headers:{apikey:KEY,Authorization:"Bearer "+KEY,"Content-Type":"application/json"},body:"{}"});
 if(!res.ok){console.error("Błąd Supabase",res.status,await res.text());process.exit(1)}
 const rows=await res.json();
+const CZAS=new Date().toISOString(); // do tej chwili zmiany z bazy są przerobione – strona (index.html) pokazuje od razu tylko nowsze zmiany okładek
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
 for(const g of list)if(g.status==="W toku")g.status="Beta";
 const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
@@ -79,4 +80,4 @@ const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG",
 for(const g of list)if(GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre];
 const after=JSON.stringify(list,null,2);
 if(after===before){console.log("Brak zmian");process.exit(0)}
-fs.writeFileSync("spolszczenia.json",after+"\n");console.log("Zaktualizowano spolszczenia.json, wpisów:",list.length);
+fs.writeFileSync("spolszczenia.json",after+"\n");fs.writeFileSync("katalog-czas.json",JSON.stringify({t:CZAS})+"\n");console.log("Zaktualizowano spolszczenia.json, wpisów:",list.length);

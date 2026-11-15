@@ -2382,7 +2382,8 @@ function mergeApproved(rows){
         if(f==="dubStatus"){if(DUBST.indexOf(v)>-1)gm.dubStatus=v;else if(!v)delete gm.dubStatus;return}
         if(f==="game"){if(!v)return;if(!gm.id)gm.id=keyOf(gm);gm.game=v;return}
         if(f==="link"){if(/^https?:\/\//i.test(v))gm.link=v;else if(!v&&((d.changes||[]).some(function(x){return x.field==="pl"&&x.to==="of"})||gm.pl==="of"))delete gm.link;return}
-        if(f==="img"){if(!v)delete gm.img;else if(/^(https?:\/\/|img\/)/i.test(v))gm.img=v;return}
+        if(f==="img"){if(/^https:\/\/cdn\.grypopolsku\.pl\//.test(gm.img||"")&&!/^https:\/\/cdn\.grypopolsku\.pl\//.test(v))return; // okładka już na R2 – stara zmiana jej nie cofa (nową okładkę i tak wpisze automat w ciągu 30 min)
+          if(!v)delete gm.img;else if(/^(https?:\/\/|img\/)/i.test(v))gm.img=v;return}
         if(f==="premiera"){if(/^\d{4}-\d{2}-\d{2}$/.test(v))gm.premiera=v;else if(!v)delete gm.premiera;return}
         if(f==="genre"||f==="opis"){if(v)gm[f]=f==="opis"?v.slice(0,500):v;else delete gm[f];return}
         if(f==="type"){if(TYPES.indexOf(v)>-1)gm.type=v;return}

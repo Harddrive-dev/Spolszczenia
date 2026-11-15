@@ -3,6 +3,10 @@ import fs from "node:fs";
 const URL_="https://qbozpokxgtspwdxvbevv.supabase.co", KEY="sb_publishable_0StDDiTyHHv_ZIW0nh590g_ij3wNMTV";
 const slug=t=>String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const keyOf=g=>g.id||slug(g.game||"");
+// Okładki przeniesione na R2 (cdn.grypopolsku.pl): stare adresy z zatwierdzonych zmian zamieniamy na nowe,
+// inaczej każde uruchomienie przywracałoby starą okładkę ze SteamGridDB (mapa: scripts/okladki-r2-mapa.json).
+const R2MAP=fs.existsSync("scripts/okladki-r2-mapa.json")?JSON.parse(fs.readFileSync("scripts/okladki-r2-mapa.json","utf8")):{};
+const r2img=v=>R2MAP[v]||v;
 const res=await fetch(URL_+"/rest/v1/rpc/approved_changes",{method:"POST",headers:{apikey:KEY,Authorization:"Bearer "+KEY,"Content-Type":"application/json"},body:"{}"});
 if(!res.ok){console.error("Błąd Supabase",res.status,await res.text());process.exit(1)}
 const rows=await res.json();
@@ -28,7 +32,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader)&&!URLOK(d.dub)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
-  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;list.push(e)}
+  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=r2img(String(d.img));if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
@@ -49,7 +53,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="dubStatus"){if(DUBST.includes(v))g.dubStatus=v;else if(!v)delete g.dubStatus;continue}
    if(f==="game"){if(!v)continue;if(!g.id)g.id=keyOf(g);g.game=v;continue}
    if(f==="link"){if(/^https?:\/\//i.test(v))g.link=v;else if(!v&&((d.changes||[]).some(x=>x.field==="pl"&&x.to==="of")||g.pl==="of"))delete g.link;continue}
-   if(f==="img"){if(!v)delete g.img;else if(/^(https?:\/\/|img\/)/i.test(v))g.img=v;continue}
+   if(f==="img"){if(!v)delete g.img;else if(/^(https?:\/\/|img\/)/i.test(v))g.img=r2img(v);continue}
    if(f==="premiera"){if(/^\d{4}-\d{2}-\d{2}$/.test(v))g.premiera=v;else if(!v)delete g.premiera;continue}
    if(f==="genre"||f==="opis"){if(v)g[f]=f==="opis"?v.slice(0,500):v;else delete g[f];continue}
    if(f==="type"){if(TYPES.includes(v))g.type=v;continue}

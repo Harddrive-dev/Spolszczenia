@@ -91,10 +91,12 @@ for(const r of rows){
   const url=SITE+"/aktualnosci/"+r.slug+"/",cc=CATS[r.category]||"c-ogl",c=imgOf(r),th=cover(r);
   const desc=(r.excerpt||String(r.body).replace(/[#*\[\]()]/g," ").replace(/\s+/g," ").trim()).slice(0,200);
   const ogi=c||th,img=ogi?(ogi.startsWith("/")?SITE+ogi:ogi):DEF_IMG;
+  // obrazki WebP z R2 mają kopię .og.jpg do podglądu linku (Facebook/Messenger nie zawsze pokazują WebP) – robi ją scripts/aktualnosci-r2.py
+  const ogImg=/^https:\/\/cdn\.grypopolsku\.pl\/aktualnosci\/[^/?#]+\.webp$/.test(img)?img.replace(/\.webp$/,".og.jpg"):img;
   const body='<div class="panel"><a class="back" href="/aktualnosci/">← Aktualności</a><article><span class="etag '+cc+'">'+esc(r.category)+'</span> <span class="d"><time datetime="'+esc(r.created_at)+'">'+dateLong(r.created_at)+'</time>'+(r.author?' · '+esc(r.author):'')+'</span><h1>'+esc(r.title)+'</h1>'+(c?'<div class="cover"><img src="'+esc(c)+'" alt="'+esc(r.title)+'"></div>':'')+'<div class="body">'+fmt(r.body)+'</div></article></div>'+gameBox(gry)+
    '<div class="panel" id="komentarze"><h2 class="ch">Komentarze (<span id="ccount">0</span>)</h2><div id="cform"></div><div id="clist"><p class="msg">Wczytywanie komentarzy…</p></div></div>';
-  fs.writeFileSync(path.join(dir,"index.html"),page({title:r.title+" – GryPoPolsku.pl",desc,url,body,og:{type:"article",title:r.title,image:img,big:!!ogi},pageType:"post",key:"news:"+r.slug,
-   ld:{"@context":"https://schema.org","@type":"NewsArticle",headline:r.title.slice(0,110),description:desc,image:[img],datePublished:r.created_at,dateModified:r.updated_at||r.created_at,inLanguage:"pl",author:{"@type":"Organization",name:r.author||"GryPoPolsku.pl"},publisher:{"@type":"Organization",name:"GryPoPolsku.pl",logo:{"@type":"ImageObject",url:DEF_IMG}},mainEntityOfPage:url}}))}
+  fs.writeFileSync(path.join(dir,"index.html"),page({title:r.title+" – GryPoPolsku.pl",desc,url,body,og:{type:"article",title:r.title,image:ogImg,big:!!ogi},pageType:"post",key:"news:"+r.slug,
+   ld:{"@context":"https://schema.org","@type":"NewsArticle",headline:r.title.slice(0,110),description:desc,image:[ogImg],datePublished:r.created_at,dateModified:r.updated_at||r.created_at,inLanguage:"pl",author:{"@type":"Organization",name:r.author||"GryPoPolsku.pl"},publisher:{"@type":"Organization",name:"GryPoPolsku.pl",logo:{"@type":"ImageObject",url:DEF_IMG}},mainEntityOfPage:url}}))}
 fs.writeFileSync(path.join(OUT,"powiazania.json"),JSON.stringify(POW,null,1)+"\n");
 // sprzątanie usuniętych wpisów
 const keep=new Set(rows.map(r=>r.slug));

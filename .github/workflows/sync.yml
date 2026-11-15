@@ -54,6 +54,15 @@ jobs:
         run: |
           [ -x /tmp/okl/bin/python ] || { python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q pillow boto3; }
           /tmp/okl/bin/python scripts/do-r2.py
+      - name: Obrazki Aktualności na R2 – WebP (+ kopia .og.jpg do podglądu linku)
+        continue-on-error: true
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          [ -x /tmp/okl/bin/python ] || { python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q pillow boto3; }
+          /tmp/okl/bin/python scripts/aktualnosci-r2.py
       - name: Generuj strony Aktualności
         if: always()
         run: node scripts/news.mjs

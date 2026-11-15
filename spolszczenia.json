@@ -15739,7 +15739,7 @@
     "steam": 3564740
   },
   {
-    "game": "Call of Duty®: Modern Warfare® 4",
+    "game": "Call of Duty: Modern Warfare 4",
     "platform": "PC",
     "type": "Napisy",
     "prog": 100,
@@ -15754,7 +15754,8 @@
     "status": "Gotowe",
     "opis": "Nowa odsłona serii Modern Warfare przenosi konflikt na Półwysep Koreański. Kapitan Price i jego oddział walczą w kampanii rozgrywanej w wielu miejscach świata.",
     "steam": 4435490,
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "id": "call-of-duty-modern-warfare-4"
   },
   {
     "game": "The Elder Scrolls Online",
@@ -19908,7 +19909,7 @@
     "prog": 100,
     "ver": "—",
     "author": "—",
-    "link": "https://cdn.grypopolsku.pl/spolszczenia/life-is-strange-remastered/LiS-Remastered-Spolszczenie.zip",
+    "link": "https://cdn.grypopolsku.pl/spolszczenia/pc/life-is-strange-remastered/LiS-Remastered-Spolszczenie.zip",
     "genre": "Przygodowa",
     "dodano": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
@@ -19917,15 +19918,19 @@
     "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku."
   },
   {
-    "game": "Call of Duty®: Black Ops II",
+    "game": "Call of Duty: Black Ops II",
     "platform": "PC",
     "pl": "of",
     "steam": 202970,
     "genre": "Strzelanka",
-    "img": "https://cdn.grypopolsku.pl/okladki/call-of-duty-black-ops-ii-64078b1d.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/call-of-duty-black-ops-ii-f81fd27c.webp",
     "lore": "https://lorespeak.pl/games/call-of-duty-black-ops-ii",
     "dodano": "2026-11-15",
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "id": "call-of-duty-black-ops-ii",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 0
   },
   {
     "game": "Borderlands 2",
@@ -20040,5 +20045,21 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Middle-earth: Shadow of Mordor",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/middle-earth-shadow-of-mordor",
+    "genre": "Akcja",
+    "dodano": "2026-11-15",
+    "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-mordor-ffc9a129.webp",
+    "opis": "Middle-earth: Shadow of Mordor to trzecioosobowa gra akcji RPG z otwartym światem z 2014 roku, osadzona w uniwersum Władcy Pierścieni (pomiędzy wydarzeniami z Hobbita a Władcą Pierścieni).",
+    "steam": 241930,
+    "upd": "2026-11-15"
   }
 ]

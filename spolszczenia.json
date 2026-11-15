@@ -19914,7 +19914,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
     "steam": 1265920,
     "upd": "2026-11-15",
-    "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą."
+    "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku."
   },
   {
     "game": "Call of Duty®: Black Ops II",

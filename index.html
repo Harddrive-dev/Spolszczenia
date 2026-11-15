@@ -778,7 +778,7 @@ html{-webkit-tap-highlight-color:transparent}
 <footer>Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/gra/">Wszystkie gry A–Z</a> · <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 1.11.2026 ai</span></footer>
 </div>
 
-<div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="modedit" id="rmed" style="display:none" role="menuitem">🛠️ Edytuj wpis (moderator)</button><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
+<div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="modedit" id="rmed" style="display:none" role="menuitem">🛠️ Edytuj wpis (moderator)</button><button type="button" data-ra="zrzuty" id="rzrz" style="display:none" role="menuitem">🖼️ Zrzuty ekranu (moderator)</button><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
 <div class="overlay" id="rm"><div class="box"><button class="mini" id="rclose" aria-label="Zamknij">✕</button><div id="rbody"></div></div></div>
 <div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
 <script>
@@ -1776,6 +1776,32 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   busy(t,0);
   if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message)+" (czy uruchomiłeś edycja-wpisow.sql w Supabase?)");
   closeModal();editG=null;await loadCatalog()});
+// ====== ZRZUTY EKRANU (moderator/admin): wgrywanie przez stronę do R2 (funkcja Supabase „zrzuty”), galerię robi automat co 30 min ======
+var ZRZ={g:null,busy:false};
+async function zrzCall(body){var r=await sb.functions.invoke("zrzuty",{body:body});if(r.error){var m=r.error.message||"Błąd";try{var j=await r.error.context.json();if(j&&j.error)m=j.error}catch(e){}throw new Error(m)}if(r.data&&r.data.error)throw new Error(r.data.error);return r.data}
+function zrzList(pl){var b=$("zrzlist");if(!b)return;b.innerHTML=pl.length?pl.map(function(p){return '<div class="zrzi"><a href="'+esc(p.url)+'" target="_blank" rel="noopener"><img src="'+esc(p.url)+'" alt="'+esc(p.plik)+'" loading="lazy"></a><div><b>'+esc(p.plik)+'</b><small>'+p.kb+' KB</small></div><button class="btn nob" type="button" data-zdel="'+esc(p.plik)+'">🗑 Usuń</button></div>'}).join(""):'<p class="msg">Ta gra nie ma jeszcze zrzutów.</p>';
+  var n=$("zrzn");if(n)n.textContent=pl.length}
+function zrzMsg(t,err){var m=$("zrzmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
+async function openZrzuty(g){if(!CM||!isMod()||!g)return;ZRZ.g=g;curKey=null;var k=keyOf(g);
+  openModal('<h2>Zrzuty ekranu</h2><p class="msg" style="margin-top:0"><b>'+esc(g.game)+'</b> · <a href="/gra/'+esc(k)+'/" target="_blank" rel="noopener">strona gry ↗</a></p>'+
+   '<p class="msg">Najlepiej zrzuty z <b>polskim tekstem</b> (dialogi, menu). Kolejność = numery plików. Na stronie gry pojawią się w ciągu ok. 30 minut (automat robi miniaturki). Najwyżej 12 na grę.</p>'+
+   '<label class="zrzdrop" id="zrzdrop"><input type="file" id="zrzfile" accept="image/png,image/jpeg,image/webp" multiple hidden><span>➕ Wybierz obrazki albo przeciągnij je tutaj</span><small>PNG, JPG lub WebP · strona sama je zmniejszy</small></label>'+
+   '<p class="msg" id="zrzmsg"></p><h3 style="margin:14px 0 8px;font-size:15px">Wgrane (<span id="zrzn">…</span>)</h3><div id="zrzlist"><p class="msg">Wczytywanie…</p></div>'+
+   '<style>.zrzdrop{display:flex;flex-direction:column;align-items:center;gap:4px;border:2px dashed var(--line);border-radius:14px;padding:18px;cursor:pointer;text-align:center}.zrzdrop span{font-weight:700;color:var(--accent)}.zrzdrop small{color:var(--muted)}.zrzdrop.on{border-color:var(--accent);background:rgba(232,144,95,.08)}.zrzi{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}.zrzi img{width:120px;height:68px;object-fit:cover;border-radius:8px;display:block}.zrzi div{flex:1;min-width:0}.zrzi small{display:block;color:var(--muted)}</style>');
+  try{zrzList((await zrzCall({action:"lista",gra:k})).pliki||[])}catch(e){zrzList([]);zrzMsg("Nie udało się wczytać listy: "+e.message,1)}}
+// obrazek -> WebP maks. 1920 px szerokości (mniejszy plik, szybsze wysyłanie)
+function zrzZmniejsz(f){return new Promise(function(ok,no){var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,s=Math.min(1,1920/w),c=document.createElement("canvas");c.width=Math.round(w*s);c.height=Math.round(h*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);
+  c.toBlob(function(b){if(!b)return no(new Error("nie udało się przerobić obrazka"));var r=new FileReader();r.onload=function(){ok({typ:b.type,dane:String(r.result).split(",")[1]})};r.onerror=function(){no(new Error("błąd odczytu"))};r.readAsDataURL(b)},"image/webp",0.88)};im.onerror=function(){URL.revokeObjectURL(u);no(new Error("to nie jest obrazek"))};im.src=u})}
+async function zrzWgraj(files){if(ZRZ.busy||!ZRZ.g)return;var l=[].slice.call(files||[]).filter(function(f){return /^image\//.test(f.type)});if(!l.length){zrzMsg("Wybierz pliki z obrazkami (PNG, JPG, WebP).",1);return}
+  ZRZ.busy=true;var k=keyOf(ZRZ.g),ok=0,err=[];
+  for(var i=0;i<l.length;i++){zrzMsg("Wysyłam "+(i+1)+" z "+l.length+"…");try{var o=await zrzZmniejsz(l[i]);var r=await zrzCall({action:"dodaj",gra:k,typ:o.typ,dane:o.dane});zrzList(r.pliki||[]);ok++}catch(e){err.push(l[i].name+": "+e.message)}}
+  ZRZ.busy=false;zrzMsg((ok?"Wgrano "+ok+" "+(ok===1?"zrzut":ok<5?"zrzuty":"zrzutów")+". Na stronie gry pojawią się w ciągu ok. 30 minut. ":"")+(err.length?"Błędy: "+err.join("; "):""),err.length&&!ok)}
+document.addEventListener("change",function(e){if(e.target&&e.target.id==="zrzfile"){zrzWgraj(e.target.files);e.target.value=""}});
+document.addEventListener("dragover",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d){e.preventDefault();d.classList.add("on")}});
+document.addEventListener("dragleave",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d)d.classList.remove("on")});
+document.addEventListener("drop",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d){e.preventDefault();d.classList.remove("on");zrzWgraj(e.dataTransfer.files)}});
+document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("[data-zdel]");if(!t||!ZRZ.g)return;var p=t.getAttribute("data-zdel");if(!confirm("Usunąć zrzut "+p+"? Zniknie ze strony gry w ciągu ok. 30 minut."))return;
+  busy(t,"Usuwam…");try{zrzList((await zrzCall({action:"usun",gra:keyOf(ZRZ.g),plik:p})).pliki||[]);zrzMsg("Usunięto "+p+".")}catch(err){busy(t,0);zrzMsg("Nie udało się usunąć: "+err.message,1)}});
 // ====== KONIEC NARZĘDZI MODERATORA ======
 // ====== ZGŁOSZENIA ZMIAN ======
 var menuG=null;
@@ -1791,10 +1817,10 @@ function openReport(kind,g){
   curKey=null;openModal(h);$("cm").setAttribute("data-rk",keyOf(g));$("cm").setAttribute("data-rkind",kind)}
 document.addEventListener("click",async function(e){
   var rb=e.target.closest&&e.target.closest(".rowmenu");
-  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=isMod()?"block":"none";
+  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=isMod()?"block":"none";$("rzrz").style.display=isMod()?"block":"none";
     m.className="rmenu open";m.style.top=Math.min(r.bottom+4,innerHeight-m.offsetHeight-8)+"px";m.style.left=Math.max(8,Math.min(r.left,innerWidth-m.offsetWidth-8))+"px";return}
   var ra=e.target.closest&&e.target.closest("[data-ra]");
-  if(ra&&menuG){var g2=menuG;hideRmenu();if(ra.getAttribute("data-ra")==="modedit"){if(typeof openModEdit==="function")openModEdit(g2);return}openReport(ra.getAttribute("data-ra"),g2);return}
+  if(ra&&menuG){var g2=menuG;hideRmenu();if(ra.getAttribute("data-ra")==="modedit"){if(typeof openModEdit==="function")openModEdit(g2);return}if(ra.getAttribute("data-ra")==="zrzuty"){openZrzuty(g2);return}openReport(ra.getAttribute("data-ra"),g2);return}
   if(!e.target.closest||!e.target.closest("#rmenu"))hideRmenu();
   if(e.target.id==="rpsend"){
     var k=$("cm").getAttribute("data-rk"),kind=$("cm").getAttribute("data-rkind"),g3=gameByKey(k);if(!g3)return;

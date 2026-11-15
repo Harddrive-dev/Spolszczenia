@@ -19929,7 +19929,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
     "steam": 1265920,
     "upd": "2026-11-15",
-    "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku."
+    "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku.",
+    "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay."
   },
   {
     "game": "Call of Duty: Black Ops II",
@@ -19944,7 +19945,8 @@
     "id": "call-of-duty-black-ops-ii",
     "type": "Napisy",
     "status": "Gotowe",
-    "prog": 0
+    "prog": 0,
+    "opis": "Strzelanka FPS od Treyarch z 2012 roku, kontynuacja Call of Duty: Black Ops. Kampania przeplata zimną wojnę lat 80. z niedaleką przyszłością, w której świat musi stawić czoła Raulowi Menendezowi."
   },
   {
     "game": "Borderlands 2",
@@ -19960,7 +19962,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/borderlands-2-5196aa72.webp",
     "gamereader": "https://www.gamereader.pl/biblioteka",
     "dodano": "2026-11-15",
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opis": "Kooperacyjna strzelanka z elementami RPG od Gearbox Software z 2012 roku. Łowcy Krypty przemierzają planetę Pandorę, by powstrzymać Handsome Jacka, a po drodze zbierają tysiące losowo generowanych broni."
   },
   {
     "game": "Borderlands 4",
@@ -19971,7 +19974,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/borderlands-4-7d4273fd.webp",
     "gamereader": "https://www.gamereader.pl/biblioteka",
     "dodano": "2026-11-15",
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opis": "Najnowsza odsłona serii od Gearbox Software z 2025 roku – chaotyczna strzelanka pełna łupów i miliardów broni, w którą można grać także w kooperacji. Jako jeden z czterech nowych Łowców Krypty próbujesz uciec z niebezpiecznej, ukrytej planety."
   },
   {
     "game": "Playable Archive",
@@ -19985,7 +19989,9 @@
     "steam": 5356470,
     "img": "https://cdn.grypopolsku.pl/okladki/playable-archive-a97fff06.webp",
     "dodano": "2026-11-15",
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "genre": "Horror",
+    "opis": "Krótki, darmowy horror od DarkStone Digital (ok. 30–60 minut) w formie archiwum nagrań od anonimowego informatora. Para z Nowej Anglii znajduje podczas remontu domu tajemniczy przedmiot, a gra prowadzi przez demoniczne rytuały, kontakt ze zmarłymi i kilka linii czasu."
   },
   {
     "game": "DeathWatchers",
@@ -19999,7 +20005,9 @@
     "steam": 2599370,
     "img": "https://cdn.grypopolsku.pl/okladki/deathwatchers-ed0e2cc6.webp",
     "dodano": "2026-11-15",
-    "upd": "2026-11-15"
+    "upd": "2026-11-15",
+    "genre": "Horror",
+    "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść."
   },
   {
     "game": "The Hundred Line -Last Defense Academy-",
@@ -20013,7 +20021,9 @@
     "steam": 3014080,
     "img": "https://cdn.grypopolsku.pl/okladki/the-hundred-line-last-defense-academy-54fb3bf6.webp",
     "dodano": "2026-11-15",
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "genre": "Przygodowa",
+    "opis": "Gra przygodowa z 2025 roku, pierwsza wspólna produkcja Kazutaki Kodaki (Danganronpa) i Kotaro Uchikoshiego (Zero Escape). Piętnaścioro uczniów przez 100 dni broni szkoły przed groteskowymi potworami i próbuje odkryć, o co w tym wszystkim chodzi."
   },
   {
     "game": "The Path Into The Abyss (demo)",
@@ -20027,7 +20037,9 @@
     "steam": 3725100,
     "img": "https://cdn.grypopolsku.pl/okladki/the-path-into-the-abyss-demo-640bcb11.webp",
     "dodano": "2026-11-15",
-    "upd": "2026-11-15"
+    "upd": "2026-11-15",
+    "genre": "Strzelanka",
+    "opis": "Demo hardkorowej strzelanki survival z perspektywy pierwszej osoby od MXR Productions. Akcja toczy się w otwartym świecie osadzonym w Buenos Aires, z motywami kosmicznego horroru, wymagającymi przeciwnikami i zbieraniem łupów."
   },
   {
     "game": "The First Berserker: Khazan",
@@ -20042,7 +20054,8 @@
     "genre": "Akcja",
     "img": "https://cdn.grypopolsku.pl/okladki/the-first-berserker-khazan-eaf28c96.webp",
     "dodano": "2026-11-15",
-    "upd": "2026-11-15"
+    "upd": "2026-11-15",
+    "opis": "Hardkorowa gra akcji RPG od Neople z 2025 roku, osadzona w uniwersum Dungeon & Fighter. Wcielasz się w Khazana, wielkiego generała imperium Pell Los, który pokonał śmierć i wyrusza, by poznać prawdę o wydarzeniach, które doprowadziły do jego upadku."
   },
   {
     "game": "Middle-earth: Shadow of Mordor",

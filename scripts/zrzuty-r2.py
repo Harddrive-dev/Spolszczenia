@@ -3,7 +3,7 @@
 # np. zrzuty/life-is-strange-remastered/1.png). Kolejność w galerii = kolejność nazw plików (1.png, 2.png, ...).
 # Opcjonalnie plik  zrzuty/<klucz-gry>/podpis.txt  z tekstem pod galerią (np. „Zrzuty: Ryszard Chojnowski”).
 # Automat (krok w sync.yml) co 30 min:
-#  - robi z każdego obrazka WebP (maks. 1600 px szerokości) i miniaturkę (maks. 480 px) w  zrzuty-web/<klucz-gry>/,
+#  - robi z każdego obrazka WebP (maks. 1600 px szerokości) i miniaturkę (maks. 640 px) w  zrzuty-web/<klucz-gry>/,
 #    nazwa zawiera skrót pliku, więc podmieniony obrazek dostaje nowy adres,
 #  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": duży, "m": miniaturka}], „zrzutyPodpis”),
 #  - usuwa z zrzuty-web/ pliki, których już nic nie używa (oryginały w zrzuty/ zostają nietknięte).
@@ -16,7 +16,7 @@ from botocore.config import Config
 CDN = "https://cdn.grypopolsku.pl/"
 BUCKET = "grypopolsku"
 SRC, WEB = "zrzuty/", "zrzuty-web/"
-MAX_D, MAX_M = 1600, 480
+MAX_D, MAX_M = 1600, 640
 OBRAZ = re.compile(r"\.(png|jpe?g|webp|gif|bmp)$", re.I)
 
 s3 = boto3.client(
@@ -83,7 +83,7 @@ for gra, pliki in sorted(foldery.items()):
         etag = zrodla[k]["ETag"].strip('"')
         nazwa = re.sub(r"[^a-z0-9]+", "-", os.path.splitext(k.rsplit("/", 1)[1])[0].lower()).strip("-") or "zrzut"
         skrot = hashlib.sha1(etag.encode()).hexdigest()[:8]
-        kd, km = "%s%s/%s-%s.webp" % (WEB, gra, nazwa, skrot), "%s%s/%s-%s-m.webp" % (WEB, gra, nazwa, skrot)
+        kd, km = "%s%s/%s-%s.webp" % (WEB, gra, nazwa, skrot), "%s%s/%s-%s-t.webp" % (WEB, gra, nazwa, skrot)
         if kd not in gotowe or km not in gotowe:
             try:
                 dane = s3.get_object(Bucket=BUCKET, Key=k)["Body"].read()

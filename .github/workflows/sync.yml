@@ -21,6 +21,21 @@ jobs:
       - name: Import gier (jednorazowy)
         run: node scripts/import.mjs
       - run: node scripts/sync.mjs
+      - name: Nowe okładki na R2 (cdn.grypopolsku.pl)
+        continue-on-error: true
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          TRYB: wgraj
+          LIMIT: "60"
+        run: |
+          # tylko gdy jest okładka spoza cdn.grypopolsku.pl (i nie na liście niedziałających) – inaczej nic nie instaluje
+          if python3 -c "import json,os,sys;b=json.load(open('scripts/okladki-r2-bledy.json')) if os.path.exists('scripts/okladki-r2-bledy.json') else {};d=json.load(open('spolszczenia.json'));sys.exit(0 if any(str(g.get('img') or '').startswith('http') and not str(g.get('img')).startswith('https://cdn.grypopolsku.pl/') and g.get('img') not in b for g in d) else 1)"; then
+            python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q pillow boto3 && /tmp/okl/bin/python scripts/okladki-r2.py && python3 scripts/okladki-r2-zastosuj.py
+          else
+            echo "Brak nowych okładek."
+          fi
       - name: Generuj strony Aktualności
         if: always()
         run: node scripts/news.mjs
@@ -37,7 +52,7 @@ jobs:
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json
+          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json
           git rm -q --cached --ignore-unmatch import-lektor.json
           echo "PRE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           if [ -n "$(git status --porcelain)" ]; then

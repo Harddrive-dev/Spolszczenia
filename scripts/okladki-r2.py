@@ -21,6 +21,8 @@ GRY = [x.strip().lower() for x in os.environ.get("GRY", "").split(";") if x.stri
 MAX_W = int(os.environ.get("SZER") or 480)
 JAKOSC = int(os.environ.get("JAKOSC") or 88)
 MAPA_F = "scripts/okladki-r2-mapa.json"
+BLEDY_F = "scripts/okladki-r2-bledy.json"  # adresy, których nie da się pobrać (np. 404) – automat ich już nie próbuje
+BLEDY = json.load(open(BLEDY_F, encoding="utf-8")) if os.path.exists(BLEDY_F) else {}
 
 def slug(t):
     t = str(t).lower().replace("ł", "l")
@@ -43,7 +45,7 @@ gry = json.load(open("spolszczenia.json", encoding="utf-8"))
 kand, widziane = [], set()
 for g in gry:
     img = g.get("img") or ""
-    if not re.match(r"^https?://", img) or img.startswith(CDN):
+    if not re.match(r"^https?://", img) or img.startswith(CDN) or img in BLEDY:
         continue
     if GRY and (g.get("game") or "").lower() not in GRY:
         continue
@@ -55,6 +57,9 @@ for g in gry:
 if LIMIT:
     kand = kand[:LIMIT]
 print("Tryb: %s, do przeniesienia: %d" % (TRYB, len(kand)))
+if not kand:
+    print("Nic do przeniesienia.")
+    sys.exit(0)
 
 mapa = {}
 if os.path.exists(MAPA_F):
@@ -94,6 +99,11 @@ print("Podsumowanie: OK %d, błędy %d, razem %d KB -> %d KB" % (len(raport), le
 print("Raport: %sokladki/_raport.json" % CDN)
 
 if TRYB == "wgraj":
+    for b_ in bledy:
+        if "404" in b_["blad"] or "403" in b_["blad"] or "cannot identify image" in b_["blad"]:
+            BLEDY[b_["stary"]] = b_["game"] + ": " + b_["blad"]
+    with open(BLEDY_F, "w", encoding="utf-8") as f:
+        f.write(json.dumps(BLEDY, ensure_ascii=False, indent=1) + "\n")
     json.dump(mapa, open(MAPA_F, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     open(MAPA_F, "a").write("\n")
     print("Zapisano mapę (%d adresów) w %s" % (len(mapa), MAPA_F))

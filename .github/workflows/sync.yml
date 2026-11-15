@@ -8,6 +8,10 @@ on:
         description: "Wyślij wiadomość testową na Discord"
         type: boolean
         default: false
+      sprzataj_okladki:
+        description: "Uruchom teraz sprzątanie nieużywanych okładek na R2 (normalnie raz dziennie ok. 4:00)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 jobs:
@@ -36,6 +40,21 @@ jobs:
           else
             echo "Brak nowych okładek."
           fi
+      - name: Sprzątanie okładek na R2 (raz dziennie)
+        # usuwa z okladki/ pliki, których żadna gra nie używa od co najmniej 30 dni (np. stara okładka po podmianie)
+        continue-on-error: true
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RECZNIE: ${{ github.event.inputs.sprzataj_okladki }}
+        run: |
+          if [ "$(date -u +%H)" = "03" ] || [ "$RECZNIE" = "true" ]; then
+            [ -x /tmp/okl/bin/python ] || { python3 -m venv /tmp/okl && /tmp/okl/bin/pip install -q boto3; }
+            /tmp/okl/bin/python scripts/okladki-r2-sprzataj.py
+          else
+            echo "Sprzątanie tylko raz dziennie (ok. 4:00–5:00 czasu polskiego)."
+          fi
       - name: Generuj strony Aktualności
         if: always()
         run: node scripts/news.mjs
@@ -52,7 +71,7 @@ jobs:
       - name: Zapisz zmiany
         if: always()
         run: |
-          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json
+          git add -A spolszczenia.json aktualnosci gra sitemap.xml index.html scripts/discord-komentarze.json scripts/okladki-r2-mapa.json scripts/okladki-r2-bledy.json scripts/okladki-r2-nieuzywane.json
           git rm -q --cached --ignore-unmatch import-lektor.json
           echo "PRE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           if [ -n "$(git status --porcelain)" ]; then

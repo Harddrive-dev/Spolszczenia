@@ -9160,12 +9160,12 @@
     "type": "Dubbing",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.4.1",
+    "ver": "0.5.0",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
     "img": "https://cdn.grypopolsku.pl/okladki/world-of-warcraft-forever-d397fa07.webp",
-    "upd": "2026-11-13",
+    "upd": "2026-11-15",
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
     "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
@@ -15290,11 +15290,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.4",
+    "ver": "1.6",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/wo-long",
     "dodano": "2026-08-22",
-    "upd": "2026-11-14",
+    "upd": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/wo-long-fallen-dynasty-e3de4a76.webp",
     "opis": "Wymagająca gra akcji osadzona w Chinach okresu Trzech Królestw. Młody milicjant walczy z demonami w szybkich starciach opartych na parowaniu.",
     "steam": 1448440
@@ -15611,7 +15611,20 @@
     "upd": "2026-11-04",
     "genre": "Akcja",
     "opis": "Gra o przetrwaniu w otwartym świecie opanowanym przez zombie. Zbierasz zapasy, budujesz bazę i walczysz sam lub w kooperacji.",
-    "steam": 1766060
+    "steam": 1766060,
+    "spolszczenia": [
+      {
+        "id": "humanitz--vetspolszczenia",
+        "author": "VetSpolszczenia",
+        "link": "https://vetspolszczenia.pl/projekt.html?id=humanitz",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-15",
+        "dodano": "2026-11-15"
+      }
+    ]
   },
   {
     "game": "Lost Records: Bloom & Rage",

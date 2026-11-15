@@ -228,7 +228,7 @@ html{-webkit-tap-highlight-color:transparent}
 
 /* Moje ulubione: serduszko przy nazwie gry + dymek (11.2026) */
 .gtt{display:flex;align-items:flex-start;gap:14px}
-.gfav{flex:none;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px 0 12px;margin-top:6px;border-radius:999px;border:1.5px solid #e0566b;background:transparent;color:#e0566b;font:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.gfav{flex:none;display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px 0 10px;margin-top:6px;border-radius:999px;border:1.5px solid #e0566b;background:transparent;color:#e0566b;font:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
 .gfav[hidden]{display:none}
 .gfav:hover{background:color-mix(in srgb,#e0566b 12%,transparent)}
 .gfav.on{background:#e0566b;color:#fff}

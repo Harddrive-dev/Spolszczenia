@@ -1,24 +1,27 @@
-# Zrzuty ekranu z gier (galeria „Jak to wygląda po polsku” na stronach gier).
-# Właściciel wgrywa obrazki w panelu Cloudflare do folderu  zrzuty/<klucz-gry>/  (klucz = końcówka adresu strony gry,
-# np. zrzuty/life-is-strange-remastered/1.png). Kolejność w galerii = kolejność nazw plików (1.png, 2.png, ...).
-# Opcjonalnie plik  zrzuty/<klucz-gry>/podpis.txt  z tekstem pod galerią (np. „Zrzuty: Ryszard Chojnowski”).
-# Automat (krok w sync.yml) co 30 min:
-#  - robi z każdego obrazka WebP (maks. 1600 px szerokości) i miniaturkę (maks. 640 px) w  zrzuty-web/<klucz-gry>/,
-#    nazwa zawiera skrót pliku, więc podmieniony obrazek dostaje nowy adres,
-#  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": duży, "m": miniaturka}], „zrzutyPodpis”),
-#  - duże oryginały (>1 MB albo nie-WebP) zamienia w zrzuty/ na lekki WebP 1920 px (ta sama nazwa, końcówka .webp),
-#  - usuwa z zrzuty-web/ pliki, których już nic nie używa.
+# Zrzuty ekranu z gier (galeria „Jak to wygląda po polsku” na stronach gier). Wszystko w jednym folderze gry:
+#   zrzuty/<klucz-gry>/1.webp            – zrzut (pokazywany po kliknięciu)
+#   zrzuty/<klucz-gry>/1-miniatura.webp  – miniaturka robiona przez automat (nie ruszać ręcznie)
+#   zrzuty/<klucz-gry>/podpis.txt        – opcjonalnie tekst pod galerią (np. „Zrzuty: Ryszard Chojnowski”)
+# Klucz = końcówka adresu strony gry. Kolejność w galerii = numery w nazwach (1, 2, 3, ...).
+# Właściciel wgrywa obrazki (PNG/JPG/WebP, dowolny rozmiar). Automat (krok w sync.yml) co 30 min:
+#  - duże albo nie-WebP pliki zamienia na lekki WebP (maks. 1920 px, jakość 90) pod tą samą nazwą (.webp), stary plik usuwa,
+#  - robi miniaturkę <nazwa>-miniatura.webp (maks. 640 px) – na nowo, gdy zrzut się zmieni,
+#  - usuwa miniaturki bez zrzutu,
+#  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": zrzut, "m": miniaturka}], „zrzutyPodpis”);
+#    adresy mają na końcu ?v=<skrót pliku>, więc po podmianie zrzutu przeglądarki od razu biorą nowy.
 # Klucze R2 tylko w sekretach GitHuba: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ACCOUNT_ID.
-import os, io, json, re, sys, hashlib
+import os, io, json, re, hashlib
 from PIL import Image
 import boto3
 from botocore.config import Config
 
 CDN = "https://cdn.grypopolsku.pl/"
 BUCKET = "grypopolsku"
-SRC, WEB = "zrzuty/", "zrzuty-web/"
-MAX_D, MAX_M = 1600, 640
+SRC = "zrzuty/"
+STARY_WEB = "zrzuty-web/"            # dawny osobny folder (do 15.11) – automat go sprząta
+MAX_D, MAX_M, MAX_ORYG = 1920, 640, 1024 * 1024
 OBRAZ = re.compile(r"\.(png|jpe?g|webp|gif|bmp)$", re.I)
+MINI = "-miniatura.webp"
 
 s3 = boto3.client(
     "s3",
@@ -42,19 +45,21 @@ def slug(t):
     t = "".join(c for c in unicodedata.normalize("NFD", t) if not unicodedata.combining(c))
     return re.sub(r"^-|-$", "", re.sub(r"[^a-z0-9]+", "-", t))
 
-def nat(s):  # 2.png przed 10.png
+def nat(s):  # 2.webp przed 10.webp
     return [int(x) if x.isdigit() else x.lower() for x in re.split(r"(\d+)", s)]
 
 def webp(dane, szer, jakosc):
-    im = Image.open(io.BytesIO(dane))
-    im = im.convert("RGB")
+    im = Image.open(io.BytesIO(dane)).convert("RGB")
     if im.width > szer:
         im = im.resize((szer, round(im.height * szer / im.width)), Image.LANCZOS)
     b = io.BytesIO()
     im.save(b, "WEBP", quality=jakosc, method=6)
     return b.getvalue()
 
-zrodla, gotowe = lista(SRC), lista(WEB)
+def skrot(o):
+    return hashlib.sha1(str(o.get("ETag", "")).strip('"').encode()).hexdigest()[:8]
+
+zrodla = lista(SRC)
 gry = json.load(open("spolszczenia.json", encoding="utf-8"))
 klucze = {}
 for g in gry:
@@ -62,8 +67,7 @@ for g in gry:
     if k:
         klucze.setdefault(k, []).append(g)
 
-foldery = {}
-podpisy = {}
+foldery, miniatury, podpisy = {}, {}, {}
 for k in zrodla:
     czesci = k[len(SRC):].split("/")
     if len(czesci) != 2 or not czesci[1]:
@@ -71,12 +75,13 @@ for k in zrodla:
     gra, plik = czesci
     if plik.lower() == "podpis.txt":
         podpisy[gra] = k
+    elif plik.lower().endswith(MINI):
+        miniatury[k] = gra
     elif OBRAZ.search(plik):
         foldery.setdefault(gra, []).append(k)
 
-# Duże oryginały (np. PNG prosto z gry, 3–10 MB) zamieniamy na lekki WebP (maks. 1920 px, jakość 90, zwykle 0,2–0,6 MB):
-# zrzuty/<gra>/1.png -> zrzuty/<gra>/1.webp, a stary plik usuwamy. Oszczędza miejsce na R2 (darmowe 10 GB).
-MAX_ORYG = 1024 * 1024
+bledy, galerie, nowe = [], {}, 0
+# 1) duże albo nie-WebP pliki -> lekki WebP pod tą samą nazwą
 for gra, pliki in foldery.items():
     for i, k in enumerate(list(pliki)):
         o = zrodla[k]
@@ -87,40 +92,40 @@ for gra, pliki in foldery.items():
             continue  # jest już plik o tej nazwie – nic nie ruszamy
         try:
             b = webp(s3.get_object(Bucket=BUCKET, Key=k)["Body"].read(), MAX_D, 90)
-            r = s3.put_object(Bucket=BUCKET, Key=nowy, Body=b, ContentType="image/webp")
+            r = s3.put_object(Bucket=BUCKET, Key=nowy, Body=b, ContentType="image/webp", CacheControl="public, max-age=31536000")
             if nowy != k:
                 s3.delete_object(Bucket=BUCKET, Key=k)
                 zrodla.pop(k, None)
-            zrodla[nowy] = {"Key": nowy, "ETag": r["ETag"], "Size": len(b)}
+            zrodla[nowy] = {"Key": nowy, "ETag": r["ETag"], "Size": len(b), "LastModified": None}
             pliki[i] = nowy
-            print("Zmniejszono oryginał: %s (%d KB) -> %s (%d KB)" % (k, o.get("Size", 0) // 1024, nowy, len(b) // 1024))
+            print("Zmniejszono: %s (%d KB) -> %s (%d KB)" % (k, o.get("Size", 0) // 1024, nowy, len(b) // 1024))
         except Exception as e:
-            print("UWAGA: nie udało się zmniejszyć %s: %s" % (k, str(e)[:150]))
+            bledy.append("nie udało się zmniejszyć %s: %s" % (k, str(e)[:150]))
 
-uzywane, nowe, bledy, galerie = set(), 0, [], {}
+# 2) miniaturki + lista do galerii
+potrzebne = set()
 for gra, pliki in sorted(foldery.items()):
     if gra not in klucze:
         bledy.append("folder zrzuty/%s/ – nie ma gry o takim adresie (sprawdź końcówkę adresu strony gry)" % gra)
         continue
     lst = []
     for k in sorted(pliki, key=nat)[:12]:
-        etag = zrodla[k]["ETag"].strip('"')
-        nazwa = re.sub(r"[^a-z0-9]+", "-", os.path.splitext(k.rsplit("/", 1)[1])[0].lower()).strip("-") or "zrzut"
-        skrot = hashlib.sha1(etag.encode()).hexdigest()[:8]
-        kd, km = "%s%s/%s-%s.webp" % (WEB, gra, nazwa, skrot), "%s%s/%s-%s-t.webp" % (WEB, gra, nazwa, skrot)
-        if kd not in gotowe or km not in gotowe:
+        o = zrodla[k]
+        km = os.path.splitext(k)[0] + MINI
+        potrzebne.add(km)
+        m = zrodla.get(km)
+        # miniaturka do zrobienia: brak albo starsza niż zrzut (zrzut świeżo zmniejszony = LastModified None)
+        if not m or o.get("LastModified") is None or (m.get("LastModified") and o["LastModified"] > m["LastModified"]):
             try:
-                dane = s3.get_object(Bucket=BUCKET, Key=k)["Body"].read()
-                for klucz, szer, jak in ((kd, MAX_D, 82), (km, MAX_M, 78)):
-                    s3.put_object(Bucket=BUCKET, Key=klucz, Body=webp(dane, szer, jak), ContentType="image/webp",
-                                  CacheControl="public, max-age=31536000, immutable")
+                b = webp(s3.get_object(Bucket=BUCKET, Key=k)["Body"].read(), MAX_M, 78)
+                r = s3.put_object(Bucket=BUCKET, Key=km, Body=b, ContentType="image/webp", CacheControl="public, max-age=31536000")
+                zrodla[km] = m = {"Key": km, "ETag": r["ETag"], "Size": len(b)}
                 nowe += 1
-                print("Nowy zrzut: %s -> %s" % (k, kd))
+                print("Miniaturka: %s" % km)
             except Exception as e:
                 bledy.append("%s: %s" % (k, str(e)[:150]))
                 continue
-        uzywane.update((kd, km))
-        lst.append({"d": CDN + kd, "m": CDN + km})
+        lst.append({"d": CDN + k + "?v=" + skrot(o), "m": CDN + km + "?v=" + skrot(m)})
     if lst:
         galerie[gra] = lst
 
@@ -132,6 +137,7 @@ for gra, k in podpisy.items():
         except Exception as e:
             bledy.append("%s: %s" % (k, str(e)[:150]))
 
+# 3) katalog
 zmiany = 0
 for k, gs in klucze.items():
     for g in gs:
@@ -146,13 +152,13 @@ if zmiany:
     with open("spolszczenia.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(gry, ensure_ascii=False, indent=2) + "\n")
 
-# zrzuty-web/: usuwamy tylko pliki zrobione przez automat, których nic już nie używa (np. po podmianie obrazka)
-if not bledy or galerie:
-    stare = [k for k in gotowe if k not in uzywane]
-    for i in range(0, len(stare), 1000):
-        s3.delete_objects(Bucket=BUCKET, Delete={"Objects": [{"Key": k} for k in stare[i:i + 1000]], "Quiet": True})
-    for k in stare:
-        print("Usunięto nieużywany:", k)
-print("Zrzuty: gier z galerią %d, nowych obrazków %d, zmienionych wpisów %d." % (len([k for k in galerie if "\0" not in k]), nowe, zmiany))
+# 4) sprzątanie: miniaturki bez zrzutu (tylko w folderach gier z katalogu) i dawny folder zrzuty-web/
+stare = [k for k, gra in miniatury.items() if k not in potrzebne and (gra in klucze or gra not in foldery)]
+stare += list(lista(STARY_WEB))
+for i in range(0, len(stare), 1000):
+    s3.delete_objects(Bucket=BUCKET, Delete={"Objects": [{"Key": k} for k in stare[i:i + 1000]], "Quiet": True})
+for k in stare:
+    print("Usunięto:", k)
+print("Zrzuty: gier z galerią %d, nowych miniaturek %d, zmienionych wpisów %d." % (len([k for k in galerie if "\0" not in k]), nowe, zmiany))
 for b in bledy:
     print("UWAGA:", b)

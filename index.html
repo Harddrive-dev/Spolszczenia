@@ -2405,6 +2405,7 @@ function mergeApproved(rows){
         if(f==="genre"||f==="opis"){if(v)gm[f]=f==="opis"?v.slice(0,500):v;else delete gm[f];return}
         if(f==="type"){if(TYPES.indexOf(v)>-1)gm.type=v;return}
         if(f==="prog"){gm.prog=Math.max(0,Math.min(100,+v||0));return}
+        if(f==="author"||f==="ver"){gm[f]=v||"—";return} // puste pole = brak autora / wersji (wcześniej puste pole nic nie zmieniało)
         if(v)gm[f]=v});if(day&&!(d.changes||[]).some(function(c){return c.field==="upd"})&&spUpdKey(przedM,gm))gm.upd=day;if(gm._usun)list.splice(list.indexOf(gm),1)}
     else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
   return list}

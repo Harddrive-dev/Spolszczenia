@@ -58,6 +58,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="genre"||f==="opis"){if(v)g[f]=f==="opis"?v.slice(0,500):v;else delete g[f];continue}
    if(f==="type"){if(TYPES.includes(v))g.type=v;continue}
    if(f==="prog"){g.prog=Math.max(0,Math.min(100,+v||0));continue}
+   if(f==="author"||f==="ver"){g[f]=v||"—";continue} // puste pole = brak autora / wersji
    if(v)g[f]=v}
   if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day;
   if(g._usun)list.splice(list.indexOf(g),1)}

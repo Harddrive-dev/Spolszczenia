@@ -2370,6 +2370,7 @@ if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader
 if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH)route();
 
 var baseItems=[];
+var JSON_T=0; // kiedy powstał wczytany spolszczenia.json (nagłówek Last-Modified)
 function mergeApproved(rows){
   var list=baseItems.map(function(g){return Object.assign({},g)}),TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"],DUBST=["Gotowe","Beta","Testy"];
   function find(k){return list.filter(function(g){return keyOf(g)===k})[0]}
@@ -2403,7 +2404,7 @@ function mergeApproved(rows){
         if(f==="dubStatus"){if(DUBST.indexOf(v)>-1)gm.dubStatus=v;else if(!v)delete gm.dubStatus;return}
         if(f==="game"){if(!v)return;if(!gm.id)gm.id=keyOf(gm);gm.game=v;return}
         if(f==="link"){if(/^https?:\/\//i.test(v))gm.link=v;else if(!v&&((d.changes||[]).some(function(x){return x.field==="pl"&&x.to==="of"})||gm.pl==="of"))delete gm.link;return}
-        if(f==="img"){if(/^https:\/\/cdn\.grypopolsku\.pl\//.test(gm.img||"")&&!/^https:\/\/cdn\.grypopolsku\.pl\//.test(v))return; // okładka już na R2 – stara zmiana jej nie cofa (nową okładkę i tak wpisze automat w ciągu 30 min)
+        if(f==="img"){if(/^https:\/\/cdn\.grypopolsku\.pl\//.test(gm.img||"")&&!/^https:\/\/cdn\.grypopolsku\.pl\//.test(v)&&!(Date.parse(r.created_at||"")>JSON_T))return; // okładka już na R2 – zmiana, którą automat już przerobił (starsza niż plik katalogu), jej nie cofa; nowa okładka moderatora pokazuje się od razu, a automat w ciągu 30 min przenosi ją na R2
           if(!v)delete gm.img;else if(/^(https?:\/\/|img\/)/i.test(v))gm.img=v;return}
         if(f==="premiera"){if(/^\d{4}-\d{2}-\d{2}$/.test(v))gm.premiera=v;else if(!v)delete gm.premiera;return}
         if(f==="genre"||f==="opis"){if(v)gm[f]=f==="opis"?v.slice(0,500):v;else delete gm[f];return}
@@ -2414,7 +2415,7 @@ function mergeApproved(rows){
     else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
   return list}
 function loadCatalog(){
-  return fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  return fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;JSON_T=Date.parse(r.headers.get("last-modified")||"")||0;return r.json()}).then(function(d){
     d.forEach(function(g){if(g.status==="W toku")g.status="Beta"});baseItems=d;items=d;refresh();
     if(CM)sb.rpc("approved_changes").then(function(r){if(r.error){console.warn("approved_changes:",r.error.message);return}if(r.data&&r.data.length){items=mergeApproved(r.data);items.forEach(function(g){if(g.status==="W toku")g.status="Beta"});refresh()}}).catch(function(e){console.warn("approved_changes:",e)})
   }).catch(function(){

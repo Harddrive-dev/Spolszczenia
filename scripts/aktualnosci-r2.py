@@ -1,8 +1,10 @@
 # Obrazki do Aktualności na R2 (folder aktualnosci/) – zamiana PNG/JPG na lekki WebP.
 # Automat (krok w sync.yml, co 30 min):
 #  1) dla każdego aktualnosci/<nazwa>.png|.jpg robi aktualnosci/<nazwa>.webp (maks. 1920 px, jakość 88),
-#  2) dla każdego .webp robi kopię aktualnosci/<nazwa>.og.jpg (maks. 1200 px) – tylko do podglądu linku
-#     na Facebooku/Messengerze (nie wszystkie serwisy pokazują WebP); news.mjs wpisuje ją w og:image,
+#  2) robi kopię aktualnosci/<nazwa>.og.jpg (maks. 1200 px) – tylko do podglądu linku na Facebooku/Messengerze
+#     (nie wszystkie serwisy pokazują WebP); news.mjs wpisuje ją w og:image. Kopia powstaje tylko dla obrazka,
+#     który strony wpisów faktycznie podają do udostępniania (albo dla nowego obrazka, jeszcze nieużywanego na stronach);
+#     kopie, których żadna strona nie używa (np. miniaturek), automat usuwa,
 #  3) stary PNG/JPG usuwa dopiero wtedy, gdy jest już WebP i żadna strona w repozytorium (aktualnosci/, index.html)
 #     nie odwołuje się do starego adresu – czyli po zmianie adresów we wpisach na .webp.
 # Klucze R2 tylko w sekretach GitHuba: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ACCOUNT_ID.
@@ -74,10 +76,16 @@ for k in sorted(klucze):
     except Exception as e:
         bledy.append("%s: %s" % (k, str(e)[:150]))
 
+tekst = uzywane()
 for w in sorted(x for x in klucze if x.endswith(".webp") and x.count("/") == 1):
     og = w[:-5] + OG
     if og in klucze:
+        if og not in tekst and w in tekst:   # obrazek jest na stronach, ale nie do udostępniania (np. miniaturka)
+            s3.delete_object(Bucket=BUCKET, Key=og); klucze.discard(og)
+            print("Usunięto niepotrzebną kopię:", og)
         continue
+    if w in tekst and og not in tekst:
+        continue   # np. miniaturka – do udostępniania używany jest duży obraz
     try:
         b = zapisz(odczyt(w), 1200, "JPEG", 85)
         s3.put_object(Bucket=BUCKET, Key=og, Body=b, ContentType="image/jpeg", CacheControl="public, max-age=86400")
@@ -86,7 +94,6 @@ for w in sorted(x for x in klucze if x.endswith(".webp") and x.count("/") == 1):
     except Exception as e:
         bledy.append("%s: %s" % (w, str(e)[:150]))
 
-tekst = uzywane()
 for k in sorted(klucze):
     if k.lower().endswith(OG) or not STARE.search(k) or k.count("/") != 1:
         continue

@@ -842,14 +842,14 @@ function ytId(u){var m=String(u||"").trim().match(/^https?:\/\/(?:www\.|m\.)?(?:
 function hasSp(g){return !!g.link&&g.pl!=="of"}
 function spExtra(g){return Array.isArray(g.spolszczenia)?g.spolszczenia.filter(function(s){return s&&/^https?:\/\//i.test(s.link||"")}):[]}
 function authorsOf(g){var ex=spExtra(g),m=g.author&&g.author!=="—"?g.author:(g.dub&&g.dubAuthor)||"",a=[];
-  if(m)a.push(m);else if(ex.length&&g.link)a.push("nieznany autor");
-  ex.forEach(function(s){var n=s.author&&s.author!=="—"?s.author:"nieznany autor";if(a.indexOf(n)<0)a.push(n)});
+  if(m)a.push(m);else if(ex.length&&g.link)a.push("—");
+  ex.forEach(function(s){var n=s.author&&s.author!=="—"?s.author:"—";if(a.indexOf(n)<0)a.push(n)});
   return a.sort(function(x,y){return x.localeCompare(y,"pl")})}
 // Wersja każdego spolszczenia w tej samej kolejności co autorzy w kolumnie „Autor” (każda na wysokości swojego autora).
 function versPairs(g){var ex=spExtra(g),m=g.author&&g.author!=="—"?g.author:(g.dub&&g.dubAuthor)||"",p=[],seen=Object.create(null);
   function add(n,v){if(seen[n])return;seen[n]=1;p.push({n:n,v:v&&v!=="—"?v:"—"})}
-  if(m)add(m,g.ver);else if(ex.length&&g.link)add("nieznany autor",g.ver);
-  ex.forEach(function(s){add(s.author&&s.author!=="—"?s.author:"nieznany autor",s.ver)});
+  if(m)add(m,g.ver);else if(ex.length&&g.link)add("—",g.ver);
+  ex.forEach(function(s){add(s.author&&s.author!=="—"?s.author:"—",s.ver)});
   return p.sort(function(x,y){return x.n.localeCompare(y.n,"pl")})}
 function versionsCell(g){var p=versPairs(g);if(p.length<2)return esc(g.ver||"—");
   return p.map(function(x){return '<span class="au1" title="'+esc(x.n)+'">'+esc(x.v)+'</span>'}).join("")}
@@ -2373,10 +2373,14 @@ var baseItems=[];
 function mergeApproved(rows){
   var list=baseItems.map(function(g){return Object.assign({},g)}),TYPES=["Napisy","Pełne","Dubbing"],EDIT=["status","ver","author","genre","link"],DUBST=["Gotowe","Beta","Testy"];
   function find(k){return list.filter(function(g){return keyOf(g)===k})[0]}
+  // linki celowo zastąpione przez moderatora – stare zgłoszenie „new” nie dodaje ich z powrotem jako dodatkowego spolszczenia (jak w sync.mjs)
+  var ZAST={};rows.forEach(function(r){if(r.kind!=="modedit")return;((r.data||{}).changes||[]).forEach(function(c){
+    if(c.field==="link"&&c.from&&String(c.to||"").trim()!==String(c.from).trim())ZAST[String(c.from).trim()]=1;
+    if(c.field==="spolszczenia"){var a=[],b=[];try{a=JSON.parse(c.from||"[]");b=JSON.parse(c.to||"[]")}catch(e){}var nw={};(b||[]).forEach(function(s){nw[String(s.link||"").trim()]=1});(a||[]).forEach(function(s){var l=String(s.link||"").trim();if(l&&!nw[l])ZAST[l]=1})}})});
   rows.forEach(function(r){var d=r.data||{},day=String(r.created_at||"").slice(0,10);
     if(r.kind==="new"){var name=String(d.game||r.game||"").trim(),link=String(d.link||"");
       var gOf=d.pl==="of",gLk=/^https?:\/\//i.test(d.lore||"")||/^https?:\/\//i.test(d.gamereader||"")||/^https?:\/\//i.test(d.dub||"");
-      var exG=find(slug(name));if(exG){if(/^https?:\/\//i.test(link))spAdd(exG,d,link,day,keyOf);return}if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk))return;
+      var exG=find(slug(name));if(exG){if(/^https?:\/\//i.test(link)&&!ZAST[link.trim()])spAdd(exG,d,link,day,keyOf);if(ZAST[link.trim()]&&Array.isArray(exG.spolszczenia)){exG.spolszczenia=exG.spolszczenia.filter(function(s){return s.link!==link.trim()||s.id!==keyOf(exG)+"--"+(slug(d.author||"")||"autor")});if(!exG.spolszczenia.length)delete exG.spolszczenia}return}if(!name||(!/^https?:\/\//i.test(link)&&!gOf&&!gLk))return;
       var e={game:name,platform:d.platform||"PC",type:TYPES.indexOf(d.type)>-1?d.type:"Napisy",status:d.status||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
       if(/^https?:\/\//i.test(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(/^https?:\/\//i.test(d.lore||""))e.lore=d.lore;if(/^https?:\/\//i.test(d.gamereader||""))e.gamereader=d.gamereader;if(/^https?:\/\//i.test(d.dub||"")){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.indexOf(d.dubStatus)>-1)e.dubStatus=d.dubStatus}if(ytId(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
       if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=String(d.img);if(d.opis)e.opis=String(d.opis).slice(0,500);var est=steamParse(Array.isArray(d.steam)?d.steam.join(","):d.steam);if(est&&est.length)steamSet(e,est);if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;list.push(e)}

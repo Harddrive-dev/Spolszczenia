@@ -67,7 +67,7 @@ for(const g of games){
   const exSp=Array.isArray(g.spolszczenia)?g.spolszczenia.filter(s=>s&&/^https?:\/\//.test(s.link||"")):[],multi=exSp.length>0;
   const spTxt=s=>{const p=Math.round(+s.prog);return (s.status==="W trakcie"||s.status==="Korekta")&&isFinite(p)&&p<100?s.status+" · "+Math.max(0,p)+"%":(s.status||"Gotowe")};
   const spList=(hasSp?[{author:g.author,link:g.link,type:g.type,status:g.status,prog:g.prog,ver:g.ver,upd:g.upd}]:[]).concat(exSp).sort((a,b)=>(a.status==="Gotowe"?0:1)-(b.status==="Gotowe"?0:1)||String(b.upd||"").localeCompare(String(a.upd||"")));
-  const spAut=s=>s.author&&s.author!=="—"?s.author:"nieznany autor",spAll=[...new Set(spList.map(spAut))].join(", ");
+  const spAut=s=>s.author&&s.author!=="—"?s.author:"—",spAll=[...new Set(spList.map(spAut))].join(", ");
   const spSec=multi?'<div class="spl"><h2>Dostępne spolszczenia ('+spList.length+')</h2>'+spList.map(s=>'<div class="spr"><div class="sx"><b>'+esc(spAut(s))+'</b><small>'+esc([s.type||"Napisy",spTxt(s),s.ver&&s.ver!=="—"?"wersja "+s.ver:""].filter(Boolean).join(" · "))+'</small></div><a href="'+esc(safe(s.link))+'" target="_blank" rel="noopener"><span>Pobierz ↗</span>'+(host(s.link)?'<small>'+esc(host(s.link))+'</small>':'')+'</a></div>').join("")+'</div>':"";
   const pr=Math.round(+g.prog),wip=(g.status==="W trakcie"||g.status==="Korekta")&&isFinite(pr)&&pr<100,stTxt=wip?g.status+" ("+Math.max(0,pr)+"% ukończone)":(g.status||"—");
   const plat1=plat.split(",")[0].trim(),naPl=String(g.game).toLowerCase().includes(plat1.toLowerCase())?"":" na "+plat1,autor1=g.author&&g.author!=="—"?g.author:"";

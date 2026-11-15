@@ -23,12 +23,18 @@ const spNorm=a=>{const seen=new Set();return (Array.isArray(a)?a:[]).map(s=>({id
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
 const spUpd=(o,n)=>!!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Korekta","Beta","Testy","Zapowiedź"].includes(o.status)&&n.status==="Gotowe")));
 const spAdd=(g,d,link,day)=>{const a=Array.isArray(g.spolszczenia)?g.spolszczenia:[];if(g.link===link||a.some(s=>s.link===link))return;const base=keyOf(g)+"--"+(slug(d.author||"")||"autor");let id=base,n=2;while(a.some(s=>s.id===id))id=base+"-"+(n++);a.push(spNorm([{id,author:d.author,link,type:d.type,status:d.status==="W toku"?"Beta":d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0]);g.spolszczenia=a};
+// Linki, które moderator celowo zastąpił (zmiana „link”) albo usunął z listy dodatkowych spolszczeń. Stare zgłoszenie „new” tej gry
+// nie dodaje ich z powrotem jako dodatkowego spolszczenia (np. Life is Strange Remastered 15.11: link .niux zamieniony na plik z R2).
+const ZASTAPIONE=new Set();
+for(const r of rows){if(r.kind!=="modedit")continue;const d=r.data||{};for(const c of d.changes||[]){
+ if(c.field==="link"&&c.from&&String(c.to||"").trim()!==String(c.from).trim())ZASTAPIONE.add(String(c.from).trim());
+ if(c.field==="spolszczenia"){let a=[],b=[];try{a=JSON.parse(c.from||"[]");b=JSON.parse(c.to||"[]")}catch{}const nowe=new Set((b||[]).map(s=>String(s.link||"").trim()));for(const s of a||[]){const l=String(s.link||"").trim();if(l&&!nowe.has(l))ZASTAPIONE.add(l)}}}}
 const renames=[];// [stary adres, nowy adres] z każdej zmiany nazwy gry – do przekierowań starych adresów stron gier
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
  if(r.kind==="modedit")for(const c of d.changes||[])if(c.field==="game"&&c.from&&c.to){const a=slug(c.from),b=slug(String(c.to).trim());if(a&&b&&a!==b)renames.push([a,b])}
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
-  const exG=name&&find(slug(name));if(exG){if(URLOK(link))spAdd(exG,d,link,day);continue}
+  const exG=name&&find(slug(name));if(exG){if(URLOK(link)&&!ZASTAPIONE.has(link.trim()))spAdd(exG,d,link,day);if(Array.isArray(exG.spolszczenia)&&ZASTAPIONE.has(link.trim())){exG.spolszczenia=exG.spolszczenia.filter(s=>s.link!==link.trim()||s.id!==keyOf(exG)+"--"+(slug(d.author||"")||"autor"));if(!exG.spolszczenia.length)delete exG.spolszczenia}continue}
   if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader)&&!URLOK(d.dub)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);

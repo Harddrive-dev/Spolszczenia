@@ -1,6 +1,6 @@
 # Sprzątanie okładek na R2: usuwa pliki z folderu okladki/, których nie używa żadna gra w spolszczenia.json
 # od co najmniej 30 dni (np. stara okładka po podmianie). Do tego czasu można jeszcze wrócić do starej okładki.
-# Stan („od kiedy nieużywana”) jest w scripts/okladki-r2-nieuzywane.json. Uruchamia go raz dziennie (ok. 4:00) krok w sync.yml; ręcznie: Actions → „Aktualizuj spolszczenia.json” → Run workflow → „sprzątanie okładek”.
+# Stan („od kiedy nieużywana”) jest w scripts/okladki-r2-nieuzywane.json. Uruchamia go co tydzień okladki-r2-sprzataj.yml.
 # Plików spoza okladki/ (np. test.webp) i raportu okladki/_raport.json nie rusza. Klucze tylko w sekretach GitHuba.
 import os, json, datetime
 import boto3

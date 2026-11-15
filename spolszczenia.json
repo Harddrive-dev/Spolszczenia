@@ -805,7 +805,8 @@
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/bloodrayne/",
     "genre": "Akcja",
-    "opis": "Rayne, pół wampirzyca, pół człowiek, walczy z nazistami parającymi się okultyzmem. Gra akcji z krwawą walką."
+    "opis": "Rayne, pół wampirzyca, pół człowiek, walczy z nazistami parającymi się okultyzmem. Gra akcji z krwawą walką.",
+    "steam": 3810
   },
   {
     "game": "Bloodrayne 2 (wersja bez filmów)",
@@ -819,7 +820,8 @@
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-wersja-bez-filmow/",
     "genre": "Akcja",
-    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach."
+    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach.",
+    "steam": 3820
   },
   {
     "game": "Bloodrayne 2 (wersja z filmami)",
@@ -833,7 +835,8 @@
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-wersja-z-filmami/",
     "genre": "Akcja",
-    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach."
+    "opis": "Kontynuacja przygód Rayne, w której mierzy się z wampirzymi rodami w jeszcze brutalniejszych walkach.",
+    "steam": 3820
   },
   {
     "game": "BloodRayne 2 Terminal Cut",
@@ -2567,7 +2570,8 @@
     "link": "https://grajpopolsku.pl/download/gabriel-knight-sins-of-the-fathers/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna przygodówka grozy. Pisarz Gabriel Knight bada serię morderstw w Nowym Orleanie, które łączą się z voodoo."
+    "opis": "Klasyczna przygodówka grozy. Pisarz Gabriel Knight bada serię morderstw w Nowym Orleanie, które łączą się z voodoo.",
+    "steam": 495700
   },
   {
     "game": "Galaxian",
@@ -3673,7 +3677,8 @@
     "link": "https://grajpopolsku.pl/download/monkey-island-2/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Guybrush Threepwood wraca w wielkim stylu. Przygodówka LucasArts, w której walczysz z piratem LeChuckiem."
+    "opis": "Guybrush Threepwood wraca w wielkim stylu. Przygodówka LucasArts, w której walczysz z piratem LeChuckiem.",
+    "steam": 32460
   },
   {
     "game": "Monkey Island 2 Special Edition: LeChuck's Revenge",
@@ -4287,7 +4292,8 @@
     "link": "https://grajpopolsku.pl/download/pt-boats/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Symulacja walk morskich z czasów II wojny światowej. Dowodzisz kutrami torpedowymi."
+    "opis": "Symulacja walk morskich z czasów II wojny światowej. Dowodzisz kutrami torpedowymi.",
+    "steam": 10250
   },
   {
     "game": "Quantum Break",
@@ -10872,7 +10878,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/patapon",
     "dodano": "2026-10-02",
     "upd": "2026-10-02",
-    "img": "https://cdn.grypopolsku.pl/okladki/patapon-42b4e9bc.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/patapon-42b4e9bc.webp",
+    "steam": 2383200
   },
   {
     "game": "Dread Delusion",
@@ -16714,10 +16721,11 @@
     "prog": 100,
     "ver": "—",
     "genre": "Przygodowa",
-    "author": "goliat",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4840",
+    "author": "Rysław",
+    "link": "https://ryslaw.pl/bladerunner/",
     "dodano": "2026-08-24",
-    "img": "https://cdn.grypopolsku.pl/okladki/blade-runner-3b8a67bf.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/blade-runner-de2617a3.webp",
+    "steam": 1678420
   },
   {
     "game": "POSTAL 2",

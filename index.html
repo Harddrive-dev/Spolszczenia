@@ -2104,6 +2104,23 @@ async function favToggle(k){
   delete FAV.busy[k]}
 function favMarkSeen(){var L=favUnread();if(!L.length)return;FAVV.fresh=(FAVV.fresh||[]).concat(L.map(keyOf));
   L.forEach(function(g){var k=keyOf(g),ev=nwEvent(g).date;FAV.m[k].s=ev;try{sb.from("favorites").update({seen:ev}).eq("game_key",k).then(function(){},function(){})}catch(e){}})}
+// Kliknięcie w grę w „Moich grach Steam” albo w „Moich ulubionych” = ta nowość przeczytana (prośba właściciela 15.11).
+// Zapis na koncie czeka chwilę (maks. 0,8 s) przed przejściem na stronę gry, żeby nie przerwało go przejście.
+function stMarkOne(g){var u=me();if(!u||!sb)return null;var nk=stNewKey(g);if(STEAM.fresh)STEAM.fresh=STEAM.fresh.filter(function(x){return x!==nk});
+  if(steamCat(g).indexOf("new")<0||stSeen().indexOf(nk)>-1)return null;
+  var cur={};steamMatches().forEach(function(x){if(steamCat(x).indexOf("new")>-1)cur[stNewKey(x)]=1});
+  var k=stSeen().concat([nk]).filter(function(x,i,a){return cur[x]&&a.indexOf(x)===i});
+  try{localStorage.setItem("steam.seen",JSON.stringify({u:u.id,k:k}))}catch(e){}STEAM.srvSeen={u:u.id,k:k};steamUI();
+  try{return sb.from("steam_seen").upsert({user_id:u.id,keys:k.slice(0,2000),updated_at:new Date().toISOString()})}catch(e){return null}}
+function favMarkOne(g){var k=keyOf(g);if(FAVV.fresh)FAVV.fresh=FAVV.fresh.filter(function(x){return x!==k});var f=FAV.m[k];if(!f||!favUnr(g))return null;
+  var ev=nwEvent(g).date;f.s=ev;favUI();try{return sb.from("favorites").update({seen:ev}).eq("game_key",k)}catch(e){return null}}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.ncard");if(!a||!(onSteam||onFav))return;
+  var m=(a.getAttribute("href")||"").match(/^\/gra\/([^\/]+)\/$/);if(!m)return;var g=gameByKey(decodeURIComponent(m[1]))||gameByKey(m[1]);if(!g)return;
+  var w=onSteam?stMarkOne(g):favMarkOne(g);if(w)w=Promise.resolve(w);a.classList.remove("unr");var d=a.querySelector(".unrd");if(d)d.remove();
+  if(!w||e.defaultPrevented||e.button||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||a.target==="_blank")return;
+  e.preventDefault();var href=a.href,go=function(){go=function(){};location.href=href};w.then(function(){go()},function(){go()});setTimeout(function(){go()},800)});
+// Powrót przyciskiem „Wstecz” może pokazać starą kopię strony z pamięci przeglądarki – odświeżamy wtedy oznaczenia.
+window.addEventListener("pageshow",function(e){if(!e.persisted)return;try{steamUI();favUI();if(onSteam)renderSteam();else if(onFav)renderFav()}catch(x){}});
 function favReady(g){return g.pl==="of"||g.status==="Gotowe"||g.status==="Beta"}
 function favTag(g){var s=g.status||"";if(g.pl==="of"||s==="Gotowe")return["ok","✓ Można grać po polsku"];if(s==="Beta")return["ok","✓ Można grać (wersja beta)"];
   if(s==="Zapowiedź"||s==="Premiera")return["wait","📅 "+s];return["wip","⏳ "+(s||"W przygotowaniu")+(s==="W trakcie"&&g.prog?" "+g.prog+"%":"")]}

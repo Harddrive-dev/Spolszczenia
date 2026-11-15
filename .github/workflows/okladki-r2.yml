@@ -1,0 +1,57 @@
+name: Okładki na R2 (cdn.grypopolsku.pl)
+# Uruchamiany ręcznie (Actions → „Okładki na R2” → Run workflow).
+# „proba” – wgrywa wybrane okładki na R2 i zapisuje raport (https://cdn.grypopolsku.pl/okladki/_raport.json), katalogu nie zmienia.
+# „wgraj” – wgrywa i podmienia adresy okładek w spolszczenia.json (stare adresy zapisane w scripts/okladki-r2-mapa.json).
+on:
+  workflow_dispatch:
+    inputs:
+      tryb:
+        description: "proba albo wgraj"
+        type: choice
+        options: [proba, wgraj]
+        default: proba
+      limit:
+        description: "Ile gier (0 = wszystkie)"
+        default: "10"
+      gry:
+        description: "Opcjonalnie: nazwy gier rozdzielone średnikiem"
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: okladki-r2
+jobs:
+  okladki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow boto3
+      - name: Wgraj okładki na R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          TRYB: ${{ github.event.inputs.tryb }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          GRY: ${{ github.event.inputs.gry }}
+        run: python scripts/okladki-r2.py
+      - name: Podmień adresy w katalogu i zapisz
+        if: github.event.inputs.tryb == 'wgraj'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp scripts/okladki-r2-mapa.json /tmp/mapa.json
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/mapa.json scripts/okladki-r2-mapa.json
+            python scripts/okladki-r2-zastosuj.py
+            git add spolszczenia.json scripts/okladki-r2-mapa.json
+            git diff --cached --quiet && { echo "Brak zmian."; exit 0; }
+            git commit -q -m "Okładki: przeniesienie na cdn.grypopolsku.pl (R2)"
+            git push -q origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

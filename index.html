@@ -221,9 +221,9 @@ body:has(.overlay.open){overflow:hidden}
 .uav{width:34px;height:34px;border-radius:50%;flex:none;overflow:hidden;background:var(--accent);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
 .uav img{width:100%;height:100%;object-fit:cover;display:block}
 .unm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.umenu{display:none;position:absolute;top:48px;left:0;min-width:240px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.umenu{display:none;position:absolute;top:48px;left:0;width:max-content;min-width:240px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .umenu.open{display:block}
-.umenu .btn{width:100%;white-space:nowrap}
+.umenu .btn{display:block;width:100%;white-space:nowrap}
 @media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
 .sprow{display:grid;grid-template-columns:1.2fr 1.6fr .9fr .9fr 64px .7fr auto;gap:6px;align-items:center;margin-bottom:6px}.sprow input,.sprow select{width:100%;min-width:0}@media (max-width:640px){.sprow{grid-template-columns:1fr 1fr;padding:8px 0;border-bottom:1px solid var(--line)}.sprow .sp_l{grid-column:1/-1;grid-row:2}}
 .bar{display:block;margin-bottom:10px}

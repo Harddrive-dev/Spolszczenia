@@ -1,6 +1,6 @@
 # Przenosi okładki gier na Cloudflare R2 (adres https://cdn.grypopolsku.pl/okladki/...).
 # - bierze gry z spolszczenia.json, których okładka (pole img) nie jest jeszcze na cdn.grypopolsku.pl,
-# - pobiera obrazek, zmniejsza do szerokości maks. 400 px i zapisuje jako WebP (jakość 80),
+# - pobiera obrazek, zmniejsza do szerokości maks. 480 px i zapisuje jako WebP (jakość 88; można zmienić: SZER, JAKOSC),
 # - wgrywa na R2 jako okladki/<klucz-gry>-<8 znaków skrótu>.webp (nazwa zmienia się razem z obrazkiem,
 #   więc przeglądarki mogą trzymać plik w pamięci na zawsze),
 # - zapisuje mapę stary adres -> nowy adres (scripts/okladki-r2-mapa.json), żeby dało się cofnąć.
@@ -18,7 +18,8 @@ BUCKET = "grypopolsku"
 TRYB = os.environ.get("TRYB", "proba")
 LIMIT = int(os.environ.get("LIMIT", "10") or 0)
 GRY = [x.strip().lower() for x in os.environ.get("GRY", "").split(";") if x.strip()]
-MAX_W, JAKOSC = 400, 80
+MAX_W = int(os.environ.get("SZER") or 480)
+JAKOSC = int(os.environ.get("JAKOSC") or 88)
 MAPA_F = "scripts/okladki-r2-mapa.json"
 
 def slug(t):

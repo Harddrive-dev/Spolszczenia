@@ -16,6 +16,12 @@ on:
       gry:
         description: "Opcjonalnie: nazwy gier rozdzielone średnikiem"
         default: ""
+      szer:
+        description: "Maks. szerokość okładki w px"
+        default: "480"
+      jakosc:
+        description: "Jakość WebP (1-100)"
+        default: "88"
 permissions:
   contents: write
 concurrency:
@@ -37,6 +43,8 @@ jobs:
           TRYB: ${{ github.event.inputs.tryb }}
           LIMIT: ${{ github.event.inputs.limit }}
           GRY: ${{ github.event.inputs.gry }}
+          SZER: ${{ github.event.inputs.szer }}
+          JAKOSC: ${{ github.event.inputs.jakosc }}
         run: python scripts/okladki-r2.py
       - name: Podmień adresy w katalogu i zapisz
         if: github.event.inputs.tryb == 'wgraj'

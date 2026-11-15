@@ -6,7 +6,8 @@
 #  - robi z każdego obrazka WebP (maks. 1600 px szerokości) i miniaturkę (maks. 640 px) w  zrzuty-web/<klucz-gry>/,
 #    nazwa zawiera skrót pliku, więc podmieniony obrazek dostaje nowy adres,
 #  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": duży, "m": miniaturka}], „zrzutyPodpis”),
-#  - usuwa z zrzuty-web/ pliki, których już nic nie używa (oryginały w zrzuty/ zostają nietknięte).
+#  - duże oryginały (>1 MB albo nie-WebP) zamienia w zrzuty/ na lekki WebP 1920 px (ta sama nazwa, końcówka .webp),
+#  - usuwa z zrzuty-web/ pliki, których już nic nie używa.
 # Klucze R2 tylko w sekretach GitHuba: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ACCOUNT_ID.
 import os, io, json, re, sys, hashlib
 from PIL import Image
@@ -72,6 +73,29 @@ for k in zrodla:
         podpisy[gra] = k
     elif OBRAZ.search(plik):
         foldery.setdefault(gra, []).append(k)
+
+# Duże oryginały (np. PNG prosto z gry, 3–10 MB) zamieniamy na lekki WebP (maks. 1920 px, jakość 90, zwykle 0,2–0,6 MB):
+# zrzuty/<gra>/1.png -> zrzuty/<gra>/1.webp, a stary plik usuwamy. Oszczędza miejsce na R2 (darmowe 10 GB).
+MAX_ORYG = 1024 * 1024
+for gra, pliki in foldery.items():
+    for i, k in enumerate(list(pliki)):
+        o = zrodla[k]
+        if o.get("Size", 0) <= MAX_ORYG and k.lower().endswith(".webp"):
+            continue
+        nowy = os.path.splitext(k)[0] + ".webp"
+        if nowy != k and nowy in zrodla:
+            continue  # jest już plik o tej nazwie – nic nie ruszamy
+        try:
+            b = webp(s3.get_object(Bucket=BUCKET, Key=k)["Body"].read(), MAX_D, 90)
+            r = s3.put_object(Bucket=BUCKET, Key=nowy, Body=b, ContentType="image/webp")
+            if nowy != k:
+                s3.delete_object(Bucket=BUCKET, Key=k)
+                zrodla.pop(k, None)
+            zrodla[nowy] = {"Key": nowy, "ETag": r["ETag"], "Size": len(b)}
+            pliki[i] = nowy
+            print("Zmniejszono oryginał: %s (%d KB) -> %s (%d KB)" % (k, o.get("Size", 0) // 1024, nowy, len(b) // 1024))
+        except Exception as e:
+            print("UWAGA: nie udało się zmniejszyć %s: %s" % (k, str(e)[:150]))
 
 uzywane, nowe, bledy, galerie = set(), 0, [], {}
 for gra, pliki in sorted(foldery.items()):

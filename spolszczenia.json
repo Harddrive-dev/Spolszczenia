@@ -687,7 +687,21 @@
     "genre": "Przygodowa",
     "opis": "Epizodowa opowieść o Bruce'ie Wayne'ie, w której twoje decyzje wpływają na losy Gotham. Autorem jest Telltale Games.",
     "premiera": "2026-11-06",
-    "steam": 498240
+    "steam": 498240,
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/1-11263f0b.webp",
+        "m": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/1-11263f0b-m.webp"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/2-50a54e98.webp",
+        "m": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/2-50a54e98-m.webp"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/3-001000c8.webp",
+        "m": "https://cdn.grypopolsku.pl/zrzuty-web/batman-the-telltale-series/3-001000c8-m.webp"
+      }
+    ]
   },
   {
     "game": "Beneath a Steel Sky",

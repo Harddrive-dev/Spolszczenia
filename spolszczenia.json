@@ -19898,7 +19898,20 @@
     "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
     "steam": 1265920,
     "upd": "2026-11-15",
-    "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą."
+    "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą.",
+    "spolszczenia": [
+      {
+        "id": "life-is-strange-remastered--niux",
+        "author": ".niux",
+        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-15",
+        "dodano": "2026-11-15"
+      }
+    ]
   },
   {
     "game": "MADiSON",

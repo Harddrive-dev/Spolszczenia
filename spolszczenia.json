@@ -9499,7 +9499,8 @@
     "opis": "Kooperacyjny looter shooter, w którym Łowcy Krypty ścigają bliźniaków Calypso. Akcja wykracza poza Pandorę na inne planety, a głównym łupem są miliardy kombinacji broni.",
     "status": "Gotowe",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4190",
-    "steam": 397540
+    "steam": 397540,
+    "gamereader": "https://www.gamereader.pl/biblioteka"
   },
   {
     "game": "Grand Theft Auto",
@@ -14596,13 +14597,13 @@
     "platform": "PC",
     "genre": "Akcja",
     "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
-    "ver": "—",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=lost-in-random",
     "dodano": "2026-10-30",
-    "upd": "2026-10-30",
+    "upd": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/lost-in-random-148414bb.webp",
     "opis": "Baśniowa gra akcji w świecie, gdzie wszystkim rządzą kości. Even wyrusza na ratunek siostrze Odd z pomocą żywej kostki Dicey, łącząc walkę z kartami.",
     "steam": 1462570
@@ -14692,11 +14693,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=ni-no-kuni-wrath-of-the-white-witch-remastered",
     "dodano": "2026-10-05",
-    "upd": "2026-10-05",
+    "upd": "2026-11-14",
     "img": "https://cdn.grypopolsku.pl/okladki/ni-no-kuni-wrath-of-the-white-witch-remastered-ea249237.webp",
     "opis": "Oliver po stracie matki trafia do magicznego świata i próbuje ją uratować. Baśniowe jRPG z oprawą studia Ghibli.",
     "steam": 798460
@@ -15739,7 +15740,8 @@
     "genre": "Strzelanka",
     "status": "Gotowe",
     "opis": "Nowa odsłona serii Modern Warfare przenosi konflikt na Półwysep Koreański. Kapitan Price i jego oddział walczą w kampanii rozgrywanej w wielu miejscach świata.",
-    "steam": 4435490
+    "steam": 4435490,
+    "gamereader": "https://www.gamereader.pl/biblioteka"
   },
   {
     "game": "The Elder Scrolls Online",
@@ -16900,7 +16902,8 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3456",
     "dodano": "2019-06-29",
     "steam": 729040,
-    "img": "https://cdn.grypopolsku.pl/okladki/borderlands-game-of-the-year-goty-enhanced-1fd93a84.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/borderlands-game-of-the-year-goty-enhanced-1fd93a84.webp",
+    "gamereader": "https://www.gamereader.pl/biblioteka"
   },
   {
     "game": "The Stone of Madness",
@@ -19899,6 +19902,115 @@
     "steam": 1265920,
     "upd": "2026-11-15",
     "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą."
+  },
+  {
+    "game": "Call of Duty®: Black Ops II",
+    "platform": "PC",
+    "pl": "of",
+    "steam": 202970,
+    "genre": "Strzelanka",
+    "img": "https://cdn.grypopolsku.pl/okladki/call-of-duty-black-ops-ii-64078b1d.webp",
+    "lore": "https://lorespeak.pl/games/call-of-duty-black-ops-ii",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-14"
+  },
+  {
+    "game": "Borderlands 2",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "IRON SQUAD / jose77",
+    "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=786438064",
+    "steam": 49520,
+    "genre": "Strzelanka",
+    "img": "https://cdn.grypopolsku.pl/okladki/borderlands-2-c35c58c0.webp",
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-14"
+  },
+  {
+    "game": "Borderlands 4",
+    "platform": "PC",
+    "pl": "of",
+    "steam": 1285190,
+    "genre": "Strzelanka",
+    "img": "https://cdn.grypopolsku.pl/okladki/borderlands-4-7d4273fd.webp",
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-14"
+  },
+  {
+    "game": "Playable Archive",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/playable_archive",
+    "steam": 5356470,
+    "img": "https://cdn.grypopolsku.pl/okladki/playable-archive-a97fff06.webp",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-14"
+  },
+  {
+    "game": "DeathWatchers",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=deathwatchers",
+    "steam": 2599370,
+    "img": "https://cdn.grypopolsku.pl/okladki/deathwatchers-ed0e2cc6.webp",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-15"
+  },
+  {
+    "game": "The Hundred Line -Last Defense Academy-",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=the-hundred-line",
+    "steam": 3014080,
+    "img": "https://cdn.grypopolsku.pl/okladki/the-hundred-line-last-defense-academy-54fb3bf6.webp",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-14"
+  },
+  {
+    "game": "The Path Into The Abyss (demo)",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "DykuGierkuje",
+    "link": "https://dykugierkuje.pl/spolszczenie/the-path-into-the-abyss",
+    "steam": 3725100,
+    "img": "https://cdn.grypopolsku.pl/okladki/the-path-into-the-abyss-demo-640bcb11.webp",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-15"
+  },
+  {
+    "game": "The First Berserker: Khazan",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "DykuGierkuje",
+    "link": "https://dykugierkuje.pl/spolszczenie/the-first-berserker-khazan",
+    "steam": 2680010,
+    "genre": "Akcja",
+    "img": "https://cdn.grypopolsku.pl/okladki/the-first-berserker-khazan-eaf28c96.webp",
+    "dodano": "2026-11-15",
+    "upd": "2026-11-15"
   },
   {
     "game": "MADiSON",

@@ -1116,7 +1116,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/citadels/",
     "dodano": "2026-10-28",
-    "genre": "Strategia"
+    "genre": "Strategia",
+    "steam": 238870
   },
   {
     "game": "Clive Baker's Undying",
@@ -5126,7 +5127,8 @@
     "link": "https://grajpopolsku.pl/download/swordsoldiers/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Strategia czasu rzeczywistego w widoku z boku, w której prowadzisz wojska różnych cywilizacji."
+    "opis": "Strategia czasu rzeczywistego w widoku z boku, w której prowadzisz wojska różnych cywilizacji.",
+    "steam": 63500
   },
   {
     "game": "Syberia",
@@ -7030,7 +7032,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/screamer-280bc752.webp",
     "genre": "Sportowa / wyścigi",
-    "opis": "Nowa odsłona klasycznej serii wyścigów od Milestone. Arcade'owe wyścigi łączą się z fabułą i oprawą inspirowaną anime."
+    "opis": "Nowa odsłona klasycznej serii wyścigów od Milestone. Arcade'owe wyścigi łączą się z fabułą i oprawą inspirowaną anime.",
+    "steam": 2814990
   },
   {
     "game": "Alien: Isolation",
@@ -7077,7 +7080,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/crimson-desert-72297011.webp",
     "genre": "Akcja",
-    "opis": "Gra akcji w otwartym świecie od twórców Black Desert. Kliff i jego najemnicy z Greymanów walczą o przetrwanie na kontynencie Pywel."
+    "opis": "Gra akcji w otwartym świecie od twórców Black Desert. Kliff i jego najemnicy z Greymanów walczą o przetrwanie na kontynencie Pywel.",
+    "steam": 3321460
   },
   {
     "game": "BioShock Infinite",
@@ -10487,7 +10491,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/retrospace",
     "dodano": "2026-10-02",
     "upd": "2026-10-09",
-    "img": "https://cdn.grypopolsku.pl/okladki/retrospace-a961959f.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/retrospace-a961959f.webp",
+    "steam": 2067820
   },
   {
     "game": "Yakuza 0",
@@ -10502,7 +10507,8 @@
     "dodano": "2026-10-09",
     "upd": "2026-10-09",
     "img": "https://cdn.grypopolsku.pl/okladki/yakuza-0-94aae3ed.webp",
-    "opis": "Tokio i Osaka lat 80., czasy bańki gospodarczej. Kazuma Kiryu i Goro Majima wplątują się w walkę o niewielką działkę, a między bijatykami czeka mnóstwo zabawnych zajęć pobocznych."
+    "opis": "Tokio i Osaka lat 80., czasy bańki gospodarczej. Kazuma Kiryu i Goro Majima wplątują się w walkę o niewielką działkę, a między bijatykami czeka mnóstwo zabawnych zajęć pobocznych.",
+    "steam": 2988580
   },
   {
     "game": "Terminator Dark Fate - Defiance",
@@ -11789,7 +11795,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/zero_parades",
     "dodano": "2026-05-22",
     "upd": "2026-09-06",
-    "img": "https://cdn.grypopolsku.pl/okladki/zero-parades-de91a1de.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/zero-parades-de91a1de.webp",
+    "steam": 2863680
   },
   {
     "game": "Wheelmates",
@@ -12326,7 +12333,14 @@
     "author": "kofii12345",
     "link": "https://bazarowespolszczenia.pl/gra/fears_to_fathom_seria",
     "dodano": "2026-08-10",
-    "upd": "2026-08-10"
+    "upd": "2026-08-10",
+    "steam": [
+      1671340,
+      1763050,
+      2120900,
+      2506160,
+      2961530
+    ]
   },
   {
     "game": "Schedule I",
@@ -12915,7 +12929,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/haven",
     "dodano": "2026-05-18",
     "upd": "2026-05-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/haven-6e801abc.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/haven-6e801abc.webp",
+    "steam": 983970
   },
   {
     "game": "Warhammer 40,000: Mechanicus",
@@ -13050,7 +13065,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/nocturnal",
     "dodano": "2026-04-23",
     "upd": "2026-04-23",
-    "img": "https://cdn.grypopolsku.pl/okladki/nocturnal-f0f5676d.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/nocturnal-f0f5676d.webp",
+    "steam": 1634080
   },
   {
     "game": "OPUS: Prism Peak",
@@ -13300,7 +13316,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/icarus",
     "dodano": "2026-03-07",
     "upd": "2026-03-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/icarus-7ed11abf.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/icarus-7ed11abf.webp",
+    "steam": 1149460
   },
   {
     "game": "Romeo is a DeadMan",
@@ -13359,7 +13376,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/reach",
     "dodano": "2026-03-05",
     "upd": "2026-03-05",
-    "img": "https://cdn.grypopolsku.pl/okladki/reach-321bfcfe.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/reach-321bfcfe.webp",
+    "steam": 3273480
   },
   {
     "game": "Octopath Traveler",
@@ -13721,7 +13739,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/maestro",
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
-    "img": "https://cdn.grypopolsku.pl/okladki/maestro-fae4005c.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/maestro-fae4005c.webp",
+    "steam": 2701700
   },
   {
     "game": "Red Matter 2",
@@ -13751,7 +13770,8 @@
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
     "img": "https://cdn.grypopolsku.pl/okladki/moss-46304eb6.webp",
-    "opis": "Mysz Quill przemierza baśniowy świat, a Ty pomagasz jej jako tajemniczy Czytelnik w VR. Łączy platformówkę, zagadki i ciepłą opowieść."
+    "opis": "Mysz Quill przemierza baśniowy świat, a Ty pomagasz jej jako tajemniczy Czytelnik w VR. Łączy platformówkę, zagadki i ciepłą opowieść.",
+    "steam": 846470
   },
   {
     "game": "Red Matter",
@@ -13977,7 +13997,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=crownhold",
     "dodano": "2026-09-21",
     "upd": "2026-09-21",
-    "img": "https://cdn.grypopolsku.pl/okladki/crownhold-2d7da00b.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/crownhold-2d7da00b.webp",
+    "steam": 4579940
   },
   {
     "game": "Daymare: 1998",
@@ -14764,7 +14785,8 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=rock-bottom",
     "dodano": "2026-10-19",
     "upd": "2026-10-31",
-    "img": "https://cdn.grypopolsku.pl/okladki/rock-bottom-6adae3ad.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/rock-bottom-6adae3ad.webp",
+    "steam": 4297840
   },
   {
     "game": "Scarlet Nexus",
@@ -19767,6 +19789,21 @@
     "upd": "2026-11-14"
   },
   {
+    "game": "Life is Strange Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": ".niux",
+    "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-15",
+    "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
+    "steam": 1265920,
+    "upd": "2026-11-15"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -19781,20 +19818,5 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
-  },
-  {
-    "game": "Life is Strange Remastered",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": ".niux",
-    "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247",
-    "genre": "Przygodowa",
-    "dodano": "2026-11-15",
-    "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
-    "steam": 1265920,
-    "upd": "2026-11-15"
   }
 ]

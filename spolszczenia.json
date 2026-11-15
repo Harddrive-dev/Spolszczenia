@@ -2786,7 +2786,7 @@
     "steam": 316790
   },
   {
-    "game": "GTA Liberty City Stories",
+    "game": "Grand Theft Auto Liberty City Stories",
     "img": "https://cdn.grypopolsku.pl/okladki/gta-liberty-city-stories-7551e539.webp",
     "platform": "Sony PSP",
     "type": "Napisy",
@@ -2797,10 +2797,14 @@
     "link": "https://grajpopolsku.pl/download/gta-liberty-city-stories/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Wersja Liberty City Stories na PSP. Toni Cipriani wraca do miasta i walczy o pozycję w mafii."
+    "opis": "Wersja Liberty City Stories na PSP. Toni Cipriani wraca do miasta i walczy o pozycję w mafii.",
+    "id": "gta-liberty-city-stories",
+    "aliasy": [
+      "gta-liberty-city-stories"
+    ]
   },
   {
-    "game": "GTA Vice City Stories",
+    "game": "Grand Theft Auto: Vice City Stories",
     "img": "https://cdn.grypopolsku.pl/okladki/gta-vice-city-stories-dea828bf.webp",
     "platform": "Sony PSP",
     "type": "Napisy",
@@ -2811,7 +2815,11 @@
     "link": "https://grajpopolsku.pl/download/gta-vice-city-stories/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Wersja Vice City Stories na PSP. Vic Vance trafia w świat przestępczości Vice City w latach 80."
+    "opis": "Wersja Vice City Stories na PSP. Vic Vance trafia w świat przestępczości Vice City w latach 80.",
+    "id": "gta-vice-city-stories",
+    "aliasy": [
+      "gta-vice-city-stories"
+    ]
   },
   {
     "game": "GYLT",
@@ -15689,7 +15697,7 @@
     "steam": 233270
   },
   {
-    "game": "GTA San Andreas: Dosłowne Tłumaczenie (Edycja Parodystyczna)",
+    "game": "Grand Theft Auto San Andreas: Dosłowne Tłumaczenie (Edycja Parodystyczna)",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -15703,7 +15711,11 @@
     "dodano": "2026-11-04",
     "img": "https://cdn.grypopolsku.pl/okladki/gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna-eed6f3be.webp",
     "opis": "Stworzona przez ArtKoval modyfikacja „GTA San Andreas: Dosłowne Tłumaczenie” to bezkompromisowe i pełne humoru spolszczenie, które przekłada angielski tekst słowo w słowo, tworząc całkowicie absurdalne zdania.",
-    "upd": "2026-11-04"
+    "upd": "2026-11-04",
+    "id": "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna",
+    "aliasy": [
+      "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna"
+    ]
   },
   {
     "game": "Monster Train",
@@ -16137,7 +16149,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/resident-evil-2-76a693bd.webp"
   },
   {
-    "game": "GTA 1: Definitive Retro Edition (GTA 1 + London '69 + London '61)",
+    "game": "Grand Theft Auto1: Definitive Retro Edition (GTA 1 + London '69 + London '61)",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -16147,7 +16159,11 @@
     "author": "Na100procent",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4931",
     "dodano": "2026-10-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/gta-1-definitive-retro-edition-gta-1-london-69-london-61-6a0008a4.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/gta-1-definitive-retro-edition-gta-1-london-69-london-61-6a0008a4.webp",
+    "id": "gta-1-definitive-retro-edition-gta-1-london-69-london-61",
+    "aliasy": [
+      "gta-1-definitive-retro-edition-gta-1-london-69-london-61"
+    ]
   },
   {
     "game": "Re-Volt",

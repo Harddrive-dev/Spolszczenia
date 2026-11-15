@@ -8048,6 +8048,7 @@
     "upd": "2026-10-29",
     "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\".",
     "lore": "https://lorespeak.pl/games/phantom-blade-zero",
+    "steam": 4115450,
     "spolszczenia": [
       {
         "id": "phantom-blade-zero--promptowy",
@@ -8060,8 +8061,7 @@
         "upd": "2026-10-29",
         "dodano": ""
       }
-    ],
-    "steam": 4115450
+    ]
   },
   {
     "game": "Tom Clancy's Ghost Recon Breakpoint",
@@ -19898,20 +19898,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
     "steam": 1265920,
     "upd": "2026-11-15",
-    "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą.",
-    "spolszczenia": [
-      {
-        "id": "life-is-strange-remastered--niux",
-        "author": ".niux",
-        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247",
-        "type": "Napisy",
-        "status": "Gotowe",
-        "prog": 100,
-        "ver": "—",
-        "upd": "2026-11-15",
-        "dodano": "2026-11-15"
-      }
-    ]
+    "instr": "1. Pobieramy spolszczenie\n2. Wklejamy spolszczenie do folderu \"Life is Strange Remastered\\LIS\\Content\\Paks\"\n3. Cieszymy się grą."
   },
   {
     "game": "MADiSON",

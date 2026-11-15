@@ -1,0 +1,42 @@
+[
+ {
+  "game": "Life is Strange Remastered",
+  "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay."
+ },
+ {
+  "game": "Call of Duty: Black Ops II",
+  "opis": "Strzelanka FPS od Treyarch z 2012 roku, kontynuacja Call of Duty: Black Ops. Kampania przeplata zimną wojnę lat 80. z niedaleką przyszłością, w której świat musi stawić czoła Raulowi Menendezowi."
+ },
+ {
+  "game": "Borderlands 2",
+  "opis": "Kooperacyjna strzelanka z elementami RPG od Gearbox Software z 2012 roku. Łowcy Krypty przemierzają planetę Pandorę, by powstrzymać Handsome Jacka, a po drodze zbierają tysiące losowo generowanych broni."
+ },
+ {
+  "game": "Borderlands 4",
+  "opis": "Najnowsza odsłona serii od Gearbox Software z 2025 roku – chaotyczna strzelanka pełna łupów i miliardów broni, w którą można grać także w kooperacji. Jako jeden z czterech nowych Łowców Krypty próbujesz uciec z niebezpiecznej, ukrytej planety."
+ },
+ {
+  "game": "Playable Archive",
+  "opis": "Krótki, darmowy horror od DarkStone Digital (ok. 30–60 minut) w formie archiwum nagrań od anonimowego informatora. Para z Nowej Anglii znajduje podczas remontu domu tajemniczy przedmiot, a gra prowadzi przez demoniczne rytuały, kontakt ze zmarłymi i kilka linii czasu.",
+  "genre": "Horror"
+ },
+ {
+  "game": "DeathWatchers",
+  "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść.",
+  "genre": "Horror"
+ },
+ {
+  "game": "The Hundred Line -Last Defense Academy-",
+  "opis": "Gra przygodowa z 2025 roku, pierwsza wspólna produkcja Kazutaki Kodaki (Danganronpa) i Kotaro Uchikoshiego (Zero Escape). Piętnaścioro uczniów przez 100 dni broni szkoły przed groteskowymi potworami i próbuje odkryć, o co w tym wszystkim chodzi.",
+  "genre": "Przygodowa"
+ },
+ {
+  "game": "The Path Into The Abyss (demo)",
+  "opis": "Demo hardkorowej strzelanki survival z perspektywy pierwszej osoby od MXR Productions. Akcja toczy się w otwartym świecie osadzonym w Buenos Aires, z motywami kosmicznego horroru, wymagającymi przeciwnikami i zbieraniem łupów.",
+  "genre": "Strzelanka"
+ },
+ {
+  "game": "The First Berserker: Khazan",
+  "opis": "Hardkorowa gra akcji RPG od Neople z 2025 roku, osadzona w uniwersum Dungeon & Fighter. Wcielasz się w Khazana, wielkiego generała imperium Pell Los, który pokonał śmierć i wyrusza, by poznać prawdę o wydarzeniach, które doprowadziły do jego upadku."
+ }
+]

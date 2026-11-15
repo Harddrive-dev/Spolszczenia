@@ -19781,5 +19781,20 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07"
+  },
+  {
+    "game": "Life is Strange Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": ".niux",
+    "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-15",
+    "img": "https://cdn.grypopolsku.pl/okladki/life-is-strange-remastered-5ff76f54.webp",
+    "steam": 1265920,
+    "upd": "2026-11-15"
   }
 ]

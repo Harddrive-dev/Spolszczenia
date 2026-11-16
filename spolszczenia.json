@@ -16536,7 +16536,9 @@
       "dzien": "2026-11-16"
     },
     "opis": "Sonic Rivals to dynamiczna gra wyścigowo-platformowa wydana w 2006 roku wyłącznie na konsolę PlayStation Portable (PSP). Za jej produkcję odpowiadało kanadyjskie studio Backbone Entertainment.",
-    "opisOd": "Harddrive"
+    "opisOd": "Harddrive",
+    "instr": "## Emulator PPSSPP (komputer, telefon)\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Rozpakuj plik ISO gry (np. programem 7-Zip) do osobnego folderu, tak żeby powstała ścieżka typu D:/PSPGAMES/SonicRivals/PSP_GAME.\n3. Rozpakuj plik ZIP ze spolszczeniem do folderu SonicRivals i potwierdź zastąpienie plików.\n4. W PPSSPP przejdź w zakładce „Gry” do folderu SonicRivals i uruchom grę.\n\n## Konsola PSP / PS Vita / PS TV\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Otwórz plik ISO gry w programie UMDGen (Windows).\n3. Rozpakuj plik ZIP ze spolszczeniem i podmień nim pliki w UMDGen.\n4. Zapisz nowy plik ISO (najlepiej bez kompresji).\n5. Skopiuj go na konsolę: na PSP do folderu ISO na karcie pamięci, a na PS Vita / PS TV (przez Adrenaline) do folderu ux0:pspemu/ISO.\n6. Uruchom grę.",
+    "instrOd": "Harddrive"
   },
   {
     "game": "Dante's Inferno",

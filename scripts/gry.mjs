@@ -83,11 +83,11 @@ for(const g of games){
   const dub=/^https?:\/\//.test(g.dub||"")?g.dub:"",dubA=String(g.dubAuthor||"").trim(),dubS=g.dubStatus&&g.dubStatus!=="Gotowe"?g.dubStatus.toLowerCase():"";
   const typ=hasSp?({Napisy:"polskie napisy","Pełne":"pełne polskie spolszczenie",Dubbing:"polski dubbing"}[g.type]||"polskie spolszczenie"):(dub?"polski dubbing":hasLk?"polski lektor":"polska wersja");
   const exSp=Array.isArray(g.spolszczenia)?g.spolszczenia.filter(s=>s&&/^https?:\/\//.test(s.link||"")):[],multi=exSp.length>0;
-  const spTxt=s=>{const p=Math.round(+s.prog);return (s.status==="W trakcie"||s.status==="Korekta")&&isFinite(p)&&p<100?s.status+" · "+Math.max(0,p)+"%":(s.status||"Gotowe")};
+  const spTxt=s=>{const p=Math.round(+s.prog);return (s.status==="W trakcie"||s.status==="Korekta"||s.status==="Testy")&&isFinite(p)&&p<100?s.status+" · "+Math.max(0,p)+"%":(s.status||"Gotowe")};
   const spList=(hasSp?[{author:g.author,link:g.link,type:g.type,status:g.status,prog:g.prog,ver:g.ver,upd:g.upd}]:[]).concat(exSp).sort((a,b)=>(a.status==="Gotowe"?0:1)-(b.status==="Gotowe"?0:1)||String(b.upd||"").localeCompare(String(a.upd||"")));
   const spAut=s=>s.author&&s.author!=="—"?s.author:"—",spAll=[...new Set(spList.map(spAut))].join(", ");
   const spSec=multi?'<div class="spl"><h2>Dostępne spolszczenia ('+spList.length+')</h2>'+spList.map(s=>'<div class="spr"><div class="sx"><b>'+esc(spAut(s))+'</b><small>'+esc([s.type||"Napisy",spTxt(s),s.ver&&s.ver!=="—"?"wersja "+s.ver:""].filter(Boolean).join(" · "))+'</small></div>'+dlBtn(s.link,"Pobierz")+'</div>').join("")+'</div>':"";
-  const pr=Math.round(+g.prog),wip=(g.status==="W trakcie"||g.status==="Korekta")&&isFinite(pr)&&pr<100,stTxt=wip?g.status+" ("+Math.max(0,pr)+"% ukończone)":(g.status||"—");
+  const pr=Math.round(+g.prog),wip=(g.status==="W trakcie"||g.status==="Korekta"||g.status==="Testy")&&isFinite(pr)&&pr<100,stTxt=wip?g.status+" ("+Math.max(0,pr)+"% ukończone)":(g.status||"—");
   const plat1=plat.split(",")[0].trim(),naPl=String(g.game).toLowerCase().includes(plat1.toLowerCase())?"":" na "+plat1,autor1=g.author&&g.author!=="—"?g.author:"";
   const title=(hasSp?g.game+" – "+(g.type==="Dubbing"?"dubbing PL ("+plat1+")":"spolszczenie ("+typ+", "+plat1+")"):dub?g.game+" – dubbing PL ("+plat1+")":g.game+" – "+typ)+" | GryPoPolsku.pl";
   const lkNames=[lore?"LoreSpeak":"",gr?"GameReader 2.0":""].filter(Boolean).join(" i ");

@@ -8255,6 +8255,11 @@
     "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\".",
     "lore": "https://lorespeak.pl/games/phantom-blade-zero",
     "steam": 4115450,
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    },
     "spolszczenia": [
       {
         "id": "phantom-blade-zero--promptowy",
@@ -8267,12 +8272,7 @@
         "upd": "2026-10-29",
         "dodano": ""
       }
-    ],
-    "opisOd": "Harddrive",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-06"
-    }
+    ]
   },
   {
     "game": "Tom Clancy's Ghost Recon Breakpoint",
@@ -9432,6 +9432,11 @@
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
     "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
+    "instrOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    },
     "spolszczenia": [
       {
         "id": "world-of-warcraft-forever--rustykey",
@@ -9444,12 +9449,7 @@
         "upd": "2026-11-07",
         "dodano": "2026-11-07"
       }
-    ],
-    "instrOd": "Harddrive",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-15"
-    }
+    ]
   },
   {
     "game": "Getting Over It with Bennett Foddy",

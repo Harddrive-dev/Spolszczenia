@@ -74,26 +74,15 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day;
   if(g._usun)list.splice(list.indexOf(g),1)}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
-// Podpisy na stronach gier: „Autor opisu”, „Autor instrukcji” – osoba, która napisała pierwszą wersję tekstu (drobne poprawki
-// innych osób podpisu nie zmieniają; zmienia go dopiero tekst napisany w większości od nowa) – oraz „Ostatnia zmiana wpisu”
-// (kto i kiedy). Liczą się tylko zmiany ludzi z bazy (zgłoszenia, „Edytuj wpis”), nie import ani bot. Nick: user_name zgłoszenia.
-{const slowa=t=>String(t||"").toLowerCase().match(/[\p{L}\p{N}]+/gu)||[];
- const podobne=(a,b)=>{const A=slowa(a),B=slowa(b);if(!A.length||!B.length)return 0;const m=new Map();for(const w of A)m.set(w,(m.get(w)||0)+1);let w=0;for(const x of B){const n=m.get(x);if(n){w++;m.set(x,n-1)}}return w/Math.max(A.length,B.length)};
- const KTO=new Map(),kto=k=>{if(!KTO.has(k))KTO.set(k,{});return KTO.get(k)};
- const tekst=(o,pole,nick,v,przed)=>{v=String(v||"").trim();if(!v){delete o[pole];return}const st=o[pole],stary=st?st.t:String(przed||"").trim();
-  o[pole]={kto:(!stary||podobne(stary,v)<0.5)?(nick||""):(st?st.kto:""),t:v}};
+// Podpis na stronie gry: „Ostatnia zmiana wpisu: nick · data” – ostatnia zmiana zrobiona przez człowieka
+// (zgłoszenie poprawki, „Edytuj wpis”), nie przez import ani bota. Nick: user_name zgłoszenia.
+// (16.11: podpisy „Autor opisu” i „Autor instrukcji” usunięte na prośbę właściciela.)
+{const ZM=new Map();
  for(const r of rows){const d=r.data||{},nick=String(r.user_name||"").trim().slice(0,30),dzien=String(r.created_at||"").slice(0,10);
-  if(r.kind==="new"){const k=slug(String(d.game||r.game||"").trim());if(!k)continue;const o=kto(k);if(d.opis&&!o.opis)o.opis={kto:nick,t:String(d.opis).trim()};if(d.instr&&!o.instr)o.instr={kto:nick,t:String(d.instr).trim()};continue}
-  if(!d.key)continue;
-  if(r.kind==="modedit"){const g=find(d.key);if(g&&!wZakresie(g,d))continue;const o=kto(d.key);let zm=false;
-   for(const c of d.changes||[]){if(c.field==="usun")continue;zm=true;if(c.field==="opis"||c.field==="instr")tekst(o,c.field,nick,c.to,c.from)}
-   if(zm&&nick)o.zmiana={kto:nick,dzien}}
-  else if((r.kind==="edit"||r.kind==="link")&&nick)kto(d.key).zmiana={kto:nick,dzien}}
- const rowne=(a,b)=>String(a||"").trim()===String(b||"").trim();
- for(const g of list){const o=KTO.get(keyOf(g))||{};
-  if(o.opis&&o.opis.kto&&rowne(o.opis.t.slice(0,500),g.opis))g.opisOd=o.opis.kto;else delete g.opisOd;
-  if(o.instr&&o.instr.kto&&rowne(o.instr.t.slice(0,3000),g.instr))g.instrOd=o.instr.kto;else delete g.instrOd;
-  if(o.zmiana)g.zmiana={kto:o.zmiana.kto,dzien:o.zmiana.dzien};else delete g.zmiana}}
+  if(!d.key||!nick)continue;
+  if(r.kind==="modedit"){const g=find(d.key);if(g&&!wZakresie(g,d))continue;if((d.changes||[]).some(c=>c.field!=="usun"))ZM.set(d.key,{kto:nick,dzien})}
+  else if(r.kind==="edit"||r.kind==="link")ZM.set(d.key,{kto:nick,dzien})}
+ for(const g of list){delete g.opisOd;delete g.instrOd;const z=ZM.get(keyOf(g));if(z)g.zmiana=z;else delete g.zmiana}}
 // Dawne adresy stron gier (po zmianie nazwy): pole „aliasy”, z którego gry.mjs robi przekierowania na obecną stronę.
 {const cur=new Map(list.map(g=>[slug(g.game||""),g])),nxt=new Map(renames);
  for(const [a,b] of renames){let t=b,n=0;while(!cur.has(t)&&nxt.has(t)&&n++<10)t=nxt.get(t);const g=cur.get(t);if(!g||cur.has(a))continue;

@@ -63,7 +63,7 @@ const fInfo=u=>{const ext=(String(u).split(/[?#]/)[0].match(/\.([a-z0-9]{2,5})$/
 // i bez pola okladkaPasek („Okładka ma już pasek platformy”, zaznaczane w „Edytuj wpis”).
 const PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"}];
 const pasekDla=g=>{const p=String(g.platform||"").split(/\s*,\s*/).filter(Boolean);if(p.length!==1)return null;const x=PASKI.find(q=>q.re.test(p[0]));return x?x.src:null};
-// Podpisy osób (nicki z bazy, liczone w scripts/sync.mjs i scripts/zrzuty-r2.py): „Autor opisu: Lisa”, „Zrzuty od: A, B” itd.
+// Podpisy osób (nicki z bazy, liczone w scripts/sync.mjs i scripts/zrzuty-r2.py): „Ostatnia zmiana wpisu: Lisa · data”, „Zrzuty od: A, B”.
 const kto=(etykieta,kto_,dzien)=>{const l=(Array.isArray(kto_)?kto_:[kto_]).map(x=>String(x||"").trim()).filter(Boolean);return l.length?'<p class="kto">'+etykieta+': '+l.map(x=>'<b>'+esc(x)+'</b>').join(", ")+(dzien?' · '+esc(dzien):'')+'</p>':""};
 const dlBtn=(u,txt,cls)=>CDNF.test(u||"")?'<a'+(cls?' class="'+cls+'"':'')+' href="'+esc(safe(u))+'" download><span>⬇ '+txt+'</span><small>'+esc(fInfo(u))+'</small></a>':'<a'+(cls?' class="'+cls+'"':'')+' href="'+esc(safe(u))+'" target="_blank" rel="noopener"><span>'+txt+' ↗</span>'+(host(u)?'<small>'+esc(host(u))+'</small>':'')+'</a>';
 // seria gry: część tytułu przed dwukropkiem/myślnikiem albo bez numeru na końcu („The Elder Scrolls IV: Oblivion” -> „the elder scrolls”)
@@ -110,10 +110,10 @@ for(const g of games){
     if(ls.every(l=>/^- /.test(l)))return'<ul class="il">'+ls.map(l=>'<li>'+iIn(l.slice(2))+'</li>').join("")+'</ul>';
     if(ls.every(l=>/^\d+\. /.test(l)))return'<ol class="il" start="'+parseInt(ls[0])+'">'+ls.map(l=>'<li>'+iIn(l.replace(/^\d+\. /,""))+'</li>').join("")+'</ol>';
     return'<p>'+ls.map(iIn).join("<br>")+'</p>'}).join("");
-  const instrSec=g.instr?'<div class="panel opis inst"><h2 class="ch">Jak zainstalować</h2>'+iFmt(g.instr)+kto("Autor instrukcji",g.instrOd)+'</div>':"";
+  const instrSec=g.instr?'<div class="panel opis inst"><h2 class="ch">Jak zainstalować</h2>'+iFmt(g.instr)+'</div>':"";
   const zrz=Array.isArray(g.zrzuty)?g.zrzuty.filter(z=>z&&/^https:\/\//.test(z.d||"")&&/^https:\/\//.test(z.m||"")).slice(0,12):[];
   const zrzSec=zrz.length?'<div class="panel zrz"><h2 class="ch">Jak to wygląda po polsku</h2><div class="zg">'+zrz.map((z,i)=>'<a href="'+esc(z.d)+'" aria-label="Zrzut ekranu '+(i+1)+' – powiększ"><img loading="lazy" src="'+esc(z.m)+'" alt="'+esc(g.game)+' po polsku – zrzut ekranu '+(i+1)+'"></a>').join("")+'</div>'+(g.zrzutyPodpis?'<p class="gn" style="margin-top:8px">'+esc(g.zrzutyPodpis)+'</p>':'')+kto("Zrzuty od",g.zrzutyOd)+'</div>':"";
-  const opisSec=g.opis?'<div class="panel opis"><h2 class="ch">O grze</h2>'+String(g.opis).split(/\n\s*\n/).map(p=>'<p>'+esc(p.trim())+'</p>').join("")+kto("Autor opisu",g.opisOd)+'</div>':"";
+  const opisSec=g.opis?'<div class="panel opis"><h2 class="ch">O grze</h2>'+String(g.opis).split(/\n\s*\n/).map(p=>'<p>'+esc(p.trim())+'</p>').join("")+'</div>':"";
   // podobne gry: ta sama seria, ten sam autor, ten sam lub pokrewny gatunek; dopiero potem losowe z okładką
   const ser=series(g.game),relg=RELG[g.genre]||[];
   const score=o=>(ser&&series(o.g.game)===ser?100:0)+(g.genre&&o.g.genre===g.genre?50:relg.includes(o.g.genre)?25:0)+(autor1&&o.g.author===autor1?30:0);

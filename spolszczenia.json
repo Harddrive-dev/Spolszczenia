@@ -2969,6 +2969,19 @@
     ],
     "zrzutyOd": [
       "kokos324"
+    ],
+    "spolszczenia": [
+      {
+        "id": "gta-liberty-city-stories--grupa-smg",
+        "author": "Grupa SMG",
+        "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4788",
+        "type": "Napisy",
+        "status": "Beta",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-16",
+        "dodano": "2026-11-16"
+      }
     ]
   },
   {
@@ -2980,7 +2993,7 @@
     "prog": 100,
     "ver": "—",
     "author": "Qjon, ciffer",
-    "link": "https://cdn2.steamgriddb.com/thumb/c8aa48a3667e7a29486f3f978b0e0279.jpg",
+    "link": "https://grajpopolsku.pl/download/gta-vice-city-stories/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Wersja Vice City Stories na PSP. Vic Vance trafia w świat przestępczości Vice City w latach 80.",
@@ -2992,7 +3005,20 @@
       "kto": "kokos324",
       "dzien": "2026-11-16"
     },
-    "okladkaPasek": 1
+    "okladkaPasek": 1,
+    "spolszczenia": [
+      {
+        "id": "gta-vice-city-stories--grupa-smg",
+        "author": "Grupa SMG",
+        "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4986",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-16",
+        "dodano": "2026-11-16"
+      }
+    ]
   },
   {
     "game": "GYLT",

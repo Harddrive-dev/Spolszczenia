@@ -28,7 +28,11 @@
     "genre": "RPG",
     "miesiaca": true,
     "opis": "Środkowa część wielkiego remake'u Final Fantasy VII. Cloud i jego towarzysze opuszczają Midgar i ruszają w świat w pościgu za Sephirothem.",
-    "steam": 2909400
+    "steam": 2909400,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Silver Pines",
@@ -192,7 +196,11 @@
     "gamereader": "https://www.gamereader.pl/biblioteka",
     "yt": "https://www.youtube.com/watch?v=-41ucPsBM-s",
     "opis": "Realistyczne RPG z otwartym światem, osadzone w średniowiecznych Czechach w 1403 roku. Syn kowala Henryk próbuje przetrwać po napaści na jego wioskę.",
-    "steam": 379430
+    "steam": 379430,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Alice: Madness Returns",
@@ -701,7 +709,11 @@
         "d": "https://cdn.grypopolsku.pl/zrzuty/batman-the-telltale-series/3.webp?v=5f43af91",
         "m": "https://cdn.grypopolsku.pl/zrzuty/batman-the-telltale-series/3-miniatura.webp?v=14cd7d63"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Beneath a Steel Sky",
@@ -1424,7 +1436,11 @@
     "upd": "2026-10-23",
     "opis": "Odświeżona wersja klasycznej przygodówki LucasArts z nową oprawą graficzną i dźwiękową.",
     "img": "https://cdn.grypopolsku.pl/okladki/day-of-the-tentacle-remastered-a43b74a4.webp",
-    "steam": 388210
+    "steam": 388210,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-04"
+    }
   },
   {
     "game": "Dead City",
@@ -2016,7 +2032,11 @@
     "link": "https://grajpopolsku.pl/download/elvenland/",
     "dodano": "2026-10-28",
     "genre": "Logiczna",
-    "img": "https://cdn.grypopolsku.pl/okladki/elvenland-26b2e1f6.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/elvenland-26b2e1f6.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Eriksholm The Stolen Dream",
@@ -2313,7 +2333,11 @@
         "upd": "2026-11-12",
         "dodano": "2026-11-12"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-12"
+    }
   },
   {
     "game": "Firewatch (GOG)",
@@ -2670,7 +2694,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodowa gra o przetrwaniu i trudnych wyborach moralnych. Twoje decyzje decydują o losie załogi i pasażerów.",
-    "steam": 274290
+    "steam": 274290,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Golden Sun",
@@ -2801,7 +2829,11 @@
     "id": "gta-liberty-city-stories",
     "aliasy": [
       "gta-liberty-city-stories"
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Grand Theft Auto: Vice City Stories",
@@ -2819,7 +2851,11 @@
     "id": "gta-vice-city-stories",
     "aliasy": [
       "gta-vice-city-stories"
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "GYLT",
@@ -2833,7 +2869,11 @@
     "link": "https://grajpopolsku.pl/download/gylt/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "steam": 2206210
+    "steam": 2206210,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Hacker Evolution",
@@ -3020,7 +3060,11 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/igneous/",
     "dodano": "2026-10-28",
-    "genre": "Platformówka"
+    "genre": "Platformówka",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Ike Ike! Nekketsu Hockey Bu – Subette Koronde Dai Rantou",
@@ -3203,7 +3247,11 @@
     "genre": "Symulacja",
     "dodano": "2026-10-28",
     "opis": "Budujesz i zarządzasz parkiem pełnym dinozaurów. Musisz dbać o gości, bezpieczeństwo i zwierzęta.",
-    "steam": 648350
+    "steam": 648350,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Kao Challengers",
@@ -3643,7 +3691,11 @@
     "link": "https://bazaspolszczen.pl/games/metal-gear/grzybdev",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji ze skradaniem na NES-a. Solid Snake infiltruje bazę wroga."
+    "opis": "Gra akcji ze skradaniem na NES-a. Solid Snake infiltruje bazę wroga.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Miami Vice The Game",
@@ -3742,7 +3794,11 @@
     "link": "https://grajpopolsku.pl/download/moonlight-walks/",
     "dodano": "2026-10-28",
     "genre": "Symulacja",
-    "img": "https://cdn.grypopolsku.pl/okladki/moonlight-walks-c9192731.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/moonlight-walks-c9192731.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Mortal Kombat Komplete Edition",
@@ -3941,7 +3997,11 @@
     "link": "https://grajpopolsku.pl/download/one-afternoon/",
     "dodano": "2026-10-28",
     "genre": "Symulacja",
-    "img": "https://cdn.grypopolsku.pl/okladki/one-afternoon-92310d0a.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/one-afternoon-92310d0a.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "OneShot",
@@ -3956,7 +4016,11 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Gra przygodowa z zagadkami, w której przez cały czas rozmawiasz z samą grą, a jej decyzje zależą od ciebie.",
-    "steam": 420530
+    "steam": 420530,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "OneShot: World Machine Edition",
@@ -3972,7 +4036,11 @@
     "dodano": "2026-10-28",
     "opis": "Rozszerzona wersja OneShot z dodatkowymi poprawkami.",
     "id": "oneshot-world-machine-edition",
-    "steam": 2915460
+    "steam": 2915460,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Osmos",
@@ -4330,7 +4398,11 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Gra akcji, w której kontrolujesz czas i walczysz z korporacją. Całość przeplatana serialem aktorskim.",
-    "steam": 474960
+    "steam": 474960,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Ranma 1/2: Treasure of The Red Cat Gang",
@@ -4387,7 +4459,11 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Strzelanka z czasów II wojny światowej, rozwinięcie klasycznego Return to Castle Wolfenstein.",
-    "steam": 1379630
+    "steam": 1379630,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Resident Evil 0 HD Remaster",
@@ -4871,7 +4947,7 @@
     "opis": "Henry Townshend zostaje uwięziony w swoim mieszkaniu i odkrywa przejście do mrocznych miejsc."
   },
   {
-    "game": "Silent Hill: Shattered Memories [PSP]",
+    "game": "Silent Hill: Shattered Memories",
     "img": "https://cdn.grypopolsku.pl/okladki/silent-hill-shattered-memories-psp-82433d3d.webp",
     "platform": "Sony PSP",
     "type": "Napisy",
@@ -4882,7 +4958,15 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-shattered-memories-psp/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Wersja Shattered Memories na PSP. Harry Mason szuka córki, a rozmowy z psychologiem zmieniają przebieg gry."
+    "opis": "Wersja Shattered Memories na PSP. Harry Mason szuka córki, a rozmowy z psychologiem zmieniają przebieg gry.",
+    "id": "silent-hill-shattered-memories-psp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-16"
+    },
+    "aliasy": [
+      "silent-hill-shattered-memories-psp"
+    ]
   },
   {
     "game": "Snake Pass",
@@ -5439,7 +5523,11 @@
         "upd": "2026-11-13",
         "dodano": "2026-11-13"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "The Beast Within: A Gabriel Knight Mystery",
@@ -5513,7 +5601,11 @@
         "dodano": ""
       }
     ],
-    "steam": 1281590
+    "steam": 1281590,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-05"
+    }
   },
   {
     "game": "The Dark Pictures Anthology: Little Hope",
@@ -5530,7 +5622,11 @@
     "opis": "Interaktywny horror od Supermassive Games. Grupa ludzi utyka w mglistym miasteczku Little Hope, a o ich losach decydują wybory.",
     "id": "the-dark-pictures-anthology-little-hope",
     "yt": "https://www.youtube.com/watch?v=cd5IUE-Q-o8",
-    "steam": 1194630
+    "steam": 1194630,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "The Dark Pictures Anthology: Man of Medan",
@@ -5561,7 +5657,11 @@
         "dodano": ""
       }
     ],
-    "steam": 939850
+    "steam": 939850,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-05"
+    }
   },
   {
     "game": "The Dark Pictures Anthology: The Devil in Me",
@@ -5590,7 +5690,11 @@
         "dodano": "2026-11-07"
       }
     ],
-    "steam": 1567020
+    "steam": 1567020,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "The Dig",
@@ -5906,7 +6010,11 @@
     "link": "https://grajpopolsku.pl/download/thief-sword-another-stories-przygody-raiki/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/thief-01b085a8.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/thief-01b085a8.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "This is the Police (GOG)",
@@ -6432,7 +6540,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/castlevania-belmont-s-curse-ec4cd9f0.webp",
     "upd": "2026-10-28",
     "genre": "Metroidvania",
-    "steam": 4231820
+    "steam": 4231820,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-28"
+    }
   },
   {
     "game": "The Legend of Zelda: Tears of The Kingdom",
@@ -6448,7 +6560,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-legend-of-zelda-tears-of-the-kingdom-6c9260d8.webp",
     "upd": "2026-10-28",
     "opis": "Link w Hyrule, który obejmuje teraz także niebo i podziemia. Kontynuacja Breath of the Wild z możliwością łączenia przedmiotów.",
-    "yt": "https://www.youtube.com/watch?v=7F0aqDB39lw"
+    "yt": "https://www.youtube.com/watch?v=7F0aqDB39lw",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Metro Exodus",
@@ -6499,7 +6615,11 @@
     "opis": "Gra akcji od Rockstar Games z 2002 roku, osadzona w nadmorskim Vice City w latach 80. Tommy Vercetti buduje tam swoje przestępcze imperium.",
     "type": "Napisy",
     "status": "Gotowe",
-    "prog": 0
+    "prog": 0,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Blair Witch",
@@ -6515,7 +6635,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/blair-witch-626e0573.webp",
     "opis": "Horror psychologiczny z Lasem Black Hills w tle. Były policjant Ellis szuka zaginionego chłopca i walczy z własnymi koszmarami.",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 1092660
+    "steam": 1092660,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "Valor Mortis",
@@ -6591,7 +6715,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "steam": 1145360
+    "steam": 1145360,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "The Callisto Protocol",
@@ -6644,7 +6772,11 @@
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/minecraft-dungeons-ii-a8063144.webp",
     "opis": "Kontynuacja gry akcji RPG ze świata Minecrafta. Wyruszasz samotnie lub w kooperacji do lochów, walcząc z hordami potworów i zdobywając ekwipunek.",
-    "steam": 1912410
+    "steam": 1912410,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "Dune: Awakening",
@@ -6722,7 +6854,11 @@
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/onimusha-way-of-the-sword-780b47af.webp",
     "opis": "Gra akcji z elementami samurajskimi. Miyamoto Musashi walczy z demonami w feudalnej Japonii.",
-    "steam": 2638890
+    "steam": 2638890,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "STAR WARS Zero Company",
@@ -6969,7 +7105,11 @@
     "status": "Gotowe",
     "prog": 0,
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 2592160
+    "steam": 2592160,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Aliens: Dark Descent",
@@ -6996,7 +7136,11 @@
     "status": "Gotowe",
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/control-ultimate-edition-751c91f2.webp",
-    "steam": 870780
+    "steam": 870780,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "Assassin's Creed Black Flag Resynced",
@@ -7245,7 +7389,11 @@
     "status": "Gotowe",
     "prog": 0,
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 3768760
+    "steam": 3768760,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Forza Horizon 6",
@@ -7286,7 +7434,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-v-enhanced-ecca0160.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-v-enhanced-ecca0160.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Sherlock Holmes The Awakened",
@@ -7319,7 +7471,11 @@
     "status": "Gotowe",
     "prog": 0,
     "author": "VOXALTER",
-    "steam": 1086940
+    "steam": 1086940,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Directive 8020",
@@ -7446,7 +7602,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "steam": 752590
+    "steam": 752590,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Avatar: Frontiers of Pandora",
@@ -7574,7 +7734,11 @@
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/assassin-s-creed-revelations-4d613bfe.webp",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 201870
+    "steam": 201870,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Assassin's Creed Odyssey",
@@ -7590,7 +7754,11 @@
     "status": "Gotowe",
     "prog": 0,
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 812140
+    "steam": 812140,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Assassin's Creed Origins",
@@ -7907,7 +8075,11 @@
     "prog": 0,
     "author": "kofii12345",
     "link": "https://bazarowespolszczenia.pl/gra/nobody_wants_to_die",
-    "steam": 1939970
+    "steam": 1939970,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Mirror's Edge Catalyst",
@@ -8021,7 +8193,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "steam": 1182900
+    "steam": 1182900,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Thief",
@@ -8036,7 +8212,11 @@
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/thief-01b085a8.webp",
     "opis": "Garrett, mistrz złodziei, wraca do miasta pełnego zagrożeń. Skradanka w stylu klasycznej serii.",
-    "steam": 239160
+    "steam": 239160,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "Silent Hill 2 Remake",
@@ -8052,7 +8232,11 @@
     "prog": 0,
     "img": "https://cdn.grypopolsku.pl/okladki/silent-hill-2-remake-f7a22a18.webp",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 2124490
+    "steam": 2124490,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-29"
+    }
   },
   {
     "game": "Phantom Blade Zero",
@@ -8083,7 +8267,12 @@
         "upd": "2026-10-29",
         "dodano": ""
       }
-    ]
+    ],
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Tom Clancy's Ghost Recon Breakpoint",
@@ -8200,7 +8389,11 @@
         "upd": "2026-10-12"
       }
     ],
-    "steam": 1551980
+    "steam": 1551980,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-09"
+    }
   },
   {
     "game": "A.I.L.A",
@@ -8233,7 +8426,11 @@
     "status": "Gotowe",
     "prog": 0,
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 1030830
+    "steam": 1030830,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-30"
+    }
   },
   {
     "game": "Mafia: Edycja Ostateczna",
@@ -8264,7 +8461,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/alan-wake-2-deluxe-edition-6097f8d7.webp",
     "aliasy": [
       "alan-wake-2-deluxe-edition"
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Alan Wake Remastered",
@@ -8278,7 +8479,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/alan-wake-remastered-feedc6ec.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/alan-wake-remastered-feedc6ec.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Remnant: From the Ashes",
@@ -8466,7 +8671,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-san-andreas-the-definitive-edition-00099f95.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-san-andreas-the-definitive-edition-00099f95.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Max Payne 2",
@@ -8580,7 +8789,11 @@
     "author": "—",
     "img": "https://cdn.grypopolsku.pl/okladki/hollow-knight-silksong-69d5490e.webp",
     "opis": "Hornet wyrusza do królestwa Pharloom. Kontynuacja Hollow Knight z nowymi umiejętnościami i wrogami.",
-    "steam": 1030300
+    "steam": 1030300,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-30"
+    }
   },
   {
     "game": "FINAL FANTASY XVI + 2dlc",
@@ -8595,7 +8808,11 @@
     "steam": 2515020,
     "type": "Napisy",
     "status": "Gotowe",
-    "prog": 0
+    "prog": 0,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-08"
+    }
   },
   {
     "game": "Bully: Scholarship Edition",
@@ -8788,7 +9005,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-vice-city-the-definitive-edition-32490991.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-vice-city-the-definitive-edition-32490991.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Grand Theft Auto IV: The Complete Edition",
@@ -8822,7 +9043,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-iii-the-definitive-edition-eb74ebce.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-iii-the-definitive-edition-eb74ebce.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "METAL GEAR SOLID Δ: SNAKE EATER",
@@ -8872,7 +9097,11 @@
     "steam": 2369390,
     "type": "Napisy",
     "status": "Gotowe",
-    "prog": 0
+    "prog": 0,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Styx: Master of Shadows",
@@ -8999,7 +9228,11 @@
     "steam": 990080,
     "type": "Napisy",
     "status": "Gotowe",
-    "prog": 0
+    "prog": 0,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Far Cry 2",
@@ -9083,7 +9316,11 @@
     "prog": 0,
     "lore": "https://lorespeak.pl/games/resident-evil-4-remake",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "steam": 2050650
+    "steam": 2050650,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Resident Evil 2 Remake",
@@ -9124,7 +9361,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "steam": 934700
+    "steam": 934700,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-10-31"
+    }
   },
   {
     "game": "Dark Messiah of Might & Magic",
@@ -9203,7 +9444,12 @@
         "upd": "2026-11-07",
         "dodano": "2026-11-07"
       }
-    ]
+    ],
+    "instrOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Getting Over It with Bennett Foddy",
@@ -9235,7 +9481,11 @@
     "upd": "2026-11-01",
     "genre": "Horror",
     "opis": "Tym razem grasz dzieckiem uwięzionym nocą w sypialni. Nasłuchujesz kroków koszmarnych animatroników za drzwiami i w szafie, bo słuch jest tu ważniejszy niż wzrok.",
-    "steam": 388090
+    "steam": 388090,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "ULTRAKILL",
@@ -9331,7 +9581,11 @@
     "upd": "2026-11-01",
     "genre": "Horror",
     "opis": "Nowy pracownik firmy Circus Baby's Rentals wykonuje polecenia głosu z głośnika w podziemnym kompleksie. Każda noc to inne zadanie, a animatroniki skrywają mroczną tajemnicę.",
-    "steam": 506610
+    "steam": 506610,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "Baldi's Basics Classic Remastered",
@@ -9347,7 +9601,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/baldi-s-basics-classic-remastered-cfd52f43.webp",
     "upd": "2026-11-01",
     "opis": "Parodia edukacyjnych gier z lat 90., która szybko zmienia się w horror. Zbierasz zeszyty w szkole, rozwiązujesz zadania, a za każdy błąd Baldi goni Cię coraz szybciej.",
-    "steam": 1712830
+    "steam": 1712830,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-01"
+    }
   },
   {
     "game": "START AGAIN: a prologue",
@@ -9456,7 +9714,11 @@
         "upd": "2026-11-14",
         "dodano": "2026-11-14"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-14"
+    }
   },
   {
     "game": "Tell Me Why",
@@ -9522,7 +9784,11 @@
     "status": "Gotowe",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4190",
     "steam": 397540,
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Grand Theft Auto",
@@ -9539,7 +9805,11 @@
     "status": "Gotowe",
     "link": "https://www.gta-mods.pl/pliki/444/spolszczenie-do-gta-1#google_vignette",
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "opis": "Pierwsza odsłona słynnej serii, oglądana z góry. Jako przestępca kradniesz auta i wykonujesz zlecenia w trzech miastach: Liberty City, San Andreas i Vice City."
+    "opis": "Pierwsza odsłona słynnej serii, oglądana z góry. Jako przestępca kradniesz auta i wykonujesz zlecenia w trzech miastach: Liberty City, San Andreas i Vice City.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Late Shift",
@@ -9740,7 +10010,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "img": "https://cdn.grypopolsku.pl/okladki/driver-san-francisco-c4ee5b10.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/driver-san-francisco-c4ee5b10.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Pacific Drive",
@@ -9937,7 +10211,12 @@
     "upd": "2026-10-31",
     "img": "https://cdn.grypopolsku.pl/okladki/queen-s-domain-7afe69f4.webp",
     "steam": 1799840,
-    "opis": "Queen's Domain to mroczna gra Action-RPG w stylu retro dark fantasy, mocno inspirowana kultową serią King’s Field od studia FromSoftware oraz klasycznymi produkcjami z epoki pierwszego PlayStation."
+    "opis": "Queen's Domain to mroczna gra Action-RPG w stylu retro dark fantasy, mocno inspirowana kultową serią King’s Field od studia FromSoftware oraz klasycznymi produkcjami z epoki pierwszego PlayStation.",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Batman: The Enemy Within",
@@ -10167,7 +10446,11 @@
     "link": "https://bazarowespolszczenia.pl/gra/final_fantasy_resonance_port",
     "dodano": "2026-10-22",
     "upd": "2026-10-22",
-    "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-resonance-fd9c9843.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-resonance-fd9c9843.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-08"
+    }
   },
   {
     "game": "Phoenix Wright: Ace Attorney Trilogy",
@@ -10694,7 +10977,11 @@
     "link": "https://bazarowespolszczenia.pl/gra/seven_mansions_z_owrogi_usmiech",
     "dodano": "2026-10-06",
     "upd": "2026-10-06",
-    "img": "https://cdn.grypopolsku.pl/okladki/seven-mansions-zlowrogi-usmiech-30a524c7.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/seven-mansions-zlowrogi-usmiech-30a524c7.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Well Dweller",
@@ -11557,7 +11844,11 @@
         "upd": "2026-11-03"
       }
     ],
-    "steam": 3949550
+    "steam": 3949550,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Blackwood",
@@ -11644,7 +11935,11 @@
         "upd": "2026-10-30"
       }
     ],
-    "steam": 1374490
+    "steam": 1374490,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Out and About",
@@ -11794,7 +12089,11 @@
         "dodano": ""
       }
     ],
-    "steam": 2362060
+    "steam": 2362060,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-05"
+    }
   },
   {
     "game": "Code Vein",
@@ -13628,7 +13927,11 @@
     "dodano": "2026-01-23",
     "upd": "2026-01-23",
     "img": "https://cdn.grypopolsku.pl/okladki/ball-x-pit-fa8e43f9.webp",
-    "steam": 2062430
+    "steam": 2062430,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Marvel's Deadpool VR",
@@ -13978,7 +14281,11 @@
     "dodano": "2026-10-11",
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/bayonetta-2-76e8e4d5.webp",
-    "opis": "Bayonetta rusza do piekła, by uratować duszę przyjaciółki Jeanne. Kontynuacja jeszcze szybszej i bardziej widowiskowej walki znanej z pierwszej części."
+    "opis": "Bayonetta rusza do piekła, by uratować duszę przyjaciółki Jeanne. Kontynuacja jeszcze szybszej i bardziej widowiskowej walki znanej z pierwszej części.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Bayonetta 3",
@@ -14009,7 +14316,11 @@
     "upd": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/black-desert-0a987861.webp",
     "opis": "Koreańskie MMORPG z dynamiczną walką akcji i rozbudowanym życiem w otwartym świecie. Oprócz potworów możesz handlować, hodować konie i łowić ryby.",
-    "steam": 582660
+    "steam": 582660,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-10"
+    }
   },
   {
     "game": "Blades of Fire",
@@ -14040,7 +14351,11 @@
     "dodano": "2026-10-25",
     "upd": "2026-11-11",
     "img": "https://cdn.grypopolsku.pl/okladki/blades-of-time-d7339dbf.webp",
-    "steam": 208670
+    "steam": 208670,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-11"
+    }
   },
   {
     "game": "Bloodstained: Ritual of the Night",
@@ -14104,7 +14419,12 @@
     "steam": 842100,
     "opis": "Daymare: 1998 to klasyczny survival horror z widokiem z trzeciej osoby (TPP), stanowiący duchowego spadkobiercę zombijowych serii z lat 90. (szczególnie Resident Evil 2).\n\nGra przenosi cię do małego miasteczka opanowanego przez śmiertelny wirus zmieniający ludzi w krwiożercze potwory. Rozgrywka ukazuje historię z perspektywy trzech różnych postaci i stawia na mroczną atmosferę, twarde zarządzanie mocno ograniczoną amunicją i zasobami, wymagające zagadki środowiskowe oraz bezkompromisowy poziom t",
     "lore": "https://lorespeak.pl/games/daymare-1998",
-    "yt": "https://www.youtube.com/watch?v=c31w7JwlqHI"
+    "yt": "https://www.youtube.com/watch?v=c31w7JwlqHI",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-08"
+    }
   },
   {
     "game": "Dead Rising 3",
@@ -14166,7 +14486,11 @@
     "upd": "2026-10-18",
     "img": "https://cdn.grypopolsku.pl/okladki/devil-may-cry-hd-collection-e81dc403.webp",
     "opis": "Zbiór trzech pierwszych części przygód łowcy demonów Dantego. Odświeżone klasyki slasherów, w których liczy się styl i płynne kombinacje.",
-    "steam": 631510
+    "steam": 631510,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-12"
+    }
   },
   {
     "game": "Digimon Story: Time Stranger",
@@ -14241,7 +14565,11 @@
     "dodano": "2026-08-12",
     "upd": "2026-11-05",
     "img": "https://cdn.grypopolsku.pl/okladki/e-shop-tycoon-c4762d6c.webp",
-    "steam": 4249850
+    "steam": 4249850,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-05"
+    }
   },
   {
     "game": "Eternal Strands",
@@ -14272,7 +14600,11 @@
     "upd": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/eve-online-451c9b22.webp",
     "opis": "Kosmiczne MMO z jednym wspólnym wszechświatem, w którym gospodarkę i wojny tworzą sami gracze. Pilotujesz statki, handlujesz i dołączasz do wielkich korporacji.",
-    "steam": 8500
+    "steam": 8500,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-10"
+    }
   },
   {
     "game": "Evil Genius 2: World Domination",
@@ -14303,7 +14635,11 @@
     "upd": "2026-09-25",
     "img": "https://cdn.grypopolsku.pl/okladki/f-i-s-t-forged-in-shadow-torch-bb9c1279.webp",
     "steam": 1330470,
-    "yt": "https://www.youtube.com/watch?v=PuTJxOmZg0w"
+    "yt": "https://www.youtube.com/watch?v=PuTJxOmZg0w",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-08"
+    }
   },
   {
     "game": "Fantasy Life i: The Girl Who Steals Time",
@@ -14612,7 +14948,11 @@
     "upd": "2026-11-05",
     "img": "https://cdn.grypopolsku.pl/okladki/lost-ark-1d78e1e9.webp",
     "opis": "Izometryczne MMORPG akcji od Smilegate. Przemierzasz kontynenty Arkesii, walczysz z ogromnymi bossami w rajdach i szukasz Arki, by powstrzymać demony.",
-    "steam": 1599340
+    "steam": 1599340,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-06"
+    }
   },
   {
     "game": "Lost in Random",
@@ -14643,7 +14983,11 @@
     "dodano": "2026-10-27",
     "upd": "2026-10-27",
     "img": "https://cdn.grypopolsku.pl/okladki/lucius-ii-b94c6ba3.webp",
-    "steam": 296830
+    "steam": 296830,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-11"
+    }
   },
   {
     "game": "Momodora: Reverie Under The Moonlight",
@@ -14783,7 +15127,11 @@
     "dodano": "2026-06-24",
     "upd": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/palia-39139cc0.webp",
-    "steam": 2707930
+    "steam": 2707930,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-10"
+    }
   },
   {
     "game": "Patrician 4",
@@ -14938,7 +15286,11 @@
     "dodano": "2026-07-15",
     "upd": "2026-11-07",
     "img": "https://cdn.grypopolsku.pl/okladki/space-hulk-deathwing-enhanced-edition-94b1adb4.webp",
-    "steam": 816090
+    "steam": 816090,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "Starsector",
@@ -15043,7 +15395,11 @@
     "dodano": "2026-09-09",
     "upd": "2026-11-07",
     "img": "https://cdn.grypopolsku.pl/okladki/the-legend-of-heroes-trails-beyond-the-horizon-b61560d7.webp",
-    "steam": 3316940
+    "steam": 3316940,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   },
   {
     "game": "The Seven Deadly Sins: Origin",
@@ -15196,7 +15552,11 @@
     "upd": "2026-11-13",
     "img": "https://cdn.grypopolsku.pl/okladki/pathfinder-kingmaker-0d0f76af.webp",
     "opis": "RPG oparte na systemie Pathfinder. Dostajesz kawałek ziemi w Skradzionych Krainach i budujesz własne królestwo, podejmując decyzje polityczne.",
-    "steam": 640820
+    "steam": 640820,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Trials of Mana",
@@ -15242,7 +15602,11 @@
     "dodano": "2026-09-06",
     "upd": "2026-11-12",
     "img": "https://cdn.grypopolsku.pl/okladki/incursion-red-river-c6cb8ba6.webp",
-    "steam": 2116120
+    "steam": 2116120,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-12"
+    }
   },
   {
     "game": "TEKKEN 7",
@@ -15288,7 +15652,11 @@
     "dodano": "2026-09-02",
     "upd": "2026-09-11",
     "img": "https://cdn.grypopolsku.pl/okladki/forsaken-realms-vahrin-s-call-8fa1421b.webp",
-    "steam": 951770
+    "steam": 951770,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Harvestella",
@@ -15319,7 +15687,11 @@
     "upd": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/wo-long-fallen-dynasty-e3de4a76.webp",
     "opis": "Wymagająca gra akcji osadzona w Chinach okresu Trzech Królestw. Młody milicjant walczy z demonami w szybkich starciach opartych na parowaniu.",
-    "steam": 1448440
+    "steam": 1448440,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "The Relic: First Guardian",
@@ -15349,7 +15721,11 @@
     "dodano": "2026-08-17",
     "upd": "2026-10-01",
     "img": "https://cdn.grypopolsku.pl/okladki/road-to-vostok-b21ba8e8.webp",
-    "steam": 1963610
+    "steam": 1963610,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-05"
+    }
   },
   {
     "game": "IXION",
@@ -15380,7 +15756,11 @@
     "upd": "2026-09-30",
     "img": "https://cdn.grypopolsku.pl/okladki/mark-of-the-deep-947c3636.webp",
     "yt": "https://www.youtube.com/watch?v=Hfp9zocrMSc",
-    "steam": 1933370
+    "steam": 1933370,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "New Arc Line",
@@ -15395,7 +15775,11 @@
     "dodano": "2026-06-25",
     "upd": "2026-09-30",
     "img": "https://cdn.grypopolsku.pl/okladki/new-arc-line-ba585567.webp",
-    "steam": 2458310
+    "steam": 2458310,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-02"
+    }
   },
   {
     "game": "Six Days in Fallujah",
@@ -15458,7 +15842,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/fallout-4-498e20a8.webp",
     "opis": "Postapokaliptyczna gra RPG z otwartym światem: po 200 latach w krypcie bohater wychodzi na zrujnowane pustkowia Bostonu w poszukiwaniu porwanego syna.",
     "yt": "https://www.youtube.com/watch?v=pTnaw_mwCBo",
-    "steam": 377160
+    "steam": 377160,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Fallout: New Vegas",
@@ -15475,7 +15863,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/fallout-new-vegas-64f5d773.webp",
     "opis": "Kurier postrzelony i pogrzebany na pustyni Mojave rusza tropem swoich oprawców, a jego wybory decydują o losie Nowego Vegas.",
     "yt": "https://www.youtube.com/watch?v=VEh7nN4zaUk",
-    "steam": 22380
+    "steam": 22380,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Star Wars: Knights of the Old Republic",
@@ -15492,7 +15884,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/star-wars-knights-of-the-old-republic-ba447b03.webp",
     "opis": "Klasyczne RPG od BioWare osadzone 4000 lat przed filmami: bohater odkrywa swoją przeszłość i staje między Jasną a Ciemną Stroną Mocy.",
     "yt": "https://www.youtube.com/watch?v=N9VbB4I5QJs",
-    "steam": 32370
+    "steam": 32370,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Portal 2",
@@ -15509,7 +15905,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/portal-2-7d006f82.webp",
     "opis": "Logiczna gra z perspektywy pierwszej osoby: Chell wraca do laboratoriów Aperture Science i z pomocą działa portalowego rozwiązuje kolejne komory testowe.",
     "yt": "https://www.youtube.com/watch?v=wln19NZjFV4",
-    "steam": 620
+    "steam": 620,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Gothic II Returning: New Balance",
@@ -15525,7 +15925,11 @@
     "upd": "2026-11-03",
     "img": "https://cdn.grypopolsku.pl/okladki/gothic-ii-returning-new-balance-b7d12836.webp",
     "opis": "Rozbudowana modyfikacja Gothic II: nowe lokacje, zadania, gildie i przebalansowana rozgrywka w świecie Khorinis.",
-    "yt": "https://www.youtube.com/watch?v=80nTVSzv0mQ"
+    "yt": "https://www.youtube.com/watch?v=80nTVSzv0mQ",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Divinity: Original Sin 2",
@@ -15546,7 +15950,11 @@
     "steam": 435150,
     "aliasy": [
       "divinity-original-sin-2-definitive-edition"
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "Enderal: Forgotten Stories",
@@ -15567,7 +15975,11 @@
     "aliasy": [
       "enderal-forgotten-stories-special-edition"
     ],
-    "steam": 933480
+    "steam": 933480,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "The Elder Scrolls IV: Oblivion",
@@ -15584,7 +15996,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-elder-scrolls-iv-oblivion-814831ce.webp",
     "opis": "Klasyczne RPG z otwartym światem: bohater musi zamknąć bramy Otchłani, przez które demony najeżdżają prowincję Cyrodiil.",
     "yt": "https://www.youtube.com/watch?v=8LWe7TWhEnI",
-    "steam": 22330
+    "steam": 22330,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "South Park: The Stick of Truth",
@@ -15601,7 +16017,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/south-park-the-stick-of-truth-d626134f.webp",
     "opis": "Turowe RPG w stylu serialu South Park: Nowy Chłopiec dołącza do zabawy w fantasy, która szybko wymyka się spod kontroli.",
     "yt": "https://www.youtube.com/watch?v=5fUgwe3jNXU",
-    "steam": 213670
+    "steam": 213670,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-03"
+    }
   },
   {
     "game": "The Elder Scrolls IV: Oblivion Remastered",
@@ -15646,7 +16066,11 @@
         "upd": "2026-11-15",
         "dodano": "2026-11-15"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Lost Records: Bloom & Rage",
@@ -15662,7 +16086,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/lost-records-bloom-rage-ffa44979.webp",
     "upd": "2026-11-04",
     "opis": "Przygodówka od twórców Life is Strange. Cztery przyjaciółki spędzają lato 1995 roku w Velvet Cove, a po 27 latach spotykają się, by zmierzyć się z tym, co wtedy ukryły.",
-    "steam": 1902960
+    "steam": 1902960,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-09"
+    }
   },
   {
     "game": "Grand Theft Auto 2",
@@ -15694,7 +16122,11 @@
     "status": "Gotowe",
     "img": "https://cdn.grypopolsku.pl/okladki/far-cry-blood-dragon-f92bb87d.webp",
     "opis": "Samodzielny dodatek do Far Cry 3, utrzymany w stylu neonowych filmów akcji z lat 80. Cybernetyczny komandos Rex Colt walczy na wyspie pełnej żołnierzy i smoków strzelających laserami.",
-    "steam": 233270
+    "steam": 233270,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-04"
+    }
   },
   {
     "game": "Grand Theft Auto San Andreas: Dosłowne Tłumaczenie (Edycja Parodystyczna)",
@@ -15715,7 +16147,12 @@
     "id": "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna",
     "aliasy": [
       "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna"
-    ]
+    ],
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Monster Train",
@@ -15746,7 +16183,11 @@
     "dodano": "2026-11-04",
     "img": "https://cdn.grypopolsku.pl/okladki/world-of-warcraft-retail-0bfe96cd.webp",
     "upd": "2026-11-12",
-    "opis": "Aktualna wersja słynnego MMORPG Blizzarda, rozwijana od 2004 roku. Tworzysz postać, wybierasz stronę Przymierza lub Hordy i przemierzasz Azeroth oraz kolejne dodatki."
+    "opis": "Aktualna wersja słynnego MMORPG Blizzarda, rozwijana od 2004 roku. Tworzysz postać, wybierasz stronę Przymierza lub Hordy i przemierzasz Azeroth oraz kolejne dodatki.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-12"
+    }
   },
   {
     "game": "Where Winds Meet",
@@ -15781,7 +16222,11 @@
     "opis": "Nowa odsłona serii Modern Warfare przenosi konflikt na Półwysep Koreański. Kapitan Price i jego oddział walczą w kampanii rozgrywanej w wielu miejscach świata.",
     "steam": 4435490,
     "gamereader": "https://www.gamereader.pl/biblioteka",
-    "id": "call-of-duty-modern-warfare-4"
+    "id": "call-of-duty-modern-warfare-4",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "The Elder Scrolls Online",
@@ -15918,7 +16363,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/huntdown-5602b323.webp",
     "opis": "Huntdown to dynamiczna, cyberpunkowa strzelanka platformowa 2D w stylu retro (run and gun), która w pełni oddaje hołd kinowi akcji lat 80.\n\nW świecie opanowanym przez bezwzględne gangi wcielasz się w rolę bezkompromisowego łowcy nagród. Gra zachwyca fenomenalną grafiką pikselową, klimatyczną ścieżką dźwiękową synthwave oraz niezwykle płynną, arcade'ową rozgrywką. To idealna pozycja dla fanów klasycznych wyzwań – zarówno solo, jak i w lokalnym trybie kooperacji.",
     "steam": 598550,
-    "upd": "2026-11-07"
+    "upd": "2026-11-07",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Star Wars Outlaws",
@@ -15934,7 +16380,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/star-wars-outlaws-9f2e08da.webp",
     "opis": "Star Wars Outlaws to pierwsza w historii franczyzy przygodowa gra akcji w całkowicie otwartym świecie, osadzona w uniwersum Gwiezdnych Wojen.\n\nWcielasz się w rolę Kay Vess – sprytnej łotrzycy, która wraz ze swoim małym kompanem Nixem próbuje przeprowadzić jeden z największych skoków w historii Zewnętrznych Rubieży. Gra skupia się na przestępczym podziemiu Galaktyki, oferując dynamiczne strzelaniny, skradanie się, eksplorację różnorodnych planet na ścigaczu oraz kosmiczne walki na pokładzie statk",
     "steam": 2842040,
-    "upd": "2026-11-07"
+    "upd": "2026-11-07",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Arco",
@@ -15950,7 +16397,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/arco-90b4af4e.webp",
     "opis": "Arco to niezwykła, taktyczna gra RPG w klimacie mezoamerykańskiego fantasy, łącząca unikalny system walki z przepiękną, artystyczną oprawą w stylu pixel art.",
     "steam": 2366970,
-    "upd": "2026-11-08"
+    "upd": "2026-11-08",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Shenmue III",
@@ -15967,7 +16415,12 @@
     "opis": "Shenmue III to kultowa przygodowa gra akcji z elementami sztuk walki i symulatora życia, stanowiąca bezpośrednią kontynuację legendarnych odsłon z konsoli Sega Dreamcast.",
     "steam": 878670,
     "upd": "2026-11-08",
-    "lore": "https://lorespeak.pl/games/shenmue-iii"
+    "lore": "https://lorespeak.pl/games/shenmue-iii",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-08"
+    }
   },
   {
     "game": "Death's Gambit: Afterlife",
@@ -15983,7 +16436,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/death-s-gambit-afterlife-2fa4c3fa.webp",
     "opis": "Death's Gambit: Afterlife to rozbudowana, dwuwymiarowa gra z gatunku Metroidvania z silnymi elementami Soulslike, osadzona w mrocznym świecie dark fantasy.",
     "steam": 356650,
-    "upd": "2026-11-08"
+    "upd": "2026-11-08",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Keep Driving",
@@ -15999,7 +16453,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/keep-driving-744e67fe.webp",
     "opis": "Keep Driving to nostalgiczne, klimatyczne RPG z elementami symulatora zarządzania i rogue-lite, osadzone w klimacie dalekiej podróży samochodowej (road trip) z początku lat 2000.",
     "steam": 2756920,
-    "upd": "2026-11-09"
+    "upd": "2026-11-09",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Shovel Knight: Treasure Trove",
@@ -16015,7 +16470,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/shovel-knight-treasure-trove-4f5f22a6.webp",
     "opis": "Shovel Knight: Treasure Trove to ostateczna, pełna kolekcja kultowej retro platformówki 2D, stworzona przez studio Yacht Club Games. Gra garściami czerpie z klasyków ery 8-bitowych konsol (takich jak Mega Man, Castlevania czy DuckTales), łącząc nostalgiczny pikselart i chwytliwą muzykę z nowoczesnym, dopracowanym sterowaniem.",
     "steam": 250760,
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Dungeons & Dragons: Dark Alliance",
@@ -16030,7 +16486,8 @@
     "dodano": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/dungeons-dragons-dark-alliance-a60ab041.webp",
     "opis": "Dungeons & Dragons: Dark Alliance (2021) to kooperacyjna gra akcji TPP z elementami hack and slash, stworzona przez studio Tuque Games i wydana przez Wizards of the Coast. Akcja gry toczy się w mrocznym, zaśnieżonym regionie Icewind Dale, dobrze znanym z uniwersum Dungeons & Dragons.",
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Stygian Outer Gods",
@@ -16046,7 +16503,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/stygian-outer-gods-aa83e0fa.webp",
     "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
     "steam": 2581410,
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Sonic Rivals",
@@ -16090,7 +16548,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-inc-ae7d62d6.webp",
     "opis": "Kingdom Inc. (2026) to niezależna gra strategiczna łącząca mechaniki budowania fabryki (automation/crafting), symulatora miasta oraz gry przygodowej, stworzona przez studio Leaping Turtle.   W odróżnieniu od klasycznych gier budowlanych, w Kingdom Inc. gracz wciela się w rolę zarządcy upadającego królestwa Yensburg i przekształca je w sprawnie działające „przedsiębiorstwo” produkcyjne.",
     "steam": 4538080,
-    "upd": "2026-11-11"
+    "upd": "2026-11-11",
+    "opisOd": "Harddrive"
   },
   {
     "game": "System Shock 2: 25th Anniversary Remaster",
@@ -16106,7 +16565,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/system-shock-2-25th-anniversary-remaster-00691b01.webp",
     "opis": "System Shock 2: 25th Anniversary Remaster (znany również jako Enhanced Edition) to kompletne odświeżenie kultowej arcydzieła gatunku Immersive Sim z 1999 roku, przygotowane przez Nightdive Studios na silniku KEX Engine.",
     "steam": 866570,
-    "upd": "2026-11-11"
+    "upd": "2026-11-11",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Silent Hill Origins",
@@ -16163,7 +16623,11 @@
     "id": "gta-1-definitive-retro-edition-gta-1-london-69-london-61",
     "aliasy": [
       "gta-1-definitive-retro-edition-gta-1-london-69-london-61"
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Re-Volt",
@@ -16387,7 +16851,11 @@
         "dodano": "2016-09-24"
       }
     ],
-    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "The Legend of Zelda: The Wind Waker",
@@ -16771,7 +17239,11 @@
     "link": "https://ryslaw.pl/bladerunner/",
     "dodano": "2026-08-24",
     "img": "https://cdn.grypopolsku.pl/okladki/blade-runner-de2617a3.webp",
-    "steam": 1678420
+    "steam": 1678420,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "POSTAL 2",
@@ -16840,7 +17312,11 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3371",
     "dodano": "2018-10-04",
     "img": "https://cdn.grypopolsku.pl/okladki/banjo-kazooie-74d00bb2.webp",
-    "yt": "https://www.youtube.com/watch?v=Dz4nsmEWsH0"
+    "yt": "https://www.youtube.com/watch?v=Dz4nsmEWsH0",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Pokémon Ranger: Shadows of Almia",
@@ -18111,7 +18587,11 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3817",
     "dodano": "2022-12-21",
     "steam": 342580,
-    "img": "https://cdn.grypopolsku.pl/okladki/12-labours-of-hercules-69251377.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/12-labours-of-hercules-69251377.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "12 Labours of Hercules IV: Mother Nature",
@@ -19656,7 +20136,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/biped-2-fadb415c.webp",
     "opis": "Biped 2 to urocza, kooperacyjna gra przygodowo-logiczna z elementami platformówki 3D, będąca bezpośrednią kontynuacją przebojowego tytułu z 2020 roku, w którym sterujesz dwunożnymi robotami za pomocą nietypowego, opartego na fizyce schematu kontroli.",
     "steam": 2560240,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "opisOd": "Harddrive"
   },
   {
     "game": "CarX Street",
@@ -19672,7 +20153,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/carx-street-b7962912.webp",
     "opis": "CarX Street to dynamiczna gra wyścigowa w otwartym świecie, skupiająca się na nielegalnych wyścigach ulicznych, drifcie oraz zaawansowanym tuningu samochodów.",
     "steam": 1114150,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "opisOd": "Harddrive"
   },
   {
     "game": "The Necromancer’s Tale",
@@ -19688,7 +20170,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-necromancer-s-tale-6a3e9d63.webp",
     "opis": "The Necromancer’s Tale to mroczna, narracyjna gra cRPG (izometryczne RPG) w klimacie gotyckiego horroru historycznego, w której wcielasz się w adepta zakazanej sztuki nekromancji.",
     "steam": 1315320,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Homura Hime",
@@ -19704,7 +20187,12 @@
     "img": "https://cdn.grypopolsku.pl/okladki/homura-hime-daedfa4e.webp",
     "opis": "Homura Hime to niezwykle dynamiczna, trójwymiarowa gra akcji w stylu anime, która widowiskowo łączy gatunki hack and slash oraz 3D bullet hell.",
     "steam": 1820000,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Kingdom Eighties",
@@ -19720,7 +20208,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-eighties-822624ff.webp",
     "opis": "Kingdom Eighties to gra należąca do gatunku strategii czasu rzeczywistego (RTS) z silnymi elementami tower defense, budowania bazy oraz przygodówki (side-scroller).",
     "steam": 1956040,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Kingdom Two Crowns",
@@ -19736,7 +20225,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-two-crowns-8c988649.webp",
     "opis": "Kingdom Two Crowns to klimatyczna gra strategiczna 2D z piękną oprawą pixel-art, w której wcielasz się w monarchę budującego własne królestwo od zera.\n\nPrzemierzając krainę na wierzchowcu, rekrutujesz poddanych, wznosisz mury, rozwijasz gospodarkę i odkrywasz nowe wyspy, by w nocy odpierać fale potworów czyhających na Twoją koronę. Całość opiera się na intuicyjnym sterowaniu i systemie zarządzania monetami, a unikalny tryb kooperacji pozwala przeżyć tę przygodę solo lub wspólnie z drugim graczem",
     "steam": 701160,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Kingdom: Classic",
@@ -19752,7 +20242,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-classic-140bb547.webp",
     "opis": "Kingdom: Classic to minimalistyczna, dwuwymiarowa gra strategiczna z nastrojową oprawą pixel-art, która zapoczątkowała całą serię.\n\nJako monarcha przemierzający krainę na wierzchowcu, musisz zbudować swoje królestwo od podstaw za pomocą prostego systemu wydawania złotych monet. Za dnia rekrutujesz poddanych, wznosisz mury i rozwijasz gospodarkę, by nocą odpierać coraz silniejsze ataki tajemniczych stworów czyhających na Twoją koronę. Gra stawia na samodzielne odkrywanie zasad i wysokie wyzwanie",
     "steam": 368230,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Kingdom: New Lands",
@@ -19768,7 +20259,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-new-lands-e1e3ff5a.webp",
     "opis": "Kingdom: New Lands to nastrojowa, dwuwymiarowa gra strategiczna z oprawą pixel-art, rozwijająca pomysły znane z pierwowzoru o rozbudowany element odkrywania nieznanego.\n\nJako monarcha przemierzasz konno kolejne wyspy, rekrutując poddanych, wznosząc umocnienia i odpierając nocne ataki tajemniczych stworów czyhających na Twoją koronę. Twoim głównym celem jest nie tylko obrona obozu przed coraz silniejszymi falami wrogów oraz surową zimą, ale też odbudowa wraku statku, który pozwala wyruszyć w dals",
     "steam": 496300,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "over the hill",
@@ -19784,7 +20276,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/over-the-hill-75809077.webp",
     "opis": "Over the Hill to relaksująca gra wyścigowo-eksploracyjna w otwartym świecie, stworzona przez autorów ciepło przyjętego art of rally (studio Funselektor).\n\nZasiadasz w niej za kierownicą klasycznych samochodów terenowych z lat 60., 70. i 80., by w spokojnym tempie przemierzać malownicze doliny, góry i bezdroża inspirowane prawdziwymi krajobrazami. Gra stawia na odkrywanie ukrytych szlaków, radzenie sobie ze zmienną pogodą i cyklem dnia i nocy, a także rozbijanie obozowisk i wykonywanie prostych w",
     "steam": 2929250,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Definitely Not Fried Chicken",
@@ -19800,7 +20293,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/definitely-not-fried-chicken-300ff431.webp",
     "opis": "Definitely Not Fried Chicken to osadzona w klimacie lat 80. gra ekonomiczno-strategiczna (tycoon / symulator zarządzania), w której budujesz narkotykowe imperium pod przykrywką całkowicie legalnych biznesów.",
     "steam": 1036240,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "The Witch's Bakery",
@@ -19816,7 +20310,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-witch-s-bakery-d83bc260.webp",
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Ys Origin",
@@ -19832,7 +20327,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/ys-origin-1fc7e76a.webp",
     "opis": "Ys Origin to dynamiczna gra action RPG typu hack-and-slash, będąca fabularnym prequelem kultowej japońskiej serii Ys, której akcja rozgrywa się 700 lat przed wydarzeniami z pierwszej części.",
     "steam": 207350,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Twin Mirror",
@@ -19862,7 +20358,12 @@
         "d": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/3.webp?v=11a96abd",
         "m": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/3-miniatura.webp?v=3637312b"
       }
-    ]
+    ],
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Forsaken Remastered",
@@ -19879,7 +20380,12 @@
     "img": "https://cdn.grypopolsku.pl/okladki/forsaken-remastered-bb70c478.webp",
     "opis": "Forsaken Remastered to klasyczna strzelanka pierwszoosobowa (FPS) z pełną swobodą ruchu w trzech wymiarach (tzw. 6DoF – Six Degrees of Freedom), będąca odświeżoną wersją kultowej gry z 1998 roku (często porównywanej do serii Descent).",
     "steam": 668980,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-13"
+    }
   },
   {
     "game": "Crimson Moon",
@@ -19895,7 +20401,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/crimson-moon-5f205bf3.webp",
     "opis": "Crimson Moon to dynamiczna gra action RPG osadzona w mrocznym świecie fantasy, w której wcielasz się w łowcę polującego na potwory pod tytułowym Krwawym Księżycem.",
     "steam": 4317690,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Icy Tower",
@@ -19911,7 +20418,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/icy-tower-1e199801.webp",
     "opis": "Icy Tower to kultowa, zręcznościowa gra platformowa z 2001 roku, w której wcielasz się w Harolda the Homeboya wspinającego się na pozornie nieskończoną, lodową wieżę.",
     "steam": 3014860,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opisOd": "Harddrive"
   },
   {
     "game": "TCG Card Shop Simulator",
@@ -19927,7 +20435,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tcg-card-shop-simulator-5211393c.webp",
     "opis": "TCG Card Shop Simulator to symulator ekonomiczny / gra typu tycoon z perspektywy pierwszej osoby (FPP), skupiająca się na prowadzeniu własnego sklepu z kolekcjonerskimi grami karcianymi.",
     "steam": 3070070,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opisOd": "Harddrive"
   },
   {
     "game": "DERELIKT",
@@ -19943,7 +20452,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/derelikt-04dbd820.webp",
     "opis": "DERELIKT to klimatyczna, pierwszoosobowa gra survival horror / przygodowa (często określana jako walking simulator z elementami zagadek i grozy) osadzona w opuszczonym, postindustrialnym lub postapokaliptycznym świecie.",
     "steam": 3810510,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "opisOd": "Harddrive"
   },
   {
     "game": "Life is Strange Remastered",
@@ -19960,7 +20470,12 @@
     "steam": 1265920,
     "upd": "2026-11-15",
     "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku.",
-    "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay."
+    "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay.",
+    "instrOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Call of Duty: Black Ops II",
@@ -19976,7 +20491,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 0,
-    "opis": "Strzelanka FPS od Treyarch z 2012 roku, kontynuacja Call of Duty: Black Ops. Kampania przeplata zimną wojnę lat 80. z niedaleką przyszłością, w której świat musi stawić czoła Raulowi Menendezowi."
+    "opis": "Strzelanka FPS od Treyarch z 2012 roku, kontynuacja Call of Duty: Black Ops. Kampania przeplata zimną wojnę lat 80. z niedaleką przyszłością, w której świat musi stawić czoła Raulowi Menendezowi.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Borderlands 2",
@@ -19993,7 +20512,11 @@
     "gamereader": "https://www.gamereader.pl/biblioteka",
     "dodano": "2026-11-15",
     "upd": "2026-11-14",
-    "opis": "Kooperacyjna strzelanka z elementami RPG od Gearbox Software z 2012 roku. Łowcy Krypty przemierzają planetę Pandorę, by powstrzymać Handsome Jacka, a po drodze zbierają tysiące losowo generowanych broni."
+    "opis": "Kooperacyjna strzelanka z elementami RPG od Gearbox Software z 2012 roku. Łowcy Krypty przemierzają planetę Pandorę, by powstrzymać Handsome Jacka, a po drodze zbierają tysiące losowo generowanych broni.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-15"
+    }
   },
   {
     "game": "Borderlands 4",
@@ -20101,7 +20624,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-mordor-ffc9a129.webp",
     "opis": "Middle-earth: Shadow of Mordor to trzecioosobowa gra akcji RPG z otwartym światem z 2014 roku, osadzona w uniwersum Władcy Pierścieni (pomiędzy wydarzeniami z Hobbita a Władcą Pierścieni).",
     "steam": 241930,
-    "upd": "2026-11-15"
+    "upd": "2026-11-15",
+    "opisOd": "Harddrive"
   },
   {
     "game": "MADiSON",
@@ -20117,6 +20641,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
-    "upd": "2026-11-07"
+    "upd": "2026-11-07",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

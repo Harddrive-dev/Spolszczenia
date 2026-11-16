@@ -1189,7 +1189,7 @@ async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
     if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
-  updateAuth();if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews()}
+  updateAuth();if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
 var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;
@@ -2252,8 +2252,16 @@ function renderKonto(){var v=$("kontoview");if(!v)return;var hd=VBACK+'<h2>⚙�
     :'<p class="msg">Logujesz się przez '+esc(pv.map(function(x){return PNM[x]||x}).join(", ")||"zewnętrzne konto")+' – hasło zmieniasz na tamtej stronie, u nas nie ma osobnego hasła.</p>';
   v.innerHTML=hd+'<p class="msg dsub">Tu zmienisz nick widoczny na stronie i hasło do konta.</p>'+
     '<div class="ksec"><h3>Nick na stronie</h3>'+ns+'</div>'+
+    rolaSec()+
     '<div class="ksec"><h3>Hasło</h3>'+ps+'</div>'+
     '<div class="ksec"><h3>Konto</h3><div class="kinfo"><span>E-mail</span><span>'+esc(u.email||"—")+'</span><span>Logowanie</span><span>'+esc(pv.map(function(x){return PNM[x]||x}).join(", ")||"—")+'</span></div></div>'}
+// Sekcja „Twoja rola” w Ustawieniach konta: admin / moderator / opiekun sekcji (z listą jego gier).
+function rolaSec(){if(!roleLoaded||!myRole)return "";
+  if(myRole==="opiekun"){var pl=myPlat.join("/")||"sekcji",gry=items.filter(wSekcji).sort(function(a,b){return String(a.game).localeCompare(String(b.game),"pl")});
+    return '<div class="ksec"><h3>Twoja rola</h3><p><span class="opb" style="margin:0">Opiekun '+esc(pl)+'</span></p>'+
+      '<p class="msg">Możesz poprawiać wpisy i dodawać zrzuty ekranu gier z platformy <b>'+esc(myPlat.join(", ")||"—")+'</b>. W katalogu przy tych grach w menu ⋯ masz „Edytuj wpis” i „Zrzuty ekranu”. Twoje zmiany pojawiają się na stronie w ciągu ok. 30 minut, podpisane Twoim nickiem.</p>'+
+      (gry.length?'<p class="msg" style="margin-bottom:4px">Twoje gry ('+gry.length+'):</p><p class="kgry">'+gry.slice(0,60).map(function(g){return '<a href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'}).join(" · ")+(gry.length>60?' · i '+(gry.length-60)+' więcej':'')+'</p>':'<p class="msg">W katalogu nie ma jeszcze gier z tej platformy.</p>')+'</div>'}
+  return '<div class="ksec"><h3>Twoja rola</h3><p><span class="modb" style="margin:0">'+(myRole==="admin"?"Administrator":"Moderator")+'</span></p><p class="msg">'+(myRole==="admin"?"Masz pełny dostęp: zgłoszenia, edycja wszystkich gier, Aktualności i lista moderatorów.":"Widzisz zgłoszenia, poprawiasz wpisy wszystkich gier i usuwasz komentarze.")+'</p></div>'}
 function showKonto(){enterView("konto","Ustawienia konta – GryPoPolsku.pl");if(me()&&PROF.u!==me().id)loadProfile();renderKonto()}
 function kMsg(id){return function(t,err){var m=$(id);if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("#ukonto,#knsave,#kpsave");if(!t)return;

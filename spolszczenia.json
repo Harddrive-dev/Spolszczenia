@@ -2721,6 +2721,38 @@
       {
         "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/1.webp?v=231e869d",
         "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/1-miniatura.webp?v=07e8114d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/2.webp?v=258a91e7",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/2-miniatura.webp?v=c1a2d1a8"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/3.webp?v=016d6aad",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/3-miniatura.webp?v=3a06a14c"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/4.webp?v=9fdb9f15",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/4-miniatura.webp?v=1443a16f"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/5.webp?v=9452a5e8",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/5-miniatura.webp?v=3328d5cb"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/6.webp?v=11cb264e",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/6-miniatura.webp?v=d5df93c6"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/7.webp?v=df367343",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/7-miniatura.webp?v=9290733d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/8.webp?v=ec2237a4",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/8-miniatura.webp?v=a7bd2844"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/9.webp?v=b09fa763",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/9-miniatura.webp?v=0e973fec"
       }
     ],
     "zrzutyOd": [
@@ -2957,9 +2989,10 @@
       "gta-vice-city-stories"
     ],
     "zmiana": {
-      "kto": "tanixd",
+      "kto": "kokos324",
       "dzien": "2026-11-16"
-    }
+    },
+    "okladkaPasek": 1
   },
   {
     "game": "GYLT",
@@ -16979,7 +17012,7 @@
       {
         "id": "manhunt-2--ariul",
         "author": "Darnok",
-        "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060",
+        "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060&start=20",
         "type": "Napisy",
         "status": "Gotowe",
         "prog": 100,

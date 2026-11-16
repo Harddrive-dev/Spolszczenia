@@ -8255,7 +8255,6 @@
     "opis": "Gra akcji od chińskiego studia S-GAME, w której szybka i widowiskowa walka w stylu sztuk walki spotyka mroczny świat inspirowany wuxia. Całość utrzymana jest w estetyce, którą twórcy określają jako „kung fu punk\".",
     "lore": "https://lorespeak.pl/games/phantom-blade-zero",
     "steam": 4115450,
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
@@ -9432,7 +9431,6 @@
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
     "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
-    "instrOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
@@ -10212,7 +10210,6 @@
     "img": "https://cdn.grypopolsku.pl/okladki/queen-s-domain-7afe69f4.webp",
     "steam": 1799840,
     "opis": "Queen's Domain to mroczna gra Action-RPG w stylu retro dark fantasy, mocno inspirowana kultową serią King’s Field od studia FromSoftware oraz klasycznymi produkcjami z epoki pierwszego PlayStation.",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
@@ -14420,7 +14417,6 @@
     "opis": "Daymare: 1998 to klasyczny survival horror z widokiem z trzeciej osoby (TPP), stanowiący duchowego spadkobiercę zombijowych serii z lat 90. (szczególnie Resident Evil 2).\n\nGra przenosi cię do małego miasteczka opanowanego przez śmiertelny wirus zmieniający ludzi w krwiożercze potwory. Rozgrywka ukazuje historię z perspektywy trzech różnych postaci i stawia na mroczną atmosferę, twarde zarządzanie mocno ograniczoną amunicją i zasobami, wymagające zagadki środowiskowe oraz bezkompromisowy poziom t",
     "lore": "https://lorespeak.pl/games/daymare-1998",
     "yt": "https://www.youtube.com/watch?v=c31w7JwlqHI",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-08"
@@ -16160,7 +16156,6 @@
     "aliasy": [
       "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna"
     ],
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
@@ -16375,8 +16370,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/huntdown-5602b323.webp",
     "opis": "Huntdown to dynamiczna, cyberpunkowa strzelanka platformowa 2D w stylu retro (run and gun), która w pełni oddaje hołd kinowi akcji lat 80.\n\nW świecie opanowanym przez bezwzględne gangi wcielasz się w rolę bezkompromisowego łowcy nagród. Gra zachwyca fenomenalną grafiką pikselową, klimatyczną ścieżką dźwiękową synthwave oraz niezwykle płynną, arcade'ową rozgrywką. To idealna pozycja dla fanów klasycznych wyzwań – zarówno solo, jak i w lokalnym trybie kooperacji.",
     "steam": 598550,
-    "upd": "2026-11-07",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-07"
   },
   {
     "game": "Star Wars Outlaws",
@@ -16392,8 +16386,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/star-wars-outlaws-9f2e08da.webp",
     "opis": "Star Wars Outlaws to pierwsza w historii franczyzy przygodowa gra akcji w całkowicie otwartym świecie, osadzona w uniwersum Gwiezdnych Wojen.\n\nWcielasz się w rolę Kay Vess – sprytnej łotrzycy, która wraz ze swoim małym kompanem Nixem próbuje przeprowadzić jeden z największych skoków w historii Zewnętrznych Rubieży. Gra skupia się na przestępczym podziemiu Galaktyki, oferując dynamiczne strzelaniny, skradanie się, eksplorację różnorodnych planet na ścigaczu oraz kosmiczne walki na pokładzie statk",
     "steam": 2842040,
-    "upd": "2026-11-07",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-07"
   },
   {
     "game": "Arco",
@@ -16409,8 +16402,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/arco-90b4af4e.webp",
     "opis": "Arco to niezwykła, taktyczna gra RPG w klimacie mezoamerykańskiego fantasy, łącząca unikalny system walki z przepiękną, artystyczną oprawą w stylu pixel art.",
     "steam": 2366970,
-    "upd": "2026-11-08",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-08"
   },
   {
     "game": "Shenmue III",
@@ -16428,7 +16420,6 @@
     "steam": 878670,
     "upd": "2026-11-08",
     "lore": "https://lorespeak.pl/games/shenmue-iii",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-08"
@@ -16448,8 +16439,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/death-s-gambit-afterlife-2fa4c3fa.webp",
     "opis": "Death's Gambit: Afterlife to rozbudowana, dwuwymiarowa gra z gatunku Metroidvania z silnymi elementami Soulslike, osadzona w mrocznym świecie dark fantasy.",
     "steam": 356650,
-    "upd": "2026-11-08",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-08"
   },
   {
     "game": "Keep Driving",
@@ -16465,8 +16455,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/keep-driving-744e67fe.webp",
     "opis": "Keep Driving to nostalgiczne, klimatyczne RPG z elementami symulatora zarządzania i rogue-lite, osadzone w klimacie dalekiej podróży samochodowej (road trip) z początku lat 2000.",
     "steam": 2756920,
-    "upd": "2026-11-09",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-09"
   },
   {
     "game": "Shovel Knight: Treasure Trove",
@@ -16482,8 +16471,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/shovel-knight-treasure-trove-4f5f22a6.webp",
     "opis": "Shovel Knight: Treasure Trove to ostateczna, pełna kolekcja kultowej retro platformówki 2D, stworzona przez studio Yacht Club Games. Gra garściami czerpie z klasyków ery 8-bitowych konsol (takich jak Mega Man, Castlevania czy DuckTales), łącząc nostalgiczny pikselart i chwytliwą muzykę z nowoczesnym, dopracowanym sterowaniem.",
     "steam": 250760,
-    "upd": "2026-11-10",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-10"
   },
   {
     "game": "Dungeons & Dragons: Dark Alliance",
@@ -16498,8 +16486,7 @@
     "dodano": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/dungeons-dragons-dark-alliance-a60ab041.webp",
     "opis": "Dungeons & Dragons: Dark Alliance (2021) to kooperacyjna gra akcji TPP z elementami hack and slash, stworzona przez studio Tuque Games i wydana przez Wizards of the Coast. Akcja gry toczy się w mrocznym, zaśnieżonym regionie Icewind Dale, dobrze znanym z uniwersum Dungeons & Dragons.",
-    "upd": "2026-11-10",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-10"
   },
   {
     "game": "Stygian Outer Gods",
@@ -16515,8 +16502,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/stygian-outer-gods-aa83e0fa.webp",
     "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
     "steam": 2581410,
-    "upd": "2026-11-10",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-10"
   },
   {
     "game": "Sonic Rivals",
@@ -16536,9 +16522,7 @@
       "dzien": "2026-11-16"
     },
     "opis": "Sonic Rivals to dynamiczna gra wyścigowo-platformowa wydana w 2006 roku wyłącznie na konsolę PlayStation Portable (PSP). Za jej produkcję odpowiadało kanadyjskie studio Backbone Entertainment.",
-    "opisOd": "Harddrive",
-    "instr": "## Emulator PPSSPP (komputer, telefon)\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Rozpakuj plik ISO gry (np. programem 7-Zip) do osobnego folderu, tak żeby powstała ścieżka typu D:/PSPGAMES/SonicRivals/PSP_GAME.\n3. Rozpakuj plik ZIP ze spolszczeniem do folderu SonicRivals i potwierdź zastąpienie plików.\n4. W PPSSPP przejdź w zakładce „Gry” do folderu SonicRivals i uruchom grę.\n\n## Konsola PSP / PS Vita / PS TV\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Otwórz plik ISO gry w programie UMDGen (Windows).\n3. Rozpakuj plik ZIP ze spolszczeniem i podmień nim pliki w UMDGen.\n4. Zapisz nowy plik ISO (najlepiej bez kompresji).\n5. Skopiuj go na konsolę: na PSP do folderu ISO na karcie pamięci, a na PS Vita / PS TV (przez Adrenaline) do folderu ux0:pspemu/ISO.\n6. Uruchom grę.",
-    "instrOd": "Harddrive"
+    "instr": "## Emulator PPSSPP (komputer, telefon)\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Rozpakuj plik ISO gry (np. programem 7-Zip) do osobnego folderu, tak żeby powstała ścieżka typu D:/PSPGAMES/SonicRivals/PSP_GAME.\n3. Rozpakuj plik ZIP ze spolszczeniem do folderu SonicRivals i potwierdź zastąpienie plików.\n4. W PPSSPP przejdź w zakładce „Gry” do folderu SonicRivals i uruchom grę.\n\n## Konsola PSP / PS Vita / PS TV\n\n1. Zrób kopię zapasową oryginalnego pliku ISO gry.\n2. Otwórz plik ISO gry w programie UMDGen (Windows).\n3. Rozpakuj plik ZIP ze spolszczeniem i podmień nim pliki w UMDGen.\n4. Zapisz nowy plik ISO (najlepiej bez kompresji).\n5. Skopiuj go na konsolę: na PSP do folderu ISO na karcie pamięci, a na PS Vita / PS TV (przez Adrenaline) do folderu ux0:pspemu/ISO.\n6. Uruchom grę."
   },
   {
     "game": "Dante's Inferno",
@@ -16568,8 +16552,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-inc-ae7d62d6.webp",
     "opis": "Kingdom Inc. (2026) to niezależna gra strategiczna łącząca mechaniki budowania fabryki (automation/crafting), symulatora miasta oraz gry przygodowej, stworzona przez studio Leaping Turtle.   W odróżnieniu od klasycznych gier budowlanych, w Kingdom Inc. gracz wciela się w rolę zarządcy upadającego królestwa Yensburg i przekształca je w sprawnie działające „przedsiębiorstwo” produkcyjne.",
     "steam": 4538080,
-    "upd": "2026-11-11",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-11"
   },
   {
     "game": "System Shock 2: 25th Anniversary Remaster",
@@ -16585,8 +16568,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/system-shock-2-25th-anniversary-remaster-00691b01.webp",
     "opis": "System Shock 2: 25th Anniversary Remaster (znany również jako Enhanced Edition) to kompletne odświeżenie kultowej arcydzieła gatunku Immersive Sim z 1999 roku, przygotowane przez Nightdive Studios na silniku KEX Engine.",
     "steam": 866570,
-    "upd": "2026-11-11",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-11"
   },
   {
     "game": "Silent Hill Origins",
@@ -20156,8 +20138,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/biped-2-fadb415c.webp",
     "opis": "Biped 2 to urocza, kooperacyjna gra przygodowo-logiczna z elementami platformówki 3D, będąca bezpośrednią kontynuacją przebojowego tytułu z 2020 roku, w którym sterujesz dwunożnymi robotami za pomocą nietypowego, opartego na fizyce schematu kontroli.",
     "steam": 2560240,
-    "upd": "2026-11-12",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-12"
   },
   {
     "game": "CarX Street",
@@ -20173,8 +20154,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/carx-street-b7962912.webp",
     "opis": "CarX Street to dynamiczna gra wyścigowa w otwartym świecie, skupiająca się na nielegalnych wyścigach ulicznych, drifcie oraz zaawansowanym tuningu samochodów.",
     "steam": 1114150,
-    "upd": "2026-11-12",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-12"
   },
   {
     "game": "The Necromancer’s Tale",
@@ -20190,8 +20170,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-necromancer-s-tale-6a3e9d63.webp",
     "opis": "The Necromancer’s Tale to mroczna, narracyjna gra cRPG (izometryczne RPG) w klimacie gotyckiego horroru historycznego, w której wcielasz się w adepta zakazanej sztuki nekromancji.",
     "steam": 1315320,
-    "upd": "2026-11-12",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-12"
   },
   {
     "game": "Homura Hime",
@@ -20208,7 +20187,6 @@
     "opis": "Homura Hime to niezwykle dynamiczna, trójwymiarowa gra akcji w stylu anime, która widowiskowo łączy gatunki hack and slash oraz 3D bullet hell.",
     "steam": 1820000,
     "upd": "2026-11-13",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
@@ -20228,8 +20206,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-eighties-822624ff.webp",
     "opis": "Kingdom Eighties to gra należąca do gatunku strategii czasu rzeczywistego (RTS) z silnymi elementami tower defense, budowania bazy oraz przygodówki (side-scroller).",
     "steam": 1956040,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Kingdom Two Crowns",
@@ -20245,8 +20222,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-two-crowns-8c988649.webp",
     "opis": "Kingdom Two Crowns to klimatyczna gra strategiczna 2D z piękną oprawą pixel-art, w której wcielasz się w monarchę budującego własne królestwo od zera.\n\nPrzemierzając krainę na wierzchowcu, rekrutujesz poddanych, wznosisz mury, rozwijasz gospodarkę i odkrywasz nowe wyspy, by w nocy odpierać fale potworów czyhających na Twoją koronę. Całość opiera się na intuicyjnym sterowaniu i systemie zarządzania monetami, a unikalny tryb kooperacji pozwala przeżyć tę przygodę solo lub wspólnie z drugim graczem",
     "steam": 701160,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Kingdom: Classic",
@@ -20262,8 +20238,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-classic-140bb547.webp",
     "opis": "Kingdom: Classic to minimalistyczna, dwuwymiarowa gra strategiczna z nastrojową oprawą pixel-art, która zapoczątkowała całą serię.\n\nJako monarcha przemierzający krainę na wierzchowcu, musisz zbudować swoje królestwo od podstaw za pomocą prostego systemu wydawania złotych monet. Za dnia rekrutujesz poddanych, wznosisz mury i rozwijasz gospodarkę, by nocą odpierać coraz silniejsze ataki tajemniczych stworów czyhających na Twoją koronę. Gra stawia na samodzielne odkrywanie zasad i wysokie wyzwanie",
     "steam": 368230,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Kingdom: New Lands",
@@ -20279,8 +20254,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-new-lands-e1e3ff5a.webp",
     "opis": "Kingdom: New Lands to nastrojowa, dwuwymiarowa gra strategiczna z oprawą pixel-art, rozwijająca pomysły znane z pierwowzoru o rozbudowany element odkrywania nieznanego.\n\nJako monarcha przemierzasz konno kolejne wyspy, rekrutując poddanych, wznosząc umocnienia i odpierając nocne ataki tajemniczych stworów czyhających na Twoją koronę. Twoim głównym celem jest nie tylko obrona obozu przed coraz silniejszymi falami wrogów oraz surową zimą, ale też odbudowa wraku statku, który pozwala wyruszyć w dals",
     "steam": 496300,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "over the hill",
@@ -20296,8 +20270,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/over-the-hill-75809077.webp",
     "opis": "Over the Hill to relaksująca gra wyścigowo-eksploracyjna w otwartym świecie, stworzona przez autorów ciepło przyjętego art of rally (studio Funselektor).\n\nZasiadasz w niej za kierownicą klasycznych samochodów terenowych z lat 60., 70. i 80., by w spokojnym tempie przemierzać malownicze doliny, góry i bezdroża inspirowane prawdziwymi krajobrazami. Gra stawia na odkrywanie ukrytych szlaków, radzenie sobie ze zmienną pogodą i cyklem dnia i nocy, a także rozbijanie obozowisk i wykonywanie prostych w",
     "steam": 2929250,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Definitely Not Fried Chicken",
@@ -20313,8 +20286,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/definitely-not-fried-chicken-300ff431.webp",
     "opis": "Definitely Not Fried Chicken to osadzona w klimacie lat 80. gra ekonomiczno-strategiczna (tycoon / symulator zarządzania), w której budujesz narkotykowe imperium pod przykrywką całkowicie legalnych biznesów.",
     "steam": 1036240,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "The Witch's Bakery",
@@ -20330,8 +20302,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-witch-s-bakery-d83bc260.webp",
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Ys Origin",
@@ -20347,8 +20318,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/ys-origin-1fc7e76a.webp",
     "opis": "Ys Origin to dynamiczna gra action RPG typu hack-and-slash, będąca fabularnym prequelem kultowej japońskiej serii Ys, której akcja rozgrywa się 700 lat przed wydarzeniami z pierwszej części.",
     "steam": 207350,
-    "upd": "2026-11-13",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-13"
   },
   {
     "game": "Twin Mirror",
@@ -20379,7 +20349,6 @@
         "m": "https://cdn.grypopolsku.pl/zrzuty/twin-mirror/3-miniatura.webp?v=3637312b"
       }
     ],
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
@@ -20401,7 +20370,6 @@
     "opis": "Forsaken Remastered to klasyczna strzelanka pierwszoosobowa (FPS) z pełną swobodą ruchu w trzech wymiarach (tzw. 6DoF – Six Degrees of Freedom), będąca odświeżoną wersją kultowej gry z 1998 roku (często porównywanej do serii Descent).",
     "steam": 668980,
     "upd": "2026-11-13",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
@@ -20421,8 +20389,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/crimson-moon-5f205bf3.webp",
     "opis": "Crimson Moon to dynamiczna gra action RPG osadzona w mrocznym świecie fantasy, w której wcielasz się w łowcę polującego na potwory pod tytułowym Krwawym Księżycem.",
     "steam": 4317690,
-    "upd": "2026-11-14",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-14"
   },
   {
     "game": "Icy Tower",
@@ -20438,8 +20405,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/icy-tower-1e199801.webp",
     "opis": "Icy Tower to kultowa, zręcznościowa gra platformowa z 2001 roku, w której wcielasz się w Harolda the Homeboya wspinającego się na pozornie nieskończoną, lodową wieżę.",
     "steam": 3014860,
-    "upd": "2026-11-14",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-14"
   },
   {
     "game": "TCG Card Shop Simulator",
@@ -20455,8 +20421,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tcg-card-shop-simulator-5211393c.webp",
     "opis": "TCG Card Shop Simulator to symulator ekonomiczny / gra typu tycoon z perspektywy pierwszej osoby (FPP), skupiająca się na prowadzeniu własnego sklepu z kolekcjonerskimi grami karcianymi.",
     "steam": 3070070,
-    "upd": "2026-11-14",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-14"
   },
   {
     "game": "DERELIKT",
@@ -20472,8 +20437,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/derelikt-04dbd820.webp",
     "opis": "DERELIKT to klimatyczna, pierwszoosobowa gra survival horror / przygodowa (często określana jako walking simulator z elementami zagadek i grozy) osadzona w opuszczonym, postindustrialnym lub postapokaliptycznym świecie.",
     "steam": 3810510,
-    "upd": "2026-11-14",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-14"
   },
   {
     "game": "Life is Strange Remastered",
@@ -20491,7 +20455,6 @@
     "upd": "2026-11-15",
     "instr": "1. Pobierz spolszczenie (przycisk powyżej) i rozpakuj plik ZIP – w środku jest plik **pakchunk88-WindowsNoEditor.pak**.\n2. Otwórz folder gry: w Steam kliknij grę prawym przyciskiem → **Zarządzaj** → **Przeglądaj pliki lokalne**.\n3. Wejdź do folderu **LIS\\Content\\Paks** i wklej tam plik **pakchunk88-WindowsNoEditor.pak**.\n4. Uruchom grę – napisy będą po polsku.",
     "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay.",
-    "instrOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
@@ -20644,8 +20607,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-mordor-ffc9a129.webp",
     "opis": "Middle-earth: Shadow of Mordor to trzecioosobowa gra akcji RPG z otwartym światem z 2014 roku, osadzona w uniwersum Władcy Pierścieni (pomiędzy wydarzeniami z Hobbita a Władcą Pierścieni).",
     "steam": 241930,
-    "upd": "2026-11-15",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-15"
   },
   {
     "game": "Battlefleet Gothic: Armada 2",
@@ -20661,8 +20623,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/battlefleet-gothic-armada-2-c841ef28.webp",
     "opis": "Battlefleet Gothic: Armada 2 to taktyczna strategia czasu rzeczywistego (RTS) osadzona w mrocznym uniwersum Warhammera 40,000, w której przejmujesz dowodzenie nad potężnymi flotami kosmicznymi. Wydana w 2019 roku produkcja studia Tindalos Interactive jest bezpośrednią kontynuacją gry z 2016 roku, znacząco rozbudowaną pod względem skali i zawartości.",
     "steam": 573100,
-    "upd": "2026-11-16",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-16"
   },
   {
     "game": "Cat Quest II",
@@ -20678,8 +20639,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/cat-quest-ii-b6686aef.webp",
     "opis": "Cat Quest II to urocza, pełna humoru gra RPG akcji (action RPG) osadzona w fantastycznym świecie zamieszkanym przez antropomorficzne koty i psy. Wydana w 2019 roku przez studio The Gentlebros produkcja jest bezpośrednią kontynuacją ciepło przyjętego Cat Quest, rozbudowującą znaną formułę o tryb współpracy i nowe mechaniki.",
     "steam": 914710,
-    "upd": "2026-11-16",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-16"
   },
   {
     "game": "Golf With Your Friends",
@@ -20695,8 +20655,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/golf-with-your-friends-7d88f75f.webp",
     "opis": "Golf With Your Friends to dynamiczna, zręcznościowa gra imprezowa o minigolfie, nastawiona przede wszystkim na rywalizację ze znajomymi w sieci. Produkcja studia Blacklight Interactive (wydana przez Team17) stawia na szalone, nierealistyczne tory pełne przeszkód oraz możliwość modyfikowania zasad rozgrywki.",
     "steam": 431240,
-    "upd": "2026-11-16",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-16"
   },
   {
     "game": "Remnant II",
@@ -20712,8 +20671,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/remnant-ii-92392e4e.webp",
     "opis": "Remnant II to wymagająca strzelanka z perspektywy trzeciej osoby (TPP) z elementami gier soulslike i RPG akcji, stworzona przez studio Gunfire Games i wydana w 2023 roku. Jako kontynuacja Remnant: From the Ashes, gra ponownie rzuca ocalałych ludzi w sam środek walki z niszczycielską siłą znaną jako Root, rozgrywającej się w wielu alternatywnych wymiarach.",
     "steam": 1282100,
-    "upd": "2026-11-16",
-    "opisOd": "Harddrive"
+    "upd": "2026-11-16"
   },
   {
     "game": "MADiSON",
@@ -20730,7 +20688,6 @@
     "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
     "steam": 1670870,
     "upd": "2026-11-07",
-    "opisOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-07"

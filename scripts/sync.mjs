@@ -16,6 +16,9 @@ for(const g of list)if(g.status==="W toku")g.status="Beta";
 const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
+// Opiekun sekcji (rola „opiekun”, np. tylko PSP): przy jego poprawkach baza wpisuje data.zakres = lista platform.
+// Poprawkę przyjmujemy tylko w grze, której platforma zawiera jedną z nich (np. „PSP” → „Sony PSP”).
+const wZakresie=(g,d)=>!Array.isArray(d.zakres)||d.zakres.some(p=>p&&String(g.platform||"").toLowerCase().includes(String(p).toLowerCase()));
 // Numer gry na Steamie: sam numer, link do sklepu albo kilka po przecinku. Zwraca listę numerów albo null, gdy coś jest nie tak.
 const steamParse=v=>{v=String(Array.isArray(v)?v.join(","):v??"").trim();if(!v)return[];const out=[];for(const x of v.split(/[\s,;]+/)){if(!x)continue;const m=/^(\d{1,8})$/.exec(x)||/steam(?:powered|community)\.com\/(?:app|agecheck\/app)\/(\d{1,8})/i.exec(x);if(!m)return null;if(!out.includes(+m[1]))out.push(+m[1])}return out};
 const steamSet=(g,ids)=>{if(ids&&ids.length)g.steam=ids.length===1?ids[0]:ids;else delete g.steam};
@@ -44,7 +47,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
   if(day&&spUpd(przed,g))g.upd=day}
- else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
+ else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;if(!wZakresie(g,d)){console.log("Pominięto poprawkę spoza sekcji opiekuna:",r.game,"(",(d.zakres||[]).join(", "),")");continue}const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();
    if(f==="usun"){if(v==="1")g._usun=1;continue}
    if(f==="steam"){const st=steamParse(v);if(st)steamSet(g,st);continue}
@@ -70,6 +73,26 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(day&&!(d.changes||[]).some(c=>c.field==="upd")&&spUpd(przed,g))g.upd=day;
   if(g._usun)list.splice(list.indexOf(g),1)}
  else if(r.kind==="link"){const g=find(d.key),nl=String(d.newLink||"");if(g&&/^https?:\/\//i.test(nl))g.link=nl}}
+// Podpisy na stronach gier: „Autor opisu”, „Autor instrukcji” – osoba, która napisała pierwszą wersję tekstu (drobne poprawki
+// innych osób podpisu nie zmieniają; zmienia go dopiero tekst napisany w większości od nowa) – oraz „Ostatnia zmiana wpisu”
+// (kto i kiedy). Liczą się tylko zmiany ludzi z bazy (zgłoszenia, „Edytuj wpis”), nie import ani bot. Nick: user_name zgłoszenia.
+{const slowa=t=>String(t||"").toLowerCase().match(/[\p{L}\p{N}]+/gu)||[];
+ const podobne=(a,b)=>{const A=slowa(a),B=slowa(b);if(!A.length||!B.length)return 0;const m=new Map();for(const w of A)m.set(w,(m.get(w)||0)+1);let w=0;for(const x of B){const n=m.get(x);if(n){w++;m.set(x,n-1)}}return w/Math.max(A.length,B.length)};
+ const KTO=new Map(),kto=k=>{if(!KTO.has(k))KTO.set(k,{});return KTO.get(k)};
+ const tekst=(o,pole,nick,v,przed)=>{v=String(v||"").trim();if(!v){delete o[pole];return}const st=o[pole],stary=st?st.t:String(przed||"").trim();
+  o[pole]={kto:(!stary||podobne(stary,v)<0.5)?(nick||""):(st?st.kto:""),t:v}};
+ for(const r of rows){const d=r.data||{},nick=String(r.user_name||"").trim().slice(0,30),dzien=String(r.created_at||"").slice(0,10);
+  if(r.kind==="new"){const k=slug(String(d.game||r.game||"").trim());if(!k)continue;const o=kto(k);if(d.opis&&!o.opis)o.opis={kto:nick,t:String(d.opis).trim()};if(d.instr&&!o.instr)o.instr={kto:nick,t:String(d.instr).trim()};continue}
+  if(!d.key)continue;
+  if(r.kind==="modedit"){const g=find(d.key);if(g&&!wZakresie(g,d))continue;const o=kto(d.key);let zm=false;
+   for(const c of d.changes||[]){if(c.field==="usun")continue;zm=true;if(c.field==="opis"||c.field==="instr")tekst(o,c.field,nick,c.to,c.from)}
+   if(zm&&nick)o.zmiana={kto:nick,dzien}}
+  else if((r.kind==="edit"||r.kind==="link")&&nick)kto(d.key).zmiana={kto:nick,dzien}}
+ const rowne=(a,b)=>String(a||"").trim()===String(b||"").trim();
+ for(const g of list){const o=KTO.get(keyOf(g))||{};
+  if(o.opis&&o.opis.kto&&rowne(o.opis.t.slice(0,500),g.opis))g.opisOd=o.opis.kto;else delete g.opisOd;
+  if(o.instr&&o.instr.kto&&rowne(o.instr.t.slice(0,3000),g.instr))g.instrOd=o.instr.kto;else delete g.instrOd;
+  if(o.zmiana)g.zmiana={kto:o.zmiana.kto,dzien:o.zmiana.dzien};else delete g.zmiana}}
 // Dawne adresy stron gier (po zmianie nazwy): pole „aliasy”, z którego gry.mjs robi przekierowania na obecną stronę.
 {const cur=new Map(list.map(g=>[slug(g.game||""),g])),nxt=new Map(renames);
  for(const [a,b] of renames){let t=b,n=0;while(!cur.has(t)&&nxt.has(t)&&n++<10)t=nxt.get(t);const g=cur.get(t);if(!g||cur.has(a))continue;

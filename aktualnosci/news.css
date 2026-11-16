@@ -44,7 +44,7 @@ h2.ch{font-size:20px;margin:0 0 12px}
 .cav img{width:100%;height:100%;object-fit:cover}
 .cmain{flex:1;min-width:0}
 .cmeta{font-size:13px;color:var(--muted)}.cmeta b{color:var(--text);font-size:14px}
-.modb{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:1px 8px;margin-left:6px;background:var(--accent);color:var(--onacc)}
+.modb{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:1px 8px;margin-left:6px;background:var(--accent);color:var(--onacc)}.opb{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:0 7px;margin-left:6px;border:1px solid var(--accent);color:var(--accent)}
 .cbody{margin:2px 0 4px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
 .act{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}
 .act button{all:unset;cursor:pointer;color:var(--muted);font-size:13px}.act button:hover{color:var(--accent)}

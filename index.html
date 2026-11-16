@@ -265,7 +265,7 @@ body:has(.overlay.open){overflow:hidden}
 .cav{width:40px;height:40px;border-radius:50%;flex:none;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;color:#150f1c}
 .cav img{width:100%;height:100%;object-fit:cover;display:block}
 .cmt{display:flex;gap:12px}.cmt .cmain{min-width:0;flex:1}
-.modb{background:var(--accent);color:var(--bg);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}
+.modb{background:var(--accent);color:var(--bg);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}.opb{border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:0 7px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}
 .cformrow{display:flex;gap:12px;align-items:flex-start}.cformrow .cin{flex:1;min-width:0}
 .cwho{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-bottom:8px;font-weight:700;font-size:14px}.cwho small{color:var(--muted);font-weight:400;font-size:12px}
 .sub{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.sub .subh{margin-bottom:2px}.subd{margin-top:4px;display:grid;gap:2px;overflow-wrap:anywhere}.cvmuted{color:var(--muted);font-size:13px}
@@ -1168,7 +1168,7 @@ async function loadCounts(){
       if(r.data.length<1000)break;from+=1000}
     counts=c;render();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
 function me(){return recov?null:(session&&session.user)}
-var myRole=null,roleLoaded=false,authReady=false;
+var myRole=null,roleLoaded=false,authReady=false,myPlat=[];
 // Zanim Supabase odtworzy sesję (ułamek sekundy po wejściu) nie wiadomo, czy ktoś jest zalogowany.
 // Zapamiętany token logowania w przeglądarce mówi, że pewnie tak – wtedy zamiast „zaloguj się” pokazujemy „Sprawdzam…”.
 // Tak samo rozpoznają to strony gier (LAZY_HEAD w scripts/gry.mjs).
@@ -1178,11 +1178,17 @@ function authWait(){return !!(CM&&!authReady&&authTok())}
 function refreshView(){if(!CM)return;
   if(onAdd)renderAdd();else if(onSubs)renderSubs();else if(onMods)renderMods();else if(onNews)renderNews();else if(onSteam)renderSteam();else if(onFav)renderFav();else if(onKonto)renderKonto()}
 function emailIsOwner(){var u=me();return !!(u&&u.email&&ADMIN_EMAIL&&u.email.toLowerCase()===ADMIN_EMAIL.toLowerCase())}
-function isMod(){return roleLoaded?!!myRole:emailIsOwner()}
+function isMod(){return roleLoaded?(!!myRole&&myRole!=="opiekun"):emailIsOwner()}
+// Opiekun sekcji (rola „opiekun”, np. tylko PSP): poprawia wpisy i wgrywa zrzuty tylko w grach ze swojej platformy.
+// To tylko wygoda w przeglądarce – naprawdę pilnują tego baza, funkcja „zrzuty” i automat (scripts/sync.mjs).
+function isOpiekun(){return roleLoaded&&myRole==="opiekun"}
+function wSekcji(g){return !!g&&myPlat.some(function(p){return p&&String(g.platform||"").toLowerCase().indexOf(String(p).toLowerCase())>=0})}
+function mozeEdytowac(g){return isMod()||(isOpiekun()&&wSekcji(g))}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
 async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
-  try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;roleLoaded=true}catch(e){roleLoaded=false}
+  try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
+    if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
   updateAuth();if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
@@ -1294,13 +1300,14 @@ function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
 function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
 async function loadComments(key){
   try{
-    var r=await sb.from("comments").select("id,user_id,author,body,created_at,avatar_url,is_mod").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
+    var r=await sb.from("comments").select("id,user_id,author,body,created_at,avatar_url,is_mod,ranga").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
+    if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at,avatar_url,is_mod").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
     if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
     if(r.error)throw r.error;if(curKey!==key)return;
     var u=me();
     $("clist").innerHTML=r.data.length?r.data.map(function(c){
       var del=u&&(c.user_id===u.id||isMod())?' <button class="mini" data-del="'+esc(c.id)+'">Usuń</button>':"";
-      return '<div class="cmt">'+avHtml(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
+      return '<div class="cmt">'+avHtml(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
   }catch(e){if(curKey===key)$("clist").textContent="Nie udało się wczytać komentarzy."}
 }
 function showComments(key){
@@ -1668,10 +1675,10 @@ document.addEventListener("input",function(e){if(e.target&&/^nw_/.test(e.target.
 // ====== ZARZĄDZANIE MODERATORAMI ======
 async function openMods(){
   if(!CM||!isAdmin()||!onMods)return;curKey=null;var box=$("modsview");box.innerHTML=SBACK+'<h2>Moderatorzy</h2><p class="msg"><span class="spn"></span>Wczytywanie…</p>';
-  try{var r=await sb.from("moderators").select("email,role,added_at").order("added_at",{ascending:true});if(r.error)throw r.error;
-    box.innerHTML=SBACK+'<h2>Moderatorzy</h2><p class="msg">Moderator widzi panel „Zgłoszenia", zatwierdza zgłoszenia i usuwa komentarze. Osoba musi logować się kontem z podanym adresem e-mail.</p>'+
-     r.data.map(function(m){var owner=m.email.toLowerCase()===String(ADMIN_EMAIL).toLowerCase();return '<div class="sub" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><b style="flex:1;min-width:0;overflow-wrap:anywhere">'+esc(m.email)+'</b><span class="modb" style="margin:0">'+(m.role==="admin"?"Administrator":"Moderator")+'</span>'+(owner?'<span class="cvmuted">właściciel</span>':'<button class="mini" data-modrm="'+esc(m.email)+'">Usuń</button>')+'</div>'}).join("")+
-     '<h3 style="margin:16px 0 6px;font-size:16px">Dodaj moderatora</h3><div class="rpf"><label style="grid-column:1/-1">Adres e-mail konta<input id="mod_email" type="email" maxlength="200" placeholder="Zacznij pisać e-mail lub nazwę…" autocomplete="off"><div id="mod_sug" class="usug"></div></label><label>Rola<select id="mod_role"><option value="mod">Moderator</option><option value="admin">Administrator (może dodawać innych)</option></select></label></div><p class="btns" style="justify-content:flex-start"><button class="btn on" id="mod_add" type="button">Dodaj</button></p><p class="msg" id="modmsg"></p>'
+  try{var r=await sb.from("moderators").select("email,role,added_at,platformy").order("added_at",{ascending:true});if(r.error)throw r.error;
+    box.innerHTML=SBACK+'<h2>Moderatorzy</h2><p class="msg">Moderator widzi panel „Zgłoszenia", zatwierdza zgłoszenia i usuwa komentarze. Opiekun sekcji tylko poprawia wpisy i wgrywa zrzuty gier z wybranej platformy. Osoba musi logować się kontem z podanym adresem e-mail.</p>'+
+     r.data.map(function(m){var owner=m.email.toLowerCase()===String(ADMIN_EMAIL).toLowerCase();return '<div class="sub" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><b style="flex:1;min-width:0;overflow-wrap:anywhere">'+esc(m.email)+'</b>'+(m.role==="opiekun"?'<span class="opb" style="margin:0">Opiekun '+esc((m.platformy||[]).join("/")||"sekcji")+'</span>':'<span class="modb" style="margin:0">'+(m.role==="admin"?"Administrator":"Moderator")+'</span>')+''+(owner?'<span class="cvmuted">właściciel</span>':'<button class="mini" data-modrm="'+esc(m.email)+'">Usuń</button>')+'</div>'}).join("")+
+     '<h3 style="margin:16px 0 6px;font-size:16px">Dodaj moderatora</h3><div class="rpf"><label style="grid-column:1/-1">Adres e-mail konta<input id="mod_email" type="email" maxlength="200" placeholder="Zacznij pisać e-mail lub nazwę…" autocomplete="off"><div id="mod_sug" class="usug"></div></label><label>Rola<select id="mod_role"><option value="mod">Moderator</option><option value="opiekun">Opiekun sekcji (tylko wybrana platforma)</option><option value="admin">Administrator (może dodawać innych)</option></select></label><label id="mod_platl" style="display:none">Platforma (fragment nazwy, np. PSP – obejmie „Sony PSP”)<input id="mod_plat" maxlength="40" placeholder="np. PSP"></label><p class="msg" id="mod_plath" style="grid-column:1/-1;display:none;margin:0">Opiekun może tylko poprawiać wpisy i wgrywać zrzuty gier z tej platformy. Nie widzi zgłoszeń, nie dodaje i nie usuwa gier ani cudzych komentarzy. Kilka platform: wpisz po przecinku.</p></div><p class="btns" style="justify-content:flex-start"><button class="btn on" id="mod_add" type="button">Dodaj</button></p><p class="msg" id="modmsg"></p>'
   }catch(e){$("modsview").innerHTML=SBACK+'<h2>Moderatorzy</h2><p class="msg err">Nie udało się wczytać listy (czy uruchomiłeś moderatorzy.sql w Supabase?).</p>'}}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.getAttribute("data-sug")){$("mod_email").value=t.getAttribute("data-sug");$("mod_sug").className="usug";return}
@@ -1679,11 +1686,14 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.id==="unews"){$("umenu").className="umenu";openNewsView();return}
   if(t.id==="mod_add"){var em=$("mod_email").value.trim().toLowerCase(),msg=$("modmsg");
     if(!/^\S+@\S+\.\S+$/.test(em)){msg.textContent="Podaj poprawny adres e-mail.";msg.className="msg err";return}
-    var r=await sb.from("moderators").upsert({email:em,role:$("mod_role").value},{onConflict:"email"});
+    var rola=$("mod_role").value,plat=rola==="opiekun"?$("mod_plat").value.split(",").map(function(x){return x.trim()}).filter(Boolean).slice(0,5):null;
+    if(rola==="opiekun"&&!(plat&&plat.length)){msg.textContent="Podaj platformę opiekuna, np. PSP.";msg.className="msg err";return}
+    var r=await sb.from("moderators").upsert({email:em,role:rola,platformy:plat},{onConflict:"email"});
     if(r.error){msg.textContent="Nie udało się dodać: "+plMsg(r.error.message);msg.className="msg err";return}openMods();return}
   if(t.getAttribute("data-modrm")){if(!confirm("Usunąć uprawnienia tej osoby?"))return;var d=await sb.from("moderators").delete().eq("email",t.getAttribute("data-modrm"));if(d.error)alert("Błąd: "+d.error.message);openMods()}
 });
 var sugT=null;
+document.addEventListener("change",function(e){if(!e.target||e.target.id!=="mod_role")return;var o=e.target.value==="opiekun";$("mod_platl").style.display=o?"":"none";$("mod_plath").style.display=o?"":"none"});
 document.addEventListener("input",function(e){if(!e.target||e.target.id!=="mod_email")return;
   var q=e.target.value.trim(),box=$("mod_sug");clearTimeout(sugT);
   if(q.length<2){box.className="usug";return}
@@ -1708,7 +1718,7 @@ function spRow(s){var o=function(a,c){return a.map(function(x){return '<option'+
   return '<div class="sprow" data-id="'+esc(s.id||"")+'" data-upd="'+esc(s.upd||"")+'" data-dodano="'+esc(s.dodano||"")+'"><input class="sp_a" list="al_mod" autocomplete="off" maxlength="100" placeholder="Autor / grupa" aria-label="Autor" value="'+esc(s.author&&s.author!=="—"?s.author:"")+'"><input class="sp_l" type="url" maxlength="500" placeholder="Link https://…" aria-label="Link" value="'+esc(s.link||"")+'"><select class="sp_t" aria-label="Zakres">'+o(["Napisy","Pełne","Dubbing"],s.type||"Napisy")+'</select><select class="sp_s" aria-label="Status">'+o(["Gotowe","W trakcie","Korekta","Beta","Testy","Premiera","Zapowiedź"],s.status||"Gotowe")+'</select><input class="sp_p" type="number" min="0" max="100" aria-label="Ukończono w procentach" title="Ukończono (%)" value="'+(s.prog==null?100:+s.prog)+'"><input class="sp_v" maxlength="40" placeholder="Wersja" aria-label="Wersja" value="'+esc(s.ver&&s.ver!=="—"?s.ver:"")+'"><button class="mini" type="button" data-spdel="1">Usuń</button></div>'}
 function spRead(){return [].slice.call(document.querySelectorAll("#e_sp .sprow")).map(function(r){var q=function(c){return r.querySelector(c).value.trim()};return{id:r.getAttribute("data-id"),author:q(".sp_a")||"—",link:q(".sp_l"),type:q(".sp_t"),status:q(".sp_s"),prog:+q(".sp_p")||0,ver:q(".sp_v")||"—",upd:r.getAttribute("data-upd"),dodano:r.getAttribute("data-dodano")}})}
 function openModEdit(g){
-  if(!CM||!isMod()||!g)return;editG=g;curKey=null;
+  if(!CM||!mozeEdytowac(g)||!g)return;editG=g;curKey=null;
   var opt=function(a,cur){a=a.slice();if(cur&&a.indexOf(cur)<0)a.push(cur);return a.map(function(x){return '<option value="'+esc(x)+'"'+(x===cur?' selected':'')+'>'+esc(x||"— brak —")+'</option>'}).join("")};
   var v=function(k){return esc(g[k]==null?"":String(g[k]))};
   openModal('<h2>Edytuj wpis</h2><p class="msg">Zmiany pojawią się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Zmieniona nazwa nie psuje komentarzy ani głosów.</p>'+
@@ -1738,6 +1748,7 @@ function openModEdit(g){
    '<div style="grid-column:1/-1"><b>Dodatkowe spolszczenia tej gry</b><p class="msg" style="margin:2px 0 8px">Główne spolszczenie jest w polach powyżej. Tutaj dodajesz inne, np. od drugiej grupy.</p><div id="e_sp">'+spNorm(spExtra(g)).map(spRow).join("")+'</div><button class="btn" type="button" id="e_spadd">➕ Dodaj kolejne spolszczenie</button></div>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
    '</div><p class="msg" id="e_msg"></p><p class="btns" style="justify-content:flex-start"><button class="btn on okb" type="button" id="e_go">Zapisz zmiany</button><button class="btn nob" type="button" id="e_close">Anuluj</button>'+(isAdmin()?'<button class="btn nob" type="button" id="e_del" style="margin-left:auto">🗑 Usuń z katalogu</button>':'')+'</p>');
+  if(!isMod()){var eg=$("e_game");if(eg){eg.readOnly=true;eg.title="Nazwę gry zmienia moderator"}var pb=document.querySelector('[data-ppt="e_platform"]');if(pb){pb.disabled=true;pb.title="Platformę zmienia moderator"}}
   setTimeout(function(){var f=$("e_game");if(f)f.focus();if(!steamStr(g)&&/pc/i.test(g.platform||"")&&!/emu/i.test(g.platform||""))steamFind("e")},50)}
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
   if(t.id==="e_close"){closeModal();return}
@@ -1752,6 +1763,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.id!=="e_go"||!editG)return;
   var g=editG,val=function(i){return $(i).value.trim()},m=$("e_msg"),bad=function(x){m.textContent=x;m.className="msg err"};
   var nv={game:val("e_game"),platform:platGet("e_platform"),genre:genreNorm(val("e_genre")),type:val("e_type"),status:val("e_status"),prog:String(Math.max(0,Math.min(100,+val("e_prog")||0))),ver:val("e_ver"),author:val("e_author"),link:val("e_link"),img:val("e_img"),opis:val("e_opis"),premiera:val("e_premiera"),pl:val("e_pl"),lore:val("e_lore"),gamereader:val("e_gr"),yt:val("e_yt"),ytt:val("e_ytt"),dub:val("e_dub")};nv.dubAuthor=nv.dub?val("e_dubauthor"):"";nv.dubStatus=nv.dub?val("e_dubstatus"):"";
+  if(!isMod()){nv.game=g.game;nv.platform=g.platform||nv.platform} // opiekun sekcji nie zmienia nazwy ani platformy
   if(!nv.game)return bad("Podaj nazwę gry.");
   if(isProgSt(nv.status)&&!(+nv.prog<100))return bad("Przy statusie „"+nv.status+"” podaj, ile procent jest ukończone (0–99).");
   if(nv.pl!=="of"&&!/^https?:\/\//i.test(nv.link))return bad("Link musi zaczynać się od https://");
@@ -1782,7 +1794,7 @@ async function zrzCall(body){var r=await sb.functions.invoke("zrzuty",{body:body
 function zrzList(pl){var b=$("zrzlist");if(!b)return;b.innerHTML=pl.length?pl.map(function(p){return '<div class="zrzi"><a href="'+esc(p.url)+'" target="_blank" rel="noopener"><img src="'+esc(p.url)+'" alt="'+esc(p.plik)+'" loading="lazy"></a><div><b>'+esc(p.plik)+'</b><small>'+p.kb+' KB</small></div><button class="btn nob" type="button" data-zdel="'+esc(p.plik)+'">🗑 Usuń</button></div>'}).join(""):'<p class="msg">Ta gra nie ma jeszcze zrzutów.</p>';
   var n=$("zrzn");if(n)n.textContent=pl.length}
 function zrzMsg(t,err){var m=$("zrzmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
-async function openZrzuty(g){if(!CM||!isMod()||!g)return;ZRZ.g=g;curKey=null;var k=keyOf(g);
+async function openZrzuty(g){if(!CM||!mozeEdytowac(g)||!g)return;ZRZ.g=g;curKey=null;var k=keyOf(g);
   openModal('<h2>Zrzuty ekranu</h2><p class="msg" style="margin-top:0"><b>'+esc(g.game)+'</b> · <a href="/gra/'+esc(k)+'/" target="_blank" rel="noopener">strona gry ↗</a></p>'+
    '<p class="msg">Najlepiej zrzuty z <b>polskim tekstem</b> (dialogi, menu). Kolejność = numery plików. Na stronie gry pojawią się w ciągu ok. 30 minut (automat robi miniaturki). Najwyżej 12 na grę.</p>'+
    '<label class="zrzdrop" id="zrzdrop"><input type="file" id="zrzfile" accept="image/png,image/jpeg,image/webp" multiple hidden><span>➕ Wybierz obrazki albo przeciągnij je tutaj</span><small>PNG, JPG lub WebP · strona sama je zmniejszy</small></label>'+
@@ -1817,7 +1829,7 @@ function openReport(kind,g){
   curKey=null;openModal(h);$("cm").setAttribute("data-rk",keyOf(g));$("cm").setAttribute("data-rkind",kind)}
 document.addEventListener("click",async function(e){
   var rb=e.target.closest&&e.target.closest(".rowmenu");
-  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=isMod()?"block":"none";$("rzrz").style.display=isMod()?"block":"none";
+  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=mozeEdytowac(g)?"block":"none";$("rzrz").style.display=mozeEdytowac(g)?"block":"none";
     m.className="rmenu open";m.style.top=Math.min(r.bottom+4,innerHeight-m.offsetHeight-8)+"px";m.style.left=Math.max(8,Math.min(r.left,innerWidth-m.offsetWidth-8))+"px";return}
   var ra=e.target.closest&&e.target.closest("[data-ra]");
   if(ra&&menuG){var g2=menuG;hideRmenu();if(ra.getAttribute("data-ra")==="modedit"){if(typeof openModEdit==="function")openModEdit(g2);return}if(ra.getAttribute("data-ra")==="zrzuty"){openZrzuty(g2);return}openReport(ra.getAttribute("data-ra"),g2);return}
@@ -2416,7 +2428,7 @@ function mergeApproved(rows){
       (d.changes||[]).forEach(function(c){if(EDIT.indexOf(c.field)<0)return;var v=String(c.to==null?"":c.to).trim();
         if(c.field==="link"&&!/^https?:\/\//i.test(v))return;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre});
       if(day&&spUpdKey(przedE,g))g.upd=day}
-    else if(r.kind==="modedit"){var gm=find(d.key);if(!gm)return;var przedM={ver:gm.ver,status:gm.status};
+    else if(r.kind==="modedit"){var gm=find(d.key);if(!gm)return;if(Array.isArray(d.zakres)&&!d.zakres.some(function(p){return p&&String(gm.platform||"").toLowerCase().indexOf(String(p).toLowerCase())>=0}))return;var przedM={ver:gm.ver,status:gm.status};
       (d.changes||[]).forEach(function(c){var f=c.field,v=String(c.to==null?"":c.to).trim();
         if(f==="usun"){if(v==="1")gm._usun=1;return}
         if(f==="steam"){var sv=steamParse(v);if(sv)steamSet(gm,sv);return}

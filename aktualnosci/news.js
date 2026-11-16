@@ -58,7 +58,7 @@ async function steamCount(){var u=me();if(!u)return;try{var r=await sb.from("ste
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
-  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+L("/#/konto","⚙️ Ustawienia konta");
+  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole&&myRole!=="opiekun"?L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia"):"")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+L("/#/konto","⚙️ Ustawienia konta");
   c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();profLoad();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   $("ulo").onclick=function(){sb.auth.signOut({scope:"local"})}} // tylko to urządzenie
@@ -205,11 +205,11 @@ function initList(){
 
 // ---- komentarze ----
 var KEY="",armed=null,rows=[],likes=[],openT={},drafts={};
-function can(c){var u=me();return !!u&&(c.user_id===u.id||!!myRole)}
+function can(c){var u=me();return !!u&&(c.user_id===u.id||(!!myRole&&myRole!=="opiekun"))}
 function cHtml(c,rep,n){
   var u=me(),lk=likes.filter(function(l){return l.comment_id===c.id}),mine=!!u&&lk.some(function(l){return l.user_id===u.id});
   var tb=rep?'':'<button type="button" data-a="thread" data-i="'+c.id+'">'+(n?'Odpowiedzi ('+n+') '+(openT[c.id]?'▴':'▾'):'Odpowiedz')+'</button>';
-  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
+  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
 function threadHtml(c,reps){
   var form=me()?'<div class="rform"><textarea class="t" id="rb'+c.id+'" maxlength="1000" placeholder="Twoja odpowiedź…" style="min-height:60px"></textarea><p style="margin:6px 0 0"><button class="btn pri" type="button" data-a="rsend" data-i="'+c.id+'">Wyślij odpowiedź</button></p><p class="msg" id="rm'+c.id+'"></p></div>'
     :'<div class="rform"><p class="msg">Aby odpowiedzieć, <button class="linkb" type="button" data-a="login">zaloguj się</button>.</p></div>';
@@ -230,7 +230,8 @@ function renderList(){
 async function loadComments(){
   try{
     var cols="id,user_id,author,body,created_at,avatar_url,is_mod,parent_id";
-    var r=await sb.from("comments").select(cols).eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
+    var r=await sb.from("comments").select(cols+",ranga").eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
+    if(r.error)r=await sb.from("comments").select(cols).eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
     if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
     if(r.error)throw r.error;rows=r.data;likes=[];
     if(rows.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",rows.map(function(c){return c.id})).limit(5000);if(!l.error)likes=l.data}

@@ -9,10 +9,12 @@
 #    plik ze znakiem dostaje w R2 metadane znak=1, więc znak nie jest dodawany drugi raz,
 #  - przy tym robi z czystego obrazka miniaturkę <nazwa>-miniatura.webp (maks. 640 px, bez znaku),
 #  - usuwa miniaturki bez zrzutu,
-#  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": zrzut, "m": miniaturka}], „zrzutyPodpis”);
+#  - wpisuje listę do spolszczenia.json (pole „zrzuty”: [{"d": zrzut, "m": miniaturka}], „zrzutyPodpis”,
+#    „zrzutyOd”: nicki osób, które wgrały zrzuty przez stronę – z metadanych R2 „autor”, które zapisuje funkcja „zrzuty”);
 #    adresy mają na końcu ?v=<skrót pliku>, więc po podmianie zrzutu przeglądarki od razu biorą nowy.
 # Klucze R2 tylko w sekretach GitHuba: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ACCOUNT_ID.
 import os, io, json, re, hashlib
+from urllib.parse import unquote
 from PIL import Image, ImageDraw, ImageFont
 import boto3
 from botocore.config import Config
@@ -87,11 +89,11 @@ def znak_wodny(im, tekst="grypopolsku.pl", krycie=0.09, kat=25, kolumny=4):
     im.alpha_composite(warstwa.crop((l, t, l + W, t + H)))
     return im.convert("RGB")
 
-def ma_znak(k):
+def meta(k):
     try:
-        return s3.head_object(Bucket=BUCKET, Key=k).get("Metadata", {}).get("znak") == "1"
+        return s3.head_object(Bucket=BUCKET, Key=k).get("Metadata", {}) or {}
     except Exception:
-        return False
+        return {}
 
 def skrot(o):
     return hashlib.sha1(str(o.get("ETag", "")).strip('"').encode()).hexdigest()[:8]
@@ -118,11 +120,15 @@ for k in zrodla:
         foldery.setdefault(gra, []).append(k)
 
 bledy, galerie, nowe = [], {}, 0
+autorzy = {}   # klucz zrzutu -> nick osoby, która go wgrała przez stronę
 # 1) nowe zrzuty (bez znaku wodnego, duże albo nie-WebP) -> WebP ze znakiem wodnym + miniaturka z czystego obrazka
 for gra, pliki in foldery.items():
     for i, k in enumerate(list(pliki)):
         o = zrodla[k]
-        if o.get("Size", 0) <= MAX_ORYG and k.lower().endswith(".webp") and ma_znak(k):
+        md = meta(k)
+        if md.get("autor"):
+            autorzy[k] = unquote(md["autor"]).strip()[:30]
+        if o.get("Size", 0) <= MAX_ORYG and k.lower().endswith(".webp") and md.get("znak") == "1":
             continue
         nowy = os.path.splitext(k)[0] + ".webp"
         if nowy != k and nowy in zrodla:
@@ -132,7 +138,10 @@ for gra, pliki in foldery.items():
             im = Image.open(io.BytesIO(s3.get_object(Bucket=BUCKET, Key=k)["Body"].read())).convert("RGB")
             b = webp(znak_wodny(zmniejsz(im, MAX_D)), 90)
             bm = webp(zmniejsz(im, MAX_M), 78)
-            r = s3.put_object(Bucket=BUCKET, Key=nowy, Body=b, ContentType="image/webp", CacheControl="public, max-age=31536000", Metadata={"znak": "1"})
+            md2 = {"znak": "1"}
+            if md.get("autor"):
+                md2["autor"] = md["autor"]   # nick osoby, która wgrała zrzut – zostaje przy pliku ze znakiem
+            r = s3.put_object(Bucket=BUCKET, Key=nowy, Body=b, ContentType="image/webp", CacheControl="public, max-age=31536000", Metadata=md2)
             rm = s3.put_object(Bucket=BUCKET, Key=km, Body=bm, ContentType="image/webp", CacheControl="public, max-age=31536000")
             if nowy != k:
                 s3.delete_object(Bucket=BUCKET, Key=k)
@@ -141,6 +150,8 @@ for gra, pliki in foldery.items():
             zrodla[km] = {"Key": km, "ETag": rm["ETag"], "Size": len(bm)}
             miniatury[km] = gra
             pliki[i] = nowy
+            if k in autorzy:
+                autorzy[nowy] = autorzy.pop(k)
             nowe += 1
             print("Znak wodny + miniaturka: %s (%d KB) -> %s (%d KB)" % (k, o.get("Size", 0) // 1024, nowy, len(b) // 1024))
         except Exception as e:
@@ -172,6 +183,13 @@ for gra, pliki in sorted(foldery.items()):
         lst.append({"d": CDN + k + "?v=" + skrot(o), "m": CDN + km + "?v=" + skrot(m)})
     if lst:
         galerie[gra] = lst
+        od = []
+        for k in sorted(pliki, key=nat)[:12]:
+            a = autorzy.get(k)
+            if a and a not in od:
+                od.append(a)
+        if od:
+            galerie[gra + "\0od"] = od
 
 for gra, k in podpisy.items():
     if gra in galerie:
@@ -185,13 +203,15 @@ for gra, k in podpisy.items():
 zmiany = 0
 for k, gs in klucze.items():
     for g in gs:
-        nz, np_ = galerie.get(k), galerie.get(k + "\0podpis")
-        if nz != g.get("zrzuty") or (np_ or None) != g.get("zrzutyPodpis"):
+        nz, np_, od = galerie.get(k), galerie.get(k + "\0podpis"), galerie.get(k + "\0od")
+        if nz != g.get("zrzuty") or (np_ or None) != g.get("zrzutyPodpis") or (od if nz else None) != g.get("zrzutyOd"):
             zmiany += 1
             if nz: g["zrzuty"] = nz
             else: g.pop("zrzuty", None)
             if nz and np_: g["zrzutyPodpis"] = np_
             else: g.pop("zrzutyPodpis", None)
+            if nz and od: g["zrzutyOd"] = od
+            else: g.pop("zrzutyOd", None)
 if zmiany:
     with open("spolszczenia.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(gry, ensure_ascii=False, indent=2) + "\n")

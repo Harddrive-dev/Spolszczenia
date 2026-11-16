@@ -2833,8 +2833,7 @@
     "zmiana": {
       "kto": "tanixd",
       "dzien": "2026-11-16"
-    },
-    "okladkaPasek": 1
+    }
   },
   {
     "game": "Grand Theft Auto: Vice City Stories",
@@ -2856,8 +2855,7 @@
     "zmiana": {
       "kto": "tanixd",
       "dzien": "2026-11-16"
-    },
-    "okladkaPasek": 1
+    }
   },
   {
     "game": "GYLT",
@@ -14311,17 +14309,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.10",
+    "ver": "1.11",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=black-desert",
     "dodano": "2026-10-09",
-    "upd": "2026-11-10",
+    "upd": "2026-11-16",
     "img": "https://cdn.grypopolsku.pl/okladki/black-desert-0a987861.webp",
     "opis": "Koreańskie MMORPG z dynamiczną walką akcji i rozbudowanym życiem w otwartym świecie. Oprócz potworów możesz handlować, hodować konie i łowić ryby.",
     "steam": 582660,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-10"
+      "dzien": "2026-11-16"
     }
   },
   {
@@ -14788,8 +14786,8 @@
     "platform": "PC",
     "genre": "Strzelanka",
     "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
+    "status": "W trakcie",
+    "prog": 20,
     "ver": "—",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=halo-the-master-chief-collection",
@@ -14797,7 +14795,11 @@
     "upd": "2026-10-09",
     "img": "https://cdn.grypopolsku.pl/okladki/halo-the-master-chief-collection-c466729e.webp",
     "opis": "Zbiór głównych odsłon przygód Master Chiefa, od Halo: Combat Evolved po Halo 4, wraz z Halo: Reach i ODST. Kultowe kampanie i tryb wieloosobowy w jednym miejscu.",
-    "steam": 976730
+    "steam": 976730,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-16"
+    }
   },
   {
     "game": "Hearth and Hamlet",
@@ -15123,16 +15125,16 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.6",
+    "ver": "1.7",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=palia",
     "dodano": "2026-06-24",
-    "upd": "2026-11-10",
+    "upd": "2026-11-16",
     "img": "https://cdn.grypopolsku.pl/okladki/palia-39139cc0.webp",
     "steam": 2707930,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-10"
+      "dzien": "2026-11-16"
     }
   },
   {
@@ -15155,8 +15157,8 @@
     "platform": "PC",
     "genre": "RPG",
     "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
+    "status": "W trakcie",
+    "prog": 30,
     "ver": "—",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=persona-5-strikers",
@@ -15164,7 +15166,11 @@
     "upd": "2026-10-25",
     "img": "https://cdn.grypopolsku.pl/okladki/persona-5-strikers-c4242444.webp",
     "opis": "Złodzieje Widmowi ruszają w wakacyjną podróż po Japonii, ale wpadają w nową intrygę. Kontynuacja Persony 5 z dynamiczną walką z wieloma przeciwnikami.",
-    "steam": 1382330
+    "steam": 1382330,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-16"
+    }
   },
   {
     "game": "Pumpkin Jack",
@@ -15301,12 +15307,16 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=starsector",
     "dodano": "2026-10-09",
-    "upd": "2026-10-09",
-    "img": "https://cdn.grypopolsku.pl/okladki/starsector-be49f986.webp"
+    "upd": "2026-11-16",
+    "img": "https://cdn.grypopolsku.pl/okladki/starsector-be49f986.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-16"
+    }
   },
   {
     "game": "Stranger of Paradise: Final Fantasy Origin",
@@ -20649,5 +20659,73 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Battlefleet Gothic: Armada 2",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=battlefleet-gothic-armada-2",
+    "genre": "Strategia",
+    "dodano": "2026-11-16",
+    "img": "https://cdn.grypopolsku.pl/okladki/battlefleet-gothic-armada-2-c841ef28.webp",
+    "opis": "Battlefleet Gothic: Armada 2 to taktyczna strategia czasu rzeczywistego (RTS) osadzona w mrocznym uniwersum Warhammera 40,000, w której przejmujesz dowodzenie nad potężnymi flotami kosmicznymi. Wydana w 2019 roku produkcja studia Tindalos Interactive jest bezpośrednią kontynuacją gry z 2016 roku, znacząco rozbudowaną pod względem skali i zawartości.",
+    "steam": 573100,
+    "upd": "2026-11-16",
+    "opisOd": "Harddrive"
+  },
+  {
+    "game": "Cat Quest II",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=cat-quest-ii",
+    "genre": "RPG",
+    "dodano": "2026-11-16",
+    "img": "https://cdn.grypopolsku.pl/okladki/cat-quest-ii-b6686aef.webp",
+    "opis": "Cat Quest II to urocza, pełna humoru gra RPG akcji (action RPG) osadzona w fantastycznym świecie zamieszkanym przez antropomorficzne koty i psy. Wydana w 2019 roku przez studio The Gentlebros produkcja jest bezpośrednią kontynuacją ciepło przyjętego Cat Quest, rozbudowującą znaną formułę o tryb współpracy i nowe mechaniki.",
+    "steam": 914710,
+    "upd": "2026-11-16",
+    "opisOd": "Harddrive"
+  },
+  {
+    "game": "Golf With Your Friends",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=golf-with-your-friends",
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2026-11-16",
+    "img": "https://cdn.grypopolsku.pl/okladki/golf-with-your-friends-7d88f75f.webp",
+    "opis": "Golf With Your Friends to dynamiczna, zręcznościowa gra imprezowa o minigolfie, nastawiona przede wszystkim na rywalizację ze znajomymi w sieci. Produkcja studia Blacklight Interactive (wydana przez Team17) stawia na szalone, nierealistyczne tory pełne przeszkód oraz możliwość modyfikowania zasad rozgrywki.",
+    "steam": 431240,
+    "upd": "2026-11-16",
+    "opisOd": "Harddrive"
+  },
+  {
+    "game": "Remnant II",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "DykuGierkuje",
+    "link": "https://dykugierkuje.pl/spolszczenie/remnant-2",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-16",
+    "img": "https://cdn.grypopolsku.pl/okladki/remnant-ii-92392e4e.webp",
+    "opis": "Remnant II to wymagająca strzelanka z perspektywy trzeciej osoby (TPP) z elementami gier soulslike i RPG akcji, stworzona przez studio Gunfire Games i wydana w 2023 roku. Jako kontynuacja Remnant: From the Ashes, gra ponownie rzuca ocalałych ludzi w sam środek walki z niszczycielską siłą znaną jako Root, rozgrywającej się w wielu alternatywnych wymiarach.",
+    "steam": 1282100,
+    "upd": "2026-11-16",
+    "opisOd": "Harddrive"
   }
 ]

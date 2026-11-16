@@ -9423,19 +9423,19 @@
     "type": "Dubbing",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.5.0",
+    "ver": "0.6.1",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
     "img": "https://cdn.grypopolsku.pl/okladki/world-of-warcraft-forever-d397fa07.webp",
-    "upd": "2026-11-15",
+    "upd": "2026-11-16",
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
     "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
     "instrOd": "Harddrive",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-15"
+      "dzien": "2026-11-16"
     },
     "spolszczenia": [
       {
@@ -14786,7 +14786,7 @@
     "platform": "PC",
     "genre": "Strzelanka",
     "type": "Napisy",
-    "status": "W trakcie",
+    "status": "Testy",
     "prog": 20,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -15157,7 +15157,7 @@
     "platform": "PC",
     "genre": "RPG",
     "type": "Napisy",
-    "status": "W trakcie",
+    "status": "Testy",
     "prog": 30,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -16526,11 +16526,15 @@
     "prog": 100,
     "ver": "—",
     "author": "Studio Zielone Wzgorza",
-    "link": "https://shc.zone/entries/expo2023/793",
+    "link": "https://cdn.grypopolsku.pl/spolszczenia/psp/sonic-rivals/Sonic-Rywale-(By-Studio-Zielone-Wzgorza).zip",
     "genre": "Platformówka",
     "dodano": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/sonic-rivals-a6bfc2fa.webp",
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-16"
+    }
   },
   {
     "game": "Dante's Inferno",
@@ -17245,7 +17249,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "0.91",
     "genre": "Przygodowa",
     "author": "Rysław",
     "link": "https://ryslaw.pl/bladerunner/",
@@ -17254,7 +17258,7 @@
     "steam": 1678420,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-15"
+      "dzien": "2026-11-16"
     }
   },
   {
@@ -20640,27 +20644,6 @@
     "opisOd": "Harddrive"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "opisOd": "Harddrive",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Battlefleet Gothic: Armada 2",
     "platform": "PC",
     "type": "Napisy",
@@ -20727,5 +20710,26 @@
     "steam": 1282100,
     "upd": "2026-11-16",
     "opisOd": "Harddrive"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "opisOd": "Harddrive",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

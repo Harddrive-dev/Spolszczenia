@@ -2679,7 +2679,16 @@
     "link": "https://grajpopolsku.pl/download/god-of-war-chains-of-olympus/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Kratos stoi w świecie greckiej mitologii. Gra akcji na PSP z widowiskowymi walkami i bossami."
+    "opis": "Kratos stoi w świecie greckiej mitologii. Gra akcji na PSP z widowiskowymi walkami i bossami.",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/1.webp?v=fc96a52a",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/god-of-war-chains-of-olympus/1-miniatura.webp?v=46e51028"
+      }
+    ],
+    "zrzutyOd": [
+      "tanixd"
+    ]
   },
   {
     "game": "Gods Will Be Watching (do testów otwartych)",

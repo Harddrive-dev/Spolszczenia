@@ -123,6 +123,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .badge{font-size:12px;color:var(--ok);margin-left:6px}
 .gcell{display:flex;align-items:center;gap:10px}
 .thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
+.pasw{display:inline-flex;flex-direction:column;flex:none;line-height:0;border-radius:6px;overflow:hidden;vertical-align:middle;background:#000}.pasw.fpas{border-radius:12px;align-self:flex-start}.pasw img{border-radius:0!important}.pasw .pasek{display:block;width:0;min-width:100%;height:auto;pointer-events:none}
 .gcell .thumb{width:44px;height:66px;flex:0 0 44px;border-radius:6px}
 .ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted)}
 .cbtn{margin-left:auto}
@@ -871,8 +872,13 @@ function lkHtml(g){var h="";if(g.lore)h+='<a class="lkb lkl" title="LoreSpeak" t
 var VIEW="all";
 function setView(v){VIEW=v;page=1;if(typeof stats==="function"&&items&&items.length)stats();["vwlk","vwall"].forEach(function(i){var e=$(i);if(e)e.className="btn"+(i==="vw"+v?" on":"")});render()}
 function imgOk(u){return typeof u==="string"&&u.indexOf("..")<0&&(/^https:\/\//i.test(u)||/^[\w\-][\w\-\/.]*\.(png|jpe?g|webp|gif|svg)$/i.test(u))}
+// Pasek platformy nad okładką (jak na pudełkach PSP – dokładany od góry, okładka nic nie traci). Tylko gry z jedną platformą z tej listy i bez zaznaczonego
+// „Okładka ma już pasek platformy” (pole okladkaPasek). Ten sam spis jest w scripts/gry.mjs (PASKI).
+var PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"}];
+function pasekDla(g){var p=String((g&&g.platform)||"").split(/\s*,\s*/).filter(Boolean);if(p.length!==1)return null;for(var i=0;i<PASKI.length;i++)if(PASKI[i].re.test(p[0]))return PASKI[i].src;return null}
+function zPaskiem(g,html,cls){var s=imgOk(g&&g.img)&&!(g&&g.okladkaPasek)?pasekDla(g):null;return s?'<span class="pasw'+(cls?" "+cls:"")+'"><img class="pasek" src="'+s+'" alt="" aria-hidden="true">'+html+'</span>':html}
 function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());
-  return imgOk(g.img)?'<img class="thumb" loading="lazy" alt="" data-l="'+l+'" src="'+esc(g.img)+'">':'<span class="thumb ph">'+l+'</span>'}
+  return imgOk(g.img)?zPaskiem(g,'<img class="thumb" loading="lazy" alt="" data-l="'+l+'" src="'+esc(g.img)+'">'):'<span class="thumb ph">'+l+'</span>'}
 document.addEventListener("error",function(e){var t=e.target;if(!t||!t.classList)return;if(t.tagName==="IMG"&&t.closest&&t.closest(".pod")){var pi=document.createElement("div");pi.className="pimg";pi.textContent=(t.parentNode.querySelector("b")||{textContent:"?"}).textContent.charAt(0).toUpperCase();t.replaceWith(pi);return}if(t.tagName==="IMG"&&t.classList.contains("vth")){var vp=document.createElement("div");vp.className="vth";vp.textContent=t.getAttribute("data-l")||"?";t.replaceWith(vp);return}if(t.classList.contains("thumb")){var p=document.createElement("span");p.className="thumb ph";p.textContent=t.getAttribute("data-l")||"?";t.replaceWith(p)}else if(t.classList.contains("fimg")){var q=document.createElement("div");q.className="fcover";q.textContent=t.getAttribute("data-l")||"?";t.replaceWith(q)}},true);
 function pct(n){return Math.max(0,Math.min(100,+n||0))}
 // pole „Ukończono (%)” widać tylko przy statusach z licznikiem: „W trakcie” i „Korekta”
@@ -982,7 +988,7 @@ function renderHome(){
   function feat(el,f,badge,when){
     if(!f){el.style.display="none";el.innerHTML="";return}
     var n=counts[keyOf(f)]||0,lt=esc((f.game||"?").charAt(0).toUpperCase());
-    var cover=imgOk(f.img)?'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">':'<div class="fcover">'+lt+'</div>';
+    var cover=imgOk(f.img)?zPaskiem(f,'<img class="fcover fimg" alt="" data-l="'+lt+'" src="'+esc(f.img)+'">',"fpas"):'<div class="fcover">'+lt+'</div>';
     el.innerHTML=cover+'<div class="fbody"><div class="fhead"><span class="fbadge">'+badge+'</span><span class="fwhen">'+esc(when)+'</span></div><h2 class="ftitle"><a class="ftlink" href="/gra/'+esc(keyOf(f))+'/">'+esc(f.game)+'</a></h2><div class="fpills">'+featPills(f)+'</div>'+premLine(f)+featMeta(f)+'<div class="fbtns">'+(f.link?'<a class="fbtn" target="_blank" rel="noopener" href="'+esc(safe(f.link))+'">Zobacz spolszczenie</a>':'<a class="fbtn" href="/gra/'+esc(keyOf(f))+'/">Zobacz grę</a>')+(CM?'<button class="mini cbtn" data-k="'+esc(keyOf(f))+'">Komentarze'+(n?' ('+n+')':'')+'</button>':"")+'</div></div>';
     el.style.display=""}
   var fw=(winnerKey&&gameByKey(winnerKey))||items.filter(function(g){return g.tygodnia})[0],fm=items.filter(function(g){return g.miesiaca})[0];
@@ -1742,6 +1748,7 @@ function openModEdit(g){
    '<label>🎬 Film z YouTube (link; puste = brak)<input id="e_yt" type="url" maxlength="300" value="'+v("yt")+'"></label>'+
    '<label>Podpis filmu (opcjonalnie)<input id="e_ytt" maxlength="80" value="'+v("ytt")+'"></label>'+
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
+   (pasekDla(g)?'<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_opas" type="checkbox" style="width:auto"'+(g.okladkaPasek?' checked':'')+'> Okładka ma już pasek platformy (np. PSP na górze) – nie dokładaj drugiego</label>':'')+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
    '<label style="grid-column:1/-1">Instrukcja instalacji (opcjonalnie)<textarea id="e_instr" rows="5" maxlength="3000" style="width:100%;display:block">'+v("instr")+'</textarea><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Pokaże się na stronie gry jako sekcja „Jak zainstalować” (puste = brak sekcji). Pusty wiersz = nowy akapit, <code>## Tytuł</code> = nagłówek, <code>1. </code> = kroki, <code>- </code> = lista, <code>**pogrubienie**</code>, <code>[tekst](https://adres)</code>.</small></label>'+
    '<label style="grid-column:1/-1">Numer Steam albo link do sklepu Steam (puste = brak)<input id="e_steam" maxlength="300" autocomplete="off" value="'+esc(steamStr(g))+'" placeholder="np. 1030840 albo https://store.steampowered.com/app/1030840/">'+STEAM_HINT+'</label>'+steamFindHtml("e")+
@@ -1781,6 +1788,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var einstr=(($("e_instr")||{}).value||"").replace(/\r/g,"").trim().slice(0,3000);if(einstr!==String(g.instr||""))changes.push({field:"instr",from:String(g.instr||""),to:einstr});
   if(esteam.join(", ")!==steamStr(g))changes.push({field:"steam",from:steamStr(g),to:esteam.join(", ")});
   if(JSON.stringify(spNew)!==JSON.stringify(spOld))changes.push({field:"spolszczenia",from:JSON.stringify(spOld),to:JSON.stringify(spNew)});
+  if($("e_opas")&&$("e_opas").checked!==!!g.okladkaPasek)changes.push({field:"okladkaPasek",from:g.okladkaPasek?"1":"",to:$("e_opas").checked?"1":""});
   if($("e_upd").checked)changes.push({field:"upd",from:String(g.upd||""),to:new Date().toISOString().slice(0,10)});
   if(!changes.length)return bad("Nic nie zmieniono.");
   busy(t,"Zapisuję…");
@@ -2441,6 +2449,7 @@ function mergeApproved(rows){
         if(f==="usun"){if(v==="1")gm._usun=1;return}
         if(f==="steam"){var sv=steamParse(v);if(sv)steamSet(gm,sv);return}
         if(f==="instr"){if(v)gm.instr=v.slice(0,3000);else delete gm.instr;return}
+         if(f==="okladkaPasek"){if(v==="1")gm.okladkaPasek=1;else delete gm.okladkaPasek;return}
         if(f==="spolszczenia"){var spv=[];try{spv=spNorm(JSON.parse(String(c.to||"[]")))}catch(e){return}spv.forEach(function(s){var o=spExtra(gm).filter(function(x){return x.id===s.id})[0];if(o&&spUpdKey(o,s))s.upd=day});if(spv.length)gm.spolszczenia=spv;else delete gm.spolszczenia;return}
         if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].indexOf(f)<0)return;
         if(f==="yt"){if(ytId(v))gm.yt=v;else if(!v)delete gm.yt;return}

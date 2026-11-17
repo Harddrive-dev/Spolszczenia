@@ -779,7 +779,7 @@ html{-webkit-tap-highlight-color:transparent}
 <footer>Do każdego spolszczenia potrzebna jest własna, legalnie nabyta kopia gry. <a href="/gra/">Wszystkie gry A–Z</a> · <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <span style="opacity:.6">wersja 1.11.2026 ai</span></footer>
 </div>
 
-<div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="modedit" id="rmed" style="display:none" role="menuitem">🛠️ Edytuj wpis (moderator)</button><button type="button" data-ra="zrzuty" id="rzrz" style="display:none" role="menuitem">🖼️ Zrzuty ekranu (moderator)</button><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
+<div class="rmenu" id="rmenu" role="menu"><button type="button" data-ra="modedit" id="rmed" style="display:none" role="menuitem">🛠️ Edytuj wpis (moderator)</button><button type="button" data-ra="zrzuty" id="rzrz" style="display:none" role="menuitem">🖼️ Zrzuty ekranu (moderator)</button><button type="button" data-ra="info" id="rinfo" style="display:none" role="menuitem">📋 Informacje o spolszczeniu</button><button type="button" data-ra="edit" role="menuitem">✏️ Zaproponuj zmianę</button><button type="button" data-ra="link" role="menuitem">🔗 Zgłoś zepsuty link</button><button type="button" data-ra="bug" role="menuitem">⚠️ Zgłoś błąd</button></div>
 <div class="overlay" id="rm"><div class="box"><button class="mini" id="rclose" aria-label="Zamknij">✕</button><div id="rbody"></div></div></div>
 <div class="overlay" id="cm"><div class="box"><button class="mini" id="mclose" aria-label="Zamknij">✕</button><div id="mbody"></div></div></div>
 <script>
@@ -1755,8 +1755,7 @@ function openModEdit(g){
    '<label style="grid-column:1/-1">Adres okładki (https://… lub img/nazwa.jpg)<input id="e_img" maxlength="500" value="'+v("img")+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”). Puste pole usuwa okładkę.</small></label>'+
    (pasekDla(g)?'<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_opas" type="checkbox" style="width:auto"'+(g.okladkaPasek?' checked':'')+'> Okładka ma już pasek platformy (np. PSP na górze) – nie dokładaj drugiego</label>':'')+
    '<label style="grid-column:1/-1">Opis (opcjonalnie)<textarea id="e_opis" rows="2" maxlength="500" style="width:100%;display:block">'+v("opis")+'</textarea></label>'+
-   '<label style="grid-column:1/-1">Twórcy spolszczenia (opcjonalnie, nicki po przecinku)<input id="e_tworcy" maxlength="600" placeholder="np. Pixel the Retro, Adg0s, Neron" value="'+esc((Array.isArray(g.tworcy)?g.tworcy:[]).join(", "))+'"><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Pokażą się na końcu sekcji „O grze” jako „Twórcy spolszczenia”.</small></label>'+
-   '<label style="grid-column:1/-1">Instrukcja instalacji (opcjonalnie)<textarea id="e_instr" rows="5" maxlength="3000" style="width:100%;display:block">'+v("instr")+'</textarea><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Pokaże się na stronie gry jako sekcja „Jak zainstalować” (puste = brak sekcji). Pusty wiersz = nowy akapit, <code>## Tytuł</code> = nagłówek, <code>1. </code> = kroki, <code>- </code> = lista, <code>**pogrubienie**</code>, <code>[tekst](https://adres)</code>.</small></label>'+
+   '<p class="msg" style="grid-column:1/-1;margin:0">Instrukcję, linki do autorów i twórców spolszczenia edytujesz w menu ⋯ → „📋 Informacje o spolszczeniu”.</p>'+
    '<label style="grid-column:1/-1">Numer Steam albo link do sklepu Steam (puste = brak)<input id="e_steam" maxlength="300" autocomplete="off" value="'+esc(steamStr(g))+'" placeholder="np. 1030840 albo https://store.steampowered.com/app/1030840/">'+STEAM_HINT+'</label>'+steamFindHtml("e")+
    '<div style="grid-column:1/-1"><b>Dodatkowe spolszczenia tej gry</b><p class="msg" style="margin:2px 0 8px">Główne spolszczenie jest w polach powyżej. Tutaj dodajesz inne, np. od drugiej grupy.</p><div id="e_sp">'+spNorm(spExtra(g)).map(spRow).join("")+'</div><button class="btn" type="button" id="e_spadd">➕ Dodaj kolejne spolszczenie</button></div>'+
    '<label style="grid-column:1/-1;flex-direction:row;align-items:center;gap:8px"><input id="e_upd" type="checkbox" style="width:auto"> Odśwież datę aktualizacji (wpis wskoczy na górę „Najnowsze”)</label>'+
@@ -1791,8 +1790,6 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var spRows=spRead();if(spRows.some(function(s){return !/^https?:\/\//i.test(s.link)}))return bad("Każde dodatkowe spolszczenie musi mieć link zaczynający się od https://");
   var spOld=spNorm(spExtra(g)),spNew=spNorm(spRows).map(function(s){if(s.id)return s;var b=keyOf(g)+"--"+(slug(s.author==="—"?"":s.author)||"autor"),id=b,n=2,all=spOld.concat(spRows);while(all.some(function(x){return x.id===id}))id=b+"-"+(n++);s.id=id;s.upd=s.dodano=new Date().toISOString().slice(0,10);spRows.push(s);return s});
   var changes=[];Object.keys(nv).forEach(function(k){var old=g[k]==null?"":String(g[k]);if(nv[k]!==old)changes.push({field:k,from:old,to:nv[k]})});
-  var etw=tworcyNorm((($("e_tworcy")||{}).value||"")).join(", "),gtw=(Array.isArray(g.tworcy)?g.tworcy:[]).join(", ");if(etw!==gtw)changes.push({field:"tworcy",from:gtw,to:etw});
-  var einstr=(($("e_instr")||{}).value||"").replace(/\r/g,"").trim().slice(0,3000);if(einstr!==String(g.instr||""))changes.push({field:"instr",from:String(g.instr||""),to:einstr});
   if(esteam.join(", ")!==steamStr(g))changes.push({field:"steam",from:steamStr(g),to:esteam.join(", ")});
   if(JSON.stringify(spNew)!==JSON.stringify(spOld))changes.push({field:"spolszczenia",from:JSON.stringify(spOld),to:JSON.stringify(spNew)});
   if($("e_opas")&&$("e_opas").checked!==!!g.okladkaPasek)changes.push({field:"okladkaPasek",from:g.okladkaPasek?"1":"",to:$("e_opas").checked?"1":""});
@@ -1804,6 +1801,36 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message)+" (czy uruchomiłeś edycja-wpisow.sql w Supabase?)");
   odswiezStrone();closeModal();editG=null;await loadCatalog()});
 // ====== ZRZUTY EKRANU (moderator/admin): wgrywanie przez stronę do R2 (funkcja Supabase „zrzuty”), galerię robi automat (rusza sam po wgraniu, ok. 3 min) ======
+// ===== INFORMACJE O SPOLSZCZENIU (okno z menu ⋯): instrukcja w paczce, informacje/instrukcja, linki do autorów, twórcy =====
+// Zapis jako zwykła poprawka wpisu (modedit) – pola instrPaczka, instr, linki (JSON), tworcy. To samo czyta scripts/sync.mjs.
+function linkiNorm(v){var a=[];try{a=typeof v==="string"?JSON.parse(v||"[]"):(v||[])}catch(e){a=[]}if(!Array.isArray(a))return[];var o=[];
+  a.forEach(function(x){var t=String((x&&x.t)||"").trim().slice(0,60),u=String((x&&x.u)||"").trim().slice(0,500);if(t&&/^https:\/\/[^\s]+$/i.test(u)&&o.length<10)o.push({t:t,u:u})});return o}
+var infoG=null;
+function infoRow(t,u){return '<div class="lkrow" style="display:grid;grid-template-columns:1fr 2fr auto;gap:8px;margin-bottom:8px"><input class="lk_t" maxlength="60" placeholder="Nazwa, np. Strona autora" value="'+esc(t||"")+'"><input class="lk_u" maxlength="500" placeholder="https://…" value="'+esc(u||"")+'"><button class="mini" type="button" data-lkdel="1" title="Usuń link">✕</button></div>'}
+function openInfo(g){if(!CM||!g||!mozeEdytowac(g))return;infoG=g;
+  var lk=linkiNorm(g.linki);
+  openModal('<h2>📋 Informacje o spolszczeniu</h2><p class="msg"><b>'+esc(g.game)+'</b> · wszystko tu pojawi się na stronie gry w sekcji „Informacje o spolszczeniu” w ciągu ok. 3 minut.</p>'+
+   '<div class="rpf">'+
+   '<label style="grid-column:1/-1;display:flex;flex-direction:row;align-items:center;gap:8px"><input id="i_pacz" type="checkbox" style="width:auto;margin:0"'+(g.instrPaczka?' checked':'')+'><span>Instrukcja instalacji jest w paczce ze spolszczeniem</span></label>'+
+   '<label style="grid-column:1/-1">Informacje / instrukcja (opcjonalnie)<textarea id="i_instr" rows="5" maxlength="3000" style="width:100%;display:block">'+esc(String(g.instr||""))+'</textarea><small class="cvmuted" style="display:block;margin-top:4px;line-height:1.4">Krótka informacja albo pełna instrukcja, gdy nie ma jej w paczce. Pusty wiersz = nowy akapit, <code>## Tytuł</code> = nagłówek, <code>1. </code> = kroki, <code>- </code> = lista, <code>**pogrubienie**</code>.</small></label>'+
+   '<div style="grid-column:1/-1"><div style="font-size:13px;margin-bottom:6px">Linki (strona autora, temat na forum, Discord…) – maks. 10, tylko adresy https://</div><div id="i_links">'+(lk.length?lk.map(function(x){return infoRow(x.t,x.u)}).join(""):infoRow("",""))+'</div><button class="mini" type="button" id="i_ladd">+ Dodaj link</button></div>'+
+   '<label style="grid-column:1/-1">Twórcy spolszczenia (nicki po przecinku)<input id="i_tworcy" maxlength="600" placeholder="np. Pixel the Retro, Adg0s, Neron" value="'+esc((Array.isArray(g.tworcy)?g.tworcy:[]).join(", "))+'"></label>'+
+   '</div><p class="msg" id="i_msg"></p><p style="margin-top:10px"><button class="btn on" type="button" id="i_go">Zapisz</button></p>')}
+document.addEventListener("click",async function(e){var t=e.target;if(!t||!t.closest)return;
+  if(t.id==="i_ladd"){var box=$("i_links");if(box&&box.querySelectorAll(".lkrow").length<10)box.insertAdjacentHTML("beforeend",infoRow("",""));return}
+  if(t.closest("[data-lkdel]")&&t.closest("#i_links")){t.closest(".lkrow").remove();return}
+  if(t.id!=="i_go"||!infoG)return;var g=infoG,msg=$("i_msg"),bad=function(m){msg.textContent=m;msg.className="msg err"};
+  var rows=[].slice.call(document.querySelectorAll("#i_links .lkrow")).map(function(r){return{t:r.querySelector(".lk_t").value.trim(),u:r.querySelector(".lk_u").value.trim()}}).filter(function(x){return x.t||x.u});
+  for(var i=0;i<rows.length;i++){if(!rows[i].t)return bad("Podaj nazwę linku nr "+(i+1)+".");if(!/^https:\/\/[^\s]+$/i.test(rows[i].u))return bad("Link „"+rows[i].t+"” musi zaczynać się od https:// (bez spacji).")}
+  var changes=[],nl=JSON.stringify(linkiNorm(rows)),ol=JSON.stringify(linkiNorm(g.linki));if(nl!==ol)changes.push({field:"linki",from:ol,to:nl});
+  var np=$("i_pacz").checked;if(np!==!!g.instrPaczka)changes.push({field:"instrPaczka",from:g.instrPaczka?"1":"",to:np?"1":""});
+  var ni=$("i_instr").value.replace(/\r/g,"").trim().slice(0,3000);if(ni!==String(g.instr||""))changes.push({field:"instr",from:String(g.instr||""),to:ni});
+  var ntw=tworcyNorm($("i_tworcy").value).join(", "),otw=(Array.isArray(g.tworcy)?g.tworcy:[]).join(", ");if(ntw!==otw)changes.push({field:"tworcy",from:otw,to:ntw});
+  if(!changes.length)return bad("Nic nie zmieniono.");
+  busy(t,"Zapisuję…");
+  var res=await sb.from("submissions").insert({kind:"modedit",game:g.game,data:{key:keyOf(g),changes:changes},status:"done",user_name:nick()||null});
+  busy(t,0);if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message));
+  odswiezStrone();closeModal();infoG=null;await loadCatalog()});
 var ZRZ={g:null,busy:false};
 // Po zapisie na stronie: prośba do automatu na GitHubie o przebudowanie stron (funkcja Supabase „odswiez”;
 // automat czeka ok. 2 min, zbiera wszystkie zmiany i publikuje – strony gier są aktualne po 2–3 min).
@@ -1847,10 +1874,10 @@ function openReport(kind,g){
   curKey=null;openModal(h);$("cm").setAttribute("data-rk",keyOf(g));$("cm").setAttribute("data-rkind",kind)}
 document.addEventListener("click",async function(e){
   var rb=e.target.closest&&e.target.closest(".rowmenu");
-  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=mozeEdytowac(g)?"block":"none";$("rzrz").style.display=mozeEdytowac(g)?"block":"none";
+  if(rb){e.stopPropagation();var g=gameByKey(rb.getAttribute("data-rk"));if(!g)return;menuG=g;var m=$("rmenu"),r=rb.getBoundingClientRect();$("rmed").style.display=mozeEdytowac(g)?"block":"none";$("rzrz").style.display=mozeEdytowac(g)?"block":"none";$("rinfo").style.display=mozeEdytowac(g)?"block":"none";
     m.className="rmenu open";m.style.top=Math.min(r.bottom+4,innerHeight-m.offsetHeight-8)+"px";m.style.left=Math.max(8,Math.min(r.left,innerWidth-m.offsetWidth-8))+"px";return}
   var ra=e.target.closest&&e.target.closest("[data-ra]");
-  if(ra&&menuG){var g2=menuG;hideRmenu();if(ra.getAttribute("data-ra")==="modedit"){if(typeof openModEdit==="function")openModEdit(g2);return}if(ra.getAttribute("data-ra")==="zrzuty"){openZrzuty(g2);return}openReport(ra.getAttribute("data-ra"),g2);return}
+  if(ra&&menuG){var g2=menuG;hideRmenu();if(ra.getAttribute("data-ra")==="modedit"){if(typeof openModEdit==="function")openModEdit(g2);return}if(ra.getAttribute("data-ra")==="zrzuty"){openZrzuty(g2);return}if(ra.getAttribute("data-ra")==="info"){openInfo(g2);return}openReport(ra.getAttribute("data-ra"),g2);return}
   if(!e.target.closest||!e.target.closest("#rmenu"))hideRmenu();
   if(e.target.id==="rpsend"){
     var k=$("cm").getAttribute("data-rk"),kind=$("cm").getAttribute("data-rkind"),g3=gameByKey(k);if(!g3)return;
@@ -2460,6 +2487,8 @@ function mergeApproved(rows){
         if(f==="steam"){var sv=steamParse(v);if(sv)steamSet(gm,sv);return}
         if(f==="instr"){if(v)gm.instr=v.slice(0,3000);else delete gm.instr;return}
          if(f==="okladkaPasek"){if(v==="1")gm.okladkaPasek=1;else delete gm.okladkaPasek;return}
+         if(f==="instrPaczka"){if(v==="1")gm.instrPaczka=1;else delete gm.instrPaczka;return}
+         if(f==="linki"){var lk=linkiNorm(v);if(lk.length)gm.linki=lk;else delete gm.linki;return}
          if(f==="tworcy"){var tw=tworcyNorm(v);if(tw.length)gm.tworcy=tw;else delete gm.tworcy;return}
         if(f==="spolszczenia"){var spv=[];try{spv=spNorm(JSON.parse(String(c.to||"[]")))}catch(e){return}spv.forEach(function(s){var o=spExtra(gm).filter(function(x){return x.id===s.id})[0];if(o&&spUpdKey(o,s))s.upd=day});if(spv.length)gm.spolszczenia=spv;else delete gm.spolszczenia;return}
         if(["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].indexOf(f)<0)return;

@@ -53,6 +53,8 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="steam"){const st=steamParse(v);if(st)steamSet(g,st);continue}
    if(f==="instr"){if(v)g.instr=v.slice(0,3000);else delete g.instr;continue}
    if(f==="tworcy"){const tw=[];for(let x of v.split(",")){x=x.trim().slice(0,40);if(x&&!tw.includes(x)&&tw.length<30)tw.push(x)}if(tw.length)g.tworcy=tw;else delete g.tworcy;continue} // „Twórcy spolszczenia” (koniec sekcji „O grze”)
+   if(f==="instrPaczka"){if(v==="1")g.instrPaczka=1;else delete g.instrPaczka;continue} // „Instrukcja instalacji jest w paczce ze spolszczeniem”
+   if(f==="linki"){let a=[];try{a=JSON.parse(v||"[]")}catch{a=[]}const lk=[];for(const x of Array.isArray(a)?a:[]){const t=String(x&&x.t||"").trim().slice(0,60),u=String(x&&x.u||"").trim().slice(0,500);if(t&&/^https:\/\/\S+$/i.test(u)&&lk.length<10)lk.push({t,u})}if(lk.length)g.linki=lk;else delete g.linki;continue} // linki do autorów / forów
    if(f==="okladkaPasek"){if(v==="1")g.okladkaPasek=1;else delete g.okladkaPasek;continue} // okładka ma już pasek platformy – strona nie dokłada drugiego
    if(f==="spolszczenia"){let a=null;try{a=spNorm(JSON.parse(v||"[]"))}catch{continue}for(const s of a){const o=(g.spolszczenia||[]).find(x=>x.id===s.id);if(o&&spUpd(o,s))s.upd=day}if(a.length)g.spolszczenia=a;else delete g.spolszczenia;continue}
    if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].includes(f))continue;

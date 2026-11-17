@@ -3826,7 +3826,7 @@
     "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej."
   },
   {
-    "game": "MediEvil Resurrection [PSP]",
+    "game": "MediEvil Resurrection",
     "img": "https://cdn.grypopolsku.pl/okladki/medievil-resurrection-psp-204ece27.webp",
     "platform": "Sony PSP",
     "type": "Napisy",
@@ -3839,9 +3839,13 @@
     "dodano": "2026-10-28",
     "opis": "Odświeżona wersja klasycznej platformówki o Sir Danielu Fortesque.",
     "zmiana": {
-      "kto": "kokos324",
-      "dzien": "2026-11-16"
-    }
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    },
+    "id": "medievil-resurrection-psp",
+    "aliasy": [
+      "medievil-resurrection-psp"
+    ]
   },
   {
     "game": "MediEvil [PSX]",
@@ -17719,7 +17723,11 @@
     "author": "P.G",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4791",
     "dodano": "2026-07-31",
-    "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-931ed360.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-55fcd5fd.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "The Legend of Zelda: Oracle of Ages / Oracle of Seasons",

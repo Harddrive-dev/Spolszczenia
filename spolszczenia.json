@@ -3021,7 +3021,6 @@
       }
     ],
     "yt": "https://www.youtube.com/watch?v=hD-q7bvBh5E",
-    "okladkaPasek": 1,
     "zrzuty": [
       {
         "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/1.webp?v=7ceb74bc",
@@ -3062,7 +3061,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "okladkaPasek": 1
   },
   {
     "game": "GYLT",

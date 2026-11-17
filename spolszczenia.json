@@ -20836,8 +20836,14 @@
     "opis": "Odświeżona wersja przygodówki Life is Strange, przygotowana przez Deck Nine w 2022 roku – z lepszą grafiką i animacjami nagranymi metodą motion capture. Studentka fotografii Max Caulfield odkrywa, że potrafi cofać czas, i razem z przyjaciółką Chloe próbuje rozwikłać tajemnice miasteczka Arcadia Bay.",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-15"
-    }
+      "dzien": "2026-11-17"
+    },
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://steamcommunity.com/sharedfiles/filedetails/?id=3316437247"
+      }
+    ]
   },
   {
     "game": "Call of Duty: Black Ops II",

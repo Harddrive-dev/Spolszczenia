@@ -1530,18 +1530,37 @@
     "img": "https://cdn.grypopolsku.pl/okladki/dead-city-5adb1dca.webp"
   },
   {
-    "game": "Dead or Alive [PSX]",
+    "game": "Dead or Alive",
     "img": "https://cdn.grypopolsku.pl/okladki/dead-or-alive-psx-7ecdf91e.webp",
     "platform": "Sony PSX",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "ikskoks",
     "link": "https://grajpopolsku.pl/download/dead-or-alive-psx/",
     "genre": "Bijatyka",
     "dodano": "2026-10-28",
-    "opis": "Bijatyka 3D od Tecmo, w której liczą się szybkie kontrataki i dynamiczne areny."
+    "opis": "Bijatyka 3D od Tecmo, w której liczą się szybkie kontrataki i dynamiczne areny.",
+    "id": "dead-or-alive-psx",
+    "yt": "https://www.youtube.com/watch?v=sfLfP3_rXhI",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?p=36951"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    },
+    "aliasy": [
+      "dead-or-alive-psx"
+    ]
   },
   {
     "game": "Dead Space 2",
@@ -1718,7 +1737,7 @@
     "spolszczenia": [
       {
         "id": "dink-smallwood-hd--ikskoks",
-        "author": "ikskoks",
+        "author": "ikskoks (GNU FreeDink)",
         "link": "https://ikskoks.pl/download/pc-dink-smallwood-gnu-freedink-spolszczenie-v1-0/",
         "type": "Napisy",
         "status": "Gotowe",
@@ -1727,7 +1746,8 @@
         "upd": "2026-11-17",
         "dodano": "2026-11-17"
       }
-    ]
+    ],
+    "upd": "2026-11-17"
   },
   {
     "game": "Dino Crisis 2 [PSX]",

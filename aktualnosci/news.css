@@ -94,6 +94,7 @@ a{color:var(--accent)}
 .umenu{display:none;position:absolute;top:48px;left:0;width:max-content;min-width:240px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .umenu.open{display:block}
 .umenu .btn{display:block;width:100%;white-space:nowrap}
+.umgrp{display:none;margin:0 0 6px 10px;padding-left:8px;border-left:2px solid var(--line)}.umgrp.open{display:block}.umgrp .btn{font-size:13px}.umgrp .btn:last-child{margin-bottom:0!important}.umt .ar{display:inline-block;transition:transform .15s;margin-left:4px;opacity:.7}.umt.open .ar{transform:rotate(90deg)}.umt.open .bd{display:none!important}
 @media (max-width:480px){.unm{max-width:90px}.ubtn{padding-right:10px}}
 .btn.busy{opacity:.75;cursor:progress}
 .btn.busy::after{content:"";display:inline-block;width:12px;height:12px;margin-left:8px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-2px;animation:spin .7s linear infinite}

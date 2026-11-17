@@ -6461,8 +6461,8 @@
     "dodano": "2026-10-28",
     "opis": "Toy Story 3: The Video Game to wydana w 2010 roku przygodowa gra platformowa stworzona przez studio Avalanche Software, oparta na kinowym hicie studia Pixar. Gracz wciela się w Chudego, Buzza Astrala oraz Jessie, przeżywając zarówno wydarzenia znane z filmu, jak i zupełnie nowe przygody w otwartym świecie.\n\nOpis spolszczenia: napisy w pełni przetłumaczone - z polskimi znakami.",
     "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-16"
+      "kto": "kokos324",
+      "dzien": "2026-11-17"
     },
     "zrzuty": [
       {
@@ -6504,7 +6504,18 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=923"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "kokos324"
+    ],
+    "instr": "Napisy w pełni przetłumaczone - z polskimi znakami."
   },
   {
     "game": "Ultimate Basketball",

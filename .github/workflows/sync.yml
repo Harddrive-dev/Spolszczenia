@@ -103,7 +103,13 @@ jobs:
             git config user.name "spolszczenia-bot"
             git config user.email "bot@users.noreply.github.com"
             git commit -m "Automatyczna aktualizacja katalogu i aktualności"
-            git push && echo "PUSHED=1" >> "$GITHUB_ENV"
+            # Gdy w międzyczasie ktoś coś wgrał (np. zmiana kodu strony), dociągamy ją i próbujemy jeszcze raz (do 3 razy).
+            # Przy sporze o ten sam plik wygrywa świeżo wygenerowana wersja automatu.
+            for i in 1 2 3; do
+              if git push; then echo "PUSHED=1" >> "$GITHUB_ENV"; break; fi
+              [ "$i" = 3 ] && exit 1
+              git pull --rebase -X theirs || { git rebase --abort; exit 1; }
+            done
           fi
       - name: Ogłoszenia na Discordzie
         if: always()

@@ -57,6 +57,29 @@ h1 .logo{color:inherit;text-decoration:none;cursor:pointer}
 input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
 input[type=search]{flex:1 1 140px;min-width:140px}
 input.stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:16px;margin:0 0 12px;flex:none;min-width:0}
+.nwhead{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.nwhead>.nwl{flex:1 1 320px;min-width:0}
+.nwhead .stq{margin-top:14px}
+.nwcal{flex:0 0 auto;border:1px solid var(--line);border-radius:12px;padding:8px 10px;background:var(--bg);margin-bottom:12px}
+.nwcal .ct{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px;font-size:13px}
+.nwcal .nav{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:8px;width:28px;height:26px;font:inherit;font-size:16px;line-height:1;cursor:pointer}
+.nwcal .nav:not(:disabled):hover{border-color:var(--accent);color:var(--accent)}.nwcal .nav:disabled{opacity:.3;cursor:default}
+.nwcal .cg{display:grid;grid-template-columns:repeat(7,32px);gap:3px}
+.nwcal .cw{font-size:10px;color:var(--muted);text-align:center}
+.nwcal .cd{height:30px;border-radius:7px;border:1px solid transparent;background:transparent;color:var(--text);font:inherit;padding:0;position:relative;cursor:pointer;display:grid;place-items:center}
+.nwcal .cd .dn{position:absolute;top:1px;left:3px;font-size:8px;opacity:.6}
+.nwcal .cd b{font-size:12px;line-height:1;margin-top:5px}
+.nwcal .cd.z{cursor:default;color:var(--muted)}.nwcal .cd.z b{opacity:.35;font-weight:400}
+.nwcal .cd.l1{background:color-mix(in srgb,var(--accent) 18%,transparent)}
+.nwcal .cd.l2{background:color-mix(in srgb,var(--accent) 38%,transparent)}
+.nwcal .cd.l3{background:color-mix(in srgb,var(--accent) 65%,transparent);color:#1f1513}
+.nwcal .cd.tod{border-color:var(--accent)}
+.nwcal .cd.on{outline:2px solid var(--text);outline-offset:1px}
+.nwcal .cd:not(.z):hover{border-color:var(--accent)}
+.nwcal .cs{font-size:11px;color:var(--muted);text-align:center;margin-top:5px}
+.nwsel{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:4px 0 10px;font-size:15px}
+.nwsel .lnk{background:none;border:0;color:var(--accent);font:inherit;font-size:14px;cursor:pointer;padding:0}
+@media(max-width:600px){.nwcal{width:100%;box-sizing:border-box}.nwcal .cg{grid-template-columns:repeat(7,1fr)}}
 .count{color:var(--muted);font-size:14px;margin:0 0 10px;display:block;width:fit-content;background:var(--bg);padding:2px 8px 2px 0;border-radius:8px;position:relative}
 .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
@@ -2262,23 +2285,50 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
   FAVV.tab=t.getAttribute("data-fvtab");if(FAVV.tab==="new"){favMarkSeen();favUI()}else renderFavList();
   var f=$("favview");if(f&&t.classList.contains("lnk"))f.scrollIntoView({block:"start"})},true);
 // ====== WSZYSTKIE NOWOŚCI (#/nowosci): pełna lista „Nowości i aktualizacje”, według dni ======
-var NWV={tab:"all",n:60,q:"",built:false};
+var NWV={tab:"all",n:60,q:"",built:false,cm:null,m:null,d:null}; // cm = miesiąc w kalendarzyku, m = wybrany miesiąc (archiwum), d = wybrany dzień
 function nwSince(){var d=new Date(Date.now()-30*864e5);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")} // widok pokazuje ostatnie 30 dni
 function nwKind(g){return nwEvent(g).typ==="Aktualizacja"?"upd":"new"}
+// ====== Kalendarzyk w „Nowości i aktualizacje”: liczba zmian w każdym dniu, strzałki do starszych miesięcy (archiwum) ======
+var NWMC=["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],NWMD=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
+function nwYmd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function nwMonAdd(m,k){var y=+m.slice(0,4),mo=+m.slice(5,7)-1+k;y+=Math.floor(mo/12);mo=((mo%12)+12)%12;return y+"-"+String(mo+1).padStart(2,"0")}
+function nwMonName(m){var s=NWMC[+m.slice(5,7)-1];return s.charAt(0).toUpperCase()+s.slice(1)+" "+m.slice(0,4)}
+function nwFirstMon(){var a=nwAll(),k=a.length?nk(a[a.length-1]):"";return /^\d{4}-\d{2}/.test(k)?k.slice(0,7):nwYmd(new Date()).slice(0,7)}
+function nwPass(g,w){return !(w.length&&!srchHit(g,w))&&(NWV.tab==="all"||nwKind(g)===NWV.tab)}
+function renderNwCal(w){var box=$("nwcal");if(!box)return;var today=nwYmd(new Date()),cur=today.slice(0,7),cm=NWV.cm||cur,cnt={};
+  nwAll().forEach(function(g){var k=nk(g);if(k.slice(0,7)===cm&&nwPass(g,w))cnt[k]=(cnt[k]||0)+1});
+  var vals=Object.keys(cnt).map(function(k){return cnt[k]}).sort(function(a,b){return a-b}),p=function(x){return vals.length?vals[Math.floor(x*(vals.length-1))]:0},t1=p(.4),t2=p(.8);
+  var y=+cm.slice(0,4),mo=+cm.slice(5,7)-1,first=new Date(y,mo,1,12),days=new Date(y,mo+1,0).getDate(),pad=(first.getDay()+6)%7,tot=0;
+  var h='<div class="ct"><button type="button" class="nav" data-nwm="-1" aria-label="Poprzedni miesiąc"'+(cm<=nwFirstMon()?" disabled":"")+'>‹</button><b>'+esc(nwMonName(cm))+'</b><button type="button" class="nav" data-nwm="1" aria-label="Następny miesiąc"'+(cm>=cur?" disabled":"")+'>›</button></div><div class="cg">'+["Pn","Wt","Śr","Cz","Pt","So","Nd"].map(function(x){return '<div class="cw">'+x+'</div>'}).join("");
+  for(var i=0;i<pad;i++)h+='<span></span>';
+  for(var d=1;d<=days;d++){var k=cm+"-"+String(d).padStart(2,"0"),n=cnt[k]||0,fut=k>today;tot+=n;
+    var lv=n?(n>t2?3:n>t1?2:1):0,lab=d+" "+NWMD[mo]+": "+n+" "+(n===1?"zmiana":n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?"zmiany":"zmian");
+    h+='<button type="button" class="cd'+(n?" l"+lv:" z")+(k===today?" tod":"")+(NWV.d===k?" on":"")+'"'+(n?' data-nwd="'+k+'"':" disabled")+' title="'+lab+'" aria-label="'+lab+'"><span class="dn">'+d+'</span><b>'+(fut?"":(n||"·"))+'</b></button>'}
+  h+='</div><div class="cs">'+(tot?"W tym miesiącu: <b>"+tot+"</b>":"W tym miesiącu brak zmian")+'</div>';
+  box.innerHTML=h}
 function renderNwList(){var box=$("nwlist");if(!box)return;
-  var since=nwSince(),all=nwAll().filter(function(g){return nk(g)>=since}),w=srchWords(NWV.q),c={all:0,"new":0,upd:0},L=[];
-  all.forEach(function(g){if(w.length&&!srchHit(g,w))return;var k=nwKind(g);c.all++;c[k]++;if(NWV.tab==="all"||NWV.tab===k)L.push(g)}); // te same zasady wyszukiwania co katalog (też skróty: wow, gta)
+  var since=nwSince(),w=srchWords(NWV.q),c={all:0,"new":0,upd:0},L=[];
+  nwAll().forEach(function(g){var k=nk(g);if(NWV.d?k!==NWV.d:NWV.m?k.slice(0,7)!==NWV.m:k<since)return;if(w.length&&!srchHit(g,w))return;var t=nwKind(g);c.all++;c[t]++;if(NWV.tab==="all"||NWV.tab===t)L.push(g)});
   ["all","new","upd"].forEach(function(t){var b=document.querySelector('[data-nwtab="'+t+'"]');if(b){b.classList.toggle("on",NWV.tab===t);b.querySelector(".tn").textContent=c[t]}});
-  var vis=L.slice(0,NWV.n),h="",last="";
-  vis.forEach(function(g){var d=nk(g),lab=dysDay(d+"T12:00:00");if(lab!==last){if(last)h+='</div>';h+='<div class="dday">'+esc(lab)+'</div><div class="ngrid">';last=lab}h+=nwCard(g)});
+  renderNwCal(w);
+  var lab=NWV.d?(+NWV.d.slice(8,10))+" "+NWMD[+NWV.d.slice(5,7)-1]+" "+NWV.d.slice(0,4):NWV.m?nwMonName(NWV.m):"",h="";
+  if(lab)h+='<div class="nwsel">📅 <b>'+esc(lab)+'</b><button type="button" class="lnk" id="nwreset">← Wróć do najnowszych</button></div>';
+  var vis=L.slice(0,NWV.n),last="";
+  vis.forEach(function(g){var d=nk(g),l=dysDay(d+"T12:00:00");if(l!==last){if(last)h+='</div>';h+='<div class="dday">'+esc(l)+'</div><div class="ngrid">';last=l}h+=nwCard(g)});
   if(last)h+='</div>';
-  if(!vis.length)h='<p class="msg">'+(w.length?'Nic nie znaleziono.':'W ostatnich 30 dniach nie było nowości.')+'</p>';
+  if(!vis.length)h+='<p class="msg">'+(w.length?'Nic nie znaleziono.':lab?'W tym czasie nie było nowości.':'W ostatnich 30 dniach nie było nowości.')+'</p>';
   if(L.length>NWV.n)h+='<button class="btn dmore" id="nwmore" type="button">Pokaż starsze ('+(L.length-NWV.n)+')</button>';
   box.innerHTML=h}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-nwm],[data-nwd],#nwreset");if(!t||!onNw)return;
+  var cur=nwYmd(new Date()).slice(0,7);NWV.n=60;
+  if(t.id==="nwreset"){NWV.m=null;NWV.d=null;NWV.cm=null}
+  else if(t.hasAttribute("data-nwm")){var m=nwMonAdd(NWV.cm||cur,+t.getAttribute("data-nwm"));if(m>cur)return;NWV.cm=m===cur?null:m;NWV.m=NWV.cm;NWV.d=null}
+  else{var k=t.getAttribute("data-nwd");NWV.d=NWV.d===k?null:k;if(!NWV.d)NWV.m=NWV.cm}
+  renderNwList()});
 function renderNw(){var v=$("nwview");
   if(!NWV.built){NWV.built=true;
-    v.innerHTML=VBACK+'<h2>🆕 Nowości i aktualizacje</h2><p class="msg dsub">Wszystkie nowe spolszczenia i aktualizacje w katalogu z ostatnich 30 dni – od najnowszych.</p>'+
-     '<input id="nwq" class="stq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w nowościach"><div class="dtabs"><button type="button" data-nwtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-nwtab="new">Nowe<span class="tn"></span></button><button type="button" data-nwtab="upd">Aktualizacje<span class="tn"></span></button></div><div id="nwlist"></div>';
+    v.innerHTML='<div class="nwhead"><div class="nwl">'+VBACK+'<h2>🆕 Nowości i aktualizacje</h2><p class="msg dsub">Nowe spolszczenia i aktualizacje w katalogu – od najnowszych. W kalendarzyku cofniesz się do starszych miesięcy.</p>'+
+     '<input id="nwq" class="stq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w nowościach"><div class="dtabs"><button type="button" data-nwtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-nwtab="new">Nowe<span class="tn"></span></button><button type="button" data-nwtab="upd">Aktualizacje<span class="tn"></span></button></div></div><div class="nwcal" id="nwcal"></div></div><div id="nwlist"></div>';
     $("nwq").addEventListener("input",function(){NWV.q=this.value;NWV.n=60;renderNwList()})}
   renderNwList()}
 function showNw(){var was=curViewName();enterView("nw","Nowości i aktualizacje – GryPoPolsku.pl");if(was!=="nw")NWV.n=60;renderNw()}

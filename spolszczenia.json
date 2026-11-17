@@ -21041,7 +21041,7 @@
   },
   {
     "game": "Tales of Phantasia: Narikiri Dungeon X",
-    "platform": "PC",
+    "platform": "Sony PSP",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
@@ -21052,7 +21052,11 @@
     "dodano": "2026-11-16",
     "img": "https://cdn.grypopolsku.pl/okladki/tales-of-phantasia-narikiri-dungeon-x-0f4f6760.webp",
     "opis": "Tales of Phantasia: Narikiri Dungeon X to wydana w 2010 roku na konsolę PSP japońska gra jRPG akcji, będąca pełnoprawnym remakiem tytułu z Game Boy Color z 2000 roku. Akcja toczy się ponad sto lat po wydarzeniach z pierwszej części serii i skupia się na losach bliźniaków, Dio i Mell, którzy wyruszają w podróż w czasie, aby naprawić zaburzenia w historii i odkryć własną tożsamość.",
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Axiom Verge",

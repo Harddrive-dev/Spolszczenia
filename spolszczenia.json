@@ -475,12 +475,28 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "Bartłomiej Duda (Ikskoks)",
+    "ver": "1.0",
+    "author": "ikskoks",
     "upd": "2025-01-07",
-    "link": "https://grajpopolsku.pl/download/alien-shooter-td/",
+    "link": "https://ikskoks.pl/download/pc-alien-shooter-td-spolszczenie-v1-0/",
     "genre": "Strategia",
-    "steam": 541230
+    "steam": 541230,
+    "opis": "Alien Shooter TD to wydana w 2017 roku gra strategiczna typu tower defense, stworzona i wydana przez studio Sigma Team jako spin-off kultowej serii strzelanek izometrycznych Alien Shooter. Produkcja przenosi znany z głównych odsłon cyklu mroczny klimat science fiction, rzut izometryczny oraz hordy krwiożerczych obcych na grunt obrony bazy.",
+    "yt": "https://www.youtube.com/watch?v=lIhk3GMdhPw",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3220"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "American McGee's Alice – wersja lekka",
@@ -6605,12 +6621,27 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/waking-mars/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/pc-waking-mars-spolszczenie/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Astrobiolog bada Marsa i odkrywa tajemnice ukryte w obcej cywilizacji. Przygoda z elementami platformówki.",
-    "steam": 227200
+    "steam": 227200,
+    "yt": "https://www.youtube.com/watch?v=yv2k58H6Mdo",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3635"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Wallace & Gromit's Grand Adventures",

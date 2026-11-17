@@ -4,16 +4,32 @@ on:
     - cron: "*/30 * * * *"   # co 30 minut
   workflow_dispatch:           # przycisk "Run workflow" do ręcznego uruchomienia
     inputs:
+      czekaj:
+        description: "Ile sekund poczekać na zebranie zmian ze strony (0 = od razu; strona wysyła 120)"
+        required: false
+        default: "0"
       discord_test:
         description: "Wyślij wiadomość testową na Discord"
         type: boolean
         default: false
 permissions:
   contents: write
+# Nigdy dwa automaty naraz: kolejne uruchomienia czekają w kolejce (GitHub trzyma najwyżej jedno oczekujące).
+concurrency:
+  group: aktualizacja-katalogu
+  cancel-in-progress: false
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # Po zapisie na stronie (funkcja Supabase „odswiez”) automat czeka chwilę i zbiera wszystkie zmiany naraz.
+      - name: Zebranie zmian ze strony (czekanie)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          CZEKAJ: ${{ inputs.czekaj }}
+        run: |
+          s="$CZEKAJ"; case "$s" in ''|*[!0-9]*) s=0;; esac; [ "$s" -gt 300 ] && s=300
+          echo "Czekam $s s"; sleep "$s"
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

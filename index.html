@@ -1484,7 +1484,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     var ur=await sb.from("submissions").update(upd).eq("id",sid).select("id");
     if(!ur.error&&(!ur.data||!ur.data.length))ur={error:{message:"brak uprawnień lub zgłoszenie już nie istnieje (odśwież stronę i sprawdź, czy jesteś zalogowany jako moderator)"}};
     if(ur.error){busy(t,0);sibs.forEach(function(b){b.disabled=false});var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
-    await openSubs(true);loadSubCount();loadCatalog();return}
+    if(st==="done")odswiezStrone();await openSubs(true);loadSubCount();loadCatalog();return}
   if(t.getAttribute("data-fedit")){var row=t.closest(".sf"),sv=row.querySelector(".sv"),kind=row.getAttribute("data-t");
     if(!row.querySelector("input,select")){var cur=row.getAttribute("data-v");
       sv.innerHTML=kind==="g"?'<input type="text" list="gl_mod" maxlength="40" autocomplete="off" value="'+esc(cur)+'">':kind==="s"?'<select>'+sfOpts(row.getAttribute("data-f"),cur)+'</select>':'<input '+(kind==="n"?'type="number" min="0" max="100"':'type="text" maxlength="200"')+' value="'+esc(cur)+'">';
@@ -1494,7 +1494,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     return}
   if(t.getAttribute("data-subdel")){busy(t,"Usuwam…");var dr=await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel")).select("id");
     if(dr.error||!dr.data||!dr.data.length){busy(t,0);var note=document.createElement("span");note.className="msg err";note.style.marginLeft="8px";note.textContent=dr.error?"Nie udało się usunąć: "+plMsg(dr.error.message):"Nie można usunąć: zatwierdzone zgłoszenia można kasować dopiero godzinę po zatwierdzeniu.";t.parentNode.appendChild(note);return}
-    await openSubs(true);loadSubCount();loadCatalog();return}
+    odswiezStrone();await openSubs(true);loadSubCount();loadCatalog();return}
 });
 
 
@@ -1611,6 +1611,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var res=await sb.from("submissions").insert({kind:"new",game:game,data:data,status:"done",user_name:nick()||null});
   busy(t,0);
   if(res.error)return bad("Nie udało się dodać: "+plMsg(res.error.message)+" (czy uruchomiłeś dodawanie-na-stronie.sql w Supabase?)");
+  odswiezStrone();
   addMem("platform",data.platform);addMem("type",data.type);addMem("status",data.status);addMem("author",data.author==="—"?"":data.author);
   ["a_game","a_ver","a_link","a_lore","a_gr","a_yt","a_ytt","a_img","a_opis","a_premiera","a_steam","a_instr"].forEach(function(i){$(i).value=""});$("a_prog").value=100;
   m.textContent=(dupG?"Dodano kolejne spolszczenie: ":"Dodano: ")+game+". Możesz wpisać kolejne.";m.className="msg ok";$("a_game").focus();
@@ -1660,7 +1661,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   if(t.id==="nw_cancel"){nEdit=null;nDraftClear();renderNews();return}
   if(t.getAttribute("data-nedit")){var r=await sb.from("news").select("*").eq("id",t.getAttribute("data-nedit")).single();if(r.error)return alert("Błąd: "+plMsg(r.error.message));nEdit=r.data;renderNews();return}
   if(t.getAttribute("data-ndel")){if(!confirm("Usunąć ten wpis razem z jego stroną? Komentarze pod wpisem też znikną z widoku."))return;
-    var d=await sb.from("news").delete().eq("id",t.getAttribute("data-ndel")).select("id");if(d.error||!d.data||!d.data.length)alert("Nie udało się usunąć: "+(d.error?plMsg(d.error.message):"brak uprawnień"));openNewsList();return}
+    var d=await sb.from("news").delete().eq("id",t.getAttribute("data-ndel")).select("id");if(d.error||!d.data||!d.data.length)alert("Nie udało się usunąć: "+(d.error?plMsg(d.error.message):"brak uprawnień"));else odswiezStrone();openNewsList();return}
   if(t.id==="nw_save"){
     var msg=$("nw_msg"),fail=function(m){msg.textContent=m;msg.className="msg err"};
     var title=$("nw_title").value.trim(),sl=$("nw_slug").value.trim().toLowerCase()||slug(title),cv=$("nw_cover").value.trim(),body=$("nw_body").value.trim();
@@ -1677,7 +1678,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     busy(t,0);
     if(w.error)return fail(/duplicate|unique/i.test(w.error.message)?"Wpis z takim adresem już istnieje. Zmień adres strony.":/image/i.test(w.error.message)?"Brakuje kolumny na obraz w artykule. Uruchom w Supabase plik aktualnosci-obraz.sql.":"Nie udało się zapisać: "+plMsg(w.error.message));
     if(!w.data||!w.data.length)return fail("Zapis się nie powiódł (brak uprawnień administratora).");
-    nEdit=null;nDraftClear();await openNewsList();$("newsview").insertAdjacentHTML("afterbegin",'<p class="msg" style="color:var(--ok)">Zapisano. Strona wpisu pojawi się w ciągu ok. 30 minut.</p>')}
+    nEdit=null;nDraftClear();odswiezStrone();await openNewsList();$("newsview").insertAdjacentHTML("afterbegin",'<p class="msg" style="color:var(--ok)">Zapisano. Strona wpisu pojawi się w ciągu ok. 3 minut.</p>')}
   }catch(er){alert("Błąd: "+((er&&er.message)||er))}});
 document.addEventListener("input",function(e){if(!e.target||e.target.id!=="nw_title")return;var sl=$("nw_slug");if(sl&&!sl.getAttribute("data-man")&&!(nEdit&&nEdit.id))sl.value=slug(e.target.value).slice(0,90)});
 document.addEventListener("input",function(e){if(e.target&&e.target.id==="nw_slug")e.target.setAttribute("data-man","1")});
@@ -1769,7 +1770,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     busy(t,"Usuwam…");
     var rd=await sb.from("submissions").insert({kind:"modedit",game:gd.game,data:{key:keyOf(gd),changes:[{field:"usun",from:"",to:"1"}]},status:"done",user_name:nick()||null});
     busy(t,0);if(rd.error){md.textContent="Nie udało się usunąć: "+plMsg(rd.error.message);md.className="msg err";return}
-    closeModal();editG=null;await loadCatalog();return}
+    odswiezStrone();closeModal();editG=null;await loadCatalog();return}
   if(t.id==="e_spadd"){$("e_sp").insertAdjacentHTML("beforeend",spRow());return}
   if(t.getAttribute("data-spdel")){t.closest(".sprow").remove();return}
   if(t.id!=="e_go"||!editG)return;
@@ -1801,10 +1802,13 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   var res=await sb.from("submissions").insert({kind:"modedit",game:g.game,data:{key:keyOf(g),changes:changes},status:"done",user_name:nick()||null});
   busy(t,0);
   if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message)+" (czy uruchomiłeś edycja-wpisow.sql w Supabase?)");
-  closeModal();editG=null;await loadCatalog()});
+  odswiezStrone();closeModal();editG=null;await loadCatalog()});
 // ====== ZRZUTY EKRANU (moderator/admin): wgrywanie przez stronę do R2 (funkcja Supabase „zrzuty”), galerię robi automat co 30 min ======
 var ZRZ={g:null,busy:false};
-async function zrzCall(body){var r=await sb.functions.invoke("zrzuty",{body:body});if(r.error){var m=r.error.message||"Błąd";try{var j=await r.error.context.json();if(j&&j.error)m=j.error}catch(e){}throw new Error(m)}if(r.data&&r.data.error)throw new Error(r.data.error);return r.data}
+// Po zapisie na stronie: prośba do automatu na GitHubie o przebudowanie stron (funkcja Supabase „odswiez”;
+// automat czeka ok. 2 min, zbiera wszystkie zmiany i publikuje – strony gier są aktualne po 2–3 min).
+var odswT=0;function odswiezStrone(){var t=Date.now();if(t-odswT<20000)return;odswT=t;try{sb.functions.invoke("odswiez",{body:{}}).catch(function(){})}catch(e){}}
+async function zrzCall(body){var r=await sb.functions.invoke("zrzuty",{body:body});if(r.error){var m=r.error.message||"Błąd";try{var j=await r.error.context.json();if(j&&j.error)m=j.error}catch(e){}throw new Error(m)}if(r.data&&r.data.error)throw new Error(r.data.error);if(body&&body.action!=="lista")odswiezStrone();return r.data}
 function zrzList(pl){var b=$("zrzlist");if(!b)return;b.innerHTML=pl.length?pl.map(function(p){return '<div class="zrzi"><a href="'+esc(p.url)+'" target="_blank" rel="noopener"><img src="'+esc(p.url)+'" alt="'+esc(p.plik)+'" loading="lazy"></a><div><b>'+esc(p.plik)+'</b><small>'+p.kb+' KB</small></div><button class="btn nob" type="button" data-zdel="'+esc(p.plik)+'">🗑 Usuń</button></div>'}).join(""):'<p class="msg">Ta gra nie ma jeszcze zrzutów.</p>';
   var n=$("zrzn");if(n)n.textContent=pl.length}
 function zrzMsg(t,err){var m=$("zrzmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}

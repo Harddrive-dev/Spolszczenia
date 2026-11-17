@@ -2712,7 +2712,7 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "grajpopolsku.pl",
+    "author": "Zespół Graj Po Polsku",
     "link": "https://grajpopolsku.pl/download/god-of-war-chains-of-olympus/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
@@ -2759,6 +2759,7 @@
       "kokos324"
     ],
     "tworcy": [
+      "Zespół Graj Po Polsku",
       "Twig",
       "Manuel Czaszka",
       "Machiner",
@@ -2766,7 +2767,7 @@
     ],
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-16"
+      "dzien": "2026-11-17"
     }
   },
   {

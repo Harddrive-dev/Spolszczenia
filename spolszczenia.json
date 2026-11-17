@@ -622,17 +622,37 @@
     ]
   },
   {
-    "game": "Astérix: The Gallic War [PSX]",
+    "game": "Astérix: The Gallic War",
     "img": "https://cdn.grypopolsku.pl/okladki/asterix-the-gallic-war-psx-d87847ad.webp",
     "platform": "Sony PSX",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "Bartłomiej Duda (Ikskoks)",
+    "ver": "1.0",
+    "author": "ikskoks",
     "upd": "2025-01-07",
-    "link": "https://grajpopolsku.pl/download/asterix-the-gallic-war-psx/",
-    "genre": "Strategia"
+    "link": "https://ikskoks.pl/download/psx-asterix-the-gallic-war-spolszczenie-v1-0/",
+    "genre": "Strategia",
+    "id": "asterix-the-gallic-war-psx",
+    "opis": "Astérix: The Gallic War (znana w Europie również pod tytułem Astérix: La Bataille des Gaules) to wydana w 1999 roku gra akcji z elementami strategii turowej, stworzona przez studio Warthog Games i wydana przez Infogrames na konsolę PlayStation oraz komputery PC. Tytuł oparty jest na kultowej francuskiej serii komiksów autorstwa René Goscinnego i Alberta Uderzo.",
+    "yt": "https://www.youtube.com/watch?v=yaAbD7YlrgQ",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3669"
+      }
+    ],
+    "tworcy": [
+      "ikskoks"
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    },
+    "aliasy": [
+      "asterix-the-gallic-war-psx"
+    ]
   },
   {
     "game": "Astro Fang – Super Machine",
@@ -5627,18 +5647,37 @@
     "opis": "Czołgowa gra zręcznościowa, w której bronisz swojej bazy."
   },
   {
-    "game": "Tekken 3 [PSX]",
+    "game": "Tekken 3",
     "img": "https://cdn.grypopolsku.pl/okladki/tekken-3-psx-511e560d.webp",
     "platform": "Sony PSX",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/tekken-3-psx/",
+    "ver": "1.0",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/psx-tekken-3-spolszczenie-v1-0/",
     "genre": "Bijatyka",
     "dodano": "2026-10-28",
-    "opis": "Bijatyka 3D z postaciami o różnych stylach walki. Trzecia część serii na PlayStation."
+    "opis": "Bijatyka 3D z postaciami o różnych stylach walki. Trzecia część serii na PlayStation.",
+    "id": "tekken-3-psx",
+    "yt": "https://www.youtube.com/watch?v=L60SPuEJJMs",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3662"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    },
+    "aliasy": [
+      "tekken-3-psx"
+    ]
   },
   {
     "game": "Tenchi Muyo RPG",

@@ -635,7 +635,21 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=110"
+      }
+    ],
+    "tworcy": [
+      "kuzo89"
+    ],
+    "instr": "Opis spolszczenia: napisy w pełni przetłumaczone - bez polskich znaków.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Astérix: The Gallic War",

@@ -17458,10 +17458,23 @@
     "ver": "—",
     "genre": "Logiczna",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4867",
+    "link": "https://ikskoks.pl/download/pc-ballance-spolszczenie/",
     "dodano": "2026-09-15",
-    "img": "https://cdn.grypopolsku.pl/okladki/ballance-646993d7.webp",
-    "steam": 2000770
+    "img": "https://cdn.grypopolsku.pl/okladki/ballance-019b0f8b.webp",
+    "steam": 2000770,
+    "opis": "Ballance to wydana w 2004 roku zręcznościowo-logiczna gra 3D stworzona przez niemieckie studio Cyparade i wydana przez Atari. Zadaniem gracza jest przeprowadzenie kuli przez zawieszone wysoko w chmurach, pełne pułapek i zagadek fizycznych tory przeszkód, bez spadnięcia w przepaść.",
+    "yt": "https://www.youtube.com/watch?v=hbEUX1Xh6z8",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=4867"
+      }
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Shantae",

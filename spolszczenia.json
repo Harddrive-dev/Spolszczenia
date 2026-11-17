@@ -3021,7 +3021,48 @@
       }
     ],
     "yt": "https://www.youtube.com/watch?v=hD-q7bvBh5E",
-    "okladkaPasek": 1
+    "okladkaPasek": 1,
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/1.webp?v=7ceb74bc",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/1-miniatura.webp?v=fe13a980"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/2.webp?v=e5d160a6",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/2-miniatura.webp?v=653cf435"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/3.webp?v=fc8d7c59",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/3-miniatura.webp?v=498a2a84"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/4.webp?v=ceff22d0",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/4-miniatura.webp?v=721a8252"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/5.webp?v=321be6a3",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/5-miniatura.webp?v=903ee3f4"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/6.webp?v=3e267e2a",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/6-miniatura.webp?v=1208366a"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/7.webp?v=9926704f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/7-miniatura.webp?v=d2019ad9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/8.webp?v=d939e388",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/8-miniatura.webp?v=06ba43f9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/9.webp?v=f218026a",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/gta-vice-city-stories/9-miniatura.webp?v=1cadc18d"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "GYLT",

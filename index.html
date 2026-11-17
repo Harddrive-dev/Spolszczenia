@@ -78,6 +78,7 @@ input.stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:1
 .nwcal .cd:not(.z):hover{border-color:var(--accent)}
 .nwcal .cs{font-size:11px;color:var(--muted);text-align:center;margin-top:5px}
 .nwsel{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:4px 0 10px;font-size:15px}
+.nwsel .nwr{color:var(--muted);font-size:13px}
 .nwsel .lnk{background:none;border:0;color:var(--accent);font:inherit;font-size:14px;cursor:pointer;padding:0}
 @media(max-width:600px){.nwcal{width:100%;box-sizing:border-box}.nwcal .cg{grid-template-columns:repeat(7,1fr)}}
 .count{color:var(--muted);font-size:14px;margin:0 0 10px;display:block;width:fit-content;background:var(--bg);padding:2px 8px 2px 0;border-radius:8px;position:relative}
@@ -2313,6 +2314,8 @@ function renderNwList(){var box=$("nwlist");if(!box)return;
   renderNwCal(w);
   var lab=NWV.d?(+NWV.d.slice(8,10))+" "+NWMD[+NWV.d.slice(5,7)-1]+" "+NWV.d.slice(0,4):NWV.m?nwMonName(NWV.m):"",h="";
   if(lab)h+='<div class="nwsel">📅 <b>'+esc(lab)+'</b><button type="button" class="lnk" id="nwreset">← Wróć do najnowszych</button></div>';
+  else{var MS=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"],td=nwYmd(new Date()),fd=function(x){return (+x.slice(8,10))+" "+MS[+x.slice(5,7)-1]};
+    h+='<div class="nwsel">📅 <b>Ostatnie 30 dni</b><span class="nwr">'+fd(since)+(since.slice(0,4)!==td.slice(0,4)?" "+since.slice(0,4):"")+' – '+fd(td)+' '+td.slice(0,4)+'</span></div>'}
   var vis=L.slice(0,NWV.n),last="";
   vis.forEach(function(g){var d=nk(g),l=dysDay(d+"T12:00:00");if(l!==last){if(last)h+='</div>';h+='<div class="dday">'+esc(l)+'</div><div class="ngrid">';last=l}h+=nwCard(g)});
   if(last)h+='</div>';

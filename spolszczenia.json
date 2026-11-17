@@ -21055,5 +21055,21 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Axiom Verge",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/axiom_verge",
+    "genre": "Metroidvania",
+    "dodano": "2026-11-17",
+    "img": "https://cdn.grypopolsku.pl/okladki/axiom-verge-d7f34f6e.webp",
+    "opis": "Axiom Verge to wydana w 2015 roku niezależna gra akcji typu metroidvania, stworzona w całości (programowanie, grafika, muzyka i fabuła) przez jednego człowieka – Thomasa Happa. Tytuł stanowi hołd dla klasycznych 8- i 16-bitowych produkcji z ery konsol NES i SNES, takich jak Metroid, Contra czy Bionic Comando.",
+    "steam": 332200,
+    "upd": "2026-11-17"
   }
 ]

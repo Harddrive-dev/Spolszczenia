@@ -1808,7 +1808,7 @@ function linkiNorm(v){var a=[];try{a=typeof v==="string"?JSON.parse(v||"[]"):(v|
 var infoG=null;
 // ikonka przed nazwą linku (zapisywana jako początek nazwy, np. „🔗 Strona autora”)
 var LK_E=["","🔗","💬","🌐","▶️","🎮","💻","📝","📦","⭐"];
-var LK_SZYBKO=[["🔗","Strona autora"],["💬","Temat na forum"],["🎮","Discord"],["▶️","YouTube"]];
+var LK_SZYBKO=[["🔗","Strona autora"],["💬","Temat na forum"],["🎮","Discord autora"],["▶️","YouTube"]];
 function infoRow(t,u){t=String(t||"");var e="";LK_E.forEach(function(x){if(x&&t.indexOf(x+" ")===0)e=x});if(e)t=t.slice(e.length+1);
   return '<div class="lkrow" style="display:grid;grid-template-columns:64px 1fr 1.6fr auto;gap:8px;margin-bottom:8px"><select class="lk_e" title="Ikonka" style="width:64px;font-size:18px;padding:6px">'+LK_E.map(function(x){return '<option value="'+x+'"'+(x===e?' selected':'')+'>'+(x||"—")+'</option>'}).join("")+'</select><input class="lk_t" maxlength="55" placeholder="Nazwa, np. Strona autora" value="'+esc(t)+'"><input class="lk_u" maxlength="500" placeholder="https://…" value="'+esc(u||"")+'"><button class="mini" type="button" data-lkdel="1" title="Usuń link">✕</button></div>'}
 function openInfo(g){if(!CM||!g||!mozeEdytowac(g))return;infoG=g;

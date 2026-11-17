@@ -1558,7 +1558,7 @@ function addMem(k,v){try{if(v===undefined)return localStorage.getItem("add."+k)|
 function openAdd(){if(!CM||!isMod())return;curKey=null;openAddView()}
 function addFormHtml(){
   var opt=function(a,sel){return a.map(function(x){return '<option'+(x===sel?' selected':'')+'>'+esc(x)+'</option>'}).join("")};
-  return ('<h2>Dodaj spolszczenie</h2><p class="msg">Wpis pojawi się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Pola z * są wymagane.</p>'+
+  return ('<h2>Dodaj spolszczenie</h2><p class="msg">Wpis pojawi się w katalogu od razu, a na stronie gry w ciągu ok. 3 minut. Pola z * są wymagane.</p>'+
    '<div class="rpf">'+
    '<label style="grid-column:1/-1">Gra *<input id="a_game" maxlength="150" autocomplete="off"></label>'+
    '<div class="rpw">Platforma'+platPicker("a_platform",addMem("platform")||"PC")+'</div>'+
@@ -1640,7 +1640,7 @@ function nSync(){if(!nEdit||!$("nw_title"))return;
 async function openNewsList(){
   var box=$("newsview");box.innerHTML=nHead()+'<p class="msg"><span class="spn"></span>Wczytywanie…</p>';
   try{var r=await sb.from("news").select("id,slug,title,category,published,created_at").order("created_at",{ascending:false}).limit(200);if(r.error)throw r.error;nRows=r.data;
-    box.innerHTML=nHead()+'<p class="msg">Wpisy trafiają na stronę <a href="/aktualnosci/" target="_blank" rel="noopener">/aktualnosci/</a>. Po zapisaniu strona wpisu jest generowana automatycznie w ciągu ok. 30 minut (możesz przyspieszyć: GitHub → Actions → „Aktualizuj spolszczenia.json” → Run workflow).</p><p><button class="btn on" id="nw_new" type="button">➕ Nowy wpis</button></p>'+
+    box.innerHTML=nHead()+'<p class="msg">Wpisy trafiają na stronę <a href="/aktualnosci/" target="_blank" rel="noopener">/aktualnosci/</a>. Po zapisaniu strona wpisu pojawi się automatycznie w ciągu ok. 3 minut.</p><p><button class="btn on" id="nw_new" type="button">➕ Nowy wpis</button></p>'+
      (r.data.length?r.data.map(function(x){return '<div class="sub" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><div style="flex:1;min-width:200px"><b>'+esc(x.title)+'</b><div class="msg" style="margin:2px 0 0">'+esc(x.category)+' · '+esc(new Date(x.created_at).toLocaleDateString("pl-PL"))+' · '+(x.published?'opublikowany':'<b>szkic (ukryty)</b>')+' · <a href="/aktualnosci/'+esc(x.slug)+'/" target="_blank" rel="noopener">/aktualnosci/'+esc(x.slug)+'/</a></div></div><button class="btn" type="button" data-nedit="'+x.id+'">Edytuj</button><button class="btn" type="button" data-ndel="'+x.id+'">Usuń</button></div>'}).join(""):'<p class="msg">Nie ma jeszcze żadnych wpisów.</p>')
   }catch(e){box.innerHTML=nHead()+nFmt("Nie udało się wczytać wpisów (czy uruchomiłeś aktualnosci.sql w Supabase?).",1)}}
 function nFormHtml(x){var isNew=!x.id;
@@ -1732,7 +1732,7 @@ function openModEdit(g){
   if(!CM||!mozeEdytowac(g)||!g)return;editG=g;curKey=null;
   var opt=function(a,cur){a=a.slice();if(cur&&a.indexOf(cur)<0)a.push(cur);return a.map(function(x){return '<option value="'+esc(x)+'"'+(x===cur?' selected':'')+'>'+esc(x||"— brak —")+'</option>'}).join("")};
   var v=function(k){return esc(g[k]==null?"":String(g[k]))};
-  openModal('<h2>Edytuj wpis</h2><p class="msg">Zmiany pojawią się na stronie od razu, a w pliku <code>spolszczenia.json</code> do ok. 30 minut. Zmieniona nazwa nie psuje komentarzy ani głosów.</p>'+
+  openModal('<h2>Edytuj wpis</h2><p class="msg">Zmiany pojawią się w katalogu od razu, a na stronie gry w ciągu ok. 3 minut. Zmieniona nazwa nie psuje komentarzy ani głosów.</p>'+
    '<div class="rpf">'+
    '<label style="grid-column:1/-1">Gra *<input id="e_game" maxlength="150" value="'+v("game")+'"></label>'+
    '<div class="rpw">Platforma'+platPicker("e_platform",g.platform||"")+'</div>'+
@@ -1803,7 +1803,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
   busy(t,0);
   if(res.error)return bad("Nie udało się zapisać: "+plMsg(res.error.message)+" (czy uruchomiłeś edycja-wpisow.sql w Supabase?)");
   odswiezStrone();closeModal();editG=null;await loadCatalog()});
-// ====== ZRZUTY EKRANU (moderator/admin): wgrywanie przez stronę do R2 (funkcja Supabase „zrzuty”), galerię robi automat co 30 min ======
+// ====== ZRZUTY EKRANU (moderator/admin): wgrywanie przez stronę do R2 (funkcja Supabase „zrzuty”), galerię robi automat (rusza sam po wgraniu, ok. 3 min) ======
 var ZRZ={g:null,busy:false};
 // Po zapisie na stronie: prośba do automatu na GitHubie o przebudowanie stron (funkcja Supabase „odswiez”;
 // automat czeka ok. 2 min, zbiera wszystkie zmiany i publikuje – strony gier są aktualne po 2–3 min).
@@ -1814,7 +1814,7 @@ function zrzList(pl){var b=$("zrzlist");if(!b)return;b.innerHTML=pl.length?pl.ma
 function zrzMsg(t,err){var m=$("zrzmsg");if(m){m.textContent=t;m.className="msg"+(err?" err":"")}}
 async function openZrzuty(g){if(!CM||!mozeEdytowac(g)||!g)return;ZRZ.g=g;curKey=null;var k=keyOf(g);
   openModal('<h2>Zrzuty ekranu</h2><p class="msg" style="margin-top:0"><b>'+esc(g.game)+'</b> · <a href="/gra/'+esc(k)+'/" target="_blank" rel="noopener">strona gry ↗</a></p>'+
-   '<p class="msg">Najlepiej zrzuty z <b>polskim tekstem</b> (dialogi, menu). Kolejność = numery plików. Na stronie gry pojawią się w ciągu ok. 30 minut (automat robi miniaturki). Najwyżej 12 na grę.</p>'+
+   '<p class="msg">Najlepiej zrzuty z <b>polskim tekstem</b> (dialogi, menu). Kolejność = numery plików. Na stronie gry pojawią się w ciągu ok. 3 minut (automat robi miniaturki i znak wodny). Najwyżej 12 na grę.</p>'+
    '<label class="zrzdrop" id="zrzdrop"><input type="file" id="zrzfile" accept="image/png,image/jpeg,image/webp" multiple hidden><span>➕ Wybierz obrazki albo przeciągnij je tutaj</span><small>PNG, JPG lub WebP · strona sama je zmniejszy</small></label>'+
    '<p class="msg" id="zrzmsg"></p><h3 style="margin:14px 0 8px;font-size:15px">Wgrane (<span id="zrzn">…</span>)</h3><div id="zrzlist"><p class="msg">Wczytywanie…</p></div>'+
    '<style>.zrzdrop{display:flex;flex-direction:column;align-items:center;gap:4px;border:2px dashed var(--line);border-radius:14px;padding:18px;cursor:pointer;text-align:center}.zrzdrop span{font-weight:700;color:var(--accent)}.zrzdrop small{color:var(--muted)}.zrzdrop.on{border-color:var(--accent);background:rgba(232,144,95,.08)}.zrzi{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}.zrzi img{width:120px;height:68px;object-fit:cover;border-radius:8px;display:block}.zrzi div{flex:1;min-width:0}.zrzi small{display:block;color:var(--muted)}</style>');
@@ -1825,12 +1825,12 @@ function zrzZmniejsz(f){return new Promise(function(ok,no){var u=URL.createObjec
 async function zrzWgraj(files){if(ZRZ.busy||!ZRZ.g)return;var l=[].slice.call(files||[]).filter(function(f){return /^image\//.test(f.type)});if(!l.length){zrzMsg("Wybierz pliki z obrazkami (PNG, JPG, WebP).",1);return}
   ZRZ.busy=true;var k=keyOf(ZRZ.g),ok=0,err=[];
   for(var i=0;i<l.length;i++){zrzMsg("Wysyłam "+(i+1)+" z "+l.length+"…");try{var o=await zrzZmniejsz(l[i]);var r=await zrzCall({action:"dodaj",gra:k,typ:o.typ,dane:o.dane});zrzList(r.pliki||[]);ok++}catch(e){err.push(l[i].name+": "+e.message)}}
-  ZRZ.busy=false;zrzMsg((ok?"Wgrano "+ok+" "+(ok===1?"zrzut":ok<5?"zrzuty":"zrzutów")+". Na stronie gry pojawią się w ciągu ok. 30 minut. ":"")+(err.length?"Błędy: "+err.join("; "):""),err.length&&!ok)}
+  ZRZ.busy=false;zrzMsg((ok?"Wgrano "+ok+" "+(ok===1?"zrzut":ok<5?"zrzuty":"zrzutów")+". Na stronie gry pojawią się w ciągu ok. 3 minut. ":"")+(err.length?"Błędy: "+err.join("; "):""),err.length&&!ok)}
 document.addEventListener("change",function(e){if(e.target&&e.target.id==="zrzfile"){zrzWgraj(e.target.files);e.target.value=""}});
 document.addEventListener("dragover",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d){e.preventDefault();d.classList.add("on")}});
 document.addEventListener("dragleave",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d)d.classList.remove("on")});
 document.addEventListener("drop",function(e){var d=e.target.closest&&e.target.closest("#zrzdrop");if(d){e.preventDefault();d.classList.remove("on");zrzWgraj(e.dataTransfer.files)}});
-document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("[data-zdel]");if(!t||!ZRZ.g)return;var p=t.getAttribute("data-zdel");if(!confirm("Usunąć zrzut "+p+"? Zniknie ze strony gry w ciągu ok. 30 minut."))return;
+document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("[data-zdel]");if(!t||!ZRZ.g)return;var p=t.getAttribute("data-zdel");if(!confirm("Usunąć zrzut "+p+"? Zniknie ze strony gry w ciągu ok. 3 minut."))return;
   busy(t,"Usuwam…");try{zrzList((await zrzCall({action:"usun",gra:keyOf(ZRZ.g),plik:p})).pliki||[]);zrzMsg("Usunięto "+p+".")}catch(err){busy(t,0);zrzMsg("Nie udało się usunąć: "+err.message,1)}});
 // ====== KONIEC NARZĘDZI MODERATORA ======
 // ====== ZGŁOSZENIA ZMIAN ======
@@ -2277,7 +2277,7 @@ function renderKonto(){var v=$("kontoview");if(!v)return;var hd=VBACK+'<h2>⚙�
 function rolaSec(){if(!roleLoaded||!myRole)return "";
   if(myRole==="opiekun"){var pl=myPlat.join("/")||"sekcji",gry=items.filter(wSekcji).sort(function(a,b){return String(a.game).localeCompare(String(b.game),"pl")});
     return '<div class="ksec"><h3>Twoja rola</h3><p><span class="opb" style="margin:0">Opiekun '+esc(pl)+'</span></p>'+
-      '<p class="msg">Możesz poprawiać wpisy i dodawać zrzuty ekranu gier z platformy <b>'+esc(myPlat.join(", ")||"—")+'</b>. W katalogu przy tych grach w menu ⋯ masz „Edytuj wpis” i „Zrzuty ekranu”. Twoje zmiany pojawiają się na stronie w ciągu ok. 30 minut, podpisane Twoim nickiem.</p>'+
+      '<p class="msg">Możesz poprawiać wpisy i dodawać zrzuty ekranu gier z platformy <b>'+esc(myPlat.join(", ")||"—")+'</b>. W katalogu przy tych grach w menu ⋯ masz „Edytuj wpis” i „Zrzuty ekranu”. Twoje zmiany pojawiają się na stronie gry w ciągu ok. 3 minut, podpisane Twoim nickiem.</p>'+
       (gry.length?'<p class="msg" style="margin-bottom:4px">Twoje gry ('+gry.length+'):</p><p class="kgry">'+gry.slice(0,60).map(function(g){return '<a href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'}).join(" · ")+(gry.length>60?' · i '+(gry.length-60)+' więcej':'')+'</p>':'<p class="msg">W katalogu nie ma jeszcze gier z tej platformy.</p>')+'</div>'}
   return '<div class="ksec"><h3>Twoja rola</h3><p><span class="modb" style="margin:0">'+(myRole==="admin"?"Administrator":"Moderator")+'</span></p><p class="msg">'+(myRole==="admin"?"Masz pełny dostęp: zgłoszenia, edycja wszystkich gier, Aktualności i lista moderatorów.":"Widzisz zgłoszenia, poprawiasz wpisy wszystkich gier i usuwasz komentarze.")+'</p></div>'}
 function showKonto(){enterView("konto","Ustawienia konta – GryPoPolsku.pl");if(me()&&PROF.u!==me().id)loadProfile();renderKonto()}

@@ -17292,7 +17292,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-16"
+      "dzien": "2026-11-17"
     },
     "tworcy": [
       "doki10",
@@ -17339,7 +17339,19 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami. Spolszczenie bazuje na tłumaczeniu przygotowanym przed laty przez doki10, które w 2026 roku zostało poddane korekcie i uzupełnione o polskie znaki przez Darnoka. Dodatkowo wprowadzono do gry kody oraz modyfikacje."
   },
   {
     "game": "The Legend of Zelda: The Wind Waker",

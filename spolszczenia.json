@@ -6315,7 +6315,48 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
-    }
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/1.webp?v=4ea9da4d",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/1-miniatura.webp?v=0425afba"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/2.webp?v=6dd37aac",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/2-miniatura.webp?v=73558cab"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/3.webp?v=300bb8e0",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/3-miniatura.webp?v=47016852"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/4.webp?v=0e20f236",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/4-miniatura.webp?v=d455b6bd"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/5.webp?v=77f1a953",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/5-miniatura.webp?v=8269eb4d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/6.webp?v=c11ecae8",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/6-miniatura.webp?v=4b321c74"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/7.webp?v=4b3a186c",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/7-miniatura.webp?v=bb18075e"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/8.webp?v=0c459535",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/8-miniatura.webp?v=2f95632d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/9.webp?v=eb60eb5f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/toy-story-3-the-video-game/9-miniatura.webp?v=f4cba497"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Ultimate Basketball",

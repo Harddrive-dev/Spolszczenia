@@ -1658,12 +1658,26 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/dink-smallwood-hd/",
+    "ver": "1.1",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/dink-smallwood-hd-spolszczenie-v1-1/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Akcja RPG w stylu klasycznych gier. Dink wyrusza w przygodę, by ratować świat."
+    "opis": "Akcja RPG w stylu klasycznych gier. Dink wyrusza w przygodę, by ratować świat.",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3847"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Dino Crisis 2 [PSX]",

@@ -68,7 +68,7 @@ fs.mkdirSync(OUT,{recursive:true});
 // lista
 const cats=[...new Set(rows.map(r=>r.category))];
 const listBody='<div class="panel"><h1 class="pt">Aktualności</h1>'+
-  (rows.length?'<input class="srch" id="q" type="search" placeholder="🔍 Szukaj w aktualnościach…" aria-label="Szukaj w aktualnościach"><div class="chips"><button type="button" class="chip on" data-c="">Wszystko</button>'+cats.map(c=>'<button type="button" class="chip" data-c="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>'+item(rows[0],true)+rows.slice(1).map(r=>item(r,false)).join("")+'<p class="empty" id="empty" style="display:none">Brak wpisów pasujących do wyszukiwania.</p>'
+  (rows.length?'<input class="srch" id="q" type="search" placeholder="Szukaj w aktualnościach…" aria-label="Szukaj w aktualnościach"><div class="chips"><button type="button" class="chip on" data-c="">Wszystko</button>'+cats.map(c=>'<button type="button" class="chip" data-c="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>'+item(rows[0],true)+rows.slice(1).map(r=>item(r,false)).join("")+'<p class="empty" id="empty" style="display:none">Brak wpisów pasujących do wyszukiwania.</p>'
   :'<p class="empty">Na razie nie ma jeszcze żadnych aktualności. Zajrzyj tu wkrótce!</p><input id="q" type="hidden"><span id="empty" style="display:none"></span>')+'</div>';
 const listDesc="Aktualności ze świata polskich wersji językowych gier: premiery, nowe spolszczenia, aktualizacje i ogłoszenia GryPoPolsku.pl.";
 fs.writeFileSync(path.join(OUT,"index.html"),page({title:"Aktualności – GryPoPolsku.pl",desc:listDesc,url:SITE+"/aktualnosci/",body:listBody,og:{title:"Aktualności – GryPoPolsku.pl",image:DEF_IMG},pageType:"list",

@@ -56,6 +56,7 @@ h1 .logo{color:inherit;text-decoration:none;cursor:pointer}
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
 input,select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
 input[type=search]{flex:1 1 140px;min-width:140px}
+input.stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:16px;margin:0 0 12px;flex:none;min-width:0}
 .count{color:var(--muted);font-size:14px;margin:0 0 10px;display:block;width:fit-content;background:var(--bg);padding:2px 8px 2px 0;border-radius:8px;position:relative}
 .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
@@ -551,7 +552,7 @@ html{-webkit-tap-highlight-color:transparent}
 .dtabs button{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;color:var(--muted);background:var(--bg);cursor:pointer}
 .dtabs button.on{background:var(--accent);color:#1f1513;border-color:var(--accent);font-weight:700}
 .dtabs button:not(.on):hover{border-color:var(--accent);color:var(--text)}
-#dq{flex:1;min-width:200px;border-radius:999px}
+
 .dday{margin:16px 0 6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .dkm{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
 .dg{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--text);min-width:0}
@@ -628,7 +629,7 @@ html{-webkit-tap-highlight-color:transparent}
 @media (max-width:1100px){#nwview .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){#nwview .ngrid{grid-template-columns:minmax(0,1fr)}}
 .dtabs button .tn{opacity:.7;font-weight:600;margin-left:4px}
-#nwq{flex:1;min-width:200px;border-radius:999px}
+
 .mpanel h3 .mall{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}.mpanel h3 .mall:hover{text-decoration:underline}
 @media (max-width:700px){.dkm{grid-template-columns:minmax(0,1fr);gap:8px}.db{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:8px}.dg .thumb{width:34px;height:50px;flex-basis:34px}.hcnt small{display:none}}
 </style>
@@ -2137,7 +2138,7 @@ function renderDysList(){var box=$("dyslist");if(!box)return;
 function renderDys(){var v=$("dysview");
   if(!DYS.built){DYS.built=true;
     v.innerHTML=VBACK+'<h2>💬 Dyskusje</h2><p class="msg dsub">Wszystkie komentarze z całej strony w jednym miejscu – zobacz, o czym rozmawiają gracze, i dołącz do rozmowy.</p>'+
-     '<div class="dtabs"><button type="button" data-dtab="new">🕒 Najnowsze</button><button type="button" data-dtab="hot">🔥 Najgorętsze w tym tygodniu</button><button type="button" data-dtab="news">📰 Pod wpisami</button><input id="dq" type="search" placeholder="Szukaj gry, osoby lub treści…" autocomplete="off" aria-label="Szukaj w komentarzach"></div><div id="dyslist"></div>';
+     '<input id="dq" class="stq" type="search" placeholder="Szukaj gry, osoby lub treści…" autocomplete="off" aria-label="Szukaj w komentarzach"><div class="dtabs"><button type="button" data-dtab="new">🕒 Najnowsze</button><button type="button" data-dtab="hot">🔥 Najgorętsze w tym tygodniu</button><button type="button" data-dtab="news">📰 Pod wpisami</button></div><div id="dyslist"></div>';
     $("dq").addEventListener("input",function(){DYS.q=this.value;DYS.n=30;renderDysList()})}
   renderDysList();if(!DYS.rows.length&&!DYS.done)dysLoad()}
 function showDys(){var was=curViewName();enterView("dys","Dyskusje – GryPoPolsku.pl");if(was!=="dys"){DYS.rows=[];DYS.done=false;DYS.err=false;DYS.n=30}renderDys()}
@@ -2277,7 +2278,7 @@ function renderNwList(){var box=$("nwlist");if(!box)return;
 function renderNw(){var v=$("nwview");
   if(!NWV.built){NWV.built=true;
     v.innerHTML=VBACK+'<h2>🆕 Nowości i aktualizacje</h2><p class="msg dsub">Wszystkie nowe spolszczenia i aktualizacje w katalogu z ostatnich 30 dni – od najnowszych.</p>'+
-     '<div class="dtabs"><button type="button" data-nwtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-nwtab="new">Nowe<span class="tn"></span></button><button type="button" data-nwtab="upd">Aktualizacje<span class="tn"></span></button><input id="nwq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w nowościach"></div><div id="nwlist"></div>';
+     '<input id="nwq" class="stq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w nowościach"><div class="dtabs"><button type="button" data-nwtab="all">Wszystkie<span class="tn"></span></button><button type="button" data-nwtab="new">Nowe<span class="tn"></span></button><button type="button" data-nwtab="upd">Aktualizacje<span class="tn"></span></button></div><div id="nwlist"></div>';
     $("nwq").addEventListener("input",function(){NWV.q=this.value;NWV.n=60;renderNwList()})}
   renderNwList()}
 function showNw(){var was=curViewName();enterView("nw","Nowości i aktualizacje – GryPoPolsku.pl");if(was!=="nw")NWV.n=60;renderNw()}

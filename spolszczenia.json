@@ -16790,7 +16790,7 @@
       "kto": "Harddrive",
       "dzien": "2026-11-17"
     },
-    "opis": "Sonic Rivals to dynamiczna gra wyścigowo-platformowa wydana w 2006 roku wyłącznie na konsolę PlayStation Portable (PSP). Za jej produkcję odpowiadało kanadyjskie studio Backbone Entertainment.\n\nOpis spolszczenia: napisy w pełni przetłumaczone - z polskimi znakami.",
+    "opis": "Sonic Rivals to dynamiczna gra wyścigowo-platformowa wydana w 2006 roku wyłącznie na konsolę PlayStation Portable (PSP). Za jej produkcję odpowiadało kanadyjskie studio Backbone Entertainment.",
     "tworcy": [
       "Pixel the Retro",
       "AniTrochęFioletowy",
@@ -17240,7 +17240,11 @@
     "author": "Spawacz11",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4890",
     "dodano": "2026-09-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/battlefield-bad-company-2-99fbf720.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/battlefield-bad-company-2-fdcaced4.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-17"
+    }
   },
   {
     "game": "Beholder 3",

@@ -1677,7 +1677,21 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "yt": "https://www.youtube.com/watch?v=EwZljbWld9E&t=13s",
+    "spolszczenia": [
+      {
+        "id": "dink-smallwood-hd--ikskoks",
+        "author": "ikskoks",
+        "link": "https://ikskoks.pl/download/pc-dink-smallwood-gnu-freedink-spolszczenie-v1-0/",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-17",
+        "dodano": "2026-11-17"
+      }
+    ]
   },
   {
     "game": "Dino Crisis 2 [PSX]",

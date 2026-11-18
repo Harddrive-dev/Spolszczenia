@@ -905,7 +905,7 @@ function setView(v){VIEW=v;page=1;if(typeof stats==="function"&&items&&items.len
 function imgOk(u){return typeof u==="string"&&u.indexOf("..")<0&&(/^https:\/\//i.test(u)||/^[\w\-][\w\-\/.]*\.(png|jpe?g|webp|gif|svg)$/i.test(u))}
 // Pasek platformy nad okładką (jak na pudełkach PSP – dokładany od góry, okładka nic nie traci). Tylko gry z jedną platformą z tej listy i bez zaznaczonego
 // „Okładka ma już pasek platformy” (pole okladkaPasek). Ten sam spis jest w scripts/gry.mjs (PASKI).
-var PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"},{re:/\bps2\b/i,src:"/img/pasek-ps2.webp"}];
+var PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"},{re:/\bps2\b/i,src:"/img/pasek-ps2.webp?v=2"}];
 function pasekDla(g){var p=String((g&&g.platform)||"").split(/\s*,\s*/).filter(Boolean);if(p.length!==1)return null;for(var i=0;i<PASKI.length;i++)if(PASKI[i].re.test(p[0]))return PASKI[i].src;return null}
 function zPaskiem(g,html,cls){var s=imgOk(g&&g.img)&&!(g&&g.okladkaPasek)?pasekDla(g):null;return s?'<span class="pasw'+(cls?" "+cls:"")+'"><img class="pasek" src="'+s+'" alt="" aria-hidden="true">'+html+'</span>':html}
 function thumb(g){var l=esc((g.game||"?").charAt(0).toUpperCase());

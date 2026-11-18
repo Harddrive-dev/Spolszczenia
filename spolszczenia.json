@@ -17298,47 +17298,6 @@
       "MarioCsaplar (czcionka)"
     ],
     "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
-    "zrzuty": [
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/1.webp?v=66fdd7cc",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/1-miniatura.webp?v=dad7a203"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/2.webp?v=48cad43c",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/2-miniatura.webp?v=c41b2e44"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/3.webp?v=228ea010",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/3-miniatura.webp?v=f6ced55f"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/4.webp?v=d9ec3450",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/4-miniatura.webp?v=5d8c34d9"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/5.webp?v=75cd9a15",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/5-miniatura.webp?v=eb307b15"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/6.webp?v=2996a3b7",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/6-miniatura.webp?v=55a90ef9"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/7.webp?v=bf84c567",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/7-miniatura.webp?v=7b8eb26b"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/8.webp?v=808eef23",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/8-miniatura.webp?v=be09d209"
-      },
-      {
-        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/9.webp?v=4af8229f",
-        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2/9-miniatura.webp?v=d207307a"
-      }
-    ],
-    "zrzutyOd": [
-      "kokos324"
-    ],
     "linki": [
       {
         "t": "💬 Temat na forum",
@@ -21319,26 +21278,6 @@
     "osobna": true
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Manhunt 2",
     "platform": "Sony PSP",
     "type": "Napisy",
@@ -21373,6 +21312,67 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-18"
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/1.webp?v=66fdd7cc",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/1-miniatura.webp?v=dad7a203"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/2.webp?v=48cad43c",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/2-miniatura.webp?v=c41b2e44"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/3.webp?v=228ea010",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/3-miniatura.webp?v=f6ced55f"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/4.webp?v=d9ec3450",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/4-miniatura.webp?v=5d8c34d9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/5.webp?v=75cd9a15",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/5-miniatura.webp?v=eb307b15"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/6.webp?v=2996a3b7",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/6-miniatura.webp?v=55a90ef9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/7.webp?v=bf84c567",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/7-miniatura.webp?v=7b8eb26b"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/8.webp?v=808eef23",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/8-miniatura.webp?v=be09d209"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/9.webp?v=4af8229f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/manhunt-2-psp/9-miniatura.webp?v=d207307a"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
     }
   }
 ]

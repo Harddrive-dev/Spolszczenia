@@ -21407,6 +21407,42 @@
     "upd": "2026-11-18"
   },
   {
+    "game": "Moomin: Midsummer Madness",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/moomin_midsummer_madness",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/moomin-midsummer-madness-aadf08db.webp",
+    "opis": "Moomin: Midsummer Madness (wydana w Polsce jako Muminki: Szaleństwo nocy świętojańskiej) to familijna, interaktywna gra przygodowa z 2002 roku (w Polsce wydana w 2003), oparta bezpośrednio na książce Tove Jansson „Lato Muminków”.",
+    "steam": 4463520,
+    "upd": "2026-11-18"
+  },
+  {
+    "game": "BLEACH Rebirth Of Souls",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Zapowiedź",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=bleach-rebirth-of-souls",
+    "genre": "Bijatyka",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
+    "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
+    "steam": 1689620,
+    "upd": "2026-11-18",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -21427,35 +21463,19 @@
     }
   },
   {
-    "game": "Moomin: Midsummer Madness",
+    "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Gotowe",
+    "status": "Zapowiedź",
     "prog": 100,
     "ver": "—",
-    "author": "kofii12345",
-    "link": "https://bazarowespolszczenia.pl/gra/moomin_midsummer_madness",
-    "genre": "Przygodowa",
-    "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/moomin-midsummer-madness-aadf08db.webp",
-    "opis": "Moomin: Midsummer Madness (wydana w Polsce jako Muminki: Szaleństwo nocy świętojańskiej) to familijna, interaktywna gra przygodowa z 2002 roku (w Polsce wydana w 2003), oparta bezpośrednio na książce Tove Jansson „Lato Muminków”.",
-    "steam": 4463520,
-    "upd": "2026-11-18"
-  },
-  {
-    "game": "BLEACH Rebirth Of Souls",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
-    "ver": "—",
     "author": "VetSpolszczenia",
-    "link": "https://vetspolszczenia.pl/projekt.html?id=bleach-rebirth-of-souls",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles",
     "genre": "Bijatyka",
     "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
-    "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
-    "steam": 1689620,
+    "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-41fa0f5c.webp",
+    "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles to wydana w 2021 roku trójwymiarowa bijatyka arenówka z elementami przygodowej gry akcji, stworzona przez studio CyberConnect2 (znane z serii Naruto: Ultimate Ninja Storm) i wydana przez firmę Sega. Produkcja jest wierną adaptacją pierwszego sezonu popularnego anime Kimetsu no Yaiba oraz kinowego hitu Mugen Train.",
+    "steam": 1490890,
     "upd": "2026-11-18"
   }
 ]

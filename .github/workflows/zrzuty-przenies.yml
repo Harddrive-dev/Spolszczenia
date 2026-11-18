@@ -1,0 +1,33 @@
+name: Przenieś zrzuty do innej karty
+# Jednorazowo, ręcznie: przenosi zrzuty ekranu gry (z miniaturkami i podpisem autora) do innej karty,
+# np. po podziale gry na osobne karty platform (manhunt-2 -> manhunt-2-psp). Potem automat odświeża strony.
+on:
+  workflow_dispatch:
+    inputs:
+      z:
+        description: "Z karty (końcówka adresu, np. manhunt-2)"
+        required: true
+      do:
+        description: "Do karty (końcówka adresu, np. manhunt-2-psp)"
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: zrzuty-przenies
+jobs:
+  przenies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q boto3
+      - name: Przenieś zrzuty
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          Z: ${{ github.event.inputs.z }}
+          DO: ${{ github.event.inputs.do }}
+        run: python scripts/zrzuty-przenies.py

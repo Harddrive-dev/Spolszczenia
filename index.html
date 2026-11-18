@@ -1228,13 +1228,16 @@ function maInfo(g){return !!(g.instr||g.instrPaczka||(g.linki&&g.linki.length)||
 function modWidok(){return me()&&(isMod()||isOpiekun())}
 function gName(g){var a='<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>';if(!modWidok()||!mozeEdytowac(g))return a;var z=(g.zrzuty||[]).length,i=maInfo(g);
   return '<div class="gname">'+a+'<div class="mtag">'+(z?'<span class="on" title="Zrzuty ekranu na stronie gry">📷 '+z+'</span>':'<span class="off" title="Brak zrzutów ekranu">📷 brak</span>')+(i?'<span class="on" title="Informacje o spolszczeniu uzupełnione">📋 info</span>':'<span class="off" title="Brak informacji o spolszczeniu">📋 brak</span>')+'</div></div>'}
+// Po wczytaniu roli dokładamy znaczki do już narysowanych wierszy (bez przerysowania tabeli – okładki nie mrugają)
+function dodajZnaczki(){var m={};items.forEach(function(g){m[keyOf(g)]=g});
+  document.querySelectorAll(".gcell > a.g").forEach(function(a){var k=decodeURIComponent((a.getAttribute("href")||"").split("/")[2]||""),g=m[k];if(!g)return;var h=gName(g);if(h.indexOf("gname")<0)return;var t=document.createElement("div");t.innerHTML=h;a.replaceWith(t.firstChild)})}
 function fzOk(g,z){if(!z||!modWidok())return true;if(!mozeEdytowac(g))return false;var nz=!(g.zrzuty||[]).length,ni=!maInfo(g);return z==="z"?nz:z==="i"?ni:(nz||ni)}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
 async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
     if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
-  updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";render()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
+  updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";if(fzv)dodajZnaczki()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
 var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;

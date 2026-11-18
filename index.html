@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
+<script>/* lista gier zaczyna się pobierać od razu, równolegle z resztą strony */try{window.__SPJ=fetch("spolszczenia.json",{cache:"no-cache"})}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -1055,7 +1056,7 @@ function slideCat(view,d0){FLT_POS=null;clearFlt();setView(view);if(view==="all"
 function goKatalog(){var h=location.hash;if(h!=="#katalog"&&h!=="#/lektor")return;var view=h==="#/lektor"?"lk":"all";history.replaceState(null,"",location.pathname+location.search);slideCat(view,350)}
 // dawne nazwy gatunków (z wcześniejszych edycji w panelu, nanoszonych także w przeglądarce) -> obecne
 var GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
-function refresh(){(items||[]).forEach(function(g){if(g&&GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre]});if(typeof fillGenreDl==="function")fillGenreDl();fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog"||location.hash==="#/lektor")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"");if(typeof steamUI==="function"&&STEAM.row)steamUI();if(typeof onDys!=="undefined"&&onDys)renderDysList()}
+function refresh(){(items||[]).forEach(function(g){if(g&&GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre]});if(typeof fillGenreDl==="function")setTimeout(fillGenreDl,0);fillSel("fp","platform","Platforma");fillSel("fg","genre","Gatunek");fillSel("ft","type","Zakres tłumaczenia");fillSel("fs","status","Status");if(!FLT_OK)loadF();stats();render();if(location.hash==="#katalog"||location.hash==="#/lektor")goKatalog();else if(FLT_POS)restoreScroll();renderHome();if(typeof onVote!=="undefined"&&onVote&&vLoaded)renderVote($("vq")?$("vq").value:"");if(typeof steamUI==="function"&&STEAM.row)steamUI();if(typeof onDys!=="undefined"&&onDys)renderDysList()}
 function say(t,err){$("fmsg").textContent=t;$("fmsg").className="msg"+(err?" err":"")}
 $("openForm").onclick=function(){$("fmsg").textContent="";openAddView()};
 var FDRAFT="gp_adddraft",FIDS=["f_game","f_link","f_author","f_type","f_status","f_ver","f_prog","f_prem","f_platform","f_genre","f_lore","f_gr","f_note"];
@@ -2587,7 +2588,7 @@ function mergeApproved(rows){
     else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
   return list}
 function loadCatalog(){
-  return fetch("spolszczenia.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  var pre=window.__SPJ;window.__SPJ=null;return (pre||fetch("spolszczenia.json",{cache:"no-cache"})).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
     d.forEach(function(g){if(g.status==="W toku")g.status="Beta"});baseItems=d;items=d;refresh();
     if(CM)Promise.all([sb.rpc("approved_changes"),fetch("katalog-czas.json",{cache:"no-cache"}).then(function(x){return x.ok?x.json():null}).catch(function(){return null})]).then(function(a){var r=a[0],kt=a[1];JSON_T=(kt&&Date.parse(kt.t))||Infinity;if(r.error){console.warn("approved_changes:",r.error.message);return}if(r.data&&r.data.length){items=mergeApproved(r.data);items.forEach(function(g){if(g.status==="W toku")g.status="Beta"});refresh()}}).catch(function(e){console.warn("approved_changes:",e)})
   }).catch(function(){
@@ -2730,7 +2731,7 @@ function init(){if(ready)return;ready=true;cv=document.getElementById("jcozy");l
  document.addEventListener("visibilitychange",function(){if(document.hidden)stopL();else if(H.classList.contains("jes"))startL()})}
 function sync(){if(H.classList.contains("jes")){init();cv.resume();place();startL()}else if(ready){cv.pause();stopL()}}
 var o=window.__setTheme;window.__setTheme=function(x){o(x);sync()};
-sync()})();
+/* animacja startuje, gdy strona jest już gotowa (nie spowalnia ładowania) */if(window.requestIdleCallback)requestIdleCallback(sync,{timeout:1000});else setTimeout(sync,300)})();
 </script>
 </body>
 </html>

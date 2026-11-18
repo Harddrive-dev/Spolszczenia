@@ -63,7 +63,7 @@ const fInfo=u=>{const ext=(String(u).split(/[?#]/)[0].match(/\.([a-z0-9]{2,5})$/
 // przycisk pobierania: nasz plik = „⬇ …” + rodzaj i rozmiar, pobiera się od razu; link zewnętrzny = „… ↗” + adres strony, w nowej karcie
 // Pasek platformy nad okładką (jak na pudełkach PSP, dokładany od góry) – ten sam spis co w index.html (PASKI). Tylko gry z jedną platformą
 // i bez pola okladkaPasek („Okładka ma już pasek platformy”, zaznaczane w „Edytuj wpis”).
-const PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"}];
+const PASKI=[{re:/\bpsp\b/i,src:"/img/pasek-psp.webp"},{re:/\bps2\b/i,src:"/img/pasek-ps2.webp"}];
 const pasekDla=g=>{const p=String(g.platform||"").split(/\s*,\s*/).filter(Boolean);if(p.length!==1)return null;const x=PASKI.find(q=>q.re.test(p[0]));return x?x.src:null};
 // Podpisy osób (nicki z bazy, liczone w scripts/sync.mjs i scripts/zrzuty-r2.py): „Ostatnia zmiana wpisu: Lisa · data”, „Zrzuty od: A, B”.
 const kto=(etykieta,kto_,dzien)=>{const l=(Array.isArray(kto_)?kto_:[kto_]).map(x=>String(x||"").trim()).filter(Boolean);return l.length?'<p class="kto">'+etykieta+': '+l.map(x=>'<b>'+esc(x)+'</b>').join(", ")+(dzien?' · '+esc(dzien):'')+'</p>':""};

@@ -17878,7 +17878,7 @@
   },
   {
     "game": "LEGO Batman: The Videogame",
-    "platform": "Sony PS2, Sony PSP",
+    "platform": "Sony PSP",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
@@ -17890,8 +17890,19 @@
     "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-55fcd5fd.webp",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-17"
-    }
+      "dzien": "2026-11-18"
+    },
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=4791"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "P.G"
+    ],
+    "opis": "LEGO Batman: The Videogame to wydana w 2008 roku przygodowa gra akcji z elementami platformówki i zagadek logicznych, stworzona przez studio Traveller's Tales. W przeciwieństwie do wcześniejszych produkcji z serii LEGO (opartych bezpośrednio na scenariuszach filmowych), tytuł ten oferuje całkowicie oryginalną fabułę osadzoną w uniwersum Mrocznego Rycerza."
   },
   {
     "game": "The Legend of Zelda: Oracle of Ages / Oracle of Seasons",

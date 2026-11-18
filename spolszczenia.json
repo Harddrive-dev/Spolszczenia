@@ -17057,7 +17057,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "1.3.6",
     "genre": "Akcja",
     "author": "Na100procent",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4931",
@@ -17069,7 +17069,7 @@
     ],
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-15"
+      "dzien": "2026-11-18"
     }
   },
   {
@@ -17277,23 +17277,25 @@
   },
   {
     "game": "Manhunt 2",
-    "platform": "PC, Sony PS2, Sony PSP",
+    "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
     "genre": "Horror",
-    "author": "doki10, Darnok",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060&start=20",
+    "author": "TomaszDoki",
+    "link": "https://cdn.grypopolsku.pl/spolszczenia/pc/manhunt-2/Manhunt_2_PL.rar",
     "dodano": "2010-04-23",
     "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
     "zmiana": {
-      "kto": "kokos324",
-      "dzien": "2026-11-17"
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
     },
     "tworcy": [
-      "doki10",
-      "Darnok"
+      "TomaszDoki (tłumaczenie)",
+      "DamianKwolek (testy)",
+      "PawełKalwik (programowanie)",
+      "MarioCsaplar (czcionka)"
     ],
     "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
     "zrzuty": [
@@ -17346,9 +17348,7 @@
         "t": "💬 Temat na forum",
         "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
       }
-    ],
-    "instrPaczka": 1,
-    "instr": "W wersji na PSP napisy w pełni przetłumaczone – z polskimi znakami. Spolszczenie bazuje na tłumaczeniu przygotowanym przed laty przez doki10, które w 2026 roku zostało poddane korekcie i uzupełnione o polskie znaki przez Darnok'a. Dodatkowo wprowadzono do gry kody oraz modyfikacje."
+    ]
   },
   {
     "game": "The Legend of Zelda: The Wind Waker",
@@ -21302,6 +21302,23 @@
     "osobna": true
   },
   {
+    "game": "Freedom Fighters",
+    "platform": "Sony PS2",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "P.G",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4835",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/freedom-fighters-392ec1a5.webp",
+    "opis": "Freedom Fighters to strzelanka z perspektywy trzeciej osoby od IO Interactive, twórców serii Hitman, wydana w 2003 roku. Akcja toczy się w alternatywnej historii, w której Związek Radziecki najeżdża Stany Zjednoczone i zajmuje Nowy Jork. Gracz wciela się w hydraulika Christophera Stone'a, który staje na czele ruchu oporu. Za zdobywaną charyzmę może werbować kolejnych bojowników i wydawać im proste rozkazy w walce.",
+    "upd": "2026-11-18",
+    "id": "freedom-fighters-ps2",
+    "osobna": true
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -21322,20 +21339,40 @@
     }
   },
   {
-    "game": "Freedom Fighters",
-    "platform": "Sony PS2",
+    "game": "Manhunt 2",
+    "platform": "Sony PSP",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "P.G",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4835",
-    "genre": "Strzelanka",
+    "author": "doki10, Darnok",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060&start=20",
+    "genre": "Horror",
     "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/freedom-fighters-392ec1a5.webp",
-    "opis": "Freedom Fighters to strzelanka z perspektywy trzeciej osoby od IO Interactive, twórców serii Hitman, wydana w 2003 roku. Akcja toczy się w alternatywnej historii, w której Związek Radziecki najeżdża Stany Zjednoczone i zajmuje Nowy Jork. Gracz wciela się w hydraulika Christophera Stone'a, który staje na czele ruchu oporu. Za zdobywaną charyzmę może werbować kolejnych bojowników i wydawać im proste rozkazy w walce.",
+    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
+    "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
+    "instr": "W wersji na PSP napisy w pełni przetłumaczone – z polskimi znakami. Spolszczenie bazuje na tłumaczeniu przygotowanym przed laty przez doki10, które w 2026 roku zostało poddane korekcie i uzupełnione o polskie znaki przez Darnok'a. Dodatkowo wprowadzono do gry kody oraz modyfikacje.",
     "upd": "2026-11-18",
-    "id": "freedom-fighters-ps2",
-    "osobna": true
+    "id": "manhunt-2-psp",
+    "osobna": true,
+    "tworcy": [
+      "doki10",
+      "Darnok"
+    ],
+    "instrPaczka": 1,
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   }
 ]

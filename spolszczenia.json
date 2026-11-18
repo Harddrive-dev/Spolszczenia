@@ -3838,7 +3838,25 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-18"
-    }
+    },
+    "tworcy": [
+      "Nadzorowanie prac: KorzychXP/HED",
+      "Tłumacze: KorzychXP/HED",
+      "Pomoc techniczna: Danio & MixerX"
+    ],
+    "spolszczenia": [
+      {
+        "id": "manhunt--killer",
+        "author": "Killer",
+        "link": "https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2147030534",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-18",
+        "dodano": "2026-11-18"
+      }
+    ]
   },
   {
     "game": "Mass Effect 2: Geneza",
@@ -15105,14 +15123,18 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=final-fantasy-type-0-hd",
     "dodano": "2026-11-01",
-    "upd": "2026-11-01",
+    "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-type-0-hd-26327234.webp",
     "opis": "Kadeci klasy Zero z akademii Vermilion Bird walczą w wojnie o kryształy krainy Orience. Bardziej mroczna odsłona serii z walką w czasie rzeczywistym.",
-    "steam": 340170
+    "steam": 340170,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   },
   {
     "game": "Fire Emblem Engage",
@@ -21542,5 +21564,25 @@
     "opis": "Deliver At All Costs to izometryczna gra akcji / zręcznościowa gra samochodowa z otwartym światem, silnym naciskiem na destrukcję otoczenia oraz czarny humor i narrację.\n\nRozgrywka łączy klasyczne, zręcznościowe prowadzenie pojazdów (przypominające pierwsze odsłony Grand Theft Auto czy Crazy Taxi) z misjami kurierskimi opartymi na fizyce – gracz wciela się w kuriera z lat 50., który musi dostarczyć niezwykle nietypowe, niebezpieczne lub absurdalne ładunki, przebijając się dosłownie przez budynki",
     "steam": 1880610,
     "upd": "2026-11-18"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

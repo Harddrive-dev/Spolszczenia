@@ -21391,6 +21391,22 @@
     }
   },
   {
+    "game": "Radiolight",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/radiolight",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/radiolight-32d6c265.webp",
+    "opis": "Radiolight to pierwszoosobowy thriller narracyjny z elementami horroru psychologicznego i przygodówki eksploracyjnej, stworzony przez niezależnego dewelopera Krystiana Majewskiego (Wydawnictwo Iceberg Interactive). Akcja gry przenosi graczy do 1985 roku, w głąb malowniczego, ale pełnego niepokojących sekretów parku narodowego Ashwood Creek.",
+    "steam": 1342690,
+    "upd": "2026-11-18"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -21411,19 +21427,35 @@
     }
   },
   {
-    "game": "Radiolight",
+    "game": "Moomin: Midsummer Madness",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
     "author": "kofii12345",
-    "link": "https://bazarowespolszczenia.pl/gra/radiolight",
+    "link": "https://bazarowespolszczenia.pl/gra/moomin_midsummer_madness",
     "genre": "Przygodowa",
     "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/radiolight-32d6c265.webp",
-    "opis": "Radiolight to pierwszoosobowy thriller narracyjny z elementami horroru psychologicznego i przygodówki eksploracyjnej, stworzony przez niezależnego dewelopera Krystiana Majewskiego (Wydawnictwo Iceberg Interactive). Akcja gry przenosi graczy do 1985 roku, w głąb malowniczego, ale pełnego niepokojących sekretów parku narodowego Ashwood Creek.",
-    "steam": 1342690,
+    "img": "https://cdn.grypopolsku.pl/okladki/moomin-midsummer-madness-aadf08db.webp",
+    "opis": "Moomin: Midsummer Madness (wydana w Polsce jako Muminki: Szaleństwo nocy świętojańskiej) to familijna, interaktywna gra przygodowa z 2002 roku (w Polsce wydana w 2003), oparta bezpośrednio na książce Tove Jansson „Lato Muminków”.",
+    "steam": 4463520,
+    "upd": "2026-11-18"
+  },
+  {
+    "game": "BLEACH Rebirth Of Souls",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=bleach-rebirth-of-souls",
+    "genre": "Bijatyka",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
+    "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
+    "steam": 1689620,
     "upd": "2026-11-18"
   }
 ]

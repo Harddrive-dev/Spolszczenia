@@ -21466,8 +21466,8 @@
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Zapowiedź",
-    "prog": 100,
+    "status": "Testy",
+    "prog": 10,
     "ver": "—",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles",
@@ -21476,6 +21476,26 @@
     "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-41fa0f5c.webp",
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles to wydana w 2021 roku trójwymiarowa bijatyka arenówka z elementami przygodowej gry akcji, stworzona przez studio CyberConnect2 (znane z serii Naruto: Ultimate Ninja Storm) i wydana przez firmę Sega. Produkcja jest wierną adaptacją pierwszego sezonu popularnego anime Kimetsu no Yaiba oraz kinowego hitu Mugen Train.",
     "steam": 1490890,
+    "upd": "2026-11-18",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
+  },
+  {
+    "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2",
+    "genre": "Bijatyka",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2-01324854.webp",
+    "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 to wydana w 2025 roku kontynuacja trójwymiarowej bijatyki arenówki z elementami przygodowej gry akcji, ponownie opracowana przez studio CyberConnect2 i wydana przez firmę Sega. Produkcja rozwija formułę pierwszej części i adaptuje kolejne kluczowe wątki z anime Kimetsu no Yaiba – od Dzielnicy Rozrywki (Entertainment District Arc), przez Wioskę Kowali (Swordsmith Village Arc), aż po Trening Filarów (Hashira Training Arc).",
+    "steam": 2928600,
     "upd": "2026-11-18"
   }
 ]

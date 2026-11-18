@@ -3839,11 +3839,6 @@
       "kto": "Harddrive",
       "dzien": "2026-11-18"
     },
-    "tworcy": [
-      "Nadzorowanie prac: KorzychXP/HED",
-      "Tłumacze: KorzychXP/HED",
-      "Pomoc techniczna: Danio & MixerX"
-    ],
     "spolszczenia": [
       {
         "id": "manhunt--killer",
@@ -21527,26 +21522,6 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-18"
-    }
-  },
-  {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
     }
   },
   {

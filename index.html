@@ -86,6 +86,8 @@ input.stq{display:block;width:100%;box-sizing:border-box;height:48px;font-size:1
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .g{flex:1 1 auto;min-width:0}
+.gcell .gname{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px}.gname .g{flex:none}
+.mtag{display:flex;gap:4px;flex-wrap:wrap}.mtag span{font-size:11px;line-height:1;padding:3px 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}.mtag span.on{border-color:color-mix(in srgb,var(--accent) 55%,transparent);color:var(--text);background:color-mix(in srgb,var(--accent) 14%,transparent)}.mtag span.off{opacity:.5;border-style:dashed}
 .gcell .cbtn{flex:none;white-space:nowrap}.cbtn.cic{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:13px}.cbtn.cic b{color:var(--accent);font-weight:600}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 td.au{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -771,6 +773,7 @@ html{-webkit-tap-highlight-color:transparent}
     <button class="btn" id="ftog" type="button" aria-expanded="false"><span class="fm1">Więcej filtrów</span><span class="fm2">Filtry</span><span id="fn"></span> <span id="far">▾</span></button>
     <select id="fg" class="fx" aria-label="Gatunek"></select>
     <select id="ft" class="fx" aria-label="Zakres tłumaczenia"></select>
+    <select id="fz" class="fx" aria-label="Uzupełnienie wpisów (tylko moderacja)" style="display:none"><option value="">🛡️ Uzupełnienie: wszystkie</option><option value="z">📷 Brak zrzutów</option><option value="i">📋 Brak informacji</option><option value="zi">📷/📋 Brak zrzutów lub informacji</option></select>
     <button class="btn" id="clr" type="button" style="display:none">Wyczyść</button>
     <span class="sp"></span>
     <span class="vgrp" id="vwg"><button class="btn on" id="vwall">Wszystkie</button><button class="btn" id="vwlk">Z lektorem</button></span>
@@ -945,8 +948,8 @@ function srchInit(g){var w=srchWords(g.game);if(w[0]==="the"&&w.length>2)w=w.sli
 function srchIniHit(g,x){return x.length>=3&&/^[a-z0-9]+$/.test(x)&&srchInit(g).indexOf(x)===0}
 function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(g.author||"")+" "+authorsOf(g).join(" "));return w.every(function(x){return h.indexOf(x)>-1||srchIniHit(g,x)})}
 function filtered(){
-  var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value;
-  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spTyp(g,t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&srchHit(g,q)});
+  var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value,fz=$("fz").value;
+  var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spTyp(g,t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&fzOk(g,fz)&&srchHit(g,q)});
   r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
@@ -967,9 +970,9 @@ function scrollPos(){var y=window.pageYOffset,h=window.innerHeight,best=null,bd=
   for(var i=0;i<els.length;i++){var el=els[i];if(!el.offsetParent||el.closest(".overlay,#cm"))continue;var r=el.getBoundingClientRect();
     if(r.height<8||r.height>h*3||r.bottom<0||r.top>h)continue;var d=r.top>=0?r.top:-r.top*1.5;if(d<bd){bd=d;best={y:y,id:el.id,off:Math.round(r.top)}}}
   return best||{y:y}}
-function saveF(pos){if(!FLT_OK)return;if(pos)FLT_POS_SAVED=pos;try{sessionStorage.setItem("flt",JSON.stringify({v:VIEW,q:$("q").value,fp:$("fp").value,fg:$("fg").value,ft:$("ft").value,fs:$("fs").value,so:$("sort").value,pg:page,pos:FLT_POS_SAVED}))}catch(e){}}
+function saveF(pos){if(!FLT_OK)return;if(pos)FLT_POS_SAVED=pos;try{sessionStorage.setItem("flt",JSON.stringify({v:VIEW,q:$("q").value,fp:$("fp").value,fg:$("fg").value,ft:$("ft").value,fs:$("fs").value,fz:$("fz").value,so:$("sort").value,pg:page,pos:FLT_POS_SAVED}))}catch(e){}}
 function loadF(){FLT_OK=true;var d=null;try{d=JSON.parse(sessionStorage.getItem("flt")||"null")}catch(e){}if(!d)return;
-  ["q","fp","fg","ft","fs"].forEach(function(i){var el=$(i);if(el&&typeof d[i]==="string"){el.value=d[i];if(el.tagName==="SELECT"&&el.value!==d[i])el.value=""}});
+  ["q","fp","fg","ft","fs","fz"].forEach(function(i){var el=$(i);if(el&&typeof d[i]==="string"){el.value=d[i];if(el.tagName==="SELECT"&&el.value!==d[i])el.value=""}});
   if(d.so&&$("sort")){$("sort").value=d.so;if($("sort").value!==d.so)$("sort").selectedIndex=0}
   if(d.v==="all"||d.v==="sp"||d.v==="lk"||d.v==="du")VIEW=d.v;["vwlk","vwall"].forEach(function(i){var e=$(i);if(e)e.className="btn"+(i==="vw"+VIEW?" on":"")});if(+d.pg>0)page=+d.pg;
   FLT_POS_SAVED=d.pos||(d.y?{y:+d.y}:null);if(FLT_POS_SAVED&&(FLT_POS_SAVED.y>0||FLT_POS_SAVED.id)&&onCat())FLT_POS=FLT_POS_SAVED}
@@ -990,7 +993,7 @@ function render(){
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" gier":"Wyświetlono 0 z "+items.length+" gier";
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+'<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td class="vr">'+versionsCell(g)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
+  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+gName(g)+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td class="vr">'+versionsCell(g)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
   $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">'+versionsTxt(g)+'</div>')+'</div>'}).join("")}
 function stats(){
   var sp=items.filter(hasSp).length+items.reduce(function(n,g){return n+spExtra(g).length},0),lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
@@ -1102,17 +1105,17 @@ $("send").onclick=async function(){
   $("send").disabled=true;var r=await submitReport("new",data.game,data,note);$("send").disabled=false;
   if(r.ok){say("Dziękujemy! Zgłoszenie trafiło do moderacji.");["f_game","f_ver","f_author","f_link","f_lore","f_gr","f_note","f_prem"].forEach(function(i){$(i).value=""});$("f_status").value="Gotowe";$("f_prog").value="100";try{localStorage.removeItem(FDRAFT)}catch(e){}fUI()}else say(r.err,1)
 };
-["q","fp","fg","ft","fs","sort"].forEach(function(i){$(i).addEventListener("input",function(){page=1;render()})});
+["q","fp","fg","ft","fs","fz","sort"].forEach(function(i){$(i).addEventListener("input",function(){page=1;render()})});
 $("ps").value=String(PS);
 $("ps").addEventListener("input",function(){PS=+$("ps").value;page=1;try{localStorage.setItem("ps",PS)}catch(e){}render()});
 $("pager").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-pg]");if(!b||b.disabled)return;page=+b.getAttribute("data-pg");render();var o=$("out");window.scrollTo({top:o.getBoundingClientRect().top+window.pageYOffset-70,behavior:"smooth"})});
-$("clr").onclick=function(){$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
+$("clr").onclick=function(){$("fz").value="";$("q").value="";$("fp").value="";$("fg").value="";$("ft").value="";$("fs").value="";page=1;render()};
 // Pasek filtrów: "Wyczyść" tylko gdy jest co czyścić, licznik pokazuje aktywne filtry schowane pod przyciskiem.
 var FMOB=window.matchMedia("(max-width:640px)");
-function syncBar(){var hid=FMOB.matches?["fp","fs","fg","ft"]:["fg","ft"],o=$("fbar").classList.contains("fopen");
+function syncBar(){var hid=FMOB.matches?["fp","fs","fg","ft","fz"]:["fg","ft","fz"],o=$("fbar").classList.contains("fopen");
   var n=hid.filter(function(i){return $(i).value}).length;
   $("fn").textContent=n?" ("+n+")":"";$("far").textContent=o?"▴":"▾";$("ftog").setAttribute("aria-expanded",o?"true":"false");
-  $("clr").style.display=($("q").value||$("fp").value||$("fg").value||$("ft").value||$("fs").value)?"":"none"}
+  $("clr").style.display=($("fz").value||$("q").value||$("fp").value||$("fg").value||$("ft").value||$("fs").value)?"":"none"}
 $("ftog").onclick=function(){$("fbar").classList.toggle("fopen");$("cline").classList.toggle("fopen");syncBar()};
 if(FMOB.addEventListener)FMOB.addEventListener("change",syncBar);
 var lastPick=null;
@@ -1220,12 +1223,18 @@ function isMod(){return roleLoaded?(!!myRole&&myRole!=="opiekun"):emailIsOwner()
 function isOpiekun(){return roleLoaded&&myRole==="opiekun"}
 function wSekcji(g){return !!g&&myPlat.some(function(p){return p&&String(g.platform||"").toLowerCase().indexOf(String(p).toLowerCase())>=0})}
 function mozeEdytowac(g){return isMod()||(isOpiekun()&&wSekcji(g))}
+// Znaczki „📷 zrzuty / 📋 info” pod nazwą gry w tabeli i filtr „Uzupełnienie” – tylko admin, moderator i opiekun (u opiekuna: gry z jego sekcji)
+function maInfo(g){return !!(g.instr||g.instrPaczka||(g.linki&&g.linki.length)||(g.tworcy&&g.tworcy.length))}
+function modWidok(){return me()&&(isMod()||isOpiekun())}
+function gName(g){var a='<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>';if(!modWidok()||!mozeEdytowac(g))return a;var z=(g.zrzuty||[]).length,i=maInfo(g);
+  return '<div class="gname">'+a+'<div class="mtag">'+(z?'<span class="on" title="Zrzuty ekranu na stronie gry">📷 '+z+'</span>':'<span class="off" title="Brak zrzutów ekranu">📷 brak</span>')+(i?'<span class="on" title="Informacje o spolszczeniu uzupełnione">📋 info</span>':'<span class="off" title="Brak informacji o spolszczeniu">📋 brak</span>')+'</div></div>'}
+function fzOk(g,z){if(!z||!modWidok())return true;if(!mozeEdytowac(g))return false;var nz=!(g.zrzuty||[]).length,ni=!maInfo(g);return z==="z"?nz:z==="i"?ni:(nz||ni)}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
 async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
     if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
-  updateAuth();if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
+  updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";render()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
 var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;
@@ -1319,7 +1328,7 @@ function forgotHtml(email){
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){PROF={ok:null,row:null,u:null};NICKASKED=false;$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";

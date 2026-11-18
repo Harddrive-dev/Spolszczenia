@@ -21409,5 +21409,21 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Radiolight",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/radiolight",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/radiolight-32d6c265.webp",
+    "opis": "Radiolight to pierwszoosobowy thriller narracyjny z elementami horroru psychologicznego i przygodówki eksploracyjnej, stworzony przez niezależnego dewelopera Krystiana Majewskiego (Wydawnictwo Iceberg Interactive). Akcja gry przenosi graczy do 1985 roku, w głąb malowniczego, ale pełnego niepokojących sekretów parku narodowego Ashwood Creek.",
+    "steam": 1342690,
+    "upd": "2026-11-18"
   }
 ]

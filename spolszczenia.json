@@ -3823,13 +3823,17 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "PLProjekt",
     "link": "https://grajpopolsku.pl/download/manhunt/",
     "genre": "Horror",
     "dodano": "2026-10-28",
     "lore": "https://lorespeak.pl/games/manhunt",
     "opis": "Brutalny horror akcji. Skazaniec James Earl Cash zostaje wykorzystany w morderczej grze.",
-    "steam": 12130
+    "steam": 12130,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   },
   {
     "game": "Mass Effect 2: Geneza",
@@ -21288,7 +21292,7 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060&start=20",
     "genre": "Horror",
     "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-ps2-d430a2a7.webp",
     "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
     "instr": "W wersji na PSP napisy w pełni przetłumaczone – z polskimi znakami. Spolszczenie bazuje na tłumaczeniu przygotowanym przed laty przez doki10, które w 2026 roku zostało poddane korekcie i uzupełnione o polskie znaki przez Darnok'a. Dodatkowo wprowadzono do gry kody oraz modyfikacje.",
     "upd": "2026-11-18",
@@ -21353,8 +21357,7 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ],
-    "okladkaPasek": 1
+    ]
   },
   {
     "game": "Manhunt 2",
@@ -21367,7 +21370,7 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?p=48494#p48494",
     "genre": "Horror",
     "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-ps2-d430a2a7.webp",
     "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
     "upd": "2026-11-18",
     "id": "manhunt-2-ps2",
@@ -21518,5 +21521,21 @@
       "kto": "Harddrive",
       "dzien": "2026-11-18"
     }
+  },
+  {
+    "game": "Deliver At All Costs",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=deliver-at-all-costs",
+    "genre": "Akcja",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/deliver-at-all-costs-95300f05.webp",
+    "opis": "Deliver At All Costs to izometryczna gra akcji / zręcznościowa gra samochodowa z otwartym światem, silnym naciskiem na destrukcję otoczenia oraz czarny humor i narrację.\n\nRozgrywka łączy klasyczne, zręcznościowe prowadzenie pojazdów (przypominające pierwsze odsłony Grand Theft Auto czy Crazy Taxi) z misjami kurierskimi opartymi na fizyce – gracz wciela się w kuriera z lat 50., który musi dostarczyć niezwykle nietypowe, niebezpieczne lub absurdalne ładunki, przebijając się dosłownie przez budynki",
+    "steam": 1880610,
+    "upd": "2026-11-18"
   }
 ]

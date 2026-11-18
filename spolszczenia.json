@@ -3970,6 +3970,21 @@
     "id": "medievil-resurrection-psp",
     "aliasy": [
       "medievil-resurrection-psp"
+    ],
+    "linki": [
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://ikskoks.pl/download/medievil-resurrection-spolszczenie-1-0/"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?p=34080#p34080"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
+    "tworcy": [
+      "ikskoks"
     ]
   },
   {

@@ -17301,10 +17301,6 @@
     "linki": [
       {
         "t": "💬 Temat na forum",
-        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060"
-      },
-      {
-        "t": "💬 Temat na forum",
         "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
       }
     ]
@@ -21353,7 +21349,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "okladkaPasek": 1
   },
   {
     "game": "MADiSON",
@@ -21373,6 +21370,40 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-07"
+    }
+  },
+  {
+    "game": "Manhunt 2",
+    "platform": "Sony PS2",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "doki10",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?p=48494#p48494",
+    "genre": "Horror",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
+    "opis": "Manhunt 2 to mroczna i brutalna gra akcji z elementami skradanki oraz horroru psychologicznego, stworzona przez Rockstar Games. Gracz wciela się w Daniela Lamba, pacjenta zakładu psychiatrycznego, który próbuje odzyskać utracone wspomnienia i odkryć prawdę o tajemniczym eksperymencie, którego padł ofiarą.",
+    "upd": "2026-11-18",
+    "id": "manhunt-2-ps2",
+    "osobna": true,
+    "tworcy": [
+      "doki10"
+    ],
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3060"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
     }
   }
 ]

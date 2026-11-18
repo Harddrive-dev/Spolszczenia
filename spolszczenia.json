@@ -21443,26 +21443,6 @@
     }
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
     "platform": "PC",
     "type": "Napisy",
@@ -21497,5 +21477,46 @@
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 to wydana w 2025 roku kontynuacja trójwymiarowej bijatyki arenówki z elementami przygodowej gry akcji, ponownie opracowana przez studio CyberConnect2 i wydana przez firmę Sega. Produkcja rozwija formułę pierwszej części i adaptuje kolejne kluczowe wątki z anime Kimetsu no Yaiba – od Dzielnicy Rozrywki (Entertainment District Arc), przez Wioskę Kowali (Swordsmith Village Arc), aż po Trening Filarów (Hashira Training Arc).",
     "steam": 2928600,
     "upd": "2026-11-18"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
+  },
+  {
+    "game": "Middle-earth: Shadow of War",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/middle-earth-shadow-of-war",
+    "genre": "Akcja",
+    "dodano": "2026-11-18",
+    "opis": "Middle-earth: Shadow of War (pol. Śródziemie: Cień Wojny) to wydana w 2017 roku przygodowa gra akcji z elementami RPG w otwartym świecie, stworzona przez studio Monolith Productions i wydana przez Warner Bros. Interactive Entertainment. Produkcja jest bezpośrednią kontynuacją Śródziemia: Cienia Mordoru z 2014 roku i rozgrywa się w uniwersum Władcy Pierścieni J.R.R. Tolkiena, pomiędzy wydarzeniami z Hobbita a Drużyny Pierścienia.",
+    "steam": 356190,
+    "upd": "2026-11-18",
+    "status": "Gotowe",
+    "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-war-47fc84ab.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   }
 ]

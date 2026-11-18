@@ -16581,7 +16581,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
-    }
+    },
+    "aliasy": [
+      "gta-san-andreas-doslowne-tlumaczenie-edycja-parodystyczna"
+    ]
   },
   {
     "game": "Monster Train",
@@ -21284,6 +21287,24 @@
     "upd": "2026-11-17"
   },
   {
+    "game": "LEGO Batman: The Videogame",
+    "platform": "Sony PS2",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "P.G",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4791",
+    "genre": "Akcja",
+    "premiera": "2026-07-31",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-55fcd5fd.webp",
+    "opis": "LEGO Batman: The Videogame to wydana w 2008 roku przygodowa gra akcji z elementami platformówki i zagadek logicznych, stworzona przez studio Traveller's Tales. W przeciwieństwie do wcześniejszych produkcji z serii LEGO (opartych bezpośrednio na scenariuszach filmowych), tytuł ten oferuje całkowicie oryginalną fabułę osadzoną w uniwersum Mrocznego Rycerza.",
+    "upd": "2026-11-18",
+    "id": "lego-batman-the-videogame-ps2",
+    "osobna": true
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -21302,23 +21323,5 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
-  },
-  {
-    "game": "LEGO Batman: The Videogame",
-    "platform": "Sony PS2",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "P.G",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4791",
-    "genre": "Akcja",
-    "premiera": "2026-07-31",
-    "dodano": "2026-11-18",
-    "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-55fcd5fd.webp",
-    "opis": "LEGO Batman: The Videogame to wydana w 2008 roku przygodowa gra akcji z elementami platformówki i zagadek logicznych, stworzona przez studio Traveller's Tales. W przeciwieństwie do wcześniejszych produkcji z serii LEGO (opartych bezpośrednio na scenariuszach filmowych), tytuł ten oferuje całkowicie oryginalną fabułę osadzoną w uniwersum Mrocznego Rycerza.",
-    "upd": "2026-11-18",
-    "id": "lego-batman-the-videogame-ps2",
-    "osobna": true
   }
 ]

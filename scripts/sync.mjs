@@ -38,11 +38,11 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
  if(r.kind==="modedit")for(const c of d.changes||[])if(c.field==="game"&&c.from&&c.to){const a=slug(c.from),b=slug(String(c.to).trim());if(a&&b&&a!==b)renames.push([a,b])}
  if(r.kind==="new"){const name=String(d.game||r.game||"").trim(),link=String(d.link||"");
   const URLOK=u=>/^https?:\/\//i.test(u||""),gOf=d.pl==="of";
-  const exG=name&&find(slug(name));if(exG){if(URLOK(link)&&!ZASTAPIONE.has(link.trim()))spAdd(exG,d,link,day);if(Array.isArray(exG.spolszczenia)&&ZASTAPIONE.has(link.trim())){exG.spolszczenia=exG.spolszczenia.filter(s=>s.link!==link.trim()||s.id!==keyOf(exG)+"--"+(slug(d.author||"")||"autor"));if(!exG.spolszczenia.length)delete exG.spolszczenia}continue}
+  const nid=/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(d.id||""))?String(d.id):"";const exG=name&&find(nid||slug(name)); // nid = osobna karta tej samej gry na inną platformę (np. manhunt-2-psp)if(exG){if(URLOK(link)&&!ZASTAPIONE.has(link.trim()))spAdd(exG,d,link,day);if(Array.isArray(exG.spolszczenia)&&ZASTAPIONE.has(link.trim())){exG.spolszczenia=exG.spolszczenia.filter(s=>s.link!==link.trim()||s.id!==keyOf(exG)+"--"+(slug(d.author||"")||"autor"));if(!exG.spolszczenia.length)delete exG.spolszczenia}continue}
   if(!name||(!URLOK(link)&&!gOf&&!URLOK(d.lore)&&!URLOK(d.gamereader)&&!URLOK(d.dub)))continue;
   const e={game:name,platform:d.platform||"PC",type:TYPES.includes(d.type)?d.type:"Napisy",status:(d.status==="W toku"?"Beta":d.status)||"Gotowe",prog:Math.max(0,Math.min(100,+d.prog||0)),ver:d.ver||"—",author:d.author||"—"};
   if(URLOK(link))e.link=link;if(gOf){e.pl="of";delete e.status}if(URLOK(d.lore))e.lore=d.lore;if(URLOK(d.gamereader))e.gamereader=d.gamereader;if(URLOK(d.dub)){e.dub=d.dub;if(d.dubAuthor)e.dubAuthor=String(d.dubAuthor).slice(0,100);if(DUBST.includes(d.dubStatus))e.dubStatus=d.dubStatus}if(YT(d.yt))e.yt=d.yt;if(d.ytt)e.ytt=String(d.ytt).slice(0,80);
-  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=r2img(String(d.img));if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;list.push(e)}
+  if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=r2img(String(d.img));if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;if(nid&&nid!==slug(name)){e.id=nid;e.osobna=true}list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
    if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
@@ -87,7 +87,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   else if(r.kind==="edit"||r.kind==="link")ZM.set(d.key,{kto:nick,dzien})}
  for(const g of list){delete g.opisOd;delete g.instrOd;const z=ZM.get(keyOf(g));if(z)g.zmiana=z;else delete g.zmiana}}
 // Dawne adresy stron gier (po zmianie nazwy): pole „aliasy”, z którego gry.mjs robi przekierowania na obecną stronę.
-{const cur=new Map(list.map(g=>[slug(g.game||""),g])),nxt=new Map(renames);
+{const cur=new Map(list.filter(g=>!g.osobna).map(g=>[slug(g.game||""),g])),nxt=new Map(renames);
  for(const [a,b] of renames){let t=b,n=0;while(!cur.has(t)&&nxt.has(t)&&n++<10)t=nxt.get(t);const g=cur.get(t);if(!g||cur.has(a))continue;
   const al=new Set(g.aliasy||[]);al.add(a);g.aliasy=[...al].sort()}
  for(const g of list)if(g.aliasy){const me=slug(g.game||"");g.aliasy=g.aliasy.filter(a=>a&&a!==me&&!cur.has(a));if(!g.aliasy.length)delete g.aliasy}}

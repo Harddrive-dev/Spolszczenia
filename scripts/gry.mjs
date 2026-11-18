@@ -7,6 +7,8 @@ const SITE="https://grypopolsku.pl",OUT=process.env.GRY_OUT||"gra",SITEMAP=proce
 const ONLY=(process.env.GRY_ONLY?process.env.GRY_ONLY.split("|"):[]).filter(Boolean);
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const slug=t=>String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+// adres strony gry: zwykle z nazwy; osobna karta tej samej gry na inną platformę (pole osobna) – z id, np. manhunt-2-psp
+const pslug=g=>g&&g.osobna&&g.id?g.id:slug(g&&g.game||"");
 const safe=u=>/^https?:\/\//i.test(u||"")?u:"#";
 const MONTHS=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
 const dateLong=s=>{const d=new Date(s+"T12:00:00");return isNaN(d)?"":d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear()};
@@ -70,14 +72,14 @@ const dlBtn=(u,txt,cls)=>CDNF.test(u||"")?'<a'+(cls?' class="'+cls+'"':'')+' hre
 const series=t=>{const w=String(t).toLowerCase().replace(/\s*[\[(][^\])]*[\])]/g,"").split(/\s*[:–—]\s+|\s+-\s+/)[0].replace(/[^a-z0-9ąćęłńóśźż' ]+/g," ").trim().split(/\s+/);while(w.length>1&&/^(?:[ivx]+|\d+)$/.test(w[w.length-1]))w.pop();const x=w.slice(0,3).join(" ");return w.length>=2||x.length>=6?x:""};
 const RELG={"Akcja":["Platformówka","Metroidvania","Bijatyka"],"Platformówka":["Metroidvania","Akcja"],"Metroidvania":["Platformówka","Akcja"],"RPG":["Akcja"],"Horror":["Przygodowa"],"Przygodowa":["Logiczna","Horror"],"Logiczna":["Przygodowa"],"Strzelanka":["Akcja"],"Bijatyka":["Akcja"],"Strategia":["Symulacja"],"Symulacja":["Strategia"]};
 const hash=t=>{let h=0;for(const c of String(t))h=(h*31+c.charCodeAt(0))>>>0;return h%1000000};
-const BYGENRE={};for(const g of all){if(!g.game||!g.genre)continue;const sl=slug(g.game);if(!sl)continue;(BYGENRE[g.genre]=BYGENRE[g.genre]||[]).push({s:sl,g})}
+const BYGENRE={};for(const g of all){if(!g.game||!g.genre)continue;const sl=pslug(g);if(!sl)continue;(BYGENRE[g.genre]=BYGENRE[g.genre]||[]).push({s:sl,g})}
 // wpisy z Aktualności powiązane z grą (plik tworzy news.mjs)
 let POW={};try{POW=JSON.parse(fs.readFileSync(path.join(NEWS,"powiazania.json"),"utf8"))}catch(e){}
 const NCATS={"Premiera":"c-premiera","Nowe spolszczenie":"c-nowe","Aktualizacja":"c-akt","Strona":"c-strona","Ogłoszenie":"c-ogl"};
-const ALLG=[];for(const g of all){const sl=g.game&&slug(g.game);if(sl)ALLG.push({s:sl,g})}
+const ALLG=[];for(const g of all){const sl=g.game&&pslug(g);if(sl)ALLG.push({s:sl,g})}
 const built=[];
 for(const g of games){
-  const s=slug(g.game);if(!s)continue;
+  const s=pslug(g);if(!s)continue;
   const key=g.id||s,url=SITE+"/gra/"+s+"/",plat=g.platform||"PC";
   const hasSp=!!g.link&&g.pl!=="of",ofi=g.pl==="of",lore=/^https?:\/\//.test(g.lore||"")?g.lore:"",gr=/^https?:\/\//.test(g.gamereader||"")?g.gamereader:"",hasLk=!!(lore||gr);
   const dub=/^https?:\/\//.test(g.dub||"")?g.dub:"",dubA=String(g.dubAuthor||"").trim(),dubS=g.dubStatus&&g.dubStatus!=="Gotowe"?g.dubStatus.toLowerCase():"";
@@ -171,7 +173,7 @@ if(!ONLY.length||process.env.GRY_AZ){
   const body=azCss+'<div class="panel"><nav class="bc" aria-label="Ścieżka"><a href="/">GryPoPolsku.pl</a><span>›</span><b>Wszystkie gry A–Z</b></nav>'+
    '<h1>Wszystkie gry po polsku (A–Z)</h1><p class="azi">'+list.length+' gier z polską wersją: fanowskie spolszczenia, oficjalne polskie wersje, polski lektor i dubbing. Kliknij grę, aby zobaczyć szczegóły, linki i instrukcję.</p>'+
    '<nav class="azn" aria-label="Litery">'+L.map(l=>'<a href="#l-'+(l==="0–9"?"0":l)+'">'+l+'</a>').join("")+'</nav>'+
-   L.map(l=>'<h2 class="azh" id="l-'+(l==="0–9"?"0":l)+'">'+l+'<small>'+grp[l].length+'</small></h2><ul class="azl">'+grp[l].map(g=>'<li><a href="/gra/'+slug(g.game)+'/">'+esc(g.game)+'</a>'+tags(g)+'</li>').join("")+'</ul>').join("")+'</div>';
+   L.map(l=>'<h2 class="azh" id="l-'+(l==="0–9"?"0":l)+'">'+l+'<small>'+grp[l].length+'</small></h2><ul class="azl">'+grp[l].map(g=>'<li><a href="/gra/'+pslug(g)+'/">'+esc(g.game)+'</a>'+tags(g)+'</li>').join("")+'</ul>').join("")+'</div>';
   const url=SITE+"/gra/",title="Wszystkie gry po polsku A–Z – spolszczenia, lektor, dubbing | GryPoPolsku.pl";
   const desc="Lista "+list.length+" gier z polską wersją językową od A do Z: fanowskie spolszczenia, oficjalne PL, polski lektor i dubbing.";
   const ld={"@context":"https://schema.org","@type":"CollectionPage",name:"Wszystkie gry po polsku (A–Z)",url,inLanguage:"pl",description:desc};
@@ -184,7 +186,7 @@ if(!ONLY.length&&fs.existsSync("index.html")){const n=Math.floor(games.length/10
   if(n>=100&&nh!==ih){fs.writeFileSync("index.html",nh);console.log("Opis linku: Ponad "+n+" gier")}}
 // przekierowania z dawnych adresów (po zmianie nazwy gry) na obecną stronę gry; nie trafiają do sitemap.xml
 const redir=[];{const real=new Set(built.map(b=>b.s));
- for(const g of games)for(const a of g.aliasy||[]){const s=slug(g.game),to=SITE+"/gra/"+s+"/";if(!a||real.has(a)||!/^[a-z0-9-]+$/.test(a))continue;
+ for(const g of games)for(const a of g.aliasy||[]){const s=pslug(g),to=SITE+"/gra/"+s+"/";if(!a||real.has(a)||!/^[a-z0-9-]+$/.test(a))continue;
   const dir=path.join(OUT,a);fs.mkdirSync(dir,{recursive:true});
   fs.writeFileSync(path.join(dir,"index.html"),'<!doctype html><html lang="pl"><head><meta charset="utf-8"><title>'+esc(g.game)+' – GryPoPolsku.pl</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="'+to+'"><meta http-equiv="refresh" content="0;url='+to+'"><script>location.replace("'+to+'"+location.hash)</script></head><body><p>Strona gry jest pod nowym adresem: <a href="'+to+'">'+esc(g.game)+'</a></p></body></html>\n');
   redir.push(a)}}

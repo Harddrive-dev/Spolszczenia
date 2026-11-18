@@ -39,7 +39,7 @@ function gameEmbed(g, typ, extra) {
   const head = { nowa: "🆕 Nowe w katalogu", sp: "🆕 Nowe spolszczenie", dub: "🎭 Nowy dubbing", aktualizacja: "🔄 Aktualizacja", test: "🧪 Test ogłoszeń" }[typ];
   const e = {
     title: `${head}: ${g.game}`.slice(0, 250),
-    url: `${SITE}/gra/${slug(g.game)}/`,
+    url: `${SITE}/gra/${g.osobna && g.id ? g.id : slug(g.game)}/`,
     color: COLORS[typ],
     fields,
     footer: { text: "GryPoPolsku.pl – katalog polskich wersji gier" },
@@ -56,11 +56,11 @@ function catalogEvents() {
   if (!oldTxt) return [];
   let oldL, newL;
   try { oldL = JSON.parse(oldTxt); newL = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")); } catch { return []; }
-  const O = new Map(oldL.map(g => [slug(g.game || ""), g]));
+  const O = new Map(oldL.map(g => [g.id || slug(g.game || ""), g]));
   const ev = [];
   for (const g of newL) {
     if (!g.game || onlyZap(g)) continue;
-    const o = O.get(slug(g.game));
+    const o = O.get(g.id || slug(g.game));
     if (!o) { if (recent(g.dodano || g.upd || today)) ev.push(gameEmbed(g, "nowa")); continue; }
     const nSp = (g.spolszczenia || []).filter(x => !(o.spolszczenia || []).some(y => y && x && y.id === x.id));
     if (nSp.length && nSp.some(x => x.link)) {
@@ -151,7 +151,7 @@ async function commentEvents() {
     const ns = (/^news:(.+)$/.exec(c.game_key || "") || [])[1];
     let title, url, thumb;
     if (ns) { if (!titles.has(ns)) continue; title = titles.get(ns); url = `${SITE}/aktualnosci/${ns}/`; }
-    else { const g = byKey.get(c.game_key); if (!g) continue; title = g.game; url = `${SITE}/gra/${slug(g.game)}/`; thumb = img(g.img); }
+    else { const g = byKey.get(c.game_key); if (!g) continue; title = g.game; url = `${SITE}/gra/${g.osobna && g.id ? g.id : slug(g.game)}/`; thumb = img(g.img); }
     const body = String(c.body || "").replace(/\s+\n/g, "\n").trim();
     const e = {
       author: { name: (c.author || "Gracz").slice(0, 80) + (c.is_mod ? " · moderator" : ""), ...(/^https:\/\//.test(c.avatar_url || "") ? { icon_url: c.avatar_url } : {}) },

@@ -17785,30 +17785,22 @@
   },
   {
     "game": "Freedom Fighters",
-    "platform": "PC, Sony PS2",
+    "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "1.01",
     "genre": "Strzelanka",
     "author": "p.m.",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3465",
     "dodano": "2019-07-27",
-    "spolszczenia": [
-      {
-        "id": "freedom-fighters--p-g",
-        "author": "P.G",
-        "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4835",
-        "type": "Napisy",
-        "status": "Gotowe",
-        "prog": 100,
-        "ver": "—",
-        "upd": "2026-08-23",
-        "dodano": "2026-08-23"
-      }
-    ],
     "steam": 1347780,
-    "img": "https://cdn.grypopolsku.pl/okladki/freedom-fighters-392ec1a5.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/freedom-fighters-392ec1a5.webp",
+    "opis": "Freedom Fighters to strzelanka z perspektywy trzeciej osoby od IO Interactive, twórców serii Hitman, wydana w 2003 roku. Akcja toczy się w alternatywnej historii, w której Związek Radziecki najeżdża Stany Zjednoczone i zajmuje Nowy Jork. Gracz wciela się w hydraulika Christophera Stone'a, który staje na czele ruchu oporu. Za zdobywaną charyzmę może werbować kolejnych bojowników i wydawać im proste rozkazy w walce.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   },
   {
     "game": "Banjo-Kazooie",
@@ -21328,5 +21320,22 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Freedom Fighters",
+    "platform": "Sony PS2",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "P.G",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4835",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-18",
+    "img": "https://cdn.grypopolsku.pl/okladki/freedom-fighters-392ec1a5.webp",
+    "opis": "Freedom Fighters to strzelanka z perspektywy trzeciej osoby od IO Interactive, twórców serii Hitman, wydana w 2003 roku. Akcja toczy się w alternatywnej historii, w której Związek Radziecki najeżdża Stany Zjednoczone i zajmuje Nowy Jork. Gracz wciela się w hydraulika Christophera Stone'a, który staje na czele ruchu oporu. Za zdobywaną charyzmę może werbować kolejnych bojowników i wydawać im proste rozkazy w walce.",
+    "upd": "2026-11-18",
+    "id": "freedom-fighters-ps2",
+    "osobna": true
   }
 ]

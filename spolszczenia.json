@@ -17122,7 +17122,12 @@
     "author": "hisokasenapi",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4918",
     "dodano": "2026-10-09",
-    "img": "https://cdn.grypopolsku.pl/okladki/rayman-3-hoodlum-havoc-029b5f9e.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/rayman-3-hoodlum-havoc-029b5f9e.webp",
+    "okladkaPasek": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-18"
+    }
   },
   {
     "game": "Urban Strife",

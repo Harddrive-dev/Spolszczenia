@@ -987,14 +987,18 @@ function restoreScroll(){var pos=FLT_POS;FLT_POS=null;if(!pos)return;var stop=fa
   [300,800,1500,3000,5000].forEach(function(ms){setTimeout(align,ms)});setTimeout(quit,6100)}
 window.addEventListener("pagehide",function(){if(onCat())saveF(scrollPos())});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#tb a.g,#cards a.g");if(a)saveF(scrollPos())},true);
+// Wstawia HTML tylko gdy coś się zmieniło – przy ładowaniu tabela jest liczona kilka razy (dane, zatwierdzone zmiany),
+// a podmiana wierszy pod kursorem „gubiła” kliknięcia przez ułamek sekundy.
+function setHtml(el,h){if(!el||el.__h===h)return;el.innerHTML=h;el.__h=h}
+function odswiezLiczniki(){document.querySelectorAll(".cbtn[data-k]").forEach(function(b){var n=counts[b.getAttribute("data-k")]||0,t=n?"Komentarze ("+n+")":"Komentarze",x=b.querySelector("b");if(x)x.textContent=n;b.title=t;b.setAttribute("aria-label",t)})}
 function render(){
   syncBar();var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;saveF();
   var r=all.slice((page-1)*PS,page*PS);
   $("count").textContent=all.length?"Wyświetlono "+((page-1)*PS+1)+"–"+((page-1)*PS+r.length)+" z "+all.length+(all.length!==items.length?" (wszystkich: "+items.length+")":"")+" gier":"Wyświetlono 0 z "+items.length+" gier";
   $("pager").innerHTML=pagerHtml(pages);
-  if(!all.length){$("tb").innerHTML='<tr><td colspan="9" class="empty">Brak wyników.</td></tr>';$("cards").innerHTML='<div class="empty">Brak wyników.</div>';return}
-  $("tb").innerHTML=r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+gName(g)+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td class="vr">'+versionsCell(g)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join("");
-  $("cards").innerHTML=r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">'+versionsTxt(g)+'</div>')+'</div>'}).join("")}
+  if(!all.length){setHtml($("tb"),'<tr><td colspan="9" class="empty">Brak wyników.</td></tr>');setHtml($("cards"),'<div class="empty">Brak wyników.</div>');return}
+  setHtml($("tb"),r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+gName(g)+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+(g.status&&hasSp(g)?'<span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'—')+'</td><td>'+lkHtml(g)+'</td><td class="vr">'+versionsCell(g)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join(""));
+  setHtml($("cards"),r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+(g.status&&hasSp(g)?' <span class="pill '+cls(g.status)+'">'+esc(stText(g))+'</span>':'')+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">'+versionsTxt(g)+'</div>')+'</div>'}).join(""))}
 function stats(){
   var sp=items.filter(hasSp).length+items.reduce(function(n,g){return n+spExtra(g).length},0),lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
@@ -1205,7 +1209,7 @@ async function loadCounts(){
       if(r.error)throw r.error;
       r.data.forEach(function(x){c[x.game_key]=(c[x.game_key]||0)+1});
       if(r.data.length<1000)break;from+=1000}
-    counts=c;render();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
+    counts=c;odswiezLiczniki();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
 function me(){return recov?null:(session&&session.user)}
 var myRole=null,roleLoaded=false,authReady=false,myPlat=[];
 // Zanim Supabase odtworzy sesję (ułamek sekundy po wejściu) nie wiadomo, czy ktoś jest zalogowany.

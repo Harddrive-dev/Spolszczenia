@@ -640,6 +640,10 @@
       {
         "t": "💬 Temat na forum",
         "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=110"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=29&hilit=Asterix+%26amp%3B+Obelix"
       }
     ],
     "tworcy": [
@@ -647,8 +651,8 @@
     ],
     "instr": "Opis spolszczenia: napisy w pełni przetłumaczone - bez polskich znaków.",
     "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-17"
+      "kto": "kokos324",
+      "dzien": "2026-11-18"
     }
   },
   {

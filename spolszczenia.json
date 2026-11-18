@@ -596,7 +596,7 @@
     "ver": "—",
     "author": "kuzo89",
     "upd": "2021-03-18",
-    "link": "https://grajpopolsku.pl/download/asterix-obelix-xxl2-mission-wifix/",
+    "link": "https://cdn.grypopolsku.pl/spolszczenia/psp/asterix-obelix-xxl2-mission-wifix/%5BPSP%5DAsterix%26Obelix_PL.zip",
     "genre": "Akcja",
     "opis": "Przygodowa gra w świecie Asteriksa i Obeliksa, przeniesiona na przenośną konsolę.",
     "zrzuty": [
@@ -651,9 +651,10 @@
     ],
     "instr": "Opis spolszczenia: napisy w pełni przetłumaczone - bez polskich znaków.",
     "zmiana": {
-      "kto": "kokos324",
+      "kto": "Harddrive",
       "dzien": "2026-11-18"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Astérix: The Gallic War",

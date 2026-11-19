@@ -5383,16 +5383,56 @@
     "link": "https://ikskoks.pl/download/psp-silent-hill-shattered-memories-spolszczenie-v1-0/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Silent Hill: Shattered Memories to wydany w 2009 roku survival horror psychologiczny studia Climax Studios, stanowiący nową interpretację (reimagining) pierwszej części kultowej serii.\n\nOpis spolszczenia: napisy w pełni przetłumaczone - z polskimi znakami.",
+    "opis": "Silent Hill: Shattered Memories to wydany w 2009 roku survival horror psychologiczny studia Climax Studios, stanowiący nową interpretację (reimagining) pierwszej części kultowej serii.",
     "id": "silent-hill-shattered-memories-psp",
     "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-16"
+      "kto": "kokos324",
+      "dzien": "2026-11-19"
     },
     "aliasy": [
       "silent-hill-shattered-memories-psp"
     ],
-    "yt": "https://www.youtube.com/watch?v=_A9rxQZT6vk"
+    "yt": "https://www.youtube.com/watch?v=_A9rxQZT6vk",
+    "linki": [
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://ikskoks.pl/download/psp-silent-hill-shattered-memories-spolszczenie-v1-0/"
+      },
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=3538"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
+    "tworcy": [
+      "ikskoks"
+    ],
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/1.webp?v=2750222e",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/1-miniatura.webp?v=eca8dcd3"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/2.webp?v=b02974bb",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/2-miniatura.webp?v=b33c09ce"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/3.webp?v=225e2160",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/3-miniatura.webp?v=8856ff09"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/4.webp?v=6b290fa0",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/4-miniatura.webp?v=7c9b49e9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/5.webp?v=3bf29e53",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/silent-hill-shattered-memories-psp/5-miniatura.webp?v=2f4664f8"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Snake Pass",

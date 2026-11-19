@@ -58,7 +58,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="okladkaPasek"){if(v==="1")g.okladkaPasek=1;else delete g.okladkaPasek;continue} // okładka ma już pasek platformy – strona nie dokłada drugiego
    if(f==="spolszczenia"){let a=null;try{a=spNorm(JSON.parse(v||"[]"))}catch{continue}for(const s of a){const o=(g.spolszczenia||[]).find(x=>x.id===s.id);if(o&&spUpd(o,s))s.upd=day}if(a.length)g.spolszczenia=a;else delete g.spolszczenia;continue}
    if(!["game","platform","genre","type","status","prog","ver","author","link","img","opis","upd","premiera","pl","lore","gamereader","yt","ytt","dub","dubAuthor","dubStatus"].includes(f))continue;
-   if(f==="status"){if(v)g.status=v==="W toku"?"Beta":v;continue}
+   if(f==="status"){if(v){const nowy=v==="W toku"?"Beta":v;if(nowy==="Gotowe"&&g.status&&g.status!=="Gotowe")g.ukonczono=day;else if(nowy!=="Gotowe")delete g.ukonczono;g.status=nowy}continue} // ukonczono = dzień przejścia na „Gotowe” (plakietka „Ukończone” w Nowościach)
    if(f==="yt"){if(YT(v))g.yt=v;else if(!v)delete g.yt;continue}
    if(f==="ytt"){if(v)g.ytt=v.slice(0,80);else delete g.ytt;continue}
    if(f==="pl"){if(v==="of")g.pl="of";else delete g.pl;continue}

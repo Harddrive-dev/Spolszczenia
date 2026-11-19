@@ -3024,13 +3024,14 @@
     ],
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-17"
+      "dzien": "2026-11-19"
     },
     "tworcy": [
       "Qjon",
       "Alucard",
       "BigJohn",
       "Wojtaz",
+      "piromen333",
       "Grupa SMG"
     ],
     "zrzuty": [
@@ -3087,7 +3088,15 @@
         "dodano": "2026-11-16"
       }
     ],
-    "yt": "https://www.youtube.com/watch?v=IGB_nDwAUNQ"
+    "yt": "https://www.youtube.com/watch?v=IGB_nDwAUNQ",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=4788"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Gra posiada dwa spolszczenia do wyboru. Pierwsze z nich, przygotowane przed laty pod kierownictwem Qjona, to bardzo dobre tłumaczenie, jednak pozbawione polskich znaków. Jest to sprawdzona i stabilna wersja.\n\nW 2026 roku gra doczekała się odświeżonej wersji spolszczenia, przygotowanej przez Grupę SMG, która wprowadziła korektę tłumaczenia oraz obsługę polskich znaków. Na chwilę obecną (19.11.2026 r.) spolszczenie nadal znajduje się w fazie testów - użytkownicy zgłaszają napotkane problemy, a autorzy pracują nad ich rozwiązaniem."
   },
   {
     "game": "Grand Theft Auto: Vice City Stories",
@@ -3165,7 +3174,6 @@
     "zrzutyOd": [
       "kokos324"
     ],
-    "okladkaPasek": 1,
     "linki": [
       {
         "t": "💬 Temat na forum",
@@ -3173,7 +3181,8 @@
       }
     ],
     "instrPaczka": 1,
-    "instr": "Gra posiada dwa spolszczenia do wyboru. Pierwsze z nich, wydane przed laty przez Qjona i ciffera, to bardzo dobre tłumaczenie, jednak pozbawione polskich znaków. Jest to sprawdzona i stabilna wersja.\n\nW 2026 roku gra doczekała się odświeżonej wersji spolszczenia, przygotowanej przez Grupę SMG, która wprowadziła korektę tłumaczenia oraz obsługę polskich znaków. Nowa wersja została w całości przetestowana przez autorów spolszczenia."
+    "instr": "Gra posiada dwa spolszczenia do wyboru. Pierwsze z nich, wydane przed laty przez Qjona i ciffera, to bardzo dobre tłumaczenie, jednak pozbawione polskich znaków. Jest to sprawdzona i stabilna wersja.\n\nW 2026 roku gra doczekała się odświeżonej wersji spolszczenia, przygotowanej przez Grupę SMG, która wprowadziła korektę tłumaczenia oraz obsługę polskich znaków. Nowa wersja została w całości przetestowana przez autorów spolszczenia.",
+    "okladkaPasek": 1
   },
   {
     "game": "GYLT",

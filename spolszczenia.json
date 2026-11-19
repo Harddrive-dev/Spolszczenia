@@ -21908,5 +21908,37 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Cat Quest III",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=cat-quest-iii",
+    "genre": "RPG",
+    "dodano": "2026-11-19",
+    "img": "https://cdn.grypopolsku.pl/okladki/cat-quest-iii-a8cf9ab3.webp",
+    "opis": "Cat Quest III to wydana w 2024 roku urocza, dwuwymiarowa gra akcji RPG osadzona w pirackim otwartym świecie, stworzona przez singapurskie studio The Gentlebros i wydana przez Kepler Interactive. Trzecia odsłona popularnej serii przenosi graczy do malowniczego archipelagu Purribean, pełnego tropikalnych wysp, ukrytych skarbów i kocich żartów słownych.",
+    "steam": 2305840,
+    "upd": "2026-11-19"
+  },
+  {
+    "game": "Monster Sanctuary",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/monster_sanctuary",
+    "genre": "RPG",
+    "dodano": "2026-11-19",
+    "img": "https://cdn.grypopolsku.pl/okladki/monster-sanctuary-a050a9c7.webp",
+    "opis": "Monster Sanctuary to wydana w 2020 roku dwuwymiarowa metroidvania połączona z taktycznym, turowym RPG polegającym na kolekcjonowaniu potworów, stworzona przez niezależne niemieckie studio Moi Rai Games i wydana przez Team17.",
+    "steam": 814370,
+    "upd": "2026-11-19"
   }
 ]

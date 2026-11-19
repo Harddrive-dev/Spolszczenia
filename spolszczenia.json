@@ -2806,12 +2806,43 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
-    "author": "—",
+    "ver": "1.0.0.1",
+    "author": "Zespół Graj Po Polsku",
     "link": "https://grajpopolsku.pl/download/game-of-thrones-a-telltale-games-series/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Epizodowa przygodówka Telltale w świecie „Gry o tron\". Poznajesz losy rodu Forresterów, a twoje wybory zmieniają bieg wydarzeń."
+    "opis": "Epizodowa przygodówka Telltale w świecie „Gry o tron\". Poznajesz losy rodu Forresterów, a twoje wybory zmieniają bieg wydarzeń.",
+    "tworcy": [
+      "Norek",
+      "Kasica",
+      "Semprini",
+      "Izzie",
+      "Tipheret",
+      "Bartek Musajew",
+      "Walken",
+      "criav",
+      "Jan „jasiek_barca” Marcinkowski",
+      "Konrad Kołodziejczyk",
+      "Dominika",
+      "Monika",
+      "mapet",
+      "Maksymilian Pawlak",
+      "Aleksander Wysocki",
+      "Mateusz Gankowski",
+      "Patrycja „dinosaur” Polowczyk",
+      "Piotr „Celu” Zelek",
+      "BlackiePearl",
+      "Ysska",
+      "mziab",
+      "cienislaw",
+      "GimmyBreaker",
+      "VHS",
+      "Manuel Czaszka"
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Ghostbusters II",
@@ -21820,26 +21851,6 @@
     "upd": "2026-11-18"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Adventure Time: Heroes of Ooo",
     "platform": "Android",
     "type": "Napisy",
@@ -21863,5 +21874,25 @@
     "link": "https://ikskoks.pl/download/regular-show-best-park-in-the-universe-spolszczenie/",
     "dodano": "2026-11-19",
     "upd": "2026-11-19"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

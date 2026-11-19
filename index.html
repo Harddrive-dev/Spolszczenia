@@ -896,7 +896,7 @@ function spNorm(a){var seen={};return (Array.isArray(a)?a:[]).map(function(s){re
 function spAdd(g,d,link,day,kf){if(g.link===link||spExtra(g).some(function(s){return s.link===link}))return;var a=Array.isArray(g.spolszczenia)?g.spolszczenia:(g.spolszczenia=[]),base=kf(g)+"--"+(kf({game:d.author||""})||"autor"),id=base,n=2;
   while(a.some(function(s){return s.id===id}))id=base+"-"+(n++);
   a.push(spNorm([{id:id,author:d.author,link:link,type:d.type,status:d.status,prog:d.prog,ver:d.ver,upd:d.upd||day,dodano:day}])[0])}
-function hasDub(g){return /^https?:\/\//i.test(g.dub||"")||(hasSp(g)&&g.type==="Dubbing")}
+function hasDub(g){return /^https?:\/\//i.test(g.dub||"")||(hasSp(g)&&g.type==="Dubbing")||spExtra(g).some(function(s){return s.type==="Dubbing"})} // także dubbing dopisany jako dodatkowe spolszczenie (np. MediEvil)
 function dubPill(g){return /^https?:\/\//i.test(g.dub||"")&&!(hasSp(g)&&g.type==="Dubbing")?' <span class="pill dub">Dubbing</span>':""}
 function hasLk(g){return !!(g.lore||g.gamereader)}
 function lkHtml(g){var h="";if(g.lore)h+='<a class="lkb lkl" title="LoreSpeak" target="_blank" rel="noopener" href="'+esc(safe(g.lore))+'"><img src="/img/lorespeak.png" alt="LoreSpeak"></a>';if(g.gamereader)h+='<a class="lkb lkl" title="GameReader 2.0" target="_blank" rel="noopener" href="'+esc(safe(g.gamereader))+'"><img src="/img/gamereader.png" alt="GameReader 2.0"></a>';return (g.lore&&g.gamereader)?'<span class="lkw">'+h+'</span>':(h||"—")}

@@ -21101,7 +21101,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.0.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-witch-s-bakery",
     "genre": "Przygodowa",
@@ -21109,7 +21109,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-witch-s-bakery-d83bc260.webp",
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
-    "upd": "2026-11-18",
+    "upd": "2026-11-19",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
@@ -21761,7 +21761,7 @@
     "game": "BLEACH Rebirth Of Souls",
     "platform": "PC",
     "type": "Napisy",
-    "status": "W trakcie",
+    "status": "Testy",
     "prog": 10,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -21771,7 +21771,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
     "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
     "steam": 1689620,
-    "upd": "2026-11-17",
+    "upd": "2026-11-19",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
@@ -21781,9 +21781,9 @@
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
-    "ver": "—",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles",
     "genre": "Bijatyka",
@@ -21791,19 +21791,19 @@
     "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-41fa0f5c.webp",
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles to wydana w 2021 roku trójwymiarowa bijatyka arenówka z elementami przygodowej gry akcji, stworzona przez studio CyberConnect2 (znane z serii Naruto: Ultimate Ninja Storm) i wydana przez firmę Sega. Produkcja jest wierną adaptacją pierwszego sezonu popularnego anime Kimetsu no Yaiba oraz kinowego hitu Mugen Train.",
     "steam": 1490890,
-    "upd": "2026-11-18",
+    "upd": "2026-11-19",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-19"
     }
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Testy",
-    "prog": 10,
-    "ver": "—",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2",
     "genre": "Bijatyka",
@@ -21811,7 +21811,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2-01324854.webp",
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 to wydana w 2025 roku kontynuacja trójwymiarowej bijatyki arenówki z elementami przygodowej gry akcji, ponownie opracowana przez studio CyberConnect2 i wydana przez firmę Sega. Produkcja rozwija formułę pierwszej części i adaptuje kolejne kluczowe wątki z anime Kimetsu no Yaiba – od Dzielnicy Rozrywki (Entertainment District Arc), przez Wioskę Kowali (Swordsmith Village Arc), aż po Trening Filarów (Hashira Training Arc).",
     "steam": 2928600,
-    "upd": "2026-11-18"
+    "upd": "2026-11-19",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Middle-earth: Shadow of War",

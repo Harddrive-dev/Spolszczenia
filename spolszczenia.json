@@ -15259,17 +15259,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.1",
+    "ver": "1.2",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=final-fantasy-type-0-hd",
     "dodano": "2026-11-01",
-    "upd": "2026-11-18",
+    "upd": "2026-11-19",
     "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-type-0-hd-26327234.webp",
     "opis": "Kadeci klasy Zero z akademii Vermilion Bird walczą w wojnie o kryształy krainy Orience. Bardziej mroczna odsłona serii z walką w czasie rzeczywistym.",
     "steam": 340170,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-19"
     }
   },
   {
@@ -15468,14 +15468,18 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=lightning-returns-final-fantasy-xiii",
     "dodano": "2026-10-06",
-    "upd": "2026-10-06",
+    "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/lightning-returns-final-fantasy-xiii-e309bb77.webp",
     "opis": "Finał trylogii Final Fantasy XIII. Lightning ma trzynaście dni, by ocalić dusze ludzi przed końcem świata, a czas w grze płynie nieubłaganie.",
-    "steam": 345350
+    "steam": 345350,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Lake",
@@ -15909,14 +15913,18 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.3",
+    "ver": "1.4",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=stranger-of-paradise-final-fantasy-origin",
     "dodano": "2026-09-17",
-    "upd": "2026-10-17",
+    "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/stranger-of-paradise-final-fantasy-origin-32e5104d.webp",
     "opis": "Mroczne spojrzenie na początki Final Fantasy z szybką walką w stylu Nioh. Jack i jego towarzysze chcą pokonać Chaos, ale nie wszystko jest takie, jak się wydaje.",
-    "steam": 1358700
+    "steam": 1358700,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "The Bureau: XCOM Declassified",
@@ -16052,15 +16060,19 @@
     "genre": "Strategia",
     "type": "Napisy",
     "status": "Testy",
-    "prog": 10,
+    "prog": 60,
     "ver": "—",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=valkyria-chronicles",
     "dodano": "2026-10-25",
-    "upd": "2026-10-25",
+    "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/valkyria-chronicles-7978e780.webp",
     "opis": "Taktyczne RPG o fikcyjnej wojnie w Europie, z oprawą stylizowaną na akwarelę. Oddział Welkina Guntera broni księstwa Gallia przed Imperium.",
-    "steam": 294860
+    "steam": 294860,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Vigil: The Longest Night",
@@ -16196,16 +16208,16 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.5",
+    "ver": "1.6",
     "author": "DykuGierkuje",
     "link": "https://dykugierkuje.pl/spolszczenie/incursion-red-river",
     "dodano": "2026-09-06",
-    "upd": "2026-11-12",
+    "upd": "2026-11-19",
     "img": "https://cdn.grypopolsku.pl/okladki/incursion-red-river-c6cb8ba6.webp",
     "steam": 2116120,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-12"
+      "dzien": "2026-11-19"
     }
   },
   {
@@ -20964,9 +20976,9 @@
     "game": "The Witch's Bakery",
     "platform": "PC",
     "type": "Napisy",
-    "status": "W trakcie",
-    "prog": 10,
-    "ver": "—",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-witch-s-bakery",
     "genre": "Przygodowa",
@@ -20974,7 +20986,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-witch-s-bakery-d83bc260.webp",
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
-    "upd": "2026-11-13"
+    "upd": "2026-11-18",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Ys Origin",
@@ -21622,7 +21638,7 @@
     "game": "BLEACH Rebirth Of Souls",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Zapowiedź",
+    "status": "W trakcie",
     "prog": 10,
     "ver": "—",
     "author": "VetSpolszczenia",
@@ -21632,10 +21648,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
     "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
     "steam": 1689620,
-    "upd": "2026-11-18",
+    "upd": "2026-11-17",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-19"
     }
   },
   {

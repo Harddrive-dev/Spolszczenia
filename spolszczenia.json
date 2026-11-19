@@ -649,10 +649,10 @@
     "tworcy": [
       "kuzo89"
     ],
-    "instr": "Opis spolszczenia: napisy w pełni przetłumaczone - bez polskich znaków.",
+    "instr": "Napisy w pełni przetłumaczone – bez polskich znaków.",
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-19"
     },
     "instrPaczka": 1
   },
@@ -2870,8 +2870,16 @@
     ],
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-17"
-    }
+      "dzien": "2026-11-19"
+    },
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=533"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami."
   },
   {
     "game": "Gods Will Be Watching (do testów otwartych)",

@@ -21940,5 +21940,37 @@
     "opis": "Monster Sanctuary to wydana w 2020 roku dwuwymiarowa metroidvania połączona z taktycznym, turowym RPG polegającym na kolekcjonowaniu potworów, stworzona przez niezależne niemieckie studio Moi Rai Games i wydana przez Team17.",
     "steam": 814370,
     "upd": "2026-11-19"
+  },
+  {
+    "game": "FINAL FANTASY X/X-2 HD Remaster",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=final-fantasy-x-x-2-hd-remaster",
+    "genre": "RPG",
+    "dodano": "2026-11-19",
+    "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-x-x-2-hd-remaster-6670434d.webp",
+    "opis": "FINAL FANTASY X/X-2 HD Remaster to wydany w 2013 roku (a następnie przeniesiony na nowsze platformy) odświeżony pakiet dwóch kultowych japońskich gier fabularnych (jRPG) z ery PlayStation 2, stworzony i wydany przez firmę Square Enix. Kolekcja zawiera pełne wersje Final Fantasy X oraz jego bezpośredniej kontynuacji Final Fantasy X-2 w wersji International, wraz z dodatkowymi epilogami.",
+    "steam": 359870,
+    "upd": "2026-11-19"
+  },
+  {
+    "game": "PowerWash Simulator",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=powerwash-simulator",
+    "genre": "Symulacja",
+    "dodano": "2026-11-19",
+    "img": "https://cdn.grypopolsku.pl/okladki/powerwash-simulator-ff26baef.webp",
+    "opis": "PowerWash Simulator to wydany w 2022 roku relaksujący symulator mycia ciśnieniowego z perspektywy pierwszej osoby (FPP), stworzony przez brytyjskie studio FuturLab i wydany przez Square Enix Collective. Produkcja zdobyła ogromną popularność jako tzw. gra typu cozy – pozbawiona presji czasu, rywalizacji i przemocy, skupiająca się na satysfakcjonującym przywracaniu porządku.",
+    "steam": 1290000,
+    "upd": "2026-11-19"
   }
 ]

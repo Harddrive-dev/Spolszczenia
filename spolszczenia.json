@@ -436,9 +436,13 @@
     "ver": "—",
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-22",
-    "link": "https://grajpopolsku.pl/download/adventure-time-explore-the-dungeon-because-i-dont-know/",
+    "link": "https://ikskoks.pl/download/adventure-time-explore-the-dungeon-because-i-dont-know-spolszczenie/",
     "genre": "Akcja",
-    "opis": "Finn i Jake wyruszają do lochów w dynamicznej grze akcji w stylu roguelike. Całość opiera się na serialu animowanym."
+    "opis": "Finn i Jake wyruszają do lochów w dynamicznej grze akcji w stylu roguelike. Całość opiera się na serialu animowanym.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Age of Empires: Definitive Edition",
@@ -1071,9 +1075,14 @@
     "ver": "—",
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-15",
-    "link": "https://grajpopolsku.pl/download/c-12-final-resistance-psx/",
+    "link": "https://ikskoks.pl/download/psx-c-12-final-resistance-spolszczenie-1-0/",
     "genre": "Strzelanka",
-    "opis": "Cyborg Riley Vaughan trafia w sam środek wojny i walczy z wrogą armią w grze akcji z widokiem zza pleców."
+    "opis": "Cyborg Riley Vaughan trafia w sam środek wojny i walczy z wrogą armią w grze akcji z widokiem zza pleców.",
+    "yt": "https://www.youtube.com/watch?v=tr4qA_WJPqk",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Cabela's 4×4",
@@ -1114,10 +1123,14 @@
     "ver": "—",
     "author": "Bartłomiej Duda (Ikskoks)",
     "upd": "2024-06-22",
-    "link": "https://grajpopolsku.pl/download/castle-of-illusion/",
+    "link": "https://ikskoks.pl/download/castle-of-illusion-spolszczenie/",
     "genre": "Platformówka",
     "opis": "Mickey Mouse wyrusza do zaczarowanego zamku, by uratować Minnie. Platformówka w bajkowej oprawie.",
-    "steam": 227600
+    "steam": 227600,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Castlevania",
@@ -1400,25 +1413,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/crash-bandicoot-fusion-spolszczenie/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Platformówka z Crashem Bandicootem w roli głównej, stworzona na przenośną konsolę."
-  },
-  {
-    "game": "Crash Bandicoot Fusion [GBA]",
-    "img": "https://cdn.grypopolsku.pl/okladki/crash-bandicoot-fusion-gba-a4b7dc34.webp",
-    "platform": "Game Boy Advance",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/crash-bandicoot-fusion-2/",
-    "genre": "Platformówka",
-    "dodano": "2026-10-28",
-    "opis": "Platformówka z Crashem Bandicootem w roli głównej, stworzona na przenośną konsolę."
+    "opis": "Platformówka z Crashem Bandicootem w roli głównej, stworzona na przenośną konsolę.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Crash Team Racing [PSX]",
@@ -1428,11 +1431,16 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/crash-team-racing-psx/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/psx-crash-team-racing-spolszczenie/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Wyścigi gokartów z postaciami Crash Bandicoot. Zgrabna konkurencja dla Mario Karta."
+    "opis": "Wyścigi gokartów z postaciami Crash Bandicoot. Zgrabna konkurencja dla Mario Karta.",
+    "yt": "https://www.youtube.com/watch?v=C143gdfMvV4",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "CS: Source",
@@ -1545,12 +1553,16 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/dead-city/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/dead-city-spolszczenie/",
     "dodano": "2026-10-28",
     "genre": "Przygodowa",
     "steam": 2157650,
-    "img": "https://cdn.grypopolsku.pl/okladki/dead-city-5adb1dca.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/dead-city-5adb1dca.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Dead or Alive",
@@ -1561,7 +1573,7 @@
     "prog": 100,
     "ver": "—",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/download/dead-or-alive-psx/",
+    "link": "https://ikskoks.pl/download/psx-dead-or-alive-spolszczenie/",
     "genre": "Bijatyka",
     "dodano": "2026-10-28",
     "opis": "Bijatyka 3D od Tecmo, w której liczą się szybkie kontrataki i dynamiczne areny.",
@@ -1579,7 +1591,7 @@
     ],
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-17"
+      "dzien": "2026-11-19"
     },
     "aliasy": [
       "dead-or-alive-psx"
@@ -1653,12 +1665,17 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/deadpool/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/deadpool-spolszczenie-1-0/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Gra akcji z Deadpoolem w roli głównej. Bohater walczy z wrogami, komentując wszystko żartami.",
-    "gamereader": "https://www.gamereader.pl/biblioteka"
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "yt": "https://www.youtube.com/watch?v=xhZpwOgDDj0",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Dementium 2",
@@ -1696,10 +1713,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/dexters-laboratory-mandarks-lab/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/dexters-laboratory-mandarks-lab-spolszczenie/",
     "genre": "Platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "yt": "https://www.youtube.com/watch?v=2068TBtkHFk",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Diablo",
@@ -2521,11 +2543,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/fist-of-jesus/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/fist-of-jesus-spolszczenie/",
     "genre": "Bijatyka",
     "dodano": "2026-10-28",
-    "opis": "Parodia gier bijatyki i kina kopanego, w której Jezus walczy ze złem."
+    "opis": "Parodia gier bijatyki i kina kopanego, w której Jezus walczy ze złem.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "FlatOut",
@@ -2677,12 +2703,16 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/furi/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/furi-spolszczenie/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Intensywna gra akcji z pojedynkami z bossami. Walczysz, unikasz i kontratakujesz w widowiskowych starciach.",
-    "steam": 423230
+    "steam": 423230,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Fushigi no Umi no Nadia",
@@ -3932,24 +3962,28 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/medievil/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/medievil-spolszczenie-napisy/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Sir Daniel Fortesque, najgorszy rycerz w królestwie, wstaje z grobu, by pokonać złego czarnoksiężnika. Platformówka z humorem i klimatem horroru."
-  },
-  {
-    "game": "MediEvil [PSX] Dubbing",
-    "img": "https://cdn.grypopolsku.pl/okladki/medievil-psx-d3208da8.webp",
-    "platform": "Sony PSX",
-    "type": "Dubbing",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/medievil-psx-dubbing/",
-    "genre": "Akcja",
-    "dodano": "2026-10-28"
+    "opis": "Sir Daniel Fortesque, najgorszy rycerz w królestwie, wstaje z grobu, by pokonać złego czarnoksiężnika. Platformówka z humorem i klimatem horroru.",
+    "spolszczenia": [
+      {
+        "id": "medievil--ikskoks-dubbing",
+        "author": "ikskoks",
+        "link": "https://ikskoks.pl/download/medievil-spolszczenie-napisy-dubbing/",
+        "type": "Dubbing",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "",
+        "dodano": ""
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "MediEvil 2",
@@ -3959,25 +3993,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/medievil-2/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/medievil-2-spolszczenie-napisy/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej."
-  },
-  {
-    "game": "MediEvil 2 [PSX]",
-    "img": "https://cdn.grypopolsku.pl/okladki/medievil-2-psx-42000a24.webp",
-    "platform": "Sony PSX",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/medievil-2-psx/",
-    "genre": "Akcja",
-    "dodano": "2026-10-28",
-    "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej."
+    "opis": "Kontynuacja MediEvil. Sir Daniel znów walczy z siłami zła w Londynie epoki wiktoriańskiej.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "MediEvil Resurrection",
@@ -3993,8 +4017,8 @@
     "dodano": "2026-10-28",
     "opis": "MediEvil Resurrection to przygodowa gra akcji wydana w 2005 roku na PSP, będąca odświeżoną wersją klasyka z pierwszego PlayStation. Gracz wciela się w sir Daniela Fortesque’a, który musi ocalić królestwo Gallowmere przed złym czarnoksiężnikiem Zarokiem. Gra łączy walkę, eksplorację i zagadki w gotyckim klimacie pełnym czarnego humoru.",
     "zmiana": {
-      "kto": "kokos324",
-      "dzien": "2026-11-18"
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
     },
     "id": "medievil-resurrection-psp",
     "aliasy": [
@@ -4055,21 +4079,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
-  },
-  {
-    "game": "MediEvil [PSX]",
-    "img": "https://cdn.grypopolsku.pl/okladki/medievil-psx-d3208da8.webp",
-    "platform": "Sony PSX",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/medievil-psx/",
-    "genre": "Akcja",
-    "dodano": "2026-10-28",
-    "opis": "Sir Daniel Fortesque, najgorszy rycerz w królestwie, wstaje z grobu, by pokonać złego czarnoksiężnika. Platformówka z humorem i klimatem horroru."
+    ],
+    "yt": "https://www.youtube.com/watch?v=xFRYKU_KxZE"
   },
   {
     "game": "Megaman II",
@@ -4106,11 +4117,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/mental-repairs-inc/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/mental-repairs-inc-spolszczenie/",
     "dodano": "2026-10-28",
     "genre": "Przygodowa",
-    "img": "https://cdn.grypopolsku.pl/okladki/mental-repairs-inc-a816ed9d.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/mental-repairs-inc-a816ed9d.webp",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Metal Gear",
@@ -4516,12 +4531,16 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/papo-yo/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/papo-yo-spolszczenie/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Chłopiec ucieka przed rzeczywistością i trafia do świata fantazji, gdzie towarzyszy mu potwór. Przygodówka o trudnej relacji z ojcem.",
-    "steam": 227080
+    "steam": 227080,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Pathologic",
@@ -5470,12 +5489,17 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/snake-pass/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/pc-snake-pass-spolszczenie/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Platformówka z wężem, który przemierza zadziwiające poziomy.",
-    "steam": 544330
+    "steam": 544330,
+    "yt": "https://www.youtube.com/watch?v=y9X6f6qjiBM",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Soldier of Fortune",
@@ -5716,11 +5740,29 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/super-space-pug/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/pc-super-space-pug-spolszczenie-v1-0/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "steam": 466840
+    "steam": 466840,
+    "yt": "https://www.youtube.com/watch?v=4C8JahIy4Cw",
+    "spolszczenia": [
+      {
+        "id": "super-space-pug--ikskoks-dubbing",
+        "author": "ikskoks",
+        "link": "https://ikskoks.pl/download/icon-pc-super-space-pug-spolszczenie-v1-0-pl-dubbing/",
+        "type": "Dubbing",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "",
+        "dodano": ""
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Superbike Racing",
@@ -6375,12 +6417,30 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/the-silent-age/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/the-silent-age-spolszczenie/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka z elementami podróży w czasie, w której bohater próbuje uratować przyszłość.",
-    "steam": 352520
+    "steam": 352520,
+    "yt": "https://www.youtube.com/watch?v=95PcfS11e4g",
+    "spolszczenia": [
+      {
+        "id": "the-silent-age--ikskoks-dubbing",
+        "author": "ikskoks",
+        "link": "https://ikskoks.pl/download/pc-the-silent-age-polski-dubbing-v1-0/",
+        "type": "Dubbing",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "",
+        "dodano": ""
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "The Simpsons Hit & Run",
@@ -6390,11 +6450,15 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/the-simpsons-hit-run/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/the-simpsons-hit-run-spolszczenie/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji w świecie Simpsonów, w której przemierzasz Springfield i wykonujesz zadania."
+    "opis": "Gra akcji w świecie Simpsonów, w której przemierzasz Springfield i wykonujesz zadania.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "The Walking Dead Season 1",
@@ -6609,11 +6673,16 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/tony-hawks-pro-skater-hd/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/pc-tony-hawks-pro-skater-hd-spolszczenie-1-0/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Odświeżona wersja klasycznej gry o deskorolce."
+    "opis": "Odświeżona wersja klasycznej gry o deskorolce.",
+    "yt": "https://www.youtube.com/watch?v=cbbPlBpQYis",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Top Gun",
@@ -6763,12 +6832,17 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "link": "https://grajpopolsku.pl/download/urban-chaos/",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/urban-chaos-spolszczenie-1-0/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Strzelanka, w której walczysz z terrorystami w mieście.",
-    "steam": 243060
+    "steam": 243060,
+    "yt": "https://www.youtube.com/watch?v=8LjC4ZQGSXg",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Velvet Assassin",
@@ -16417,12 +16491,16 @@
     "prog": 100,
     "ver": "—",
     "author": "Bartłomiej Duda (Ikskoks)",
-    "link": "https://grajpopolsku.pl/download/zanzarah-the-hidden-portal/",
+    "link": "https://ikskoks.pl/download/spolszczenie-do-zanzarah-the-hidden-portal/",
     "dodano": "2026-11-02",
     "upd": "2024-06-22",
     "img": "https://cdn.grypopolsku.pl/okladki/zanzarah-the-hidden-portal-d386ae42.webp",
     "opis": "Bohaterka trafia do magicznej krainy Zanzarah, gdzie zbiera i szkoli wróżki, by ocalić ją przed zagładą.",
-    "steam": 384570
+    "steam": 384570,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Metal Gear NES",
@@ -19572,13 +19650,13 @@
     "ver": "—",
     "genre": "Horror",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3555",
+    "link": "https://ikskoks.pl/download/java-silent-hill-orphan-spolszczenie-v1-0/",
     "dodano": "2020-06-21",
     "img": "https://cdn.grypopolsku.pl/okladki/silent-hill-orphan-62059e80.webp",
     "yt": "https://www.youtube.com/watch?v=7-Mz_fHG8ss",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-16"
+      "dzien": "2026-11-19"
     }
   },
   {
@@ -19603,9 +19681,14 @@
     "ver": "—",
     "genre": "Bijatyka",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3528",
+    "link": "https://ikskoks.pl/download/java-tekken-mobile-spolszczenie-pl-dubbing/",
     "dodano": "2020-02-11",
-    "img": "https://cdn.grypopolsku.pl/okladki/tekken-mobile-6b944797.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/tekken-mobile-6b944797.webp",
+    "yt": "https://www.youtube.com/watch?v=ccoGF-9gD04",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Crash Bandicoot: Mutant Island",
@@ -19616,9 +19699,14 @@
     "ver": "—",
     "genre": "Platformówka",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3527",
+    "link": "https://ikskoks.pl/download/crash-bandicoot-mutant-island-spolszczenie-download/",
     "dodano": "2020-02-02",
-    "img": "https://cdn.grypopolsku.pl/okladki/crash-bandicoot-mutant-island-2400ce79.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/crash-bandicoot-mutant-island-2400ce79.webp",
+    "yt": "https://www.youtube.com/watch?v=oGpXymgxH00",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Disciples III: Reincarnation",
@@ -20053,10 +20141,14 @@
     "ver": "—",
     "genre": "Horror",
     "author": "ikskoks",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3094",
+    "link": "https://ikskoks.pl/download/distraint-spolszczenie/",
     "dodano": "2016-12-18",
     "img": "https://cdn.grypopolsku.pl/okladki/distraint-c7c2ca16.webp",
-    "steam": 395170
+    "steam": 395170,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-19"
+    }
   },
   {
     "game": "Magic: The Gathering – Duels of the Planeswalkers 2013",
@@ -21746,5 +21838,30 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Adventure Time: Heroes of Ooo",
+    "platform": "Android",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/adventure-time-heroes-of-ooo-spolszczenie/",
+    "yt": "https://www.youtube.com/watch?v=A1x61_g42vM",
+    "dodano": "2026-11-19",
+    "upd": "2026-11-19"
+  },
+  {
+    "game": "Regular Show: Best Park In The Universe",
+    "platform": "Android",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/regular-show-best-park-in-the-universe-spolszczenie/",
+    "dodano": "2026-11-19",
+    "upd": "2026-11-19"
   }
 ]

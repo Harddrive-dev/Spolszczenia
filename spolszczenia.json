@@ -32,7 +32,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-02"
-    }
+    },
+    "ukonczono": "2026-11-02"
   },
   {
     "game": "Silver Pines",
@@ -21795,7 +21796,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "ukonczono": "2026-11-19"
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
@@ -21890,26 +21892,6 @@
     }
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Cat Quest III",
     "platform": "PC",
     "type": "Napisy",
@@ -21942,6 +21924,26 @@
     "upd": "2026-11-19"
   },
   {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
+  },
+  {
     "game": "FINAL FANTASY X/X-2 HD Remaster",
     "platform": "PC",
     "type": "Napisy",
@@ -21971,6 +21973,22 @@
     "img": "https://cdn.grypopolsku.pl/okladki/powerwash-simulator-ff26baef.webp",
     "opis": "PowerWash Simulator to wydany w 2022 roku relaksujący symulator mycia ciśnieniowego z perspektywy pierwszej osoby (FPP), stworzony przez brytyjskie studio FuturLab i wydany przez Square Enix Collective. Produkcja zdobyła ogromną popularność jako tzw. gra typu cozy – pozbawiona presji czasu, rywalizacji i przemocy, skupiająca się na satysfakcjonującym przywracaniu porządku.",
     "steam": 1290000,
+    "upd": "2026-11-19"
+  },
+  {
+    "game": "Coromon",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/coromon",
+    "genre": "RPG",
+    "dodano": "2026-11-19",
+    "img": "https://cdn.grypopolsku.pl/okladki/coromon-9400cc89.webp",
+    "opis": "Coromon to wydana w 2022 roku dwuwymiarowa, pikselartowa gra RPG polegająca na kolekcjonowaniu i trenowaniu stworków (monster taming), stworzona przez niezależne holenderskie studio TRAGsoft i wydana przez Freedom Games. Produkcja jest wyraźnym hołdem dla klasycznych, 16-bitowych odsłon serii Pokémon (zwłaszcza z ery Game Boy Advance), wzbogaconym o współczesne usprawnienia i głębsze mechaniki taktyczne.",
+    "steam": 1218210,
     "upd": "2026-11-19"
   }
 ]

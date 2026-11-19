@@ -3108,7 +3108,7 @@
     ],
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-17"
+      "dzien": "2026-11-19"
     },
     "spolszczenia": [
       {
@@ -3165,7 +3165,15 @@
     "zrzutyOd": [
       "kokos324"
     ],
-    "okladkaPasek": 1
+    "okladkaPasek": 1,
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=4986"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Gra posiada dwa spolszczenia do wyboru. Pierwsze z nich, wydane przed laty przez Qjona i ciffera, to bardzo dobre tłumaczenie, jednak pozbawione polskich znaków. Jest to sprawdzona i stabilna wersja.\n\nW 2026 roku gra doczekała się odświeżonej wersji spolszczenia, przygotowanej przez Grupę SMG, która wprowadziła korektę tłumaczenia oraz obsługę polskich znaków. Nowa wersja została w całości przetestowana przez autorów spolszczenia."
   },
   {
     "game": "GYLT",

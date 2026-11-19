@@ -2964,7 +2964,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-03"
-    }
+    },
+    "ukonczono": "2026-11-03"
   },
   {
     "game": "Golden Sun",
@@ -8949,6 +8950,7 @@
       "kto": "Harddrive",
       "dzien": "2026-11-06"
     },
+    "ukonczono": "2026-11-01",
     "spolszczenia": [
       {
         "id": "phantom-blade-zero--promptowy",
@@ -15042,7 +15044,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-11"
-    }
+    },
+    "ukonczono": "2026-11-11"
   },
   {
     "game": "Bloodstained: Ritual of the Night",
@@ -15110,7 +15113,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-08"
-    }
+    },
+    "ukonczono": "2026-11-03"
   },
   {
     "game": "Dead Rising 3",
@@ -16274,7 +16278,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
-    }
+    },
+    "ukonczono": "2026-11-13"
   },
   {
     "game": "Trials of Mana",
@@ -21114,7 +21119,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "ukonczono": "2026-11-19"
   },
   {
     "game": "Ys Origin",
@@ -21817,7 +21823,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "ukonczono": "2026-11-19"
   },
   {
     "game": "Middle-earth: Shadow of War",
@@ -21924,26 +21931,6 @@
     "upd": "2026-11-19"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "FINAL FANTASY X/X-2 HD Remaster",
     "platform": "PC",
     "type": "Napisy",
@@ -21990,5 +21977,25 @@
     "opis": "Coromon to wydana w 2022 roku dwuwymiarowa, pikselartowa gra RPG polegająca na kolekcjonowaniu i trenowaniu stworków (monster taming), stworzona przez niezależne holenderskie studio TRAGsoft i wydana przez Freedom Games. Produkcja jest wyraźnym hołdem dla klasycznych, 16-bitowych odsłon serii Pokémon (zwłaszcza z ery Game Boy Advance), wzbogaconym o współczesne usprawnienia i głębsze mechaniki taktyczne.",
     "steam": 1218210,
     "upd": "2026-11-19"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

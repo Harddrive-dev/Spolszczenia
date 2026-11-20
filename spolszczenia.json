@@ -9067,7 +9067,7 @@
     "steam": 1449690
   },
   {
-    "game": "Shenmue I & II",
+    "game": "Shenmue 1 & 2",
     "platform": "PC",
     "genre": "Przygodowa",
     "dodano": "2026-10-30",
@@ -9081,7 +9081,15 @@
     "author": "VetSpolszczenia",
     "img": "https://cdn.grypopolsku.pl/okladki/shenmue-i-ii-126e5df4.webp",
     "opis": "Ryo Hazuki szuka zabójcy swojego ojca. Klasyczna przygoda z otwartym światem i szczegółowo odwzorowanym życiem codziennym.",
-    "steam": 758330
+    "steam": 758330,
+    "id": "shenmue-i-ii",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    },
+    "aliasy": [
+      "shenmue-i-ii"
+    ]
   },
   {
     "game": "Clive Barker's Hellraiser: Revival",
@@ -17163,7 +17171,7 @@
     "upd": "2026-11-08"
   },
   {
-    "game": "Shenmue III",
+    "game": "Shenmue 3",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -17180,8 +17188,13 @@
     "lore": "https://lorespeak.pl/games/shenmue-iii",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-08"
-    }
+      "dzien": "2026-11-20"
+    },
+    "id": "shenmue-iii",
+    "yt": "https://www.youtube.com/watch?v=lgFX9965Rms",
+    "aliasy": [
+      "shenmue-iii"
+    ]
   },
   {
     "game": "Death's Gambit: Afterlife",

@@ -3797,7 +3797,7 @@
     "game": "Kao Challengers",
     "img": "https://cdn.grypopolsku.pl/okladki/kao-challengers-14c5a069.webp",
     "platform": "Sony PSP",
-    "type": "Napisy",
+    "type": "Dubbing + napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
@@ -3811,7 +3811,7 @@
       "Pixel the Retro"
     ],
     "zmiana": {
-      "kto": "kokos324",
+      "kto": "Harddrive",
       "dzien": "2026-11-20"
     },
     "yt": "https://www.youtube.com/watch?v=u0m6LFqT8SI",
@@ -3834,7 +3834,6 @@
         "dodano": "2026-11-20"
       }
     ],
-    "okladkaPasek": 1,
     "instrPaczka": 1,
     "instr": "Napisy niemal w całości przetłumaczone – z polskimi znakami. Sporadycznie można natrafić na pojedyncze słowa w języku angielskim.\n\nSpolszczenie dostępne jest w dwóch wersjach. Pierwotna wersja, zawierająca wyłącznie polskie napisy, została przygotowana przez **JUSEXE**. Kilka lat później lokalizacja została wzbogacona o polski dubbing, którego autorem jest **Pixel the Retro**.\n\nInstrukcja instalacji pierwszej wersji znajduje się w paczce spolszczenia, natomiast instrukcję instalacji wersji z dubbingiem można znaleźć w linku zamieszczonym poniżej.",
     "zrzuty": [

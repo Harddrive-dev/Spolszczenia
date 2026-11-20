@@ -17586,8 +17586,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/sonic-rivals-a6bfc2fa.webp",
     "upd": "2026-11-10",
     "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-17"
+      "kto": "kokos324",
+      "dzien": "2026-11-20"
     },
     "opis": "Sonic Rivals to dynamiczna gra wyścigowo-platformowa wydana w 2006 roku wyłącznie na konsolę PlayStation Portable (PSP). Za jej produkcję odpowiadało kanadyjskie studio Backbone Entertainment.",
     "tworcy": [
@@ -17602,11 +17602,53 @@
     ],
     "linki": [
       {
-        "t": "🔗 Strona autora",
+        "t": "🔗 Strona ze spolszczeniem",
         "u": "https://shc.zone/entries/expo2023/793"
       }
     ],
-    "instrPaczka": 1
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/1.webp?v=6393e89d",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/1-miniatura.webp?v=e49bf4c1"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/2.webp?v=9f97ba65",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/2-miniatura.webp?v=1e133773"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/3.webp?v=821ac93c",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/3-miniatura.webp?v=42df8c4b"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/4.webp?v=175ae846",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/4-miniatura.webp?v=c38dccf3"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/5.webp?v=5ee4dbb2",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/5-miniatura.webp?v=13f4eb58"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/6.webp?v=f877dc85",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/6-miniatura.webp?v=1c7905a4"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/7.webp?v=941d995d",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/7-miniatura.webp?v=822a00f9"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/8.webp?v=ab7a9052",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/8-miniatura.webp?v=2bf95e37"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/9.webp?v=fe033720",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/9-miniatura.webp?v=b29f90b3"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Dante's Inferno",

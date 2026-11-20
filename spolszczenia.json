@@ -4386,16 +4386,27 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "0.9",
     "author": "sparks",
     "link": "https://grajpopolsku.pl/download/miami-vice-the-game/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji na podstawie serialu „Miami Vice\".",
+    "opis": "Miami Vice: The Game to trzecioosobowa gra akcji na konsolę PSP, inspirowana filmem „Miami Vice” z 2006 roku. Gracz wciela się w detektywów Crocketta i Tubbsa, którzy działając pod przykrywką, infiltrują przestępczy świat Miami i walczą z kartelami narkotykowymi.",
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-16"
-    }
+      "dzien": "2026-11-20"
+    },
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=684"
+      }
+    ],
+    "instrPaczka": 1,
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
+    "tworcy": [
+      "sparks"
+    ]
   },
   {
     "game": "Mickey's Speedway USA",
@@ -22400,7 +22411,7 @@
   },
   {
     "game": "Turok 3: Shadow of Oblivion",
-    "img": "https://cdn.grypopolsku.pl/okladki/turok-3-shadow-of-oblivion-remastered-70ea24f9.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/turok-3-shadow-of-oblivion-9845cd36.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22418,7 +22429,11 @@
         "t": "🔗 Grupa autora na Facebooku",
         "u": "https://www.facebook.com/groups/sdk68/"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "Doom 64",

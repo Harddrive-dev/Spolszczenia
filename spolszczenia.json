@@ -22534,7 +22534,7 @@
   },
   {
     "game": "Doom 64",
-    "img": "https://cdn.grypopolsku.pl/okladki/doom-64-f63528c3.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/doom-64-95e98d81.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22556,11 +22556,15 @@
         "t": "🔗 Grupa autora na Facebooku",
         "u": "https://www.facebook.com/groups/sdk68/"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "Quake (Enhanced)",
-    "img": "https://cdn.grypopolsku.pl/okladki/quake-enhanced-a2db3cbd.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/quake-enhanced-4603fa35.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22582,7 +22586,11 @@
         "t": "🔗 Grupa autora na Facebooku",
         "u": "https://www.facebook.com/groups/sdk68/"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "MADiSON",

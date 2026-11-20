@@ -5742,12 +5742,25 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/download/soldier-of-fortune/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28",
+    "dodano": "2024-06-26",
     "opis": "Strzelanka znana z realistycznego systemu obrażeń. Najemnik walczy z terrorystami.",
-    "img": "https://cdn.grypopolsku.pl/okladki/soldier-of-fortune-99b75f22.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/soldier-of-fortune-99b75f22.webp",
+    "yt": "https://www.youtube.com/watch?v=e7gjEzBUpYo",
+    "upd": "2024-06-26",
+    "tworcy": [
+      "SneakiestDuke68",
+      "PanLimon",
+      "Horseman Otto"
+    ],
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "SOMA",
@@ -5831,12 +5844,20 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/download/star-wars-jedi-knight-mysteries-of-the-sith/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28",
+    "dodano": "2024-07-21",
     "opis": "Dodatek do Jedi Knight z nową historią Kyle'a Katarna i Mary Jade.",
-    "steam": 32390
+    "steam": 32390,
+    "yt": "https://www.youtube.com/watch?v=H_PVTPW_DB4",
+    "upd": "2024-07-21",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Stories Untold",
@@ -7101,11 +7122,24 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/download/vietcong-fist-alpha-red-dawn/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28",
-    "opis": "Pakiet gier z serii Vietcong, w których walczysz w wietnamskiej dżungli."
+    "dodano": "2022-03-21",
+    "opis": "Pakiet gier z serii Vietcong, w których walczysz w wietnamskiej dżungli.",
+    "yt": "https://www.youtube.com/watch?v=2g4n3tYV1ys",
+    "upd": "2022-03-21",
+    "tworcy": [
+      "SneakiestDuke68",
+      "PanLimon",
+      "Mr. Blue"
+    ],
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Vietcong 2",
@@ -7115,11 +7149,23 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
+    "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/download/vietcong-2/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28",
-    "opis": "Kontynuacja strzelanki o wojnie w Wietnamie, z nowymi misjami."
+    "dodano": "2022-04-07",
+    "opis": "Kontynuacja strzelanki o wojnie w Wietnamie, z nowymi misjami.",
+    "yt": "https://www.youtube.com/watch?v=SP170e4Qxdo",
+    "upd": "2022-04-07",
+    "tworcy": [
+      "SneakiestDuke68",
+      "PanLimon"
+    ],
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Villgust",
@@ -17553,7 +17599,16 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4361",
     "dodano": "2025-06-04",
     "steam": 1678430,
-    "img": "https://cdn.grypopolsku.pl/okladki/powerslave-exhumed-ae3ab420.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/powerslave-exhumed-ae3ab420.webp",
+    "yt": "https://www.youtube.com/watch?v=vRoszySf8Rs",
+    "upd": "2025-06-04",
+    "opis": "PowerSlave Exhumed to odświeżona przez Nightdive Studios wersja klasycznej strzelanki pierwszoosobowej PowerSlave. Akcja toczy się w starożytnym Egipcie, w okolicach Karnaku, gdzie gracz walczy z obcymi najeźdźcami i ożywionymi mumiami. Rozgrywka łączy strzelanie z eksploracją i zdobywaniem nowych umiejętności, które otwierają dostęp do kolejnych obszarów. Wersja Exhumed bazuje na wydaniu konsolowym gry.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Resident Evil 2",
@@ -19291,12 +19346,25 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "—",
+    "ver": "1.3",
     "genre": "Strzelanka",
     "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3451",
-    "dodano": "2019-06-16",
-    "img": "https://cdn.grypopolsku.pl/okladki/no-one-lives-forever-2-77bdb902.webp"
+    "dodano": "2019-06-13",
+    "img": "https://cdn.grypopolsku.pl/okladki/no-one-lives-forever-2-77bdb902.webp",
+    "yt": "https://www.youtube.com/watch?v=zFJWxcpZWFA",
+    "upd": "2019-06-13",
+    "tworcy": [
+      "SneakiestDuke68",
+      "Mr.Blue"
+    ],
+    "opis": "No One Lives Forever 2: A Spy in H.A.R.M.'s Way to strzelanka pierwszoosobowa studia Monolith z 2002 roku. Gracz ponownie wciela się w Cate Archer, agentkę organizacji UNITY, która walczy z przestępczą siecią H.A.R.M. Gra łączy akcję i skradanie z humorem w stylu szpiegowskich filmów z lat 60. Misje prowadzą m.in. do Japonii, na Syberię i do Indii.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Cry of Fear",
@@ -21414,15 +21482,21 @@
     "link": "https://drive.google.com/file/d/11G416zrCPpHJgB7OJy-8wHgWBVhHMBKN/view",
     "yt": "https://www.youtube.com/watch?v=65Rs4JXVXAI",
     "genre": "Strzelanka",
-    "dodano": "2026-11-13",
+    "dodano": "2026-11-08",
     "img": "https://cdn.grypopolsku.pl/okladki/forsaken-remastered-bb70c478.webp",
     "opis": "Forsaken Remastered to klasyczna strzelanka pierwszoosobowa (FPS) z pełną swobodą ruchu w trzech wymiarach (tzw. 6DoF – Six Degrees of Freedom), będąca odświeżoną wersją kultowej gry z 1998 roku (często porównywanej do serii Descent).",
     "steam": 668980,
-    "upd": "2026-11-13",
+    "upd": "2026-11-08",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
-    }
+    },
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Crimson Moon",
@@ -22247,5 +22321,181 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Contract J.A.C.K.",
+    "img": "https://cdn2.steamgriddb.com/thumb/bef535e41d7882d056dec209c1716532.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1K3-Xm3mWsBodKkAPDgjH-KOtuObul8xH/view",
+    "genre": "Strzelanka",
+    "dodano": "2019-09-13",
+    "upd": "2019-09-13",
+    "yt": "https://www.youtube.com/watch?v=U7LCV1mzKW4",
+    "opis": "Contract J.A.C.K. to strzelanka pierwszoosobowa studia Monolith z 2003 roku, osadzona w świecie serii No One Lives Forever. Akcja rozgrywa się przed wydarzeniami z No One Lives Forever 2. Gracz wciela się w Johna Jacka, najemnika wynajętego przez organizację H.A.R.M. do rozprawienia się z konkurencyjną grupą przestępczą. Gra stawia na szybką, liniową akcję i dużą liczbę starć z przeciwnikami.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Test Drive Unlimited (TDU Platinum mod)",
+    "img": "https://cdn2.steamgriddb.com/thumb/901b9035ad14b7027b68234af8ceb739.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "2.1",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1Tr6asHGv1l0FV2yfwer8wyR3TZKUnaB_/view",
+    "genre": "Sportowa / wyścigi",
+    "dodano": "2020-03-08",
+    "upd": "2020-07-13",
+    "yt": "https://www.youtube.com/watch?v=uBsuHqs1Fxk",
+    "opis": "Test Drive Unlimited to wyścigowa gra z otwartym światem z 2006 roku, której akcja toczy się na hawajskiej wyspie Oahu. Gracz może swobodnie jeździć po ponad 1600 km dróg, brać udział w wyścigach i kolekcjonować samochody oraz motocykle. TDU Platinum to rozbudowana modyfikacja fanowska, która dodaje do gry nowe pojazdy i liczne poprawki. Spolszczenie przygotowano z myślą o grze z tym modem.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Return to Castle Wolfenstein (RealRTCW)",
+    "img": "https://cdn2.steamgriddb.com/thumb/93207fd350112b3a0d70fb9509aff4c5.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1eqng26O3syqkfNLQHil66b51cDqwo7Y_/view",
+    "genre": "Strzelanka",
+    "dodano": "2023-10-16",
+    "upd": "2023-10-16",
+    "yt": "https://www.youtube.com/watch?v=rl65maz7QBU",
+    "opis": "Return to Castle Wolfenstein to klasyczna strzelanka pierwszoosobowa z 2001 roku, w której agent B.J. Blazkowicz walczy z nazistami i ich okultystycznymi eksperymentami. Kampania prowadzi przez zamki, laboratoria i bazy wojskowe. RealRTCW to rozbudowana modyfikacja, która odświeża grę: dodaje nowe bronie, poprawia oprawę i czyni rozgrywkę bardziej realistyczną. Spolszczenie przygotowano z myślą o grze z RealRTCW.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Bandits: Phoenix Rising",
+    "img": "https://cdn2.steamgriddb.com/thumb/f72edc124c9e73b8fb56feeabc134703.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1ylHczooVm9kysu5Uqj3OmS8fI478-7PX/view",
+    "genre": "Akcja",
+    "dodano": "2025-03-24",
+    "upd": "2025-03-24",
+    "yt": "https://www.youtube.com/watch?v=Bv78LbwfCJ8",
+    "opis": "Bandits: Phoenix Rising to gra akcji szwedzkiego studia GRIN z 2002 roku, w której walczy się uzbrojonymi pojazdami. Akcja toczy się w postapokaliptycznym świecie, a gracz kieruje duetem bandytów. Misje polegają na pościgach, napadach na konwoje i walkach z innymi gangami. Spolszczenie jest dostosowane do wersji gry z patchem 1.1.1.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Soldier of Fortune II: Double Helix – Gold Edition",
+    "img": "https://cdn2.steamgriddb.com/thumb/726908dab676d7ecd2bcac74defd8b19.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1VCD0Dt0boIE00k_bsCdBEEDMArrpR-mT/view",
+    "genre": "Strzelanka",
+    "dodano": "2025-03-25",
+    "upd": "2025-03-25",
+    "yt": "https://www.youtube.com/watch?v=fLUWbGAG1tg",
+    "opis": "Soldier of Fortune II: Double Helix to strzelanka pierwszoosobowa studia Raven Software z 2002 roku. Gracz wciela się w najemnika Johna Mullinsa, który trafia na trop spisku związanego z bronią biologiczną. Gra słynie z rozbudowanego systemu obrażeń i misji w różnych zakątkach świata, od Kolumbii po Hongkong. Wydanie Gold Edition zawiera dodatkowe mapy do trybu wieloosobowego i poprawki.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Turok 3: Shadow of Oblivion Remastered",
+    "img": "https://cdn2.steamgriddb.com/thumb/c369ccfb915604a7b770dbf4d6840119.png",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1rO_g73ZjGaSewMYIIbfYswwX0BPIaXeV/view",
+    "genre": "Strzelanka",
+    "dodano": "2025-04-11",
+    "upd": "2025-04-11",
+    "yt": "https://www.youtube.com/watch?v=DckMZdNpbE8",
+    "opis": "Turok 3: Shadow of Oblivion to strzelanka pierwszoosobowa z 2000 roku, wydana pierwotnie na konsolę Nintendo 64. Wersja Remastered od Nightdive Studios przenosi grę na PC z odświeżoną grafiką i nowoczesnym sterowaniem. Gracz wciela się w Josepha lub Danielle Fireseed, którzy stają do walki z pradawną siłą zwaną Oblivion. Rozgrywka łączy strzelanie z eksploracją rozległych poziomów.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Doom 64",
+    "img": "https://cdn2.steamgriddb.com/thumb/26617546c2c198ff22155db69d49e1f8.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1B6zkLduM-Jvf0dQR1sVJTsON9afL7qpI/view",
+    "genre": "Strzelanka",
+    "dodano": "2025-05-29",
+    "upd": "2025-05-29",
+    "yt": "https://www.youtube.com/watch?v=CU4JXMibUK0",
+    "opis": "Doom 64 to strzelanka pierwszoosobowa z 1997 roku, wydana pierwotnie na Nintendo 64 jako kontynuacja pierwszych części serii Doom. Gra wyróżnia się mroczniejszym klimatem, nowym wyglądem przeciwników i zupełnie nowymi poziomami. W 2020 roku studio Nightdive wydało odświeżoną wersję na PC i konsole. Gracz ponownie walczy z hordami demonów, by powstrzymać inwazję z piekła.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
+  },
+  {
+    "game": "Quake (Enhanced)",
+    "img": "https://cdn2.steamgriddb.com/thumb/6e08800fb4eeff487ee9d1a5e61ec500.jpg",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "SneakiestDuke68",
+    "link": "https://drive.google.com/file/d/1rk2Az6trU00e9CYVhVLHfSQkXcTL_xP6/view",
+    "genre": "Strzelanka",
+    "dodano": "2025-06-04",
+    "upd": "2025-06-04",
+    "yt": "https://www.youtube.com/watch?v=Eu7YpGBEMWg",
+    "opis": "Quake to klasyczna strzelanka pierwszoosobowa studia id Software z 1996 roku, jedna z pierwszych gier w pełni trójwymiarowych. Gracz przemierza mroczne, gotyckie poziomy i walczy z potworami z innego wymiaru. Wersja Enhanced z 2021 roku, przygotowana przez Nightdive Studios, odświeża oprawę i zawiera dodatki do gry. Spolszczenie przygotowano z myślą o tej wersji.",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   }
 ]

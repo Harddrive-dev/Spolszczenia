@@ -217,7 +217,13 @@
     "genre": "Horror",
     "lore": "https://lorespeak.pl/games/alice-madness-returns",
     "opis": "Kontynuacja American McGee's Alice. Zniszczona psychicznie Alicja wraca do Krainy Czarów, by odkryć, co dzieje się z jej wspomnieniami.",
-    "steam": 19680
+    "steam": 19680,
+    "yt": "https://www.youtube.com/watch?v=TD9aTM67JxU",
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "Castlevania: Lords of Shadow",

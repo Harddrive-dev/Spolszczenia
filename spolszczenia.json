@@ -283,7 +283,24 @@
     "link": "https://gamesub.pl/spolszczenie-costume-quest/",
     "genre": "RPG",
     "opis": "Dzieciaki w Halloween zmieniają się w wielkie bohaterów swoich kostiumów i ruszają na ratunek porwanemu rodzeństwu. Lekkie RPG z turową walką.",
-    "steam": 115100
+    "steam": 115100,
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "jasiek_barca",
+      "Sledziu_w",
+      "WinegaR",
+      "Vielokont",
+      "Piter",
+      "vhs",
+      "ARKaM",
+      "cienislaw"
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "Enslaved: Odyssey to the West",

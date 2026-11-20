@@ -4406,6 +4406,47 @@
     "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
     "tworcy": [
       "sparks"
+    ],
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/1.webp?v=c7551bb6",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/1-miniatura.webp?v=d5d46a93"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/2.webp?v=b20121ae",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/2-miniatura.webp?v=4a010bc4"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/3.webp?v=2bb0eadf",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/3-miniatura.webp?v=09800cb3"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/4.webp?v=90eec158",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/4-miniatura.webp?v=a9f6b678"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/5.webp?v=b16932b6",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/5-miniatura.webp?v=e4d1aa6b"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/6.webp?v=cd87e568",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/6-miniatura.webp?v=8c144164"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/7.webp?v=d1303668",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/7-miniatura.webp?v=d1d2161e"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/8.webp?v=d8c5c498",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/8-miniatura.webp?v=8331a417"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/9.webp?v=1d0cafab",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/miami-vice-the-game/9-miniatura.webp?v=0c777456"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
     ]
   },
   {
@@ -19370,7 +19411,7 @@
     "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3451",
     "dodano": "2019-06-13",
-    "img": "https://cdn.grypopolsku.pl/okladki/no-one-lives-forever-2-77bdb902.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/no-one-lives-forever-2-73efd74b.webp",
     "yt": "https://www.youtube.com/watch?v=zFJWxcpZWFA",
     "upd": "2019-06-13",
     "tworcy": [
@@ -19383,7 +19424,11 @@
         "t": "🔗 Grupa autora na Facebooku",
         "u": "https://www.facebook.com/groups/sdk68/"
       }
-    ]
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "Cry of Fear",

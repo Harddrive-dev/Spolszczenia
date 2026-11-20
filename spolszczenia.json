@@ -22303,28 +22303,8 @@
     "upd": "2026-11-20"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Contract J.A.C.K.",
-    "img": "https://cdn2.steamgriddb.com/thumb/bef535e41d7882d056dec209c1716532.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/contract-j-a-c-k-a2be7fc2.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22346,7 +22326,7 @@
   },
   {
     "game": "Test Drive Unlimited (TDU Platinum mod)",
-    "img": "https://cdn2.steamgriddb.com/thumb/901b9035ad14b7027b68234af8ceb739.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/test-drive-unlimited-tdu-platinum-mod-bdc9f267.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22368,7 +22348,7 @@
   },
   {
     "game": "Return to Castle Wolfenstein (RealRTCW)",
-    "img": "https://cdn2.steamgriddb.com/thumb/93207fd350112b3a0d70fb9509aff4c5.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/return-to-castle-wolfenstein-realrtcw-5df047f0.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22390,7 +22370,7 @@
   },
   {
     "game": "Bandits: Phoenix Rising",
-    "img": "https://cdn2.steamgriddb.com/thumb/f72edc124c9e73b8fb56feeabc134703.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/bandits-phoenix-rising-8a357af1.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22412,7 +22392,7 @@
   },
   {
     "game": "Soldier of Fortune II: Double Helix – Gold Edition",
-    "img": "https://cdn2.steamgriddb.com/thumb/726908dab676d7ecd2bcac74defd8b19.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/soldier-of-fortune-ii-double-helix-gold-edition-f8008eac.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22434,7 +22414,7 @@
   },
   {
     "game": "Turok 3: Shadow of Oblivion Remastered",
-    "img": "https://cdn2.steamgriddb.com/thumb/c369ccfb915604a7b770dbf4d6840119.png",
+    "img": "https://cdn.grypopolsku.pl/okladki/turok-3-shadow-of-oblivion-remastered-70ea24f9.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22456,7 +22436,7 @@
   },
   {
     "game": "Doom 64",
-    "img": "https://cdn2.steamgriddb.com/thumb/26617546c2c198ff22155db69d49e1f8.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/doom-64-f63528c3.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22478,7 +22458,7 @@
   },
   {
     "game": "Quake (Enhanced)",
-    "img": "https://cdn2.steamgriddb.com/thumb/6e08800fb4eeff487ee9d1a5e61ec500.jpg",
+    "img": "https://cdn.grypopolsku.pl/okladki/quake-enhanced-a2db3cbd.webp",
     "platform": "PC",
     "type": "Napisy",
     "status": "Gotowe",
@@ -22497,5 +22477,25 @@
         "u": "https://www.facebook.com/groups/sdk68/"
       }
     ]
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

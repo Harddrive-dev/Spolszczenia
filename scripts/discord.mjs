@@ -65,7 +65,7 @@ function catalogEvents() {
     const nSp = (g.spolszczenia || []).filter(x => !(o.spolszczenia || []).some(y => y && x && y.id === x.id));
     if (nSp.length && nSp.some(x => x.link)) {
       const s = nSp[0];
-      const dub = s.type === "Dubbing";
+      const dub = /^Dubbing/.test(s.type || "");
       // pola (autor, zakres, status, wersja) opisują nowe spolszczenie, a nie główne
       const gs = { ...g, author: s.author, spolszczenia: [], type: s.type, status: s.status, ver: s.ver, prog: s.prog, pl: undefined };
       ev.push(gameEmbed(gs, dub ? "dub" : "sp", `${dub ? "Nowy dubbing" : "Kolejne spolszczenie"}${s.author ? ` od **${s.author}**` : ""}${s.status ? ` (${s.status})` : ""}.`));

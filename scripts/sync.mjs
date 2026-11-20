@@ -13,7 +13,7 @@ const rows=await res.json();
 const CZAS=new Date().toISOString(); // do tej chwili zmiany z bazy są przerobione – strona (index.html) pokazuje od razu tylko nowsze zmiany okładek
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
 for(const g of list)if(g.status==="W toku")g.status="Beta";
-const TYPES=["Napisy","Pełne","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
+const TYPES=["Napisy","Dubbing + napisy","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
 // Opiekun sekcji (rola „opiekun”, np. tylko PSP): przy jego poprawkach baza wpisuje data.zakres = lista platform.

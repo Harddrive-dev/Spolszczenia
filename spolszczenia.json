@@ -609,7 +609,13 @@
     "author": "wasiOo, Manuel Czaszka",
     "upd": "2021-04-03",
     "link": "https://grajpopolsku.pl/download/alice-in-wonderland/",
-    "genre": "Horror"
+    "genre": "Horror",
+    "tworcy": [
+      "wasiOo",
+      "Manuel Czaszka",
+      "twig",
+      "mziab"
+    ]
   },
   {
     "game": "Alien Shooter TD",
@@ -967,7 +973,16 @@
     "link": "https://grajpopolsku.pl/download/beneath-a-steel-sky/",
     "genre": "Przygodowa",
     "opis": "Klasyczna przygodówka point and click w dystopijnym świecie. Robert Foster, wychowany poza miastem, próbuje odkryć spisek w Union City.",
-    "steam": 1368340
+    "steam": 1368340,
+    "tworcy": [
+      "Machiner",
+      "Manuel Czaszka",
+      "Rael",
+      "mziab",
+      "twig",
+      "bemberg",
+      "Johnny"
+    ]
   },
   {
     "game": "Big Nose the Caveman",
@@ -1041,7 +1056,12 @@
     "genre": "Strzelanka",
     "lore": "https://lorespeak.pl/games/bioshock-remastered",
     "opis": "Odświeżona wersja pierwszego BioShocka. Rapture w lepszej grafice, z tą samą mroczną fabułą.",
-    "steam": 409710
+    "steam": 409710,
+    "tworcy": [
+      "dzaggiel",
+      "Majestic",
+      "VenomPlay"
+    ]
   },
   {
     "game": "Blacksad: Under the Skin",
@@ -1056,7 +1076,13 @@
     "link": "https://grajpopolsku.pl/download/blacksad-under-the-skin/",
     "genre": "Przygodowa",
     "opis": "Kotowaty detektyw John Blacksad bada sprawę w mrocznym, noirowym świecie zwierzęcych bohaterów. Przygodówka według komiksu.",
-    "steam": 1003890
+    "steam": 1003890,
+    "tworcy": [
+      "bax001",
+      "raf001",
+      "matiko13",
+      "Woczok"
+    ]
   },
   {
     "game": "Bloodrayne",
@@ -1116,7 +1142,16 @@
     "link": "https://grajpopolsku.pl/download/bloodrayne-2-terminal-cut/",
     "genre": "Akcja",
     "opis": "Rozszerzona wersja BloodRayne 2 z dodatkowymi poprawkami i zawartością. Rayne walczy z klanami wampirów.",
-    "steam": 1373550
+    "steam": 1373550,
+    "tworcy": [
+      "Śledziks",
+      "Borsuczyca",
+      "Wilq",
+      "twig",
+      "Manuel Czaszka",
+      "Norek",
+      "Wózuś"
+    ]
   },
   {
     "game": "Borderlands The Zombie Island of Dr. Ned",
@@ -1130,7 +1165,15 @@
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/borderlands-the-zombie-island-of-dr-ned/",
     "genre": "Strzelanka",
-    "opis": "Dodatek do pierwszego Borderlands. Pandora zostaje opanowana przez zombie, a ty musisz stawić im czoła."
+    "opis": "Dodatek do pierwszego Borderlands. Pandora zostaje opanowana przez zombie, a ty musisz stawić im czoła.",
+    "tworcy": [
+      "Norek",
+      "Manuel Czaszka",
+      "Machiner",
+      "GimmyBreaker",
+      "mziab",
+      "roobin"
+    ]
   },
   {
     "game": "Broken Age",
@@ -1145,7 +1188,16 @@
     "link": "https://grajpopolsku.pl/download/broken-age/",
     "genre": "Przygodowa",
     "opis": "Przygodówka w baśniowej oprawie. Dwoje nastolatków, Vella i Shay, żyją w odmiennych światach, których losy się splatają. Reżyserował Tim Schafer.",
-    "steam": 232790
+    "steam": 232790,
+    "tworcy": [
+      "Śledziks",
+      "sb8gapi",
+      "TheoPL",
+      "DirkPitt1",
+      "GreenScream",
+      "geras",
+      "mziab"
+    ]
   },
   {
     "game": "Broken Sword 2,5",
@@ -1173,7 +1225,16 @@
     "upd": "2024-10-12",
     "link": "https://grajpopolsku.pl/download/broken-sword-directors-cut/",
     "genre": "Przygodowa",
-    "opis": "Klasyczna przygodówka. George Stobbart wraz z Nico prowadzi śledztwo w sprawie spisku Templariuszy w Paryżu."
+    "opis": "Klasyczna przygodówka. George Stobbart wraz z Nico prowadzi śledztwo w sprawie spisku Templariuszy w Paryżu.",
+    "tworcy": [
+      "Manuel Czaszka",
+      "mendosa",
+      "YaReX",
+      "Przemo",
+      "Michał Rzeźnik",
+      "goliat",
+      "mziab"
+    ]
   },
   {
     "game": "Broken Sword: The Shadow of the Templars",
@@ -1202,7 +1263,10 @@
     "upd": "2025-01-07",
     "link": "https://grajpopolsku.pl/download/bucky-ohare/",
     "genre": "Platformówka",
-    "opis": "Platformówka Konami z kosmicznym zającem Buckym O'Hare, który walczy z toadami."
+    "opis": "Platformówka Konami z kosmicznym zającem Buckym O'Hare, który walczy z toadami.",
+    "tworcy": [
+      "Markiz"
+    ]
   },
   {
     "game": "C-12: Final Resistance [PSX]",
@@ -1312,7 +1376,17 @@
     "link": "https://grajpopolsku.pl/download/castlevania-lords-of-shadow-ultimate-edition/",
     "genre": "Akcja",
     "opis": "Pełne wydanie gry Castlevania: Lords of Shadow z dodatkowymi rozdziałami fabuły.",
-    "steam": 234080
+    "steam": 234080,
+    "tworcy": [
+      "Vielokont",
+      "Sledziu_w",
+      "jasiek_barca",
+      "Piter",
+      "vhs",
+      "ARKaM",
+      "Tortain",
+      "cienislaw"
+    ]
   },
   {
     "game": "Celeste",
@@ -1327,7 +1401,10 @@
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Madeline wspina się na górę Celeste i mierzy z własnymi lękami. Wymagająca platformówka z przejmującą historią.",
-    "steam": 504230
+    "steam": 504230,
+    "tworcy": [
+      "Valthemar"
+    ]
   },
   {
     "game": "Chaser",
@@ -1356,7 +1433,10 @@
     "link": "https://grajpopolsku.pl/download/chicken-run/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra na podstawie filmu animowanego, w której kury próbują uciec z farmy."
+    "opis": "Gra na podstawie filmu animowanego, w której kury próbują uciec z farmy.",
+    "tworcy": [
+      "Tobi-Srobi"
+    ]
   },
   {
     "game": "Child of Light",
@@ -1371,7 +1451,11 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Aurora, mała księżniczka, trafia do baśniowej krainy Lemuria. RPG z malowaną grafiką i turową walką.",
-    "steam": 256290
+    "steam": 256290,
+    "tworcy": [
+      "goliat",
+      "karhorus"
+    ]
   },
   {
     "game": "Chrono Trigger",
@@ -1385,7 +1469,10 @@
     "link": "https://grajpopolsku.pl/download/chrono-trigger/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczne japońskie RPG o podróżach w czasie. Crono i jego przyjaciele próbują zapobiec zagładzie świata."
+    "opis": "Klasyczne japońskie RPG o podróżach w czasie. Crono i jego przyjaciele próbują zapobiec zagładzie świata.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Citadels",
@@ -1399,7 +1486,11 @@
     "dodano": "2026-10-28",
     "genre": "Strategia",
     "steam": 238870,
-    "img": "https://cdn.grypopolsku.pl/okladki/citadels-4d5d5e69.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/citadels-4d5d5e69.webp",
+    "tworcy": [
+      "Czarnobrody",
+      "ridzio"
+    ]
   },
   {
     "game": "Clive Baker's Undying",
@@ -1413,7 +1504,11 @@
     "link": "https://grajpopolsku.pl/download/clive-bakers-undying/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Horror pierwszoosobowy według pomysłu Clive'a Barkera. Detektyw zjawisk paranormalnych odkrywa mroczną tajemnicę rodziny."
+    "opis": "Horror pierwszoosobowy według pomysłu Clive'a Barkera. Detektyw zjawisk paranormalnych odkrywa mroczną tajemnicę rodziny.",
+    "tworcy": [
+      "goliat",
+      "YaReX"
+    ]
   },
   {
     "game": "Cognition: An Erica Reed Thriller (GOG)",
@@ -1428,7 +1523,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka kryminalna, w której agentka FBI Erica Reed ściga seryjnego mordercę, wykorzystując zdolność odczytywania śladów z przeszłości.",
-    "steam": 242780
+    "steam": 242780,
+    "tworcy": [
+      "Annica88",
+      "Pikor"
+    ]
   },
   {
     "game": "Cognition: An Erica Reed Thriller (Steam)",
@@ -1443,7 +1542,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka kryminalna, w której agentka FBI Erica Reed ściga seryjnego mordercę, wykorzystując zdolność odczytywania śladów z przeszłości.",
-    "steam": 242780
+    "steam": 242780,
+    "tworcy": [
+      "Annica88",
+      "Pikor"
+    ]
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (GOG)",
@@ -1457,7 +1560,11 @@
     "link": "https://grajpopolsku.pl/download/cognition_ep2_gog/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę."
+    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę.",
+    "tworcy": [
+      "Annica88",
+      "Pikor"
+    ]
   },
   {
     "game": "Cognition: An Erica Reed Thriller – epizod II (Steam)",
@@ -1471,7 +1578,11 @@
     "link": "https://grajpopolsku.pl/download/cognition_ep2_steam/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę."
+    "opis": "Druga część przygody agentki FBI Eriki Reed, w której musi powstrzymać kolejnego przestępcę.",
+    "tworcy": [
+      "Annica88",
+      "Pikor"
+    ]
   },
   {
     "game": "Conarium",
@@ -1486,7 +1597,10 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Horror przygodowy inspirowany prozą Lovecrafta. Naukowiec bada tajemniczą wyprawę na Antarktydzie.",
-    "steam": 313780
+    "steam": 313780,
+    "tworcy": [
+      "Valthemar"
+    ]
   },
   {
     "game": "Condemned: Criminal Origins",
@@ -1515,7 +1629,13 @@
     "genre": "Symulacja",
     "dodano": "2026-10-28",
     "opis": "Gra, w której zakładasz własną firmę budowlaną i zarządzasz nią, wznosząc domy i walcząc z konkurencją.",
-    "steam": 579020
+    "steam": 579020,
+    "tworcy": [
+      "BuTcHeR",
+      "Manuel Czaszka",
+      "mziab",
+      "bemberg"
+    ]
   },
   {
     "game": "Contra",
@@ -1608,7 +1728,10 @@
     "link": "https://grajpopolsku.pl/download/cyber-knight/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG science fiction na konsolę Super Nintendo."
+    "opis": "RPG science fiction na konsolę Super Nintendo.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Cyber Knight II",
@@ -1621,7 +1744,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/cyber-knight-ii/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Darkwing Duck",
@@ -1649,7 +1775,10 @@
     "link": "https://grajpopolsku.pl/download/dave-mirra-2-freestyle-bmx/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Gra sportowa o jeździe na BMX. Wykonuj triki w kilku miejscach, zdobywając punkty."
+    "opis": "Gra sportowa o jeździe na BMX. Wykonuj triki w kilku miejscach, zdobywając punkty.",
+    "tworcy": [
+      "sparks"
+    ]
   },
   {
     "game": "Day of the Tentacle",
@@ -1663,7 +1792,17 @@
     "link": "https://grajpopolsku.pl/download/day-of-the-tentacle/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna przygodówka LucasArts. Trzech przyjaciół podróżuje w czasie, żeby powstrzymać szalonego Purpurowego Macka."
+    "opis": "Klasyczna przygodówka LucasArts. Trzech przyjaciół podróżuje w czasie, żeby powstrzymać szalonego Purpurowego Macka.",
+    "tworcy": [
+      "Machiner",
+      "Rael",
+      "Johnny",
+      "Norek",
+      "mendosa",
+      "Manuel Czaszka",
+      "Vicek",
+      "mziab"
+    ]
   },
   {
     "game": "Day of the Tentacle Remastered",
@@ -1749,7 +1888,15 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Isaac Clarke walczy z nekromorfami na Tytanie. Kontynuacja kosmicznego horroru.",
-    "steam": 47780
+    "steam": 47780,
+    "tworcy": [
+      "Manuel Czaszka",
+      "twig",
+      "Machiner",
+      "Norek",
+      "ffgriever",
+      "rysiu"
+    ]
   },
   {
     "game": "Dead Space 3",
@@ -1764,7 +1911,25 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Isaac Clarke trafia na lodową planetę, gdzie szuka źródła zagrożenia. Trzecia część kosmicznego horroru.",
-    "steam": 1238060
+    "steam": 1238060,
+    "tworcy": [
+      "ffgriever",
+      "mziab",
+      "cienislaw",
+      "Nostaliusz",
+      "Norek",
+      "Bartek Musajew",
+      "GimmyBreaker",
+      "Machiner",
+      "Harrolfo",
+      "kilos53",
+      "Natalia Gałuszkiewicz",
+      "jasiek_barca",
+      "ARKaM",
+      "rysiu",
+      "Manuel Czaszka",
+      "voythas"
+    ]
   },
   {
     "game": "Deadlight",
@@ -1779,7 +1944,15 @@
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Platformówka z elementami horroru. Bohater przemierza Seattle po apokalipsie zombie.",
-    "steam": 211400
+    "steam": 211400,
+    "tworcy": [
+      "Manuel Czaszka",
+      "Norek",
+      "Izzie",
+      "kaem",
+      "mziab",
+      "Andrzej Dominowski"
+    ]
   },
   {
     "game": "Deadlight: Director's Cut",
@@ -1794,7 +1967,16 @@
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Rozszerzona wersja Deadlight z dodatkowymi rozdziałami i trybami.",
-    "steam": 423950
+    "steam": 423950,
+    "tworcy": [
+      "Manuel Czaszka",
+      "Norek",
+      "Izzie",
+      "Talaith",
+      "kaem",
+      "mziab",
+      "Andrzej Dominowski"
+    ]
   },
   {
     "game": "Deadpool",
@@ -1828,7 +2010,10 @@
     "link": "https://grajpopolsku.pl/download/dementium-2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Horror pierwszoosobowy na DS. Bohater, uwięziony w szpitalu psychiatrycznym, musi przeżyć."
+    "opis": "Horror pierwszoosobowy na DS. Bohater, uwięziony w szpitalu psychiatrycznym, musi przeżyć.",
+    "tworcy": [
+      "Cierpa"
+    ]
   },
   {
     "game": "Dementium: The Ward",
@@ -1842,7 +2027,10 @@
     "link": "https://grajpopolsku.pl/download/dementium-the-ward/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Horror pierwszoosobowy na konsolę DS. Bohater budzi się w ponurym szpitalu i próbuje ujść z życiem."
+    "opis": "Horror pierwszoosobowy na konsolę DS. Bohater budzi się w ponurym szpitalu i próbuje ujść z życiem.",
+    "tworcy": [
+      "Cierpa"
+    ]
   },
   {
     "game": "Dexter's Laboratory – Mandark's Lab [PSX]",
@@ -1874,7 +2062,26 @@
     "link": "https://grajpopolsku.pl/download/diablo/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo."
+    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo.",
+    "tworcy": [
+      "Noktis",
+      "Sznyrak",
+      "Sarlack",
+      "Baxx",
+      "Sadi",
+      "Helmer",
+      "Marek Walczak",
+      "Phea",
+      "Nenn",
+      "Błażej Parda",
+      "WiA",
+      "Michał Kaim",
+      "Iwona Dudek",
+      "Dandrov",
+      "Mrurk",
+      "Merry Ś.",
+      "Haxite (HCH)"
+    ]
   },
   {
     "game": "Diablo (GOG)",
@@ -1888,7 +2095,26 @@
     "link": "https://grajpopolsku.pl/download/diablo-gog/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo."
+    "opis": "Klasyczna gra RPG akcji. Bohater schodzi do podziemi pod miastem Tristram, by pokonać Diablo.",
+    "tworcy": [
+      "Noktis",
+      "Sznyrak",
+      "Sarlack",
+      "Baxx",
+      "Sadi",
+      "Helmer",
+      "Marek Walczak",
+      "Phea",
+      "Nenn",
+      "Błażej Parda",
+      "WiA",
+      "Michał Kaim",
+      "Iwona Dudek",
+      "Dandrov",
+      "Mrurk",
+      "Merry Ś.",
+      "Haxite (HCH)"
+    ]
   },
   {
     "game": "Dink Smallwood HD",
@@ -1945,7 +2171,16 @@
     "link": "https://grajpopolsku.pl/download/dino-crisis-2-psx/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Regina i Dylan trafiają do świata dinozaurów. Kontynuacja Dino Crisis z większym naciskiem na akcję."
+    "opis": "Regina i Dylan trafiają do świata dinozaurów. Kontynuacja Dino Crisis z większym naciskiem na akcję.",
+    "tworcy": [
+      "krzys837",
+      "Chytry",
+      "TTEMMA",
+      "jxp",
+      "W3trace",
+      "Gemini",
+      "Mr2"
+    ]
   },
   {
     "game": "Discworld",
@@ -1959,7 +2194,12 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka point and click w świecie Terry'ego Pratchetta. Rincewind, nieudolny czarodziej, próbuje uratować Świat Dysku.",
-    "img": "https://cdn.grypopolsku.pl/okladki/discworld-a2147a96.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/discworld-a2147a96.webp",
+    "tworcy": [
+      "Johnny",
+      "Manuel Czaszka",
+      "twig"
+    ]
   },
   {
     "game": "Dizzy The Adventurer",
@@ -2000,7 +2240,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/donald-duck-goin-quackers/",
     "genre": "Platformówka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "aRPI"
+    ]
   },
   {
     "game": "Donkey Kong 3",
@@ -2014,7 +2257,10 @@
     "link": "https://grajpopolsku.pl/download/donkey-kong-3/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra zręcznościowa Nintendo, w której Mario znów staje przeciwko Donkey Kongowi."
+    "opis": "Klasyczna gra zręcznościowa Nintendo, w której Mario znów staje przeciwko Donkey Kongowi.",
+    "tworcy": [
+      "sparks"
+    ]
   },
   {
     "game": "Doom",
@@ -2028,7 +2274,10 @@
     "link": "https://grajpopolsku.pl/download/doom/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Wersja kultowej strzelanki na konsolę PlayStation. Marines walczą z demonami na Marsie."
+    "opis": "Wersja kultowej strzelanki na konsolę PlayStation. Marines walczą z demonami na Marsie.",
+    "tworcy": [
+      "Gnapek"
+    ]
   },
   {
     "game": "Downtown – Nekketsu Koushin Kyoku – Soreyuke Daiundoukai",
@@ -2068,7 +2317,13 @@
     "link": "https://grajpopolsku.pl/download/dragon-ball-advanced-adventure/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Gra z uniwersum Dragon Ball na konsolę GBA. Bohaterowie walczą z wrogami i rozwijają swoje moce."
+    "opis": "Gra z uniwersum Dragon Ball na konsolę GBA. Bohaterowie walczą z wrogami i rozwijają swoje moce.",
+    "tworcy": [
+      "BezNazwy",
+      "mziab",
+      "Wini",
+      "bemberg"
+    ]
   },
   {
     "game": "Dragon Ball Legacy of Goku",
@@ -2096,7 +2351,10 @@
     "link": "https://grajpopolsku.pl/download/dragon-ball-z-legend-of-the-super-saiyan/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Bijatyka z postaciami z uniwersum Dragon Ball Z na Super Nintendo."
+    "opis": "Bijatyka z postaciami z uniwersum Dragon Ball Z na Super Nintendo.",
+    "tworcy": [
+      "cin25"
+    ]
   },
   {
     "game": "Dragon's Dogma: Dark Arisen",
@@ -2111,7 +2369,11 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Akcja RPG w otwartym świecie. Zostajesz Arisenem i mierzysz się z olbrzymimi potworami u boku pionów.",
-    "steam": 367500
+    "steam": 367500,
+    "tworcy": [
+      "mateu990",
+      "goliat"
+    ]
   },
   {
     "game": "Drawn 2: Dark Flight",
@@ -2154,7 +2416,27 @@
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-linux/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [MacOSX x86-64] (Humble Bundle)",
@@ -2168,7 +2450,27 @@
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-mac/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Humble Bundle)",
@@ -2182,7 +2484,27 @@
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-32bit-hb/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-32] (Steam, GOG)",
@@ -2197,7 +2519,27 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
-    "steam": 237850
+    "steam": 237850,
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Humble Bundle)",
@@ -2211,7 +2553,27 @@
     "link": "https://grajpopolsku.pl/download/dreamfall-chapters-hb/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy."
+    "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Dreamfall Chapters: The Final Cut [Windows x86-64] (Steam, GOG)",
@@ -2226,7 +2588,27 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Zakończenie historii z serii Dreamfall. Przygoda z wyborami moralnymi, która łączy dwa światy.",
-    "steam": 237850
+    "steam": 237850,
+    "tworcy": [
+      "Monika Łebek",
+      "Nora Pik",
+      "Jarosław Milewski",
+      "Semprini",
+      "Norek",
+      "Michał Szulecki",
+      "Izzie",
+      "Lacrimael",
+      "MarkosBoss",
+      "roobin",
+      "MasterAlvaro",
+      "mziab",
+      "Mateusz Król",
+      "dinosaur",
+      "Annica",
+      "garot",
+      "Talaith",
+      "Patryk Górski"
+    ]
   },
   {
     "game": "Driver You Are The Wheelman",
@@ -2240,7 +2622,10 @@
     "link": "https://grajpopolsku.pl/download/driver-you-are-the-wheelman/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Wyścigi i pościgi samochodowe, w których wcielasz się w kierowcę."
+    "opis": "Wyścigi i pościgi samochodowe, w których wcielasz się w kierowcę.",
+    "tworcy": [
+      "aRPI"
+    ]
   },
   {
     "game": "Dual Orb 2",
@@ -2253,7 +2638,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/dual-orb-2/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Duck Tales",
@@ -2295,7 +2683,10 @@
     "link": "https://grajpopolsku.pl/download/dungeons-of-avalon/",
     "dodano": "2026-10-28",
     "genre": "RPG",
-    "img": "https://cdn.grypopolsku.pl/okladki/dungeons-of-avalon-6bf9881f.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/dungeons-of-avalon-6bf9881f.webp",
+    "tworcy": [
+      "Rankin Ryukenden"
+    ]
   },
   {
     "game": "Dust: An Elysian Tail",
@@ -2310,7 +2701,10 @@
     "genre": "Metroidvania",
     "dodano": "2026-10-28",
     "opis": "Dust, tajemniczy wojownik z amnezją, przemierza baśniowy świat. Gra akcji z elementami metroidvanii.",
-    "steam": 236090
+    "steam": 236090,
+    "tworcy": [
+      "karhorus"
+    ]
   },
   {
     "game": "Ed, Edd & Eddy: Jawbreakers!",
@@ -2356,7 +2750,10 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Skradanka w ponurym, skandynawskim klimacie. Unikasz wrogów i szukasz drogi przez niebezpieczny świat.",
-    "steam": 2377280
+    "steam": 2377280,
+    "tworcy": [
+      "robson75"
+    ]
   },
   {
     "game": "Escape from Monkey Island",
@@ -2371,7 +2768,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Czwarta część serii Monkey Island. Guybrush Threepwood znów wpada w tarapaty i staje do walki z LeChuckiem.",
-    "steam": 730830
+    "steam": 730830,
+    "tworcy": [
+      "tirey93"
+    ]
   },
   {
     "game": "Evil Twin: Cyprien's Chronicles",
@@ -2399,7 +2799,12 @@
     "link": "https://grajpopolsku.pl/download/excitebike/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra wyścigowa na motocyklach, w której pokonujesz tory z przeszkodami."
+    "opis": "Klasyczna gra wyścigowa na motocyklach, w której pokonujesz tory z przeszkodami.",
+    "tworcy": [
+      "bemberg",
+      "Dizzy9",
+      "Johnny"
+    ]
   },
   {
     "game": "F1 2011",
@@ -2413,7 +2818,10 @@
     "link": "https://grajpopolsku.pl/download/f1-2011/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Gra wyścigowa Formuły 1 z sezonu 2011, ze wszystkimi kierowcami i torami."
+    "opis": "Gra wyścigowa Formuły 1 z sezonu 2011, ze wszystkimi kierowcami i torami.",
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Fantastic Adventures of Dizzy",
@@ -2441,7 +2849,10 @@
     "link": "https://grajpopolsku.pl/download/felix-the-cat/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Platformówka z kotem Feliksem w roli głównej, który przemierza kolejne krainy."
+    "opis": "Platformówka z kotem Feliksem w roli głównej, który przemierza kolejne krainy.",
+    "tworcy": [
+      "Markiz"
+    ]
   },
   {
     "game": "FIFA Manager 12",
@@ -2455,7 +2866,10 @@
     "link": "https://grajpopolsku.pl/download/fifa-manager-12/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Menedżer piłkarski, w którym prowadzisz klub, kupujesz zawodników i budujesz drużynę."
+    "opis": "Menedżer piłkarski, w którym prowadzisz klub, kupujesz zawodników i budujesz drużynę.",
+    "tworcy": [
+      "Lukasvista"
+    ]
   },
   {
     "game": "Fighting Force 2",
@@ -2469,7 +2883,10 @@
     "link": "https://grajpopolsku.pl/download/fighting-force-2/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji z elementami bijatyki, w której grupa bohaterów walczy z przeciwnikami."
+    "opis": "Gra akcji z elementami bijatyki, w której grupa bohaterów walczy z przeciwnikami.",
+    "tworcy": [
+      "Pavlik"
+    ]
   },
   {
     "game": "Final Fantasy",
@@ -2483,7 +2900,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Pierwsza część słynnej serii RPG. Czterech Wojowników Światła wyrusza, by odzyskać cztery kryształy."
+    "opis": "Pierwsza część słynnej serii RPG. Czterech Wojowników Światła wyrusza, by odzyskać cztery kryształy.",
+    "tworcy": [
+      "BezNazwy"
+    ]
   },
   {
     "game": "Final Fantasy (steam)",
@@ -2498,7 +2918,12 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Pierwsza część słynnej serii RPG. Czterech Wojowników Światła wyrusza, by odzyskać cztery kryształy.",
-    "steam": 1173770
+    "steam": 1173770,
+    "tworcy": [
+      "Czoklit",
+      "Robin",
+      "Emoonia"
+    ]
   },
   {
     "game": "Final Fantasy III",
@@ -2512,7 +2937,12 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-iii/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Odświeżona wersja klasycznej części, w której czwórka młodych bohaterów odkrywa kryształy i zmienia swoje klasy."
+    "opis": "Odświeżona wersja klasycznej części, w której czwórka młodych bohaterów odkrywa kryształy i zmienia swoje klasy.",
+    "tworcy": [
+      "rev",
+      "Fen",
+      "Quast"
+    ]
   },
   {
     "game": "Final Fantasy IV",
@@ -2526,7 +2956,11 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-iv/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Cecil, rycerz ciemności, odrzuca rozkazy króla i staje po stronie światła. Jedno z klasycznych japońskich RPG."
+    "opis": "Cecil, rycerz ciemności, odrzuca rozkazy króla i staje po stronie światła. Jedno z klasycznych japońskich RPG.",
+    "tworcy": [
+      "Araki",
+      "DzinX"
+    ]
   },
   {
     "game": "Final Fantasy IX (Sony PSX)",
@@ -2540,7 +2974,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-ix/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Powrót serii do baśniowej fantasy. Złodziej Zidane i księżniczka Garnet wyruszają w podróż po świecie pełnym zamków, statków powietrznych i tajemnic."
+    "opis": "Powrót serii do baśniowej fantasy. Złodziej Zidane i księżniczka Garnet wyruszają w podróż po świecie pełnym zamków, statków powietrznych i tajemnic.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "Final Fantasy V",
@@ -2554,7 +2991,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-v/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Kryształy wiatru, ziemi, ognia i wody tracą moc. Bohaterowie podejmują się misji, w której ważną rolę odgrywa system klas."
+    "opis": "Kryształy wiatru, ziemi, ognia i wody tracą moc. Bohaterowie podejmują się misji, w której ważną rolę odgrywa system klas.",
+    "tworcy": [
+      "Jaro997"
+    ]
   },
   {
     "game": "Final Fantasy VI",
@@ -2568,7 +3008,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-vi/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Wielka drużyna bohaterów buntuje się przeciw imperium. Jedno z najwyżej cenionych RPG na SNES-a."
+    "opis": "Wielka drużyna bohaterów buntuje się przeciw imperium. Jedno z najwyżej cenionych RPG na SNES-a.",
+    "tworcy": [
+      "Rusty_Can"
+    ]
   },
   {
     "game": "Final Fantasy VII",
@@ -2582,7 +3025,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-vii/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Cloud Strife dołącza do grupy Avalanche, która walczy z korporacją Shinra. Klasyczne RPG, które otworzyło serię na świat."
+    "opis": "Cloud Strife dołącza do grupy Avalanche, która walczy z korporacją Shinra. Klasyczne RPG, które otworzyło serię na świat.",
+    "tworcy": [
+      "Browar"
+    ]
   },
   {
     "game": "Final Fantasy VIII (Sony PSX)",
@@ -2596,7 +3042,11 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-viii-psx/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Squall, uczeń akademii Garden i przyszły najemnik SeeD, trafia w sam środek wojny czarownic. Gra słynie z systemu Junction i karcianki Triple Triad."
+    "opis": "Squall, uczeń akademii Garden i przyszły najemnik SeeD, trafia w sam środek wojny czarownic. Gra słynie z systemu Junction i karcianki Triple Triad.",
+    "tworcy": [
+      "Robin",
+      "Emoonia"
+    ]
   },
   {
     "game": "Final Fantasy XII",
@@ -2610,7 +3060,10 @@
     "link": "https://grajpopolsku.pl/download/final-fantasy-xii/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Vaan, młody mieszkaniec Rabanastre, trafia w sam środek konfliktu o tron. RPG z systemem Gambit do programowania zachowań postaci."
+    "opis": "Vaan, młody mieszkaniec Rabanastre, trafia w sam środek konfliktu o tron. RPG z systemem Gambit do programowania zachowań postaci.",
+    "tworcy": [
+      "ffgriever"
+    ]
   },
   {
     "game": "Final Fantasy XII (PC/Steam)",
@@ -2642,7 +3095,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-12"
-    }
+    },
+    "tworcy": [
+      "ffgriever"
+    ]
   },
   {
     "game": "Firewatch (GOG)",
@@ -2657,7 +3113,26 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Henry zostaje obserwatorem pożarów w Wyoming i próbuje uciec od własnych problemów. Przygodowa gra eksploracyjna z fabułą opartą na rozmowach przez radio.",
-    "steam": 383870
+    "steam": 383870,
+    "tworcy": [
+      "Izzie",
+      "Norek",
+      "Bartek Musajew",
+      "dinosaur",
+      "GreenScream",
+      "Geras",
+      "Aleksun",
+      "Querida",
+      "Quo",
+      "Radek Czerniak",
+      "JoelStobbart",
+      "Grottman",
+      "Michał Rzeźnik",
+      "Andrzej Dominowski",
+      "roobin",
+      "MasterAlvaro",
+      "mziab"
+    ]
   },
   {
     "game": "Firewatch (Steam)",
@@ -2672,7 +3147,26 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Henry zostaje obserwatorem pożarów w Wyoming i próbuje uciec od własnych problemów. Przygodowa gra eksploracyjna z fabułą opartą na rozmowach przez radio.",
-    "steam": 383870
+    "steam": 383870,
+    "tworcy": [
+      "Izzie",
+      "Norek",
+      "Bartek Musajew",
+      "dinosaur",
+      "GreenScream",
+      "Geras",
+      "Aleksun",
+      "Querida",
+      "Quo",
+      "Radek Czerniak",
+      "JoelStobbart",
+      "Grottman",
+      "Michał Rzeźnik",
+      "Andrzej Dominowski",
+      "roobin",
+      "MasterAlvaro",
+      "mziab"
+    ]
   },
   {
     "game": "Fist of Jesus",
@@ -2777,7 +3271,13 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Strategia, w której kształtujesz teren i kierujesz plemieniem, które musi przetrwać kataklizmy.",
-    "steam": 33460
+    "steam": 33460,
+    "tworcy": [
+      "Norek",
+      "ffgriever",
+      "Manuel Czaszka",
+      "rysiu"
+    ]
   },
   {
     "game": "From the Abyss",
@@ -2818,7 +3318,10 @@
     "link": "https://grajpopolsku.pl/download/front-mission/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Taktyczne RPG, w którym dowodzisz mechami w świecie pełnym konfliktów."
+    "opis": "Taktyczne RPG, w którym dowodzisz mechami w świecie pełnym konfliktów.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Frontier First Encounters",
@@ -2922,7 +3425,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Klasyczna przygodówka grozy. Pisarz Gabriel Knight bada serię morderstw w Nowym Orleanie, które łączą się z voodoo.",
-    "steam": 495700
+    "steam": 495700,
+    "tworcy": [
+      "mendosa"
+    ]
   },
   {
     "game": "Galaxian",
@@ -3117,7 +3623,10 @@
     "link": "https://grajpopolsku.pl/download/golden-sun/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczne japońskie RPG na GBA, w którym drużyna młodych bohaterów używa magii żywiołów."
+    "opis": "Klasyczne japońskie RPG na GBA, w którym drużyna młodych bohaterów używa magii żywiołów.",
+    "tworcy": [
+      "Rykuzushi"
+    ]
   },
   {
     "game": "Golden Sun: The Lost Age",
@@ -3131,7 +3640,10 @@
     "link": "https://grajpopolsku.pl/download/golden-sun-the-lost-age/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Kontynuacja Golden Sun. Nowa generacja bohaterów wyrusza, by przywrócić równowagę w świecie."
+    "opis": "Kontynuacja Golden Sun. Nowa generacja bohaterów wyrusza, by przywrócić równowagę w świecie.",
+    "tworcy": [
+      "TenkaiSp"
+    ]
   },
   {
     "game": "Gore: Ultimate Soldier",
@@ -3159,7 +3671,10 @@
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-advance/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra na GBA w świecie GTA, z perspektywą z góry i misjami w mieście."
+    "opis": "Gra na GBA w świecie GTA, z perspektywą z góry i misjami w mieście.",
+    "tworcy": [
+      "Texel"
+    ]
   },
   {
     "game": "Grand Theft Auto IV",
@@ -3173,7 +3688,11 @@
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-iv/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Niko Bellic przybywa do Liberty City w poszukiwaniu amerykańskiego snu. Czwarta część serii."
+    "opis": "Niko Bellic przybywa do Liberty City w poszukiwaniu amerykańskiego snu. Czwarta część serii.",
+    "tworcy": [
+      "GTAPolska",
+      "PLP"
+    ]
   },
   {
     "game": "Grand Theft Auto: London, 1961",
@@ -3187,7 +3706,10 @@
     "link": "https://grajpopolsku.pl/download/grand-theft-auto-london-1961/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Wczesna, klasyczna odsłona serii. Trafiasz do Londynu lat 60. i wykonujesz zlecenia dla gangu."
+    "opis": "Wczesna, klasyczna odsłona serii. Trafiasz do Londynu lat 60. i wykonujesz zlecenia dla gangu.",
+    "tworcy": [
+      "Texel"
+    ]
   },
   {
     "game": "Grim Fandango",
@@ -3201,7 +3723,10 @@
     "link": "https://grajpopolsku.pl/download/grim-fandango/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Manny Calavera, pracownik biura śmierci, odkrywa spisek w krainie zmarłych. Klasyczna przygodówka LucasArts."
+    "opis": "Manny Calavera, pracownik biura śmierci, odkrywa spisek w krainie zmarłych. Klasyczna przygodówka LucasArts.",
+    "tworcy": [
+      "Manuel Czaszka"
+    ]
   },
   {
     "game": "Grim Fandango Remastered",
@@ -3216,7 +3741,24 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Odświeżona wersja Grim Fandango z ulepszoną grafiką.",
-    "steam": 316790
+    "steam": 316790,
+    "tworcy": [
+      "Manuel Czaszka",
+      "dinosaur",
+      "Hiszpańska Inkwizycja",
+      "M4ks",
+      "Willy James",
+      "Sniqs",
+      "Ysska",
+      "mendosa",
+      "mziab",
+      "Mastish",
+      "Kociołek",
+      "Zagadka",
+      "Talaith",
+      "Michał Rzeźnik",
+      "cienislaw"
+    ]
   },
   {
     "game": "Grand Theft Auto Liberty City Stories",
@@ -3471,7 +4013,10 @@
     "link": "https://grajpopolsku.pl/download/harvest-moon/",
     "genre": "Symulacja",
     "dodano": "2026-10-28",
-    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski."
+    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski.",
+    "tworcy": [
+      "ErnBob"
+    ]
   },
   {
     "game": "Harvest Moon (Nintendo SNES)",
@@ -3485,7 +4030,10 @@
     "link": "https://grajpopolsku.pl/download/harvest-moon-2/",
     "genre": "Symulacja",
     "dodano": "2026-10-28",
-    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski."
+    "opis": "Symulacja farmy, w której uprawiasz pola, opiekujesz się zwierzętami i budujesz relacje z mieszkańcami wioski.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Hollow Knight",
@@ -3500,7 +4048,11 @@
     "genre": "Metroidvania",
     "dodano": "2026-10-28",
     "opis": "Metroidvania w uroczo rysowanym świecie pełnym owadów. Hallownest kryje wiele tajemnic i trudnych przeciwników.",
-    "steam": 367520
+    "steam": 367520,
+    "tworcy": [
+      "Spitfire",
+      "bax001"
+    ]
   },
   {
     "game": "Horizon Chase Turbo",
@@ -3514,7 +4066,10 @@
     "link": "https://grajpopolsku.pl/download/2484/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Wyścigi w stylu retro, inspirowane klasyką lat 80. i 90. Kolorowe trasy w różnych krajach."
+    "opis": "Wyścigi w stylu retro, inspirowane klasyką lat 80. i 90. Kolorowe trasy w różnych krajach.",
+    "tworcy": [
+      "Valthemar"
+    ]
   },
   {
     "game": "Hudson's Adventure Island",
@@ -3543,7 +4098,10 @@
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Platformówka logiczna, w której kolor tła decyduje o tym, jakie przeszkody znikają.",
-    "steam": 383270
+    "steam": 383270,
+    "tworcy": [
+      "Valthemar"
+    ]
   },
   {
     "game": "I am Alive",
@@ -3557,7 +4115,18 @@
     "link": "https://grajpopolsku.pl/download/i-am-alive/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Postapokaliptyczna gra przygodowa o przetrwaniu w zniszczonym mieście."
+    "opis": "Postapokaliptyczna gra przygodowa o przetrwaniu w zniszczonym mieście.",
+    "tworcy": [
+      "Akken",
+      "Haoose",
+      "Johnny",
+      "Kazu",
+      "Khaes",
+      "Machiner",
+      "Manuel Czaszka",
+      "mziab",
+      "Norek"
+    ]
   },
   {
     "game": "I Have No Mouth, and I Must Scream (GOG)",
@@ -3572,7 +4141,21 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Klasyczna przygodówka, w której pięcioro ocalałych trafia do świata superkomputera, który torturuje ludzi.",
-    "steam": 245390
+    "steam": 245390,
+    "tworcy": [
+      "Izzie",
+      "dinosaur",
+      "JoelStobbart",
+      "Sniqs",
+      "Querida",
+      "Quo",
+      "Outernationalist",
+      "Baasu",
+      "Norek",
+      "mziab",
+      "Manuel Czaszka",
+      "goliat"
+    ]
   },
   {
     "game": "I Have No Mouth, and I Must Scream (STEAM)",
@@ -3587,7 +4170,21 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Klasyczna przygodówka, w której pięcioro ocalałych trafia do świata superkomputera, który torturuje ludzi.",
-    "steam": 245390
+    "steam": 245390,
+    "tworcy": [
+      "Izzie",
+      "dinosaur",
+      "JoelStobbart",
+      "Sniqs",
+      "Querida",
+      "Quo",
+      "Outernationalist",
+      "Baasu",
+      "Norek",
+      "mziab",
+      "Manuel Czaszka",
+      "goliat"
+    ]
   },
   {
     "game": "Igneous",
@@ -3604,7 +4201,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "tworcy": [
+      "Johnny"
+    ]
   },
   {
     "game": "Ike Ike! Nekketsu Hockey Bu – Subette Koronde Dai Rantou",
@@ -3632,7 +4232,11 @@
     "link": "https://grajpopolsku.pl/download/inkheart/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Przygodowa gra na podstawie powieści „Atramentowe serce\"."
+    "opis": "Przygodowa gra na podstawie powieści „Atramentowe serce\".",
+    "tworcy": [
+      "vigo",
+      "Usiula"
+    ]
   },
   {
     "game": "Inspector Gadget Crazy Maze [PSX]",
@@ -3645,7 +4249,11 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/inspector-gadget-crazy-maze-psx/",
     "genre": "Logiczna",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "krzys837",
+      "W3trace"
+    ]
   },
   {
     "game": "Inversion",
@@ -3660,7 +4268,10 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Strzelanka z perspektywy trzeciej osoby, w której wykorzystujesz zmiany grawitacji w walce.",
-    "steam": 212410
+    "steam": 212410,
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Inversion [PS3]",
@@ -3674,7 +4285,10 @@
     "link": "https://grajpopolsku.pl/download/inversion-ps3/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Strzelanka z perspektywy trzeciej osoby, w której wykorzystujesz zmiany grawitacji w walce."
+    "opis": "Strzelanka z perspektywy trzeciej osoby, w której wykorzystujesz zmiany grawitacji w walce.",
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Jagged Alliance 2’005",
@@ -3688,7 +4302,10 @@
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2005/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Fanowska modyfikacja kultowej strategii turowej, która rozszerza grę o nowe zasady i zawartość."
+    "opis": "Fanowska modyfikacja kultowej strategii turowej, która rozszerza grę o nowe zasady i zawartość.",
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Jagged Alliance 2: Renegade Republic",
@@ -3702,7 +4319,10 @@
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-renegade-republic/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Rozszerzenie strategii Jagged Alliance 2 z nową kampanią i nowymi najemnikami."
+    "opis": "Rozszerzenie strategii Jagged Alliance 2 z nową kampanią i nowymi najemnikami.",
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Jagged Alliance 2: Shady Job",
@@ -3730,7 +4350,10 @@
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-urban-chaos/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Rozbudowana modyfikacja strategii Jagged Alliance 2 z nowymi zadaniami i lokacjami."
+    "opis": "Rozbudowana modyfikacja strategii Jagged Alliance 2 z nowymi zadaniami i lokacjami.",
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Jagged Alliance 2: Vietnam SOG ’69",
@@ -3744,7 +4367,10 @@
     "link": "https://grajpopolsku.pl/download/jagged-alliance-2-vietnam-sog-69/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Modyfikacja Jagged Alliance 2 osadzona w czasach wojny w Wietnamie."
+    "opis": "Modyfikacja Jagged Alliance 2 osadzona w czasach wojny w Wietnamie.",
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Jisei",
@@ -3758,7 +4384,12 @@
     "link": "https://grajpopolsku.pl/download/jisei/",
     "dodano": "2026-10-28",
     "genre": "Przygodowa",
-    "steam": 754460
+    "steam": 754460,
+    "tworcy": [
+      "damianklu",
+      "krzys837",
+      "Cyfrowy Baron"
+    ]
   },
   {
     "game": "Jurassic Park: The Game",
@@ -3772,7 +4403,12 @@
     "link": "https://grajpopolsku.pl/download/jurassic-park-the-game/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Przygodówka epizodowa od Telltale. Opowiada historię osadzoną w świecie „Parku Jurajskiego\"."
+    "opis": "Przygodówka epizodowa od Telltale. Opowiada historię osadzoną w świecie „Parku Jurajskiego\".",
+    "tworcy": [
+      "P.G",
+      "djmati2604",
+      "Kamis19"
+    ]
   },
   {
     "game": "Jurassic World Evolution",
@@ -3791,7 +4427,12 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "bax001",
+      "raf93278",
+      "AwwBurnPL"
+    ]
   },
   {
     "game": "Kao Challengers",
@@ -3903,7 +4544,10 @@
     "link": "https://grajpopolsku.pl/download/legend-of-zelda-a-link-to-the-past/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Link wyrusza, by ocalić królestwo Hyrule. Klasyka serii Zelda na SNES-a."
+    "opis": "Link wyrusza, by ocalić królestwo Hyrule. Klasyka serii Zelda na SNES-a.",
+    "tworcy": [
+      "EmuShadow"
+    ]
   },
   {
     "game": "LEGO Indiana Jones",
@@ -3918,7 +4562,10 @@
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Klockowa gra przygodowa na motywach filmów o Indianie Jonesie.",
-    "steam": 32330
+    "steam": 32330,
+    "tworcy": [
+      "seraf5"
+    ]
   },
   {
     "game": "Lego Island 2: The Brickster's Revenge",
@@ -3932,7 +4579,10 @@
     "link": "https://grajpopolsku.pl/download/lego-island-2-the-bricksters-revenge/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Klockowa przygoda, w której zbierasz klocki i pokonujesz złego Brickstera."
+    "opis": "Klockowa przygoda, w której zbierasz klocki i pokonujesz złego Brickstera.",
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Lego Star Wars: The Complete Saga",
@@ -3947,7 +4597,10 @@
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Klockowa wersja całej sagi Gwiezdnych Wojen. Przeżywasz wydarzenia z sześciu filmów w humorystycznej formie.",
-    "steam": 32440
+    "steam": 32440,
+    "tworcy": [
+      "AwwBurnPL"
+    ]
   },
   {
     "game": "Les Adventures de Tintin Le Temple du Soleil",
@@ -3961,7 +4614,10 @@
     "link": "https://grajpopolsku.pl/download/les-adventures-de-tintin-le-temple-du-soleil/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Przygoda Tintina i kapitana Baryłki na konsoli przenośnej, oparta na komiksie „Świątynia Słońca\"."
+    "opis": "Przygoda Tintina i kapitana Baryłki na konsoli przenośnej, oparta na komiksie „Świątynia Słońca\".",
+    "tworcy": [
+      "aRPI"
+    ]
   },
   {
     "game": "Life Is Strange",
@@ -3975,7 +4631,33 @@
     "link": "https://grajpopolsku.pl/download/life-is-strange/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Max Caulfield odkrywa, że potrafi cofać czas. Epizodowa przygoda, w której twoje wybory mają znaczenie."
+    "opis": "Max Caulfield odkrywa, że potrafi cofać czas. Epizodowa przygoda, w której twoje wybory mają znaczenie.",
+    "tworcy": [
+      "Norek",
+      "Bartek Musajew",
+      "Semprini",
+      "Vanghart",
+      "criav",
+      "Mapet",
+      "Maksymilian Pawlak",
+      "Aleksander Wysocki",
+      "dinosaur",
+      "Celu",
+      "BlackiePearl",
+      "Trinity",
+      "wade91",
+      "Radek Czerniak",
+      "Predator",
+      "Zajcu",
+      "Izzie",
+      "bonek",
+      "Annica",
+      "GimmyBreaker",
+      "Martii",
+      "Paaulinaax",
+      "mziab",
+      "roobin"
+    ]
   },
   {
     "game": "Life is Strange: Before the Storm",
@@ -3990,7 +4672,20 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Prequel Life Is Strange. Opowiada o przyjaźni Chloe Price z Rachel Amber.",
-    "steam": 554620
+    "steam": 554620,
+    "tworcy": [
+      "Norek",
+      "dinosaur",
+      "Pellet",
+      "Talaith",
+      "Rias",
+      "Modliszka",
+      "Tunia86",
+      "mikute",
+      "Michał Rzeźnik",
+      "MasterAlvaro",
+      "mziab"
+    ]
   },
   {
     "game": "Life is Strange: True Colors",
@@ -4005,7 +4700,21 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Alex Chen przybywa do spokojnego miasteczka w górach i odkrywa, że ma zdolność odczytywania emocji innych.",
-    "steam": 936790
+    "steam": 936790,
+    "tworcy": [
+      "bax001",
+      "AwwBurnPL",
+      "Stroy Decroix",
+      "Krzysiek009",
+      "Heidi",
+      "Leuduxudi",
+      "MiXerOwy",
+      "RouterCat",
+      "Qusay",
+      "Mvciek",
+      ".Szkielson",
+      "Ferno Beta"
+    ]
   },
   {
     "game": "Lifeless Moon",
@@ -4020,7 +4729,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodowa gra science fiction, w której eksplorujesz obce światy.",
-    "steam": 1147330
+    "steam": 1147330,
+    "tworcy": [
+      "karhorus"
+    ]
   },
   {
     "game": "Lifeless Planet",
@@ -4035,7 +4747,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Astronauta ląduje na obcej planecie i próbuje odkryć, co się wydarzyło.",
-    "steam": 261530
+    "steam": 261530,
+    "tworcy": [
+      "karhorus"
+    ]
   },
   {
     "game": "Little Nemo – The Dream Master",
@@ -4064,7 +4779,16 @@
     "genre": "Symulacja",
     "dodano": "2026-10-28",
     "opis": "Zarządzasz tajną placówką, która przechowuje niebezpieczne istoty. Gra łączy strategię z horrorem.",
-    "steam": 568220
+    "steam": 568220,
+    "tworcy": [
+      "Si54R",
+      "Roberuto",
+      "wiedzmiarz",
+      "Nekro990",
+      "Qludek",
+      "LTKpl",
+      "13 Apostoł"
+    ]
   },
   {
     "game": "Lord of the Rings: Fellowship of the Ring",
@@ -4078,7 +4802,11 @@
     "link": "https://grajpopolsku.pl/download/lord-of-the-rings-fellowship-of-the-ring/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra RPG według „Drużyny Pierścienia\" Tolkiena."
+    "opis": "Gra RPG według „Drużyny Pierścienia\" Tolkiena.",
+    "tworcy": [
+      "sparks",
+      "lola"
+    ]
   },
   {
     "game": "Love Hina Advance",
@@ -4092,7 +4820,10 @@
     "link": "https://grajpopolsku.pl/download/love-hina-advance/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Gra oparta na mandze „Love Hina\", w której bohater próbuje zbliżyć się do bohaterek."
+    "opis": "Gra oparta na mandze „Love Hina\", w której bohater próbuje zbliżyć się do bohaterek.",
+    "tworcy": [
+      "L-Voss"
+    ]
   },
   {
     "game": "Magic Knight Rayearth",
@@ -4106,7 +4837,10 @@
     "link": "https://grajpopolsku.pl/download/magic-knight-rayearth/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG na SNES-a oparte na mandze „Magic Knight Rayearth\"."
+    "opis": "RPG na SNES-a oparte na mandze „Magic Knight Rayearth\".",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Manhunt",
@@ -4158,7 +4892,11 @@
     "link": "https://grajpopolsku.pl/download/mass-effect-2-geneza/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Dodatek do Mass Effect 2 z nową historią i misjami dla dowódcy Sheparda."
+    "opis": "Dodatek do Mass Effect 2 z nową historią i misjami dla dowódcy Sheparda.",
+    "tworcy": [
+      "TTTr96",
+      "Michu351"
+    ]
   },
   {
     "game": "Mass Effect 2: Lair of Shadow Broker",
@@ -4186,7 +4924,10 @@
     "link": "https://grajpopolsku.pl/download/medal-of-honor-allied-assault-war-chest/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Strzelanka z czasów II wojny światowej. Walczysz po stronie aliantów w różnych bitwach."
+    "opis": "Strzelanka z czasów II wojny światowej. Walczysz po stronie aliantów w różnych bitwach.",
+    "tworcy": [
+      "TNTalib"
+    ]
   },
   {
     "game": "MediEvil",
@@ -4461,7 +5202,10 @@
     "link": "https://grajpopolsku.pl/download/mickeys-speedway-usa/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Gra wyścigowa z kreskówkowymi bohaterami Disneya."
+    "opis": "Gra wyścigowa z kreskówkowymi bohaterami Disneya.",
+    "tworcy": [
+      "F1xat"
+    ]
   },
   {
     "game": "Micro Machines",
@@ -4505,7 +5249,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Odświeżona wersja Monkey Island 2 z nową grafiką i dźwiękiem. Guybrush znów rusza na poszukiwanie skarbu Big Whoop.",
-    "steam": 32460
+    "steam": 32460,
+    "tworcy": [
+      "Alvaro",
+      "Tirey93"
+    ]
   },
   {
     "game": "Monster In My Pocket",
@@ -4536,7 +5284,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "tworcy": [
+      "Arkon"
+    ]
   },
   {
     "game": "Mortal Kombat Komplete Edition",
@@ -4550,7 +5301,15 @@
     "link": "https://grajpopolsku.pl/download/mortal-kombat-komplete-edition/",
     "genre": "Bijatyka",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna bijatyka z krwawymi zakończeniami. Wersja Komplete zawiera wszystkie postacie."
+    "opis": "Klasyczna bijatyka z krwawymi zakończeniami. Wersja Komplete zawiera wszystkie postacie.",
+    "tworcy": [
+      "Śledziks",
+      "Brucie",
+      "Anita_M",
+      "Irysek",
+      "Tomtom",
+      "vhs"
+    ]
   },
   {
     "game": "Need For Speed: Underground 2",
@@ -4604,7 +5363,10 @@
     "link": "https://grajpopolsku.pl/download/new-super-mario-bros/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Mario wraca do dwuwymiarowych przygód. Klasyczna platformówka z nowymi możliwościami."
+    "opis": "Mario wraca do dwuwymiarowych przygód. Klasyczna platformówka z nowymi możliwościami.",
+    "tworcy": [
+      "maximo"
+    ]
   },
   {
     "game": "Ni no Kuni II: Revenant Kingdom",
@@ -4633,7 +5395,10 @@
     "link": "https://grajpopolsku.pl/download/nightmare-creatures-2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Horrorowa gra akcji z potworami w mrocznym świecie."
+    "opis": "Horrorowa gra akcji z potworami w mrocznym świecie.",
+    "tworcy": [
+      "tomcio"
+    ]
   },
   {
     "game": "Nintendo World Cup",
@@ -4662,7 +5427,10 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Horror, w którym uczniowie szkoły przemierzają mroczne korytarze i uciekają przed potworami.",
-    "steam": 254460
+    "steam": 254460,
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Obscure (GOG)",
@@ -4677,7 +5445,10 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Horror, w którym uczniowie szkoły przemierzają mroczne korytarze i uciekają przed potworami.",
-    "steam": 254460
+    "steam": 254460,
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Okami",
@@ -4691,7 +5462,12 @@
     "link": "https://grajpopolsku.pl/download/okami/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Bogini słońca Amaterasu wcielona w białego wilka walczy z demonami. Gra akcji w malarskiej, japońskiej oprawie."
+    "opis": "Bogini słońca Amaterasu wcielona w białego wilka walczy z demonami. Gra akcji w malarskiej, japońskiej oprawie.",
+    "tworcy": [
+      "ffgriever",
+      "Berion",
+      "Norek"
+    ]
   },
   {
     "game": "Okami HD",
@@ -4707,7 +5483,12 @@
     "dodano": "2026-10-28",
     "lore": "https://lorespeak.pl/games/okami-hd",
     "opis": "Odświeżona wersja Okami w wyższej rozdzielczości. Amaterasu w pięknie narysowanym świecie.",
-    "steam": 587620
+    "steam": 587620,
+    "tworcy": [
+      "ffgriever",
+      "Norek",
+      "Berion"
+    ]
   },
   {
     "game": "OMORI",
@@ -4722,7 +5503,34 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Chłopiec budzi się w dziwnym, kolorowym świecie. Psychologiczne RPG z mrocznym nastrojem i niebanalną fabułą.",
-    "steam": 1150690
+    "steam": 1150690,
+    "tworcy": [
+      "senmou",
+      "Diavolo",
+      "Oskar Płatek",
+      "Skejven",
+      "Del0rt",
+      "Yukki",
+      "Zzumi",
+      "Kostiik",
+      "Jordan Forester",
+      "Barytas",
+      "Maestro",
+      "Koralesiu",
+      "Nat",
+      "Nekrotancerz",
+      "Lien",
+      "Nexumi",
+      "Luuou",
+      "Niko",
+      "Noctis",
+      "Snobistyczny",
+      "Piotruś",
+      "Suhiroe",
+      "Rialyy",
+      "Wilhelmus",
+      "Wojciech Wróbel"
+    ]
   },
   {
     "game": "One Afternoon",
@@ -4739,7 +5547,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "tworcy": [
+      "Arkon"
+    ]
   },
   {
     "game": "OneShot",
@@ -4758,7 +5569,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "Karambito",
+      "Blackout"
+    ]
   },
   {
     "game": "OneShot: World Machine Edition",
@@ -4778,7 +5593,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "Karambito",
+      "Blackout"
+    ]
   },
   {
     "game": "Osmos",
@@ -4793,7 +5612,10 @@
     "genre": "Logiczna",
     "dodano": "2026-10-28",
     "opis": "Gra logiczna, w której kierujesz komórką i pochłaniasz mniejsze, unikając większych.",
-    "steam": 29180
+    "steam": 29180,
+    "tworcy": [
+      "Optimystique"
+    ]
   },
   {
     "game": "Pac-Man",
@@ -4869,7 +5691,10 @@
     "link": "https://grajpopolsku.pl/download/phantasy-star-iv-the-end-of-the-millennium/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczne RPG na Mega Drive, zamykające cykl Phantasy Star. Chaz i jego przyjaciele walczą ze złem."
+    "opis": "Klasyczne RPG na Mega Drive, zamykające cykl Phantasy Star. Chaz i jego przyjaciele walczą ze złem.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Pharaoh: A New Era",
@@ -4884,7 +5709,10 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Strategia, w której budujesz miasto w starożytnym Egipcie.",
-    "steam": 1351080
+    "steam": 1351080,
+    "tworcy": [
+      "Borg"
+    ]
   },
   {
     "game": "Pięć Magicznych Amuletów",
@@ -4913,7 +5741,10 @@
     "genre": "Symulacja",
     "dodano": "2026-10-28",
     "opis": "Budujesz własny park rozrywki. Projektujesz kolejki górskie, ścieżki i atrakcje, a także dbasz o gości.",
-    "steam": 493340
+    "steam": 493340,
+    "tworcy": [
+      "GramBezMonitora"
+    ]
   },
   {
     "game": "Planetarian HD",
@@ -4928,7 +5759,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Krótka powieść wizualna o robocie opiekującym się opuszczonym planetarium i człowieku, który je odwiedza.",
-    "steam": 623080
+    "steam": 623080,
+    "tworcy": [
+      "Margus"
+    ]
   },
   {
     "game": "Pocket Mirror – GoldenerTraum",
@@ -4942,7 +5776,10 @@
     "link": "https://grajpopolsku.pl/download/pocket-mirror-goldenertraum/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "steam": 1899060
+    "steam": 1899060,
+    "tworcy": [
+      "Tegron"
+    ]
   },
   {
     "game": "Pokémon Emerald",
@@ -4956,7 +5793,12 @@
     "link": "https://grajpopolsku.pl/download/pokemon-emerald/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Trzecia generacja Pokémonów. Trener z regionu Hoenn zbiera potwory i rywalizuje o tytuł mistrza."
+    "opis": "Trzecia generacja Pokémonów. Trener z regionu Hoenn zbiera potwory i rywalizuje o tytuł mistrza.",
+    "tworcy": [
+      "Texel",
+      "bemberg",
+      "tirey93"
+    ]
   },
   {
     "game": "Pokemon Fire Red",
@@ -4970,7 +5812,10 @@
     "link": "https://grajpopolsku.pl/download/pokemon-fire-red/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Odświeżona wersja pierwszych Pokémonów. Młody trener zbiera potwory w regionie Kanto."
+    "opis": "Odświeżona wersja pierwszych Pokémonów. Młody trener zbiera potwory w regionie Kanto.",
+    "tworcy": [
+      "dark_archon"
+    ]
   },
   {
     "game": "Pokémon HeartGold",
@@ -4998,7 +5843,10 @@
     "link": "https://grajpopolsku.pl/download/pokemon-mystery-dungeon-explorers-of-time/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Spin-off serii Pokémon, w którym jako Pokémon eksplorujesz losowo generowane lochy."
+    "opis": "Spin-off serii Pokémon, w którym jako Pokémon eksplorujesz losowo generowane lochy.",
+    "tworcy": [
+      "Galactic"
+    ]
   },
   {
     "game": "Pokémon Platinum",
@@ -5012,7 +5860,10 @@
     "link": "https://grajpopolsku.pl/download/pokemon-platinum/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Rozszerzona wersja gry z regionu Sinnoh, z nowymi lokacjami i poprawkami."
+    "opis": "Rozszerzona wersja gry z regionu Sinnoh, z nowymi lokacjami i poprawkami.",
+    "tworcy": [
+      "dark_archon"
+    ]
   },
   {
     "game": "Pokémon Red",
@@ -5026,7 +5877,10 @@
     "link": "https://grajpopolsku.pl/download/pokemon-red/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Pierwsza gra z serii Pokémon. Młody trener zbiera potwory i rywalizuje o tytuł mistrza."
+    "opis": "Pierwsza gra z serii Pokémon. Młody trener zbiera potwory i rywalizuje o tytuł mistrza.",
+    "tworcy": [
+      "Cin25"
+    ]
   },
   {
     "game": "Pokémon SoulSilver",
@@ -5068,7 +5922,10 @@
     "link": "https://grajpopolsku.pl/download/prince-of-persia-the-forgotten-sands/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Książę z Persji walczy o ocalenie królestwa w wersji na konsolę DS."
+    "opis": "Książę z Persji walczy o ocalenie królestwa w wersji na konsolę DS.",
+    "tworcy": [
+      "Cierpa"
+    ]
   },
   {
     "game": "Prison Tycoon 2: Maximum Security",
@@ -5125,7 +5982,10 @@
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
     "opis": "Symulacja walk morskich z czasów II wojny światowej. Dowodzisz kutrami torpedowymi.",
-    "steam": 10250
+    "steam": 10250,
+    "tworcy": [
+      "Iron Squad"
+    ]
   },
   {
     "game": "Quantum Break",
@@ -5144,7 +6004,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "Marek Grzyb",
+      "S3rafin"
+    ]
   },
   {
     "game": "Ranma 1/2: Treasure of The Red Cat Gang",
@@ -5158,7 +6022,10 @@
     "genre": "RPG",
     "dodano": "2026-10-28",
     "opis": "Bijatyka oparta na mandze „Ranma ½\". Bohater, zmieniający płeć pod wpływem wody, walczy z przeciwnikami.",
-    "img": "https://cdn.grypopolsku.pl/okladki/ranma-1-2-treasure-of-the-red-cat-gang-ea8d9465.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/ranma-1-2-treasure-of-the-red-cat-gang-ea8d9465.webp",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Rayman",
@@ -5172,7 +6039,10 @@
     "link": "https://grajpopolsku.pl/download/rayman/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Platformówka, w której Rayman, bezręki bohater, ratuje swoich przyjaciół z rąk Pana Mroku."
+    "opis": "Platformówka, w której Rayman, bezręki bohater, ratuje swoich przyjaciół z rąk Pana Mroku.",
+    "tworcy": [
+      "Antanta"
+    ]
   },
   {
     "game": "Real Kanojo",
@@ -5186,7 +6056,10 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Gra z elementami japońskiej powieści wizualnej, w której nawiązujesz relacje z bohaterkami.",
-    "img": "https://cdn.grypopolsku.pl/okladki/real-kanojo-61b286e5.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/real-kanojo-61b286e5.webp",
+    "tworcy": [
+      "Frey79"
+    ]
   },
   {
     "game": "RealRTCW",
@@ -5217,6 +6090,10 @@
         "t": "🔗 Grupa autora na Facebooku",
         "u": "https://www.facebook.com/groups/sdk68/"
       }
+    ],
+    "tworcy": [
+      "SneakiestDuke68",
+      "PanLimon"
     ]
   },
   {
@@ -5233,7 +6110,11 @@
     "dodano": "2026-10-28",
     "lore": "https://lorespeak.pl/games/resident-evil-0-hd-remaster",
     "opis": "Przedhistoria Resident Evil. Rebecca Chambers i Billy Coen trafiają do pociągu pełnego zombie.",
-    "steam": 339340
+    "steam": 339340,
+    "tworcy": [
+      "Hiko",
+      "RustDragon"
+    ]
   },
   {
     "game": "Resident Evil Code: Veronica [PS2]",
@@ -5247,7 +6128,10 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-code-veronica-ps2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Claire Redfield szuka brata Chrisa, trafiając na wyspę Rockfort, a później na Antarktydę."
+    "opis": "Claire Redfield szuka brata Chrisa, trafiając na wyspę Rockfort, a później na Antarktydę.",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Resident Evil HD Remaster",
@@ -5274,7 +6158,11 @@
       }
     ],
     "steam": 304240,
-    "img": "https://cdn.grypopolsku.pl/okladki/resident-evil-hd-remaster-46938ba7.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/resident-evil-hd-remaster-46938ba7.webp",
+    "tworcy": [
+      "goliat",
+      "kofii12345"
+    ]
   },
   {
     "game": "Resident Evil Mercenaries 3D [3DS]",
@@ -5288,7 +6176,10 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-mercenaries-3d-3ds/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji ze świata Resident Evil, w której zdobywasz punkty, eliminując przeciwników na czas."
+    "opis": "Gra akcji ze świata Resident Evil, w której zdobywasz punkty, eliminując przeciwników na czas.",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Resident Evil Outbreak File 2 [PS2]",
@@ -5302,7 +6193,10 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-outbreak-file-2-ps2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Zespół ocalałych próbuje uciec z miasta ogarniętego zarazą. Gra akcji w trybie sieciowym."
+    "opis": "Zespół ocalałych próbuje uciec z miasta ogarniętego zarazą. Gra akcji w trybie sieciowym.",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Resident Evil Survivor 2: Code Veronica [PS2]",
@@ -5316,7 +6210,10 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-2-code-veronica-ps2/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Wersja Code: Veronica w stylu strzelanki z lekkim pistoletem."
+    "opis": "Wersja Code: Veronica w stylu strzelanki z lekkim pistoletem.",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Resident Evil Survivor [PSX]",
@@ -5330,7 +6227,10 @@
     "link": "https://grajpopolsku.pl/download/resident-evil-survivor-psx/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Spin-off serii Resident Evil z widokiem pierwszoosobowym. Przeszukujesz tajemniczą posiadłość i strzelasz do wrogów."
+    "opis": "Spin-off serii Resident Evil z widokiem pierwszoosobowym. Przeszukujesz tajemniczą posiadłość i strzelasz do wrogów.",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Return to Monkey Island",
@@ -5345,7 +6245,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Powrót Guybrusha Threepwooda w nowej, ręcznie rysowanej przygodówce. Pirat wraca na Wyspę Małp.",
-    "steam": 2060130
+    "steam": 2060130,
+    "tworcy": [
+      "tirey93",
+      "raf001"
+    ]
   },
   {
     "game": "Revelations, The Demon Slayer",
@@ -5359,7 +6263,10 @@
     "link": "https://grajpopolsku.pl/download/revelations-the-demon-slayer/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Gra RPG, w której walczysz z demonami, a przeciwników można rekrutować do swojej drużyny."
+    "opis": "Gra RPG, w której walczysz z demonami, a przeciwników można rekrutować do swojej drużyny.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "Road Fighter",
@@ -5373,7 +6280,10 @@
     "link": "https://grajpopolsku.pl/download/road-fighter/",
     "genre": "Sportowa / wyścigi",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra wyścigowa z widokiem z góry."
+    "opis": "Klasyczna gra wyścigowa z widokiem z góry.",
+    "tworcy": [
+      "sparks"
+    ]
   },
   {
     "game": "Rockin' Kats",
@@ -5400,7 +6310,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/rox-psx/",
     "genre": "Logiczna",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Rune",
@@ -5429,7 +6342,12 @@
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Rzymski wojownik Marius Titus walczy w armii Imperium. Gra akcji z widowiskowymi egzekucjami.",
-    "steam": 302510
+    "steam": 302510,
+    "tworcy": [
+      "goliat",
+      "karhorus",
+      "Masagrator"
+    ]
   },
   {
     "game": "Safecracker",
@@ -5443,7 +6361,10 @@
     "link": "https://grajpopolsku.pl/download/safecracker/",
     "genre": "Logiczna",
     "dodano": "2026-10-28",
-    "opis": "Gra logiczna, w której rozwiązujesz zagadki i otwierasz sejfy."
+    "opis": "Gra logiczna, w której rozwiązujesz zagadki i otwierasz sejfy.",
+    "tworcy": [
+      "twig"
+    ]
   },
   {
     "game": "Sailor Moon Dating Sim",
@@ -5485,7 +6406,10 @@
     "link": "https://grajpopolsku.pl/download/sailor-moon-another-story/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG na SNES-a oparte na „Czarodziejce z Księżyca\". Wojowniczki ruszają w nową przygodę."
+    "opis": "RPG na SNES-a oparte na „Czarodziejce z Księżyca\". Wojowniczki ruszają w nową przygodę.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Sailor Venus Dating Sim",
@@ -5513,7 +6437,14 @@
     "link": "https://grajpopolsku.pl/download/sam-max-201-ice-station-santa/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Przygodówka epizodowa Telltale Games o parze detektywów-wariatów, psie Samie i króliku Maksie."
+    "opis": "Przygodówka epizodowa Telltale Games o parze detektywów-wariatów, psie Samie i króliku Maksie.",
+    "tworcy": [
+      "Zagadka",
+      "Madzius888",
+      "Bartek Musajew",
+      "Monttsserat",
+      "Kociołek"
+    ]
   },
   {
     "game": "Sam & Max 202: Czarny Blues Moai (Moai Better Blues)",
@@ -5527,7 +6458,14 @@
     "link": "https://grajpopolsku.pl/download/sam-max-202/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów rozwiązuje kolejne dziwne sprawy."
+    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów rozwiązuje kolejne dziwne sprawy.",
+    "tworcy": [
+      "Zagadka",
+      "Madzius888",
+      "Bartek Musajew",
+      "Monttsserat",
+      "Kociołek"
+    ]
   },
   {
     "game": "Sam & Max 203: Noc żwawych trupów (Night of the Raving Dead)",
@@ -5541,7 +6479,15 @@
     "link": "https://grajpopolsku.pl/download/sam-max-203/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Epizod drugiego sezonu Sam & Max. Dziwaczni detektywi stają przed zombiakowatym zagrożeniem."
+    "opis": "Epizod drugiego sezonu Sam & Max. Dziwaczni detektywi stają przed zombiakowatym zagrożeniem.",
+    "tworcy": [
+      "Zagadka",
+      "Madzius888",
+      "mendosa",
+      "Monttsserat",
+      "Marcin Kocot",
+      "cienislaw"
+    ]
   },
   {
     "game": "Sam & Max 204: Powrót do teraźniejszości (Chariots of the Dogs)",
@@ -5555,7 +6501,14 @@
     "link": "https://grajpopolsku.pl/download/sam-max-204/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów wraca do teraźniejszości."
+    "opis": "Epizod drugiego sezonu Sam & Max. Para detektywów wraca do teraźniejszości.",
+    "tworcy": [
+      "Zagadka",
+      "Madzius888",
+      "Monttsserat",
+      "Marcin Kocot",
+      "cienislaw"
+    ]
   },
   {
     "game": "Sam & Max: Season 2 – What's New, Beelzebub?",
@@ -5569,7 +6522,10 @@
     "link": "https://grajpopolsku.pl/download/sam-max-season-2-whats-new-beelzebub/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Drugi sezon epizodowej przygodówki Sam & Max. Para detektywów wpada w kolejne szalone tarapaty."
+    "opis": "Drugi sezon epizodowej przygodówki Sam & Max. Para detektywów wpada w kolejne szalone tarapaty.",
+    "tworcy": [
+      "Zagadka"
+    ]
   },
   {
     "game": "Sanitarium",
@@ -5584,7 +6540,11 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka grozy. Bohater budzi się w szpitalu psychiatrycznym i próbuje odkryć, kim jest.",
-    "steam": 284050
+    "steam": 284050,
+    "tworcy": [
+      "Manuel Czaszka",
+      "twig"
+    ]
   },
   {
     "game": "Serious Sam 2",
@@ -5599,7 +6559,11 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Kontynuacja Serious Sama. Bohater walczy z hordami potworów w pełnych humoru, ogromnych bitwach.",
-    "steam": 204340
+    "steam": 204340,
+    "tworcy": [
+      "Rotanimret",
+      "PikselArci"
+    ]
   },
   {
     "game": "Shadow of Comet",
@@ -5614,7 +6578,13 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodowa gra w klimacie grozy, osadzona w miasteczku nawiedzonym przez kometę.",
-    "steam": 389470
+    "steam": 389470,
+    "tworcy": [
+      "goliat",
+      "hamarfa",
+      "Van Brok",
+      "Masagrator"
+    ]
   },
   {
     "game": "Silent Hill",
@@ -5628,7 +6598,10 @@
     "link": "https://grajpopolsku.pl/download/silent-hill/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Harry Mason szuka zaginionej córki w ponurym miasteczku Silent Hill. Klasyczny horror psychologiczny."
+    "opis": "Harry Mason szuka zaginionej córki w ponurym miasteczku Silent Hill. Klasyczny horror psychologiczny.",
+    "tworcy": [
+      "Abaddon"
+    ]
   },
   {
     "game": "Silent Hill 2 – Wersja reżyserska",
@@ -5642,7 +6615,15 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-2-wr/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Wersja reżyserska Silent Hill 2. James Sunderland przyjeżdża do miasteczka po liście od zmarłej żony."
+    "opis": "Wersja reżyserska Silent Hill 2. James Sunderland przyjeżdża do miasteczka po liście od zmarłej żony.",
+    "tworcy": [
+      "belek666",
+      "YaReX",
+      "destroytheardor",
+      "xychu",
+      "macina1998",
+      "Żydolf"
+    ]
   },
   {
     "game": "Silent Hill 2 Enhanced Edition",
@@ -5670,7 +6651,14 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-2-x-2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym."
+    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym.",
+    "tworcy": [
+      "belek666",
+      "YaReX",
+      "destroytheardor",
+      "xychu",
+      "Żydolf"
+    ]
   },
   {
     "game": "Silent Hill 3",
@@ -5698,7 +6686,13 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-4-the-room/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Henry Townshend zostaje uwięziony w swoim mieszkaniu i odkrywa przejście do mrocznych miejsc."
+    "opis": "Henry Townshend zostaje uwięziony w swoim mieszkaniu i odkrywa przejście do mrocznych miejsc.",
+    "tworcy": [
+      "Nergal",
+      "YaReX",
+      "Silent Angel",
+      "Neo"
+    ]
   },
   {
     "game": "Silent Hill: Shattered Memories",
@@ -5843,7 +6837,21 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Horror science fiction w podwodnej stacji badawczej. Pytanie o to, czym jest świadomość.",
-    "steam": 282140
+    "steam": 282140,
+    "tworcy": [
+      "Izzie",
+      "Dawid Topolski",
+      "Norek",
+      "dinosaur",
+      "anti.doth",
+      "Souls Tornado",
+      "Radek Czerniak",
+      "trzmielu",
+      "criav",
+      "Whisky Bravo",
+      "Bartek Musajew",
+      "mziab"
+    ]
   },
   {
     "game": "Spider-Man – Return of the Sinister Six",
@@ -5902,7 +6910,14 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Kyle Katarn staje do walki z Mrocznymi Jedi. Strzelanka z walkami na miecze świetlne.",
-    "steam": 32380
+    "steam": 32380,
+    "tworcy": [
+      "Colek",
+      "Kartel",
+      "twig",
+      "Manuel Czaszka",
+      "Johnny"
+    ]
   },
   {
     "game": "Star Wars Jedi Knight: Mysteries of the Sith",
@@ -5944,7 +6959,10 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Horror psychologiczny, w którym wchodzisz w osobliwe, niepokojące sytuacje.",
-    "steam": 558420
+    "steam": 558420,
+    "tworcy": [
+      "ValthemarPL"
+    ]
   },
   {
     "game": "Stubbs the Zombie Rebel Without a Pulse",
@@ -5959,7 +6977,10 @@
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Zombie Stubbs wraca z grobu i rusza w żartobliwą wędrówkę po mieście. Humorystyczna gra akcji.",
-    "steam": 7800
+    "steam": 7800,
+    "tworcy": [
+      "Hikooo"
+    ]
   },
   {
     "game": "Suikoden",
@@ -5973,7 +6994,10 @@
     "link": "https://grajpopolsku.pl/download/suikoden/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczne japońskie RPG, w którym zbierasz drużynę 108 bohaterów i walczysz z imperium."
+    "opis": "Klasyczne japońskie RPG, w którym zbierasz drużynę 108 bohaterów i walczysz z imperium.",
+    "tworcy": [
+      "Kochatak Group"
+    ]
   },
   {
     "game": "Sunblaze",
@@ -5987,7 +7011,10 @@
     "link": "https://grajpopolsku.pl/download/sunblaze/",
     "dodano": "2026-10-28",
     "genre": "Platformówka",
-    "steam": 1525660
+    "steam": 1525660,
+    "tworcy": [
+      "Valthemar"
+    ]
   },
   {
     "game": "Super Back to the Future Part 2",
@@ -6001,7 +7028,11 @@
     "link": "https://grajpopolsku.pl/download/super-back-to-the-future-part-2/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Gra platformowa oparta na filmie „Powrót do przyszłości II\"."
+    "opis": "Gra platformowa oparta na filmie „Powrót do przyszłości II\".",
+    "tworcy": [
+      "mziab",
+      "Norek"
+    ]
   },
   {
     "game": "Super Contra",
@@ -6029,7 +7060,11 @@
     "link": "https://grajpopolsku.pl/download/super-mario-bros/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna platformówka Nintendo. Mario rusza ratować księżniczkę Peach z rąk Bowsera."
+    "opis": "Klasyczna platformówka Nintendo. Mario rusza ratować księżniczkę Peach z rąk Bowsera.",
+    "tworcy": [
+      "bemberg",
+      "dizzy9"
+    ]
   },
   {
     "game": "Super Mario Bros. 2",
@@ -6116,7 +7151,10 @@
     "link": "https://grajpopolsku.pl/download/sword-of-mana/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Akcja RPG z serii Mana na konsolę przenośną. Bohater wyrusza w przygodę przez magiczne lasy."
+    "opis": "Akcja RPG z serii Mana na konsolę przenośną. Bohater wyrusza w przygodę przez magiczne lasy.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "Sword&Soldiers",
@@ -6131,7 +7169,16 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Strategia czasu rzeczywistego w widoku z boku, w której prowadzisz wojska różnych cywilizacji.",
-    "steam": 63500
+    "steam": 63500,
+    "tworcy": [
+      "Czarnobrody",
+      "Machiner",
+      "Manuel Czaszka",
+      "mwk",
+      "mziab",
+      "Norek",
+      "twig"
+    ]
   },
   {
     "game": "Syberia",
@@ -6145,7 +7192,11 @@
     "link": "https://grajpopolsku.pl/download/syberia/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Przygodówka, w której prawniczka Kate Walker trafia w sam środek tajemniczej podróży. Wersja na DS."
+    "opis": "Przygodówka, w której prawniczka Kate Walker trafia w sam środek tajemniczej podróży. Wersja na DS.",
+    "tworcy": [
+      "Vader",
+      "twig"
+    ]
   },
   {
     "game": "Tactics Ogre – The Knight of Lodis",
@@ -6174,7 +7225,29 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Epizodowa przygoda w świecie Borderlands, opowiedziana przez Telltale Games.",
-    "steam": 330830
+    "steam": 330830,
+    "tworcy": [
+      "Norek",
+      "Kasica",
+      "Semprini",
+      "Tipheret",
+      "Bartek Musajew",
+      "Radek Czerniak",
+      "Walken",
+      "criav",
+      "mapet",
+      "Monika",
+      "Izzie",
+      "Talaith",
+      "Patryk Górski",
+      "garot",
+      "roobin",
+      "Lacrimael",
+      "VHS",
+      "mziab",
+      "cienislaw",
+      "GimmyBreaker"
+    ]
   },
   {
     "game": "Tales of Destiny",
@@ -6188,7 +7261,10 @@
     "link": "https://grajpopolsku.pl/download/tales-of-destiny/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Klasyczne japońskie RPG z serii Tales of. Bohater wyrusza w podróż pełną magii i walki."
+    "opis": "Klasyczne japońskie RPG z serii Tales of. Bohater wyrusza w podróż pełną magii i walki.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Tales of Monkey Island",
@@ -6203,7 +7279,12 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Pięć epizodów przygód Guybrusha Threepwooda. Pirat znów staje do walki z LeChuckiem.",
-    "steam": 31170
+    "steam": 31170,
+    "tworcy": [
+      "Pawcio",
+      "YaReX",
+      "tirey93"
+    ]
   },
   {
     "game": "Tales of Phantasia",
@@ -6217,7 +7298,10 @@
     "link": "https://grajpopolsku.pl/download/tales-of-phantasia/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Wczesna część serii Tales of, w której bohaterowie wyruszają w podróż, by pokonać zło."
+    "opis": "Wczesna część serii Tales of, w której bohaterowie wyruszają w podróż, by pokonać zło.",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Tank 1990",
@@ -6278,7 +7362,10 @@
     "link": "https://grajpopolsku.pl/download/tenchi-muyo-rpg/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG na SNES-a oparte na anime „Tenchi Muyo\"."
+    "opis": "RPG na SNES-a oparte na anime „Tenchi Muyo\".",
+    "tworcy": [
+      "cin25"
+    ]
   },
   {
     "game": "Tenchu Stealth Assassins",
@@ -6292,7 +7379,11 @@
     "link": "https://grajpopolsku.pl/download/tenchu-stealth-assassins/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra skradanka na PlayStation. Wcielasz się w ninja, który likwiduje wrogów w ciszy."
+    "opis": "Gra skradanka na PlayStation. Wcielasz się w ninja, który likwiduje wrogów w ciszy.",
+    "tworcy": [
+      "Berion",
+      "ffgriever"
+    ]
   },
   {
     "game": "Tennis",
@@ -6334,7 +7425,10 @@
     "link": "https://grajpopolsku.pl/download/terranigma/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG na SNES-a. Chłopiec Ark wyrusza w podróż, by ożywić świat."
+    "opis": "RPG na SNES-a. Chłopiec Ark wyrusza w podróż, by ożywić świat.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "Tetris",
@@ -6362,7 +7456,10 @@
     "link": "https://grajpopolsku.pl/download/the-addams-family/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Platformówka na podstawie „Rodziny Addamsów\"."
+    "opis": "Platformówka na podstawie „Rodziny Addamsów\".",
+    "tworcy": [
+      "Markiz"
+    ]
   },
   {
     "game": "The Adventures of Rad Gravity",
@@ -6376,7 +7473,10 @@
     "link": "https://grajpopolsku.pl/download/the-adventures-of-rad-gravity/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Platformówka science fiction o kosmicznym bohaterze."
+    "opis": "Platformówka science fiction o kosmicznym bohaterze.",
+    "tworcy": [
+      "Markiz"
+    ]
   },
   {
     "game": "The Awesome Adventures of Captain Spirit",
@@ -6409,7 +7509,15 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
-    }
+    },
+    "tworcy": [
+      "bax001",
+      "Burn Wolfdog",
+      "Heidi",
+      "matiko13",
+      "Michulichu0222",
+      "Woczok"
+    ]
   },
   {
     "game": "The Beast Within: A Gabriel Knight Mystery",
@@ -6439,7 +7547,14 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygoda w mrocznej atmosferze, w której chłopiec poznaje mroczne tajemnice zamku.",
-    "steam": 440880
+    "steam": 440880,
+    "tworcy": [
+      "senmou",
+      "Oskar Płatek",
+      "Michał Łukawski",
+      "barytas",
+      "Kostiik"
+    ]
   },
   {
     "game": "The Dark Eye: Demonicon",
@@ -6453,7 +7568,10 @@
     "link": "https://grajpopolsku.pl/download/the-dark-eye-demonicon/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "RPG w świecie Mrocznego Oka z mocnym wpływem wyborów."
+    "opis": "RPG w świecie Mrocznego Oka z mocnym wpływem wyborów.",
+    "tworcy": [
+      "Mateu990"
+    ]
   },
   {
     "game": "The Dark Pictures Anthology: House of Ashes",
@@ -6591,7 +7709,19 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka science fiction, w której grupa astronautów trafia na obcą planetę.",
-    "steam": 6040
+    "steam": 6040,
+    "tworcy": [
+      "bemberg",
+      "Hibernatus",
+      "Inforthekill",
+      "Johnny",
+      "Kociołek",
+      "Manuel Czaszka",
+      "mziab",
+      "Rael",
+      "twig",
+      "Urszula"
+    ]
   },
   {
     "game": "The Legend of Zelda",
@@ -6605,7 +7735,10 @@
     "link": "https://grajpopolsku.pl/download/948/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Pierwsza część serii. Link rusza do podziemi, by ocalić księżniczkę Zeldę."
+    "opis": "Pierwsza część serii. Link rusza do podziemi, by ocalić księżniczkę Zeldę.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "The Legend of Zelda Majora's Mask",
@@ -6619,7 +7752,11 @@
     "link": "https://grajpopolsku.pl/download/616/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Link ma trzy dni, by powstrzymać upadający księżyc. Jedna z najlepszych części serii Zelda."
+    "opis": "Link ma trzy dni, by powstrzymać upadający księżyc. Jedna z najlepszych części serii Zelda.",
+    "tworcy": [
+      "RPG",
+      "F1xat"
+    ]
   },
   {
     "game": "The Legend of Zelda Ocarina of Time",
@@ -6633,7 +7770,10 @@
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-ocarina-of-time/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Link podróżuje w czasie, by pokonać Ganondorfa. Klasyka serii Zelda na Nintendo 64."
+    "opis": "Link podróżuje w czasie, by pokonać Ganondorfa. Klasyka serii Zelda na Nintendo 64.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "The Legend of Zelda, Link's Awakening DX",
@@ -6647,7 +7787,10 @@
     "link": "https://grajpopolsku.pl/download/the-legend-of-zelda-links-awakening-dx/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Link budzi się na wyspie Koholint. Zelda na konsolę przenośną."
+    "opis": "Link budzi się na wyspie Koholint. Zelda na konsolę przenośną.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "The Legend of Zelda: The Minish Cap",
@@ -6690,7 +7833,10 @@
     "genre": "Logiczna",
     "dodano": "2026-10-28",
     "opis": "Gra logiczna, w której rozwiązujesz zagadki w tajemniczych, ozdobnych skrzyniach.",
-    "steam": 288160
+    "steam": 288160,
+    "tworcy": [
+      "DonVip"
+    ]
   },
   {
     "game": "The Room 2",
@@ -6705,7 +7851,10 @@
     "genre": "Logiczna",
     "dodano": "2026-10-28",
     "opis": "Kontynuacja zagadkowej gry The Room. Bohater odkrywa kolejne tajemnice ukryte w skrzyniach.",
-    "steam": 425580
+    "steam": 425580,
+    "tworcy": [
+      "DonVip"
+    ]
   },
   {
     "game": "The Secret of Monkey Island",
@@ -6719,7 +7868,10 @@
     "link": "https://grajpopolsku.pl/download/the-secret-of-monkey-island/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Guybrush Threepwood marzy o tym, by zostać piratem. Klasyczna przygodówka LucasArts."
+    "opis": "Guybrush Threepwood marzy o tym, by zostać piratem. Klasyczna przygodówka LucasArts.",
+    "tworcy": [
+      "SCUMMPL"
+    ]
   },
   {
     "game": "The Secret of Monkey Island: Special Edition",
@@ -6734,7 +7886,25 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Odświeżona wersja pierwszej części Monkey Island z nową grafiką i dźwiękiem.",
-    "steam": 32360
+    "steam": 32360,
+    "tworcy": [
+      "damiannos",
+      "hajja",
+      "helgar",
+      "mikikakak",
+      "ronzbig1",
+      "twig",
+      "mrmartin",
+      "Bartosz Jabłoński",
+      "Camiol",
+      "bemberg",
+      "Fatek",
+      "Anthrox",
+      "Szczery",
+      "lazlo71",
+      "Hibernatus",
+      "koun"
+    ]
   },
   {
     "game": "The Silent Age",
@@ -6814,7 +7984,23 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Druga część przygód Clementine, która musi przeżyć w świecie pełnym zombie.",
-    "steam": 261030
+    "steam": 261030,
+    "tworcy": [
+      "GimmyBreaker",
+      "Norek",
+      "Kasica",
+      "Tipheret",
+      "Semprini",
+      "Bartek Musajew",
+      "Leszczu",
+      "skwierczyk",
+      "Annica88",
+      "Natalia Gałuszkiewicz",
+      "Kazu",
+      "Kubson",
+      "Manuel Czaszka",
+      "roobin"
+    ]
   },
   {
     "game": "The Walking Dead: A New Frontier",
@@ -6829,7 +8015,22 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Nowa opowieść ze świata The Walking Dead, w której losy Javiera i jego rodziny się komplikują.",
-    "steam": 536220
+    "steam": 536220,
+    "tworcy": [
+      "Norek",
+      "Talaith",
+      "Sniqs",
+      "Marta Kliber",
+      "Natalia Przybysz",
+      "Konrad Kołodziejczyk",
+      "Piotr Zelek",
+      "Dagmara Huras",
+      "Annica",
+      "MasterAlvaro",
+      "Michał Rzeźnik",
+      "Patryk Górski",
+      "cienislaw"
+    ]
   },
   {
     "game": "The Walking Dead: Michonne",
@@ -6844,7 +8045,22 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Krótka historia Michonne ze świata The Walking Dead.",
-    "steam": 429570
+    "steam": 429570,
+    "tworcy": [
+      "Norek",
+      "Izzie",
+      "Quo",
+      "Wade",
+      "Trinity",
+      "Querida",
+      "Radek",
+      "geras",
+      "JoelStobbart",
+      "Talaith",
+      "Patryk Górski",
+      "cienislaw",
+      "mziab"
+    ]
   },
   {
     "game": "The Walking Dead: Survival Instinct",
@@ -6858,7 +8074,14 @@
     "link": "https://grajpopolsku.pl/download/the-walking-dead-survival-instinct/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Gra akcji z zombie, w której bracia Dixon próbują przetrwać apokalipsę."
+    "opis": "Gra akcji z zombie, w której bracia Dixon próbują przetrwać apokalipsę.",
+    "tworcy": [
+      "Winegar",
+      "Neutralize",
+      "Ramiz",
+      "filu23",
+      "cienislaw"
+    ]
   },
   {
     "game": "The Walking Dead: The Final Season",
@@ -6873,7 +8096,19 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Zakończenie historii Clementine w serii The Walking Dead od Telltale.",
-    "steam": 866800
+    "steam": 866800,
+    "tworcy": [
+      "Norek",
+      "Izzie",
+      "Fenlisek",
+      "Sniqs",
+      "Pellet",
+      "Wiktor G",
+      "Annica88",
+      "Michał Rzeźnik",
+      "cienislaw",
+      "mziab"
+    ]
   },
   {
     "game": "The Yakyuuken Special [PSX]",
@@ -6886,7 +8121,10 @@
     "link": "https://grajpopolsku.pl/download/the-yakyuuken-special-psx/",
     "genre": "Inne",
     "dodano": "2026-10-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/the-yakyuuken-special-psx-ec731d64.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/the-yakyuuken-special-psx-ec731d64.webp",
+    "tworcy": [
+      "krzys837"
+    ]
   },
   {
     "game": "Theme Hospital",
@@ -6918,7 +8156,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-10-29"
-    }
+    },
+    "tworcy": [
+      "Arkon"
+    ]
   },
   {
     "game": "This is the Police (GOG)",
@@ -6933,7 +8174,21 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Gra strategiczna, w której jako szef policji w mieście ogarniętym korupcją musisz podejmować trudne decyzje.",
-    "steam": 443810
+    "steam": 443810,
+    "tworcy": [
+      "Norek",
+      "arszanka",
+      "dinosaur",
+      "Marta Konieczna",
+      "Agnieszka Bazan",
+      "Sniqs",
+      "Predator",
+      "Modliszka",
+      "Robinson",
+      "flyflyTom",
+      "MasterAlvaro",
+      "mziab"
+    ]
   },
   {
     "game": "This is the Police (Steam)",
@@ -6948,7 +8203,21 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Gra strategiczna, w której jako szef policji w mieście ogarniętym korupcją musisz podejmować trudne decyzje.",
-    "steam": 443810
+    "steam": 443810,
+    "tworcy": [
+      "Norek",
+      "arszanka",
+      "dinosaur",
+      "Marta Konieczna",
+      "Agnieszka Bazan",
+      "Sniqs",
+      "Predator",
+      "Modliszka",
+      "Robinson",
+      "flyflyTom",
+      "MasterAlvaro",
+      "mziab"
+    ]
   },
   {
     "game": "Time Hollow",
@@ -6962,7 +8231,14 @@
     "link": "https://grajpopolsku.pl/download/time-hollow/",
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
-    "opis": "Przygodówka na DS, w której bohater wykorzystuje tajemnicze przejścia, by zmienić przeszłość."
+    "opis": "Przygodówka na DS, w której bohater wykorzystuje tajemnicze przejścia, by zmienić przeszłość.",
+    "tworcy": [
+      "mziab",
+      "ffgriever",
+      "Manuel Czaszka",
+      "Norek",
+      "GoMaTi"
+    ]
   },
   {
     "game": "Tiny Toon Adventures",
@@ -6990,7 +8266,10 @@
     "link": "https://grajpopolsku.pl/download/tom-jerry-and-tuffy/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Gra z Tomem i Jerrym, w której kot goni myszkę w serii zabawnych plansz."
+    "opis": "Gra z Tomem i Jerrym, w której kot goni myszkę w serii zabawnych plansz.",
+    "tworcy": [
+      "Markiz"
+    ]
   },
   {
     "game": "Tony Hawk's Pro Skater HD",
@@ -7184,7 +8463,11 @@
     "genre": "Akcja",
     "dodano": "2026-10-28",
     "opis": "Gra akcji, w której kobieta-szpieg walczy z niemieckimi siłami w czasie II wojny światowej.",
-    "steam": 16720
+    "steam": 16720,
+    "tworcy": [
+      "Manuel Czaszka",
+      "twig"
+    ]
   },
   {
     "game": "Vietcong + Fist Alpha + Red Dawn",
@@ -7258,7 +8541,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/villgust/",
     "dodano": "2026-10-28",
-    "genre": "RPG"
+    "genre": "RPG",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "Waking Mars",
@@ -7303,7 +8589,13 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Epizodowa przygodówka Telltale, w której Wallace i jego pies Gromit wpadają w tarapaty.",
-    "steam": 31100
+    "steam": 31100,
+    "tworcy": [
+      "P.G",
+      "Antoni Borowski",
+      "adriz_23",
+      "Marcinek Błyskawica z Sanoka"
+    ]
   },
   {
     "game": "WarCraft II Battle.net Edition",
@@ -7317,7 +8609,10 @@
     "link": "https://grajpopolsku.pl/download/warcraft-ii-battle-net-edition/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna strategia czasu rzeczywistego od Blizzarda. Walczysz o panowanie nad światem."
+    "opis": "Klasyczna strategia czasu rzeczywistego od Blizzarda. Walczysz o panowanie nad światem.",
+    "tworcy": [
+      "Noktis"
+    ]
   },
   {
     "game": "Warcraft: Orcs & Humans",
@@ -7331,7 +8626,10 @@
     "link": "https://grajpopolsku.pl/download/warcraft/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Pierwsza strategia Blizzarda z serii WarCraft. Ludzie walczą z orkami."
+    "opis": "Pierwsza strategia Blizzarda z serii WarCraft. Ludzie walczą z orkami.",
+    "tworcy": [
+      "Noktis"
+    ]
   },
   {
     "game": "Wings of Fury",
@@ -7345,7 +8643,10 @@
     "link": "https://grajpopolsku.pl/download/wings-of-fury/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Gra lotnicza na konsolę przenośną, w której pilotujesz samolot."
+    "opis": "Gra lotnicza na konsolę przenośną, w której pilotujesz samolot.",
+    "tworcy": [
+      "aRPI"
+    ]
   },
   {
     "game": "Wonder Project J",
@@ -7358,7 +8659,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/wonder-project-j/",
     "genre": "Symulacja",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Worms Armageddon",
@@ -7372,7 +8676,10 @@
     "link": "https://grajpopolsku.pl/download/worms-armageddon/",
     "genre": "Strategia",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna gra z uzbrojonymi robakami, które wzajemnie się zwalczają."
+    "opis": "Klasyczna gra z uzbrojonymi robakami, które wzajemnie się zwalczają.",
+    "tworcy": [
+      "RPG"
+    ]
   },
   {
     "game": "WRATH: Aeon of Ruin",
@@ -7387,7 +8694,10 @@
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
     "opis": "Strzelanka w klimacie nowoczesnej fantastyki, utrzymana w stylu klasycznych gier.",
-    "steam": 1000410
+    "steam": 1000410,
+    "tworcy": [
+      "PaCo666-PC"
+    ]
   },
   {
     "game": "Xenogears",
@@ -7401,7 +8711,10 @@
     "link": "https://grajpopolsku.pl/download/xenogears/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "opis": "Epickie japońskie RPG. Młodzieniec Fei wpada w sam środek konfliktu z boskimi istotami."
+    "opis": "Epickie japońskie RPG. Młodzieniec Fei wpada w sam środek konfliktu z boskimi istotami.",
+    "tworcy": [
+      "Browar"
+    ]
   },
   {
     "game": "Xenonauts",
@@ -7416,7 +8729,10 @@
     "genre": "Strategia",
     "dodano": "2026-10-28",
     "opis": "Strategia taktyczna, w której dowodzisz oddziałami do obrony Ziemi przed kosmitami.",
-    "steam": 223830
+    "steam": 223830,
+    "tworcy": [
+      "karhorus"
+    ]
   },
   {
     "game": "Yooka-Laylee",
@@ -7431,7 +8747,10 @@
     "genre": "Platformówka",
     "dodano": "2026-10-28",
     "opis": "Platformówka w stylu klasycznych gier 3D. Kameleon Yooka i nietoperz Laylee zbierają strony książek.",
-    "steam": 360830
+    "steam": 360830,
+    "tworcy": [
+      "goliat"
+    ]
   },
   {
     "game": "Yume Nikki",
@@ -7446,7 +8765,14 @@
     "genre": "Horror",
     "dodano": "2026-10-28",
     "opis": "Gra eksploracyjna, w której śnisz i odkrywasz osobliwe, niepokojące światy.",
-    "steam": 650700
+    "steam": 650700,
+    "tworcy": [
+      "senmou",
+      "Santroy",
+      "Oskar Płatek",
+      "Michał Łukawski",
+      "Kamillot"
+    ]
   },
   {
     "game": "Yuusha kara wa Nigerarenai",
@@ -7459,7 +8785,10 @@
     "link": "https://grajpopolsku.pl/download/yuusha-kara-wa-nigerarenai/",
     "genre": "RPG",
     "dodano": "2026-10-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/yuusha-kara-wa-nigerarenai-73d09fda.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/yuusha-kara-wa-nigerarenai-73d09fda.webp",
+    "tworcy": [
+      "Frey79"
+    ]
   },
   {
     "game": "Zak McKracken and the Alien Mindbenders",
@@ -7474,7 +8803,13 @@
     "genre": "Przygodowa",
     "dodano": "2026-10-28",
     "opis": "Przygodówka LucasArts. Dziennikarz Zak McKracken odkrywa kosmitów w rządzących elitach.",
-    "steam": 559070
+    "steam": 559070,
+    "tworcy": [
+      "Johnny",
+      "Manuel Czaszka",
+      "bemberg",
+      "Rael"
+    ]
   },
   {
     "game": "Zelda II – The Adventure of Link",
@@ -7502,7 +8837,10 @@
     "link": "https://grajpopolsku.pl/download/zero-wing/",
     "genre": "Strzelanka",
     "dodano": "2026-10-28",
-    "opis": "Klasyczna strzelanka z widokiem z boku. Znany z memu „All your base are belong to us\"."
+    "opis": "Klasyczna strzelanka z widokiem z boku. Znany z memu „All your base are belong to us\".",
+    "tworcy": [
+      "mziab"
+    ]
   },
   {
     "game": "Zombiez Seeker",
@@ -7515,7 +8853,10 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/zombiez-seeker/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "tworcy": [
+      "minDStorm"
+    ]
   },
   {
     "game": "Silent Hill 2",
@@ -7529,7 +8870,10 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-2-ps2/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym."
+    "opis": "Wersja Silent Hill 2 na Xbox, z dodatkowym wątkiem fabularnym.",
+    "tworcy": [
+      "Silent Hill po polsku"
+    ]
   },
   {
     "game": "Silent Hill 2: Director's Cut",
@@ -7543,7 +8887,10 @@
     "link": "https://grajpopolsku.pl/download/silent-hill-2-directors-cut/",
     "genre": "Horror",
     "dodano": "2026-10-28",
-    "opis": "Wersja reżyserska Silent Hill 2 na konsolę, z dodatkowymi scenami."
+    "opis": "Wersja reżyserska Silent Hill 2 na konsolę, z dodatkowymi scenami.",
+    "tworcy": [
+      "Silent Hill po polsku"
+    ]
   },
   {
     "game": "Castlevania Belmont's Curse",
@@ -9343,7 +10690,11 @@
       }
     ],
     "opis": "Kolejna odsłona wymagającej serii akcji Team Ninja w Japonii okresu Sengoku. Bohater może przełączać się między stylem samuraja i ninja.",
-    "steam": 3681010
+    "steam": 3681010,
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "The Walking Dead: The Telltale Definitive Series",
@@ -9386,6 +10737,11 @@
     },
     "aliasy": [
       "shenmue-i-ii"
+    ],
+    "tworcy": [
+      "Vetix",
+      "Hektor",
+      "pavlikdc"
     ]
   },
   {
@@ -9560,7 +10916,11 @@
     "author": "VetSpolszczenia",
     "img": "https://cdn.grypopolsku.pl/okladki/metal-gear-rising-revengeance-97453731.webp",
     "opis": "Raiden wraca jako cyborg z mieczem. Szybka gra akcji, w której można ciąć wrogów na kawałki.",
-    "steam": 235460
+    "steam": 235460,
+    "tworcy": [
+      "Vetix",
+      "Misstgun"
+    ]
   },
   {
     "game": "Broken Sword - Cień templariuszy: Reforged",
@@ -9730,7 +11090,11 @@
     "author": "VetSpolszczenia",
     "img": "https://cdn.grypopolsku.pl/okladki/fable-anniversary-f07836ae.webp",
     "opis": "Odnowiona wersja pierwszej części Fable. Bohater rozwija się w świecie, w którym jego wybory zmieniają wygląd i reputację.",
-    "steam": 288470
+    "steam": 288470,
+    "tworcy": [
+      "Vetix",
+      "mhkage."
+    ]
   },
   {
     "game": "Starfield Premium Edition",
@@ -10510,7 +11874,17 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "PlayandTuto",
+      "Karambito",
+      "Daniel Obrębski",
+      "Łatka",
+      "ŻabkaV2",
+      "Bullet",
+      "bialyowo",
+      "Crab"
+    ]
   },
   {
     "game": "ULTRAKILL",
@@ -10526,7 +11900,17 @@
     "img": "https://cdn.grypopolsku.pl/okladki/ultrakill-846c986a.webp",
     "upd": "2026-11-01",
     "opis": "Szybka strzelanka w stylu lat 90., w której maszyna napędzana krwią przebija się przez piekło. Akcja nagradza agresję, efektowne kombinacje broni i ciągły ruch.",
-    "steam": 1229490
+    "steam": 1229490,
+    "tworcy": [
+      "Karambito",
+      "Alias",
+      "Blackout",
+      "Kawoholik",
+      "Daniel Obrębski",
+      "Noel",
+      "Demencjusz Sernikowy",
+      "Crab"
+    ]
   },
   {
     "game": "Touhou Luna Nights",
@@ -10542,7 +11926,17 @@
     "img": "https://cdn.grypopolsku.pl/okladki/touhou-luna-nights-f512d1ae.webp",
     "upd": "2026-11-01",
     "opis": "Metroidvania ze świata Touhou. Pokojówka Sakuya Izayoi trafia do innej rzeczywistości i walczy, wykorzystując zdolność zatrzymywania czasu.",
-    "steam": 851100
+    "steam": 851100,
+    "tworcy": [
+      "PlayandTuto",
+      "TOUker0",
+      "Bullet",
+      "Łatka",
+      "Kassper",
+      "Karambito",
+      "szczurek7312",
+      "ŻabkaV2"
+    ]
   },
   {
     "game": "Five Nights at Freddy's 3",
@@ -10558,7 +11952,18 @@
     "img": "https://cdn.grypopolsku.pl/okladki/five-nights-at-freddy-s-3-9b5fcf60.webp",
     "upd": "2026-11-01",
     "opis": "Trzydzieści lat po zamknięciu pizzerii powstaje atrakcja grozy oparta na jej historii. Pilnujesz systemów budynku i stawiasz czoła Springtrapowi, który krąży po korytarzach.",
-    "steam": 354140
+    "steam": 354140,
+    "tworcy": [
+      "PlayandTuto",
+      "Karambito",
+      "Daniel Obrębski",
+      "Łatka",
+      "ŻabkaV2",
+      "Bullet",
+      "bialyowo",
+      "Crab",
+      "enotekk"
+    ]
   },
   {
     "game": "Five Nights at Freddy's 2",
@@ -10574,7 +11979,17 @@
     "img": "https://cdn.grypopolsku.pl/okladki/five-nights-at-freddy-s-2-25bbb61f.webp",
     "upd": "2026-11-01",
     "opis": "Kolejne nocne zmiany w pizzerii Freddy Fazbear's, tym razem bez drzwi do zamknięcia. Przed animatronikami chroni Cię maska, latarka i pozytywka, którą trzeba stale nakręcać.",
-    "steam": 332800
+    "steam": 332800,
+    "tworcy": [
+      "PlayandTuto",
+      "Karambito",
+      "Daniel Obrębski",
+      "Łatka",
+      "ŻabkaV2",
+      "Bullet",
+      "bialyowo",
+      "enotekk"
+    ]
   },
   {
     "game": "Five Nights at Freddy's",
@@ -10590,7 +12005,16 @@
     "img": "https://cdn.grypopolsku.pl/okladki/five-nights-at-freddy-s-3f57e6c5.webp",
     "upd": "2026-11-01",
     "opis": "Pracujesz jako nocny ochroniarz w pizzerii, w której animatroniczne maskotki po zmroku zaczynają się poruszać. Pilnujesz kamer i drzwi, oszczędzając prąd, żeby dotrwać do szóstej rano.",
-    "steam": 319510
+    "steam": 319510,
+    "tworcy": [
+      "Karambito",
+      "PlayandTuto",
+      "Daniel Obrębski",
+      "Łatka",
+      "ŻabkaV2",
+      "Bullet",
+      "bialyowo"
+    ]
   },
   {
     "game": "Five Nights at Freddy's: Sister Location",
@@ -10610,7 +12034,31 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "PlayandTuto",
+      "Karambito",
+      "Łatka",
+      "Kassper",
+      "llulaaa",
+      "Womo",
+      "Daniel Obrębski",
+      "ŻabkaV2",
+      "Noel",
+      "bialyowo",
+      "Vexiot",
+      "FatherRikuruVA",
+      "Kubusk",
+      "Bakusia",
+      "Miękuś",
+      "domirine",
+      "CinnaBun",
+      "Angelotti",
+      "Pryszcz",
+      "Wideł",
+      "Matej",
+      "Bullet"
+    ]
   },
   {
     "game": "Baldi's Basics Classic Remastered",
@@ -10630,7 +12078,22 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-01"
-    }
+    },
+    "tworcy": [
+      "Karambito",
+      "Noel",
+      "bialyowo",
+      "Demencjusz Sernikowy",
+      "Womo",
+      "Mikox",
+      "szczurek7312",
+      "Obręb",
+      "Łatka",
+      "Vexiot",
+      "AmoloV2",
+      "Kassper",
+      "FatherRikuru"
+    ]
   },
   {
     "game": "START AGAIN: a prologue",
@@ -10646,7 +12109,13 @@
     "img": "https://cdn.grypopolsku.pl/okladki/start-again-a-prologue-c74ef9aa.webp",
     "upd": "2026-11-01",
     "opis": "Prototyp RPG In Stars and Time. Bohater utknął w pętli czasowej, a kolejne powtórzenia tego samego dnia zaczynają mu ciążyć.",
-    "steam": 1691420
+    "steam": 1691420,
+    "tworcy": [
+      "Karambito",
+      "Im5hadow",
+      "Kassper",
+      "ComeReal"
+    ]
   },
   {
     "game": "METAL GEAR & METAL GEAR 2: Solid Snake",
@@ -10678,7 +12147,11 @@
     "genre": "Horror",
     "dodano": "2026-11-01",
     "opis": "Retro survival horror z prerenderowanymi tłami, jak z końca lat 90. Agentka Alisa trafia do wiktoriańskiej rezydencji, w której czyhają mechaniczne lalki.",
-    "steam": 1335530
+    "steam": 1335530,
+    "tworcy": [
+      "Obręb",
+      "Daniel Obrębski"
+    ]
   },
   {
     "game": "Cult of the Lamb",
@@ -10694,7 +12167,16 @@
     "genre": "Akcja",
     "dodano": "2026-11-01",
     "opis": "Uratowany przed zagładą baranek zakłada własną sektę: budujesz osadę, zdobywasz wyznawców i walczysz z niewiernymi w losowo generowanych lochach. Spolszczenie obejmuje grę podstawową i wszystkie dodatki.",
-    "steam": 1313140
+    "steam": 1313140,
+    "tworcy": [
+      "Łatka",
+      "Obręb",
+      "Daniel Obrębski",
+      "Noel",
+      "Crab",
+      "ŻabkaV2",
+      "DarksLuna"
+    ]
   },
   {
     "game": "Life is Strange 2",
@@ -10710,7 +12192,17 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-01",
     "opis": "Bracia Sean i Daniel Diaz uciekają przed policją do Meksyku, a młodszy z nich odkrywa w sobie telekinezę. Epizodowa podróż, w której twoje wybory kształtują losy obu chłopców.",
-    "steam": 532210
+    "steam": 532210,
+    "tworcy": [
+      "S3rafin",
+      "Patryk Kotlarz",
+      "Dominika Sędzik",
+      "AwwBurnPL",
+      "Qusay",
+      "Heidi",
+      "Woczok",
+      "Mvciek"
+    ]
   },
   {
     "game": "Life is Strange: Double Exposure",
@@ -10743,7 +12235,15 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-14"
-    }
+    },
+    "tworcy": [
+      "S3rafin",
+      "StroyDecroix",
+      "Burn Wolfdog",
+      "Heidi",
+      "Woczok",
+      "Marek Grzyb"
+    ]
   },
   {
     "game": "Tell Me Why",
@@ -10759,7 +12259,14 @@
     "genre": "Przygodowa",
     "dodano": "2026-11-01",
     "opis": "Bliźniacy Tyler i Alyson Ronan wracają do rodzinnego miasteczka na Alasce i dzięki wyjątkowej więzi odkrywają prawdę o swojej przeszłości. Epizodowa przygoda od twórców Life is Strange.",
-    "steam": 1180660
+    "steam": 1180660,
+    "tworcy": [
+      "S3rafin",
+      "Burn Wolfdog",
+      "Woczok",
+      "Heidi",
+      "Ferno Moon"
+    ]
   },
   {
     "game": "Dead Age 2: The Zombie Survival RPG",
@@ -10775,7 +12282,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/dead-age-2-the-zombie-survival-rpg-c867ecfb.webp",
     "upd": "2026-11-02",
     "opis": "Fabularna gra o przetrwaniu po apokalipsie zombie. Kierujesz grupą ocalałych, podejmujesz trudne decyzje i toczysz turowe walki.",
-    "steam": 951430
+    "steam": 951430,
+    "tworcy": [
+      "bax001",
+      "matiko13"
+    ]
   },
   {
     "game": "Sniper: Ghost Warrior",
@@ -15244,7 +16755,11 @@
     "dodano": "2026-10-26",
     "upd": "2026-10-26",
     "steam": 3292260,
-    "img": "https://cdn.grypopolsku.pl/okladki/amenti-ef0b4d9e.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/amenti-ef0b4d9e.webp",
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "Another Crab's Treasure",
@@ -15259,7 +16774,10 @@
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/another-crab-s-treasure-3d24120e.webp",
-    "steam": 1887840
+    "steam": 1887840,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Asterigos: Curse of the Stars",
@@ -15274,7 +16792,11 @@
     "dodano": "2026-07-13",
     "upd": "2026-10-20",
     "img": "https://cdn.grypopolsku.pl/okladki/asterigos-curse-of-the-stars-7a9469bf.webp",
-    "steam": 1731070
+    "steam": 1731070,
+    "tworcy": [
+      "Vetix",
+      "Vertullo"
+    ]
   },
   {
     "game": "Bayonetta",
@@ -15290,7 +16812,10 @@
     "upd": "2026-09-17",
     "img": "https://cdn.grypopolsku.pl/okladki/bayonetta-9086bcef.webp",
     "opis": "Czarownica Bayonetta budzi się po latach bez pamięci i walczy z zastępami aniołów. Efektowny slasher, w którym unik w ostatniej chwili spowalnia czas.",
-    "steam": 460790
+    "steam": 460790,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Bayonetta 2",
@@ -15309,7 +16834,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-02"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Bayonetta 3",
@@ -15324,7 +16852,10 @@
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/bayonetta-3-bb167ce2.webp",
-    "opis": "Bayonetta podróżuje przez alternatywne światy, by powstrzymać zagrażający wszechświatu byt. Do walki wchodzą wielkie przyzywane demony i nowa bohaterka, Viola."
+    "opis": "Bayonetta podróżuje przez alternatywne światy, by powstrzymać zagrażający wszechświatu byt. Do walki wchodzą wielkie przyzywane demony i nowa bohaterka, Viola.",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Black Desert",
@@ -15344,7 +16875,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Misstgun"
+    ]
   },
   {
     "game": "Blades of Fire",
@@ -15360,7 +16895,10 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/blades-of-fire-475c8f0e.webp",
     "opis": "Gra akcji od twórców Metroid Dread, w której samodzielnie kujesz broń i walczysz z królową, która zamieniła stal w kamień. Mechanika kuźni jest tu kluczowa.",
-    "steam": 2091020
+    "steam": 2091020,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Blades of Time",
@@ -15380,7 +16918,11 @@
       "kto": "Harddrive",
       "dzien": "2026-11-11"
     },
-    "ukonczono": "2026-11-11"
+    "ukonczono": "2026-11-11",
+    "tworcy": [
+      "Vetix",
+      "xionix"
+    ]
   },
   {
     "game": "Bloodstained: Ritual of the Night",
@@ -15396,7 +16938,11 @@
     "upd": "2026-10-02",
     "img": "https://cdn.grypopolsku.pl/okladki/bloodstained-ritual-of-the-night-9a6d5e7d.webp",
     "opis": "Duchowy spadkobierca Castlevanii od Kojiego Igarashiego. Miriam, naznaczona klątwą kryształów, przemierza zamek pełen demonów w stylu metroidvanii.",
-    "steam": 692850
+    "steam": 692850,
+    "tworcy": [
+      "Misstgun",
+      "Vetix"
+    ]
   },
   {
     "game": "Crown Siege",
@@ -15411,7 +16957,11 @@
     "dodano": "2026-10-05",
     "upd": "2026-10-31",
     "steam": 4310440,
-    "img": "https://cdn.grypopolsku.pl/okladki/crown-siege-29ea87ab.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/crown-siege-29ea87ab.webp",
+    "tworcy": [
+      "Misstgun",
+      "Rogal"
+    ]
   },
   {
     "game": "Crownhold",
@@ -15426,7 +16976,10 @@
     "dodano": "2026-09-21",
     "upd": "2026-09-21",
     "img": "https://cdn.grypopolsku.pl/okladki/crownhold-2d7da00b.webp",
-    "steam": 4579940
+    "steam": 4579940,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Daymare: 1998",
@@ -15449,7 +17002,11 @@
       "kto": "Harddrive",
       "dzien": "2026-11-08"
     },
-    "ukonczono": "2026-11-03"
+    "ukonczono": "2026-11-03",
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "Dead Rising 3",
@@ -15464,7 +17021,10 @@
     "dodano": "2026-09-09",
     "upd": "2026-10-19",
     "img": "https://cdn.grypopolsku.pl/okladki/dead-rising-3-271138ad.webp",
-    "steam": 265550
+    "steam": 265550,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Dementium II HD",
@@ -15479,7 +17039,10 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "img": "https://cdn.grypopolsku.pl/okladki/dementium-ii-hd-e180244c.webp",
-    "opis": "Odświeżony horror z Nintendo DS. Bohater budzi się w szpitalu psychiatrycznym po operacji mózgu i musi uciec przed koszmarnymi istotami."
+    "opis": "Odświeżony horror z Nintendo DS. Bohater budzi się w szpitalu psychiatrycznym po operacji mózgu i musi uciec przed koszmarnymi istotami.",
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Devil May Cry 4 Special Edition",
@@ -15495,7 +17058,10 @@
     "upd": "2026-10-22",
     "img": "https://cdn.grypopolsku.pl/okladki/devil-may-cry-4-special-edition-ff9b458b.webp",
     "opis": "Młody Nero i Dante stają naprzeciw siebie w mieście Fortuna. To rozszerzone wydanie z dodatkowymi grywalnymi postaciami, w tym Vergilem.",
-    "steam": 329050
+    "steam": 329050,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Devil May Cry HD Collection",
@@ -15515,7 +17081,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-12"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Misstgun"
+    ]
   },
   {
     "game": "Digimon Story: Time Stranger",
@@ -15530,7 +17100,10 @@
     "dodano": "2026-10-11",
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/digimon-story-time-stranger-94ed3ad1.webp",
-    "steam": 1984270
+    "steam": 1984270,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Dinkum",
@@ -15545,7 +17118,10 @@
     "dodano": "2026-06-25",
     "upd": "2026-10-24",
     "img": "https://cdn.grypopolsku.pl/okladki/dinkum-c870f314.webp",
-    "steam": 1062520
+    "steam": 1062520,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Drillbound",
@@ -15560,7 +17136,11 @@
     "dodano": "2026-10-19",
     "upd": "2026-10-31",
     "steam": 4149040,
-    "img": "https://cdn.grypopolsku.pl/okladki/drillbound-95dba321.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/drillbound-95dba321.webp",
+    "tworcy": [
+      "Misstgun",
+      "Rogal"
+    ]
   },
   {
     "game": "Dungeons 3",
@@ -15575,7 +17155,10 @@
     "dodano": "2026-09-16",
     "upd": "2026-09-16",
     "img": "https://cdn.grypopolsku.pl/okladki/dungeons-3-dbea07e8.webp",
-    "steam": 493900
+    "steam": 493900,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "E-Shop Tycoon",
@@ -15594,7 +17177,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-05"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Eternal Strands",
@@ -15609,7 +17195,10 @@
     "dodano": "2026-07-07",
     "upd": "2026-07-07",
     "img": "https://cdn.grypopolsku.pl/okladki/eternal-strands-fc3bec92.webp",
-    "steam": 1491410
+    "steam": 1491410,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "EVE Online",
@@ -15629,7 +17218,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Evil Genius 2: World Domination",
@@ -15644,7 +17236,10 @@
     "dodano": "2026-09-22",
     "upd": "2026-09-22",
     "img": "https://cdn.grypopolsku.pl/okladki/evil-genius-2-world-domination-22f8c010.webp",
-    "steam": 700600
+    "steam": 700600,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "F.I.S.T.: Forged In Shadow Torch",
@@ -15664,7 +17259,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-08"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "Fantasy Life i: The Girl Who Steals Time",
@@ -15679,7 +17278,11 @@
     "dodano": "2026-10-06",
     "upd": "2026-10-06",
     "img": "https://cdn.grypopolsku.pl/okladki/fantasy-life-i-the-girl-who-steals-time-d2e83ec6.webp",
-    "steam": 2993780
+    "steam": 2993780,
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "Fatal Frame / Project Zero: Mask of the Lunar Eclipse",
@@ -15695,7 +17298,10 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/fatal-frame-project-zero-mask-of-the-lunar-eclipse-b97cff62.webp",
     "opis": "Japoński survival horror. Trzy dziewczyny wracają na wyspę Rogetsu, by odzyskać utracone wspomnienia, a z duchami walczą specjalnym aparatem Camera Obscura.",
-    "steam": 2130460
+    "steam": 2130460,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Final Fantasy Type-0 HD",
@@ -15715,7 +17321,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "xionix"
+    ]
   },
   {
     "game": "Fire Emblem Engage",
@@ -15730,7 +17340,11 @@
     "dodano": "2026-10-27",
     "upd": "2026-10-27",
     "img": "https://cdn.grypopolsku.pl/okladki/fire-emblem-engage-eea5c53a.webp",
-    "opis": "Smoczy bohater Alear budzi się po tysiącu lat i zbiera pierścienie z duchami postaci z dawnych części serii. Taktyczne RPG z efektownymi walkami na siatce."
+    "opis": "Smoczy bohater Alear budzi się po tysiącu lat i zbiera pierścienie z duchami postaci z dawnych części serii. Taktyczne RPG z efektownymi walkami na siatce.",
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "Forager",
@@ -15746,7 +17360,10 @@
     "upd": "2026-10-27",
     "img": "https://cdn.grypopolsku.pl/okladki/forager-06c5f4bd.webp",
     "opis": "Pikselowa gra, w której zbierasz surowce, budujesz fabryki i wykupujesz kolejne wyspy. Prosta pętla szybko zamienia się w rozbudowane zarządzanie.",
-    "steam": 751780
+    "steam": 751780,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Forspoken",
@@ -15762,7 +17379,11 @@
     "upd": "2026-10-15",
     "img": "https://cdn.grypopolsku.pl/okladki/forspoken-d0bdef9a.webp",
     "opis": "Nowojorczanka Frey trafia do magicznej krainy Athia i odkrywa w sobie moce. Gra akcji w otwartym świecie z szybkim poruszaniem się.",
-    "steam": 1680880
+    "steam": 1680880,
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "GRIME",
@@ -15777,7 +17398,11 @@
     "dodano": "2026-10-14",
     "upd": "2026-10-14",
     "img": "https://cdn.grypopolsku.pl/okladki/grime-b87bf33f.webp",
-    "steam": 1123050
+    "steam": 1123050,
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "GRIME II",
@@ -15792,7 +17417,10 @@
     "dodano": "2026-07-19",
     "upd": "2026-07-19",
     "img": "https://cdn.grypopolsku.pl/okladki/grime-ii-d22e3e01.webp",
-    "steam": 2529790
+    "steam": 2529790,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Hitman World of Assassination",
@@ -15808,7 +17436,10 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/hitman-world-of-assassination-f472d493.webp",
     "opis": "Agent 47 podróżuje po świecie i eliminuje cele w rozbudowanych, otwartych lokacjach. Zbiór trylogii, w której sam wybierasz przebranie, narzędzia i sposób wykonania zlecenia.",
-    "steam": 1659040
+    "steam": 1659040,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Halo: The Master Chief Collection",
@@ -15843,7 +17474,10 @@
     "dodano": "2026-09-22",
     "upd": "2026-09-22",
     "img": "https://cdn.grypopolsku.pl/okladki/hearth-and-hamlet-2a592af4.webp",
-    "steam": 4315040
+    "steam": 4315040,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Hole Is Mine",
@@ -15858,7 +17492,11 @@
     "dodano": "2026-09-21",
     "upd": "2026-09-21",
     "img": "https://cdn.grypopolsku.pl/okladki/hole-is-mine-e87b63c9.webp",
-    "steam": 4508020
+    "steam": 4508020,
+    "tworcy": [
+      "Vetix",
+      "Rogal"
+    ]
   },
   {
     "game": "In Sound Mind",
@@ -15873,7 +17511,10 @@
     "dodano": "2026-07-28",
     "upd": "2026-07-28",
     "img": "https://cdn.grypopolsku.pl/okladki/in-sound-mind-9b995bff.webp",
-    "steam": 1119980
+    "steam": 1119980,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Indiana Jones and the Infernal Machine",
@@ -15888,7 +17529,10 @@
     "dodano": "2026-08-01",
     "upd": "2026-08-01",
     "img": "https://cdn.grypopolsku.pl/okladki/indiana-jones-and-the-infernal-machine-ec71849f.webp",
-    "steam": 904540
+    "steam": 904540,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Kingdoms of Amalur: Re-Reckoning",
@@ -15904,7 +17548,12 @@
     "upd": "2026-10-18",
     "img": "https://cdn.grypopolsku.pl/okladki/kingdoms-of-amalur-re-reckoning-e700094c.webp",
     "opis": "Bohater wskrzeszony przez Studnię Dusz jako jedyny może zmienić przeznaczenie w świecie, gdzie los wszystkich jest z góry znany. Remaster RPG akcji z dynamiczną walką.",
-    "steam": 1041720
+    "steam": 1041720,
+    "tworcy": [
+      "Vetix",
+      "Rogal",
+      "Niearek"
+    ]
   },
   {
     "game": "Lightning Returns: Final Fantasy XIII",
@@ -15924,7 +17573,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Lake",
@@ -15939,7 +17591,11 @@
     "dodano": "2026-08-01",
     "upd": "2026-11-01",
     "img": "https://cdn.grypopolsku.pl/okladki/lake-a39ab943.webp",
-    "steam": 1118240
+    "steam": 1118240,
+    "tworcy": [
+      "Vetix",
+      "Kamilek005"
+    ]
   },
   {
     "game": "Lara Croft and the Guardian of Light",
@@ -15954,7 +17610,11 @@
     "dodano": "2026-10-21",
     "upd": "2026-10-21",
     "img": "https://cdn.grypopolsku.pl/okladki/lara-croft-and-the-guardian-of-light-94af4a74.webp",
-    "steam": 35130
+    "steam": 35130,
+    "tworcy": [
+      "Vetix",
+      "mhkage."
+    ]
   },
   {
     "game": "Like a Dragon Gaiden: The Man Who Erased His Name",
@@ -15989,7 +17649,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Misstgun"
+    ]
   },
   {
     "game": "Lost in Random",
@@ -16005,7 +17669,10 @@
     "upd": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/lost-in-random-148414bb.webp",
     "opis": "Baśniowa gra akcji w świecie, gdzie wszystkim rządzą kości. Even wyrusza na ratunek siostrze Odd z pomocą żywej kostki Dicey, łącząc walkę z kartami.",
-    "steam": 1462570
+    "steam": 1462570,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Lucius II",
@@ -16024,7 +17691,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-11"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Momodora: Reverie Under The Moonlight",
@@ -16039,7 +17709,10 @@
     "dodano": "2026-10-01",
     "upd": "2026-10-01",
     "img": "https://cdn.grypopolsku.pl/okladki/momodora-reverie-under-the-moonlight-a40f86fb.webp",
-    "steam": 428550
+    "steam": 428550,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Ninja Gaiden 2 Black",
@@ -16055,7 +17728,10 @@
     "upd": "2026-07-13",
     "img": "https://cdn.grypopolsku.pl/okladki/ninja-gaiden-2-black-6cf42fda.webp",
     "opis": "Odświeżona wersja Ninja Gaiden 2. Ryu Hayabusa walczy z Czarnym Pająkiem i demonami w szybkich, brutalnych starciach.",
-    "steam": 3287520
+    "steam": 3287520,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Ninja Gaiden 4",
@@ -16071,7 +17747,10 @@
     "upd": "2026-09-21",
     "img": "https://cdn.grypopolsku.pl/okladki/ninja-gaiden-4-44635b18.webp",
     "opis": "Nowa odsłona serii o wymagającej walce ninja, z nowym bohaterem Yakumo i powrotem Ryu Hayabusy. Akcja dzieje się w mrocznej, futurystycznej wersji Tokio.",
-    "steam": 2627260
+    "steam": 2627260,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "New Super Lucky's Tale",
@@ -16087,7 +17766,11 @@
     "upd": "2026-11-01",
     "img": "https://cdn.grypopolsku.pl/okladki/new-super-lucky-s-tale-a255e7a5.webp",
     "opis": "Pogodna platformówka 3D o lisku Luckym, który szuka stron Księgi Wieków. Odświeżona i poprawiona wersja Super Lucky's Tale.",
-    "steam": 1038300
+    "steam": 1038300,
+    "tworcy": [
+      "Vetix",
+      "Rogal"
+    ]
   },
   {
     "game": "Ni no Kuni: Wrath of the White Witch Remastered",
@@ -16103,7 +17786,10 @@
     "upd": "2026-11-14",
     "img": "https://cdn.grypopolsku.pl/okladki/ni-no-kuni-wrath-of-the-white-witch-remastered-ea249237.webp",
     "opis": "Oliver po stracie matki trafia do magicznego świata i próbuje ją uratować. Baśniowe jRPG z oprawą studia Ghibli.",
-    "steam": 798460
+    "steam": 798460,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Outcast - Second Contact",
@@ -16133,7 +17819,10 @@
     "dodano": "2026-10-11",
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/overlord-raising-hell-af69d257.webp",
-    "steam": 12710
+    "steam": 12710,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Oxygen Not Included",
@@ -16149,7 +17838,10 @@
     "upd": "2026-10-18",
     "img": "https://cdn.grypopolsku.pl/okladki/oxygen-not-included-2782b076.webp",
     "opis": "Symulator kolonii w asteroidzie, gdzie grupa duplikantów musi przeżyć bez tlenu i jedzenia. Zarządzasz gazem, ciepłem i zasobami.",
-    "steam": 457140
+    "steam": 457140,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Palia",
@@ -16168,7 +17860,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Patrician 4",
@@ -16183,7 +17878,10 @@
     "dodano": "2026-06-23",
     "upd": "2026-06-23",
     "img": "https://cdn.grypopolsku.pl/okladki/patrician-4-497d7f26.webp",
-    "steam": 57620
+    "steam": 57620,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Persona 5 Strikers",
@@ -16218,7 +17916,10 @@
     "dodano": "2026-10-25",
     "upd": "2026-10-25",
     "img": "https://cdn.grypopolsku.pl/okladki/pumpkin-jack-728ac5b9.webp",
-    "steam": 1186640
+    "steam": 1186640,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "ReCore: Definitive Edition",
@@ -16233,7 +17934,10 @@
     "dodano": "2026-07-11",
     "upd": "2026-07-11",
     "img": "https://cdn.grypopolsku.pl/okladki/recore-definitive-edition-d55f9416.webp",
-    "steam": 537450
+    "steam": 537450,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Risk of Rain 2",
@@ -16249,7 +17953,10 @@
     "upd": "2026-10-17",
     "img": "https://cdn.grypopolsku.pl/okladki/risk-of-rain-2-72c665e1.webp",
     "opis": "Trzecioosobowy roguelike, w którym po rozbiciu statku walczysz na obcej planecie. Im dłużej grasz, tym silniejsi przeciwnicy, a przedmioty kumulują swoje efekty.",
-    "steam": 632360
+    "steam": 632360,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Rock Bottom",
@@ -16264,7 +17971,11 @@
     "dodano": "2026-10-19",
     "upd": "2026-10-31",
     "img": "https://cdn.grypopolsku.pl/okladki/rock-bottom-6adae3ad.webp",
-    "steam": 4297840
+    "steam": 4297840,
+    "tworcy": [
+      "Misstgun",
+      "Rogal"
+    ]
   },
   {
     "game": "Scarlet Nexus",
@@ -16280,7 +17991,10 @@
     "upd": "2026-08-07",
     "img": "https://cdn.grypopolsku.pl/okladki/scarlet-nexus-7098ea7c.webp",
     "opis": "W przyszłości pełnej mutantów młodzi żołnierze walczą dzięki mocom psychokinezy. Efektowne jRPG akcji z dwoma bohaterami do wyboru.",
-    "steam": 775500
+    "steam": 775500,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "SoulCalibur VI",
@@ -16296,7 +18010,10 @@
     "upd": "2026-07-23",
     "img": "https://cdn.grypopolsku.pl/okladki/soulcalibur-vi-7f78a109.webp",
     "opis": "Bijatyka z bronią białą, która wraca do wydarzeń z pierwszej części serii. Znani wojownicy walczą o miecz Soul Edge.",
-    "steam": 544750
+    "steam": 544750,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Soulstice",
@@ -16312,7 +18029,10 @@
     "upd": "2026-10-16",
     "img": "https://cdn.grypopolsku.pl/okladki/soulstice-294a9a81.webp",
     "opis": "Dwie siostry, Briar i duch Lute, walczą z Upiorami w gotyckim świecie. Slasher z ładną oprawą, w którym obie bohaterki współpracują w walce.",
-    "steam": 1602080
+    "steam": 1602080,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Space Hulk: Deathwing Enhanced Edition",
@@ -16331,7 +18051,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-07"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Starsector",
@@ -16349,7 +18072,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Stranger of Paradise: Final Fantasy Origin",
@@ -16369,7 +18095,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-19"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "The Bureau: XCOM Declassified",
@@ -16384,7 +18114,10 @@
     "dodano": "2026-08-06",
     "upd": "2026-08-18",
     "img": "https://cdn.grypopolsku.pl/okladki/the-bureau-xcom-declassified-4346fa7a.webp",
-    "steam": 65930
+    "steam": 65930,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "The Dark Queen of Mortholme",
@@ -16399,7 +18132,10 @@
     "dodano": "2026-10-11",
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/the-dark-queen-of-mortholme-e943c10f.webp",
-    "steam": 3587610
+    "steam": 3587610,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "The Guild 1 Remake: Europa 1410",
@@ -16418,7 +18154,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "The Gunk",
@@ -16433,7 +18172,11 @@
     "dodano": "2026-10-19",
     "upd": "2026-10-19",
     "img": "https://cdn.grypopolsku.pl/okladki/the-gunk-90b2b3de.webp",
-    "steam": 1087760
+    "steam": 1087760,
+    "tworcy": [
+      "Vetix",
+      "Kamilek005"
+    ]
   },
   {
     "game": "The Legend of Heroes: Trails beyond the Horizon",
@@ -16452,7 +18195,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-07"
-    }
+    },
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "The Seven Deadly Sins: Origin",
@@ -16471,7 +18217,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-20"
-    }
+    },
+    "tworcy": [
+      "Misstgun",
+      "Vetix"
+    ]
   },
   {
     "game": "The Thing That Happened",
@@ -16486,7 +18236,10 @@
     "dodano": "2026-07-24",
     "upd": "2026-07-24",
     "steam": 2906500,
-    "img": "https://cdn.grypopolsku.pl/okladki/the-thing-that-happened-3691563b.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/the-thing-that-happened-3691563b.webp",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Unknown 9: Awakening",
@@ -16501,7 +18254,10 @@
     "dodano": "2026-07-09",
     "upd": "2026-07-09",
     "img": "https://cdn.grypopolsku.pl/okladki/unknown-9-awakening-56c67f51.webp",
-    "steam": 1477940
+    "steam": 1477940,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Valkyria Chronicles",
@@ -16536,7 +18292,10 @@
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/vigil-the-longest-night-20a347de.webp",
-    "steam": 720560
+    "steam": 720560,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Wildfrost",
@@ -16552,7 +18311,10 @@
     "upd": "2026-10-19",
     "img": "https://cdn.grypopolsku.pl/okladki/wildfrost-c74a1f1e.webp",
     "opis": "Karciany roguelike o śnieżnym świecie skutym wieczną zimą. Prowadzisz karawanę i układasz talię, a licznik ataku każdej karty wymusza planowanie.",
-    "steam": 1811990
+    "steam": 1811990,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Yooka-Replaylee",
@@ -16567,7 +18329,11 @@
     "dodano": "2026-10-24",
     "upd": "2026-10-25",
     "img": "https://cdn.grypopolsku.pl/okladki/yooka-replaylee-e85ddbaa.webp",
-    "steam": 2448020
+    "steam": 2448020,
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "You Know The Drill",
@@ -16582,7 +18348,10 @@
     "dodano": "2026-10-19",
     "upd": "2026-10-28",
     "img": "https://cdn.grypopolsku.pl/okladki/you-know-the-drill-846820e1.webp",
-    "steam": 3833760
+    "steam": 3833760,
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Zoria: Age of Shattering",
@@ -16597,7 +18366,10 @@
     "dodano": "2026-08-10",
     "upd": "2026-09-18",
     "img": "https://cdn.grypopolsku.pl/okladki/zoria-age-of-shattering-b7e2ece7.webp",
-    "steam": 1159090
+    "steam": 1159090,
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Pathfinder: Kingmaker",
@@ -17136,7 +18908,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
-    }
+    },
+    "tworcy": [
+      "bax001"
+    ]
   },
   {
     "game": "Lost Records: Bloom & Rage",
@@ -17156,7 +18931,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-09"
-    }
+    },
+    "tworcy": [
+      "S3rafin",
+      "Stroy Decroix"
+    ]
   },
   {
     "game": "Grand Theft Auto 2",
@@ -17328,7 +19107,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-20"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "pavlikdc"
+    ]
   },
   {
     "game": "The Wolf Among Us Remastered",
@@ -17343,7 +19126,19 @@
     "dodano": "2026-11-06",
     "img": "https://cdn.grypopolsku.pl/okladki/the-wolf-among-us-remastered-af36c533.webp",
     "upd": "2026-11-06",
-    "steam": 3884860
+    "steam": 3884860,
+    "tworcy": [
+      "GimmyBreaker",
+      "Norek",
+      "roobin",
+      "kasica",
+      "Asenath",
+      "Semprini",
+      "Annica88",
+      "Manuel Czaszka",
+      "Kazu",
+      "mziab"
+    ]
   },
   {
     "game": "Islets",
@@ -17373,7 +19168,11 @@
     "dodano": "2026-11-07",
     "img": "https://cdn.grypopolsku.pl/okladki/garfield-escape-from-monday-a8bcd04e.webp",
     "upd": "2026-11-07",
-    "steam": 3932790
+    "steam": 3932790,
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "METAL GEAR SOLID - Master Collection Version",
@@ -17491,6 +19290,10 @@
     "yt": "https://www.youtube.com/watch?v=lgFX9965Rms",
     "aliasy": [
       "shenmue-iii"
+    ],
+    "tworcy": [
+      "Vetix",
+      "pavlikdc"
     ]
   },
   {
@@ -17554,7 +19357,11 @@
     "dodano": "2026-11-10",
     "img": "https://cdn.grypopolsku.pl/okladki/dungeons-dragons-dark-alliance-a60ab041.webp",
     "opis": "Dungeons & Dragons: Dark Alliance (2021) to kooperacyjna gra akcji TPP z elementami hack and slash, stworzona przez studio Tuque Games i wydana przez Wizards of the Coast. Akcja gry toczy się w mrocznym, zaśnieżonym regionie Icewind Dale, dobrze znanym z uniwersum Dungeons & Dragons.",
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "tworcy": [
+      "Vetix",
+      "Hektor"
+    ]
   },
   {
     "game": "Stygian Outer Gods",
@@ -17570,7 +19377,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/stygian-outer-gods-aa83e0fa.webp",
     "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
     "steam": 2581410,
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Sonic Rivals",
@@ -17678,7 +19488,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-inc-ae7d62d6.webp",
     "opis": "Kingdom Inc. (2026) to niezależna gra strategiczna łącząca mechaniki budowania fabryki (automation/crafting), symulatora miasta oraz gry przygodowej, stworzona przez studio Leaping Turtle.   W odróżnieniu od klasycznych gier budowlanych, w Kingdom Inc. gracz wciela się w rolę zarządcy upadającego królestwa Yensburg i przekształca je w sprawnie działające „przedsiębiorstwo” produkcyjne.",
     "steam": 4538080,
-    "upd": "2026-11-11"
+    "upd": "2026-11-11",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "System Shock 2: 25th Anniversary Remaster",
@@ -21384,7 +23197,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/biped-2-fadb415c.webp",
     "opis": "Biped 2 to urocza, kooperacyjna gra przygodowo-logiczna z elementami platformówki 3D, będąca bezpośrednią kontynuacją przebojowego tytułu z 2020 roku, w którym sterujesz dwunożnymi robotami za pomocą nietypowego, opartego na fizyce schematu kontroli.",
     "steam": 2560240,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "CarX Street",
@@ -21400,7 +23217,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/carx-street-b7962912.webp",
     "opis": "CarX Street to dynamiczna gra wyścigowa w otwartym świecie, skupiająca się na nielegalnych wyścigach ulicznych, drifcie oraz zaawansowanym tuningu samochodów.",
     "steam": 1114150,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "The Necromancer’s Tale",
@@ -21452,7 +23272,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-eighties-822624ff.webp",
     "opis": "Kingdom Eighties to gra należąca do gatunku strategii czasu rzeczywistego (RTS) z silnymi elementami tower defense, budowania bazy oraz przygodówki (side-scroller).",
     "steam": 1956040,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Kingdom Two Crowns",
@@ -21468,7 +23291,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-two-crowns-8c988649.webp",
     "opis": "Kingdom Two Crowns to klimatyczna gra strategiczna 2D z piękną oprawą pixel-art, w której wcielasz się w monarchę budującego własne królestwo od zera.\n\nPrzemierzając krainę na wierzchowcu, rekrutujesz poddanych, wznosisz mury, rozwijasz gospodarkę i odkrywasz nowe wyspy, by w nocy odpierać fale potworów czyhających na Twoją koronę. Całość opiera się na intuicyjnym sterowaniu i systemie zarządzania monetami, a unikalny tryb kooperacji pozwala przeżyć tę przygodę solo lub wspólnie z drugim graczem",
     "steam": 701160,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Kingdom: Classic",
@@ -21484,7 +23310,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-classic-140bb547.webp",
     "opis": "Kingdom: Classic to minimalistyczna, dwuwymiarowa gra strategiczna z nastrojową oprawą pixel-art, która zapoczątkowała całą serię.\n\nJako monarcha przemierzający krainę na wierzchowcu, musisz zbudować swoje królestwo od podstaw za pomocą prostego systemu wydawania złotych monet. Za dnia rekrutujesz poddanych, wznosisz mury i rozwijasz gospodarkę, by nocą odpierać coraz silniejsze ataki tajemniczych stworów czyhających na Twoją koronę. Gra stawia na samodzielne odkrywanie zasad i wysokie wyzwanie",
     "steam": 368230,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Kingdom: New Lands",
@@ -21500,7 +23329,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-new-lands-e1e3ff5a.webp",
     "opis": "Kingdom: New Lands to nastrojowa, dwuwymiarowa gra strategiczna z oprawą pixel-art, rozwijająca pomysły znane z pierwowzoru o rozbudowany element odkrywania nieznanego.\n\nJako monarcha przemierzasz konno kolejne wyspy, rekrutując poddanych, wznosząc umocnienia i odpierając nocne ataki tajemniczych stworów czyhających na Twoją koronę. Twoim głównym celem jest nie tylko obrona obozu przed coraz silniejszymi falami wrogów oraz surową zimą, ale też odbudowa wraku statku, który pozwala wyruszyć w dals",
     "steam": 496300,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "over the hill",
@@ -21516,7 +23348,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/over-the-hill-75809077.webp",
     "opis": "Over the Hill to relaksująca gra wyścigowo-eksploracyjna w otwartym świecie, stworzona przez autorów ciepło przyjętego art of rally (studio Funselektor).\n\nZasiadasz w niej za kierownicą klasycznych samochodów terenowych z lat 60., 70. i 80., by w spokojnym tempie przemierzać malownicze doliny, góry i bezdroża inspirowane prawdziwymi krajobrazami. Gra stawia na odkrywanie ukrytych szlaków, radzenie sobie ze zmienną pogodą i cyklem dnia i nocy, a także rozbijanie obozowisk i wykonywanie prostych w",
     "steam": 2929250,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Misstgun",
+      "Lisa_"
+    ]
   },
   {
     "game": "Definitely Not Fried Chicken",
@@ -21553,7 +23389,10 @@
       "kto": "Harddrive",
       "dzien": "2026-11-20"
     },
-    "ukonczono": "2026-11-19"
+    "ukonczono": "2026-11-19",
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Ys Origin",
@@ -21569,7 +23408,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/ys-origin-1fc7e76a.webp",
     "opis": "Ys Origin to dynamiczna gra action RPG typu hack-and-slash, będąca fabularnym prequelem kultowej japońskiej serii Ys, której akcja rozgrywa się 700 lat przed wydarzeniami z pierwszej części.",
     "steam": 207350,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "tworcy": [
+      "Misstgun"
+    ]
   },
   {
     "game": "Twin Mirror",
@@ -21670,7 +23512,11 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-18"
-    }
+    },
+    "tworcy": [
+      "Vetix",
+      "Rogal"
+    ]
   },
   {
     "game": "TCG Card Shop Simulator",
@@ -21686,7 +23532,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tcg-card-shop-simulator-5211393c.webp",
     "opis": "TCG Card Shop Simulator to symulator ekonomiczny / gra typu tycoon z perspektywy pierwszej osoby (FPP), skupiająca się na prowadzeniu własnego sklepu z kolekcjonerskimi grami karcianymi.",
     "steam": 3070070,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "DERELIKT",
@@ -21814,7 +23663,10 @@
     "dodano": "2026-11-15",
     "upd": "2026-11-15",
     "genre": "Horror",
-    "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść."
+    "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść.",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "The Hundred Line -Last Defense Academy-",
@@ -21830,7 +23682,11 @@
     "dodano": "2026-11-15",
     "upd": "2026-11-14",
     "genre": "Przygodowa",
-    "opis": "Gra przygodowa z 2025 roku, pierwsza wspólna produkcja Kazutaki Kodaki (Danganronpa) i Kotaro Uchikoshiego (Zero Escape). Piętnaścioro uczniów przez 100 dni broni szkoły przed groteskowymi potworami i próbuje odkryć, o co w tym wszystkim chodzi."
+    "opis": "Gra przygodowa z 2025 roku, pierwsza wspólna produkcja Kazutaki Kodaki (Danganronpa) i Kotaro Uchikoshiego (Zero Escape). Piętnaścioro uczniów przez 100 dni broni szkoły przed groteskowymi potworami i próbuje odkryć, o co w tym wszystkim chodzi.",
+    "tworcy": [
+      "Vetix",
+      "Undertaker"
+    ]
   },
   {
     "game": "The Path Into The Abyss (demo)",
@@ -21894,7 +23750,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/battlefleet-gothic-armada-2-c841ef28.webp",
     "opis": "Battlefleet Gothic: Armada 2 to taktyczna strategia czasu rzeczywistego (RTS) osadzona w mrocznym uniwersum Warhammera 40,000, w której przejmujesz dowodzenie nad potężnymi flotami kosmicznymi. Wydana w 2019 roku produkcja studia Tindalos Interactive jest bezpośrednią kontynuacją gry z 2016 roku, znacząco rozbudowaną pod względem skali i zawartości.",
     "steam": 573100,
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Cat Quest II",
@@ -21910,7 +23769,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/cat-quest-ii-b6686aef.webp",
     "opis": "Cat Quest II to urocza, pełna humoru gra RPG akcji (action RPG) osadzona w fantastycznym świecie zamieszkanym przez antropomorficzne koty i psy. Wydana w 2019 roku przez studio The Gentlebros produkcja jest bezpośrednią kontynuacją ciepło przyjętego Cat Quest, rozbudowującą znaną formułę o tryb współpracy i nowe mechaniki.",
     "steam": 914710,
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "Golf With Your Friends",
@@ -21926,7 +23789,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/golf-with-your-friends-7d88f75f.webp",
     "opis": "Golf With Your Friends to dynamiczna, zręcznościowa gra imprezowa o minigolfie, nastawiona przede wszystkim na rywalizację ze znajomymi w sieci. Produkcja studia Blacklight Interactive (wydana przez Team17) stawia na szalone, nierealistyczne tory pełne przeszkód oraz możliwość modyfikowania zasad rozgrywki.",
     "steam": 431240,
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Remnant II",
@@ -21994,7 +23860,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/across-the-obelisk-96dcf9cd.webp",
     "opis": "Across the Obelisk to wydana w 2022 roku turowa gra RPG typu roguelite deckbuilder, stworzona przez studio Dreamsite Games. Tytuł łączy budowanie talii kart znaną z gier takich jak Slay the Spire z klasyczną eksploracją drużynową oraz rozbudowanym trybem kooperacji.",
     "steam": 1385380,
-    "upd": "2026-11-17"
+    "upd": "2026-11-17",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Pascal's Wager: Definitive Edition",
@@ -22010,7 +23879,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/pascal-s-wager-definitive-edition-e0ce46e7.webp",
     "opis": "Pascal's Wager: Definitive Edition to mroczna gra RPG akcji typu soulslike, stworzona przez studio TipsWorks. Pierwotnie zadebiutowała na urządzeniach mobilnych w 2020 roku, zyskując uznanie jako jedna z pierwszych pełnoprawnych produkcji „konsolowej jakości” na smartfony, a edycja Definitive Edition przeniosła ją w odświeżonej formie na PC i Nintendo Switch wraz ze wszystkimi dodatkami.",
     "steam": 1456650,
-    "upd": "2026-11-17"
+    "upd": "2026-11-17",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Kunitsu-Gami: Path of the Goddess",
@@ -22246,7 +24118,10 @@
       "kto": "Harddrive",
       "dzien": "2026-11-19"
     },
-    "ukonczono": "2026-11-19"
+    "ukonczono": "2026-11-19",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
@@ -22267,7 +24142,10 @@
       "kto": "Harddrive",
       "dzien": "2026-11-19"
     },
-    "ukonczono": "2026-11-19"
+    "ukonczono": "2026-11-19",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Middle-earth: Shadow of War",
@@ -22304,7 +24182,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/deliver-at-all-costs-95300f05.webp",
     "opis": "Deliver At All Costs to izometryczna gra akcji / zręcznościowa gra samochodowa z otwartym światem, silnym naciskiem na destrukcję otoczenia oraz czarny humor i narrację.\n\nRozgrywka łączy klasyczne, zręcznościowe prowadzenie pojazdów (przypominające pierwsze odsłony Grand Theft Auto czy Crazy Taxi) z misjami kurierskimi opartymi na fizyce – gracz wciela się w kuriera z lat 50., który musi dostarczyć niezwykle nietypowe, niebezpieczne lub absurdalne ładunki, przebijając się dosłownie przez budynki",
     "steam": 1880610,
-    "upd": "2026-11-18"
+    "upd": "2026-11-18",
+    "tworcy": [
+      "Vetix",
+      "Rogal"
+    ]
   },
   {
     "game": "Adventure Time: Heroes of Ooo",
@@ -22357,7 +24239,11 @@
     "img": "https://cdn.grypopolsku.pl/okladki/cat-quest-iii-a8cf9ab3.webp",
     "opis": "Cat Quest III to wydana w 2024 roku urocza, dwuwymiarowa gra akcji RPG osadzona w pirackim otwartym świecie, stworzona przez singapurskie studio The Gentlebros i wydana przez Kepler Interactive. Trzecia odsłona popularnej serii przenosi graczy do malowniczego archipelagu Purribean, pełnego tropikalnych wysp, ukrytych skarbów i kocich żartów słownych.",
     "steam": 2305840,
-    "upd": "2026-11-19"
+    "upd": "2026-11-19",
+    "tworcy": [
+      "Vetix",
+      "Lisa_"
+    ]
   },
   {
     "game": "Monster Sanctuary",
@@ -22405,7 +24291,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/powerwash-simulator-ff26baef.webp",
     "opis": "PowerWash Simulator to wydany w 2022 roku relaksujący symulator mycia ciśnieniowego z perspektywy pierwszej osoby (FPP), stworzony przez brytyjskie studio FuturLab i wydany przez Square Enix Collective. Produkcja zdobyła ogromną popularność jako tzw. gra typu cozy – pozbawiona presji czasu, rywalizacji i przemocy, skupiająca się na satysfakcjonującym przywracaniu porządku.",
     "steam": 1290000,
-    "upd": "2026-11-19"
+    "upd": "2026-11-19",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Coromon",
@@ -22438,7 +24327,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/metal-gear-solid-4-guns-of-the-patriots-master-collection-version-4327c894.webp",
     "opis": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version to pierwsze w historii wydanie multiplatformowe kultowej skradanki akcji z 2008 roku, która przez 18 lat pozostawała tytułem ekskluzywnym dla konsoli PlayStation 3. Gra zadebiutowała 27 sierpnia 2026 roku jako główny element zestawu Metal Gear Solid: Master Collection Vol. 2 (oraz jako samodzielny tytuł cyfrowy) na PC, PlayStation 5, Xbox Series X/S, Nintendo Switch oraz Nintendo Switch 2.",
     "steam": 2492670,
-    "upd": "2026-11-20"
+    "upd": "2026-11-20",
+    "tworcy": [
+      "Vetix"
+    ]
   },
   {
     "game": "Contract J.A.C.K.",

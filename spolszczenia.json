@@ -3682,7 +3682,7 @@
     "game": "Kao Challengers",
     "img": "https://cdn.grypopolsku.pl/okladki/kao-challengers-14c5a069.webp",
     "platform": "Sony PSP",
-    "type": "Dubbing",
+    "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
@@ -3690,13 +3690,13 @@
     "link": "https://grajpopolsku.pl/download/kao-challengers/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "opis": "Gra przygodowa z kangurem Kao w roli głównej na PSP.",
+    "opis": "Kao Challengers to kolorowa platformówka 3D na konsolę PSP, w której sympatyczny kangurek przemierza różnorodne krainy, pokonuje przeciwników i rozwiązuje zagadki.",
     "tworcy": [
       "JUSEXE",
       "Pixel the Retro"
     ],
     "zmiana": {
-      "kto": "Harddrive",
+      "kto": "kokos324",
       "dzien": "2026-11-20"
     },
     "yt": "https://www.youtube.com/watch?v=u0m6LFqT8SI",
@@ -3705,7 +3705,21 @@
         "t": "▶️ Instrukcja instalacji",
         "u": "https://www.youtube.com/watch?v=a3HNd7W2MPk"
       }
-    ]
+    ],
+    "spolszczenia": [
+      {
+        "id": "kao-challengers--pixel-the-retro",
+        "author": "Pixel the Retro",
+        "link": "https://www.youtube.com/watch?v=a3HNd7W2MPk",
+        "type": "Dubbing",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-20",
+        "dodano": "2026-11-20"
+      }
+    ],
+    "okladkaPasek": 1
   },
   {
     "game": "Kick Master",
@@ -22031,6 +22045,23 @@
     "upd": "2026-11-19"
   },
   {
+    "game": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.1",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=metal-gear-solid-4-guns-of-the-patriots-master-collection-versio",
+    "yt": "https://www.youtube.com/watch?v=6nofYoSX1os",
+    "genre": "Akcja",
+    "dodano": "2026-11-20",
+    "img": "https://cdn.grypopolsku.pl/okladki/metal-gear-solid-4-guns-of-the-patriots-master-collection-version-4327c894.webp",
+    "opis": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version to pierwsze w historii wydanie multiplatformowe kultowej skradanki akcji z 2008 roku, która przez 18 lat pozostawała tytułem ekskluzywnym dla konsoli PlayStation 3. Gra zadebiutowała 27 sierpnia 2026 roku jako główny element zestawu Metal Gear Solid: Master Collection Vol. 2 (oraz jako samodzielny tytuł cyfrowy) na PC, PlayStation 5, Xbox Series X/S, Nintendo Switch oraz Nintendo Switch 2.",
+    "steam": 2492670,
+    "upd": "2026-11-20"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -22049,22 +22080,5 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
-  },
-  {
-    "game": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "1.1",
-    "author": "VetSpolszczenia",
-    "link": "https://vetspolszczenia.pl/projekt.html?id=metal-gear-solid-4-guns-of-the-patriots-master-collection-versio",
-    "yt": "https://www.youtube.com/watch?v=6nofYoSX1os",
-    "genre": "Akcja",
-    "dodano": "2026-11-20",
-    "img": "https://cdn.grypopolsku.pl/okladki/metal-gear-solid-4-guns-of-the-patriots-master-collection-version-4327c894.webp",
-    "opis": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version to pierwsze w historii wydanie multiplatformowe kultowej skradanki akcji z 2008 roku, która przez 18 lat pozostawała tytułem ekskluzywnym dla konsoli PlayStation 3. Gra zadebiutowała 27 sierpnia 2026 roku jako główny element zestawu Metal Gear Solid: Master Collection Vol. 2 (oraz jako samodzielny tytuł cyfrowy) na PC, PlayStation 5, Xbox Series X/S, Nintendo Switch oraz Nintendo Switch 2.",
-    "steam": 2492670,
-    "upd": "2026-11-20"
   }
 ]

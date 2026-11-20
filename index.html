@@ -775,7 +775,7 @@ html{-webkit-tap-highlight-color:transparent}
     <button class="btn" id="ftog" type="button" aria-expanded="false"><span class="fm1">Więcej filtrów</span><span class="fm2">Filtry</span><span id="fn"></span> <span id="far">▾</span></button>
     <select id="fg" class="fx" aria-label="Gatunek"></select>
     <select id="ft" class="fx" aria-label="Zakres tłumaczenia"></select>
-    <select id="fz" class="fx" aria-label="Uzupełnienie wpisów (tylko moderacja)" style="display:none"><option value="">🛡️ Uzupełnienie: wszystkie</option><option value="z">📷 Brak zrzutów</option><option value="i">📋 Brak informacji</option><option value="zi">📷/📋 Brak zrzutów lub informacji</option></select>
+    <select id="fz" class="fx" aria-label="Uzupełnienie wpisów (tylko moderacja)" style="display:none"><option value="">🛡️ Uzupełnienie: wszystkie</option><option value="z">📷 Brak zrzutów</option><option value="i">📋 Brak informacji</option><option value="f">🎬 Brak filmu</option><option value="zi">📷/📋 Brak zrzutów lub informacji</option><option value="zif">📷/📋/🎬 Brak zrzutów, informacji lub filmu</option></select>
     <button class="btn" id="clr" type="button" style="display:none">Wyczyść</button>
     <span class="sp"></span>
     <span class="vgrp" id="vwg"><button class="btn on" id="vwall">Wszystkie</button><button class="btn" id="vwlk">Z lektorem</button></span>
@@ -1235,11 +1235,11 @@ function mozeEdytowac(g){return isMod()||(isOpiekun()&&wSekcji(g))}
 function maInfo(g){return !!(g.instr||g.instrPaczka||(g.linki&&g.linki.length)||(g.tworcy&&g.tworcy.length))}
 function modWidok(){return me()&&(isMod()||isOpiekun())}
 function gName(g){var a='<a class="g" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>';if(!modWidok()||!mozeEdytowac(g))return a;var z=(g.zrzuty||[]).length,i=maInfo(g);
-  return '<div class="gname">'+a+'<div class="mtag">'+(z?'<span class="on" title="Zrzuty ekranu na stronie gry">📷 '+z+'</span>':'<span class="off" title="Brak zrzutów ekranu">📷 brak</span>')+(i?'<span class="on" title="Informacje o spolszczeniu uzupełnione">📋 info</span>':'<span class="off" title="Brak informacji o spolszczeniu">📋 brak</span>')+'</div></div>'}
+  return '<div class="gname">'+a+'<div class="mtag">'+(z?'<span class="on" title="Zrzuty ekranu na stronie gry">📷 '+z+'</span>':'<span class="off" title="Brak zrzutów ekranu">📷 brak</span>')+(i?'<span class="on" title="Informacje o spolszczeniu uzupełnione">📋 info</span>':'<span class="off" title="Brak informacji o spolszczeniu">📋 brak</span>')+(ytId(g.yt)?'<span class="on" title="Film z YouTube na stronie gry">🎬 film</span>':'<span class="off" title="Brak filmu z YouTube">🎬 brak</span>')+'</div></div>'}
 // Po wczytaniu roli dokładamy znaczki do już narysowanych wierszy (bez przerysowania tabeli – okładki nie mrugają)
 function dodajZnaczki(){var m={};items.forEach(function(g){m[keyOf(g)]=g});
   document.querySelectorAll(".gcell > a.g").forEach(function(a){var k=decodeURIComponent((a.getAttribute("href")||"").split("/")[2]||""),g=m[k];if(!g)return;var h=gName(g);if(h.indexOf("gname")<0)return;var t=document.createElement("div");t.innerHTML=h;a.replaceWith(t.firstChild)})}
-function fzOk(g,z){if(!z||!modWidok())return true;if(!mozeEdytowac(g))return false;var nz=!(g.zrzuty||[]).length,ni=!maInfo(g);return z==="z"?nz:z==="i"?ni:(nz||ni)}
+function fzOk(g,z){if(!z||!modWidok())return true;if(!mozeEdytowac(g))return false;var nz=!(g.zrzuty||[]).length,ni=!maInfo(g),nf=!ytId(g.yt);return z==="z"?nz:z==="i"?ni:z==="f"?nf:z==="zif"?(nz||ni||nf):(nz||ni)}
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
 async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}

@@ -5147,13 +5147,21 @@
     "author": "SneakiestDuke68",
     "link": "https://grajpopolsku.pl/download/realrtcw/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28",
+    "dodano": "2023-10-16",
     "opis": "Strzelanka z czasów II wojny światowej, rozwinięcie klasycznego Return to Castle Wolfenstein.",
     "steam": 1379630,
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-13"
-    }
+    },
+    "yt": "https://www.youtube.com/watch?v=rl65maz7QBU",
+    "upd": "2023-10-16",
+    "linki": [
+      {
+        "t": "🔗 Grupa autora na Facebooku",
+        "u": "https://www.facebook.com/groups/sdk68/"
+      }
+    ]
   },
   {
     "game": "Resident Evil 0 HD Remaster",
@@ -22347,28 +22355,6 @@
     ]
   },
   {
-    "game": "Return to Castle Wolfenstein (RealRTCW)",
-    "img": "https://cdn.grypopolsku.pl/okladki/return-to-castle-wolfenstein-realrtcw-5df047f0.webp",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "SneakiestDuke68",
-    "link": "https://drive.google.com/file/d/1eqng26O3syqkfNLQHil66b51cDqwo7Y_/view",
-    "genre": "Strzelanka",
-    "dodano": "2023-10-16",
-    "upd": "2023-10-16",
-    "yt": "https://www.youtube.com/watch?v=rl65maz7QBU",
-    "opis": "Return to Castle Wolfenstein to klasyczna strzelanka pierwszoosobowa z 2001 roku, w której agent B.J. Blazkowicz walczy z nazistami i ich okultystycznymi eksperymentami. Kampania prowadzi przez zamki, laboratoria i bazy wojskowe. RealRTCW to rozbudowana modyfikacja, która odświeża grę: dodaje nowe bronie, poprawia oprawę i czyni rozgrywkę bardziej realistyczną. Spolszczenie przygotowano z myślą o grze z RealRTCW.",
-    "linki": [
-      {
-        "t": "🔗 Grupa autora na Facebooku",
-        "u": "https://www.facebook.com/groups/sdk68/"
-      }
-    ]
-  },
-  {
     "game": "Bandits: Phoenix Rising",
     "img": "https://cdn.grypopolsku.pl/okladki/bandits-phoenix-rising-8a357af1.webp",
     "platform": "PC",
@@ -22413,7 +22399,7 @@
     ]
   },
   {
-    "game": "Turok 3: Shadow of Oblivion Remastered",
+    "game": "Turok 3: Shadow of Oblivion",
     "img": "https://cdn.grypopolsku.pl/okladki/turok-3-shadow-of-oblivion-remastered-70ea24f9.webp",
     "platform": "PC",
     "type": "Napisy",
@@ -22426,7 +22412,7 @@
     "dodano": "2025-04-11",
     "upd": "2025-04-11",
     "yt": "https://www.youtube.com/watch?v=DckMZdNpbE8",
-    "opis": "Turok 3: Shadow of Oblivion to strzelanka pierwszoosobowa z 2000 roku, wydana pierwotnie na konsolę Nintendo 64. Wersja Remastered od Nightdive Studios przenosi grę na PC z odświeżoną grafiką i nowoczesnym sterowaniem. Gracz wciela się w Josepha lub Danielle Fireseed, którzy stają do walki z pradawną siłą zwaną Oblivion. Rozgrywka łączy strzelanie z eksploracją rozległych poziomów.",
+    "opis": "Turok 3: Shadow of Oblivion to strzelanka pierwszoosobowa z 2000 roku, wydana pierwotnie na konsolę Nintendo 64. Na PC gra trafiła w odświeżonej wersji przygotowanej przez Nightdive Studios. Gracz wciela się w Josepha lub Danielle Fireseed, którzy stają do walki z pradawną siłą zwaną Oblivion. Rozgrywka łączy strzelanie z eksploracją rozległych poziomów.",
     "linki": [
       {
         "t": "🔗 Grupa autora na Facebooku",

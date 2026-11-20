@@ -223,7 +223,20 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-20"
-    }
+    },
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "hazz",
+      "Sledziu_w",
+      "jasiek_barca",
+      "Piter",
+      "WinegaR",
+      "vhs",
+      "Marta Olszewska",
+      "cienislaw",
+      "ARKaM"
+    ]
   },
   {
     "game": "Castlevania: Lords of Shadow",
@@ -238,7 +251,17 @@
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow/",
     "genre": "Akcja",
     "opis": "Restart serii Castlevania w trójwymiarowej odsłonie. Gabriel Belmont rusza do walki z siłami ciemności w mrocznym, gotyckim świecie.",
-    "steam": 234080
+    "steam": 234080,
+    "tworcy": [
+      "Vielokont",
+      "Sledziu_w",
+      "jasiek_barca",
+      "Piter",
+      "vhs",
+      "cienislaw",
+      "ARKaM",
+      "Tortain"
+    ]
   },
   {
     "game": "Castlevania: Lords of Shadow – Mirror of Fate HD",
@@ -253,7 +276,20 @@
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow-mirror-of-fate/",
     "genre": "Akcja",
     "opis": "Odświeżona wersja przygody z konsoli przenośnej. Opowiada o kolejnych pokoleniach rodu Belmontów i ich walce z Draculą.",
-    "steam": 282530
+    "steam": 282530,
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "hazz",
+      "Vielokont",
+      "Sledziu_w",
+      "jasiek_barca",
+      "Piter",
+      "WinegaR",
+      "vhs",
+      "cienislaw",
+      "ARKaM"
+    ]
   },
   {
     "game": "Castlevania: Lords of Shadow 2",
@@ -268,7 +304,20 @@
     "link": "https://gamesub.pl/spolszczenie-castlevania-lords-of-shadow-2/",
     "genre": "Akcja",
     "opis": "Zakończenie trylogii Lords of Shadow. Dracula budzi się w czasach współczesnych i musi stawić czoła dawnym wrogom.",
-    "steam": 239250
+    "steam": 239250,
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "hazz",
+      "Vielokont",
+      "Sledziu_w",
+      "jasiek_barca",
+      "Piter",
+      "WinegaR",
+      "vhs",
+      "cienislaw",
+      "ARKaM"
+    ]
   },
   {
     "game": "Costume Quest",
@@ -315,7 +364,20 @@
     "link": "https://gamesub.pl/spolszczenie-enslaved-odyssey-to-the-west-premium-edition/",
     "genre": "Akcja",
     "opis": "Postapokaliptyczna przygoda luźno oparta na chińskiej opowieści „Wędrówka na Zachód\". Małpa i Trip muszą razem przebyć niebezpieczną drogę.",
-    "steam": 245280
+    "steam": 245280,
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "hazz",
+      "Vielokont",
+      "Sledziu_w",
+      "Piter",
+      "WinegaR",
+      "vhs",
+      "cienislaw",
+      "ARKaM",
+      "jasiek_barca"
+    ]
   },
   {
     "game": "Hammerwatch",
@@ -330,7 +392,14 @@
     "link": "https://gamesub.pl/spolszczenie-hammerwatch/",
     "genre": "Akcja",
     "opis": "Pikselowa gra akcji w lochach, w którą można grać samemu lub ze znajomymi. Trzeba się w niej przebijać przez zamek pełen potworów i pułapek.",
-    "steam": 239070
+    "steam": 239070,
+    "tworcy": [
+      "Vielokont",
+      "Sledziu_w",
+      "vhs",
+      "cienislaw",
+      "ARKaM"
+    ]
   },
   {
     "game": "Papers, Please",
@@ -345,7 +414,15 @@
     "link": "https://gamesub.pl/spolszczenie-papers-please/",
     "genre": "Symulacja",
     "opis": "Wcielasz się w inspektora na granicy fikcyjnego państwa Arstotzka. Decydujesz, kogo wpuścić, a kogo odesłać, i pilnujesz, żeby starczyło pieniędzy na życie.",
-    "steam": 239030
+    "steam": 239030,
+    "tworcy": [
+      "WinegaR",
+      "jasiek_barca",
+      "Sledziu_w",
+      "vhs",
+      "cienislaw",
+      "Tortain"
+    ]
   },
   {
     "game": "Shadow Complex Remastered",
@@ -360,7 +437,14 @@
     "link": "https://gamesub.pl/spolszczenie-shadow-complex/",
     "genre": "Metroidvania",
     "opis": "Platformowa gra akcji w stylu metroidvanii. Główny bohater wpada na ślad tajemniczej organizacji i musi zdemaskować jej plan.",
-    "steam": 385560
+    "steam": 385560,
+    "tworcy": [
+      "jasiek_barca",
+      "ARKaM",
+      "cienislaw",
+      "Lacrimael",
+      "vhs"
+    ]
   },
   {
     "game": "Spelunky",
@@ -375,7 +459,14 @@
     "link": "https://gamesub.pl/spolszczenie-spelunky/",
     "genre": "Platformówka",
     "opis": "Roguelike z elementami platformówki, w którym każda jaskinia jest inna. Badaj podziemia, zbieraj skarby i staraj się nie zginąć.",
-    "steam": 239350
+    "steam": 239350,
+    "tworcy": [
+      "Adrian Hołojuch",
+      "jasiek_barca",
+      "vhs",
+      "Sledziu_w",
+      "cienislaw"
+    ]
   },
   {
     "game": "The Darkness II",
@@ -390,7 +481,17 @@
     "link": "https://gamesub.pl/spolszczenie-darkness-2/",
     "genre": "Strzelanka",
     "opis": "Jackie Estacado wraca do świata zbrodni, uzbrojony w mroczne moce, które pozwalają mu walczyć z wrogami za pomocą macek. Strzelanka z perspektywy pierwszej osoby.",
-    "steam": 67370
+    "steam": 67370,
+    "tworcy": [
+      "everfading",
+      "jasiek_barca",
+      "Sledziu_w",
+      "vhs",
+      "Vielokont",
+      "cienislaw",
+      "WinegaR",
+      "Piter"
+    ]
   },
   {
     "game": "Vampire: The Masquerade – Bloodlines",
@@ -405,7 +506,12 @@
     "link": "https://gamesub.pl/spolszczenie-vampire-the-masquerade-bloodlines/",
     "genre": "RPG",
     "opis": "Kultowe RPG, w którym jako świeżo przemieniony wampir poznajesz mroczny świat Los Angeles. Duży wpływ na przebieg fabuły mają wybory gracza.",
-    "steam": 2600
+    "steam": 2600,
+    "tworcy": [
+      "jasiek_barca",
+      "vhs",
+      "cienislaw"
+    ]
   },
   {
     "game": "X-Men Origins: Wolverine",
@@ -419,7 +525,16 @@
     "upd": "2015-03-08",
     "link": "https://gamesub.pl/spolszczenie-x-men-origins-wolverine/",
     "genre": "Akcja",
-    "opis": "Gra akcji oparta na filmie. Wolverine mści się na wrogach, wykorzystując pazury i zdolności regeneracji."
+    "opis": "Gra akcji oparta na filmie. Wolverine mści się na wrogach, wykorzystując pazury i zdolności regeneracji.",
+    "tworcy": [
+      "bianco",
+      "everfading",
+      "jasiek_barca",
+      "Sledziu_w",
+      "vhs",
+      "ARKaM",
+      "cienislaw"
+    ]
   },
   {
     "game": "12 is Better Than 6",

@@ -17607,7 +17607,6 @@
       }
     ],
     "instrPaczka": 1,
-    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
     "zrzuty": [
       {
         "d": "https://cdn.grypopolsku.pl/zrzuty/sonic-rivals/1.webp?v=6393e89d",
@@ -17648,7 +17647,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami."
   },
   {
     "game": "Dante's Inferno",

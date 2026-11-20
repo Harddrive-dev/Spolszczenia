@@ -12331,7 +12331,20 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
-    }
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/queen-s-domain/1.webp?v=7e9683d1",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/queen-s-domain/1-miniatura.webp?v=3179173c"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/queen-s-domain/2.webp?v=2f0f0e6f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/queen-s-domain/2-miniatura.webp?v=ca4b8ae5"
+      }
+    ],
+    "zrzutyOd": [
+      "Harddrive"
+    ]
   },
   {
     "game": "Batman: The Enemy Within",

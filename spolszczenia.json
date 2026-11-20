@@ -3834,7 +3834,50 @@
         "dodano": "2026-11-20"
       }
     ],
-    "okladkaPasek": 1
+    "okladkaPasek": 1,
+    "instrPaczka": 1,
+    "instr": "Napisy niemal w całości przetłumaczone – z polskimi znakami. Sporadycznie można natrafić na pojedyncze słowa w języku angielskim.\n\nSpolszczenie dostępne jest w dwóch wersjach. Pierwotna wersja, zawierająca wyłącznie polskie napisy, została przygotowana przez **JUSEXE**. Kilka lat później lokalizacja została wzbogacona o polski dubbing, którego autorem jest **Pixel the Retro**.\n\nInstrukcja instalacji pierwszej wersji znajduje się w paczce spolszczenia, natomiast instrukcję instalacji wersji z dubbingiem można znaleźć w linku zamieszczonym poniżej.",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/1.webp?v=39543302",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/1-miniatura.webp?v=8ca21cd7"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/2.webp?v=121abd36",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/2-miniatura.webp?v=cde74e3e"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/3.webp?v=9589bdd1",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/3-miniatura.webp?v=ea12700c"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/4.webp?v=733a6d92",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/4-miniatura.webp?v=9e1d801f"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/5.webp?v=e04bd6db",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/5-miniatura.webp?v=13fc12f6"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/6.webp?v=54963060",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/6-miniatura.webp?v=262bd8df"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/7.webp?v=e45a1fe2",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/7-miniatura.webp?v=d0bcf234"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/8.webp?v=d6973508",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/8-miniatura.webp?v=0290bfbf"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/9.webp?v=2a901518",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/kao-challengers/9-miniatura.webp?v=c9c18bd9"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Kick Master",

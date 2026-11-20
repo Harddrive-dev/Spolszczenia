@@ -16126,13 +16126,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.6",
+    "ver": "1.7",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-seven-deadly-sins-origin",
     "dodano": "2026-09-20",
-    "upd": "2026-10-29",
+    "upd": "2026-11-19",
     "img": "https://cdn.grypopolsku.pl/okladki/the-seven-deadly-sins-origin-f3d04f13.webp",
-    "steam": 3679080
+    "steam": 3679080,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-20"
+    }
   },
   {
     "game": "The Thing That Happened",
@@ -21107,7 +21111,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0.1",
+    "ver": "1.2",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-witch-s-bakery",
     "genre": "Przygodowa",
@@ -21115,10 +21119,10 @@
     "img": "https://cdn.grypopolsku.pl/okladki/the-witch-s-bakery-d83bc260.webp",
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
-    "upd": "2026-11-19",
+    "upd": "2026-11-20",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-19"
+      "dzien": "2026-11-20"
     },
     "ukonczono": "2026-11-19"
   },

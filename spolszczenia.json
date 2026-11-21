@@ -23956,7 +23956,7 @@
   },
   {
     "game": "Grand Theft Auto VI",
-    "platform": "PC",
+    "platform": "Sony PS5, Xbox Series X/S",
     "type": "Napisy",
     "prog": 100,
     "ver": "—",
@@ -23967,7 +23967,12 @@
     "dodano": "2026-11-21",
     "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-vi-1d2383af.webp",
     "opis": "Akcja gry przenosi graczy do współczesnego, fikcyjnego stanu Leonida, będącego satyrycznym odbiciem słonecznej Florydy – pełnej kontrastów między luksusowymi kurortami, kulturą mediów społecznościowych, a dzikimi mokradłami i szemranymi przedmieściami. Głównym ośrodkiem miejskim jest powracające po latach Vice City, ukazane tym razem w realiach połowy lat 20. XXI wieku.",
-    "upd": "2026-11-21"
+    "upd": "2026-11-21",
+    "status": "Gotowe",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-21"
+    }
   },
   {
     "game": "MADiSON",

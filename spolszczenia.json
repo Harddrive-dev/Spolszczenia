@@ -13495,18 +13495,23 @@
   },
   {
     "game": "Grand Theft Auto: Chinatown Wars",
-    "platform": "PC, Nintendo NDS",
+    "platform": "Sony PSP",
     "genre": "Akcja",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": ".niux",
-    "link": "https://bazarowespolszczenia.pl/gra/gta_chinatown_wars",
+    "author": "Grupa SMG",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=783&hilit=Chinatown+Wars&start=10",
     "dodano": "2026-09-30",
     "upd": "2026-09-30",
     "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-chinatown-wars-0af7bc4a.webp",
-    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami."
+    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami.",
+    "instr": "Napisy w pełni przetłumaczone - z polskimi znakami.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-21"
+    }
   },
   {
     "game": "Unavowed",

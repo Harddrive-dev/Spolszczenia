@@ -23214,8 +23214,8 @@
     "game": "Tales of Phantasia: Narikiri Dungeon X",
     "platform": "Sony PSP",
     "type": "Napisy",
-    "status": "Beta",
-    "prog": 99,
+    "status": "Gotowe",
+    "prog": 100,
     "ver": "1.3.2",
     "author": "TalesOfManiac",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4923",
@@ -23276,7 +23276,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "ukonczono": "2026-11-21"
   },
   {
     "game": "Axiom Verge",

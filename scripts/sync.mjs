@@ -95,9 +95,13 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
 const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
 for(const g of list)if(GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre];
 // Autor / Twórcy (zasada właściciela, 20.11): jeden twórca -> tylko pole Autor (gdy Autor pusty lub „—”) i bez sekcji Twórcy;
-// kilku twórców -> wszyscy w Twórcach, a pusty Autor = „pierwsza osoba i inni”.
-for(const g of list){const tw=Array.isArray(g.tworcy)?g.tworcy:[];if(!tw.length)continue;const pusty=!String(g.author||"").trim()||String(g.author).trim()==="—";
- if(tw.length===1){if(pusty)g.author=tw[0];delete g.tworcy}else if(pusty)g.author=tw[0]+" i inni"}
+// kilku twórców -> wszyscy w Twórcach, a pusty Autor = „pierwsza osoba i inni”;
+// (21.11) gdy Autor to jedna osoba (nie grupa, bez przecinka) -> „Osoba i inni”; nazwy grup zostają bez zmian.
+const GRUPA_RE=/grupa|zesp[oó]ł|studio|team|squad|group|spolszczenia$|^gamesub$|^nimbostratus$|^plprojekt$|po polsku|^scummpl$|^mindstorm$|gtapolska|dykugierkuje/i;
+for(const g of list){const tw=Array.isArray(g.tworcy)?g.tworcy:[];if(!tw.length)continue;const au=String(g.author||"").trim(),pusty=!au||au==="—";
+ if(tw.length===1){if(pusty)g.author=tw[0];delete g.tworcy}
+ else if(pusty)g.author=tw[0]+" i inni";
+ else if(!/ i (inni|in\.)$/.test(au)&&!au.includes(",")&&!GRUPA_RE.test(au))g.author=au+" i inni"}
 const after=JSON.stringify(list,null,2);
 if(after===before){console.log("Brak zmian");process.exit(0)}
 fs.writeFileSync("spolszczenia.json",after+"\n");fs.writeFileSync("katalog-czas.json",JSON.stringify({t:CZAS})+"\n");console.log("Zaktualizowano spolszczenia.json, wpisów:",list.length);

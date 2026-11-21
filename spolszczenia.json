@@ -24049,7 +24049,7 @@
     "ver": "—",
     "author": "P.G + seraf5 i inni",
     "link": "https://drive.google.com/file/d/1mjvFM2iKJhQeI25KYxW_Lzyho8rOmSmm/view",
-    "genre": "Przygodowa",
+    "genre": "Akcja",
     "dodano": "2026-11-21",
     "img": "https://cdn.grypopolsku.pl/okladki/lego-indiana-jones-8ffcebaa.webp",
     "opis": "LEGO Indiana Jones: The Original Adventures to przygodowa gra akcji stworzona przez studio Traveller’s Tales, w której gracz wciela się w słynnego archeologa i odtwarza wydarzenia z klasycznej filmowej trylogii w humorystycznym świecie klocków LEGO.",
@@ -24065,6 +24065,26 @@
       "P.G",
       "seraf5"
     ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-21"
+    }
+  },
+  {
+    "game": "LEGO Star Wars II: The Original Trilogy",
+    "platform": "Sony PSP",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "seraf5",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?p=46591&hilit=LEGO+Star+Wars+II#p46591",
+    "genre": "Akcja",
+    "dodano": "2026-11-21",
+    "img": "https://cdn.grypopolsku.pl/okladki/lego-star-wars-ii-the-original-trilogy-86caf28c.webp",
+    "opis": "LEGO Star Wars II: The Original Trilogy to przygodowa gra akcji z elementami platformówki, wyprodukowana przez studio Traveller's Tales i wydana we wrześniu 2006 roku przez LucasArts. Stanowi bezpośrednią kontynuację hitu LEGO Star Wars: The Video Game (2005) i przedstawia w humorystyczny, klockowy sposób wydarzenia z klasycznej trylogii filmowej Gwiezdnych wojen.",
+    "upd": "2026-11-21",
+    "instr": "Polskie napisy - bez polskich znaków.",
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-21"

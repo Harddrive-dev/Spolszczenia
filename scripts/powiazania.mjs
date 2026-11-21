@@ -23,10 +23,11 @@ function nazwy(game){
 export function gryWTytule(title,list){
   const t="-"+arab(slug(title))+"-",found=[];
   for(const g of list){
-    if(!g||!g.game)continue;const n=nazwy(g.game),s=n[0];if(!s)continue;
-    if(!s.includes("-")&&s.length<5)continue;
-    if(n.some(x=>t.includes("-"+x+"-")))found.push({s,g});
+    if(!g||!g.game)continue;const n=nazwy(g.game),a=n[0];if(!a)continue;
+    if(!a.includes("-")&&a.length<5)continue;
+    // s = zwykły adres gry (klucz w powiazania.json, tak jak szuka go gry.mjs), a = wersja z liczbą arabską do porównań
+    if(n.some(x=>t.includes("-"+x+"-")))found.push({s:slug(g.game),a,g});
   }
   const uniq=[...new Map(found.map(x=>[x.s,x])).values()];
-  return uniq.filter(x=>!uniq.some(y=>y!==x&&y.s.length>x.s.length&&("-"+y.s+"-").includes("-"+x.s+"-"))).slice(0,3);
+  return uniq.filter(x=>!uniq.some(y=>y!==x&&y.a.length>x.a.length&&("-"+y.a+"-").includes("-"+x.a+"-"))).slice(0,3);
 }

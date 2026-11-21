@@ -23999,6 +23999,28 @@
     "yt": "https://youtu.be/79w-0UMtSO8?is=2LjyaF1lMZTuLpXe"
   },
   {
+    "game": "Grand Theft Auto: Chinatown Wars",
+    "platform": "Nintendo NDS",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": ".niux",
+    "link": "https://bazarowespolszczenia.pl/gra/gta_chinatown_wars",
+    "genre": "Akcja",
+    "dodano": "2026-11-21",
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-chinatown-wars-0af7bc4a.webp",
+    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami.",
+    "upd": "2026-11-21",
+    "id": "grand-theft-auto-chinatown-wars-nds",
+    "osobna": true,
+    "premiera": "2026-11-01",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-21"
+    }
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -24019,22 +24041,30 @@
     }
   },
   {
-    "game": "Grand Theft Auto: Chinatown Wars",
-    "platform": "Nintendo NDS",
+    "game": "LEGO Indiana Jones: The Original Adventures",
+    "platform": "Sony PSP",
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": ".niux",
-    "link": "https://bazarowespolszczenia.pl/gra/gta_chinatown_wars",
-    "genre": "Akcja",
+    "author": "P.G + seraf5 i inni",
+    "link": "https://drive.google.com/file/d/1mjvFM2iKJhQeI25KYxW_Lzyho8rOmSmm/view",
+    "genre": "Przygodowa",
     "dodano": "2026-11-21",
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-chinatown-wars-0af7bc4a.webp",
-    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami.",
+    "img": "https://cdn.grypopolsku.pl/okladki/lego-indiana-jones-8ffcebaa.webp",
+    "opis": "LEGO Indiana Jones: The Original Adventures to przygodowa gra akcji stworzona przez studio Traveller’s Tales, w której gracz wciela się w słynnego archeologa i odtwarza wydarzenia z klasycznej filmowej trylogii w humorystycznym świecie klocków LEGO.",
     "upd": "2026-11-21",
-    "id": "grand-theft-auto-chinatown-wars-nds",
-    "osobna": true,
-    "premiera": "2026-11-01",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?p=47069&hilit=LEGO+indiana+psp#p47069"
+      }
+    ],
+    "instr": "Polskie napisy - bez polskich znaków.",
+    "tworcy": [
+      "P.G",
+      "seraf5"
+    ],
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-21"

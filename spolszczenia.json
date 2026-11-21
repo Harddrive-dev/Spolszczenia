@@ -23228,7 +23228,55 @@
       "kto": "kokos324",
       "dzien": "2026-11-21"
     },
-    "genre": "RPG"
+    "genre": "RPG",
+    "linki": [
+      {
+        "t": "💬 Informacje o spolszczeniu wraz z instrukcją",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=4923"
+      }
+    ],
+    "instr": "Napisy przetłumaczone – z polskimi znakami.\nNiektóre nazwy przedmiotów celowo pozostawiono w języku angielskim, aby ułatwić korzystanie z anglojęzycznych poradników i solucji.\nSpolszczenie powstało na bazie tłumaczenia maszynowego, jednak autor włożył wiele pracy w jego korektę i dopracowanie.",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/1.webp?v=1636833b",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/1-miniatura.webp?v=f748d3c3"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/2.webp?v=3dad8de9",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/2-miniatura.webp?v=64b37570"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/3.webp?v=fbd2be73",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/3-miniatura.webp?v=d008f6d2"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/4.webp?v=05565eb2",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/4-miniatura.webp?v=06f3acdb"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/5.webp?v=9192e7b4",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/5-miniatura.webp?v=dc00dcf6"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/6.webp?v=c8dc526e",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/6-miniatura.webp?v=338c54f0"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/7.webp?v=a081e858",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/7-miniatura.webp?v=0dcf8d0c"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/8.webp?v=da5d329b",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/8-miniatura.webp?v=0c0bd49d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/9.webp?v=cfe7380a",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/tales-of-phantasia-narikiri-dungeon-x/9-miniatura.webp?v=db10f6ae"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Axiom Verge",
@@ -23906,6 +23954,21 @@
     }
   },
   {
+    "game": "Grand Theft Auto VI",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "gamereader": "https://www.gamereader.pl/biblioteka",
+    "genre": "Akcja",
+    "dodano": "2026-11-21",
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-vi-1d2383af.webp",
+    "opis": "Akcja gry przenosi graczy do współczesnego, fikcyjnego stanu Leonida, będącego satyrycznym odbiciem słonecznej Florydy – pełnej kontrastów między luksusowymi kurortami, kulturą mediów społecznościowych, a dzikimi mokradłami i szemranymi przedmieściami. Głównym ośrodkiem miejskim jest powracające po latach Vice City, ukazane tym razem w realiach połowy lat 20. XXI wieku.",
+    "upd": "2026-11-21"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -23924,20 +23987,5 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
-  },
-  {
-    "game": "Grand Theft Auto VI",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "gamereader": "https://www.gamereader.pl/biblioteka",
-    "genre": "Akcja",
-    "dodano": "2026-11-21",
-    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-vi-1d2383af.webp",
-    "opis": "Akcja gry przenosi graczy do współczesnego, fikcyjnego stanu Leonida, będącego satyrycznym odbiciem słonecznej Florydy – pełnej kontrastów między luksusowymi kurortami, kulturą mediów społecznościowych, a dzikimi mokradłami i szemranymi przedmieściami. Głównym ośrodkiem miejskim jest powracające po latach Vice City, ukazane tym razem w realiach połowy lat 20. XXI wieku.",
-    "upd": "2026-11-21"
   }
 ]

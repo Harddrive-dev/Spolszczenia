@@ -24017,5 +24017,27 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Grand Theft Auto: Chinatown Wars",
+    "platform": "Nintendo NDS",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": ".niux",
+    "link": "https://bazarowespolszczenia.pl/gra/gta_chinatown_wars",
+    "genre": "Akcja",
+    "dodano": "2026-11-21",
+    "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-chinatown-wars-0af7bc4a.webp",
+    "opis": "Huang Lee przybywa do Liberty City, by oddać rodzinny miecz, ale szybko wplątuje się w wojnę triad. Gra łączy widok z góry z komiksową oprawą i handlem narkotykami.",
+    "upd": "2026-11-21",
+    "id": "grand-theft-auto-chinatown-wars-nds",
+    "osobna": true,
+    "premiera": "2026-11-01",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-21"
+    }
   }
 ]

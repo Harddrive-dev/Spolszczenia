@@ -945,7 +945,9 @@ function nwDay(d){var t=new Date(),p=function(x){return x.getFullYear()+"-"+Stri
 // Aktualizacja = nowy numer wersji albo przejście na „Gotowe”. Uzupełnienie brakującego numeru (—) się nie liczy.
 function spUpdKey(o,n){return !!(o&&n&&((o.ver&&o.ver!=="—"&&n.ver&&n.ver!=="—"&&o.ver!==n.ver)||(["W trakcie","Korekta","Beta","Testy","Zapowiedź"].indexOf(o.status)>-1&&n.status==="Gotowe")))}
 // Wyszukiwanie ignoruje wielkość liter, polskie znaki i interpunkcję; wszystkie słowa muszą wystąpić, w dowolnej kolejności.
-function srchNorm(t){return String(t||"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim()}
+// Liczby rzymskie jako osobne słowa (II–XX) zamieniane na arabskie – „gta 6” znajdzie „Grand Theft Auto VI” i odwrotnie
+var SRCH_RZ={ii:2,iii:3,iv:4,v:5,vi:6,vii:7,viii:8,ix:9,x:10,xi:11,xii:12,xiii:13,xiv:14,xv:15,xvi:16,xvii:17,xviii:18,xix:19,xx:20};
+function srchNorm(t){return String(t||"").toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim().split(" ").map(function(w){return SRCH_RZ[w]?String(SRCH_RZ[w]):w}).join(" ")}
 function srchWords(t){return srchNorm(t).split(" ").filter(Boolean)}
 // Skróty z pierwszych liter tytułu (liczby w całości): „wow” → World of Warcraft, „gta” → Grand Theft Auto, „rdr2” → Red Dead Redemption 2, „kcd” → Kingdom Come: Deliverance. Od 3 znaków.
 function srchInit(g){var w=srchWords(g.game);if(w[0]==="the"&&w.length>2)w=w.slice(1);return w.map(function(x){return /^\d+$/.test(x)?x:x.charAt(0)}).join("")}

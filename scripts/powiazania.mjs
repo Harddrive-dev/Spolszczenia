@@ -1,16 +1,31 @@
-// Łączy wpisy z Aktualności z grami z katalogu: szuka pełnej nazwy gry w tytule wpisu.
+// Łączy wpisy z Aktualności z grami z katalogu: szuka nazwy gry w tytule wpisu.
 // Używane przez news.mjs (ramka „Gra z tego wpisu”) i gry.mjs (sekcja „Wiadomości o tej grze”).
 export const slug=t=>String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
-// Zwraca do 3 gier, których pełna nazwa występuje w tytule (całymi słowami).
+// Liczby rzymskie jako osobne słowa (II–XX) -> arabskie, np. „grand-theft-auto-vi” = „grand-theft-auto-6”.
+const RZ={ii:2,iii:3,iv:4,v:5,vi:6,vii:7,viii:8,ix:9,x:10,xi:11,xii:12,xiii:13,xiv:14,xv:15,xvi:16,xvii:17,xviii:18,xix:19,xx:20};
+const arab=s=>s.split("-").map(w=>RZ[w]?String(RZ[w]):w).join("-");
+
+// Nazwy, pod którymi gra może wystąpić w tytule: pełna nazwa (z liczbą arabską) oraz skrót
+// z pierwszych liter + numer, gdy nazwa ma co najmniej 3 słowa i kończy się numerem
+// (np. „Grand Theft Auto VI” -> „gta-6”, „Red Dead Redemption 2” -> „rdr-2”).
+function nazwy(game){
+  const s=arab(slug(game)),out=[s];
+  let w=s.split("-");if(w[0]==="the"&&w.length>3)w=w.slice(1);
+  const nr=w[w.length-1],slowa=w.slice(0,-1);
+  if(/^\d+$/.test(nr)&&slowa.length>=3&&slowa.every(x=>/^[a-z]/.test(x)))out.push(slowa.map(x=>x[0]).join("")+"-"+nr);
+  return out;
+}
+
+// Zwraca do 3 gier, których nazwa występuje w tytule (całymi słowami).
 // Jednowyrazowe nazwy muszą mieć co najmniej 5 znaków, a krótsze dopasowania
 // zawarte w dłuższym (np. „World of Warcraft” w „World of Warcraft: Forever”) są pomijane.
 export function gryWTytule(title,list){
-  const t="-"+slug(title)+"-",found=[];
+  const t="-"+arab(slug(title))+"-",found=[];
   for(const g of list){
-    const s=g&&g.game?slug(g.game):"";if(!s)continue;
+    if(!g||!g.game)continue;const n=nazwy(g.game),s=n[0];if(!s)continue;
     if(!s.includes("-")&&s.length<5)continue;
-    if(t.includes("-"+s+"-"))found.push({s,g});
+    if(n.some(x=>t.includes("-"+x+"-")))found.push({s,g});
   }
   const uniq=[...new Map(found.map(x=>[x.s,x])).values()];
   return uniq.filter(x=>!uniq.some(y=>y!==x&&y.s.length>x.s.length&&("-"+y.s+"-").includes("-"+x.s+"-"))).slice(0,3);

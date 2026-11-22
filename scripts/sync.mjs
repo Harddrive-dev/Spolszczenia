@@ -33,9 +33,6 @@ const ZASTAPIONE=new Set();
 for(const r of rows){if(r.kind!=="modedit")continue;const d=r.data||{};for(const c of d.changes||[]){
  if(c.field==="link"&&c.from&&String(c.to||"").trim()!==String(c.from).trim())ZASTAPIONE.add(String(c.from).trim());
  if(c.field==="spolszczenia"){let a=[],b=[];try{a=JSON.parse(c.from||"[]");b=JSON.parse(c.to||"[]")}catch{}const nowe=new Set((b||[]).map(s=>String(s.link||"").trim()));for(const s of a||[]){const l=String(s.link||"").trim();if(l&&!nowe.has(l))ZASTAPIONE.add(l)}}}}
-// (22.11) Jedna osoba wpisana ręcznie w „Twórcy spolszczenia” (⋯ → Informacje) zostaje i pokazuje się na stronie gry.
-// Starsze poprawki z jedną osobą (sprzed tej zmiany) nadal są czyszczone – żeby nie wróciły setki wpisów usuniętych 20–21.11.
-const TW1_OD="2026-11-22T14:40:00",TW1_STARE=new Set();
 const renames=[];// [stary adres, nowy adres] z każdej zmiany nazwy gry – do przekierowań starych adresów stron gier
 for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10);
  if(r.kind==="modedit")for(const c of d.changes||[])if(c.field==="game"&&c.from&&c.to){const a=slug(c.from),b=slug(String(c.to).trim());if(a&&b&&a!==b)renames.push([a,b])}
@@ -55,7 +52,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
    if(f==="usun"){if(v==="1")g._usun=1;continue}
    if(f==="steam"){const st=steamParse(v);if(st)steamSet(g,st);continue}
    if(f==="instr"){if(v)g.instr=v.slice(0,3000);else delete g.instr;continue}
-   if(f==="tworcy"){const tw=[];for(let x of v.split(",")){x=x.trim().slice(0,40);if(x&&!tw.includes(x)&&tw.length<30)tw.push(x)}if(tw.length)g.tworcy=tw;else delete g.tworcy;if(tw.length===1&&String(r.created_at||"")<TW1_OD)TW1_STARE.add(g);else TW1_STARE.delete(g);continue} // „Twórcy spolszczenia” (koniec sekcji „O grze”)
+   if(f==="tworcy"){const tw=[];for(let x of v.split(",")){x=x.trim().slice(0,40);if(x&&!tw.includes(x)&&tw.length<30)tw.push(x)}if(tw.length)g.tworcy=tw;else delete g.tworcy;continue} // „Twórcy spolszczenia” (koniec sekcji „O grze”)
    if(f==="instrPaczka"){if(v==="1")g.instrPaczka=1;else delete g.instrPaczka;continue} // „Instrukcja instalacji jest w paczce ze spolszczeniem”
    if(f==="linki"){let a=[];try{a=JSON.parse(v||"[]")}catch{a=[]}const lk=[];for(const x of Array.isArray(a)?a:[]){const t=String(x&&x.t||"").trim().slice(0,60),u=String(x&&x.u||"").trim().slice(0,500);if(t&&/^https:\/\/\S+$/i.test(u)&&lk.length<10)lk.push({t,u})}if(lk.length)g.linki=lk;else delete g.linki;continue} // linki do autorów / forów
    if(f==="okladkaPasek"){if(v==="1")g.okladkaPasek=1;else delete g.okladkaPasek;continue} // okładka ma już pasek platformy – strona nie dokłada drugiego
@@ -97,12 +94,12 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
 // dawne nazwy gatunków (np. z wcześniejszych edycji w panelu, które automat nanosi przy każdym przebiegu) -> obecne
 const GENRE_ALIAS={"Survival Horror":"Horror","FPS":"Strzelanka","MMORPG":"RPG","Survival":"Akcja"};
 for(const g of list)if(GENRE_ALIAS[g.genre])g.genre=GENRE_ALIAS[g.genre];
-// Autor / Twórcy (zasada właściciela, 20.11): jeden twórca -> pole Autor (gdy Autor pusty lub „—”); sekcja Twórcy tylko gdy wpisany ręcznie po 22.11;
+// Autor / Twórcy (zasada właściciela, 20.11): jeden twórca -> pole Autor (gdy Autor pusty lub „—”); sekcja „Twórca spolszczenia” tylko gdy wpisany ręcznie (⋯ → Informacje);
 // kilku twórców -> wszyscy w Twórcach, a pusty Autor = „pierwsza osoba i inni”;
 // (21.11) gdy Autor to jedna osoba (nie grupa, bez przecinka) -> „Osoba i inni”; nazwy grup zostają bez zmian.
 const GRUPA_RE=/grupa|zesp[oó]ł|studio|team|squad|group|spolszczenia$|^gamesub$|^nimbostratus$|^plprojekt$|po polsku|^scummpl$|^mindstorm$|gtapolska|dykugierkuje/i;
 for(const g of list){const tw=Array.isArray(g.tworcy)?g.tworcy:[];if(!tw.length)continue;const au=String(g.author||"").trim(),pusty=!au||au==="—";
- if(tw.length===1){if(pusty)g.author=tw[0];if(TW1_STARE.has(g))delete g.tworcy}
+ if(tw.length===1){if(pusty)g.author=tw[0]} // (22.11) jedna osoba wpisana ręcznie zostaje i pokazuje się jako „Twórca spolszczenia”
  else if(pusty)g.author=tw[0]+" i inni";
  else if(!/ i (inni|in\.)$/.test(au)&&!au.includes(",")&&!GRUPA_RE.test(au))g.author=au+" i inni"}
 const after=JSON.stringify(list,null,2);

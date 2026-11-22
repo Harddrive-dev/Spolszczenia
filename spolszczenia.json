@@ -24129,5 +24129,21 @@
     "opis": "Fran Bow to przygodowa gra typu point-and-click z elementami horroru psychologicznego (oraz mrocznego fantasy).\n\nRozgrywka skupia się na eksploracji dwuwymiarowych, ręcznie rysowanych lokacji, zbieraniu przedmiotów, rozmowach z postaciami oraz rozwiązywaniu zagadek logicznych, a kluczową mechaniką jest przełączanie się między normalną rzeczywistością a jej mroczną, krwawą wersją.",
     "steam": 362680,
     "upd": "2026-11-22"
+  },
+  {
+    "game": "Fell Seal: Arbiter's Mark",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=fell-seal-arbiter-s-mark",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/fell-seal-arbiter-s-mark-03012a21.webp",
+    "opis": "Fell Seal: Arbiter's Mark to turowa gra taktyczna RPG (Tactical RPG / Strategy RPG), silnie inspirowana klasykami takimi jak Final Fantasy Tactics oraz Tactics Ogre.\n\nRozgrywka skupia się na prowadzeniu drużyny najemników przez liniową kampanię fabularną, toczeniu turowych bitew na izometrycznych, podzielonych na pola (siatkę) mapach z uwzględnieniem ukształtowania terenu oraz na rozbudowanym systemie rozwoju postaci, obejmującym ponad 30 klas i setki umiejętności.",
+    "steam": 699170,
+    "upd": "2026-11-22"
   }
 ]

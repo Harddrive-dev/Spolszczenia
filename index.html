@@ -574,9 +574,10 @@ html{-webkit-tap-highlight-color:transparent}
 .vbox .vfoot .vfi{font-size:18px;flex:none}.vbox .vfoot .vft{flex:1;line-height:1.4}.vbox .vfoot b{color:var(--text);font-weight:600}
 .vbox .vfoot .vfl{flex:none;color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}.vbox .vfoot .vfl:hover{text-decoration:underline}}
 /* Dyskusje (9.11.2026) */
-#dysview{max-width:980px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
-@media(max-width:600px){#dysview{padding:14px 12px;border-radius:12px}}
-#dysview h2{margin:6px 0 2px}#dysview .dsub{margin:0 0 12px}
+#dysview,#ocview{max-width:980px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+@media(max-width:600px){#dysview,#ocview{padding:14px 12px;border-radius:12px}}
+#dysview h2,#ocview h2{margin:6px 0 2px}#dysview .dsub,#ocview .dsub{margin:0 0 12px}
+.ocst{color:#f5b301;letter-spacing:1px;white-space:nowrap;font-style:normal}.ocst .o0{color:var(--line)}
 .dtabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
 .dtabs button{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;color:var(--muted);background:var(--bg);cursor:pointer}
 .dtabs button.on{background:var(--accent);color:#1f1513;border-color:var(--accent);font-weight:700}
@@ -712,6 +713,7 @@ html{-webkit-tap-highlight-color:transparent}
 <div id="newsview" style="display:none"></div>
 <div id="steamview" style="display:none" aria-live="polite"></div>
 <div id="dysview" style="display:none"></div>
+<div id="ocview" style="display:none"></div>
 <div id="nwview" style="display:none"></div>
 <div id="favview" style="display:none"></div>
 <div id="kontoview" style="display:none"></div>
@@ -892,7 +894,11 @@ function versionsTxt(g){var p=versPairs(g);if(p.length<2)return "Wersja "+esc(g.
 function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 // Oceny spolszczeń (gwiazdki z tabeli „oceny”, funkcja „oceny_wszystkie”): średnia przy nicku autora. Główne spolszczenie = "main".
 var OC=Object.create(null);
-async function loadOceny(){if(!sb)return;try{var r=await sb.rpc("oceny_wszystkie");if(r.error||!r.data)return;var m=Object.create(null);r.data.forEach(function(x){m[x.gra+"|"+x.sp]={a:+x.srednia,n:+x.liczba}});OC=m;render();renderHome()}catch(e){}}
+var OST=[];   // ostatnie oceny (funkcja „oceny_ostatnie”): gra, sp, ocena, kiedy, nick
+function ocGwiazdki(v){v=Math.max(0,Math.min(5,+v||0));return '<span class="ocst" aria-label="'+v+' na 5">'+"★★★★★".slice(0,v)+'<span class="o0">'+"★★★★★".slice(0,5-v)+'</span></span>'}
+function ocAutSp(g,sp){if(sp==="main")return g.author&&g.author!=="—"?g.author:"";var e=spExtra(g).filter(function(s){return s.id===sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
+async function loadOst(){if(!sb)return;try{var r=await sb.rpc("oceny_ostatnie",{p_od:0,p_ile:10});if(!r.error&&r.data){OST=r.data;renderHome()}}catch(e){}}
+async function loadOceny(){if(!sb)return;loadOst();try{var r=await sb.rpc("oceny_wszystkie");if(r.error||!r.data)return;var m=Object.create(null);r.data.forEach(function(x){m[x.gra+"|"+x.sp]={a:+x.srednia,n:+x.liczba}});OC=m;render();renderHome();if(typeof onOc!=="undefined"&&onOc)renderOcList()}catch(e){}}
 function ocBadge(g,name){var sp=null,m=g.author&&g.author!=="—"?g.author:"—";
   if(hasSp(g)&&name===m)sp="main";else{var e=spExtra(g).filter(function(s){return (s.author&&s.author!=="—"?s.author:"—")===name&&s.id})[0];if(e)sp=e.id}
   var o=sp&&OC[keyOf(g)+"|"+sp];if(!o||!o.n)return "";var t=o.a.toFixed(1).replace(".",",");
@@ -1211,13 +1217,10 @@ function renderSide(){
   var nowe=komBase?kom.filter(function(c){return c.created_at>komBase&&gameByKey(c.game_key)}).length:0;
   w.innerHTML='<h3>📰 Ostatnie wieści<a class="mall" href="/aktualnosci/">Wszystkie →</a></h3>'+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="mitem" href="/aktualnosci/'+esc(r.slug)+'/"><span class="dt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="tx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze wieści.</p>')+'';
   kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'<a class="mall" href="#/dyskusje" data-kseen="1">Wszystkie →</a></h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
-  // Najlepiej ocenione spolszczenia (średnie z „oceny_wszystkie”): po jednym na grę, najwyższa średnia, przy remisie więcej ocen
-  var oc=[],ocSeen={};Object.keys(OC).forEach(function(k){var i=k.indexOf("|"),g=gameByKey(k.slice(0,i));if(g&&OC[k].n)oc.push({g:g,sp:k.slice(i+1),a:OC[k].a,n:OC[k].n})});
-  oc.sort(function(x,y){return y.a-x.a||y.n-x.n}).forEach(function(x){if(!ocSeen[keyOf(x.g)])ocSeen[keyOf(x.g)]=x});oc=Object.keys(ocSeen).map(function(k){return ocSeen[k]}).sort(function(x,y){return y.a-x.a||y.n-x.n}).slice(0,3);
-  function ocAut(x){if(x.sp==="main")return x.g.author&&x.g.author!=="—"?x.g.author:"";var e=spExtra(x.g).filter(function(s){return s.id===x.sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
-  ob.innerHTML='<h3>⭐ Najlepiej ocenione<a class="mall" href="#katalog" data-ocall="1">Wszystkie →</a></h3>'+(oc.length?oc.map(function(x){var a=ocAut(x),t=x.a.toFixed(1).replace(".",",");return '<a class="mitem" href="/gra/'+esc(keyOf(x.g))+'/">'+thumb(x.g)+'<span class="tx"><b>'+esc(x.g.game)+'</b><span>'+(a?esc(a)+' · ':'')+'<b class="ocb">★ '+t+'</b> ('+x.n+' '+(x.n===1?"ocena":(x.n%10>=2&&x.n%10<=4&&(x.n%100<10||x.n%100>=20))?"oceny":"ocen")+')</span></span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najlepiej ocenione.</p>');
+  // Ostatnio ocenione (funkcja „oceny_ostatnie”): 3 najnowsze oceny; „Wszystkie →” otwiera widok #/oceny
+  var oc=OST.map(function(x){return {x:x,g:gameByKey(x.gra)}}).filter(function(o){return o.g}).slice(0,3);
+  ob.innerHTML='<h3>⭐ Ostatnio ocenione<a class="mall" href="#/oceny">Wszystkie →</a></h3>'+(oc.length?oc.map(function(o){var a=ocAutSp(o.g,o.x.sp);return '<a class="mitem" href="/gra/'+esc(keyOf(o.g))+'/">'+thumb(o.g)+'<span class="tx"><b>'+esc(o.g.game)+'</b><span><b class="who">'+esc(o.x.nick||"Gracz")+':</b> '+ocGwiazdki(o.x.ocena)+(a?' · '+esc(a):'')+'</span></span><span class="ago">'+esc(komAgo(o.x.kiedy))+'</span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najnowsze oceny graczy.</p>');
 }
-document.addEventListener("click",function(e){var o=e.target.closest&&e.target.closest("[data-ocall]");if(o){e.preventDefault();if(VIEW!=="all"&&typeof setView==="function")setView("all");clearFlt();$("sort").value="ocena";page=1;render();var kt=$("sort");if(kt)kt.scrollIntoView({behavior:"smooth",block:"center"});return}});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
 async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
 async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}
@@ -2033,7 +2036,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false,OHASH="#/oceny",onOc=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -2223,6 +2226,32 @@ function showDys(){var was=curViewName();enterView("dys","Dyskusje – GryPoPols
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-dtab],#dmore");if(!t||!onDys)return;
   if(t.id==="dmore"){if(DYS.n<DYS.rows.length)DYS.n+=30;else{DYS.n+=30;dysLoad()}renderDysList();return}
   DYS.tab=t.getAttribute("data-dtab");DYS.n=30;renderDysList()});
+// ====== OCENY SPOLSZCZEŃ (#/oceny): ostatnio ocenione (funkcja „oceny_ostatnie”) i najlepiej ocenione (średnie „oceny_wszystkie”) ======
+var OCV={tab:"new",rows:[],done:false,loading:false,err:false,built:false};
+async function ocvLoad(){if(!CM||OCV.loading||OCV.done)return;OCV.loading=true;renderOcList();
+  try{var r=await sb.rpc("oceny_ostatnie",{p_od:OCV.rows.length,p_ile:50});if(r.error||!r.data)OCV.err=true;else{OCV.rows=OCV.rows.concat(r.data);OCV.done=r.data.length<50}}catch(e){OCV.err=true}
+  OCV.loading=false;renderOcList()}
+function ocPl(n){return n===1?"ocena":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?"oceny":"ocen"}
+function renderOcList(){var box=$("oclist");if(!box)return;
+  ["new","top"].forEach(function(t){var b=document.querySelector('[data-otab="'+t+'"]');if(b)b.classList.toggle("on",OCV.tab===t)});
+  if(!CM){box.innerHTML='<p class="msg">Oceny są chwilowo niedostępne.</p>';return}
+  if(!items||!items.length){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję oceny…</p>';setTimeout(renderOcList,400);return}
+  if(OCV.tab==="top"){var L=[];Object.keys(OC).forEach(function(k){var i=k.indexOf("|"),g=gameByKey(k.slice(0,i));if(g&&OC[k].n)L.push({g:g,sp:k.slice(i+1),a:OC[k].a,n:OC[k].n})});
+    L.sort(function(x,y){return y.a-x.a||y.n-x.n||x.g.game.localeCompare(y.g.game,"pl")});
+    box.innerHTML=L.length?L.slice(0,50).map(function(o,i){var au=ocAutSp(o.g,o.sp);return '<a class="hc" href="/gra/'+esc(keyOf(o.g))+'/"><span class="hn">'+(i+1)+'</span>'+thumb(o.g)+'<span class="ht"><b>'+esc(o.g.game)+'</b><small>'+esc(dysMeta(o.g))+(au?' · '+esc(au):'')+'</small><i>'+ocGwiazdki(Math.round(o.a))+'</i></span><span class="hcnt"><b>'+o.a.toFixed(1).replace(".",",")+'</b><small>'+o.n+' '+ocPl(o.n)+'</small></span></a>'}).join(""):'<p class="msg">Nikt jeszcze nie ocenił spolszczenia. Oceń pierwszy na stronie dowolnej gry!</p>';return}
+  if(!OCV.rows.length&&!OCV.err&&(OCV.loading||!OCV.done)){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję oceny…</p>';return}
+  if(OCV.err&&!OCV.rows.length){box.innerHTML='<p class="msg err">Nie udało się wczytać ocen. Spróbuj odświeżyć stronę.</p>';return}
+  var h="",last="";OCV.rows.forEach(function(x){var g=gameByKey(x.gra);if(!g)return;var d=dysDay(x.kiedy),au=ocAutSp(g,x.sp);if(d!==last){h+='<div class="dday">'+esc(d)+'</div>';last=d}
+    h+='<a class="hc" href="/gra/'+esc(keyOf(g))+'/">'+thumb(g)+'<span class="ht"><b>'+esc(g.game)+'</b><small>'+esc(dysMeta(g))+(au?' · spolszczenie: '+esc(au):'')+'</small><i><b>'+esc(x.nick||"Gracz")+'</b> ocenił(a) na '+ocGwiazdki(x.ocena)+' · '+esc(komAgo(x.kiedy))+'</i></span><span class="hcnt"><b>'+(+x.ocena)+'/5</b></span></a>'});
+  if(!h)h='<p class="msg">Nie ma jeszcze ocen. Oceń spolszczenie na stronie dowolnej gry!</p>';
+  if(!OCV.done)h+='<button class="btn dmore" id="ocmore" type="button"'+(OCV.loading?' disabled':'')+'>'+(OCV.loading?'Wczytuję…':'Pokaż starsze oceny')+'</button>';
+  box.innerHTML=h}
+function renderOc(){var v=$("ocview");
+  if(!OCV.built){OCV.built=true;v.innerHTML=VBACK+'<h2>⭐ Oceny spolszczeń</h2><p class="msg dsub">Jak gracze oceniają spolszczenia – najnowsze oceny i ranking najlepiej ocenionych. Oceniasz gwiazdkami 1–5 na stronie gry (najwyżej 3 nowe oceny dziennie).</p><div class="dtabs"><button type="button" data-otab="new">🕒 Ostatnio ocenione</button><button type="button" data-otab="top">🏆 Najlepiej ocenione</button></div><div id="oclist"></div>'}
+  renderOcList();if(OCV.tab==="new"&&!OCV.rows.length&&!OCV.done)ocvLoad()}
+function showOc(){var was=curViewName();enterView("oc","Oceny spolszczeń – GryPoPolsku.pl");if(was!=="oc"){OCV.rows=[];OCV.done=false;OCV.err=false}renderOc()}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-otab],#ocmore");if(!t||!onOc)return;
+  if(t.id==="ocmore"){ocvLoad();return}OCV.tab=t.getAttribute("data-otab");renderOc()});
 // ====== MOJE ULUBIONE (#/ulubione) – tabela favorites w Supabase, tylko dla zalogowanych (11.2026) ======
 // FAV.m i FAV.busy bez prototypu (Object.create(null)), bo gra o kluczu np. „constructor” myliłaby się z wbudowanymi polami obiektu.
 // FAV.m[klucz gry] = {c: dzień dodania, t: czas dodania, s: data ostatniej obejrzanej nowości}.
@@ -2431,22 +2460,22 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     busy(t,"Zapisuję…");var r=await sb.auth.updateUser({password:p1,current_password:p0});busy(t,0); // obecne hasło sprawdza Supabase (ustawienie „Require current password when updating”)
     if(r.error){var em=String(r.error.message||"");return m(/current password|invalid.*password|password.*(incorrect|invalid)/i.test(em)&&!/different from the old/i.test(em)?"Obecne hasło jest nieprawidłowe.":/different from the old/i.test(em)?"Nowe hasło musi być inne niż obecne.":/reauthenticat|recent/i.test(em)?"Ze względów bezpieczeństwa wyloguj się, zaloguj ponownie i od razu zmień hasło.":/weak|pwned|characters/i.test(em)?"To hasło jest za słabe – wybierz dłuższe lub trudniejsze.":"Nie udało się zmienić hasła: "+plMsg(em),1)}
     $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":""}
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav||onKonto));$("kontoview").style.display=onKonto?"":"none";$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav||onKonto||onOc));$("ocview").style.display=onOc?"":"none";$("kontoview").style.display=onKonto?"":"none";$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";onKonto=name==="konto";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";onKonto=name==="konto";onOc=name==="oc";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;onKonto=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;onKonto=false;onOc=false;setViewUI()}
 var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
@@ -2572,7 +2601,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH)route();
 
 var baseItems=[];
 var JSON_T=Infinity; // do kiedy automat przerobił zmiany z bazy (katalog-czas.json, zapisuje go sync.mjs); brak pliku = stare zachowanie

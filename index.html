@@ -1455,6 +1455,16 @@ function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
   return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)">'+l+'</span>'}
 function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
 var LVC={};
+// „Lv X” i link do profilu przy nickach (Ostatnie komentarze, Dyskusje). lvNeed dociąga brakujące poziomy i rysuje widok jeszcze raz.
+function lvNeed(ids,cb){if(!CM)return;ids=(ids||[]).filter(function(i,k,a){return i&&!(i in LVC)&&a.indexOf(i)===k});if(!ids.length)return;ids.forEach(function(i){LVC[i]=0});
+  sb.rpc("poziomy",{p_ids:ids.slice(0,200)}).then(function(x){if(x.error||!x.data)return;x.data.forEach(function(y){LVC[y.user_id]=+y.poziom||1});cb&&cb()})}
+var ROLC={};
+function rolNeed(rows,cb){if(!CM)return;var ids=[];(rows||[]).forEach(function(c){if(c.is_mod&&c.user_id&&!(c.user_id in ROLC)&&ids.indexOf(c.user_id)<0)ids.push(c.user_id)});if(!ids.length)return;
+  ids.forEach(function(i){ROLC[i]=null});Promise.all(ids.slice(0,20).map(function(i){return sb.rpc("profil",{p_klucz:i}).then(function(r){if(!r.error&&r.data)ROLC[i]=r.data.rola||null})})).then(function(){cb&&cb()},function(){})}
+function lvB(id){return LVC[id]?' <span class="ulv cl">Lv '+LVC[id]+'</span>':''}
+// nick wewnątrz klikalnego kafelka (nie może być drugim linkiem) – span z data-prof
+function nickIn(id,n){return id?'<span class="cnick" role="link" tabindex="0" data-prof="'+esc(id)+'" title="Zobacz profil">'+esc(n||"Gracz")+'</span>':esc(n||"Gracz")}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-prof]");if(!t)return;e.preventDefault();e.stopPropagation();goView("#/profil/"+t.getAttribute("data-prof"))},true);
 async function loadComments(key){
   try{
     var r=await sb.from("comments").select("id,user_id,author,body,created_at,avatar_url,is_mod,ranga").eq("game_key",key).order("created_at",{ascending:true}).limit(200);
@@ -1463,9 +1473,10 @@ async function loadComments(key){
     if(r.error)throw r.error;if(curKey!==key)return;
     var u=me(),ids=r.data.map(function(c){return c.user_id}).filter(function(i){return i&&!(i in LVC)});
     if(ids.length){ids.forEach(function(i){LVC[i]=0});sb.rpc("poziomy",{p_ids:ids.slice(0,200)}).then(function(x){if(x.error||!x.data)return;x.data.forEach(function(y){LVC[y.user_id]=+y.poziom||1});if(curKey===key)loadComments(key)})}
+    rolNeed(r.data,function(){if(curKey===key)loadComments(key)});
     $("clist").innerHTML=r.data.length?r.data.map(function(c){
       var del=u&&(c.user_id===u.id||isMod())?' <button class="mini" data-del="'+esc(c.id)+'">Usuń</button>':"";
-      return '<div class="cmt">'+avHtml(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+(c.user_id?'<a class="cnick" href="#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author)+'</a>':esc(c.author))+'</b>'+(LVC[c.user_id]?' <span class="ulv cl">Lv '+LVC[c.user_id]+'</span>':'')+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
+      return '<div class="cmt">'+avHtml(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+(c.user_id?'<a class="cnick" href="#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author)+'</a>':esc(c.author))+'</b>'+(LVC[c.user_id]?' <span class="ulv cl">Lv '+LVC[c.user_id]+'</span>':'')+(c.is_mod?'<span class="modb">'+(ROLC[c.user_id]==="admin"?"Admin":"Moderator")+'</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+del+'</div><div class="cbody">'+esc(c.body)+'</div></div></div>'}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
   }catch(e){if(curKey===key)$("clist").textContent="Nie udało się wczytać komentarzy."}
 }
 function showComments(key){
@@ -2262,14 +2273,14 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
 if(!CM){var _sb=$("steambtn");if(_sb)_sb.style.display="none"}
 // ====== DYSKUSJE (#/dyskusje): wszystkie komentarze z całej strony – najnowsze, najgorętsze w tym tygodniu, pod wpisami ======
 var DYS={tab:"new",rows:[],done:false,loading:false,err:false,n:30,q:"",newsT:{},built:false};
-var DCOLS="id,game_key,author,body,created_at,avatar_url,is_mod,parent_id";
+var DCOLS="id,game_key,author,body,created_at,avatar_url,is_mod,parent_id,user_id";
 async function dysLoad(){if(!CM||DYS.loading||DYS.done)return;DYS.loading=true;
   try{var from=DYS.rows.length,q=function(c){return sb.from("comments").select(c).order("created_at",{ascending:false}).range(from,from+299)};
     var r=await q(DCOLS);if(r.error)r=await q("id,game_key,author,body,created_at");
     if(r.error||!r.data)DYS.err=true;else{DYS.rows=DYS.rows.concat(r.data);DYS.done=r.data.length<300}
     var ns=[];DYS.rows.forEach(function(c){var m=/^news:(.+)$/.exec(c.game_key||"");if(m&&!(m[1] in DYS.newsT)&&ns.indexOf(m[1])<0)ns.push(m[1])});
     if(ns.length){var n=await sb.from("news").select("slug,title").eq("published",true).in("slug",ns);ns.forEach(function(x){DYS.newsT[x]=""});if(!n.error&&n.data)n.data.forEach(function(x){DYS.newsT[x.slug]=x.title})}}catch(e){DYS.err=true}
-  DYS.loading=false;renderDysList()}
+  DYS.loading=false;renderDysList();lvNeed(DYS.rows.map(function(c){return c.user_id}),renderDysList);rolNeed(DYS.rows,renderDysList)}
 function dysWeekStart(){return new Date(Date.now()+weekLeft()*1000-7*864e5).toISOString()}
 function dysPl(n){return n===1?"komentarz":(n%10>=2&&n%10<=4&&(n%100<12||n%100>14))?"komentarze":"komentarzy"}
 function dysMeta(g){return g.pl==="of"?"Oficjalna PL"+(hasLk(g)?" · Polski lektor":""):(g.type||"Napisy")+(g.status&&hasSp(g)?" · "+stText(g):"")}
@@ -2278,7 +2289,7 @@ function dysTarget(c){var m=/^news:(.+)$/.exec(c.game_key||"");
   var g=gameByKey(c.game_key);return g?{g:g,href:"/gra/"+keyOf(g)+"/",title:g.game,meta:dysMeta(g),th:thumb(g),n:counts[c.game_key]||0}:null}
 function dysDay(t){var d=new Date(t),p=function(x){return x.getFullYear()+"-"+x.getMonth()+"-"+x.getDate()},n=new Date(),y=new Date(Date.now()-864e5);
   return p(d)===p(n)?"Dziś":p(d)===p(y)?"Wczoraj":d.getDate()+" "+MONTHS[d.getMonth()]+(d.getFullYear()!==n.getFullYear()?" "+d.getFullYear():"")}
-function dysItem(c,x){return '<article class="dkm"><a class="dg" href="'+esc(x.href)+'">'+x.th+'<span><b>'+esc(x.title)+'</b><small>'+esc(x.meta)+'</small></span></a><div class="db"><div class="dw">'+avHtml(c.avatar_url,c.author)+'<b>'+esc(c.author||"Gracz")+'</b>'+(c.is_mod?'<span class="dmod">MOD</span>':'')+(c.parent_id?'<span class="drep">↪ odpowiedź</span>':'')+'<span class="ago">· '+esc(komAgo(c.created_at))+'</span></div><p>'+esc(c.body)+'</p><div class="da"><a href="'+esc(x.href)+'#komentarze-c'+(+c.id||0)+'">Odpowiedz</a><a href="'+esc(x.href)+'#komentarze">Cała dyskusja'+(x.n?' ('+x.n+')':'')+' →</a></div></div></article>'}
+function dysItem(c,x){return '<article class="dkm"><a class="dg" href="'+esc(x.href)+'">'+x.th+'<span><b>'+esc(x.title)+'</b><small>'+esc(x.meta)+'</small></span></a><div class="db"><div class="dw">'+avHtml(c.avatar_url,c.author)+'<b>'+(c.user_id?'<a class="cnick" href="#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author||"Gracz")+'</a>':esc(c.author||"Gracz"))+'</b>'+lvB(c.user_id)+(c.is_mod?'<span class="dmod">'+(ROLC[c.user_id]==="admin"?"ADMIN":"MOD")+'</span>':'')+(c.parent_id?'<span class="drep">↪ odpowiedź</span>':'')+'<span class="ago">· '+esc(komAgo(c.created_at))+'</span></div><p>'+esc(c.body)+'</p><div class="da"><a href="'+esc(x.href)+'#komentarze-c'+(+c.id||0)+'">Odpowiedz</a><a href="'+esc(x.href)+'#komentarze">Cała dyskusja'+(x.n?' ('+x.n+')':'')+' →</a></div></div></article>'}
 function renderDysList(){var box=$("dyslist");if(!box)return;
   if(!CM){box.innerHTML='<p class="msg">Komentarze są chwilowo niedostępne.</p>';return}
   if(!DYS.rows.length&&(DYS.loading||!DYS.done)&&!DYS.err){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję komentarze…</p>';return}
@@ -2290,7 +2301,7 @@ function renderDysList(){var box=$("dyslist");if(!box)return;
   if(DYS.tab==="hot"){var ws=dysWeekStart(),agg={},ord=[];
     L.forEach(function(p){var c=p[0];if(c.created_at<ws)return;var a=agg[c.game_key];if(!a){a=agg[c.game_key]={c:c,x:p[1],n:0};ord.push(a)}a.n++});
     ord.sort(function(a,b){return b.n-a.n||(b.c.created_at>a.c.created_at?1:-1)});
-    box.innerHTML=ord.length?ord.slice(0,15).map(function(a,i){return '<a class="hc" href="'+esc(a.x.href)+'#komentarze"><span class="hn">'+(i+1)+'</span>'+a.x.th+'<span class="ht"><b>'+esc(a.x.title)+'</b><small>'+esc(a.x.meta)+'</small><i><b>'+esc(a.c.author||"Gracz")+':</b> '+esc(a.c.body)+'</i></span><span class="hcnt"><b>'+a.n+'</b><small>'+dysPl(a.n)+'<br>w tym tygodniu</small></span></a>'}).join("")
+    box.innerHTML=ord.length?ord.slice(0,15).map(function(a,i){return '<a class="hc" href="'+esc(a.x.href)+'#komentarze"><span class="hn">'+(i+1)+'</span>'+a.x.th+'<span class="ht"><b>'+esc(a.x.title)+'</b><small>'+esc(a.x.meta)+'</small><i><b>'+nickIn(a.c.user_id,a.c.author)+lvB(a.c.user_id)+':</b> '+esc(a.c.body)+'</i></span><span class="hcnt"><b>'+a.n+'</b><small>'+dysPl(a.n)+'<br>w tym tygodniu</small></span></a>'}).join("")
       :'<p class="msg">W tym tygodniu nikt jeszcze nie komentował'+(w.length?' takiej gry':'')+'. Napisz pierwszy komentarz!</p>';
     if(!DYS.done&&DYS.rows.length&&DYS.rows[DYS.rows.length-1].created_at>=ws)dysLoad();return}
   var vis=L.slice(0,DYS.n),h="",last="";
@@ -2300,11 +2311,11 @@ function renderDysList(){var box=$("dyslist");if(!box)return;
   box.innerHTML=h}
 function renderDys(){var v=$("dysview");
   if(!DYS.built){DYS.built=true;
-    v.innerHTML=VBACK+'<h2>💬 Dyskusje</h2><p class="msg dsub">Wszystkie komentarze z całej strony w jednym miejscu – zobacz, o czym rozmawiają gracze, i dołącz do rozmowy.</p>'+
+    v.innerHTML=VBACK+'<h2>💬 Ostatnie komentarze</h2><p class="msg dsub">Wszystkie komentarze z całej strony w jednym miejscu – zobacz, o czym rozmawiają gracze, i dołącz do rozmowy.</p>'+
      '<input id="dq" class="stq" type="search" placeholder="Szukaj gry, osoby lub treści…" autocomplete="off" aria-label="Szukaj w komentarzach"><div class="dtabs"><button type="button" data-dtab="new">🕒 Najnowsze</button><button type="button" data-dtab="hot">🔥 Najgorętsze w tym tygodniu</button><button type="button" data-dtab="news">📰 Pod wpisami</button></div><div id="dyslist"></div>';
     $("dq").addEventListener("input",function(){DYS.q=this.value;DYS.n=30;renderDysList()})}
   renderDysList();if(!DYS.rows.length&&!DYS.done)dysLoad()}
-function showDys(){var was=curViewName();enterView("dys","Dyskusje – GryPoPolsku.pl");if(was!=="dys"){DYS.rows=[];DYS.done=false;DYS.err=false;DYS.n=30}renderDys()}
+function showDys(){var was=curViewName();enterView("dys","Ostatnie komentarze – GryPoPolsku.pl");if(was!=="dys"){DYS.rows=[];DYS.done=false;DYS.err=false;DYS.n=30}renderDys()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-dtab],#dmore");if(!t||!onDys)return;
   if(t.id==="dmore"){if(DYS.n<DYS.rows.length)DYS.n+=30;else{DYS.n+=30;dysLoad()}renderDysList();return}
   DYS.tab=t.getAttribute("data-dtab");DYS.n=30;renderDysList()});
@@ -2563,7 +2574,7 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   else h+='<div class="pfg jeden">'+st+'</div>';
   h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span><small>raz w tygodniu</small></div><div><b>+2 pkt</b><span>Ocena spolszczenia</span><small>do 3 dziennie, raz na spolszczenie</small></div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
   v.innerHTML=h}
-function pfUrl(d,sub){return PHASH+"/"+encodeURIComponent(d.id)+(sub?"/"+sub:"")}
+function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
 function pfKomHtml(d){var K=PRF.kom;
   var head='<div class="pfc"><h3>💬 Komentarze '+(d.wlasny?"napisane przez Ciebie":"użytkownika "+esc(d.nick||"Gracz"))+'</h3>';
@@ -2590,6 +2601,8 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
       var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;powUI()}}
+    // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
+    if(PRF.data&&(PRF.key||PRF.sub)){var want=pfUrl(PRF.data,PRF.sub)+(PRF.sub==="wiadomosci"&&WM.z?"/"+WM.z:"");if(location.hash!==want)try{history.replaceState(null,"",location.pathname+location.search+want)}catch(e){}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";
     if(PRF.data&&PRF.sub==="komentarze")pfKomLoad(PRF.data.id);
     if(PRF.data&&PRF.sub==="wiadomosci"&&PRF.data.wlasny)wmLoad(true);

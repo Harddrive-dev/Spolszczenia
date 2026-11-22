@@ -62,6 +62,10 @@ async function lvFetch(ids){ids=(ids||[]).filter(function(i){return i&&!(i in LV
 // Nowe powiadomienia (👍 i odpowiedzi pod Twoimi komentarzami) – funkcja „powiad_nowe”; zerują się po wejściu na profil
 var POWN={u:null,n:0,m:0};
 async function powFetch(id){POWN={u:id,n:0,m:0};try{var r=await Promise.all([sb.rpc("powiad_nowe"),sb.rpc("wiadomosci_nowe")]);if(me()&&me().id===id){if(!r[0].error)POWN.n=+r[0].data||0;if(!r[1].error)POWN.m=+r[1].data||0;if(POWN.n||POWN.m)renderUser()}}catch(e){}}
+// ADMIN zamiast „Moderator” przy komentarzach admina (rola z funkcji „profil”, pytamy tylko o autorów z is_mod)
+var ROLM={};
+async function rolFetch(list){var ids=[];(list||[]).forEach(function(c){if(c.is_mod&&c.user_id&&!(c.user_id in ROLM)&&ids.indexOf(c.user_id)<0)ids.push(c.user_id)});if(!sb||!ids.length)return false;
+  ids.forEach(function(i){ROLM[i]=null});try{await Promise.all(ids.slice(0,20).map(function(i){return sb.rpc("profil",{p_klucz:i}).then(function(r){if(!r.error&&r.data)ROLM[i]=r.data.rola||null})}));return true}catch(e){return false}}
 function lvBadge(id){return LVM[id]?' <span class="ulv">Lv '+LVM[id]+'</span>':''}
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
@@ -220,7 +224,7 @@ function can(c){var u=me();return !!u&&(c.user_id===u.id||(!!myRole&&myRole!=="o
 function cHtml(c,rep,n){
   var u=me(),lk=likes.filter(function(l){return l.comment_id===c.id}),mine=!!u&&lk.some(function(l){return l.user_id===u.id});
   var tb=rep?'':'<button type="button" data-a="thread" data-i="'+c.id+'">'+(n?'Odpowiedzi ('+n+') '+(openT[c.id]?'▴':'▾'):'Odpowiedz')+'</button>';
-  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+(c.user_id?'<a class="cnick" href="/#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author)+'</a>':esc(c.author))+'</b>'+lvBadge(c.user_id)+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
+  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+(c.user_id?'<a class="cnick" href="/#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author)+'</a>':esc(c.author))+'</b>'+lvBadge(c.user_id)+(c.is_mod?'<span class="modb">'+(ROLM[c.user_id]==="admin"?"Admin":"Moderator")+'</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
 function threadHtml(c,reps){
   var form=me()?'<div class="rform"><textarea class="t" id="rb'+c.id+'" maxlength="1000" placeholder="Twoja odpowiedź…" style="min-height:60px"></textarea><p style="margin:6px 0 0"><button class="btn pri" type="button" data-a="rsend" data-i="'+c.id+'">Wyślij odpowiedź</button></p><p class="msg" id="rm'+c.id+'"></p></div>'
     :'<div class="rform"><p class="msg">Aby odpowiedzieć, <button class="linkb" type="button" data-a="login">zaloguj się</button>.</p></div>';
@@ -247,7 +251,7 @@ async function loadComments(){
     if(r.error)throw r.error;rows=r.data;likes=[];
     if(rows.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",rows.map(function(c){return c.id})).limit(5000);if(!l.error)likes=l.data}
     renderList();
-    lvFetch(rows.map(function(c){return c.user_id})).then(function(ok){if(ok)renderList()})}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
+    lvFetch(rows.map(function(c){return c.user_id})).then(function(ok){if(ok)renderList()});rolFetch(rows).then(function(ok){if(ok)renderList()})}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
 function renderForm(){var f=$("cform");
   f.innerHTML=me()?'<div class="cform">'+av(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea class="t" id="cbody" maxlength="1000" placeholder="Twój komentarz…"></textarea><p style="margin:8px 0 0"><button class="btn pri" id="csend" type="button">Dodaj komentarz</button></p><p class="msg" id="cfmsg"></p></div></div>'
    :'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn pri" id="cgologin" type="button">Zaloguj się</button>'}

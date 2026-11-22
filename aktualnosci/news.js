@@ -55,11 +55,17 @@ async function steamCount(){var u=me();if(!u)return;try{var r=await sb.from("ste
   var since=stSince(),un=0;seen.forEach(function(g){var d=stEvDate(g);if(d>=since&&k.indexOf((g.id||stSlug(g.game||""))+"|"+d)<0)un++});
   if(!me()||me().id!==u.id)return;
   try{localStorage.setItem("steam.c",JSON.stringify({n:String(seen.size),u:un,uid:u.id,t:Date.now()}))}catch(e){}renderUser()}catch(e){}}
+// Poziomy kont (funkcja „poziomy”): plakietka „Lv” przy nicku u góry i przy komentarzach
+var LVM={};
+async function lvFetch(ids){ids=(ids||[]).filter(function(i){return i&&!(i in LVM)});if(!sb||!ids.length)return false;
+  ids.forEach(function(i){LVM[i]=0});try{var r=await sb.rpc("poziomy",{p_ids:ids.slice(0,200)});if(r.error||!r.data)return false;r.data.forEach(function(x){LVM[x.user_id]=+x.poziom||1});return true}catch(e){return false}}
+function lvBadge(id){return LVM[id]?' <span class="ulv">Lv '+LVM[id]+'</span>':''}
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
-  var fc=favC(),menu=L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole&&myRole!=="opiekun"?'<button class="btn umt" id="umodt" type="button" style="margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="ar">▸</span></button><div class="umgrp" id="umgrp">'+L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+'</div>':"")+L("/#/konto","⚙️ Ustawienia konta");
-  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();profLoad();
+  if(!(u.id in LVM))lvFetch([u.id]).then(function(ok){if(ok)renderUser()});
+  var fc=favC(),menu=L("/#/profil","👤 Mój profil")+L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole&&myRole!=="opiekun"?'<button class="btn umt" id="umodt" type="button" style="margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="ar">▸</span></button><div class="umgrp" id="umgrp">'+L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+'</div>':"")+L("/#/konto","⚙️ Ustawienia konta");
+  c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+lvBadge(u.id)+(fc.un?'<span class="bn" title="Nowości w Twoich ulubionych grach">'+(fc.un>99?"99+":fc.un)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();profLoad();
   $("ubtn").onclick=function(e){e.stopPropagation();$("umenu").classList.toggle("open")};
   var mt=$("umodt");if(mt)mt.onclick=function(){var o=$("umgrp").classList.toggle("open");mt.classList.toggle("open",o);mt.setAttribute("aria-expanded",o?"true":"false")};
   $("ulo").onclick=function(){sb.auth.signOut({scope:"local"})}} // tylko to urządzenie
@@ -210,7 +216,7 @@ function can(c){var u=me();return !!u&&(c.user_id===u.id||(!!myRole&&myRole!=="o
 function cHtml(c,rep,n){
   var u=me(),lk=likes.filter(function(l){return l.comment_id===c.id}),mine=!!u&&lk.some(function(l){return l.user_id===u.id});
   var tb=rep?'':'<button type="button" data-a="thread" data-i="'+c.id+'">'+(n?'Odpowiedzi ('+n+') '+(openT[c.id]?'▴':'▾'):'Odpowiedz')+'</button>';
-  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+esc(c.author)+'</b>'+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
+  return '<div class="cmt'+(rep?' rep':'')+'" data-id="'+c.id+'">'+av(c.avatar_url,c.author)+'<div class="cmain"><div class="cmeta"><b>'+(c.user_id?'<a class="cnick" href="/#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author)+'</a>':esc(c.author))+'</b>'+lvBadge(c.user_id)+(c.is_mod?'<span class="modb">Moderator</span>':c.ranga?'<span class="opb">'+esc(c.ranga)+'</span>':'')+' · '+esc(new Date(c.created_at).toLocaleString("pl-PL"))+'</div><div class="cbody">'+esc(c.body)+'</div><div class="act"><button type="button" data-a="like" data-i="'+c.id+'" class="'+(mine?'liked':'')+'">👍 '+lk.length+'</button>'+tb+(can(c)?'<button type="button" data-a="del" data-i="'+c.id+'">Usuń</button>':'')+'</div></div></div>'}
 function threadHtml(c,reps){
   var form=me()?'<div class="rform"><textarea class="t" id="rb'+c.id+'" maxlength="1000" placeholder="Twoja odpowiedź…" style="min-height:60px"></textarea><p style="margin:6px 0 0"><button class="btn pri" type="button" data-a="rsend" data-i="'+c.id+'">Wyślij odpowiedź</button></p><p class="msg" id="rm'+c.id+'"></p></div>'
     :'<div class="rform"><p class="msg">Aby odpowiedzieć, <button class="linkb" type="button" data-a="login">zaloguj się</button>.</p></div>';
@@ -236,7 +242,8 @@ async function loadComments(){
     if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
     if(r.error)throw r.error;rows=r.data;likes=[];
     if(rows.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",rows.map(function(c){return c.id})).limit(5000);if(!l.error)likes=l.data}
-    renderList()}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
+    renderList();
+    lvFetch(rows.map(function(c){return c.user_id})).then(function(ok){if(ok)renderList()})}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
 function renderForm(){var f=$("cform");
   f.innerHTML=me()?'<div class="cform">'+av(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea class="t" id="cbody" maxlength="1000" placeholder="Twój komentarz…"></textarea><p style="margin:8px 0 0"><button class="btn pri" id="csend" type="button">Dodaj komentarz</button></p><p class="msg" id="cfmsg"></p></div></div>'
    :'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn pri" id="cgologin" type="button">Zaloguj się</button>'}

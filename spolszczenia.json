@@ -24251,5 +24251,57 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "ANIIMO",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "7.0",
+    "author": "FeelTHEVoice",
+    "link": "https://github.com/feelthevoicepoland-spolszczenia/WUWA_PL/releases/download/1.0/Animo.Launcher.7.0.PL.zip",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/aniimo-02bbf266.webp",
+    "opis": "Aniimo to darmowa gra action RPG z otwartym światem oraz elementami zbierania stworzeń (creature-collector), tworzona przez studio Pawprint Studio i wydawana przez Kingsglory (markę powiązaną z FunPlus).",
+    "steam": 4126040,
+    "upd": "2026-11-22",
+    "instrPaczka": 1,
+    "linki": [
+      {
+        "t": "🔗 Facebook Autora",
+        "u": "https://www.facebook.com/FeelTHEVoicePOLAND/"
+      },
+      {
+        "t": "🔗 Buycoffee",
+        "u": "https://buycoffee.to/emilieangellosanchezz"
+      },
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@feelthevoicepolska"
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/aniimo/1.webp?v=67a5673a",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/aniimo/1-miniatura.webp?v=3bdcfba5"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/aniimo/2.webp?v=76b3d7d2",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/aniimo/2-miniatura.webp?v=a8ac3c72"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/aniimo/3.webp?v=93dfe49f",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/aniimo/3-miniatura.webp?v=ec12342d"
+      }
+    ],
+    "zrzutyOd": [
+      "Harddrive"
+    ]
   }
 ]

@@ -24320,5 +24320,40 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Tales of Graces f Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.4",
+    "author": "TalesOfManiac",
+    "link": "https://talesofmaniac.pl/#projekt-graces",
+    "yt": "https://www.youtube.com/watch?v=l3BBAXgXLSI",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/tales-of-graces-f-remastered-switch-07ae1819.webp",
+    "opis": "Tales of Graces f Remastered to wydana w styczniu 2025 roku odświeżona wersja klasycznej gry jRPG akcji (Tales of Graces z 2009 roku na Nintendo Wii oraz rozszerzonego wydania Graces f z PS3). Za wydanie odpowiada Bandai Namco Entertainment.",
+    "steam": 2530980,
+    "upd": "2026-11-22"
+  },
+  {
+    "game": "Tales of Graces f Remastered",
+    "platform": "Nintendo Switch",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.4",
+    "author": "TalesOfManiac",
+    "link": "https://talesofmaniac.pl/#projekt-graces",
+    "yt": "https://www.youtube.com/watch?v=l3BBAXgXLSI",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/tales-of-graces-f-remastered-switch-07ae1819.webp",
+    "opis": "Tales of Graces f Remastered to wydana w styczniu 2025 roku odświeżona wersja klasycznej gry jRPG akcji (Tales of Graces z 2009 roku na Nintendo Wii oraz rozszerzonego wydania Graces f z PS3). Za wydanie odpowiada Bandai Namco Entertainment.",
+    "upd": "2026-11-22",
+    "id": "tales-of-graces-f-remastered-switch",
+    "osobna": true
   }
 ]

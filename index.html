@@ -634,6 +634,17 @@ html{-webkit-tap-highlight-color:transparent}
 .pfp small{margin-left:auto;color:var(--muted);white-space:nowrap}.pfp a{color:inherit;font-weight:700}
 .pfk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pfk div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px}.pfk b{display:block;font-size:20px;color:#f5b301}.pfk span{font-size:13.5px}.pfk small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
 .pfa{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pftabs{display:flex;gap:6px;margin:-2px 0 8px}.pftabs button{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:10px;padding:7px 10px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}.pftabs button.on{background:var(--accent);border-color:var(--accent);color:#1f1513}.pftabs .bd{margin-left:4px}
+.pfn2{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:start;padding:10px 8px;border-bottom:1px solid var(--line);border-radius:10px}.pfn2:last-child{border-bottom:0}
+.pfn2.nw{background:rgba(245,179,1,.08);margin-bottom:4px}.pfn2.nw .pft2:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff3b30;margin-right:6px;vertical-align:2px}
+.pfi{width:38px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:800}
+.pfi.pp{background:rgba(245,179,1,.14);color:#f5b301}.pfi.pu{background:var(--accent);color:#1f1513;font-size:11.5px}.pfi.pl{background:rgba(245,179,1,.12)}.pfi.po{background:rgba(120,170,255,.15)}
+.pfx{min-width:0}.pft2{font-size:14px;line-height:1.35}.pfgr{color:var(--muted);font-weight:400}
+.pfq{font-size:13px;color:var(--muted);font-style:italic;margin-top:3px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.pfm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:12.5px}
+.pfbtn{border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:2px 10px;font-weight:700;text-decoration:none;white-space:nowrap}.pfbtn:hover{background:var(--accent);color:#1f1513}
+.pfpk{font-size:11.5px;font-weight:800;color:#f5b301;margin-left:4px}
+.pfn2 small{color:var(--muted);font-size:12px;white-space:nowrap;padding-top:2px}
 .cnick{color:inherit;text-decoration:none}.cnick:hover{color:var(--accent);text-decoration:underline}.ulv.cl{display:inline-block;margin-left:4px;font-size:10.5px;vertical-align:1px}
 .ulv{font-size:11px;font-weight:800;background:#f5b301;color:#1b1408;border-radius:999px;padding:1px 7px;flex:none}
 @media(max-width:700px){.pfh{grid-template-columns:1fr;justify-items:center;text-align:center}.pfn{justify-content:center}.pft{grid-template-columns:repeat(2,1fr)}.pfg,.pfk{grid-template-columns:1fr}}
@@ -710,7 +721,7 @@ html{-webkit-tap-highlight-color:transparent}
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="ulv" id="ulv" style="display:none"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="uprof" type="button" style="margin-bottom:6px">👤 Mój profil</button><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn umt" id="umodt" type="button" style="display:none;margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="bd" id="ubd2" style="display:none"></span><span class="ar">▸</span></button><div class="umgrp" id="umgrp"><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button></div><button class="btn" id="ukonto" type="button" style="margin-bottom:6px">⚙️ Ustawienia konta</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="ulv" id="ulv" style="display:none"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="uprof" type="button" style="margin-bottom:6px">👤 Mój profil<span class="bd" id="upbd" style="display:none"></span></button><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn umt" id="umodt" type="button" style="display:none;margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="bd" id="ubd2" style="display:none"></span><span class="ar">▸</span></button><div class="umgrp" id="umgrp"><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button></div><button class="btn" id="ukonto" type="button" style="margin-bottom:6px">⚙️ Ustawienia konta</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -1385,14 +1396,14 @@ function forgotHtml(email){
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("ulv").style.display="none";MYLV=null;if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){$("ulv").style.display="none";MYLV=null;if(typeof POWN!=="undefined"){POWN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
   $("unm").textContent=n;box.innerHTML="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase();
-  if(typeof loadMyLv==="function")loadMyLv(u.id);if(typeof onProf!=="undefined"&&onProf&&!PRF.key&&!PRF.data)showProf("");
+  if(typeof loadMyLv==="function"){loadMyLv(u.id);loadPowN()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key&&!PRF.data)showProf("");
   if(typeof steamUI==="function")steamUI()}
 function renderForm(){
   $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
@@ -1523,7 +1534,7 @@ async function loadSubCount(){
 function showSubCount(){var n=subCnt>99?"99+":String(subCnt),on=isMod()&&subCnt>0;
   var d=$("ubd");if(d){d.textContent=n;d.style.display=on?"":"none"}var d2=$("ubd2");if(d2){d2.textContent=n;d2.style.display=on?"":"none"}
   // Odznaka przy nicku = nowe zgłoszenia (moderator) + nowości w ulubionych grach
-  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu,b=$("ubn");
+  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu+((typeof POWN!=="undefined"&&me())?POWN:0),b=$("ubn");
   if(b){b.textContent=tot>99?"99+":String(tot);b.style.display=tot?"":"none"}}
 document.addEventListener("visibilitychange",function(){if(!document.hidden&&isMod())loadSubCount()});
 setInterval(function(){if(!document.hidden&&isMod())loadSubCount()},120000);
@@ -2458,11 +2469,33 @@ function lvInfo(p){p=+p||0;var b=[0,30,80,150,250],l=1;while(l<5&&p>=b[l])l++;if
 async function loadMyLv(id){if(!CM||!id)return;try{var r=await sb.rpc("poziomy",{p_ids:[id]});if(!r.error&&r.data&&r.data[0]&&me()&&me().id===id){MYLV=+r.data[0].poziom||1;var e=$("ulv");e.textContent="Lv "+MYLV;e.style.display=""}}catch(e){}}
 function pfGra(k){if(!k)return "";var m=/^news:(.+)$/.exec(k);if(m)return {t:"wpisem w Aktualnościach",h:"/aktualnosci/"+m[1]+"/"};var g=gameByKey(k);return g?{t:g.game,h:"/gra/"+keyOf(g)+"/"}:{t:"",h:""}}
 function pfDzien(t){var d=new Date(t),n=new Date(),y=new Date(Date.now()-864e5),f=function(x){return x.toDateString()};return f(d)===f(n)?"dziś":f(d)===f(y)?"wczoraj":d.getDate()+" "+["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"][d.getMonth()]}
-function pfPowiadomienia(h){var out=[],sum=0;(h||[]).forEach(function(x){var przed=lvInfo(sum).lv;sum+=+x.pkt||0;var g=pfGra(x.gra),gl=g&&g.t?(g.h?'<a href="'+esc(g.h)+'">'+esc(g.t)+'</a>':esc(g.t)):"";
-    var txt=x.typ==="glos"?"Głos na grę tygodnia"+(gl?": "+gl:""):x.typ==="ocena"?"Oceniłeś spolszczenie"+(gl?" "+gl:""):x.typ==="like"?"Ktoś dał 👍 Twojemu komentarzowi"+(gl?" pod "+gl:""):"Punkty";
-    out.push('<div class="pfp"><span class="pt">'+((+x.pkt)>0?"+":"")+(+x.pkt)+'</span><span>'+txt+'</span><small>'+esc(pfDzien(x.created_at))+'</small></div>');
-    var po=lvInfo(sum).lv;if(po>przed)out.push('<div class="pfp"><span class="pt up">Lv '+po+'</span><span>Awansowałeś na <b>'+po+' poziom</b>!</span><small>'+esc(pfDzien(x.created_at))+'</small></div>')});
-  return out.reverse().slice(0,15).join("")}
+// Powiadomienia: punkty i awanse (tabela „punkty”) + 👍 i odpowiedzi pod Twoimi komentarzami (funkcja „moje_powiadomienia”).
+// Kto dał 👍 – nie pokazujemy (baza tego nie zwraca). Nowe od ostatniej wizyty są podświetlone.
+function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen).getTime():0,grp={};
+  function gra(k){var g=pfGra(k);return g&&g.t?g:{t:"",h:""}}
+  function cyt(t,n){t=String(t||"").replace(/\s+/g," ").trim();n=n||70;return t?"„"+(t.length>n?t.slice(0,n).trim()+"…":t)+"”":""}
+  function item(ic,cl,tyt,q,meta,t,nw){return '<div class="pfn2'+(nw?' nw':'')+'"><span class="pfi '+cl+'">'+ic+'</span><div class="pfx"><div class="pft2">'+tyt+'</div>'+(q?'<div class="pfq">'+esc(q)+'</div>':'')+(meta?'<div class="pfm">'+meta+'</div>':'')+'</div><small>'+esc(pfDzien(t))+'</small></div>'}
+  // punkty i awanse
+  (h||[]).forEach(function(x){var przed=lvInfo(sum).lv;sum+=+x.pkt||0;var t=new Date(x.created_at).getTime(),g=gra(x.gra);
+    if(x.typ!=="like")pk.push({t:t,h:item('+'+(+x.pkt),'pp',(x.typ==="glos"?"Głos na grę tygodnia":"Ocena spolszczenia")+(g.t?' <span class="pfgr">· '+esc(g.t)+'</span>':''),"","",t)});
+    else pk.push({t:t,h:item('+3','pp','Polubienie Twojego komentarza'+(g.t?' <span class="pfgr">· '+esc(g.t)+'</span>':''),"","",t)});
+    var po=lvInfo(sum).lv;if(po>przed)pk.push({t:t+1,h:item('Lv '+po,'pu','<b>Awans na '+po+' poziom!</b>',"","",t+1)})});
+  // 👍 (zgrupowane po komentarzu) i odpowiedzi
+  (pw||[]).forEach(function(x){var t=new Date(x.created_at).getTime(),nw=!!(sn&&t>sn),g=gra(x.gra),l=g.h?g.h+"#komentarze-c"+(+x.kom_id||0):"";
+    var meta=(g.t?'<span class="pfgr">'+esc(g.t)+'</span>':'')+(l?'<a class="pfbtn" href="'+esc(l)+'">'+(x.typ==="odp"?"↩ Odpowiedz":"Zobacz")+'</a>':'');
+    if(x.typ==="like"){var o=grp[x.kom_id];if(o){o.n++;o.pkt+=x.pkt?3:0;o.nw=o.nw||nw;return}
+      o=grp[x.kom_id]={like:1,n:1,pkt:x.pkt?3:0,t:t,nw:nw,q:x.moj,meta:meta};km.push(o)}
+    else km.push({t:t,nw:nw,h:item('💬','po','<b>'+esc(x.kto||"Gracz")+'</b> odpowiada na Twój komentarz',cyt(x.tresc,110),'<span class="pfgr">do '+esc(cyt(x.moj,40))+'</span>'+meta,t,nw)})});
+  km.forEach(function(o){if(o.like)o.h=item('👍','pl','Twój komentarz '+(o.n>1?'dostał <b>'+o.n+' × 👍</b>':'dostał 👍')+(o.pkt?' <span class="pfpk">+'+o.pkt+' pkt</span>':''),cyt(o.q),o.meta,o.t,o.nw)});
+  km.sort(function(a,b){return b.t-a.t});pk.sort(function(a,b){return b.t-a.t});
+  var nk=km.filter(function(e){return e.nw}).length,tab=PRF.tab||(km.length||!pk.length?"k":"p");
+  return '<div class="pftabs"><button type="button" class="'+(tab==="k"?"on":"")+'" data-pftab="k">💬 Komentarze'+(nk?' <span class="bd">'+nk+'</span>':'')+'</button><button type="button" class="'+(tab==="p"?"on":"")+'" data-pftab="p">⭐ Punkty</button></div>'+
+    (tab==="k"?(km.slice(0,15).map(function(e){return e.h}).join("")||'<p class="msg">Tu zobaczysz 👍 i odpowiedzi pod swoimi komentarzami.</p>')
+             :(pk.slice(0,15).map(function(e){return e.h}).join("")||'<p class="msg">Tu zobaczysz zdobyte punkty i awanse. Zagłosuj na grę tygodnia albo oceń spolszczenie!</p>'))}
+// Licznik nowych powiadomień (czerwona kropka przy nicku i w menu „Mój profil”)
+var POWN=0;
+async function loadPowN(){POWN=0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me())POWN=+r.data||0}catch(e){}powUI()}
+function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
 function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   if(!CM){v.innerHTML=hd+'<div class="pfc"><p class="msg">Profile są chwilowo niedostępne.</p></div>';return}
@@ -2479,18 +2512,21 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><div><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu</small></div></div>'+
     (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':'')+'</div></div></div>';
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><div class="pfl"><span>Napisane komentarze</span><b>'+d.komentarze+'</b></div><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
-  if(d.wlasny){var pw=pfPowiadomienia(PRF.hist);h+='<div class="pfg">'+st+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+(pw||'<p class="msg">Tu pojawią się Twoje punkty i awanse. Zagłosuj na grę tygodnia, oceń spolszczenie albo napisz komentarz!</p>')+'</div></div>'}
+  if(d.wlasny){var pw=pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen);h+='<div class="pfg">'+st+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pw+'</div></div>'}
   else h+='<div class="pfg jeden">'+st+'</div>';
   h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span><small>raz w tygodniu</small></div><div><b>+2 pkt</b><span>Ocena spolszczenia</span><small>do 3 dziennie, raz na spolszczenie</small></div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
   v.innerHTML=h}
-async function showProf(key){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.data=null;PRF.hist=null;PRF.err=false;renderProf();
+async function showProf(key){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.tab=null;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
-    if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[]}
+    if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
+      var pr=await sb.rpc("moje_powiadomienia",{p_ile:40});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
+      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;powUI()}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+" – profil – GryPoPolsku.pl"}
   catch(e){if(t!==PRF.t)return;PRF.err=true}
   renderProf()}
-document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#pfkonto,.cnick");if(!t)return;
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#pfkonto,.cnick,[data-pftab]");if(!t)return;
+  if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");renderProf();return}
   if(t.classList.contains("cnick")){if($("cm").className.indexOf("open")>=0)closeModal();return}
   if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}if(t.id==="pfkonto")goView(KHASH)});
 // ====== USTAWIENIA KONTA (#/konto): nick na stronie (raz na 3 miesiące), hasło, dane konta ======

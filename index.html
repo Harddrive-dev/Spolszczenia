@@ -93,6 +93,7 @@ tbody td:first-child,thead th:first-child{min-width:340px}
 .gcell .cbtn{flex:none;white-space:nowrap}.cbtn.cic{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:13px}.cbtn.cic b{color:var(--accent);font-weight:600}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 td.au{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ocb{color:#f5b301;font-weight:700;font-size:12px;white-space:nowrap}
 td.au .au1{display:block;line-height:1.3;overflow:hidden;text-overflow:ellipsis}
 td.vr{white-space:nowrap}td.vr .au1{display:block;line-height:1.3}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
@@ -889,7 +890,14 @@ function versionsCell(g){var p=versPairs(g);if(p.length<2)return esc(g.ver||"—
 function versionsTxt(g){var p=versPairs(g);if(p.length<2)return "Wersja "+esc(g.ver||"—");
   return "Wersje: "+p.map(function(x){return esc(x.n)+" "+esc(x.v)}).join(" · ")}
 function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
-function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+'</span>'}).join("")}
+// Oceny spolszczeń (gwiazdki z tabeli „oceny”, funkcja „oceny_wszystkie”): średnia przy nicku autora. Główne spolszczenie = "main".
+var OC=Object.create(null);
+async function loadOceny(){if(!sb)return;try{var r=await sb.rpc("oceny_wszystkie");if(r.error||!r.data)return;var m=Object.create(null);r.data.forEach(function(x){m[x.gra+"|"+x.sp]={a:+x.srednia,n:+x.liczba}});OC=m;render();renderHome()}catch(e){}}
+function ocBadge(g,name){var sp=null,m=g.author&&g.author!=="—"?g.author:"—";
+  if(hasSp(g)&&name===m)sp="main";else{var e=spExtra(g).filter(function(s){return (s.author&&s.author!=="—"?s.author:"—")===name&&s.id})[0];if(e)sp=e.id}
+  var o=sp&&OC[keyOf(g)+"|"+sp];if(!o||!o.n)return "";var t=o.a.toFixed(1).replace(".",",");
+  return ' <span class="ocb" title="Średnia ocena spolszczenia: '+t+'/5 ('+o.n+' '+(o.n===1?"ocena":(o.n%10>=2&&o.n%10<=4&&(o.n%100<10||o.n%100>=20))?"oceny":"ocen")+')">★ '+t+'</span>'}
+function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0])+ocBadge(g,a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+ocBadge(g,n)+'</span>'}).join("")}
 // Zakres spolszczenia: „Dubbing + napisy” liczy się też jako dubbing i jako napisy (filtry, licznik dubbingów)
 var TYPY=["Napisy","Dubbing + napisy","Dubbing"];function isDubT(t){return t==="Dubbing"||t==="Dubbing + napisy"}function typOk(v,t){return v===t||(v==="Dubbing + napisy"&&(t==="Dubbing"||t==="Napisy"))}
 function spTyp(g,t){if(t==="Oficjalna PL")return g.pl==="of";if(spExtra(g).some(function(s){return typOk(s.type,t)}))return true;return typOk(g.type,t)&&(g.pl!=="of"||t==="Dubbing")}
@@ -1004,7 +1012,7 @@ function render(){
   $("pager").innerHTML=pagerHtml(pages);
   if(!all.length){setHtml($("tb"),'<tr><td colspan="7" class="empty">Brak wyników.</td></tr>');setHtml($("cards"),'<div class="empty">Brak wyników.</div>');return}
   setHtml($("tb"),r.map(function(g){return '<tr><td><div class="gcell">'+thumb(g)+gName(g)+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</div></td><td class="au" title="'+esc(authorsOf(g).join(", "))+'">'+authorsCell(g)+'</td><td>'+esc(g.platform)+'</td><td>'+(dubPill(g)?'<span class="pls">':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'—')+dubPill(g)+(dubPill(g)?'</span>':'')+'</td><td>'+lkHtml(g)+'</td><td class="vr">'+versionsCell(g)+'</td><td>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span>':'—')+'</td></tr>'}).join(""));
-  setHtml($("cards"),r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+esc(authorsTxt(g)))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">'+versionsTxt(g)+'</div>')+'</div>'}).join(""))}
+  setHtml($("cards"),r.map(function(g){return '<div class="card"><h3 class="gcell">'+thumb(g)+'<a class="g" style="color:inherit;text-decoration:none" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>'+cbtn(g)+hrtBtn(g)+rowBtn(g)+'</h3><div class="meta">'+esc(g.platform||"—")+(g.pl==="of"&&!g.link?(g.dub&&g.dubAuthor?' · '+esc(g.dubAuthor):''):' · '+(authorsOf(g).map(function(n){return esc(n)+ocBadge(g,n)}).join(", ")||"—"))+'</div><div>'+(g.genre?'<span class="pill gen">'+esc(g.genre)+'</span> ':'')+(g.pl==="of"?'<span class="pill ofi">Oficjalna PL</span>':g.type?'<span class="pill">'+esc(g.type)+'</span>':'')+dubPill(g)+'</div>'+(hasLk(g)?'<div style="margin-top:6px">'+lkHtml(g)+'</div>':'')+''+(g.pl==="of"&&!g.link?'':'<div class="meta">'+versionsTxt(g)+'</div>')+'</div>'}).join(""))}
 function stats(){
   var sp=items.filter(hasSp).length+items.reduce(function(n,g){return n+spExtra(g).length},0),lk=items.filter(hasLk).length,du=items.filter(hasDub).length;
   $("stats").innerHTML=[[items.length,"wszystkich gier","all"],[sp,"fanowskich spolszczeń","sp"],[lk,"z lektorem","lk"],[du,"z dubbingiem","du"]].map(function(x){return '<button type="button" class="stat'+(VIEW===x[2]?' on':'')+'" data-v="'+x[2]+'" title="Pokaż w katalogu: '+x[1]+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>'}).join("")}
@@ -1201,7 +1209,11 @@ function renderSide(){
   var nowe=komBase?kom.filter(function(c){return c.created_at>komBase&&gameByKey(c.game_key)}).length:0;
   w.innerHTML='<h3>📰 Ostatnie wieści<a class="mall" href="/aktualnosci/">Wszystkie →</a></h3>'+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="mitem" href="/aktualnosci/'+esc(r.slug)+'/"><span class="dt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="tx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze wieści.</p>')+'';
   kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'<a class="mall" href="#/dyskusje" data-kseen="1">Wszystkie →</a></h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
-  ob.innerHTML='<h3>⭐ Ostatnio ocenione<small>wkrótce</small></h3><p class="mnote">Już niedługo będzie można oceniać spolszczenia w skali 1–5 gwiazdek. Tutaj pokażą się najnowsze oceny graczy.</p>';
+  // Najlepiej ocenione spolszczenia (średnie z „oceny_wszystkie”): po jednym na grę, najwyższa średnia, przy remisie więcej ocen
+  var oc=[],ocSeen={};Object.keys(OC).forEach(function(k){var i=k.indexOf("|"),g=gameByKey(k.slice(0,i));if(g&&OC[k].n)oc.push({g:g,sp:k.slice(i+1),a:OC[k].a,n:OC[k].n})});
+  oc.sort(function(x,y){return y.a-x.a||y.n-x.n}).forEach(function(x){if(!ocSeen[keyOf(x.g)])ocSeen[keyOf(x.g)]=x});oc=Object.keys(ocSeen).map(function(k){return ocSeen[k]}).sort(function(x,y){return y.a-x.a||y.n-x.n}).slice(0,3);
+  function ocAut(x){if(x.sp==="main")return x.g.author&&x.g.author!=="—"?x.g.author:"";var e=spExtra(x.g).filter(function(s){return s.id===x.sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
+  ob.innerHTML='<h3>⭐ Najlepiej ocenione</h3>'+(oc.length?oc.map(function(x){var a=ocAut(x),t=x.a.toFixed(1).replace(".",",");return '<a class="mitem" href="/gra/'+esc(keyOf(x.g))+'/">'+thumb(x.g)+'<span class="tx"><b>'+esc(x.g.game)+'</b><span>'+(a?esc(a)+' · ':'')+'<b class="ocb">★ '+t+'</b> ('+x.n+' '+(x.n===1?"ocena":(x.n%10>=2&&x.n%10<=4&&(x.n%100<10||x.n%100>=20))?"oceny":"ocen")+')</span></span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najlepiej ocenione.</p>');
 }
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
 async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
@@ -1449,7 +1461,7 @@ if(CM){
         armedC=null;var d=await sb.from("comments").delete().eq("id",id);if(d.error)alert("Błąd: "+d.error.message);else{loadComments(curKey);loadCounts()}}
     }catch(e){cmsg("Błąd: "+((e&&e.message)||e),1)}
   });
-  loadCounts();loadWiesci();loadKom();
+  loadCounts();loadOceny();loadWiesci();loadKom();
   sb.auth.getSession().then(function(r){session=r.data.session;authReady=true;updateAuth();refreshView();loadRole();loginFromLink();steamBoot();setTimeout(sessCheck,1500)});
   sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;authReady=true;
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();

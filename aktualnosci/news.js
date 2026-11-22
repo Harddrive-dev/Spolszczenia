@@ -280,15 +280,31 @@ document.addEventListener("keydown",function(e){
   if(!t||t.tagName!=="TEXTAREA"||!t.classList.contains("t"))return;
   var box=t.closest(".cin,.rform");if(!box)return;var b=box.querySelector('button[data-a="rsend"],#csend');
   if(b&&!b.disabled){e.preventDefault();b.click()}});
+// ===== OCENY SPOLSZCZEŃ (strony gier): gwiazdki 1–5 przy każdym fanowskim spolszczeniu =====
+// Średnie rysuje skrypt strony (window.__ocDraw / __ocRefresh); tu: moje oceny i zapis kliknięcia (tabela „oceny”).
+function ocGra(){return document.body.getAttribute("data-key")||""}
+async function ocMine(){if(!document.querySelector(".ocn[data-sp]"))return;var u=me(),m={};
+  if(sb&&u){try{var r=await sb.from("oceny").select("sp,ocena").eq("gra",ocGra());if(!r.error)(r.data||[]).forEach(function(x){m[x.sp]=x.ocena})}catch(e){}}
+  window.__ocMoje=m;if(window.__ocDraw)window.__ocDraw();if(u&&window.__ocPending)ocRate()}
+async function ocRate(){var p=window.__ocPending;if(!p)return;var u=me();
+  if(!sb){window.__ocPending=null;favToast("Ocenianie jest chwilowo niedostępne.",true);return}
+  if(!u){openLogin();return}   // ocena czeka na zalogowanie (onAuthStateChange → ocMine → ocRate)
+  window.__ocPending=null;var my=window.__ocMoje||(window.__ocMoje={}),prev=my[p.sp];if(prev===p.v)return;
+  my[p.sp]=p.v;if(window.__ocDraw)window.__ocDraw();
+  try{var r=await sb.from("oceny").upsert({user_id:u.id,gra:ocGra(),sp:p.sp,ocena:p.v,updated_at:new Date().toISOString()},{onConflict:"user_id,gra,sp"});
+    if(r.error)throw r.error;
+    favToast(prev?"Zmieniono ocenę na "+p.v+"/5.":"Dzięki za ocenę ("+p.v+"/5)!");if(window.__ocRefresh)window.__ocRefresh()}
+  catch(e){if(prev)my[p.sp]=prev;else delete my[p.sp];if(window.__ocDraw)window.__ocDraw();favToast("Nie udało się zapisać oceny: "+esc(plErr(e&&e.message)),true)}}
+window.__ocRate=ocRate;
 function boot(){
   var pg=document.body.getAttribute("data-page");
   if(pg==="list")initList();
   if(!sb){renderUser();if(pg==="post")initPost();return}
-  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();favCheck();
+  sb.auth.getSession().then(function(r){session=r.data.session;renderUser();favCheck();ocMine();
     // sesja zamknięta na serwerze (np. „Wyloguj” na innym urządzeniu) → wylogowanie tylko tutaj, żeby strona nie udawała zalogowania
     if(session)setTimeout(function(){sb.auth.getUser().then(function(u){var m=String(u.error&&(u.error.code||u.error.message)||"");if(u.error&&/session|jwt|not.found|expired|missing|invalid/i.test(m))sb.auth.signOut({scope:"local"})}).catch(function(){})},1500);
     return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
-  sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me())favCheck();loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
+  sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me()){favCheck();ocMine()}loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
 }
 boot();
 })();

@@ -25163,5 +25163,20 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Anubis II",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "ikskoks",
+    "link": "https://ikskoks.pl/download/pc-anubis-ii-spolszczenie-v1-0/",
+    "genre": "Platformówka",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/anubis-ii-2e86a019.webp",
+    "opis": "Anubis II to budżetowa gra platformowa 3D z 2005 roku, wydana na PC, PlayStation 2 oraz Nintendo Wii, znana głównie z niskiej jakości wykonania i statusu gry kultowej wśród fanów tzw. crapware'u.",
+    "upd": "2026-11-22"
   }
 ]

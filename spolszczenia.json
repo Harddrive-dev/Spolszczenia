@@ -24812,7 +24812,22 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tales-of-graces-f-remastered-switch-07ae1819.webp",
     "opis": "Tales of Graces f Remastered to wydana w styczniu 2025 roku odświeżona wersja klasycznej gry jRPG akcji (Tales of Graces z 2009 roku na Nintendo Wii oraz rozszerzonego wydania Graces f z PS3). Za wydanie odpowiada Bandai Namco Entertainment.",
     "steam": 2530980,
-    "upd": "2026-11-22"
+    "upd": "2026-11-22",
+    "linki": [
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@TalesofManiac"
+      },
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://talesofmaniac.pl/#start"
+      }
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
   },
   {
     "game": "Tales of Graces f Remastered",
@@ -24830,7 +24845,22 @@
     "opis": "Tales of Graces f Remastered to wydana w styczniu 2025 roku odświeżona wersja klasycznej gry jRPG akcji (Tales of Graces z 2009 roku na Nintendo Wii oraz rozszerzonego wydania Graces f z PS3). Za wydanie odpowiada Bandai Namco Entertainment.",
     "upd": "2026-11-22",
     "id": "tales-of-graces-f-remastered-switch",
-    "osobna": true
+    "osobna": true,
+    "linki": [
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@TalesofManiac"
+      },
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://talesofmaniac.pl/#start"
+      }
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
   },
   {
     "game": "Tales of Zestiria",
@@ -24847,26 +24877,21 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tales-of-zestiria-0aa5381e.webp",
     "opis": "Tales of Zestiria to wydana w 2015 roku gra jRPG akcji stworzona i wydana przez Bandai Namco Entertainment jako jubileuszowa odsłona z okazji 20-lecia serii Tales of.",
     "steam": 351970,
-    "upd": "2026-11-22"
-  },
-  {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
+    "upd": "2026-11-22",
+    "linki": [
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@TalesofManiac"
+      },
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://talesofmaniac.pl/#start"
+      }
+    ],
+    "instrPaczka": 1,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-07"
+      "dzien": "2026-11-22"
     }
   },
   {
@@ -24932,6 +24957,26 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
+    }
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
     }
   }
 ]

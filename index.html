@@ -183,7 +183,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .fdesc{margin:0;max-width:560px}
 .fbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .fbtn{display:inline-flex;align-items:center;min-height:44px;padding:8px 20px;border-radius:999px;background:var(--accent);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none}
-.fbtn:hover{color:var(--bg);opacity:.85}
+.fbtn{transition:transform .15s,box-shadow .15s,filter .15s,background-color .15s,border-color .15s}.fbtn:hover{color:var(--bg);filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}
 .fbtns .cbtn{margin-left:0;min-height:44px;padding:8px 20px;border-radius:999px;font-size:15px;color:var(--text)}
 .home{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;margin-bottom:36px}
 .home h2{margin:0 0 14px;font-size:22px}
@@ -638,6 +638,9 @@ html{-webkit-tap-highlight-color:transparent}
 .pftabs{display:flex;gap:6px;margin:-2px 0 8px}.pftabs button{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:10px;padding:7px 10px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}.pftabs button{transition:border-color .15s,color .15s,background-color .15s,transform .15s}.pftabs button:not(.on):hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px)}
 .pftabs button.on{background:var(--accent);border-color:var(--accent);color:#1f1513}.pftabs .bd{margin-left:4px}
 .pfn2{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:start;padding:10px 10px;border:1px solid var(--line);background:var(--bg);border-radius:12px;margin-bottom:6px;transition:border-color .15s,transform .15s,box-shadow .15s}.pfn2:last-child{margin-bottom:0}
+.pflist{max-height:440px;overflow-y:auto;padding:3px 6px 4px 2px;margin:0 -6px 0 -2px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;overscroll-behavior:contain}
+.pflist::-webkit-scrollbar{width:6px}.pflist::-webkit-scrollbar-thumb{background:var(--accent);border-radius:9px}
+.pfmore{display:block;width:100%;margin-top:8px;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:12px;padding:9px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,transform .15s}.pfmore:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
 .pfn2.lk{cursor:pointer}.pfn2.lk:hover,.pfn2.lk:focus-visible{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18);outline:0}
 .pfn2.nw{background:rgba(245,179,1,.08);border-color:rgba(245,179,1,.35)}.pfn2.nw .pft2:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff3b30;margin-right:6px;vertical-align:2px}
 .pfi{width:38px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:800}
@@ -2492,10 +2495,10 @@ function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen)
     else km.push({t:t,nw:nw,h:item('💬','po','<b>'+esc(x.kto||"Gracz")+'</b> odpowiada na Twój komentarz',cyt(x.tresc,110),'<span class="pfgr">do '+esc(cyt(x.moj,40))+'</span>'+meta,t,nw,l)})});
   km.forEach(function(o){if(o.like)o.h=item('👍','pl','Twój komentarz '+(o.n>1?'dostał <b>'+o.n+' × 👍</b>':'dostał 👍')+(o.pkt?' <span class="pfpk">+'+o.pkt+' pkt</span>':''),cyt(o.q),o.meta,o.t,o.nw,o.l)});
   km.sort(function(a,b){return b.t-a.t});pk.sort(function(a,b){return b.t-a.t});
-  var nk=km.filter(function(e){return e.nw}).length,tab=PRF.tab||(km.length||!pk.length?"k":"p");
+  var nk=km.filter(function(e){return e.nw}).length,tab=PRF.tab||(km.length||!pk.length?"k":"p"),lim=PRF.lim||20;
+  function lista(a,pusty){if(!a.length)return '<p class="msg">'+pusty+'</p>';return '<div class="pflist">'+a.slice(0,lim).map(function(e){return e.h}).join("")+(a.length>lim?'<button type="button" class="pfmore" data-pfmore="1">Pokaż starsze ('+(a.length-lim)+')</button>':'')+'</div>'}
   return '<div class="pftabs"><button type="button" class="'+(tab==="k"?"on":"")+'" data-pftab="k">💬 Komentarze'+(nk?' <span class="bd">'+nk+'</span>':'')+'</button><button type="button" class="'+(tab==="p"?"on":"")+'" data-pftab="p">⭐ Punkty</button></div>'+
-    (tab==="k"?(km.slice(0,15).map(function(e){return e.h}).join("")||'<p class="msg">Tu zobaczysz 👍 i odpowiedzi pod swoimi komentarzami.</p>')
-             :(pk.slice(0,15).map(function(e){return e.h}).join("")||'<p class="msg">Tu zobaczysz zdobyte punkty i awanse. Zagłosuj na grę tygodnia albo oceń spolszczenie!</p>'))}
+    (tab==="k"?lista(km,"Tu zobaczysz 👍 i odpowiedzi pod swoimi komentarzami."):lista(pk,"Tu zobaczysz zdobyte punkty i awanse. Zagłosuj na grę tygodnia albo oceń spolszczenie!"))}
 // Licznik nowych powiadomień (czerwona kropka przy nicku i w menu „Mój profil”)
 var POWN=0;
 async function loadPowN(){POWN=0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me())POWN=+r.data||0}catch(e){}powUI()}
@@ -2520,18 +2523,19 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   else h+='<div class="pfg jeden">'+st+'</div>';
   h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span><small>raz w tygodniu</small></div><div><b>+2 pkt</b><span>Ocena spolszczenia</span><small>do 3 dziennie, raz na spolszczenie</small></div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
   v.innerHTML=h}
-async function showProf(key){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.tab=null;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
+async function showProf(key){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
-      var pr=await sb.rpc("moje_powiadomienia",{p_ile:40});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
+      var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
       var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;powUI()}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+" – profil – GryPoPolsku.pl"}
   catch(e){if(t!==PRF.t)return;PRF.err=true}
   renderProf()}
 document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target.closest&&e.target.closest(".pfn2.lk");if(t)location.href=t.getAttribute("data-href")});
-document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#pfkonto,.cnick,[data-pftab],.pfn2.lk");if(!t)return;
-  if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");renderProf();return}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#pfkonto,.cnick,[data-pftab],[data-pfmore],.pfn2.lk");if(!t)return;
+  if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");PRF.lim=20;renderProf();return}
+  if(t.hasAttribute("data-pfmore")){var ls=document.querySelector(".pflist"),sc=ls?ls.scrollTop:0;PRF.lim=(PRF.lim||20)+20;renderProf();ls=document.querySelector(".pflist");if(ls)ls.scrollTop=sc;return}
   if(t.hasAttribute("data-href")){if(!e.target.closest("a"))location.href=t.getAttribute("data-href");return}
   if(t.classList.contains("cnick")){if($("cm").className.indexOf("open")>=0)closeModal();return}
   if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}if(t.id==="pfkonto")goView(KHASH)});

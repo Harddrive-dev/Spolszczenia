@@ -201,7 +201,7 @@ textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--lin
 .ngame .gb{display:flex;gap:10px;flex-wrap:wrap;margin-top:2px}
 .ngame .gb a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;font-weight:700;padding:0 18px;border-radius:12px;border:2px solid var(--accent);color:var(--accent);text-decoration:none}
 .ngame .gb a.p{background:var(--accent);color:var(--onacc,#fff)}
-.ngame .gb a:hover{opacity:.9}
+.ngame .gb a{transition:transform .15s,box-shadow .15s,filter .15s,background-color .15s,border-color .15s}.ngame .gb a:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}.ngame .gb a.p:hover{filter:brightness(1.08)}.ngame .gb a:not(.p):hover{background:color-mix(in srgb,var(--accent) 12%,transparent)}
 @media(max-width:520px){.ngc{align-items:flex-start;gap:14px}.ngi{flex-basis:72px;width:72px;height:108px;font-size:30px}.ngn{font-size:18px}.ngame .gb a{flex:1 1 100%}}
 .nwl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .nwl a{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none;transition:border-color .15s}

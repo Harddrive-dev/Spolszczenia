@@ -24603,14 +24603,14 @@
         "u": "https://grajpopolsku.pl/forum/viewtopic.php?p=47069&hilit=LEGO+indiana+psp#p47069"
       }
     ],
-    "instr": "Polskie napisy - bez polskich znaków.",
+    "instr": "Przetłumaczone napisy – bez polskich znaków. Przy starcie gry należy wybrać „English”, aby dalsza rozgrywka była w języku polskim.\n\n## Tytuł**Instrukcja instalacji spolszczenia**\n\n1. Uruchom program UMDGen i otwórz w nim obraz gry w formacie ISO.\n2. Przejdź do katalogu:\n    PSP_GAME\\USRDIR\\GAME.DAT\n3. Zastąp oryginalny plik GAME.DAT plikiem dołączonym do spolszczenia.\n4. Z menu wybierz Save → Uncompressed (*.iso) zapisz zmodyfikowany obraz gry.",
     "tworcy": [
       "P.G",
       "seraf5"
     ],
     "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-21"
+      "kto": "kokos324",
+      "dzien": "2026-11-22"
     }
   },
   {

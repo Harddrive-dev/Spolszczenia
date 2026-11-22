@@ -785,7 +785,7 @@ html{-webkit-tap-highlight-color:transparent}
 <div class="cline" id="cline">
   <p class="count" id="count"></p>
   <div class="copts">
-    <label>Sortuj: <select id="sort" aria-label="Sortowanie"><option value="game">A–Z</option><option value="upd">Najnowsze</option></select></label>
+    <label>Sortuj: <select id="sort" aria-label="Sortowanie"><option value="game">A–Z</option><option value="upd">Najnowsze</option><option value="ocena">Najlepiej oceniane</option></select></label>
     <label>Na stronie: <select id="ps" aria-label="Liczba na stronie"><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label>
   </div>
 </div>
@@ -897,6 +897,8 @@ function ocBadge(g,name){var sp=null,m=g.author&&g.author!=="—"?g.author:"—"
   if(hasSp(g)&&name===m)sp="main";else{var e=spExtra(g).filter(function(s){return (s.author&&s.author!=="—"?s.author:"—")===name&&s.id})[0];if(e)sp=e.id}
   var o=sp&&OC[keyOf(g)+"|"+sp];if(!o||!o.n)return "";var t=o.a.toFixed(1).replace(".",",");
   return ' <span class="ocb" title="Średnia ocena spolszczenia: '+t+'/5 ('+o.n+' '+(o.n===1?"ocena":(o.n%10>=2&&o.n%10<=4&&(o.n%100<10||o.n%100>=20))?"oceny":"ocen")+')">★ '+t+'</span>'}
+// najlepsza średnia spośród spolszczeń gry (sortowanie „Najlepiej oceniane”); null = brak ocen
+function ocNaj(g){var k=keyOf(g)+"|",b=null;for(var key in OC)if(key.indexOf(k)===0&&OC[key].n&&(!b||OC[key].a>b.a||(OC[key].a===b.a&&OC[key].n>b.n)))b=OC[key];return b}
 function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0])+ocBadge(g,a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+ocBadge(g,n)+'</span>'}).join("")}
 // Zakres spolszczenia: „Dubbing + napisy” liczy się też jako dubbing i jako napisy (filtry, licznik dubbingów)
 var TYPY=["Napisy","Dubbing + napisy","Dubbing"];function isDubT(t){return t==="Dubbing"||t==="Dubbing + napisy"}function typOk(v,t){return v===t||(v==="Dubbing + napisy"&&(t==="Dubbing"||t==="Napisy"))}
@@ -964,7 +966,7 @@ function srchHit(g,w){if(!w.length)return true;var h=srchNorm((g.game||"")+" "+(
 function filtered(){
   var q=srchWords($("q").value),p=$("fp").value,t=$("ft").value,gn=$("fg").value,s=$("fs").value,so=$("sort").value,fz=$("fz").value;
   var r=items.filter(function(g){return(VIEW==="all"||(VIEW==="lk"?hasLk(g):VIEW==="du"?hasDub(g):hasSp(g)))&&(!p||pcats(g).indexOf(p)>-1)&&(!t||spTyp(g,t))&&(!gn||g.genre===gn)&&(!s||spHas(g,"status",s))&&fzOk(g,fz)&&srchHit(g,q)});
-  r.sort(function(a,b){return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
+  r.sort(function(a,b){if(so==="ocena"){var x=ocNaj(a),y=ocNaj(b);return (y?1:0)-(x?1:0)||(y&&x?y.a-x.a||y.n-x.n:0)||(a.game||"").localeCompare(b.game||"","pl")}return so==="game"?(a.game||"").localeCompare(b.game||"","pl"):so==="upd"?nk(b).localeCompare(nk(a))||(b.dodano||"").localeCompare(a.dodano||"")||items.indexOf(b)-items.indexOf(a):pct(b.prog)-pct(a.prog)});
   return r}
 var page=1,PS=25;
 try{var sps=+localStorage.getItem("ps");if(sps===25||sps===50||sps===100)PS=sps}catch(e){}
@@ -1213,8 +1215,9 @@ function renderSide(){
   var oc=[],ocSeen={};Object.keys(OC).forEach(function(k){var i=k.indexOf("|"),g=gameByKey(k.slice(0,i));if(g&&OC[k].n)oc.push({g:g,sp:k.slice(i+1),a:OC[k].a,n:OC[k].n})});
   oc.sort(function(x,y){return y.a-x.a||y.n-x.n}).forEach(function(x){if(!ocSeen[keyOf(x.g)])ocSeen[keyOf(x.g)]=x});oc=Object.keys(ocSeen).map(function(k){return ocSeen[k]}).sort(function(x,y){return y.a-x.a||y.n-x.n}).slice(0,3);
   function ocAut(x){if(x.sp==="main")return x.g.author&&x.g.author!=="—"?x.g.author:"";var e=spExtra(x.g).filter(function(s){return s.id===x.sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
-  ob.innerHTML='<h3>⭐ Najlepiej ocenione</h3>'+(oc.length?oc.map(function(x){var a=ocAut(x),t=x.a.toFixed(1).replace(".",",");return '<a class="mitem" href="/gra/'+esc(keyOf(x.g))+'/">'+thumb(x.g)+'<span class="tx"><b>'+esc(x.g.game)+'</b><span>'+(a?esc(a)+' · ':'')+'<b class="ocb">★ '+t+'</b> ('+x.n+' '+(x.n===1?"ocena":(x.n%10>=2&&x.n%10<=4&&(x.n%100<10||x.n%100>=20))?"oceny":"ocen")+')</span></span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najlepiej ocenione.</p>');
+  ob.innerHTML='<h3>⭐ Najlepiej ocenione<a class="mall" href="#katalog" data-ocall="1">Wszystkie →</a></h3>'+(oc.length?oc.map(function(x){var a=ocAut(x),t=x.a.toFixed(1).replace(".",",");return '<a class="mitem" href="/gra/'+esc(keyOf(x.g))+'/">'+thumb(x.g)+'<span class="tx"><b>'+esc(x.g.game)+'</b><span>'+(a?esc(a)+' · ':'')+'<b class="ocb">★ '+t+'</b> ('+x.n+' '+(x.n===1?"ocena":(x.n%10>=2&&x.n%10<=4&&(x.n%100<10||x.n%100>=20))?"oceny":"ocen")+')</span></span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najlepiej ocenione.</p>');
 }
+document.addEventListener("click",function(e){var o=e.target.closest&&e.target.closest("[data-ocall]");if(o){e.preventDefault();if(VIEW!=="all"&&typeof setView==="function")setView("all");clearFlt();$("sort").value="ocena";page=1;render();var kt=$("sort");if(kt)kt.scrollIntoView({behavior:"smooth",block:"center"});return}});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
 async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
 async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}

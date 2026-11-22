@@ -294,7 +294,7 @@ async function ocRate(){var p=window.__ocPending;if(!p)return;var u=me();
   try{var r=await sb.from("oceny").upsert({user_id:u.id,gra:ocGra(),sp:p.sp,ocena:p.v,updated_at:new Date().toISOString()},{onConflict:"user_id,gra,sp"});
     if(r.error)throw r.error;
     favToast(prev?"Zmieniono ocenę na "+p.v+"/5.":"Dzięki za ocenę ("+p.v+"/5)!");if(window.__ocRefresh)window.__ocRefresh()}
-  catch(e){if(prev)my[p.sp]=prev;else delete my[p.sp];if(window.__ocDraw)window.__ocDraw();favToast("Nie udało się zapisać oceny: "+esc(plErr(e&&e.message)),true)}}
+  catch(e){if(prev)my[p.sp]=prev;else delete my[p.sp];if(window.__ocDraw)window.__ocDraw();var em=String(e&&e.message||"");favToast(/limit/i.test(em)?"Możesz ocenić najwyżej 3 spolszczenia dziennie. Wróć jutro! (Zmiana swojej oceny nie liczy się do limitu.)":"Nie udało się zapisać oceny: "+esc(plErr(em)),true)}}
 window.__ocRate=ocRate;
 function boot(){
   var pg=document.body.getAttribute("data-page");

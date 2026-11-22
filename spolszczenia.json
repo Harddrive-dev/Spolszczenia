@@ -12964,7 +12964,24 @@
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/disney-dreamlight-valley-9cdde4cd.webp",
     "opis": "Wracasz do magicznej doliny dotkniętej Zapomnieniem i pomagasz postaciom Disneya i Pixara. Gra łączy uprawę ziemi i wystrój domu z przygodą.",
-    "steam": 1401590
+    "steam": 1401590,
+    "spolszczenia": [
+      {
+        "id": "disney-dreamlight-valley--feelthevoice",
+        "author": "FeelTHEVoice",
+        "link": "https://tinyurl.com/DisneyDVPL",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "—",
+        "upd": "2026-11-22",
+        "dodano": "2026-11-22"
+      }
+    ],
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
   },
   {
     "game": "Retrospace",
@@ -24233,26 +24250,6 @@
     ]
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "ANIIMO",
     "platform": "PC",
     "type": "Napisy",
@@ -24303,5 +24300,25 @@
     "zrzutyOd": [
       "Harddrive"
     ]
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

@@ -3666,14 +3666,14 @@
     "link": "https://grajpopolsku.pl/download/gta-liberty-city-stories/",
     "genre": "Akcja",
     "dodano": "2026-10-28",
-    "opis": "Wersja Liberty City Stories na PSP. Toni Cipriani wraca do miasta i walczy o pozycję w mafii.",
+    "opis": "Grand Theft Auto: Liberty City Stories to gra akcji z otwartym światem, wydana na PSP w 2005 roku. Gracz wciela się w Toniego Ciprianiego, który powraca do Liberty City, by odzyskać swoją pozycję w mafii. Gra oferuje liczne misje, pościgi, strzelaniny i swobodną eksplorację miasta.",
     "id": "gta-liberty-city-stories",
     "aliasy": [
       "gta-liberty-city-stories"
     ],
     "zmiana": {
       "kto": "kokos324",
-      "dzien": "2026-11-19"
+      "dzien": "2026-11-22"
     },
     "tworcy": [
       "Qjon",
@@ -13681,7 +13681,8 @@
     ],
     "zrzutyOd": [
       "kokos324"
-    ]
+    ],
+    "yt": "https://www.youtube.com/watch?v=SWDBqHjuhBs"
   },
   {
     "game": "Unavowed",

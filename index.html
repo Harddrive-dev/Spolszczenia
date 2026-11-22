@@ -638,6 +638,29 @@ html{-webkit-tap-highlight-color:transparent}
 .pftb{display:flex;gap:4px;margin:18px -22px -20px;padding:0 22px;border-top:1px solid var(--line)}
 .pftb a{padding:12px 16px 11px;font-weight:800;font-size:14px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;transition:color .15s,border-color .15s}
 .pftb a:hover{color:var(--text);border-bottom-color:var(--line)}.pftb a.on{color:var(--accent);border-bottom-color:var(--accent)}
+.pftb a span.nw{background:#ff3b30;border-color:#ff3b30;color:#fff}
+.pfa .btn[disabled]{opacity:.5;cursor:not-allowed}.pfai{margin:6px 0 0;font-size:13px}
+.wmbox{padding:0;overflow:hidden}.wmgrid{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:520px}
+.wmlist{border-right:1px solid var(--line);padding:14px 10px;max-height:620px;overflow-y:auto;scrollbar-width:thin}.wmlist h3{margin:2px 6px 10px}
+.wmit{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:12px;color:inherit;text-decoration:none;border:1px solid transparent;margin-bottom:4px;transition:background-color .15s,border-color .15s,transform .15s}
+.wmit:hover{background:var(--bg);border-color:var(--accent);transform:translateY(-1px)}.wmit.on{background:var(--bg);border-color:var(--accent)}
+.wmit.nw .wmits{color:var(--text);font-weight:700}.wmit .bd{flex:none}
+.wmav{width:40px;height:40px;border-radius:50%;flex:none;position:relative;overflow:hidden;display:grid;place-items:center;font-weight:800;color:#150f1c}.wmav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.wmav.du{width:42px;height:42px}
+.wmitx{min-width:0;flex:1}.wmith{display:flex;align-items:center;gap:6px}.wmith b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.wmith i{font-style:normal;font-size:11px}.wmith small{margin-left:auto;color:var(--muted);font-size:11.5px;white-space:nowrap}
+.wmits{display:block;font-size:12.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.wmchat{display:flex;flex-direction:column;min-width:0}
+.wmhead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}.wmhn{font-size:16px}.wmhb{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.btn.mini2{font-size:12.5px;padding:5px 10px;min-height:0}.wmback{display:none;font-size:20px;text-decoration:none;color:var(--accent);padding:0 4px}
+.wmmsgs{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:6px;max-height:460px;min-height:300px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.wmdz{text-align:center;margin:8px 0 4px}.wmdz span{font-size:11.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.wmb{max-width:75%;align-self:flex-start}.wmb.ja{align-self:flex-end;text-align:right}
+.wmbt{display:inline-block;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:16px 16px 16px 4px;padding:8px 12px;font-size:14.5px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.wmb.ja .wmbt{background:var(--accent);border-color:var(--accent);color:#1f1513;border-radius:16px 16px 4px 16px}
+.wmb small{display:block;font-size:11px;color:var(--muted);margin:2px 4px 0}
+.wmstart{text-align:center;margin:auto}.wmform{border-top:1px solid var(--line);padding:12px 16px}.wmform textarea{width:100%;min-height:70px;resize:vertical;box-sizing:border-box}
+.wmfb{display:flex;align-items:center;gap:10px;margin-top:8px}.wmfb small{color:var(--muted);font-size:12px}.wmfb .msg{margin:0;flex:1;font-size:13px}.wmfb .btn{margin-left:auto}
+.wminfo{margin:0;text-align:center}.wmempty{margin:auto;text-align:center;padding:30px}.wmempty b{font-size:40px;display:block}.wmpusto{margin:6px}
+@media(max-width:760px){.wmgrid{grid-template-columns:1fr}.wmlist{border-right:0;max-height:none}.wmbox.czat .wmlist{display:none}.wmbox:not(.czat) .wmchat{display:none}.wmback{display:block}.wmb{max-width:88%}}
 .pftb a span{font-size:11.5px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:4px;color:var(--muted);vertical-align:1px}
 a.pfll{color:inherit;text-decoration:none;border-radius:8px;transition:background-color .15s,padding .15s}a.pfll:hover{background:var(--bg);padding-left:8px;padding-right:8px}
 .pfkl{display:flex;flex-direction:column;gap:8px}
@@ -740,7 +763,7 @@ a.pfll{color:inherit;text-decoration:none;border-radius:8px;transition:backgroun
 </script>
 </head>
 <body>
-<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="ulv" id="ulv" style="display:none"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="uprof" type="button" style="margin-bottom:6px">👤 Mój profil<span class="bd" id="upbd" style="display:none"></span></button><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn umt" id="umodt" type="button" style="display:none;margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="bd" id="ubd2" style="display:none"></span><span class="ar">▸</span></button><div class="umgrp" id="umgrp"><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button></div><button class="btn" id="ukonto" type="button" style="margin-bottom:6px">⚙️ Ustawienia konta</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
+<div class="uchip" id="uchip" style="display:none"><button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav" id="uav"></span><span class="unm" id="unm"></span><span class="ulv" id="ulv" style="display:none"></span><span class="bn" id="ubn" style="display:none"></span></button><button class="sbtn" id="steambtn" type="button" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.98 0C5.67 0 .5 4.86.02 11.04l6.43 2.66a3.4 3.4 0 0 1 1.92-.59l2.86-4.15v-.06a4.53 4.53 0 1 1 4.53 4.53h-.1l-4.08 2.91.01.16a3.4 3.4 0 0 1-6.73.66L.33 15.6A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.55 2.55 0 1 0 1.4-3.47l1.52.63a1.88 1.88 0 1 1-1.45 3.45zm11.4-9.28a3.02 3.02 0 1 0-6.04 0 3.02 3.02 0 0 0 6.04 0zm-5.28 0a2.27 2.27 0 1 1 4.54 0 2.27 2.27 0 0 1-4.54 0z"/></svg><span class="st" id="steamlbl"></span><span class="sn" id="steamn" style="display:none"></span><span class="snew" id="steamu" style="display:none"></span></button><div class="stip" id="steamtip" style="display:none" role="dialog" aria-label="Nowość: Twoje gry ze Steam"><b>Nowość: Twoje gry ze Steam</b>Połącz konto Steam, a pokażemy, które z Twoich gier mają polską wersję.<div class="r"><button type="button" class="y" id="steamtipgo">Połącz Steam</button><button type="button" class="n" id="steamtipno">Nie teraz</button></div></div><div class="umenu" id="umenu"><button class="btn" id="uprof" type="button" style="margin-bottom:6px">👤 Mój profil<span class="bd" id="upbd" style="display:none"></span></button><button class="btn" id="umsg" type="button" style="margin-bottom:6px">✉️ Wiadomości<span class="bd" id="umsgbd" style="display:none"></span></button><button class="btn" id="ufav" type="button" style="display:none;margin-bottom:6px">♥ Moje ulubione</button><button class="btn" id="usteam" type="button" style="display:none;margin-bottom:6px"></button><button class="btn umt" id="umodt" type="button" style="display:none;margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="bd" id="ubd2" style="display:none"></span><span class="ar">▸</span></button><div class="umgrp" id="umgrp"><button class="btn" id="uadd" type="button" style="display:none;margin-bottom:6px">➕ Dodaj spolszczenie</button><button class="btn" id="umod" type="button" style="display:none;margin-bottom:6px">📥 Zgłoszenia<span class="bd" id="ubd" style="display:none"></span></button><button class="btn" id="unews" type="button" style="display:none;margin-bottom:6px">📰 Aktualności (wpisy)</button><button class="btn" id="umods" type="button" style="display:none;margin-bottom:6px">👥 Moderatorzy</button></div><button class="btn" id="ukonto" type="button" style="margin-bottom:6px">⚙️ Ustawienia konta</button><button class="btn" id="ulogout" type="button">Wyloguj się</button></div></div>
 <div class="themes" role="group" aria-label="Motyw strony">
   <button type="button" class="tb" data-t="light" aria-label="Motyw jasny" title="Jasny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c97a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f5b83d"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
   <button type="button" class="tb" data-t="dark" aria-label="Motyw ciemny (brązowy)" title="Ciemny"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" fill="#d9b88a"/></svg></button>
@@ -1415,14 +1438,14 @@ function forgotHtml(email){
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("ulv").style.display="none";MYLV=null;if(typeof POWN!=="undefined"){POWN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){$("ulv").style.display="none";MYLV=null;if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
   $("unm").textContent=n;box.innerHTML="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase();
-  if(typeof loadMyLv==="function"){loadMyLv(u.id);loadPowN()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key&&!PRF.data)showProf("");
+  if(typeof loadMyLv==="function"){loadMyLv(u.id);loadPowN();loadMsgN()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key&&!PRF.data)showProf("");
   if(typeof steamUI==="function")steamUI()}
 function renderForm(){
   $("cform").innerHTML=me()?'<div class="cformrow">'+avHtml(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea id="cbody" rows="3" maxlength="1000" placeholder="Twój komentarz…" style="width:100%;margin-top:8px"></textarea><p class="btns" style="justify-content:flex-start;margin-top:8px"><button class="btn on" id="csend">Dodaj komentarz</button></p><p class="msg" id="cmsg"></p></div></div>':'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn on" id="gologin">Zaloguj się</button>'}
@@ -1553,7 +1576,7 @@ async function loadSubCount(){
 function showSubCount(){var n=subCnt>99?"99+":String(subCnt),on=isMod()&&subCnt>0;
   var d=$("ubd");if(d){d.textContent=n;d.style.display=on?"":"none"}var d2=$("ubd2");if(d2){d2.textContent=n;d2.style.display=on?"":"none"}
   // Odznaka przy nicku = nowe zgłoszenia (moderator) + nowości w ulubionych grach
-  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu+((typeof POWN!=="undefined"&&me())?POWN:0),b=$("ubn");
+  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu+((typeof POWN!=="undefined"&&me())?POWN+MSGN:0),b=$("ubn");
   if(b){b.textContent=tot>99?"99+":String(tot);b.style.display=tot?"":"none"}}
 document.addEventListener("visibilitychange",function(){if(!document.hidden&&isMod())loadSubCount()});
 setInterval(function(){if(!document.hidden&&isMod())loadSubCount()},120000);
@@ -2515,7 +2538,7 @@ function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen)
 // Licznik nowych powiadomień (czerwona kropka przy nicku i w menu „Mój profil”)
 var POWN=0;
 async function loadPowN(){POWN=0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me())POWN=+r.data||0}catch(e){}powUI()}
-function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
+function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
 function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   if(!CM){v.innerHTML=hd+'<div class="pfc"><p class="msg">Profile są chwilowo niedostępne.</p></div>';return}
@@ -2530,9 +2553,11 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
     '<div class="pfn"><h2>'+esc(n)+'</h2>'+(PF_RANGA[d.rola]?'<span class="pfr">'+PF_RANGA[d.rola]+'</span>':'')+'</div><p class="pfj">'+(dl?'Na GryPoPolsku.pl od '+esc(dl):'')+'</p>'+
     '<div class="pfbar"><i style="width:'+pr+'%"></i></div><div class="pfbl"><span>Poziom <b>'+li.lv+'</b></span><span><b>'+d.punkty+'</b> / '+li["do"]+' pkt – jeszcze <b>'+(li["do"]-d.punkty)+' pkt</b> do poziomu '+(li.lv+1)+'</span></div>'+
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><div><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu</small></div></div>'+
-    (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':'')+'</div></div>'+
-    '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'">Profil</a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'">Komentarze <span>'+d.komentarze+'</span></a></nav></div>';
+    (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':pfAkcje(d))+'</div></div>'+
+    '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'">Profil</a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'">Komentarze <span>'+d.komentarze+'</span></a>'+
+    (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'">Wiadomości'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>':'')+'</nav></div>';
   if(PRF.sub==="komentarze"){v.innerHTML=h+pfKomHtml(d);return}
+  if(PRF.sub==="wiadomosci"&&d.wlasny){v.innerHTML=h+wmHtml(d);wmPo();return}
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><a class="pfl pfll" href="'+esc(pfUrl(d,"komentarze"))+'"><span>Napisane komentarze</span><b>'+d.komentarze+' ›</b></a><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
   if(d.wlasny){var pw=pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen);h+='<div class="pfg">'+st+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pw+'</div></div>'}
   else h+='<div class="pfg jeden">'+st+'</div>';
@@ -2559,24 +2584,91 @@ async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od
       var o=await sb.from("comments").select("parent_id").in("parent_id",ids).limit(5000);if(!o.error)o.data.forEach(function(x){K.od[x.parent_id]=(K.od[x.parent_id]||0)+1})}
     PRF.kom=K}catch(e){if(t!==PRF.t)return;PRF.kom={err:true}}
   if(t===PRF.t)renderProf()}
-async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
+async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
       var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;powUI()}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";
-    if(PRF.data&&PRF.sub==="komentarze")pfKomLoad(PRF.data.id)}
+    if(PRF.data&&PRF.sub==="komentarze")pfKomLoad(PRF.data.id);
+    if(PRF.data&&PRF.sub==="wiadomosci"&&PRF.data.wlasny)wmLoad(true);
+    if(PRF.data&&!PRF.data.wlasny&&me()){var ws=await sb.rpc("wiadomosc_status",{p_do:PRF.data.id});if(t===PRF.t&&!ws.error)PRF.ws=ws.data}}
   catch(e){if(t!==PRF.t)return;PRF.err=true}
   renderProf()}
 document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target.closest&&e.target.closest(".pfn2.lk,.pfkm.lk");if(t&&!e.target.closest("a"))location.href=t.getAttribute("data-href")});
-document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#pfkonto,.cnick,[data-pftab],[data-pfmore],[data-pfkmore],.pfn2.lk,.pfkm.lk");if(!t)return;
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#umsg,#pfkonto,.cnick,[data-pftab],[data-pfmore],[data-pfkmore],[data-wm],.pfn2.lk,.pfkm.lk");if(!t)return;
   if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");PRF.lim=20;renderProf();return}
   if(t.hasAttribute("data-pfkmore")){t.disabled=true;t.textContent="Wczytywanie…";if(PRF.data)pfKomLoad(PRF.data.id,true);return}
   if(t.hasAttribute("data-pfmore")){var ls=document.querySelector(".pflist"),sc=ls?ls.scrollTop:0;PRF.lim=(PRF.lim||20)+20;renderProf();ls=document.querySelector(".pflist");if(ls)ls.scrollTop=sc;return}
   if(t.hasAttribute("data-href")){if(!e.target.closest("a"))location.href=t.getAttribute("data-href");return}
   if(t.classList.contains("cnick")){if($("cm").className.indexOf("open")>=0)closeModal();return}
-  if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}if(t.id==="pfkonto")goView(KHASH)});
+  if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}
+  if(t.id==="umsg"){$("umenu").className="umenu";if(me())goView(PHASH+"/"+me().id+"/wiadomosci");return}
+  if(t.hasAttribute("data-wm")){wmAkcja(t);return}if(t.id==="pfkonto")goView(KHASH)});
+// ====== PRYWATNE WIADOMOŚCI (zakładka „Wiadomości” na własnym profilu: #/profil/<moje id>/wiadomosci[/<id rozmówcy>]) ======
+// Zasady pilnuje baza (funkcje wyslij_wiadomosc, wiadomosc_status): od 2 poziomu (obsługa strony zawsze), odpowiedzieć można zawsze,
+// 50 wiadomości dziennie, „Zablokuj”. Każdy widzi tylko swoje rozmowy.
+var WM={z:null,list:null,msgs:null,more:false,p:null,st:null,err:"",busy:false,usun:0},MSGN=0;
+async function loadMsgN(){if(!CM||!me()){MSGN=0;powUI();return}try{var r=await sb.rpc("wiadomosci_nowe");if(!r.error&&me())MSGN=+r.data||0}catch(e){}powUI()}
+setInterval(function(){if(!document.hidden&&me()){loadMsgN();if(onProf&&PRF.sub==="wiadomosci")wmLoad(false)}},30000);
+function wmKiedy(t){var d=new Date(t),n=new Date();return d.toDateString()===n.toDateString()?d.toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"}):pfDzien(t)}
+function wmAv(url,n,cl){return /^https:\/\//i.test(url||"")?'<span class="wmav '+(cl||"")+'" style="background:hsl('+avHue(n)+',70%,70%)"><img alt="" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+esc(String(n||"?").charAt(0).toUpperCase())+'</span>':'<span class="wmav '+(cl||"")+'" style="background:hsl('+avHue(n)+',70%,70%)">'+esc(String(n||"?").charAt(0).toUpperCase())+'</span>'}
+function wmListHtml(d){var L=WM.list;if(!L)return '<p class="msg"><span class="spn"></span>Wczytywanie…</p>';
+  if(!L.length)return '<p class="msg wmpusto">Nie masz jeszcze żadnych rozmów. Aby napisać do kogoś, wejdź na jego profil (kliknij nick przy komentarzu) i wybierz „✉️ Napisz wiadomość”.</p>';
+  return L.map(function(r){return '<a class="wmit'+(r.z_kim===WM.z?' on':'')+(r.nowe?' nw':'')+'" href="'+esc(pfUrl(d,"wiadomosci")+"/"+r.z_kim)+'">'+wmAv(r.avatar,r.nick)+
+    '<span class="wmitx"><span class="wmith"><b>'+esc(r.nick||"Gracz")+'</b>'+(r.zablokowany?'<i title="Zablokowany">🚫</i>':'')+'<small>'+esc(wmKiedy(r.kiedy))+'</small></span><span class="wmits">'+(r.ostatnia_ode_mnie?"Ty: ":"")+esc(r.ostatnia||"")+'</span></span>'+(r.nowe?'<span class="bd">'+r.nowe+'</span>':'')+'</a>'}).join("")}
+function wmMsgsHtml(){var M=WM.msgs;if(!M)return '<p class="msg"><span class="spn"></span>Wczytywanie rozmowy…</p>';
+  if(!M.length)return '<p class="msg wmstart">To początek Waszej rozmowy. Napisz coś miłego! 👋</p>';
+  var out=WM.more?'<button type="button" class="pfmore" data-wm="starsze">Pokaż starsze wiadomości</button>':'',dz="";
+  M.forEach(function(m,i){var dd=new Date(m.created_at).toDateString();if(dd!==dz){dz=dd;out+='<div class="wmdz"><span>'+esc(pfDzien(m.created_at))+'</span></div>'}
+    var last=m.ode_mnie&&!M.slice(i+1).some(function(x){return x.ode_mnie});
+    out+='<div class="wmb'+(m.ode_mnie?' ja':'')+'"><div class="wmbt">'+esc(m.tresc)+'</div><small>'+esc(new Date(m.created_at).toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"}))+(last?(m.przeczytana?' · ✓✓ przeczytana':' · ✓ wysłana'):'')+'</small></div>'});
+  return out}
+function wmFormHtml(){var st=WM.st,p=WM.p||{};if(!st)return '';
+  var info={zablokowany:"Zablokowałeś tę osobę – nie możesz do niej pisać, a jej wiadomości do Ciebie nie przychodzą.",blokada:"Ta osoba nie przyjmuje od Ciebie wiadomości.",poziom:"Wiadomości możesz wysyłać od 2 poziomu konta. Zdobywaj punkty: głosuj na grę tygodnia, oceniaj spolszczenia i komentuj!",limit:"Wysłałeś dziś już 50 wiadomości. Wróć jutro!"}[st.powod];
+  if(!st.moge)return '<div class="wmform"><p class="msg wminfo">'+esc(info||"Nie możesz teraz pisać do tej osoby.")+'</p></div>';
+  return '<div class="wmform"><textarea class="t" id="wmtxt" maxlength="2000" placeholder="Napisz wiadomość do '+esc(p.nick||"tej osoby")+'… (Ctrl+Enter wysyła)">'+esc(WM.draft||"")+'</textarea>'+
+    '<div class="wmfb"><small id="wmcnt">'+(WM.draft||"").length+' / 2000'+(st.zostalo!=null?' · zostało dziś: '+st.zostalo:'')+'</small><span class="msg err" id="wmerr">'+esc(WM.err||"")+'</span><button class="btn on" type="button" data-wm="wyslij"'+(WM.busy?' disabled':'')+'>'+(WM.busy?"Wysyłanie…":"Wyślij ➤")+'</button></div></div>'}
+function wmChatHtml(d){if(!WM.z)return '<div class="wmempty"><b>✉️</b><p>Wybierz rozmowę z listy.</p><p class="msg">Aby napisać do kogoś nowego, wejdź na jego profil i kliknij „✉️ Napisz wiadomość”.</p></div>';
+  var p=WM.p||{},zb=WM.st&&WM.st.zablokowany,obs=p.rola&&PF_RANGA[p.rola];
+  return '<div class="wmhead"><a class="wmback" href="'+esc(pfUrl(d,"wiadomosci"))+'" title="Wszystkie rozmowy">←</a>'+wmAv(p.avatar,p.nick||"?","du")+'<span class="wmhn"><a class="pfgl" href="'+esc(PHASH+"/"+WM.z)+'">'+esc(p.nick||"…")+'</a>'+(p.poziom?' <span class="ulv">Lv '+p.poziom+'</span>':'')+(obs?' <span class="pfr">'+obs+'</span>':'')+'</span>'+
+    '<span class="wmhb">'+(obs?'':'<button class="btn mini2" type="button" data-wm="blok">'+(zb?"Odblokuj":"🚫 Zablokuj")+'</button>')+'<button class="btn mini2" type="button" data-wm="usun">'+(WM.usun?"Na pewno usunąć?":"🗑 Usuń rozmowę")+'</button></span></div>'+
+    '<div class="wmmsgs" id="wmmsgs">'+wmMsgsHtml()+'</div>'+wmFormHtml()}
+function wmHtml(d){return '<div class="pfc wmbox'+(WM.z?' czat':'')+'"><div class="wmgrid"><aside class="wmlist" id="wmlist"><h3>✉️ Wiadomości</h3>'+wmListHtml(d)+'</aside><section class="wmchat" id="wmchat">'+wmChatHtml(d)+'</section></div></div>'}
+function wmPo(){var m=$("wmmsgs");if(m&&!WM.trzymaj)m.scrollTop=m.scrollHeight;WM.trzymaj=false;var t=$("wmtxt");if(t){t.oninput=function(){WM.draft=t.value;var c=$("wmcnt");if(c)c.textContent=t.value.length+" / 2000"+(WM.st&&WM.st.zostalo!=null?" · zostało dziś: "+WM.st.zostalo:"")};
+  t.onkeydown=function(e){if(e.key==="Enter"&&(e.ctrlKey||e.metaKey)){e.preventDefault();wmWyslij()}}}}
+function wmRys(){if(!(onProf&&PRF.sub==="wiadomosci"&&PRF.data))return;var l=$("wmlist"),c=$("wmchat");if(!l||!c){renderProf();return}
+  l.innerHTML='<h3>✉️ Wiadomości</h3>'+wmListHtml(PRF.data);var m=$("wmmsgs"),dol=!m||m.scrollHeight-m.scrollTop-m.clientHeight<40,foc=document.activeElement&&document.activeElement.id==="wmtxt";
+  if(m&&WM.z){var sc=m.scrollTop;m.innerHTML=wmMsgsHtml();m.scrollTop=dol?m.scrollHeight:sc}else c.innerHTML=wmChatHtml(PRF.data);
+  if(!$("wmtxt")&&WM.z&&WM.st&&WM.st.moge){c.innerHTML=wmChatHtml(PRF.data);wmPo()}if(foc&&$("wmtxt"))$("wmtxt").focus()}
+async function wmLoad(pelne){if(!CM||!me())return;var z=WM.z,t=PRF.t;if(pelne){WM.list=null;WM.msgs=null;WM.p=null;WM.st=null;WM.more=false;WM.err="";WM.usun=0}
+  try{var a=await sb.rpc("moje_rozmowy");if(t!==PRF.t||z!==WM.z)return;if(!a.error)WM.list=a.data||[];
+    if(z){var calls=[sb.rpc("rozmowa",{p_z:z,p_ile:50})];if(pelne){calls.push(sb.rpc("profil",{p_klucz:z}),sb.rpc("wiadomosc_status",{p_do:z}))}
+      var res=await Promise.all(calls);if(t!==PRF.t||z!==WM.z)return;
+      if(!res[0].error){var nowe=(res[0].data||[]).slice().reverse();if(pelne||!WM.msgs||!WM.more)WM.msgs=nowe;else{var ost=WM.msgs.filter(function(m){return m.id<nowe[0].id});WM.msgs=ost.concat(nowe)}if(pelne)WM.more=(res[0].data||[]).length>=50}
+      if(pelne){if(!res[1].error)WM.p=res[1].data||{nick:"Usunięte konto"};if(!res[2].error)WM.st=res[2].data}
+      var nr=(WM.list||[]).filter(function(r){return r.z_kim===z&&r.nowe}).length;if(nr){await sb.rpc("przeczytaj_rozmowe",{p_z:z});(WM.list||[]).forEach(function(r){if(r.z_kim===z)r.nowe=0});loadMsgN()}}
+  }catch(e){}
+  if(pelne)renderProf();else wmRys()}
+async function wmWyslij(){var t=$("wmtxt");if(!t||WM.busy)return;var tx=t.value.trim();if(!tx){WM.err="Wiadomość jest pusta.";wmRys();renderProf();return}
+  WM.busy=true;WM.err="";WM.draft=t.value;renderProf();
+  try{var r=await sb.rpc("wyslij_wiadomosc",{p_do:WM.z,p_tresc:tx});if(r.error)throw r.error;WM.draft="";if(WM.st&&WM.st.zostalo!=null)WM.st.zostalo=Math.max(0,WM.st.zostalo-1)}
+  catch(e){WM.err=plErr(e.message||"Nie udało się wysłać.")}
+  WM.busy=false;await wmLoad(false);renderProf();var n=$("wmtxt");if(n)n.focus()}
+async function wmAkcja(b){var a=b.getAttribute("data-wm");
+  if(a==="wyslij")return wmWyslij();
+  if(a==="starsze"&&WM.msgs&&WM.msgs.length){b.disabled=true;var r=await sb.rpc("rozmowa",{p_z:WM.z,p_przed:WM.msgs[0].id,p_ile:50});if(!r.error){var st=(r.data||[]).slice().reverse();WM.more=(r.data||[]).length>=50;var m=$("wmmsgs"),h0=m?m.scrollHeight:0;WM.msgs=st.concat(WM.msgs);WM.trzymaj=true;wmRys();m=$("wmmsgs");if(m)m.scrollTop=m.scrollHeight-h0}return}
+  if(a==="blok"){var zb=!(WM.st&&WM.st.zablokowany);b.disabled=true;var r2=await sb.rpc("zablokuj",{p_kogo:WM.z,p_tak:zb});if(!r2.error){var s2=await sb.rpc("wiadomosc_status",{p_do:WM.z});if(!s2.error)WM.st=s2.data;await wmLoad(false)}renderProf();return}
+  if(a==="usun"){if(!WM.usun){WM.usun=1;renderProf();setTimeout(function(){if(WM.usun){WM.usun=0;if(onProf&&PRF.sub==="wiadomosci")renderProf()}},4000);return}
+    WM.usun=0;var r3=await sb.rpc("usun_rozmowe",{p_z:WM.z});if(!r3.error&&PRF.data){loadMsgN();goView(pfUrl(PRF.data,"wiadomosci"))}return}
+  if(a==="napisz"){if(!me()){curKey=null;return openModal(loginHtml())}if(PRF.data)goView(PHASH+"/"+me().id+"/wiadomosci/"+PRF.data.id);return}
+  if(a==="pblok"&&PRF.data){b.disabled=true;var zz=!(PRF.ws&&PRF.ws.zablokowany);var r4=await sb.rpc("zablokuj",{p_kogo:PRF.data.id,p_tak:zz});if(!r4.error){var s4=await sb.rpc("wiadomosc_status",{p_do:PRF.data.id});if(!s4.error)PRF.ws=s4.data}renderProf();return}}
+// Przyciski na cudzym profilu
+function pfAkcje(d){if(!CM)return "";var ws=PRF.ws,obs=d.rola&&PF_RANGA[d.rola],h='<div class="pfa"><button class="btn on" type="button" data-wm="napisz"'+(me()&&ws&&!ws.moge&&ws.powod!=="zablokowany"?' disabled':'')+'>✉️ Napisz wiadomość</button>';
+  if(me()&&!obs)h+='<button class="btn" type="button" data-wm="pblok">'+(ws&&ws.zablokowany?"Odblokuj":"🚫 Zablokuj")+'</button>';
+  h+='</div>';if(me()&&ws&&!ws.moge){var inf={poziom:"Wiadomości możesz wysyłać od 2 poziomu konta.",limit:"Wysłałeś dziś już 50 wiadomości – wróć jutro.",blokada:"Ta osoba nie przyjmuje od Ciebie wiadomości.",zablokowany:"Zablokowałeś tę osobę."}[ws.powod];if(inf)h+='<p class="msg pfai">'+esc(inf)+'</p>'}
+  return h}
 // ====== USTAWIENIA KONTA (#/konto): nick na stronie (raz na 3 miesiące), hasło, dane konta ======
 function kProv(){var u=me(),a=(u&&u.app_metadata)||{},L=a.providers||(a.provider?[a.provider]:[]);return L}
 var PNM={email:"e-mail i hasło",google:"Google",discord:"Discord"};
@@ -2618,7 +2710,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
 function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":onProf?"prof":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"?"komentarze":""}catch(e){}showProf(pk,ps)}else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}

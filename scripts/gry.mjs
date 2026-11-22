@@ -114,7 +114,7 @@ for(const g of games){
     return'<p>'+ls.map(iIn).join("<br>")+'</p>'}).join("");
   // „Twórcy spolszczenia” (pole tworcy, „Edytuj wpis”): plakietki z nickami na końcu sekcji „O grze”
   const tw=Array.isArray(g.tworcy)?g.tworcy.map(x=>String(x||"").trim()).filter(Boolean).slice(0,30):[];
-  const twHtml=tw.length?'<div class="tw"><h3>Twórcy spolszczenia</h3><ul>'+tw.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>':"";
+  const twHtml=tw.length?'<div class="tw"><h3>'+(tw.length>1?"Twórcy spolszczenia":"Twórca spolszczenia")+'</h3><ul>'+tw.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>':"";
   // „Informacje o spolszczeniu” (okno ⋯ → Informacje o spolszczeniu): instrukcja w paczce, informacje/instrukcja, linki, twórcy
   const linki=Array.isArray(g.linki)?g.linki.filter(x=>x&&x.t&&/^https:\/\/\S+$/i.test(x.u||"")).slice(0,10):[];
   const lkHtml=linki.length?'<div class="ilk">'+linki.map(x=>'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>').join("")+'</div>':"";

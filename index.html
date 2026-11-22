@@ -894,7 +894,7 @@ function versionsTxt(g){var p=versPairs(g);if(p.length<2)return "Wersja "+esc(g.
 function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 // Oceny spolszczeń (gwiazdki z tabeli „oceny”, funkcja „oceny_wszystkie”): średnia przy nicku autora. Główne spolszczenie = "main".
 var OC=Object.create(null);
-var OST=[];   // ostatnie oceny (funkcja „oceny_ostatnie”): gra, sp, ocena, kiedy, nick
+var OST=[];   // ostatnie oceny (funkcja „oceny_ostatnie”): gra, sp, ocena, kiedy – bez nicków (oceny są anonimowe)
 function ocGwiazdki(v){v=Math.max(0,Math.min(5,+v||0));return '<span class="ocst" aria-label="'+v+' na 5">'+"★★★★★".slice(0,v)+'<span class="o0">'+"★★★★★".slice(0,5-v)+'</span></span>'}
 function ocAutSp(g,sp){if(sp==="main")return g.author&&g.author!=="—"?g.author:"";var e=spExtra(g).filter(function(s){return s.id===sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
 async function loadOst(){if(!sb)return;try{var r=await sb.rpc("oceny_ostatnie",{p_od:0,p_ile:10});if(!r.error&&r.data){OST=r.data;renderHome()}}catch(e){}}
@@ -1219,7 +1219,7 @@ function renderSide(){
   kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'<a class="mall" href="#/dyskusje" data-kseen="1">Wszystkie →</a></h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
   // Ostatnio ocenione (funkcja „oceny_ostatnie”): 3 najnowsze oceny; „Wszystkie →” otwiera widok #/oceny
   var oc=OST.map(function(x){return {x:x,g:gameByKey(x.gra)}}).filter(function(o){return o.g}).slice(0,3);
-  ob.innerHTML='<h3>⭐ Ostatnio ocenione<a class="mall" href="#/oceny">Wszystkie →</a></h3>'+(oc.length?oc.map(function(o){var a=ocAutSp(o.g,o.x.sp);return '<a class="mitem" href="/gra/'+esc(keyOf(o.g))+'/">'+thumb(o.g)+'<span class="tx"><b>'+esc(o.g.game)+'</b><span><b class="who">'+esc(o.x.nick||"Gracz")+':</b> '+ocGwiazdki(o.x.ocena)+(a?' · '+esc(a):'')+'</span></span><span class="ago">'+esc(komAgo(o.x.kiedy))+'</span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najnowsze oceny graczy.</p>');
+  ob.innerHTML='<h3>⭐ Ostatnio ocenione<a class="mall" href="#/oceny">Wszystkie →</a></h3>'+(oc.length?oc.map(function(o){var a=ocAutSp(o.g,o.x.sp);return '<a class="mitem" href="/gra/'+esc(keyOf(o.g))+'/">'+thumb(o.g)+'<span class="tx"><b>'+esc(o.g.game)+'</b><span>'+ocGwiazdki(o.x.ocena)+(a?' · '+esc(a):'')+'</span></span><span class="ago">'+esc(komAgo(o.x.kiedy))+'</span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najnowsze oceny graczy.</p>');
 }
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
 async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
@@ -2242,7 +2242,7 @@ function renderOcList(){var box=$("oclist");if(!box)return;
   if(!OCV.rows.length&&!OCV.err&&(OCV.loading||!OCV.done)){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję oceny…</p>';return}
   if(OCV.err&&!OCV.rows.length){box.innerHTML='<p class="msg err">Nie udało się wczytać ocen. Spróbuj odświeżyć stronę.</p>';return}
   var h="",last="";OCV.rows.forEach(function(x){var g=gameByKey(x.gra);if(!g)return;var d=dysDay(x.kiedy),au=ocAutSp(g,x.sp);if(d!==last){h+='<div class="dday">'+esc(d)+'</div>';last=d}
-    h+='<a class="hc" href="/gra/'+esc(keyOf(g))+'/">'+thumb(g)+'<span class="ht"><b>'+esc(g.game)+'</b><small>'+esc(dysMeta(g))+(au?' · spolszczenie: '+esc(au):'')+'</small><i><b>'+esc(x.nick||"Gracz")+'</b> ocenił(a) na '+ocGwiazdki(x.ocena)+' · '+esc(komAgo(x.kiedy))+'</i></span><span class="hcnt"><b>'+(+x.ocena)+'/5</b></span></a>'});
+    h+='<a class="hc" href="/gra/'+esc(keyOf(g))+'/">'+thumb(g)+'<span class="ht"><b>'+esc(g.game)+'</b><small>'+esc(dysMeta(g))+(au?' · spolszczenie: '+esc(au):'')+'</small><i>Ocena: '+ocGwiazdki(x.ocena)+' · '+esc(komAgo(x.kiedy))+'</i></span><span class="hcnt"><b>'+(+x.ocena)+'/5</b></span></a>'});
   if(!h)h='<p class="msg">Nie ma jeszcze ocen. Oceń spolszczenie na stronie dowolnej gry!</p>';
   if(!OCV.done)h+='<button class="btn dmore" id="ocmore" type="button"'+(OCV.loading?' disabled':'')+'>'+(OCV.loading?'Wczytuję…':'Pokaż starsze oceny')+'</button>';
   box.innerHTML=h}

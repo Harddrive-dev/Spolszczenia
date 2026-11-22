@@ -24097,5 +24097,37 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Anger Foot",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "kofii12345",
+    "link": "https://bazarowespolszczenia.pl/gra/anger_foot",
+    "genre": "Akcja",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/anger-foot-94f64b85.webp",
+    "opis": "Anger Foot to niezwykle szybka, absurdalna gra akcji z perspektywy pierwszej osoby (FPS), stworzona przez studio Free Lives (twórców Broforce) i wydana przez Devolver Digital w lipcu 2024 roku.",
+    "steam": 1978590,
+    "upd": "2026-11-22"
+  },
+  {
+    "game": "Fran Bow",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/fran_bow",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/fran-bow-8856de5e.webp",
+    "opis": "Fran Bow to przygodowa gra typu point-and-click z elementami horroru psychologicznego (oraz mrocznego fantasy).\n\nRozgrywka skupia się na eksploracji dwuwymiarowych, ręcznie rysowanych lokacji, zbieraniu przedmiotów, rozmowach z postaciami oraz rozwiązywaniu zagadek logicznych, a kluczową mechaniką jest przełączanie się między normalną rzeczywistością a jej mroczną, krwawą wersją.",
+    "steam": 362680,
+    "upd": "2026-11-22"
   }
 ]

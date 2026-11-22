@@ -24590,7 +24590,7 @@
     "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "P.G + seraf5 i inni",
+    "author": "P.G, seraf5",
     "link": "https://drive.google.com/file/d/1mjvFM2iKJhQeI25KYxW_Lzyho8rOmSmm/view",
     "genre": "Akcja",
     "dodano": "2026-11-21",
@@ -24611,7 +24611,36 @@
     "zmiana": {
       "kto": "kokos324",
       "dzien": "2026-11-22"
-    }
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/1.webp?v=fcd24ca0",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/1-miniatura.webp?v=b9d1450f"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/2.webp?v=18ee86c7",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/2-miniatura.webp?v=7b339008"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/3.webp?v=34085d8c",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/3-miniatura.webp?v=4637659d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/4.webp?v=5e17de20",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/4-miniatura.webp?v=cebb4580"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/5.webp?v=7b0d61e7",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/5-miniatura.webp?v=2b63ae1d"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/6.webp?v=2620c6f9",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/lego-indiana-jones-the-original-adventures/6-miniatura.webp?v=8ea18b57"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "LEGO Star Wars II: The Original Trilogy",
@@ -24625,7 +24654,7 @@
     "genre": "Akcja",
     "dodano": "2026-11-21",
     "img": "https://cdn.grypopolsku.pl/okladki/lego-star-wars-ii-the-original-trilogy-86caf28c.webp",
-    "opis": "LEGO Star Wars II: The Original Trilogy to przygodowa gra akcji z elementami platformówki, wyprodukowana przez studio Traveller's Tales i wydana we wrześniu 2006 roku przez LucasArts. Stanowi bezpośrednią kontynuację hitu LEGO Star Wars: The Video Game (2005) i przedstawia w humorystyczny, klockowy sposób wydarzenia z klasycznej trylogii filmowej Gwiezdnych wojen.",
+    "opis": "LEGO Star Wars II: The Original Trilogy to przygodowa gra akcji, która w humorystyczny sposób przedstawia wydarzenia z trzech klasycznych filmów Gwiezdnych Wojen. Gracze wcielają się w kultowe postacie, takie jak Luke Skywalker, Han Solo czy Darth Vader, rozwiązując zagadki, walcząc z przeciwnikami i odkrywając sekrety w świecie zbudowanym z klocków LEGO.",
     "upd": "2026-11-21",
     "instr": "Przetłumaczone napisy – bez polskich znaków. Przy starcie gry należy wybrać „English”, aby dalsza rozgrywka była w języku polskim.\n\n## Instrukcja instalacji spolszczenia\n\n1. Uruchom program Delta Patcher.\n2. W polu Original file wskaż oryginalny, niezmodyfikowany obraz gry w formacie ISO.\n3. W polu XDelta patch wybierz plik łatki .xdelta dołączony do spolszczenia.\n4. Kliknij przycisk Apply patch i poczekaj na zakończenie procesu.",
     "zmiana": {

@@ -24079,26 +24079,6 @@
     }
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "Anger Foot",
     "platform": "PC",
     "type": "Napisy",
@@ -24145,5 +24125,58 @@
     "opis": "Fell Seal: Arbiter's Mark to turowa gra taktyczna RPG (Tactical RPG / Strategy RPG), silnie inspirowana klasykami takimi jak Final Fantasy Tactics oraz Tactics Ogre.\n\nRozgrywka skupia się na prowadzeniu drużyny najemników przez liniową kampanię fabularną, toczeniu turowych bitew na izometrycznych, podzielonych na pola (siatkę) mapach z uwzględnieniem ukształtowania terenu oraz na rozbudowanym systemie rozwoju postaci, obejmującym ponad 30 klas i setki umiejętności.",
     "steam": 699170,
     "upd": "2026-11-22"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
+  },
+  {
+    "game": "NTE: Neverness to Everness",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.5.4",
+    "author": "FeelTHEVoice",
+    "link": "https://github.com/feelthevoicepoland-spolszczenia/NEVERNESS-TO-EVERNESS-PL/releases/download/1.0/SPOLSZCZENIE.-.NTE.1.5.4.rar",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/nte-neverness-to-everness-83754486.webp",
+    "opis": "Neverness to Everness (NTE) to darmowa gra action RPG z otwartym światem (często określana jako urban open-world RPG lub supernatural urban RPG) w stylistyce anime, z elementami symulacji życia i monetyzacją typu gacha.\n\nRozgrywka często porównywana jest do połączenia Genshin Impact z serią Grand Theft Auto – gracz eksploruje tętniącą życiem współczesną metropolię (Hethereau), walczy z nadprzyrodzonymi anomaliami w dynamicznym systemie walki w czasie rzeczywistym, a dodatkowo może kupować i tunn",
+    "steam": 4508340,
+    "upd": "2026-11-22",
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/1.webp?v=cb646193",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/1-miniatura.webp?v=4002af0c"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/2.webp?v=ab3e516d",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/2-miniatura.webp?v=32da2a4f"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/3.webp?v=e1af2a72",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/nte-neverness-to-everness/3-miniatura.webp?v=1e00d0a4"
+      }
+    ],
+    "zrzutyOd": [
+      "Harddrive"
+    ]
   }
 ]

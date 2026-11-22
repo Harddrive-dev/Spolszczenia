@@ -24868,5 +24868,70 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "CHRONO CROSS: THE RADICAL DREAMERS EDITION",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.3",
+    "author": "TalesOfManiac",
+    "link": "https://talesofmaniac.pl/#projekt-chrono-cross",
+    "yt": "https://www.youtube.com/watch?v=qfVx_I1NhSk",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/chrono-cross-the-radical-dreamers-edition-switch-33194b6d.webp",
+    "opis": "Chrono Cross: The Radical Dreamers Edition to wydana w kwietniu 2022 roku odświeżona wersja kultowej gry jRPG Chrono Cross (z 1999 roku na PlayStation) stworzonej przez studio Square (obecnie Square Enix). Produkcja jest luźną kontynuacją klasycznego Chrono Trigger i zawiera dodatkowo nigdy wcześniej niewydaną poza Japonią powieść wizualną Radical Dreamers.",
+    "steam": 1133760,
+    "upd": "2026-11-22",
+    "linki": [
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@TalesofManiac"
+      },
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://talesofmaniac.pl/#start"
+      }
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
+  },
+  {
+    "game": "CHRONO CROSS: THE RADICAL DREAMERS EDITION",
+    "platform": "Nintendo Switch",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "TalesOfManiac",
+    "link": "https://talesofmaniac.pl/#projekt-chrono-cross",
+    "yt": "https://www.youtube.com/watch?v=qfVx_I1NhSk",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/chrono-cross-the-radical-dreamers-edition-switch-33194b6d.webp",
+    "opis": "Chrono Cross: The Radical Dreamers Edition to wydana w kwietniu 2022 roku odświeżona wersja kultowej gry jRPG Chrono Cross (z 1999 roku na PlayStation) stworzonej przez studio Square (obecnie Square Enix). Produkcja jest luźną kontynuacją klasycznego Chrono Trigger i zawiera dodatkowo nigdy wcześniej niewydaną poza Japonią powieść wizualną Radical Dreamers.",
+    "upd": "2026-11-22",
+    "id": "chrono-cross-the-radical-dreamers-edition-switch",
+    "osobna": true,
+    "linki": [
+      {
+        "t": "▶️ Kanał YouTube",
+        "u": "https://www.youtube.com/@TalesofManiac"
+      },
+      {
+        "t": "🔗 Strona autora",
+        "u": "https://talesofmaniac.pl/#start"
+      }
+    ],
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
   }
 ]

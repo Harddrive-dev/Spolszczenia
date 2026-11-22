@@ -18490,15 +18490,19 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.0.16b",
+    "ver": "0.0.18a",
     "author": "Arima",
     "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3619908590",
     "genre": "RPG",
     "dodano": "2026-11-04",
     "img": "https://cdn.grypopolsku.pl/okladki/where-winds-meet-20cee151.webp",
-    "upd": "2026-11-04",
+    "upd": "2026-11-22",
     "opis": "RPG akcji w otwartym świecie, osadzone w Chinach z czasów X wieku. Jako młody wojownik poznajesz sztuki walki wuxia i odkrywasz tajemnice swojej przeszłości.",
-    "steam": 3564740
+    "steam": 3564740,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    }
   },
   {
     "game": "Call of Duty: Modern Warfare 4",

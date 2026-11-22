@@ -24193,5 +24193,42 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "WUTHERING WAVES",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "6.0",
+    "author": "FeelTHEVoice",
+    "link": "https://github.com/feelthevoicepoland-spolszczenia/WUTHERING_WAVES_PL/releases/download/v1.0.0/WUTHERING.WAVES.-.Launcher.6.0.zip",
+    "genre": "RPG",
+    "dodano": "2026-11-22",
+    "img": "https://cdn.grypopolsku.pl/okladki/wuthering-waves-e868c2cc.webp",
+    "opis": "Wuthering Waves to darmowa gra action RPG z otwartym światem w stylistyce anime (z systemem gacha), stworzona przez studio Kuro Games.\n\nAkcja toczy się w postapokaliptycznym świecie Solaris-3, spustoszonym przez katastrofę zwaną Lamentem. Gracz wciela się w cierpiącego na amnezję Rovera, który przemierza krainę, odkrywa swoją przeszłość i walczy z potworami (Tacet Discords).",
+    "steam": 3513350,
+    "upd": "2026-11-22",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-22"
+    },
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/1.webp?v=9b6497ed",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/1-miniatura.webp?v=c7caebeb"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/2.webp?v=7c9a15b9",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/2-miniatura.webp?v=d0bba8eb"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/3.webp?v=f514eb3e",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/wuthering-waves/3-miniatura.webp?v=688aec8b"
+      }
+    ],
+    "zrzutyOd": [
+      "Harddrive"
+    ]
   }
 ]

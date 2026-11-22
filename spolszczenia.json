@@ -643,7 +643,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "tworcy": [
+      "ikskoks"
+    ]
   },
   {
     "game": "American McGee's Alice – wersja lekka",
@@ -802,6 +805,9 @@
     ],
     "zrzutyOd": [
       "kokos324"
+    ],
+    "tworcy": [
+      "kuzo89"
     ]
   },
   {
@@ -832,6 +838,9 @@
     },
     "aliasy": [
       "asterix-the-gallic-war-psx"
+    ],
+    "tworcy": [
+      "ikskoks"
     ]
   },
   {
@@ -1841,6 +1850,9 @@
     },
     "aliasy": [
       "dead-or-alive-psx"
+    ],
+    "tworcy": [
+      "ikskoks"
     ]
   },
   {
@@ -2116,7 +2128,10 @@
         "dodano": "2026-11-17"
       }
     ],
-    "upd": "2026-11-17"
+    "upd": "2026-11-17",
+    "tworcy": [
+      "ikskoks"
+    ]
   },
   {
     "game": "Dino Crisis 2 [PSX]",
@@ -4871,7 +4886,10 @@
     "zrzutyOd": [
       "kokos324"
     ],
-    "yt": "https://www.youtube.com/watch?v=xFRYKU_KxZE"
+    "yt": "https://www.youtube.com/watch?v=xFRYKU_KxZE",
+    "tworcy": [
+      "ikskoks"
+    ]
   },
   {
     "game": "Megaman II",
@@ -5001,6 +5019,9 @@
     ],
     "zrzutyOd": [
       "kokos324"
+    ],
+    "tworcy": [
+      "sparks"
     ]
   },
   {
@@ -6482,6 +6503,9 @@
     ],
     "zrzutyOd": [
       "kokos324"
+    ],
+    "tworcy": [
+      "ikskoks"
     ]
   },
   {
@@ -7036,6 +7060,9 @@
     },
     "aliasy": [
       "tekken-3-psx"
+    ],
+    "tworcy": [
+      "ikskoks"
     ]
   },
   {
@@ -8015,7 +8042,10 @@
       }
     ],
     "instrPaczka": 1,
-    "instr": "Napisy w pełni przetłumaczone - z polskimi znakami."
+    "instr": "Napisy w pełni przetłumaczone - z polskimi znakami.",
+    "tworcy": [
+      "kokos324"
+    ]
   },
   {
     "game": "Ultimate Basketball",
@@ -8211,7 +8241,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "tworcy": [
+      "ikskoks"
+    ]
   },
   {
     "game": "Wallace & Gromit's Grand Adventures",
@@ -20199,7 +20232,10 @@
     "zrzutyOd": [
       "kokos324"
     ],
-    "instr": "Przetłumaczone napisy – bez polskich znaków. Przy starcie gry należy wybrać „English”, aby dalsza rozgrywka była w języku polskim."
+    "instr": "Przetłumaczone napisy – bez polskich znaków. Przy starcie gry należy wybrać „English”, aby dalsza rozgrywka była w języku polskim.",
+    "tworcy": [
+      "P.G"
+    ]
   },
   {
     "game": "The Legend of Zelda: Oracle of Ages / Oracle of Seasons",
@@ -23821,6 +23857,9 @@
     "zrzutyOd": [
       "kokos324"
     ],
+    "tworcy": [
+      "TalesOfManiac"
+    ],
     "ukonczono": "2026-11-21"
   },
   {
@@ -24029,7 +24068,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-18"
-    }
+    },
+    "tworcy": [
+      "doki10"
+    ]
   },
   {
     "game": "Radiolight",
@@ -24690,7 +24732,10 @@
       "kto": "Harddrive",
       "dzien": "2026-11-22"
     },
-    "yt": "https://www.youtube.com/watch?v=_AS7KC3rGQI"
+    "yt": "https://www.youtube.com/watch?v=_AS7KC3rGQI",
+    "tworcy": [
+      "EmilieAngelloSanchezz"
+    ]
   },
   {
     "game": "WUTHERING WAVES",
@@ -24743,6 +24788,9 @@
     ],
     "zrzutyOd": [
       "Harddrive"
+    ],
+    "tworcy": [
+      "EmilieAngelloSanchezz"
     ]
   },
   {
@@ -24795,6 +24843,9 @@
     ],
     "zrzutyOd": [
       "Harddrive"
+    ],
+    "tworcy": [
+      "EmilieAngelloSanchezz"
     ]
   },
   {
@@ -24827,7 +24878,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
-    }
+    },
+    "tworcy": [
+      "TalesOfManiac"
+    ]
   },
   {
     "game": "Tales of Graces f Remastered",
@@ -24860,7 +24914,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
-    }
+    },
+    "tworcy": [
+      "TalesOfManiac"
+    ]
   },
   {
     "game": "Tales of Zestiria",
@@ -24892,7 +24949,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
-    }
+    },
+    "tworcy": [
+      "TalesOfManiac"
+    ]
   },
   {
     "game": "CHRONO CROSS: THE RADICAL DREAMERS EDITION",
@@ -24924,7 +24984,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
-    }
+    },
+    "tworcy": [
+      "TalesOfManiac"
+    ]
   },
   {
     "game": "CHRONO CROSS: THE RADICAL DREAMERS EDITION",
@@ -24957,7 +25020,10 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-22"
-    }
+    },
+    "tworcy": [
+      "TalesOfManiac"
+    ]
   },
   {
     "game": "MADiSON",

@@ -13626,11 +13626,58 @@
     "upd": "2026-09-30",
     "img": "https://cdn.grypopolsku.pl/okladki/grand-theft-auto-chinatown-wars-0af7bc4a.webp",
     "opis": "Grand Theft Auto: Chinatown Wars to gra akcji, w której wcielamy się w członka chińskiej triady szukającego zemsty za śmierć ojca. W otwartym świecie Liberty City czekają na nas gangsterskie porachunki, pościgi i niebezpieczne misje.",
-    "instr": "Napisy w pełni przetłumaczone - z polskimi znakami.",
+    "instr": "Napisy w pełni przetłumaczone – z polskimi znakami.",
     "zmiana": {
       "kto": "kokos324",
       "dzien": "2026-11-22"
-    }
+    },
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?p=47510#p47510"
+      }
+    ],
+    "instrPaczka": 1,
+    "tworcy": [
+      "Grupa SMG"
+    ],
+    "zrzuty": [
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/1.webp?v=382fe40c",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/1-miniatura.webp?v=8d6836be"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/2.webp?v=8a54cf12",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/2-miniatura.webp?v=1bd5fb93"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/3.webp?v=98adbec7",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/3-miniatura.webp?v=5a0ae305"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/4.webp?v=e3491902",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/4-miniatura.webp?v=98562cc6"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/5.webp?v=612ae507",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/5-miniatura.webp?v=bb273d64"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/6.webp?v=28a1dab4",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/6-miniatura.webp?v=bfb56c52"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/7.webp?v=2e9df082",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/7-miniatura.webp?v=cb875e01"
+      },
+      {
+        "d": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/8.webp?v=93e08ce1",
+        "m": "https://cdn.grypopolsku.pl/zrzuty/grand-theft-auto-chinatown-wars/8-miniatura.webp?v=47fb2c10"
+      }
+    ],
+    "zrzutyOd": [
+      "kokos324"
+    ]
   },
   {
     "game": "Unavowed",

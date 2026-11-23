@@ -2601,7 +2601,10 @@ function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen)
 // Licznik nowych powiadomień (czerwona kropka przy nicku i w menu „Mój profil”)
 var POWN=0;
 async function loadPowN(){POWN=me()?hdrC("pow"):0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me()){POWN=+r.data||0;hdrC("pow",POWN)}}catch(e){}powUI()}
-function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
+// liczby na zakładkach profilu (Wiadomości, Powiadomienia) bez przerysowywania całej strony
+function pfTabBadges(){[["/wiadomosci",typeof MSGN!=="undefined"?MSGN:0],["/powiadomienia",POWN]].forEach(function(x){var a=document.querySelector('.pftb a[href$="'+x[0]+'"]');if(!a)return;var sp=a.querySelector("span.nw");
+  if(x[1]){if(!sp){sp=document.createElement("span");sp.className="nw";a.appendChild(document.createTextNode(" "));a.appendChild(sp)}sp.textContent=x[1]>99?"99+":String(x[1])}else if(sp)sp.remove()})}
+function powUI(){pfTabBadges();var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
 // ranga z platformą (np. „OPIEKUN PSP”) – funkcja „profil” zwraca ją w polu „ranga”
 function pfRanga(d){return d&&d.ranga?String(d.ranga).toUpperCase():(d&&PF_RANGA[d.rola])||""}
@@ -2620,12 +2623,14 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><a class="pfrk" href="#/ranking" title="Zobacz ranking graczy"><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu ›</small></a></div>'+
     (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':pfAkcje(d))+'</div></div>'+
     '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'">Profil</a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'">Komentarze <span>'+d.komentarze+'</span></a>'+
-    (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'">Wiadomości'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>':'')+'</nav></div>';
+    (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'">Wiadomości'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>'+
+     '<a href="'+esc(pfUrl(d,"powiadomienia"))+'" class="'+(PRF.sub==="powiadomienia"?"on":"")+'">Powiadomienia'+(POWN?' <span class="nw">'+POWN+'</span>':'')+'</a>':'')+'</nav></div>';
   if(PRF.sub==="komentarze"){v.innerHTML=h+pfKomHtml(d);return}
   if(PRF.sub==="wiadomosci"&&d.wlasny){v.innerHTML=h+wmHtml(d);wmPo();return}
+  // Powiadomienia – osobna zakładka (tylko na własnym profilu); lista może rosnąć, nie rozpycha już kolumny ze statystykami
+  if(PRF.sub==="powiadomienia"&&d.wlasny){v.innerHTML=h+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen)+'</div>';return}
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><a class="pfl pfll" href="'+esc(pfUrl(d,"komentarze"))+'"><span>Napisane komentarze</span><b>'+d.komentarze+' ›</b></a><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
-  if(d.wlasny){var pw=pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen);h+='<div class="pfg">'+st+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pw+'</div></div>'}
-  else h+='<div class="pfg jeden">'+st+'</div>';
+  h+='<div class="pfg jeden">'+st+'</div>';
   h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span><small>raz w tygodniu</small></div><div><b>+2 pkt</b><span>Ocena spolszczenia</span><small>do 3 dziennie, raz na spolszczenie</small></div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
   v.innerHTML=h}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
@@ -2673,7 +2678,7 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
-      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}
+      if(PRF.sub==="powiadomienia"){var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}}
       pfCache({data:PRF.data,hist:PRF.hist,pow:PRF.pow,seen:PRF.seen})}
     if(PRF.data&&!PRF.data.wlasny&&key)pfoSet(key,PRF.data);
     // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
@@ -2691,7 +2696,7 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
   if(t.hasAttribute("data-pfmore")){var ls=document.querySelector(".pflist"),sc=ls?ls.scrollTop:0;PRF.lim=(PRF.lim||5)+10;renderProf();ls=document.querySelector(".pflist");if(ls)ls.scrollTop=sc;return}
   if(t.hasAttribute("data-href")){if(!e.target.closest("a"))location.href=t.getAttribute("data-href");return}
   if(t.classList.contains("cnick")){if($("cm").className.indexOf("open")>=0)closeModal();return}
-  if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}
+  if(t.id==="uprof"){$("umenu").className="umenu";goView(POWN&&me()?PHASH+"/"+me().id+"/powiadomienia":PHASH);return}
   if(t.id==="umsg"){$("umenu").className="umenu";if(me())goView(PHASH+"/"+me().id+"/wiadomosci");return}
   if(t.hasAttribute("data-wm")){wmAkcja(t);return}if(t.id==="pfkonto")goView(KHASH)});
 // ====== PRYWATNE WIADOMOŚCI (zakładka „Wiadomości” na własnym profilu: #/profil/<moje id>/wiadomosci[/<id rozmówcy>]) ======
@@ -2824,7 +2829,7 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
 function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":onProf?"prof":onRank?"rank":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===RHASH)showRank();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===RHASH)showRank();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"||pp[1]==="powiadomienia"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}

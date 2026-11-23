@@ -490,12 +490,11 @@ header{padding-top:56px}
 .mall:hover{text-decoration:underline}
 .home .ncard .ntxt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .home .ncard .ntxt{min-width:0}
-@media (max-width:900px){#ocbox{display:none}}
 .stats{margin:2px 0 12px}
 .stat{padding:8px 14px}
 .stat b{font-size:22px}
 /* Konto Steam (7.11.2026) */
-.uchip{display:flex;gap:8px;align-items:flex-start}
+.uchip{display:flex;gap:8px;align-items:flex-start}.uchip{flex-wrap:wrap}.uchip .ubtn{max-width:100%}
 .sbtn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:border-color .15s}
 .sbtn svg{color:#66c0f4;flex:none}
 .sbtn:hover,.sbtn.on{border-color:var(--accent)}
@@ -1436,7 +1435,10 @@ function loginHtml(mode){
 function forgotHtml(email){
   return '<h2>Nie pamiętasz hasła?</h2><p class="msg">Wpisz adres e-mail swojego konta, a wyślemy link do ustawienia nowego hasła.</p><div class="grid" style="grid-template-columns:1fr"><label>Adres e-mail<input type="email" id="femail" maxlength="200" autocomplete="email" value="'+esc(email||"")+'"></label></div><div id="cft" style="margin-top:10px;min-height:0"></div><p class="btns" style="justify-content:flex-start;margin-top:10px"><button class="btn on" id="fgo" type="button">Odśwież hasło</button><button class="btn" id="fback" type="button">← Wróć do logowania</button></p><p class="msg" id="cmsg"></p>'}
 var USER_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z"/></svg>';
-function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";
+// Telefon: przyciski przy nicku nie mogą wchodzić pod przyciski motywu (po prawej) – gdy brakuje miejsca, „Moje gry Steam” spada do drugiego rzędu
+function fitChip(){var c=document.getElementById("uchip"),t=document.querySelector(".themes");if(!c||!t)return;c.style.maxWidth=Math.max(150,window.innerWidth-t.getBoundingClientRect().width-48)+"px"}
+window.addEventListener("resize",fitChip);
+function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";setTimeout(fitChip,0);
   if(typeof FAV!=="undefined"&&FAV)favLoad();
   if(!u){$("ulv").style.display="none";MYLV=null;if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();

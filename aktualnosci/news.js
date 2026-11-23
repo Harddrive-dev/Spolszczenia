@@ -67,7 +67,10 @@ var ROLM={};
 async function rolFetch(list){var ids=[];(list||[]).forEach(function(c){if(c.is_mod&&c.user_id&&!(c.user_id in ROLM)&&ids.indexOf(c.user_id)<0)ids.push(c.user_id)});if(!sb||!ids.length)return false;
   ids.forEach(function(i){ROLM[i]=null});try{await Promise.all(ids.slice(0,20).map(function(i){return sb.rpc("profil",{p_klucz:i}).then(function(r){if(!r.error&&r.data)ROLM[i]=r.data.rola||null})}));return true}catch(e){return false}}
 function lvBadge(id){return LVM[id]?' <span class="ulv">Lv '+LVM[id]+'</span>':''}
-function renderUser(){var c=$("uchip");if(!c)return;var u=me();
+// Telefon: przyciski przy nicku nie mogą wchodzić pod przyciski motywu (po prawej) – gdy brakuje miejsca, „Moje gry Steam” spada do drugiego rzędu
+function fitChip(){var c=document.getElementById("uchip"),t=document.querySelector(".themes");if(!c||!t)return;c.style.maxWidth=Math.max(150,window.innerWidth-t.getBoundingClientRect().width-48)+"px"}
+window.addEventListener("resize",fitChip);
+function renderUser(){var c=$("uchip");if(!c)return;var u=me();setTimeout(fitChip,0);
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
   if(!(u.id in LVM))lvFetch([u.id]).then(function(ok){if(ok)renderUser()});

@@ -76,7 +76,7 @@ a{color:var(--accent)}
 .wrap{position:relative}
 .themes{position:absolute;top:12px;right:16px;display:flex;gap:8px;z-index:3}
 .uchip{position:absolute;top:12px;left:16px;z-index:5}
-.uchip{display:flex;gap:8px;align-items:flex-start}
+.uchip{display:flex;gap:8px;align-items:flex-start}.uchip{flex-wrap:wrap}.uchip .ubtn{max-width:100%}
 .sbtn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;transition:border-color .15s}
 .sbtn svg{color:#66c0f4;flex:none}
 .sbtn:hover{border-color:var(--accent)}

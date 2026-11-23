@@ -1399,7 +1399,8 @@ async function nickSave(btn,v,msg){var e=nickCheck(v);if(e){msg(e,1);return fals
   profSave();updateAuth();if(curKey)loadComments(curKey);return true}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
   if(u&&PROF.u===u.id&&PROF.row&&PROF.row.nick)return PROF.row.nick;var pc=profCache();if(pc&&pc.n)return pc.n;
-  var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
+  // bez nicku ustawionego na stronie: tylko pierwsze słowo nazwy z konta (imię, bez nazwiska) – tak samo jak w bazie (nick_konta)
+  var n=m.nick||String(cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||"").trim().split(/\s+/)[0]||(u?"Gracz":""); // nie pokazujemy początku e-maila
   return String(n).trim().slice(0,30)}
 function soon(t,m){openModal('<h2>'+t+'</h2><p>'+m+'</p><p class="msg">Ta sekcja pojawi się wkrótce.</p>')}
 $("navNews").onclick=function(){location.href="/aktualnosci/"};

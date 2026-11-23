@@ -15,7 +15,8 @@ async function profLoad(){var u=me();if(!sb||!u||profFor===u.id)return;profFor=u
     try{localStorage.setItem("prof.c",JSON.stringify({u:u.id,n:profNick||""}))}catch(e){}renderUser();if(typeof renderForm==="function"&&$("cform")&&!($("cbody")&&$("cbody").value))try{renderForm()}catch(e){}}catch(e){}}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
   if(u&&profFor===u.id&&profNick)return profNick;var pc=profC();if(pc)return pc;
-  var n=m.nick||cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||(u&&u.email?u.email.split("@")[0]:"");
+  // bez nicku ustawionego na stronie: tylko pierwsze słowo nazwy z konta (imię, bez nazwiska) – tak samo jak w bazie (nick_konta)
+  var n=m.nick||String(cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||"").trim().split(/\s+/)[0]||(u?"Gracz":""); // nie pokazujemy początku e-maila
   return String(n).trim().slice(0,30)}
 function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
 function hue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c.charCodeAt(0))%360});return h}

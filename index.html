@@ -1440,7 +1440,7 @@ function fitChip(){var c=document.getElementById("uchip"),t=document.querySelect
 window.addEventListener("resize",fitChip);
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";setTimeout(fitChip,0);
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("ulv").style.display="none";MYLV=null;try{if(!authTok())localStorage.removeItem("prof.d")}catch(e){}if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){$("ulv").style.display="none";MYLV=null;try{if(!authTok()){localStorage.removeItem("prof.d");snapClear()}}catch(e){}if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
@@ -2256,7 +2256,7 @@ function renderSteam(){
   if(STEAM.st===null||(STEAM.loading&&!STEAM.row)){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p class="msg"><span class="spn"></span>Wczytywanie…</p></div>';return}
   if(STEAM.st==="off"){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2><p class="msg">Funkcja jest w przygotowaniu.</p></div>';return}
   if(STEAM.st!=="linked"||!STEAM.row){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p>Połącz konto Steam, a pokażemy, które gry z Twojej biblioteki mają polską wersję w naszym katalogu.</p><p><button class="stbtn" type="button" id="stconnect">'+SI+'Połącz konto Steam</button></p><p class="msg">Logowanie odbywa się na stronie Steama – nie widzimy Twojego hasła. Zapisujemy tylko numer konta Steam, nazwę profilu i listę gier.</p></div>';return}
-  if(!items.length){box.innerHTML=back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p class="msg"><span class="spn"></span>Wczytywanie…</p></div>';return}
+  if(!items.length){box.innerHTML=snapGet("steam")||back+'<div class="stw"><h2>Twoje gry ze Steam</h2>'+msg+'<p class="msg"><span class="spn"></span>Wczytywanie…</p></div>';return}
   var row=STEAM.row,m=steamMatches(),all=Array.isArray(row.games)?row.games.length:0;
   var tabs=[["all","Wszystkie"],["new","Nowości"],["ready","Gotowe"],["wip","W trakcie / testy"],["fan","Fanowskie"],["lk","Z lektorem"],["dub","Dubbing"]].map(function(t){var n=t[0]==="all"?m.length:m.filter(function(g){return steamCat(g).indexOf(t[0])>-1}).length;var un=t[0]==="new"?stUnread(m).length:0;return (n||t[0]==="all"||t[0]==="new")?'<button type="button" data-sttab="'+t[0]+'" class="'+(STEAM.tab===t[0]?"on":"")+'">'+t[1]+' '+n+(un?'<span class="tnew">'+un+' '+(un===1?"nowa":(un%10>=2&&un%10<=4&&(un%100<10||un%100>=20)?"nowe":"nowych"))+'</span>':'')+'</button>':""}).join("");
   var list=STEAM.tab==="all"?m:m.filter(function(g){return steamCat(g).indexOf(STEAM.tab)>-1});
@@ -2270,7 +2270,7 @@ function renderSteam(){
   if(m.length){h+='<input id="stq" class="stq" type="search" autocomplete="off" placeholder="Szukaj gry lub autora…" aria-label="Szukaj w swoich grach" value="'+esc(STEAM.q)+'"><div class="sttabs">'+tabs+'</div>'+(STEAM.tab==="new"?'<p class="msg" style="margin:-4px 0 12px">Gry z Twojej biblioteki, które w ostatnich '+STEAM_NEW_DAYS+' dniach dostały nowe spolszczenie albo aktualizację. Najnowsze na górze.</p>':'')+(STEAM.tab==="new"&&!list.length?'<p class="msg">W ostatnich '+STEAM_NEW_DAYS+' dniach nic nowego nie wyszło do Twoich gier. Zajrzyj tu za jakiś czas.</p>':'')+'<div id="stgrid">'+steamGrid(list)+'</div>'}
   else h+='<p class="msg">Nie znaleźliśmy jeszcze żadnej z Twoich gier w katalogu (sprawdzamy wersje na PC).</p>';
   h+='<p class="msg" style="margin-top:12px">Gry dopasowujemy po numerze gry na Steamie, a te bez numeru po nazwie (tylko wersje na PC). Jeśli brakuje gry, która u nas jest, daj znać w komentarzu.</p></div>';
-  box.innerHTML=back+h}
+  box.innerHTML=back+h;if(STEAM.tab==="all"&&!STEAM.q&&!STEAM.msg)snapSet("steam",box.innerHTML)}
 function showSteam(){if(!onSteam)STEAM.fresh=null;enterView("steam","Twoje gry ze Steam – GryPoPolsku.pl");try{localStorage.setItem("steam.tip","1")}catch(e){}steamUI();renderSteam()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;var id=t.id;
   if(id==="steambtn"){e.stopPropagation();$("umenu").className="umenu";if(!me()){try{localStorage.setItem("steam.tip","1")}catch(e2){}goView(STHASH);return}if(STEAM.st==="linked"||STEAM.st===null)goView(STHASH);else steamConnect();return}
@@ -2303,7 +2303,7 @@ function dysTarget(c){var m=/^news:(.+)$/.exec(c.game_key||"");
 function dysDay(t){var d=new Date(t),p=function(x){return x.getFullYear()+"-"+x.getMonth()+"-"+x.getDate()},n=new Date(),y=new Date(Date.now()-864e5);
   return p(d)===p(n)?"Dziś":p(d)===p(y)?"Wczoraj":d.getDate()+" "+MONTHS[d.getMonth()]+(d.getFullYear()!==n.getFullYear()?" "+d.getFullYear():"")}
 function dysItem(c,x){return '<article class="dkm"><a class="dg" href="'+esc(x.href)+'">'+x.th+'<span><b>'+esc(x.title)+'</b><small>'+esc(x.meta)+'</small></span></a><div class="db"><div class="dw">'+avHtml(c.avatar_url,c.author)+'<b>'+(c.user_id?'<a class="cnick" href="#/profil/'+esc(c.user_id)+'" title="Zobacz profil">'+esc(c.author||"Gracz")+'</a>':esc(c.author||"Gracz"))+'</b>'+lvB(c.user_id)+(c.is_mod?'<span class="dmod">'+(ROLC[c.user_id]==="admin"?"ADMIN":"MOD")+'</span>':'')+(c.parent_id?'<span class="drep">↪ odpowiedź</span>':'')+'<span class="ago">· '+esc(komAgo(c.created_at))+'</span></div><p>'+esc(c.body)+'</p><div class="da"><a href="'+esc(x.href)+'#komentarze-c'+(+c.id||0)+'">Odpowiedz</a><a href="'+esc(x.href)+'#komentarze">Cała dyskusja'+(x.n?' ('+x.n+')':'')+' →</a></div></div></article>'}
-function renderDysList(){var box=$("dyslist");if(!box)return;
+function renderDysList(){var box=$("dyslist");if(!box)return;if(!items.length){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytywanie…</p>';return}
   if(!CM){box.innerHTML='<p class="msg">Komentarze są chwilowo niedostępne.</p>';return}
   if(!DYS.rows.length&&(DYS.loading||!DYS.done)&&!DYS.err){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję komentarze…</p>';return}
   if(DYS.err&&!DYS.rows.length){box.innerHTML='<p class="msg err">Nie udało się wczytać komentarzy. Spróbuj odświeżyć stronę.</p>';return}
@@ -2341,6 +2341,7 @@ function ocPl(n){return n===1?"ocena":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?
 function renderOcList(){var box=$("oclist");if(!box)return;
   ["new","top"].forEach(function(t){var b=document.querySelector('[data-otab="'+t+'"]');if(b)b.classList.toggle("on",OCV.tab===t)});
   if(!CM){box.innerHTML='<p class="msg">Oceny są chwilowo niedostępne.</p>';return}
+  if(!items.length){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytywanie…</p>';return}
   if(!items||!items.length){box.innerHTML='<p class="msg"><span class="spn"></span>Wczytuję oceny…</p>';setTimeout(renderOcList,400);return}
   if(OCV.tab==="top"){var L=[];Object.keys(OC).forEach(function(k){var i=k.indexOf("|"),g=gameByKey(k.slice(0,i));if(g&&OC[k].n)L.push({g:g,sp:k.slice(i+1),a:OC[k].a,n:OC[k].n})});
     L.sort(function(x,y){return y.a-x.a||y.n-x.n||x.g.game.localeCompare(y.g.game,"pl")});
@@ -2371,6 +2372,11 @@ var HRT='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="cur
 function favDay(iso){var d=new Date(iso);if(isNaN(d))return "";return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
 function isFav(k){if(FAV.ok)return !!FAV.m[k];return !!(FAVC&&FAVC[k])}
 function favUnr(g){var f=FAV.m[keyOf(g)];if(!f)return false;var b=f.s&&f.s>f.c?f.s:f.c;return nwEvent(g).date>b}
+// Zrzut gotowego widoku („Moje gry Steam”, „Moje ulubione”) zapamiętany w przeglądarce – po odświeżeniu strony pokazujemy go od razu,
+// zanim wczyta się katalog gier (spolszczenia.json, ok. 1 MB). Osobno dla konta, czyszczony po wylogowaniu.
+function snapGet(n){var u=me();if(!u)return "";try{var c=JSON.parse(localStorage.getItem("snap."+n)||"null");return c&&c.uid===u.id?c.h:""}catch(e){return ""}}
+function snapSet(n,h){var u=me();if(!u)return;try{localStorage.setItem("snap."+n,JSON.stringify({uid:u.id,h:h}))}catch(e){}}
+function snapClear(){try{["snap.steam","snap.fav"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
 function favGames(){return items.filter(function(g){return FAV.m[keyOf(g)]})}
 function favUnread(){return favGames().filter(favUnr)}
 function hrtBtn(g){if(!CM)return "";var k=keyOf(g),on=isFav(k),t=on?"Usuń z ulubionych":"Dodaj do ulubionych";return '<button class="mini hrt'+(on?" on":"")+'" type="button" data-fk="'+esc(k)+'" aria-pressed="'+on+'" title="'+t+'" aria-label="'+t+'">'+HRT+'</button>'}
@@ -2455,7 +2461,7 @@ function renderFavList(){var box=$("favlist");if(!box)return;
 function renderFav(){var v=$("favview");if(!v)return;var hd=VBACK+'<h2>♥ Moje ulubione</h2>',mode;
   if(!CM){mode="off";if(v.getAttribute("data-mode")!==mode)v.innerHTML=hd+'<p class="msg">Funkcja jest chwilowo niedostępna.</p>'}
   else if(!me()){mode="out";v.innerHTML=hd+'<p class="msg dsub">Zapisuj gry, w które chcesz zagrać, i miej je pod ręką na komputerze i telefonie. Dostaniesz też znak, gdy pojawi się nowe spolszczenie albo aktualizacja.</p><p><button class="btn on" type="button" id="favlogin">Zaloguj się</button></p>'}
-  else if(!FAV.ok){mode="load";v.innerHTML=hd+'<p class="msg"><span class="spn"></span>Wczytywanie…</p>'}
+  else if(!FAV.ok||!items.length){mode="load";v.innerHTML=snapGet("fav")||hd+'<p class="msg"><span class="spn"></span>Wczytywanie…</p>'}
   else if(FAV.err){mode="err";v.innerHTML=hd+'<p class="msg">Nie udało się wczytać ulubionych. Odśwież stronę za chwilę.</p>'}
   else if(!favGames().length){mode="empty";v.innerHTML=hd+'<p class="msg dsub">Nie masz jeszcze ulubionych gier. Kliknij serduszko <span class="hrti">'+HRT+'</span> przy grze w katalogu albo obok nazwy gry na jej stronie – gra zapisze się tutaj.</p><p><a class="btn" href="#/">Przejdź do katalogu</a></p>'}
   else{mode="list";if(v.getAttribute("data-mode")!==mode){
@@ -2463,7 +2469,7 @@ function renderFav(){var v=$("favview");if(!v)return;var hd=VBACK+'<h2>♥ Moje 
      '<input id="favq" class="stq" type="search" placeholder="Szukaj gry lub autora…" autocomplete="off" aria-label="Szukaj w ulubionych"><div class="sttabs" id="favtabs"></div>'+
      '<div class="fvsort">Sortuj: <button type="button" data-fvsort="add">ostatnio dodane</button><button type="button" data-fvsort="upd">ostatnia aktualizacja</button><button type="button" data-fvsort="az">A–Z</button></div><div id="favlist"></div>';
     $("favq").value=FAVV.q;$("favq").addEventListener("input",function(){FAVV.q=this.value;renderFavList()})}
-    renderFavList()}
+    renderFavList();if(!FAVV.q)snapSet("fav",v.innerHTML)}
   v.setAttribute("data-mode",mode)}
 function showFav(){var was=curViewName();enterView("fav","Moje ulubione – GryPoPolsku.pl");if(was!=="fav"){FAVV.fresh=null;FAVV.tab="all"}$("favview").removeAttribute("data-mode");if(me()&&!FAV.ok)favLoad();renderFav()}
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-fk],[data-fundo],[data-fvtab],[data-fvsort],#ufav,#favlogin");if(!t)return;
@@ -2592,7 +2598,7 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   v.innerHTML=h}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
-function pfKomHtml(d){var K=PRF.kom;
+function pfKomHtml(d){var K=items.length?PRF.kom:null;
   var head='<div class="pfc"><h3>💬 Komentarze '+(d.wlasny?"napisane przez Ciebie":"użytkownika "+esc(d.nick||"Gracz"))+'</h3>';
   if(!K)return head+'<p class="msg"><span class="spn"></span>Wczytywanie komentarzy…</p></div>';
   if(K.err)return head+'<p class="msg err">Nie udało się wczytać komentarzy.</p></div>';
@@ -2939,6 +2945,7 @@ function mergeApproved(rows){
 function loadCatalog(){
   var pre=window.__SPJ;window.__SPJ=null;return (pre||fetch("spolszczenia.json",{cache:"no-cache"})).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
     d.forEach(function(g){if(g.status==="W toku")g.status="Beta"});baseItems=d;items=d;refresh();if(typeof steamUI==="function"){steamUI();if(onSteam)renderSteam()}
+    try{if(onFav)renderFav();if(onProf)renderProf();if(onDys)renderDysList();if(onOc)renderOcList()}catch(e){}
     if(CM)Promise.all([sb.rpc("approved_changes"),fetch("katalog-czas.json",{cache:"no-cache"}).then(function(x){return x.ok?x.json():null}).catch(function(){return null})]).then(function(a){var r=a[0],kt=a[1];JSON_T=(kt&&Date.parse(kt.t))||Infinity;if(r.error){console.warn("approved_changes:",r.error.message);return}if(r.data&&r.data.length){items=mergeApproved(r.data);items.forEach(function(g){if(g.status==="W toku")g.status="Beta"});refresh()}}).catch(function(e){console.warn("approved_changes:",e)})
   }).catch(function(){
     $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}

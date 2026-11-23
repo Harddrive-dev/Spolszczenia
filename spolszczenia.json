@@ -18841,17 +18841,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "2.0.6",
+    "ver": "2.0.7",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/wowpopolsku-2-0",
     "genre": "RPG",
     "dodano": "2026-11-04",
     "img": "https://cdn.grypopolsku.pl/okladki/world-of-warcraft-retail-0bfe96cd.webp",
-    "upd": "2026-11-12",
+    "upd": "2026-11-23",
     "opis": "Aktualna wersja słynnego MMORPG Blizzarda, rozwijana od 2004 roku. Tworzysz postać, wybierasz stronę Przymierza lub Hordy i przemierzasz Azeroth oraz kolejne dodatki.",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-12"
+      "dzien": "2026-11-23"
     }
   },
   {

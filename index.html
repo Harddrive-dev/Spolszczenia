@@ -2110,7 +2110,11 @@ var leadRows=[];
 function plVotes(v){return v+' głos'+(v===1?'':(v%10>=2&&v%10<=4&&(v%100<12||v%100>14)?'y':'ów'))}
 function renderLeader(){var el=$("leader");if(!el)return;
   var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"],mx=Math.max.apply(null,top.map(function(x){return x.v}).concat([1]));
-  if(!CM||!leadReady){el.style.display="none";el.innerHTML="";var fr=$("featrow");if(fr)fr.className="featrow";return}
+  // Zanim przyjdą głosy, panel stoi już na swoim miejscu (z „Wczytywanie…”) – inaczej „Gra tygodnia” najpierw rysowała się szeroko
+  // z dużą okładką, a po chwili kurczyła (okładka zmieniała wielkość przy odświeżaniu).
+  if(!CM){el.style.display="none";el.innerHTML="";var fr0=$("featrow");if(fr0)fr0.className="featrow";return}
+  if(!leadReady){el.style.display="";el.innerHTML='<div class="vhead"><div class="vht"><h3>🗳️ Głosuj na grę tygodnia</h3></div></div><p class="msg"><span class="spn"></span>Wczytywanie…</p>';
+    var fr1=$("featrow"),w1=$("week");if(fr1)fr1.className="featrow"+(w1&&w1.style.display!=="none"?" two":"");return}
   el.style.display="";
   el.innerHTML='<div class="vhead"><div class="vht"><h3>🗳️ Głosuj na grę tygodnia</h3><span class="cd" id="lcd">⏳ koniec za <b id="cdv"></b></span></div><button class="votebtn" id="leadgo" type="button">Oddaj głos</button></div>'+
     (top.length?top.map(function(x,i){return '<a class="vrow" href="/gra/'+esc(keyOf(x.g))+'/"><span class="md">'+med[i]+'</span><span class="vt"><b>'+esc(x.g.game)+'</b><span class="bar" style="width:'+Math.round(x.v/mx*100)+'%"></span></span><span class="vv">'+plVotes(x.v)+'</span></a>'}).join(""):'<p class="mnote vnone">Nikt jeszcze nie zagłosował w tym tygodniu. Bądź pierwszy!</p>')+

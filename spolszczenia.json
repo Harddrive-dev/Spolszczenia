@@ -25157,7 +25157,19 @@
     "dodano": "2026-11-22",
     "img": "https://cdn.grypopolsku.pl/okladki/anubis-ii-2e86a019.webp",
     "opis": "Anubis II to budżetowa gra platformowa 3D z 2005 roku, wydana na PC, PlayStation 2 oraz Nintendo Wii, znana głównie z niskiej jakości wykonania i statusu gry kultowej wśród fanów tzw. crapware'u.",
-    "upd": "2026-11-22"
+    "upd": "2026-11-22",
+    "linki": [
+      {
+        "t": "💬 Temat na forum",
+        "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=5006"
+      }
+    ],
+    "instrPaczka": 1,
+    "yt": "https://www.youtube.com/watch?v=Fr73KE5WcUs",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-23"
+    }
   },
   {
     "game": "MADiSON",

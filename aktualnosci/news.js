@@ -61,7 +61,10 @@ async function lvFetch(ids){ids=(ids||[]).filter(function(i){return i&&!(i in LV
   ids.forEach(function(i){LVM[i]=0});try{var r=await sb.rpc("poziomy",{p_ids:ids.slice(0,200)});if(r.error||!r.data)return false;r.data.forEach(function(x){LVM[x.user_id]=+x.poziom||1});return true}catch(e){return false}}
 // Nowe powiadomienia (👍 i odpowiedzi pod Twoimi komentarzami) – funkcja „powiad_nowe”; zerują się po wejściu na profil
 var POWN={u:null,n:0,m:0};
-async function powFetch(id){POWN={u:id,n:0,m:0};try{var r=await Promise.all([sb.rpc("powiad_nowe"),sb.rpc("wiadomosci_nowe")]);if(me()&&me().id===id){if(!r[0].error)POWN.n=+r[0].data||0;if(!r[1].error)POWN.m=+r[1].data||0;if(POWN.n||POWN.m)renderUser()}}catch(e){}}
+// liczniki przy nicku zapamiętane w przeglądarce (wspólne ze stroną główną: „hdr.c”) – czerwona liczba od razu, w tle sprawdzamy zmiany
+function hdrC(id){try{var c=JSON.parse(localStorage.getItem("hdr.c")||"null");return c&&c.u===id?c:{u:id}}catch(e){return {u:id}}}
+async function powFetch(id){var c=hdrC(id),p0=+c.pow||0,m0=+c.msg||0;POWN={u:id,n:p0,m:m0};try{var r=await Promise.all([sb.rpc("powiad_nowe"),sb.rpc("wiadomosci_nowe")]);if(me()&&me().id===id){if(!r[0].error)POWN.n=+r[0].data||0;if(!r[1].error)POWN.m=+r[1].data||0;
+  c=hdrC(id);c.pow=POWN.n;c.msg=POWN.m;try{localStorage.setItem("hdr.c",JSON.stringify(c))}catch(e){}if(POWN.n!==p0||POWN.m!==m0)renderUser()}}catch(e){}}
 // ADMIN zamiast „Moderator” przy komentarzach admina (rola z funkcji „profil”, pytamy tylko o autorów z is_mod)
 var ROLM={};
 async function rolFetch(list){var ids=[];(list||[]).forEach(function(c){if(c.is_mod&&c.user_id&&!(c.user_id in ROLM)&&ids.indexOf(c.user_id)<0)ids.push(c.user_id)});if(!sb||!ids.length)return false;
@@ -73,7 +76,7 @@ window.addEventListener("resize",fitChip);
 function renderUser(){var c=$("uchip");if(!c)return;var u=me();setTimeout(fitChip,0);
   if(!u){steamChecked=null;c.innerHTML='<button class="ubtn" id="ulogin" type="button"><span class="uav">'+USER_ICON+'</span><span class="unm">Zaloguj się</span></button>'+steamChip();$("ulogin").onclick=openLogin;return}
   var n=nick()||"Użytkownik",a=myAvatar(),L=function(h,t){return '<a class="btn" href="'+h+'" style="display:block;text-align:center;margin-bottom:6px">'+t+'</a>'};
-  if(!(u.id in LVM))lvFetch([u.id]).then(function(ok){if(ok)renderUser()});
+  if(!(u.id in LVM)){var lc=0;try{lc=+localStorage.getItem("lv."+u.id)||0}catch(e){}lvFetch([u.id]).then(function(ok){if(ok){try{localStorage.setItem("lv."+u.id,String(LVM[u.id]))}catch(e){}if(LVM[u.id]!==lc)renderUser()}});if(lc>0)LVM[u.id]=lc} // poziom zapamiętany w przeglądarce – „Lv” od razu, w tle sprawdzamy zmianę
   if(POWN.u!==u.id)powFetch(u.id);var pn=POWN.u===u.id?POWN.n:0,mn=POWN.u===u.id?POWN.m:0;
   var fc=favC(),menu=L("/#/profil","👤 Mój profil"+(pn?'<span class="bd">'+(pn>99?"99+":pn)+'</span>':''))+L("/#/profil/"+u.id+"/wiadomosci","✉️ Wiadomości"+(mn?'<span class="bd">'+(mn>99?"99+":mn)+'</span>':''))+L("/#/ulubione","♥ Moje ulubione"+(fc.n?' <span style="opacity:.7">('+fc.n+')</span>':'')+(fc.un?'<span class="bd">'+fc.un+' nowe</span>':''))+(myRole&&myRole!=="opiekun"?'<button class="btn umt" id="umodt" type="button" style="margin-bottom:6px" aria-expanded="false">🛡️ Moderacja<span class="ar">▸</span></button><div class="umgrp" id="umgrp">'+L("/#/dodaj","➕ Dodaj spolszczenie")+L("/#/zgloszenia","📥 Zgłoszenia")+(myRole==="admin"?L("/#/wpisy","📰 Aktualności (wpisy)")+L("/#/moderatorzy","👥 Moderatorzy"):"")+'</div>':"")+L("/#/konto","⚙️ Ustawienia konta");
   c.innerHTML='<button class="ubtn" id="ubtn" type="button" aria-haspopup="true"><span class="uav">'+(a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'</span><span class="unm">'+esc(n)+'</span>'+lvBadge(u.id)+(fc.un+pn+mn?'<span class="bn" title="Nowe wiadomości, powiadomienia i nowości w ulubionych grach">'+(fc.un+pn+mn>99?"99+":fc.un+pn+mn)+'</span>':'')+'</button><div class="umenu" id="umenu">'+menu+'<button class="btn" id="ulo" type="button">Wyloguj się</button></div>'+steamChip();steamCheck();profLoad();

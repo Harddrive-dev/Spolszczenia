@@ -1582,14 +1582,18 @@ function loginFromLink(){var q=location.search;if(!/[?&]zaloguj=1(&|$)/.test(q))
   curKey=null;if(tm&&tm[1]==="forgot")openModal(forgotHtml());else openModal(loginHtml(tm&&tm[1]==="reg"?"reg":undefined))}
 // ====== NARZĘDZIA MODERATORA (dawny plik moderacja.js, teraz wbudowane w index.html) ======
 var modLoaded=false,subCnt=0;
+// Liczniki przy nicku zapamiętane w przeglądarce (tak jak „Moje gry Steam” i poziom) – czerwona liczba pokazuje się od razu, w tle sprawdzamy zmiany
+function hdrC(k,v){var u=me();if(!u)return 0;try{var c=JSON.parse(localStorage.getItem("hdr.c")||"null");if(!c||c.u!==u.id)c={u:u.id};if(v===undefined)return +c[k]||0;c[k]=v;localStorage.setItem("hdr.c",JSON.stringify(c))}catch(e){}return 0}
 async function loadSubCount(){
   if(!CM||!isMod()){subCnt=0;showSubCount();return}
-  try{var r=await sb.from("submissions").select("id",{count:"exact",head:true}).eq("status","new");if(!r.error&&typeof r.count==="number")subCnt=r.count}catch(e){}
+  if(!subCnt){subCnt=hdrC("sub");showSubCount()}
+  try{var r=await sb.from("submissions").select("id",{count:"exact",head:true}).eq("status","new");if(!r.error&&typeof r.count==="number"){subCnt=r.count;hdrC("sub",subCnt)}}catch(e){}
   showSubCount()}
+function favCacheUn(){var u=me();if(!u)return 0;try{var c=JSON.parse(localStorage.getItem("fav.c")||"null");return c&&c.u===u.id?+c.un||0:0}catch(e){return 0}}
 function showSubCount(){var n=subCnt>99?"99+":String(subCnt),on=isMod()&&subCnt>0;
   var d=$("ubd");if(d){d.textContent=n;d.style.display=on?"":"none"}var d2=$("ubd2");if(d2){d2.textContent=n;d2.style.display=on?"":"none"}
   // Odznaka przy nicku = nowe zgłoszenia (moderator) + nowości w ulubionych grach
-  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:0,tot=(on?subCnt:0)+fu+((typeof POWN!=="undefined"&&me())?POWN+MSGN:0),b=$("ubn");
+  var fu=(typeof FAV!=="undefined"&&FAV&&FAV.ok&&me())?favUnread().length:favCacheUn(),tot=(on?subCnt:0)+fu+((typeof POWN!=="undefined"&&me())?POWN+MSGN:0),b=$("ubn");
   if(b){b.textContent=tot>99?"99+":String(tot);b.style.display=tot?"":"none"}}
 document.addEventListener("visibilitychange",function(){if(!document.hidden&&isMod())loadSubCount()});
 setInterval(function(){if(!document.hidden&&isMod())loadSubCount()},120000);
@@ -2521,7 +2525,10 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
 // głos na grę tygodnia +5 (raz w tygodniu), ocena spolszczenia +2 (raz na spolszczenie, do 3 dziennie), 👍 pod Twoim komentarzem +3.
 var PHASH="#/profil",onProf=false,PRF={key:null,data:null,hist:null,err:false,t:0},MYLV=null;
 function lvInfo(p){p=+p||0;var b=[0,30,80,150,250],l=1;while(l<5&&p>=b[l])l++;if(l<5)return{lv:l,od:b[l-1],"do":b[l]};var od=250,gap=150,lv=5;while(p>=od+gap){od+=gap;gap+=50;lv++}return{lv:lv,od:od,"do":od+gap}}
-async function loadMyLv(id){if(!CM||!id)return;try{var r=await sb.rpc("poziomy",{p_ids:[id]});if(!r.error&&r.data&&r.data[0]&&me()&&me().id===id){MYLV=+r.data[0].poziom||1;var e=$("ulv");e.textContent="Lv "+MYLV;e.style.display=""}}catch(e){}}
+// Poziom zapamiętany w przeglądarce (jak licznik „Moje gry Steam”) – plakietka „Lv” pokazuje się od razu, a w tle sprawdzamy, czy się nie zmienił
+function lvCache(id,v){try{if(v===undefined){var x=+localStorage.getItem("lv."+id);return x>0?x:0}localStorage.setItem("lv."+id,String(v))}catch(e){}return 0}
+async function loadMyLv(id){if(!CM||!id)return;var cl=lvCache(id),e=$("ulv");if(cl&&e){MYLV=cl;e.textContent="Lv "+cl;e.style.display=""}
+  try{var r=await sb.rpc("poziomy",{p_ids:[id]});if(!r.error&&r.data&&r.data[0]&&me()&&me().id===id){MYLV=+r.data[0].poziom||1;lvCache(id,MYLV);e=$("ulv");e.textContent="Lv "+MYLV;e.style.display=""}}catch(e2){}}
 function pfGra(k){if(!k)return "";var m=/^news:(.+)$/.exec(k);if(m)return {t:"wpisem w Aktualnościach",h:"/aktualnosci/"+m[1]+"/"};var g=gameByKey(k);return g?{t:g.game,h:"/gra/"+keyOf(g)+"/"}:{t:"",h:""}}
 function pfDzien(t){var d=new Date(t),n=new Date(),y=new Date(Date.now()-864e5),f=function(x){return x.toDateString()};return f(d)===f(n)?"dziś":f(d)===f(y)?"wczoraj":d.getDate()+" "+["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"][d.getMonth()]}
 // Powiadomienia: punkty i awanse (tabela „punkty”) + 👍 i odpowiedzi pod Twoimi komentarzami (funkcja „moje_powiadomienia”).
@@ -2550,7 +2557,7 @@ function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen)
     (tab==="k"?lista(km,"Tu zobaczysz 👍 i odpowiedzi innych osób pod Twoimi komentarzami."):lista(pk,"Tu zobaczysz zdobyte punkty i awanse. Zagłosuj na grę tygodnia albo oceń spolszczenie!"))}
 // Licznik nowych powiadomień (czerwona kropka przy nicku i w menu „Mój profil”)
 var POWN=0;
-async function loadPowN(){POWN=0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me())POWN=+r.data||0}catch(e){}powUI()}
+async function loadPowN(){POWN=me()?hdrC("pow"):0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me()){POWN=+r.data||0;hdrC("pow",POWN)}}catch(e){}powUI()}
 function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
 function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
@@ -2602,7 +2609,7 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
-      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;powUI()}}
+      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}}
     // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
     if(PRF.data&&(PRF.key||PRF.sub)){var want=pfUrl(PRF.data,PRF.sub)+(PRF.sub==="wiadomosci"&&WM.z?"/"+WM.z:"");if(location.hash!==want)try{history.replaceState(null,"",location.pathname+location.search+want)}catch(e){}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";
@@ -2625,7 +2632,7 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
 // Zasady pilnuje baza (funkcje wyslij_wiadomosc, wiadomosc_status): od 2 poziomu (obsługa strony zawsze), odpowiedzieć można zawsze,
 // 50 wiadomości dziennie, „Zablokuj”. Każdy widzi tylko swoje rozmowy.
 var WM={z:null,list:null,msgs:null,more:false,p:null,st:null,err:"",busy:false,usun:0},MSGN=0;
-async function loadMsgN(){if(!CM||!me()){MSGN=0;powUI();return}try{var r=await sb.rpc("wiadomosci_nowe");if(!r.error&&me())MSGN=+r.data||0}catch(e){}powUI()}
+async function loadMsgN(){if(!CM||!me()){MSGN=0;powUI();return}if(!MSGN){MSGN=hdrC("msg");powUI()}try{var r=await sb.rpc("wiadomosci_nowe");if(!r.error&&me()){MSGN=+r.data||0;hdrC("msg",MSGN)}}catch(e){}powUI()}
 setInterval(function(){if(!document.hidden&&me()){loadMsgN();if(onProf&&PRF.sub==="wiadomosci")wmLoad(false)}},30000);
 function wmKiedy(t){var d=new Date(t),n=new Date();return d.toDateString()===n.toDateString()?d.toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"}):pfDzien(t)}
 function wmAv(url,n,cl){return /^https:\/\//i.test(url||"")?'<span class="wmav '+(cl||"")+'" style="background:hsl('+avHue(n)+',70%,70%)"><img alt="" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+esc(String(n||"?").charAt(0).toUpperCase())+'</span>':'<span class="wmav '+(cl||"")+'" style="background:hsl('+avHue(n)+',70%,70%)">'+esc(String(n||"?").charAt(0).toUpperCase())+'</span>'}

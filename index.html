@@ -575,6 +575,21 @@ html{-webkit-tap-highlight-color:transparent}
 .vbox .vfoot .vfl{flex:none;color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}.vbox .vfoot .vfl:hover{text-decoration:underline}}
 /* Dyskusje (9.11.2026) */
 #dysview,#ocview{max-width:980px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+#rankview{max-width:780px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+@media(max-width:600px){#rankview{padding:14px 12px;border-radius:12px}}
+.rktabs{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 14px}.rktabs button{border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:999px;padding:7px 14px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,transform .15s}
+.rktabs button:hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px)}.rktabs button.on{background:var(--accent);border-color:var(--accent);color:#1f1513}
+.rklist{display:flex;flex-direction:column;gap:6px}
+.rkrow{display:flex;align-items:center;gap:12px;padding:9px 12px;border:1px solid var(--line);background:var(--bg);border-radius:12px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+.rkrow:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.rkrow.top{border-color:rgba(245,179,1,.45)}.rkrow.ja{background:rgba(245,179,1,.10);border-color:#f5b301}
+.rkm{width:38px;flex:none;text-align:center;font-weight:800;font-size:15px;color:var(--muted)}.rkrow.top .rkm{font-size:24px}
+.rkn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rkn b{font-size:15px}
+.rkja{font-size:11px;font-weight:800;background:var(--accent);color:#1f1513;border-radius:999px;padding:1px 7px}
+.rkp{flex:none;color:var(--muted);font-size:13px}.rkp b{color:var(--accent);font-size:17px}
+.rkgap{text-align:center;color:var(--muted);line-height:1}
+a.pfrk{display:block;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+a.pfrk:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}a.pfrk b{display:block;font-size:24px;color:var(--accent)}a.pfrk small{color:var(--muted);font-size:12px}
 @media(max-width:600px){#dysview,#ocview{padding:14px 12px;border-radius:12px}}
 #dysview h2,#ocview h2{margin:6px 0 2px}#dysview .dsub,#ocview .dsub{margin:0 0 12px}
 .ocst{color:#f5b301;letter-spacing:1px;white-space:nowrap;font-style:normal}.ocst .o0{color:var(--line)}
@@ -791,6 +806,7 @@ a.pfll{color:inherit;text-decoration:none;border-radius:8px;transition:backgroun
 <div id="steamview" style="display:none" aria-live="polite"></div>
 <div id="dysview" style="display:none"></div>
 <div id="ocview" style="display:none"></div>
+<div id="rankview" style="display:none"></div>
 <div id="nwview" style="display:none"></div>
 <div id="favview" style="display:none"></div>
 <div id="kontoview" style="display:none"></div>
@@ -2148,7 +2164,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false,OHASH="#/oceny",onOc=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false,OHASH="#/oceny",onOc=false,RHASH="#/ranking",onRank=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -2598,7 +2614,7 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   var h=hd+'<div class="pfc"><div class="pfh"><div class="pfav">'+(av?'<img alt="" referrerpolicy="no-referrer" src="'+esc(av)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'<span class="pflv">Lv '+li.lv+'</span></div><div>'+
     '<div class="pfn"><h2>'+esc(n)+'</h2>'+(PF_RANGA[d.rola]?'<span class="pfr">'+PF_RANGA[d.rola]+'</span>':'')+'</div><p class="pfj">'+(dl?'Na GryPoPolsku.pl od '+esc(dl):'')+'</p>'+
     '<div class="pfbar"><i style="width:'+pr+'%"></i></div><div class="pfbl"><span>Poziom <b>'+li.lv+'</b></span><span><b>'+d.punkty+'</b> / '+li["do"]+' pkt – jeszcze <b>'+(li["do"]-d.punkty)+' pkt</b> do poziomu '+(li.lv+1)+'</span></div>'+
-    '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><div><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu</small></div></div>'+
+    '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><a class="pfrk" href="#/ranking" title="Zobacz ranking graczy"><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu ›</small></a></div>'+
     (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':pfAkcje(d))+'</div></div>'+
     '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'">Profil</a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'">Komentarze <span>'+d.komentarze+'</span></a>'+
     (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'">Wiadomości'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>':'')+'</nav></div>';
@@ -2723,6 +2739,24 @@ function pfAkcje(d){if(!CM)return "";var ws=PRF.ws,obs=d.rola&&PF_RANGA[d.rola],
   if(me()&&!obs)h+='<button class="btn" type="button" data-wm="pblok">'+(ws&&ws.zablokowany?"Odblokuj":"🚫 Zablokuj")+'</button>';
   h+='</div>';if(me()&&ws&&!ws.moge){var inf={poziom:"Wiadomości możesz wysyłać od 2 poziomu konta.",limit:"Wysłałeś dziś już 50 wiadomości – wróć jutro.",blokada:"Ta osoba nie przyjmuje od Ciebie wiadomości.",zablokowany:"Zablokowałeś tę osobę."}[ws.powod];if(inf)h+='<p class="msg pfai">'+esc(inf)+'</p>'}
   return h}
+// ====== RANKING GRACZY (#/ranking) – funkcja „ranking”: najlepsi + Twoje miejsce; zakładki: ogółem / ten miesiąc / ten tydzień ======
+var RK={okres:"all",rows:null,err:false,t:0};
+function renderRank(){var v=$("rankview");if(!v)return;var tabs=[["all","Ogółem"],["miesiac","Ten miesiąc"],["tydzien","Ten tydzień"]];
+  var h=VBACK+'<h2>🏆 Ranking graczy</h2><p class="msg dsub">Punkty za głosy na grę tygodnia (+5), oceny spolszczeń (+2) i 👍 pod Twoimi komentarzami (+3).</p><div class="rktabs">'+
+    tabs.map(function(t){return '<button type="button" data-rk="'+t[0]+'" class="'+(RK.okres===t[0]?"on":"")+'">'+t[1]+'</button>'}).join("")+'</div>';
+  if(!CM)h+='<p class="msg">Ranking jest chwilowo niedostępny.</p>';
+  else if(RK.err)h+='<p class="msg err">Nie udało się wczytać rankingu. Spróbuj odświeżyć stronę.</p>';
+  else if(!RK.rows)h+='<p class="msg"><span class="spn"></span>Wczytywanie rankingu…</p>';
+  else if(!RK.rows.length)h+='<p class="msg">'+(RK.okres==="all"?"Nikt jeszcze nie zdobył punktów.":RK.okres==="miesiac"?"W tym miesiącu nikt jeszcze nie zdobył punktów.":"W tym tygodniu nikt jeszcze nie zdobył punktów.")+' Zagłosuj na grę tygodnia albo oceń spolszczenie i bądź pierwszy!</p>';
+  else{var out="";RK.rows.forEach(function(r,i){if(r.ja&&i>=50)out+='<div class="rkgap">⋯</div>';
+      var md=r.miejsce===1?"🥇":r.miejsce===2?"🥈":r.miejsce===3?"🥉":"#"+r.miejsce;
+      out+='<a class="rkrow'+(r.ja?' ja':'')+(r.miejsce<=3?' top':'')+'" href="#/profil/'+esc(r.user_id)+'"><span class="rkm">'+md+'</span>'+wmAv(r.avatar,r.nick)+'<span class="rkn"><b>'+esc(r.nick||"Gracz")+'</b> <span class="ulv">Lv '+(+r.poziom||1)+'</span>'+(r.ja?' <span class="rkja">Ty</span>':'')+'</span><span class="rkp"><b>'+(+r.punkty||0)+'</b> pkt</span></a>'});
+    h+='<div class="rklist">'+out+'</div>';if(!me())h+='<p class="msg" style="margin-top:12px">Zaloguj się, żeby zbierać punkty i zobaczyć swoje miejsce.</p>'}
+  v.innerHTML=h}
+async function rankLoad(){var t=++RK.t;RK.rows=null;RK.err=false;renderRank();if(!CM)return;
+  try{var r=await sb.rpc("ranking",{p_okres:RK.okres,p_ile:50});if(t!==RK.t)return;if(r.error)throw r.error;RK.rows=r.data||[]}catch(e){if(t!==RK.t)return;RK.err=true}renderRank()}
+function showRank(){enterView("rank","Ranking graczy – GryPoPolsku.pl");rankLoad()}
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-rk]");if(!t||!onRank)return;RK.okres=t.getAttribute("data-rk");rankLoad()});
 // ====== USTAWIENIA KONTA (#/konto): nick na stronie (raz na 3 miesiące), hasło, dane konta ======
 function kProv(){var u=me(),a=(u&&u.app_metadata)||{},L=a.providers||(a.provider?[a.provider]:[]);return L}
 var PNM={email:"e-mail i hasło",google:"Google",discord:"Discord"};
@@ -2762,22 +2796,22 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     busy(t,"Zapisuję…");var r=await sb.auth.updateUser({password:p1,current_password:p0});busy(t,0); // obecne hasło sprawdza Supabase (ustawienie „Require current password when updating”)
     if(r.error){var em=String(r.error.message||"");return m(/current password|invalid.*password|password.*(incorrect|invalid)/i.test(em)&&!/different from the old/i.test(em)?"Obecne hasło jest nieprawidłowe.":/different from the old/i.test(em)?"Nowe hasło musi być inne niż obecne.":/reauthenticat|recent/i.test(em)?"Ze względów bezpieczeństwa wyloguj się, zaloguj ponownie i od razu zmień hasło.":/weak|pwned|characters/i.test(em)?"To hasło jest za słabe – wybierz dłuższe lub trudniejsze.":"Nie udało się zmienić hasła: "+plMsg(em),1)}
     $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
-function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":onProf?"prof":""}
+function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":onProf?"prof":onRank?"rank":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===RHASH)showRank();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
 function openSubsView(){goView(SHASH)}
 function openModsView(){goView(MHASH)}
 function openNewsView(){goView(NHASH)}
-function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav||onKonto||onOc||onProf));$("ocview").style.display=onOc?"":"none";$("profview").style.display=onProf?"":"none";$("kontoview").style.display=onKonto?"":"none";$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
+function setViewUI(){document.documentElement.classList.toggle("inview",!!(onVote||onAdd||onSubs||onMods||onNews||onSteam||onDys||onNw||onFav||onKonto||onOc||onProf||onRank));$("ocview").style.display=onOc?"":"none";$("rankview").style.display=onRank?"":"none";$("profview").style.display=onProf?"":"none";$("kontoview").style.display=onKonto?"":"none";$("dysview").style.display=onDys?"":"none";$("nwview").style.display=onNw?"":"none";$("favview").style.display=onFav?"":"none";$("steamview").style.display=onSteam?"":"none";var sb2=$("steambtn");if(sb2)sb2.classList.toggle("on",onSteam);$("voteview").style.display=onVote?"":"none";$("addview").style.display=onAdd?"":"none";$("subview").style.display=onSubs?"":"none";$("modsview").style.display=onMods?"":"none";$("newsview").style.display=onNews?"":"none";$("navVote").classList.toggle("on",onVote);$("openForm").classList.toggle("on",onAdd)}
 function enterView(name,title){
   var was=curViewName();
   if(!was){if(!homeScroll)homeScroll=window.scrollY||0;$("homeview").style.display="none"}
-  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";onKonto=name==="konto";onOc=name==="oc";onProf=name==="prof";setViewUI();
+  onVote=name==="vote";onAdd=name==="add";onSubs=name==="subs";onMods=name==="mods";onNews=name==="news";onSteam=name==="steam";onDys=name==="dys";onNw=name==="nw";onFav=name==="fav";onKonto=name==="konto";onOc=name==="oc";onProf=name==="prof";onRank=name==="rank";setViewUI();
   document.title=title;if(was!==name)window.scrollTo(0,0)}
-function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;onKonto=false;onOc=false;onProf=false;setViewUI()}
+function leaveViews(){onVote=false;onAdd=false;onSubs=false;onMods=false;onNews=false;onSteam=false;onDys=false;onNw=false;onFav=false;onKonto=false;onOc=false;onProf=false;onRank=false;setViewUI()}
 var modAddOn=false;
 // first=true tylko przy wejściu w „Dodaj spolszczenie”. Ponowne rysowanie (np. po powrocie na kartę, gdy Supabase odświeża logowanie)
 // nie może ustawiać kursora w polu „Gra”, bo przeglądarka przewijała wtedy stronę na samą górę.
@@ -2903,7 +2937,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});var nl=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):leadRows;if(!r.error)weekC({lead:nl});var zm=JSON.stringify(nl)!==JSON.stringify(leadRows)||!leadReady;leadRows=nl;leadReady=true;if(zm)renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){var nk=r.data[0].game_key;weekC({win:nk});if(nk!==winnerKey){winnerKey=nk;if(weekReady&&items.length)renderHome()}}markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH||location.hash.indexOf("#/profil")===0)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH||location.hash===RHASH||location.hash.indexOf("#/profil")===0)route();
 
 var baseItems=[];
 var JSON_T=Infinity; // do kiedy automat przerobił zmiany z bazy (katalog-czas.json, zapisuje go sync.mjs); brak pliku = stare zachowanie

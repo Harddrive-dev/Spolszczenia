@@ -2630,20 +2630,21 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   v.innerHTML=h}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
-function pfKomHtml(d){var K=items.length?PRF.kom:null;
+function pfKomHtml(d){var K=PRF.kom;if(K&&!K.err&&!items.length&&K.rows.some(function(c){return !c._t}))K=null; // bez katalogu – tylko gdy w pamięci są nazwy gier
   var head='<div class="pfc"><h3>💬 Komentarze '+(d.wlasny?"napisane przez Ciebie":"użytkownika "+esc(d.nick||"Gracz"))+'</h3>';
   if(!K)return head+'<p class="msg"><span class="spn"></span>Wczytywanie komentarzy…</p></div>';
   if(K.err)return head+'<p class="msg err">Nie udało się wczytać komentarzy.</p></div>';
   if(!K.rows.length)return head+'<p class="msg">'+(d.wlasny?"Nie napisałeś jeszcze żadnego komentarza. Napisz pierwszy pod swoją ulubioną grą!":"Ta osoba nie napisała jeszcze żadnego komentarza.")+'</p></div>';
   return head+'<div class="pfkl">'+K.rows.map(function(c){var m=/^news:(.+)$/.exec(c.game_key||""),g=m?null:gameByKey(c.game_key),
-      href=m?"/aktualnosci/"+m[1]+"/":g?"/gra/"+keyOf(g)+"/":"",t=m?"Wpis w Aktualnościach":g?g.game:"",lk=K.lk[c.id]||0,od=K.od[c.id]||0;
-    return '<div class="pfkm'+(href?' lk" tabindex="0" role="link" data-href="'+esc(href+"#komentarze-c"+(+c.id||0))+'"':'"')+'>'+(g?thumb(g):'<span class="thumb ph">📰</span>')+
+      href=m?"/aktualnosci/"+m[1]+"/":g?"/gra/"+keyOf(g)+"/":(c._h||""),t=m?"Wpis w Aktualnościach":g?g.game:(c._t||""),lk=K.lk[c.id]||0,od=K.od[c.id]||0;
+    return '<div class="pfkm'+(href?' lk" tabindex="0" role="link" data-href="'+esc(href+"#komentarze-c"+(+c.id||0))+'"':'"')+'>'+(g?thumb(g):c._th||'<span class="thumb ph">📰</span>')+
       '<div class="pfkb"><div class="pfkh">'+(href?'<a class="pfgl" href="'+esc(href)+'">'+esc(t)+'</a>':esc(t||"Usunięta gra"))+(c.parent_id?'<span class="pfrep">↪ odpowiedź</span>':'')+'<small>'+esc(komAgo(c.created_at))+'</small></div>'+
       '<p>'+esc(c.body)+'</p><div class="pfkf"><span>👍 '+lk+'</span><span>💬 '+od+' '+(od===1?"odpowiedź":od>1&&od<5?"odpowiedzi":"odpowiedzi")+'</span>'+(href?'<a class="pfbtn" href="'+esc(href+"#komentarze-c"+(+c.id||0))+'">Zobacz w dyskusji</a>':'')+'</div></div></div>'}).join("")+
     (K.more?'<button type="button" class="pfmore" data-pfkmore="1">Pokaż starsze</button>':'')+'</div></div>'}
 // Zakładka „Komentarze” zapamiętana w przeglądarce („pkc”, 10 ostatnich profili; komentarze i tak są publiczne) – od razu, w tle odświeżana
 function pkcGet(uid){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");return c[uid]?c[uid].k:null}catch(e){return null}}
-function pkcSet(uid,k){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");c[uid]={t:Date.now(),k:{rows:k.rows.slice(0,20),lk:k.lk,od:k.od,more:k.more||k.rows.length>20}};var ks=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});ks.slice(10).forEach(function(x){delete c[x]});localStorage.setItem("pkc",JSON.stringify(c))}catch(e){}}
+function pkcSet(uid,k){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");var rr=k.rows.slice(0,20).map(function(r){var o={};for(var x in r)o[x]=r[x];var m=/^news:(.+)$/.exec(r.game_key||""),g=m?null:gameByKey(r.game_key);if(m){o._t="Wpis w Aktualnościach";o._h="/aktualnosci/"+m[1]+"/"}else if(g){o._t=g.game;o._h="/gra/"+keyOf(g)+"/";o._th=thumb(g)}return o});
+  c[uid]={t:Date.now(),k:{rows:rr,lk:k.lk,od:k.od,more:k.more||k.rows.length>20}};var ks=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});ks.slice(10).forEach(function(x){delete c[x]});localStorage.setItem("pkc",JSON.stringify(c))}catch(e){}}
 async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od:{},more:false},t=PRF.t;
   if(!more&&!PRF.kom){var kc=pkcGet(uid);if(kc){PRF.kom=kc;renderProf()}}
   try{var r=await sb.from("comments").select("id,game_key,body,created_at,parent_id").eq("user_id",uid).order("created_at",{ascending:false}).range(K.rows.length,K.rows.length+20);
@@ -2653,11 +2654,20 @@ async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od
       var o=await sb.from("comments").select("parent_id").in("parent_id",ids).limit(5000);if(!o.error)o.data.forEach(function(x){K.od[x.parent_id]=(K.od[x.parent_id]||0)+1})}
     var zm=JSON.stringify(K)!==JSON.stringify(PRF.kom);PRF.kom=K;if(!more)pkcSet(uid,K);if(!zm&&!more)return}catch(e){if(t!==PRF.t)return;if(!PRF.kom||PRF.kom.err)PRF.kom={err:true};else return}
   if(t===PRF.t)renderProf()}
+// Cudze profile (publiczne dane) zapamiętane w przeglądarce („pfo”, 15 ostatnich) – od razu, w tle odświeżane
+function pfoGet(k){try{var c=JSON.parse(localStorage.getItem("pfo")||"{}");return c[String(k).toLowerCase()]?c[String(k).toLowerCase()].d:null}catch(e){return null}}
+function pfoSet(k,d){try{var c=JSON.parse(localStorage.getItem("pfo")||"{}");var dd={};for(var x in d)if(x!=="wlasny"&&x!=="ulubione")dd[x]=d[x];dd.wlasny=false;
+  [String(k).toLowerCase(),String(d.id),d.profilnick?String(d.profilnick).toLowerCase():""].forEach(function(kk){if(kk)c[kk]={t:Date.now(),d:dd}});
+  var ks=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});ks.slice(30).forEach(function(z){delete c[z]});localStorage.setItem("pfo",JSON.stringify(c))}catch(e){}}
 // Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
 function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
   if(v&&u)localStorage.setItem("prof.d",JSON.stringify({uid:u.id,nick:v.data.profilnick?String(v.data.profilnick).toLowerCase():"",data:v.data,hist:v.hist,pow:v.pow,seen:v.seen}));else localStorage.removeItem("prof.d")}catch(e){}return null}
 async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=5;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
   var pc=me()?pfCache():null;if(pc&&(!key||key===me().id||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
+  else if(key){var po=pfoGet(key);if(po)PRF.data=po}
+  // zakładki z pamięci od razu (nie czekamy na odpowiedź bazy o profilu)
+  if(PRF.data){if(PRF.sub==="komentarze"){var kc0=pkcGet(PRF.data.id);if(kc0)PRF.kom=kc0}
+    if(PRF.sub==="wiadomosci"&&PRF.data.wlasny){var wc0=wmC();if(wc0){if(wc0.list)WM.list=wc0.list;var cv0=WM.z&&wc0.conv[WM.z];if(cv0){WM.msgs=cv0.msgs;WM.p=cv0.p;WM.st=cv0.st}}}}
   renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
@@ -2665,6 +2675,7 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
       var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}
       pfCache({data:PRF.data,hist:PRF.hist,pow:PRF.pow,seen:PRF.seen})}
+    if(PRF.data&&!PRF.data.wlasny&&key)pfoSet(key,PRF.data);
     // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
     if(PRF.data&&(PRF.key||PRF.sub)){var want=pfUrl(PRF.data,PRF.sub)+(PRF.sub==="wiadomosci"&&WM.z?"/"+WM.z:"");if(location.hash!==want)try{history.replaceState(null,"",location.pathname+location.search+want)}catch(e){}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";

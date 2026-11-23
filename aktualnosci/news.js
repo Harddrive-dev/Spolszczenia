@@ -45,7 +45,9 @@ function stSince(){var d=new Date(Date.now()-30*864e5),x=d.getFullYear()+"-"+Str
 function stN(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
 function stN2(t){return stN(t).replace(/ (game of the year|goty|definitive|complete|enhanced|deluxe|ultimate|gold|premium|standard)( edition)?$/,"").trim()}
 async function steamCount(){var u=me();if(!u)return;try{var r=await sb.from("steam_links").select("games").maybeSingle();if(r.error||!r.data||!Array.isArray(r.data.games))return;
-  var items=await fetch("/spolszczenia.json").then(function(x){return x.json()});if(!Array.isArray(items)||!me()||me().id!==u.id)return;
+  // katalog z pamięci przeglądarki (zapisuje go strona główna, Cache Storage „gp-katalog-v1”), a gdy go nie ma – z serwera
+  var items=null;try{if(window.caches){var cr=await caches.open("gp-katalog-v1").then(function(c){return c.match("/spolszczenia.json")});if(cr)items=await cr.json()}}catch(e){}
+  if(!Array.isArray(items))items=await fetch("/spolszczenia.json").then(function(x){return x.json()});if(!Array.isArray(items)||!me()||me().id!==u.id)return;
   var byId=Object.create(null),idx=Object.create(null);items.forEach(function(g){if(!g||!/pc/i.test(g.platform||"PC"))return;if(g.status==="Zapowiedź"&&!(g.spolszczenia||[]).some(function(x){return x&&x.status&&x.status!=="Zapowiedź"}))return;
     var sid=g.steam;sid=Array.isArray(sid)?sid:(sid?[sid]:[]);if(sid.length){sid.forEach(function(i){(byId[i]=byId[i]||[]).push(g)});return}
     var a=stN(g.game),b=stN2(g.game);if(a&&!idx[a])idx[a]=g;if(b&&!idx[b])idx[b]=g});

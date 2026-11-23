@@ -2942,12 +2942,23 @@ function mergeApproved(rows){
         if(v)gm[f]=v});if(day&&!(d.changes||[]).some(function(c){return c.field==="upd"})&&spUpdKey(przedM,gm))gm.upd=day;if(gm._usun)list.splice(list.indexOf(gm),1)}
     else if(r.kind==="link"){var g2=find(d.key);var nl=String(d.newLink||"");if(g2&&/^https?:\/\//i.test(nl))g2.link=nl}});
   return list}
+// Katalog (spolszczenia.json, ok. 1 MB) zapamiętany w przeglądarce (Cache Storage „gp-katalog-v1”).
+// Przy wejściu pokazujemy od razu zapamiętaną wersję, a w tle pobieramy świeżą (z serwera, ale przy braku zmian serwer odpowiada krótko „bez zmian”).
+// Jeśli świeża różni się od zapamiętanej, rysujemy katalog jeszcze raz i zapamiętujemy nową wersję.
+var KAT_CACHE="gp-katalog-v1",KAT_URL="/spolszczenia.json";
+function katUse(d){
+  d.forEach(function(g){if(g.status==="W toku")g.status="Beta"});baseItems=d;items=d;refresh();if(typeof steamUI==="function"){steamUI();if(onSteam)renderSteam()}
+  try{if(onFav)renderFav();if(onProf)renderProf();if(onDys)renderDysList();if(onOc)renderOcList()}catch(e){}
+  if(CM)Promise.all([sb.rpc("approved_changes"),fetch("katalog-czas.json",{cache:"no-cache"}).then(function(x){return x.ok?x.json():null}).catch(function(){return null})]).then(function(a){var r=a[0],kt=a[1];JSON_T=(kt&&Date.parse(kt.t))||Infinity;if(r.error){console.warn("approved_changes:",r.error.message);return}if(r.data&&r.data.length){items=mergeApproved(r.data);items.forEach(function(g){if(g.status==="W toku")g.status="Beta"});refresh()}}).catch(function(e){console.warn("approved_changes:",e)})}
 function loadCatalog(){
-  var pre=window.__SPJ;window.__SPJ=null;return (pre||fetch("spolszczenia.json",{cache:"no-cache"})).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
-    d.forEach(function(g){if(g.status==="W toku")g.status="Beta"});baseItems=d;items=d;refresh();if(typeof steamUI==="function"){steamUI();if(onSteam)renderSteam()}
-    try{if(onFav)renderFav();if(onProf)renderProf();if(onDys)renderDysList();if(onOc)renderOcList()}catch(e){}
-    if(CM)Promise.all([sb.rpc("approved_changes"),fetch("katalog-czas.json",{cache:"no-cache"}).then(function(x){return x.ok?x.json():null}).catch(function(){return null})]).then(function(a){var r=a[0],kt=a[1];JSON_T=(kt&&Date.parse(kt.t))||Infinity;if(r.error){console.warn("approved_changes:",r.error.message);return}if(r.data&&r.data.length){items=mergeApproved(r.data);items.forEach(function(g){if(g.status==="W toku")g.status="Beta"});refresh()}}).catch(function(e){console.warn("approved_changes:",e)})
-  }).catch(function(){
+  var pre=window.__SPJ,shown=null;window.__SPJ=null;
+  var net=(pre||fetch("spolszczenia.json",{cache:"no-cache"})).then(function(r){if(!r.ok)throw 0;return r.text()});
+  var cached=Promise.resolve(null);try{if(window.caches)cached=caches.open(KAT_CACHE).then(function(c){return c.match(KAT_URL)}).then(function(r){return r?r.text():null}).catch(function(){return null})}catch(e){}
+  cached.then(function(t){if(t&&shown===null){try{var d=JSON.parse(t);if(Array.isArray(d)&&d.length){shown=t;katUse(d)}}catch(e){}}});
+  return net.then(function(t){
+    if(t!==shown){var d=JSON.parse(t);shown=t;katUse(d)}
+    try{if(window.caches)caches.open(KAT_CACHE).then(function(c){return c.put(KAT_URL,new Response(t,{headers:{"Content-Type":"application/json"}}))}).catch(function(){})}catch(e){}
+  }).catch(function(){if(shown!==null)return;
     $("count").textContent="Nie udało się wczytać spolszczenia.json. Jeśli otwierasz plik z dysku, uruchom lokalny serwer (instrukcja w README) albo wgraj stronę na hosting."})}
 if(CM&&/type=recovery/.test(location.hash||"")){sb.auth.getSession().then(function(r){if(r.data&&r.data.session){history.replaceState(null,"",location.pathname);showNewPass()}})}
 if(CM)afterConfirm();

@@ -1440,7 +1440,7 @@ function fitChip(){var c=document.getElementById("uchip"),t=document.querySelect
 window.addEventListener("resize",fitChip);
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";setTimeout(fitChip,0);
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("ulv").style.display="none";MYLV=null;if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){$("ulv").style.display="none";MYLV=null;try{if(!authTok())localStorage.removeItem("prof.d")}catch(e){}if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
   var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
@@ -2164,18 +2164,23 @@ function stMarkSeen(m){var u=me();if(!u)return;var k=m.filter(function(g){return
   STEAM.srvSeen={u:u.id,k:k};try{sb.from("steam_seen").upsert({user_id:u.id,keys:k.slice(0,2000),updated_at:new Date().toISOString()}).then(function(){},function(){})}catch(e){}}
 async function stSeenLoad(){var u=me();if(!u||!sb){STEAM.seenOk=true;return}try{var r=await sb.from("steam_seen").select("keys").maybeSingle();if(!r.error&&r.data&&Array.isArray(r.data.keys)){STEAM.srvSeen={u:u.id,k:r.data.keys};steamUI()}}catch(e){}STEAM.seenOk=true}
 function stIsUnr(g){var k=stNewKey(g);return (STEAM.fresh&&STEAM.fresh.indexOf(k)>-1)||(steamCat(g).indexOf("new")>-1&&stSeen().indexOf(k)<0)}
+// Lista gier ze Steama zapamiętana w przeglądarce (localStorage „steam.row”, osobno dla konta) – „Moje gry Steam” pokazują się od razu,
+// a w tle sprawdzamy w bazie, czy coś się zmieniło. Po wylogowaniu pamięć jest czyszczona.
+function stCache(row){var u=me();try{if(row===undefined){var c=JSON.parse(localStorage.getItem("steam.row")||"null");return c&&u&&c.uid===u.id?c.row:null}
+  if(row&&u)localStorage.setItem("steam.row",JSON.stringify({uid:u.id,row:row}));else localStorage.removeItem("steam.row")}catch(e){}return null}
 async function steamLoad(force){
   if(!CM){return}
-  if(!me()){STEAM.st="out";STEAM.row=null;steamUI();return}
+  if(!me()){STEAM.st="out";STEAM.row=null;try{if(!authTok())localStorage.removeItem("steam.row")}catch(e){}steamUI();return}
+  if(!STEAM.row){var cr=stCache();if(cr){STEAM.row=cr;STEAM.st="linked";steamUI()}}
   try{var r=await sb.from("steam_links").select("steam_id,persona,avatar,games,is_private,games_at").maybeSingle();
-    if(r.error){STEAM.st="off";steamUI();return}
-    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";if(r.data){STEAM.seenOk=false;await stSeenLoad()}steamUI();
+    if(r.error){if(!STEAM.row)STEAM.st="off";steamUI();return}
+    STEAM.row=r.data;STEAM.st=r.data?"linked":"none";stCache(r.data||null);if(r.data){STEAM.seenOk=false;await stSeenLoad()}steamUI();
     if(r.data&&(force||!r.data.games_at||Date.now()-new Date(r.data.games_at).getTime()>12*3600e3))await steamFetch(!!force)}
   catch(e){STEAM.st="off"}
   steamUI()}
 async function steamFetch(force){STEAM.loading=true;steamUI();
   try{var r=await sb.functions.invoke("steam",{body:{action:"games",refresh:force}});
-    if(r.data&&r.data.row){STEAM.row=r.data.row;STEAM.st="linked"}else if(r.data&&r.data.linked===false){STEAM.row=null;STEAM.st="none"}else if(is401(r)){sessCheck()}else if(r.error){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}}
+    if(r.data&&r.data.row){STEAM.row=r.data.row;STEAM.st="linked";stCache(STEAM.row)}else if(r.data&&r.data.linked===false){STEAM.row=null;STEAM.st="none";stCache(null)}else if(is401(r)){sessCheck()}else if(r.error){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}}
   catch(e){STEAM.msg={t:"Nie udało się pobrać listy gier ze Steama. Spróbuj ponownie za chwilę.",err:1}}
   STEAM.loading=false;steamUI()}
 function steamConnect(){
@@ -2200,7 +2205,7 @@ async function steamBoot(){steamBooted=true;
     // 401 = sesja logowania na stronie wygasła albo została zamknięta na innym urządzeniu: odświeżamy ją i próbujemy raz jeszcze
     if(is401(r)){var rf=await sb.auth.refreshSession();if(!rf.error&&rf.data&&rf.data.session){session=rf.data.session;r=await sb.functions.invoke("steam",{body:{action:"verify",params:cb.p}})}}
     var e=r.data&&r.data.error;
-    if(r.data&&r.data.ok){STEAM.row=r.data.row||null;STEAM.st="linked";STEAM.msg={t:"Gotowe! Konto Steam "+((r.data.row&&r.data.row.persona)||"")+" jest połączone.",ok:1}}
+    if(r.data&&r.data.ok){STEAM.row=r.data.row||null;STEAM.st="linked";stCache(STEAM.row);STEAM.msg={t:"Gotowe! Konto Steam "+((r.data.row&&r.data.row.persona)||"")+" jest połączone.",ok:1}}
     else if(e==="taken"||(r.error&&/409/.test(String(r.error.message||r.error))))STEAM.msg={t:"To konto Steam jest już połączone z innym kontem na GryPoPolsku.pl. Jedno konto Steam można połączyć tylko z jednym kontem na stronie.",err:1};
     else if(is401(r)){STEAM.msg={t:"Twoje logowanie na stronie wygasło. Zaloguj się ponownie (lewy górny róg), a potem jeszcze raz kliknij „Połącz konto Steam”.",err:1};sb.auth.signOut({scope:"local"}).catch(function(){})}
     else STEAM.msg={t:"Steam nie potwierdził logowania. Spróbuj jeszcze raz.",err:1}}
@@ -2208,7 +2213,7 @@ async function steamBoot(){steamBooted=true;
   STEAM.loading=false;steamLoad()}
 async function steamUnlink(){
   if(!STEAM.armed){STEAM.armed=true;renderSteam();setTimeout(function(){if(STEAM.armed){STEAM.armed=false;renderSteam()}},4000);return}
-  STEAM.armed=false;try{var u=me();var r=await sb.from("steam_links").delete().eq("user_id",u.id);if(r.error)throw r.error;STEAM.row=null;STEAM.st="none";STEAM.msg={t:"Konto Steam zostało odłączone."}}catch(e){STEAM.msg={t:"Nie udało się odłączyć konta Steam.",err:1}}
+  STEAM.armed=false;try{var u=me();var r=await sb.from("steam_links").delete().eq("user_id",u.id);if(r.error)throw r.error;STEAM.row=null;STEAM.st="none";stCache(null);STEAM.msg={t:"Konto Steam zostało odłączone."}}catch(e){STEAM.msg={t:"Nie udało się odłączyć konta Steam.",err:1}}
   steamUI()}
 function steamUI(){
   var b=$("steambtn");if(!b)return;
@@ -2604,12 +2609,18 @@ async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od
       var o=await sb.from("comments").select("parent_id").in("parent_id",ids).limit(5000);if(!o.error)o.data.forEach(function(x){K.od[x.parent_id]=(K.od[x.parent_id]||0)+1})}
     PRF.kom=K}catch(e){if(t!==PRF.t)return;PRF.kom={err:true}}
   if(t===PRF.t)renderProf()}
-async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;renderProf();
+// Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
+function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
+  if(v&&u)localStorage.setItem("prof.d",JSON.stringify({uid:u.id,nick:v.data.profilnick?String(v.data.profilnick).toLowerCase():"",data:v.data,hist:v.hist,pow:v.pow,seen:v.seen}));else localStorage.removeItem("prof.d")}catch(e){}return null}
+async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
+  var pc=me()?pfCache():null;if(pc&&(!key||key===me().id||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
+  renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
     if(PRF.data&&PRF.data.wlasny){var hr=await sb.from("punkty").select("pkt,typ,gra,created_at").order("created_at",{ascending:true}).limit(2000);PRF.hist=(!hr.error&&hr.data)?hr.data:[];
       var pr=await sb.rpc("moje_powiadomienia",{p_ile:100});PRF.pow=(!pr.error&&pr.data)?pr.data:[];
-      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}}
+      var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}
+      pfCache({data:PRF.data,hist:PRF.hist,pow:PRF.pow,seen:PRF.seen})}
     // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
     if(PRF.data&&(PRF.key||PRF.sub)){var want=pfUrl(PRF.data,PRF.sub)+(PRF.sub==="wiadomosci"&&WM.z?"/"+WM.z:"");if(location.hash!==want)try{history.replaceState(null,"",location.pathname+location.search+want)}catch(e){}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";

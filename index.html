@@ -2564,7 +2564,7 @@ function pfPowiadomienia(h,pw,seen){var km=[],pk=[],sum=0,sn=seen?new Date(seen)
     else km.push({t:t,nw:nw,h:item('💬','po','<b>'+esc(x.kto||"Gracz")+'</b> odpowiada na Twój komentarz',cyt(x.tresc,110),'<span class="pfgr">do '+esc(cyt(x.moj,40))+'</span>'+meta,t,nw,l)})});
   km.forEach(function(o){if(o.like)o.h=item('👍','pl','Twój komentarz '+(o.n>1?'dostał <b>'+o.n+' × 👍</b>':'dostał 👍')+(o.pkt?' <span class="pfpk">+'+o.pkt+' pkt</span>':''),cyt(o.q),o.meta,o.t,o.nw,o.l)});
   km.sort(function(a,b){return b.t-a.t});pk.sort(function(a,b){return b.t-a.t});
-  var nk=km.filter(function(e){return e.nw}).length,tab=PRF.tab||(km.length||!pk.length?"k":"p"),lim=PRF.lim||20;
+  var nk=km.filter(function(e){return e.nw}).length,tab=PRF.tab||(km.length||!pk.length?"k":"p"),lim=PRF.lim||5;
   function lista(a,pusty){if(!a.length)return '<p class="msg">'+pusty+'</p>';return '<div class="pflist">'+a.slice(0,lim).map(function(e){return e.h}).join("")+(a.length>lim?'<button type="button" class="pfmore" data-pfmore="1">Pokaż starsze ('+(a.length-lim)+')</button>':'')+'</div>'}
   return '<div class="pftabs"><button type="button" class="'+(tab==="k"?"on":"")+'" data-pftab="k">👍 Reakcje'+(nk?' <span class="bd">'+nk+'</span>':'')+'</button><button type="button" class="'+(tab==="p"?"on":"")+'" data-pftab="p">⭐ Punkty</button></div>'+
     (tab==="k"?lista(km,"Tu zobaczysz 👍 i odpowiedzi innych osób pod Twoimi komentarzami."):lista(pk,"Tu zobaczysz zdobyte punkty i awanse. Zagłosuj na grę tygodnia albo oceń spolszczenie!"))}
@@ -2620,7 +2620,7 @@ async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od
 // Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
 function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
   if(v&&u)localStorage.setItem("prof.d",JSON.stringify({uid:u.id,nick:v.data.profilnick?String(v.data.profilnick).toLowerCase():"",data:v.data,hist:v.hist,pow:v.pow,seen:v.seen}));else localStorage.removeItem("prof.d")}catch(e){}return null}
-async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=20;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
+async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=5;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
   var pc=me()?pfCache():null;if(pc&&(!key||key===me().id||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
   renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
@@ -2639,9 +2639,9 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
   renderProf()}
 document.addEventListener("keydown",function(e){if(e.key!=="Enter")return;var t=e.target.closest&&e.target.closest(".pfn2.lk,.pfkm.lk");if(t&&!e.target.closest("a"))location.href=t.getAttribute("data-href")});
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#uprof,#umsg,#pfkonto,.cnick,[data-pftab],[data-pfmore],[data-pfkmore],[data-wm],.pfn2.lk,.pfkm.lk");if(!t)return;
-  if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");PRF.lim=20;renderProf();return}
+  if(t.hasAttribute("data-pftab")){PRF.tab=t.getAttribute("data-pftab");PRF.lim=5;renderProf();return}
   if(t.hasAttribute("data-pfkmore")){t.disabled=true;t.textContent="Wczytywanie…";if(PRF.data)pfKomLoad(PRF.data.id,true);return}
-  if(t.hasAttribute("data-pfmore")){var ls=document.querySelector(".pflist"),sc=ls?ls.scrollTop:0;PRF.lim=(PRF.lim||20)+20;renderProf();ls=document.querySelector(".pflist");if(ls)ls.scrollTop=sc;return}
+  if(t.hasAttribute("data-pfmore")){var ls=document.querySelector(".pflist"),sc=ls?ls.scrollTop:0;PRF.lim=(PRF.lim||5)+10;renderProf();ls=document.querySelector(".pflist");if(ls)ls.scrollTop=sc;return}
   if(t.hasAttribute("data-href")){if(!e.target.closest("a"))location.href=t.getAttribute("data-href");return}
   if(t.classList.contains("cnick")){if($("cm").className.indexOf("open")>=0)closeModal();return}
   if(t.id==="uprof"){$("umenu").className="umenu";goView(PHASH);return}

@@ -2406,7 +2406,7 @@ function favUnr(g){var f=FAV.m[keyOf(g)];if(!f)return false;var b=f.s&&f.s>f.c?f
 // zanim wczyta się katalog gier (spolszczenia.json, ok. 1 MB). Osobno dla konta, czyszczony po wylogowaniu.
 function snapGet(n){var u=me();if(!u)return "";try{var c=JSON.parse(localStorage.getItem("snap."+n)||"null");return c&&c.uid===u.id?c.h:""}catch(e){return ""}}
 function snapSet(n,h){var u=me();if(!u)return;try{localStorage.setItem("snap."+n,JSON.stringify({uid:u.id,h:h}))}catch(e){}}
-function snapClear(){try{["snap.steam","snap.fav"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
+function snapClear(){try{["snap.steam","snap.fav","wm.c"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
 function favGames(){return items.filter(function(g){return FAV.m[keyOf(g)]})}
 function favUnread(){return favGames().filter(favUnr)}
 function hrtBtn(g){if(!CM)return "";var k=keyOf(g),on=isFav(k),t=on?"Usuń z ulubionych":"Dodaj do ulubionych";return '<button class="mini hrt'+(on?" on":"")+'" type="button" data-fk="'+esc(k)+'" aria-pressed="'+on+'" title="'+t+'" aria-label="'+t+'">'+HRT+'</button>'}
@@ -2641,13 +2641,17 @@ function pfKomHtml(d){var K=items.length?PRF.kom:null;
       '<div class="pfkb"><div class="pfkh">'+(href?'<a class="pfgl" href="'+esc(href)+'">'+esc(t)+'</a>':esc(t||"Usunięta gra"))+(c.parent_id?'<span class="pfrep">↪ odpowiedź</span>':'')+'<small>'+esc(komAgo(c.created_at))+'</small></div>'+
       '<p>'+esc(c.body)+'</p><div class="pfkf"><span>👍 '+lk+'</span><span>💬 '+od+' '+(od===1?"odpowiedź":od>1&&od<5?"odpowiedzi":"odpowiedzi")+'</span>'+(href?'<a class="pfbtn" href="'+esc(href+"#komentarze-c"+(+c.id||0))+'">Zobacz w dyskusji</a>':'')+'</div></div></div>'}).join("")+
     (K.more?'<button type="button" class="pfmore" data-pfkmore="1">Pokaż starsze</button>':'')+'</div></div>'}
+// Zakładka „Komentarze” zapamiętana w przeglądarce („pkc”, 10 ostatnich profili; komentarze i tak są publiczne) – od razu, w tle odświeżana
+function pkcGet(uid){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");return c[uid]?c[uid].k:null}catch(e){return null}}
+function pkcSet(uid,k){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");c[uid]={t:Date.now(),k:{rows:k.rows.slice(0,20),lk:k.lk,od:k.od,more:k.more||k.rows.length>20}};var ks=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});ks.slice(10).forEach(function(x){delete c[x]});localStorage.setItem("pkc",JSON.stringify(c))}catch(e){}}
 async function pfKomLoad(uid,more){var K=PRF.kom&&more?PRF.kom:{rows:[],lk:{},od:{},more:false},t=PRF.t;
+  if(!more&&!PRF.kom){var kc=pkcGet(uid);if(kc){PRF.kom=kc;renderProf()}}
   try{var r=await sb.from("comments").select("id,game_key,body,created_at,parent_id").eq("user_id",uid).order("created_at",{ascending:false}).range(K.rows.length,K.rows.length+20);
     if(r.error)throw r.error;if(t!==PRF.t)return;var nowe=r.data.slice(0,20);K.more=r.data.length>20;K.rows=K.rows.concat(nowe);
     var ids=nowe.map(function(c){return c.id});
     if(ids.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",ids).limit(5000);if(!l.error)l.data.forEach(function(x){if(x.user_id!==uid)K.lk[x.comment_id]=(K.lk[x.comment_id]||0)+1});
       var o=await sb.from("comments").select("parent_id").in("parent_id",ids).limit(5000);if(!o.error)o.data.forEach(function(x){K.od[x.parent_id]=(K.od[x.parent_id]||0)+1})}
-    PRF.kom=K}catch(e){if(t!==PRF.t)return;PRF.kom={err:true}}
+    var zm=JSON.stringify(K)!==JSON.stringify(PRF.kom);PRF.kom=K;if(!more)pkcSet(uid,K);if(!zm&&!more)return}catch(e){if(t!==PRF.t)return;if(!PRF.kom||PRF.kom.err)PRF.kom={err:true};else return}
   if(t===PRF.t)renderProf()}
 // Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
 function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
@@ -2715,13 +2719,21 @@ function wmRys(){if(!(onProf&&PRF.sub==="wiadomosci"&&PRF.data))return;var l=$("
   l.innerHTML='<h3>✉️ Wiadomości</h3>'+wmListHtml(PRF.data);var m=$("wmmsgs"),dol=!m||m.scrollHeight-m.scrollTop-m.clientHeight<40,foc=document.activeElement&&document.activeElement.id==="wmtxt";
   if(m&&WM.z){var sc=m.scrollTop;m.innerHTML=wmMsgsHtml();m.scrollTop=dol?m.scrollHeight:sc}else c.innerHTML=wmChatHtml(PRF.data);
   if(!$("wmtxt")&&WM.z&&WM.st&&WM.st.moge){c.innerHTML=wmChatHtml(PRF.data);wmPo()}if(foc&&$("wmtxt"))$("wmtxt").focus()}
-async function wmLoad(pelne){if(!CM||!me())return;var z=WM.z,t=PRF.t;if(pelne){WM.list=null;WM.msgs=null;WM.p=null;WM.st=null;WM.more=false;WM.err="";WM.usun=0}
+// Lista rozmów i ostatnie wiadomości zapamiętane w przeglądarce („wm.c”, 10 ostatnich rozmów po 50 wiadomości) – od razu, w tle odświeżane.
+// To prywatne dane, więc są przypisane do konta i kasowane po wylogowaniu.
+function wmC(v){var u=me();if(!u)return null;try{var c=JSON.parse(localStorage.getItem("wm.c")||"null");if(!c||c.uid!==u.id)c={uid:u.id,list:null,conv:{}};if(v===undefined)return c;
+  if(v.list)c.list=v.list;if(v.z){c.conv[v.z]={t:Date.now(),msgs:(v.msgs||[]).slice(-50),p:v.p,st:v.st};var ks=Object.keys(c.conv).sort(function(a,b){return c.conv[b].t-c.conv[a].t});ks.slice(10).forEach(function(x){delete c.conv[x]})}
+  localStorage.setItem("wm.c",JSON.stringify(c))}catch(e){}return null}
+async function wmLoad(pelne){if(!CM||!me())return;var z=WM.z,t=PRF.t;if(pelne){WM.list=null;WM.msgs=null;WM.p=null;WM.st=null;WM.more=false;WM.err="";WM.usun=0;
+    var wc=wmC();if(wc){if(wc.list)WM.list=wc.list;var cv=z&&wc.conv[z];if(cv){WM.msgs=cv.msgs;WM.p=cv.p;WM.st=cv.st;WM.more=(cv.msgs||[]).length>=50}if(wc.list||cv)renderProf()}}
   try{var a=await sb.rpc("moje_rozmowy");if(t!==PRF.t||z!==WM.z)return;if(!a.error)WM.list=a.data||[];
     if(z){var calls=[sb.rpc("rozmowa",{p_z:z,p_ile:50})];if(pelne){calls.push(sb.rpc("profil",{p_klucz:z}),sb.rpc("wiadomosc_status",{p_do:z}))}
       var res=await Promise.all(calls);if(t!==PRF.t||z!==WM.z)return;
       if(!res[0].error){var nowe=(res[0].data||[]).slice().reverse();if(pelne||!WM.msgs||!WM.more)WM.msgs=nowe;else{var ost=WM.msgs.filter(function(m){return m.id<nowe[0].id});WM.msgs=ost.concat(nowe)}if(pelne)WM.more=(res[0].data||[]).length>=50}
       if(pelne){if(!res[1].error)WM.p=res[1].data||{nick:"Usunięte konto"};if(!res[2].error)WM.st=res[2].data}
-      var nr=(WM.list||[]).filter(function(r){return r.z_kim===z&&r.nowe}).length;if(nr){await sb.rpc("przeczytaj_rozmowe",{p_z:z});(WM.list||[]).forEach(function(r){if(r.z_kim===z)r.nowe=0});loadMsgN()}}
+      var nr=(WM.list||[]).filter(function(r){return r.z_kim===z&&r.nowe}).length;if(nr){await sb.rpc("przeczytaj_rozmowe",{p_z:z});(WM.list||[]).forEach(function(r){if(r.z_kim===z)r.nowe=0});loadMsgN()}
+      wmC({z:z,msgs:WM.msgs,p:WM.p,st:WM.st})}
+    wmC({list:WM.list})
   }catch(e){}
   if(pelne)renderProf();else wmRys()}
 async function wmWyslij(){var t=$("wmtxt");if(!t||WM.busy)return;var tx=t.value.trim();if(!tx){WM.err="Wiadomość jest pusta.";wmRys();renderProf();return}

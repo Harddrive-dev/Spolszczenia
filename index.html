@@ -2089,6 +2089,10 @@ window.addEventListener("scroll",hideRmenu,{passive:true});
 // ====== GŁOSOWANIE ======
 var winnerKey=null,weekReady=!CM,leadReady=!CM;
 function markWeek(){if(!weekReady){weekReady=true;if(items.length)renderHome()}}
+// Gra tygodnia i podium głosowania zapamiętane w przeglądarce (localStorage „week.c”, ważne tylko w tym samym tygodniu) –
+// po odświeżeniu pokazujemy je od razu, a w tle sprawdzamy głosy w bazie i w razie zmiany rysujemy jeszcze raz.
+function weekC(v){try{if(v===undefined){var c=JSON.parse(localStorage.getItem("week.c")||"null");return c&&c.wk===weekRange()?c:null}
+  var o=weekC()||{wk:weekRange()};for(var k in v)o[k]=v[k];o.wk=weekRange();localStorage.setItem("week.c",JSON.stringify(o))}catch(e){}return null}
 function gameByKey(k){return items.filter(function(x){return keyOf(x)===k})[0]}
 function voteRows(rows,mine,max,thumbs){
   return rows.map(function(r){var g=gameByKey(r.k);if(!g)return "";var w=max?Math.round(r.v/max*100):0;
@@ -2107,6 +2111,7 @@ function podium(rows,mine){
     var im=imgOk(g.img)?'<img alt="" loading="lazy" src="'+esc(g.img)+'">':'<div class="pimg">'+lt+'</div>';
     return '<div class="pod p'+(i+1)+'"><span class="medal">'+med[i]+'</span>'+im+'<b><a class="vlink" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a></b><small>'+rows[i].v+' głos'+(rows[i].v===1?'':(rows[i].v%10>=2&&rows[i].v%10<=4&&(rows[i].v%100<12||rows[i].v%100>14)?'y':'ów'))+(mine===rows[i].k?' · ✓ Twój':'')+'</small></div>'}).join("")+'</div>'}
 var leadRows=[];
+(function(){var c=CM&&weekC();if(!c)return;if(c.win){winnerKey=c.win;weekReady=true}if(Array.isArray(c.lead)){leadRows=c.lead;leadReady=true}})();
 function plVotes(v){return v+' głos'+(v===1?'':(v%10>=2&&v%10<=4&&(v%100<12||v%100>14)?'y':'ów'))}
 function renderLeader(){var el=$("leader");if(!el)return;
   var top=leadRows.map(function(r){return{g:gameByKey(r.k),v:r.v}}).filter(function(x){return x.g}).slice(0,3),med=["🥇","🥈","🥉"],mx=Math.max.apply(null,top.map(function(x){return x.v}).concat([1]));
@@ -2891,8 +2896,8 @@ document.addEventListener("click",async function(ev){
   var t=ev.target.closest&&ev.target.closest("button[data-vote]");if(!t)return;
   if(!me()){VLOGIN=" ";renderVote($("vq")?$("vq").value:"");var lb=$("vlogin");if(lb&&lb.scrollIntoView)lb.scrollIntoView({behavior:"smooth",block:"nearest"});return}
   await castVote(t.getAttribute("data-vote"))});
-async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});leadRows=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):[];leadReady=true;renderLeader()}catch(e){leadReady=true;renderLeader()}}
-if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length)winnerKey=r.data[0].game_key;markWeek()}).catch(function(){markWeek()})}
+async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});var nl=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):leadRows;if(!r.error)weekC({lead:nl});var zm=JSON.stringify(nl)!==JSON.stringify(leadRows)||!leadReady;leadRows=nl;leadReady=true;if(zm)renderLeader()}catch(e){leadReady=true;renderLeader()}}
+if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){var nk=r.data[0].game_key;weekC({win:nk});if(nk!==winnerKey){winnerKey=nk;if(weekReady&&items.length)renderHome()}}markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
 if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH||location.hash.indexOf("#/profil")===0)route();
 

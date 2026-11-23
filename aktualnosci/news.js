@@ -250,16 +250,22 @@ function renderList(){
   Object.keys(drafts).forEach(function(k){var t=$(k);if(t&&drafts[k])t.value=drafts[k]});
   // link ze strony „Dyskusje”: #komentarze-c123 → przewiń do tego komentarza i na chwilę go podświetl
   var jm=!renderList.j&&/^#komentarze-c(\d+)$/.exec(location.hash);if(jm){renderList.j=1;var je=document.querySelector('.cmt[data-id="'+jm[1]+'"]')||$("komentarze");if(je){je.scrollIntoView({block:"center"});je.classList.add("chl");setTimeout(function(){je.classList.remove("chl")},2600)}}}
+// Komentarze tej strony zapamiętane w przeglądarce (localStorage „kc”, 20 ostatnio oglądanych stron, do 150 komentarzy) –
+// pokazujemy je od razu, a w tle pobieramy świeże i przerysowujemy tylko, gdy coś się zmieniło.
+function kcGet(){try{var c=JSON.parse(localStorage.getItem("kc")||"{}");return c[KEY]||null}catch(e){return null}}
+function kcSet(r,l){try{var c=JSON.parse(localStorage.getItem("kc")||"{}");c[KEY]={t:Date.now(),r:r.slice(-150),l:l};var k=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});k.slice(20).forEach(function(x){delete c[x]});localStorage.setItem("kc",JSON.stringify(c))}catch(e){}}
 async function loadComments(){
+  var kc=(!rows||!rows.length)?kcGet():null;if(kc&&kc.r&&kc.r.length){rows=kc.r;likes=kc.l||[];renderList()}
   try{
     var cols="id,user_id,author,body,created_at,avatar_url,is_mod,parent_id";
     var r=await sb.from("comments").select(cols+",ranga").eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
     if(r.error)r=await sb.from("comments").select(cols).eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
     if(r.error)r=await sb.from("comments").select("id,user_id,author,body,created_at").eq("game_key",KEY).order("created_at",{ascending:true}).limit(500);
-    if(r.error)throw r.error;rows=r.data;likes=[];
-    if(rows.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",rows.map(function(c){return c.id})).limit(5000);if(!l.error)likes=l.data}
-    renderList();
-    lvFetch(rows.map(function(c){return c.user_id})).then(function(ok){if(ok)renderList()});rolFetch(rows).then(function(ok){if(ok)renderList()})}catch(e){$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
+    if(r.error)throw r.error;
+    var nl=[];if(r.data.length){var l=await sb.from("comment_likes").select("comment_id,user_id").in("comment_id",r.data.map(function(c){return c.id})).limit(5000);if(!l.error)nl=l.data}
+    var zm=JSON.stringify(r.data)!==JSON.stringify(rows)||JSON.stringify(nl)!==JSON.stringify(likes)||!kc;rows=r.data;likes=nl;kcSet(rows,likes);
+    if(zm)renderList();
+    lvFetch(rows.map(function(c){return c.user_id})).then(function(ok){if(ok)renderList()});rolFetch(rows).then(function(ok){if(ok)renderList()})}catch(e){if(!(kc&&kc.r&&kc.r.length))$("clist").innerHTML='<p class="msg err">Nie udało się wczytać komentarzy.</p>'}}
 function renderForm(){var f=$("cform");
   f.innerHTML=me()?'<div class="cform">'+av(myAvatar(),nick())+'<div class="cin"><div class="cwho">Komentujesz jako <b>'+esc(nick())+'</b></div><textarea class="t" id="cbody" maxlength="1000" placeholder="Twój komentarz…"></textarea><p style="margin:8px 0 0"><button class="btn pri" id="csend" type="button">Dodaj komentarz</button></p><p class="msg" id="cfmsg"></p></div></div>'
    :'<p class="msg">Aby komentować, musisz się zalogować.</p><button class="btn pri" id="cgologin" type="button">Zaloguj się</button>'}

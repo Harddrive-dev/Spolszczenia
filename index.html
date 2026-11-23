@@ -971,12 +971,15 @@ function versionsTxt(g){var p=versPairs(g);if(p.length<2)return "Wersja "+esc(g.
   return "Wersje: "+p.map(function(x){return esc(x.n)+" "+esc(x.v)}).join(" · ")}
 function authorsTxt(g){return authorsOf(g).join(", ")||"—"}
 // Oceny spolszczeń (gwiazdki z tabeli „oceny”, funkcja „oceny_wszystkie”): średnia przy nicku autora. Główne spolszczenie = "main".
-var OC=Object.create(null);
-var OST=[];   // ostatnie oceny (funkcja „oceny_ostatnie”): gra, sp, ocena, kiedy – bez nicków (oceny są anonimowe)
+// Pamięć strony głównej w przeglądarce (localStorage „hc.*”): oceny ★, ostatnie oceny, wieści, ostatnie komentarze i liczniki 💬.
+// Po odświeżeniu pokazujemy od razu to, co było ostatnio, a w tle pobieramy świeże dane i przerysowujemy tylko, gdy coś się zmieniło.
+function hC(k,v){try{if(v===undefined){var x=localStorage.getItem("hc."+k);return x?JSON.parse(x):null}localStorage.setItem("hc."+k,JSON.stringify(v))}catch(e){}return null}
+var OC=(function(){var m=Object.create(null),c=hC("oc");if(c)for(var k in c)m[k]=c[k];return m})();
+var OST=hC("ost")||[];   // ostatnie oceny (funkcja „oceny_ostatnie”): gra, sp, ocena, kiedy – bez nicków (oceny są anonimowe)
 function ocGwiazdki(v){v=Math.max(0,Math.min(5,+v||0));return '<span class="ocst" aria-label="'+v+' na 5">'+"★★★★★".slice(0,v)+'<span class="o0">'+"★★★★★".slice(0,5-v)+'</span></span>'}
 function ocAutSp(g,sp){if(sp==="main")return g.author&&g.author!=="—"?g.author:"";var e=spExtra(g).filter(function(s){return s.id===sp})[0];return e&&e.author&&e.author!=="—"?e.author:""}
-async function loadOst(){if(!sb)return;try{var r=await sb.rpc("oceny_ostatnie",{p_od:0,p_ile:10});if(!r.error&&r.data){OST=r.data;renderHome()}}catch(e){}}
-async function loadOceny(){if(!sb)return;loadOst();try{var r=await sb.rpc("oceny_wszystkie");if(r.error||!r.data)return;var m=Object.create(null);r.data.forEach(function(x){m[x.gra+"|"+x.sp]={a:+x.srednia,n:+x.liczba}});OC=m;render();renderHome();if(typeof onOc!=="undefined"&&onOc)renderOcList()}catch(e){}}
+async function loadOst(){if(!sb)return;try{var r=await sb.rpc("oceny_ostatnie",{p_od:0,p_ile:10});if(!r.error&&r.data){var zm=JSON.stringify(r.data)!==JSON.stringify(OST);OST=r.data;hC("ost",r.data);if(zm)renderHome()}}catch(e){}}
+async function loadOceny(){if(!sb)return;loadOst();try{var r=await sb.rpc("oceny_wszystkie");if(r.error||!r.data)return;var m=Object.create(null);r.data.forEach(function(x){m[x.gra+"|"+x.sp]={a:+x.srednia,n:+x.liczba}});var zm=JSON.stringify(m)!==JSON.stringify(OC);OC=m;hC("oc",m);if(!zm)return;render();renderHome();if(typeof onOc!=="undefined"&&onOc)renderOcList()}catch(e){}}
 function ocBadge(g,name){var sp=null,m=g.author&&g.author!=="—"?g.author:"—";
   if(hasSp(g)&&name===m)sp="main";else{var e=spExtra(g).filter(function(s){return (s.author&&s.author!=="—"?s.author:"—")===name&&s.id})[0];if(e)sp=e.id}
   var o=sp&&OC[keyOf(g)+"|"+sp];if(!o||!o.n)return "";var t=o.a.toFixed(1).replace(".",",");
@@ -1285,6 +1288,7 @@ google:'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style
 function slug(t){return String(t).toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function keyOf(g){return g.id||slug(g.game||"")}
 var counts=Object.create(null),wiesci=[],kom=[],sideTab="w",komBase=null,KM=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
+(function(){var c=hC("cnt");if(c)for(var k in c)counts[k]=c[k];wiesci=hC("wie")||[];kom=hC("kom")||[]})();
 // Prawa kolumna: zakładki Wieści i Komentarze. Kolejne wejście pokazuje liczbę komentarzy nowszych niż ostatnie otwarcie zakładki.
 function komSeen(v){try{if(v===undefined)return localStorage.getItem("kom.widz")||"";localStorage.setItem("kom.widz",v)}catch(e){}return ""}
 function komRows(){var seen={};return kom.filter(function(c){var g=gameByKey(c.game_key);if(!g||seen[c.game_key])return false;seen[c.game_key]=1;c.g=g;return true}).slice(0,3)}
@@ -1300,8 +1304,8 @@ function renderSide(){
   ob.innerHTML='<h3>⭐ Ostatnio ocenione<a class="mall" href="#/oceny">Wszystkie →</a></h3>'+(oc.length?oc.map(function(o){var a=ocAutSp(o.g,o.x.sp);return '<a class="mitem" href="/gra/'+esc(keyOf(o.g))+'/">'+thumb(o.g)+'<span class="tx"><b>'+esc(o.g.game)+'</b><span>'+ocGwiazdki(o.x.ocena)+(a?' · '+esc(a):'')+'</span></span><span class="ago">'+esc(komAgo(o.x.kiedy))+'</span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najnowsze oceny graczy.</p>');
 }
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-kseen]");if(a){komBase=new Date().toISOString();komSeen(komBase)}});
-async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;kom=r.data;if(!komSeen()&&kom.length)komSeen(new Date().toISOString());renderHome()}catch(e){}}
-async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;wiesci=r.data;renderHome()}catch(e){}}
+async function loadKom(){try{var r=await sb.from("comments").select("game_key,author,body,created_at").not("game_key","like","news:%").order("created_at",{ascending:false}).limit(30);if(r.error||!r.data)return;var zm=JSON.stringify(r.data)!==JSON.stringify(kom);kom=r.data;hC("kom",r.data);if(!komSeen()&&kom.length)komSeen(new Date().toISOString());if(zm)renderHome()}catch(e){}}
+async function loadWiesci(){try{var r=await sb.from("news").select("slug,title,category,created_at").eq("published",true).order("created_at",{ascending:false}).limit(3);if(r.error||!r.data)return;var zm=JSON.stringify(r.data)!==JSON.stringify(wiesci);wiesci=r.data;hC("wie",r.data);if(zm)renderHome()}catch(e){}}
 function rowBtn(g){return '<button class="mini rowmenu" type="button" data-rk="'+esc(keyOf(g))+'" aria-label="Więcej akcji" aria-haspopup="true">⋯</button>'}
 function cbtn(g){if(!CM)return "";var n=counts[keyOf(g)]||0,t=n?"Komentarze ("+n+")":"Komentarze";return '<button class="mini cbtn cic" data-k="'+esc(keyOf(g))+'" title="'+t+'" aria-label="'+t+'"><span aria-hidden="true">💬</span><b>'+n+'</b></button>'}
 async function loadCounts(){
@@ -1311,7 +1315,7 @@ async function loadCounts(){
       if(r.error)throw r.error;
       r.data.forEach(function(x){c[x.game_key]=(c[x.game_key]||0)+1});
       if(r.data.length<1000)break;from+=1000}
-    counts=c;odswiezLiczniki();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
+    var zm=JSON.stringify(c)!==JSON.stringify(counts);counts=c;hC("cnt",c);if(!zm)return;odswiezLiczniki();renderHome();if(typeof onDys!=="undefined"&&onDys)renderDysList()}catch(e){}}
 function me(){return recov?null:(session&&session.user)}
 var myRole=null,roleLoaded=false,authReady=false,myPlat=[];
 // Zanim Supabase odtworzy sesję (ułamek sekundy po wejściu) nie wiadomo, czy ktoś jest zalogowany.

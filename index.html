@@ -2603,6 +2603,8 @@ var POWN=0;
 async function loadPowN(){POWN=me()?hdrC("pow"):0;powUI();if(!CM||!me())return;try{var r=await sb.rpc("powiad_nowe");if(!r.error&&me()){POWN=+r.data||0;hdrC("pow",POWN)}}catch(e){}powUI()}
 function powUI(){var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
+// ranga z platformą (np. „OPIEKUN PSP”) – funkcja „profil” zwraca ją w polu „ranga”
+function pfRanga(d){return d&&d.ranga?String(d.ranga).toUpperCase():(d&&PF_RANGA[d.rola])||""}
 function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   if(!CM){v.innerHTML=hd+'<div class="pfc"><p class="msg">Profile są chwilowo niedostępne.</p></div>';return}
   if(!PRF.key&&!PRF.data){if(authWait()||(me()&&!PRF.err)){v.innerHTML=hd+'<div class="pfc"><p class="msg"><span class="spn"></span>Wczytywanie profilu…</p></div>';return}
@@ -2613,7 +2615,7 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   var d=PRF.data,li=lvInfo(d.punkty),pr=Math.max(0,Math.min(100,Math.round((d.punkty-li.od)*100/Math.max(1,li["do"]-li.od)))),n=d.nick||"Gracz",av=/^https:\/\//i.test(d.avatar||"")?d.avatar:"";
   var dl=d.dolaczyl?new Date(d.dolaczyl).toLocaleDateString("pl-PL",{day:"numeric",month:"long",year:"numeric"}):"";
   var h=hd+'<div class="pfc"><div class="pfh"><div class="pfav">'+(av?'<img alt="" referrerpolicy="no-referrer" src="'+esc(av)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'<span class="pflv">Lv '+li.lv+'</span></div><div>'+
-    '<div class="pfn"><h2>'+esc(n)+'</h2>'+(PF_RANGA[d.rola]?'<span class="pfr">'+PF_RANGA[d.rola]+'</span>':'')+'</div><p class="pfj">'+(dl?'Na GryPoPolsku.pl od '+esc(dl):'')+'</p>'+
+    '<div class="pfn"><h2>'+esc(n)+'</h2>'+(pfRanga(d)?'<span class="pfr">'+esc(pfRanga(d))+'</span>':'')+'</div><p class="pfj">'+(dl?'Na GryPoPolsku.pl od '+esc(dl):'')+'</p>'+
     '<div class="pfbar"><i style="width:'+pr+'%"></i></div><div class="pfbl"><span>Poziom <b>'+li.lv+'</b></span><span><b>'+d.punkty+'</b> / '+li["do"]+' pkt – jeszcze <b>'+(li["do"]-d.punkty)+' pkt</b> do poziomu '+(li.lv+1)+'</span></div>'+
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><a class="pfrk" href="#/ranking" title="Zobacz ranking graczy"><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu ›</small></a></div>'+
     (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':pfAkcje(d))+'</div></div>'+
@@ -2702,8 +2704,8 @@ function wmFormHtml(){var st=WM.st,p=WM.p||{};if(!st)return '';
   return '<div class="wmform"><textarea class="t" id="wmtxt" maxlength="2000" placeholder="Napisz wiadomość do '+esc(p.nick||"tej osoby")+'… (Ctrl+Enter wysyła)">'+esc(WM.draft||"")+'</textarea>'+
     '<div class="wmfb"><small id="wmcnt">'+(WM.draft||"").length+' / 2000'+(st.zostalo!=null?' · zostało dziś: '+st.zostalo:'')+'</small><span class="msg err" id="wmerr">'+esc(WM.err||"")+'</span><button class="btn on" type="button" data-wm="wyslij"'+(WM.busy?' disabled':'')+'>'+(WM.busy?"Wysyłanie…":"Wyślij ➤")+'</button></div></div>'}
 function wmChatHtml(d){if(!WM.z)return '<div class="wmempty"><b>✉️</b><p>Wybierz rozmowę z listy.</p><p class="msg">Aby napisać do kogoś nowego, wejdź na jego profil i kliknij „✉️ Napisz wiadomość”.</p></div>';
-  var p=WM.p||{},zb=WM.st&&WM.st.zablokowany,obs=p.rola&&PF_RANGA[p.rola];
-  return '<div class="wmhead"><a class="wmback" href="'+esc(pfUrl(d,"wiadomosci"))+'" title="Wszystkie rozmowy">←</a>'+wmAv(p.avatar,p.nick||"?","du")+'<span class="wmhn"><a class="pfgl" href="'+esc(PHASH+"/"+WM.z)+'">'+esc(p.nick||"…")+'</a>'+(p.poziom?' <span class="ulv">Lv '+p.poziom+'</span>':'')+(obs?' <span class="pfr">'+obs+'</span>':'')+'</span>'+
+  var p=WM.p||{},zb=WM.st&&WM.st.zablokowany,obs=pfRanga(p);
+  return '<div class="wmhead"><a class="wmback" href="'+esc(pfUrl(d,"wiadomosci"))+'" title="Wszystkie rozmowy">←</a>'+wmAv(p.avatar,p.nick||"?","du")+'<span class="wmhn"><a class="pfgl" href="'+esc(PHASH+"/"+WM.z)+'">'+esc(p.nick||"…")+'</a>'+(p.poziom?' <span class="ulv">Lv '+p.poziom+'</span>':'')+(obs?' <span class="pfr">'+esc(obs)+'</span>':'')+'</span>'+
     '<span class="wmhb">'+(obs?'':'<button class="btn mini2" type="button" data-wm="blok">'+(zb?"Odblokuj":"🚫 Zablokuj")+'</button>')+'<button class="btn mini2" type="button" data-wm="usun">'+(WM.usun?"Na pewno usunąć?":"🗑 Usuń rozmowę")+'</button></span></div>'+
     '<div class="wmmsgs" id="wmmsgs">'+wmMsgsHtml()+'</div>'+wmFormHtml()}
 function wmHtml(d){return '<div class="pfc wmbox'+(WM.z?' czat':'')+'"><div class="wmgrid"><aside class="wmlist" id="wmlist"><h3>✉️ Wiadomości</h3>'+wmListHtml(d)+'</aside><section class="wmchat" id="wmchat">'+wmChatHtml(d)+'</section></div></div>'}

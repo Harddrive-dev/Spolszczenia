@@ -12540,7 +12540,7 @@
   },
   {
     "game": "Jeanne d'Arc",
-    "platform": "PC",
+    "platform": "Sony PSP",
     "genre": "RPG",
     "type": "Napisy",
     "status": "Gotowe",
@@ -12551,7 +12551,11 @@
     "dodano": "2026-10-27",
     "upd": "2026-10-27",
     "img": "https://cdn.grypopolsku.pl/okladki/jeanne-d-arc-c98eedbe.webp",
-    "opis": "Jeanne d'Arc to taktyczna gra RPG studia Level-5, wydana w 2006 roku na PSP. Historia jest luźno oparta na losach Joanny d'Arc w czasie wojny stuletniej, ale dodaje elementy fantasy i magię. Joanna otrzymuje tajemniczą bransoletę, która daje jej moc walki z demonami wspierającymi armię wroga. Walki toczą się na planszy z polami, a ustawienie postaci ma duży wpływ na wynik starcia."
+    "opis": "Jeanne d'Arc to taktyczna gra RPG studia Level-5, wydana w 2006 roku na PSP. Historia jest luźno oparta na losach Joanny d'Arc w czasie wojny stuletniej, ale dodaje elementy fantasy i magię. Joanna otrzymuje tajemniczą bransoletę, która daje jej moc walki z demonami wspierającymi armię wroga. Walki toczą się na planszy z polami, a ustawienie postaci ma duży wpływ na wynik starcia.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-23"
+    }
   },
   {
     "game": "Fall of Porcupine",

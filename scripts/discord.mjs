@@ -157,7 +157,7 @@ async function commentEvents() {
       author: { name: (c.author || "Gracz").slice(0, 80) + (c.is_mod ? " · moderator" : ""), ...(/^https:\/\//.test(c.avatar_url || "") ? { icon_url: c.avatar_url } : {}) },
       title: ((c.parent_id ? "↪ Odpowiedź: " : "💬 ") + title).slice(0, 250),
       url: url + "#komentarze-c" + c.id,
-      description: (body.length > 400 ? body.slice(0, 397) + "…" : body) + `\n\n[Odpowiedz na stronie](${url}#komentarze-c${c.id})`,
+      description: (body.length > 400 ? body.slice(0, 397) + "…" : body) + `\n\n[Odpowiedz na stronie](${url}#komentarze-c${c.id}) · [Wszystkie komentarze](${SITE}/#/ostatnie-komentarze)`,
       color: c.parent_id ? 0x8e5cd9 : 0xe8905f,
       footer: { text: ns ? "Komentarz pod wpisem · GryPoPolsku.pl" : "Komentarz · GryPoPolsku.pl" },
       timestamp: c.created_at,
@@ -185,7 +185,7 @@ if (TEST) {
   const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")).filter(g => !onlyZap(g));
   const last = list.slice().sort((a, b) => String(b.upd || b.dodano || "").localeCompare(String(a.upd || a.dodano || "")))[0];
   await send([gameEmbed(last, "test", "To jest wiadomość testowa dla kanału z katalogiem. Jeśli ją widzisz, ogłoszenia działają.")]);
-  if (HOOK_KOM) await send([{ title: "🧪 Test: komentarze ze strony", url: SITE + "/#/dyskusje", color: COLORS.test, description: "To jest wiadomość testowa dla kanału z komentarzami. Nowe komentarze ze strony będą tu trafiać co około 30 minut.", footer: { text: "GryPoPolsku.pl – Dyskusje" } }], null, HOOK_KOM);
+  if (HOOK_KOM) await send([{ title: "🧪 Test: komentarze ze strony", url: SITE + "/#/ostatnie-komentarze", color: COLORS.test, description: "To jest wiadomość testowa dla kanału z komentarzami. Nowe komentarze ze strony będą tu trafiać co około 30 minut.", footer: { text: "GryPoPolsku.pl – Dyskusje" } }], null, HOOK_KOM);
   if (HOOK_NEWS !== HOOK) await send([{ title: "🧪 Test ogłoszeń: Aktualności", url: SITE + "/aktualnosci/", color: COLORS.wpis, description: "To jest wiadomość testowa dla kanału z Aktualnościami. Jeśli ją widzisz, nowe wpisy będą trafiać tutaj.", footer: { text: "GryPoPolsku.pl – Aktualności" } }], null, HOOK_NEWS);
   console.log("Wysłano wiadomość testową.");
   process.exit(0);

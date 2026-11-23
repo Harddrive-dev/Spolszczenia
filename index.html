@@ -1314,7 +1314,7 @@ function renderSide(){
   if(komBase===null)komBase=komSeen();
   var nowe=komBase?kom.filter(function(c){return c.created_at>komBase&&gameByKey(c.game_key)}).length:0;
   w.innerHTML='<h3>📰 Ostatnie wieści<a class="mall" href="/aktualnosci/">Wszystkie →</a></h3>'+(wiesci.length?wiesci.map(function(r){var d=new Date(r.created_at);return '<a class="mitem" href="/aktualnosci/'+esc(r.slug)+'/"><span class="dt">'+d.getDate()+'<small>'+KM[d.getMonth()]+'</small></span><span class="tx"><i>'+esc(r.category)+'</i><b>'+esc(r.title)+'</b></span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze wieści.</p>')+'';
-  kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'<a class="mall" href="#/dyskusje" data-kseen="1">Wszystkie →</a></h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
+  kb.innerHTML='<h3>💬 Ostatnie komentarze'+(nowe?'<span class="dot">'+(nowe>9?"9+":nowe)+'</span>':'')+'<a class="mall" href="#/ostatnie-komentarze" data-kseen="1">Wszystkie →</a></h3>'+(k.length?k.map(function(c){return '<a class="mitem" href="/gra/'+esc(keyOf(c.g))+'/#komentarze" data-kseen="1">'+thumb(c.g)+'<span class="tx"><b>'+esc(c.g.game)+'</b><span><b class="who">'+esc(c.author||"Gracz")+':</b> '+esc(c.body)+'</span></span><span class="ago">'+esc(komAgo(c.created_at))+'</span></a>'}).join(""):'<p class="mnote">Nie ma jeszcze komentarzy. Napisz pierwszy na stronie dowolnej gry!</p>');
   // Ostatnio ocenione (funkcja „oceny_ostatnie”): 3 najnowsze oceny; „Wszystkie →” otwiera widok #/oceny
   var oc=OST.map(function(x){return {x:x,g:gameByKey(x.gra)}}).filter(function(o){return o.g}).slice(0,3);
   ob.innerHTML='<h3>⭐ Ostatnio ocenione<a class="mall" href="#/oceny">Wszystkie →</a></h3>'+(oc.length?oc.map(function(o){var a=ocAutSp(o.g,o.x.sp);return '<a class="mitem" href="/gra/'+esc(keyOf(o.g))+'/">'+thumb(o.g)+'<span class="tx"><b>'+esc(o.g.game)+'</b><span>'+ocGwiazdki(o.x.ocena)+(a?' · '+esc(a):'')+'</span></span><span class="ago">'+esc(komAgo(o.x.kiedy))+'</span></a>'}).join(""):'<p class="mnote">Oceniaj spolszczenia w skali 1–5 gwiazdek na stronach gier. Tutaj pokażą się najnowsze oceny graczy.</p>');
@@ -2165,7 +2165,7 @@ var VBACK='<a class="vback" href="#/">← Wróć do katalogu</a>';
 // ===== Konto Steam: połączenie konta i „Moje gry Steam” (etap 1) =====
 // Logowanie przez Steam OpenID 2.0: Steam wraca na /?steam=cb&n=…&openid.*, a funkcja „steam” w Supabase sprawdza odpowiedź u Steama
 // i zapisuje SteamID w tabeli steam_links. Lista gier: GetOwnedGames (wymaga publicznych „Szczegółów gier” w profilu Steam).
-var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false,OHASH="#/oceny",onOc=false,RHASH="#/ranking",onRank=false;
+var STHASH="#/steam",onSteam=false,steamBooted=false,DHASH="#/ostatnie-komentarze",OLD_DHASH="#/dyskusje",onDys=false,NWHASH="#/nowosci",onNw=false,FHASH="#/ulubione",onFav=false,KHASH="#/konto",onKonto=false,OHASH="#/oceny",onOc=false,RHASH="#/ranking",onRank=false;
 var STEAM={st:null,row:null,loading:false,msg:null,tab:"all",more:false,armed:false,q:"",list:[]};
 var STEAM_CB=(function(){try{var u=new URLSearchParams(location.search);if(u.get("steam")!=="cb")return null;var p={};u.forEach(function(v,k){if(k.indexOf("openid.")===0)p[k]=v});history.replaceState(null,"",location.pathname+STHASH);return{n:u.get("n")||"",p:p}}catch(e){return null}})();
 function stNorm(t){return String(t||"").toLowerCase().replace(/[™®©]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ł/g,"l").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim()}
@@ -2314,7 +2314,7 @@ document.addEventListener("click",function(e){var t=e.target.closest&&e.target.c
   if(id==="stmore"){STEAM.more=true;renderSteam();return}
   var tb=t.getAttribute("data-sttab");if(tb){STEAM.tab=tb;STEAM.more=false;if(tb==="new"){var mm=steamMatches(),fr=stUnread(mm).map(stNewKey);STEAM.fresh=(STEAM.fresh||[]).concat(fr);stMarkSeen(mm);steamUI()}renderSteam()}});
 if(!CM){var _sb=$("steambtn");if(_sb)_sb.style.display="none"}
-// ====== DYSKUSJE (#/dyskusje): wszystkie komentarze z całej strony – najnowsze, najgorętsze w tym tygodniu, pod wpisami ======
+// ====== OSTATNIE KOMENTARZE (#/ostatnie-komentarze, dawniej #/dyskusje – stary adres przekierowuje): wszystkie komentarze z całej strony – najnowsze, najgorętsze w tym tygodniu, pod wpisami ======
 var DYS={tab:"new",rows:[],done:false,loading:false,err:false,n:30,q:"",newsT:{},built:false};
 var DCOLS="id,game_key,author,body,created_at,avatar_url,is_mod,parent_id,user_id";
 async function dysLoad(){if(!CM||DYS.loading||DYS.done)return;DYS.loading=true;
@@ -2644,7 +2644,7 @@ function pfKomHtml(d){var K=PRF.kom;if(K&&!K.err&&!items.length&&K.rows.some(fun
       href=m?"/aktualnosci/"+m[1]+"/":g?"/gra/"+keyOf(g)+"/":(c._h||""),t=m?"Wpis w Aktualnościach":g?g.game:(c._t||""),lk=K.lk[c.id]||0,od=K.od[c.id]||0;
     return '<div class="pfkm'+(href?' lk" tabindex="0" role="link" data-href="'+esc(href+"#komentarze-c"+(+c.id||0))+'"':'"')+'>'+(g?thumb(g):c._th||'<span class="thumb ph">📰</span>')+
       '<div class="pfkb"><div class="pfkh">'+(href?'<a class="pfgl" href="'+esc(href)+'">'+esc(t)+'</a>':esc(t||"Usunięta gra"))+(c.parent_id?'<span class="pfrep">↪ odpowiedź</span>':'')+'<small>'+esc(komAgo(c.created_at))+'</small></div>'+
-      '<p>'+esc(c.body)+'</p><div class="pfkf"><span>👍 '+lk+'</span><span>💬 '+od+' '+(od===1?"odpowiedź":od>1&&od<5?"odpowiedzi":"odpowiedzi")+'</span>'+(href?'<a class="pfbtn" href="'+esc(href+"#komentarze-c"+(+c.id||0))+'">Zobacz w dyskusji</a>':'')+'</div></div></div>'}).join("")+
+      '<p>'+esc(c.body)+'</p><div class="pfkf"><span>👍 '+lk+'</span><span>💬 '+od+' '+(od===1?"odpowiedź":od>1&&od<5?"odpowiedzi":"odpowiedzi")+'</span>'+(href?'<a class="pfbtn" href="'+esc(href+"#komentarze-c"+(+c.id||0))+'">Zobacz komentarz</a>':'')+'</div></div></div>'}).join("")+
     (K.more?'<button type="button" class="pfmore" data-pfkmore="1">Pokaż starsze</button>':'')+'</div></div>'}
 // Zakładka „Komentarze” zapamiętana w przeglądarce („pkc”, 10 ostatnich profili; komentarze i tak są publiczne) – od razu, w tle odświeżana
 function pkcGet(uid){try{var c=JSON.parse(localStorage.getItem("pkc")||"{}");return c[uid]?c[uid].k:null}catch(e){return null}}
@@ -2829,7 +2829,9 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
     $("kp0").value="";$("kp1").value="";$("kp2").value="";m("Hasło zostało zmienione.");return}});
 function curViewName(){return onVote?"vote":onAdd?"add":onSubs?"subs":onMods?"mods":onNews?"news":onSteam?"steam":onDys?"dys":onNw?"nw":onFav?"fav":onKonto?"konto":onOc?"oc":onProf?"prof":onRank?"rank":""}
 var PEND=null;
-function route(){var h=location.hash,hq=h.indexOf("?");if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===RHASH)showRank();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"||pp[1]==="powiadomienia"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
+function route(){var h=location.hash,hq=h.indexOf("?");
+  // stary adres „#/dyskusje” (linki z Discorda itp.) → nowy „#/ostatnie-komentarze”, bez nowego wpisu w historii
+  if(h===OLD_DHASH){h=DHASH;try{history.replaceState(null,"",location.pathname+location.search+DHASH)}catch(e){}}if(h.indexOf(VHASH+"?")===0){var mm=h.slice(hq+1).match(/(?:^|&)g=([^&]+)/);if(mm){try{PEND=decodeURIComponent(mm[1])}catch(e){}}h=VHASH}if(h===VHASH)showVote();else if(h===AHASH)showAdd();else if(h===SHASH)showSubs();else if(h===MHASH)showMods();else if(h===NHASH)showNews();else if(h===STHASH)showSteam();else if(h===DHASH)showDys();else if(h===NWHASH)showNw();else if(h===FHASH)showFav();else if(h===KHASH)showKonto();else if(h===OHASH)showOc();else if(h===RHASH)showRank();else if(h===PHASH||h.indexOf(PHASH+"/")===0){var pk="",ps="";try{var pp=h.slice(PHASH.length+1).split("/");pk=decodeURIComponent(pp[0]||"");ps=pp[1]==="komentarze"||pp[1]==="wiadomosci"||pp[1]==="powiadomienia"?pp[1]:"";WM.z=ps==="wiadomosci"&&/^[0-9a-f-]{36}$/i.test(pp[2]||"")?pp[2]:null}catch(e){}showProf(pk,ps)}else showHome()}
 function goView(h){if(!curViewName())homeScroll=window.scrollY||0;if(location.hash===h)route();else location.hash=h}
 function openVote(){if(!CM)return soon("Głosowanie","Głosowanie jest chwilowo niedostępne.");goView(VHASH)}
 function openAddView(){goView(AHASH)}
@@ -2968,7 +2970,7 @@ document.addEventListener("click",async function(ev){
 async function loadLeader(){try{var r=await sb.rpc("vote_counts",{w:0});var nl=(!r.error&&r.data)?r.data.slice(0,3).map(function(x){return{k:x.game_key,v:+x.votes}}):leadRows;if(!r.error)weekC({lead:nl});var zm=JSON.stringify(nl)!==JSON.stringify(leadRows)||!leadReady;leadRows=nl;leadReady=true;if(zm)renderLeader()}catch(e){leadReady=true;renderLeader()}}
 if(CM){loadLeader();setTimeout(function(){leadReady=true;markWeek();renderLeader()},3000);sb.rpc("vote_counts",{w:-1}).then(function(r){if(!r.error&&r.data&&r.data.length){var nk=r.data[0].game_key;weekC({win:nk});if(nk!==winnerKey){winnerKey=nk;if(weekReady&&items.length)renderHome()}}markWeek()}).catch(function(){markWeek()})}
 // ====== KONIEC KOMENTARZY ======
-if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH||location.hash===RHASH||location.hash.indexOf("#/profil")===0)route();
+if(location.hash.indexOf(VHASH)===0||location.hash===AHASH||location.hash===SHASH||location.hash===MHASH||location.hash===NHASH||location.hash===STHASH||location.hash===DHASH||location.hash===OLD_DHASH||location.hash===NWHASH||location.hash===FHASH||location.hash===KHASH||location.hash===OHASH||location.hash===RHASH||location.hash.indexOf("#/profil")===0)route();
 
 var baseItems=[];
 var JSON_T=Infinity; // do kiedy automat przerobił zmiany z bazy (katalog-czas.json, zapisuje go sync.mjs); brak pliku = stare zachowanie

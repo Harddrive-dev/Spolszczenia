@@ -250,7 +250,9 @@ function renderList(){
   $("clist").innerHTML=roots.length?roots.map(function(c){var rs=rep[c.id]||[];return cHtml(c,false,rs.length)+threadHtml(c,rs)}).join(""):'<p class="msg">Brak komentarzy. Bądź pierwszy!</p>';
   Object.keys(drafts).forEach(function(k){var t=$(k);if(t&&drafts[k])t.value=drafts[k]});
   // link ze strony „Dyskusje”: #komentarze-c123 → przewiń do tego komentarza i na chwilę go podświetl
-  var jm=!renderList.j&&/^#komentarze-c(\d+)$/.exec(location.hash);if(jm){renderList.j=1;var je=document.querySelector('.cmt[data-id="'+jm[1]+'"]')||$("komentarze");if(je){je.scrollIntoView({block:"center"});je.classList.add("chl");setTimeout(function(){je.classList.remove("chl")},2600)}}}
+  var jm=!renderList.j&&/^#komentarze-c(\d+)$/.exec(location.hash);if(jm){renderList.j=1;var je=document.querySelector('.cmt[data-id="'+jm[1]+'"]')||$("komentarze");if(je){je.scrollIntoView({block:"center"});je.classList.add("chl");setTimeout(function(){je.classList.remove("chl")},2600)}}
+  // link „Cała dyskusja” (#komentarze-lista): przewiń od razu do listy komentarzy (nie do pola pisania)
+  if(!renderList.j&&location.hash==="#komentarze-lista"&&rows.length){renderList.j=1;var go=function(){var l=$("clist");if(l){l.scrollIntoView({block:"start"});window.scrollBy(0,-16)}};go();setTimeout(go,500)}}
 // Komentarze tej strony zapamiętane w przeglądarce (localStorage „kc”, 20 ostatnio oglądanych stron, do 150 komentarzy) –
 // pokazujemy je od razu, a w tle pobieramy świeże i przerysowujemy tylko, gdy coś się zmieniło.
 function kcGet(){try{var c=JSON.parse(localStorage.getItem("kc")||"{}");return c[KEY]||null}catch(e){return null}}

@@ -711,6 +711,18 @@ a.pfll{color:inherit;text-decoration:none;border-radius:8px;transition:backgroun
 .ulv{font-size:11px;font-weight:800;background:#f5b301;color:#1b1408;border-radius:999px;padding:1px 7px;flex:none}
 .ubtn .ulv.hv{position:absolute;left:21px;top:21px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border:2px solid var(--surface);border-radius:999px;font-size:10px;line-height:14px;text-align:center;margin:0}
 @media(max-width:700px){.pfh{grid-template-columns:1fr;justify-items:center;text-align:center}.pfn{justify-content:center}.pft{grid-template-columns:repeat(2,1fr)}.pfg,.pfk{grid-template-columns:1fr}}
+.pftb a i{display:none}.pftb a em{font-style:normal}
+.pfkm .pasw{align-self:start} /* okładka z paskiem platformy nie rozciąga się (bez czarnego pasa pod okładką) */
+@media(max-width:700px){.pfbl{justify-content:center;text-align:center}.pfh .pfa{justify-content:center}}
+/* Telefon: zakładki profilu jako 4 równe pola z ikonką (wcześniej wychodziły poza ekran i rozpychały całą stronę) */
+@media(max-width:600px){.pfc{padding:16px 14px}
+ .pftb{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0;margin:16px -14px -16px;padding:0}
+ .pftb a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 2px 8px;font-size:11px;letter-spacing:0;text-transform:none;position:relative;min-width:0}
+ .pftb a i{display:block;font-style:normal;font-size:19px;line-height:1.1}
+ .pftb a em{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .pftb a span{position:absolute;top:3px;left:calc(50% + 9px);margin:0;padding:0 5px;font-size:10px;line-height:15px}
+ .wmgrid{min-height:0}.wmmsgs{max-height:60vh;min-height:160px}.wmhb .btn{white-space:nowrap;font-size:12.5px;padding:6px 10px}
+ .rkrow{gap:8px;padding:8px 10px}.rkm{width:28px}}
 #kontoview{max-width:720px;margin:6px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
 @media(max-width:600px){#kontoview{padding:14px 12px;border-radius:12px}}
 #kontoview h2{margin:6px 0 4px}#kontoview .dsub{margin:0 0 14px}
@@ -2655,16 +2667,16 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
     '<div class="pfbar"><i style="width:'+pr+'%"></i></div><div class="pfbl"><span>Poziom <b>'+li.lv+'</b></span><span><b>'+d.punkty+'</b> / '+li["do"]+' pkt – jeszcze <b>'+(li["do"]-d.punkty)+' pkt</b> do poziomu '+(li.lv+1)+'</span></div>'+
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><a class="pfrk" href="#/ranking" title="Zobacz ranking graczy"><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu ›</small></a></div>'+
     (d.wlasny?'<div class="pfa"><button class="btn" type="button" id="pfkonto">⚙️ Ustawienia konta</button></div>':pfAkcje(d))+'</div></div>'+
-    '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'">Profil</a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'">Komentarze <span>'+d.komentarze+'</span></a>'+
-    (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'">Wiadomości'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>'+
-     '<a href="'+esc(pfUrl(d,"powiadomienia"))+'" class="'+(PRF.sub==="powiadomienia"?"on":"")+'">Powiadomienia'+(POWN?' <span class="nw">'+POWN+'</span>':'')+'</a>':'')+'</nav></div>';
+    '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'"><i>👤</i><em>Profil</em></a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'"><i>💬</i><em>Komentarze</em> <span>'+d.komentarze+'</span></a>'+
+    (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'"><i>✉️</i><em>Wiadomości</em>'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>'+
+     '<a href="'+esc(pfUrl(d,"powiadomienia"))+'" class="'+(PRF.sub==="powiadomienia"?"on":"")+'"><i>🔔</i><em>Powiadomienia</em>'+(POWN?' <span class="nw">'+POWN+'</span>':'')+'</a>':'')+'</nav></div>';
   if(PRF.sub==="komentarze"){v.innerHTML=h+pfKomHtml(d);return}
   if(PRF.sub==="wiadomosci"&&d.wlasny){v.innerHTML=h+wmHtml(d);wmPo();return}
   // Powiadomienia – osobna zakładka (tylko na własnym profilu); lista może rosnąć, nie rozpycha już kolumny ze statystykami
   if(PRF.sub==="powiadomienia"&&d.wlasny){v.innerHTML=h+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen)+'</div>';return}
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><a class="pfl pfll" href="'+esc(pfUrl(d,"komentarze"))+'"><span>Napisane komentarze</span><b>'+d.komentarze+' ›</b></a><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
   h+='<div class="pfg jeden">'+st+'</div>';
-  if(d.wlasny)h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span>'+(pfAktGlos(d)||'<small>raz w tygodniu</small>')+'</div><div><b>+2 pkt</b><span>Ocena spolszczenia</span>'+(pfAktOc(d)||'<small>do 3 dziennie, raz na spolszczenie</small>')+'</div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
+  if(d.wlasny)h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span>'+(pfAktGlos(d)||'<small>raz w tygodniu</small>')+'</div><div><b>+2 pkt</b><span>Ocena spolszczenia</span>'+(pfAktOc(d)||'<small>do 3 dziennie, raz na spolszczenie</small>')+'</div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2&nbsp;–&nbsp;30&nbsp;pkt · 3&nbsp;–&nbsp;80&nbsp;pkt · 4&nbsp;–&nbsp;150&nbsp;pkt · 5&nbsp;–&nbsp;250&nbsp;pkt · dalej co poziom o&nbsp;50&nbsp;pkt więcej.</p></div>';
   v.innerHTML=h}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
@@ -2755,7 +2767,7 @@ function wmMsgsHtml(){var M=WM.msgs;if(!M)return '<p class="msg"><span class="sp
 function wmFormHtml(){var st=WM.st,p=WM.p||{};if(!st)return '';
   var info={zablokowany:"Zablokowałeś tę osobę – nie możesz do niej pisać, a jej wiadomości do Ciebie nie przychodzą.",blokada:"Ta osoba nie przyjmuje od Ciebie wiadomości.",poziom:"Wiadomości możesz wysyłać od 2 poziomu konta. Zdobywaj punkty: głosuj na grę tygodnia, oceniaj spolszczenia i komentuj!",limit:"Wysłałeś dziś już 50 wiadomości. Wróć jutro!"}[st.powod];
   if(!st.moge)return '<div class="wmform"><p class="msg wminfo">'+esc(info||"Nie możesz teraz pisać do tej osoby.")+'</p></div>';
-  return '<div class="wmform"><textarea class="t" id="wmtxt" maxlength="2000" placeholder="Napisz wiadomość do '+esc(p.nick||"tej osoby")+'… (Ctrl+Enter wysyła)">'+esc(WM.draft||"")+'</textarea>'+
+  return '<div class="wmform"><textarea class="t" id="wmtxt" maxlength="2000" placeholder="Napisz wiadomość do '+esc(p.nick||"tej osoby")+'…'+(matchMedia("(pointer:fine)").matches?' (Ctrl+Enter wysyła)':'')+'">'+esc(WM.draft||"")+'</textarea>'+
     '<div class="wmfb"><small id="wmcnt">'+(WM.draft||"").length+' / 2000'+(st.zostalo!=null?' · zostało dziś: '+st.zostalo:'')+'</small><span class="msg err" id="wmerr">'+esc(WM.err||"")+'</span><button class="btn on" type="button" data-wm="wyslij"'+(WM.busy?' disabled':'')+'>'+(WM.busy?"Wysyłanie…":"Wyślij ➤")+'</button></div></div>'}
 function wmChatHtml(d){if(!WM.z)return '<div class="wmempty"><b>✉️</b><p>Wybierz rozmowę z listy.</p><p class="msg">Aby napisać do kogoś nowego, wejdź na jego profil i kliknij „✉️ Napisz wiadomość”.</p></div>';
   var p=WM.p||{},zb=WM.st&&WM.st.zablokowany,obs=pfRanga(p);

@@ -24068,9 +24068,9 @@
     "game": "BLEACH Rebirth Of Souls",
     "platform": "PC",
     "type": "Napisy",
-    "status": "Zapowiedź",
-    "prog": 10,
-    "ver": "—",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=bleach-rebirth-of-souls",
     "genre": "Bijatyka",
@@ -24078,7 +24078,12 @@
     "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
     "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
     "steam": 1689620,
-    "upd": "2026-11-19"
+    "upd": "2026-11-23",
+    "ukonczono": "2026-11-24",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-24"
+    }
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",

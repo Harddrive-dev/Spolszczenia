@@ -33,7 +33,7 @@ let LAZY_JS="";
 function page({title,desc,url,body,image,ld,key,pg}){
   if(!LAZY_JS)LAZY_JS='<script>(function(){var done=0;function add(src,cb){var s=document.createElement("script");s.src=src;s.onload=s.onerror=cb;document.body.appendChild(s)}'+
    'function go(){if(done)return;done=1;add("'+SUPA_JS+'",function(){add("/aktualnosci/news.js?v='+V.js+'",function(){if(window.__gpWantLogin){var t=0,iv=setInterval(function(){var b=document.getElementById("ulogin");var ok=b&&b.onclick&&!b.getAttribute("onclick");if(ok||++t>40){clearInterval(iv);if(ok)b.click()}},75)}})})}'+
-   'window.__gpLoad=go;if(window.__gpLogged||/komentarze/.test(location.hash)){go();return}'+
+   'window.__gpLoad=go;if(window.__gpLogged||/komentarz/.test(location.hash)){go();return}'+
    'var c=document.getElementById("komentarze");if(c&&"IntersectionObserver" in window){var o=new IntersectionObserver(function(e){for(var i=0;i<e.length;i++)if(e[i].isIntersecting){o.disconnect();go();return}},{rootMargin:"600px 0px"});o.observe(c)}else go();'+
    '["pointerdown","keydown","touchstart"].forEach(function(t){addEventListener(t,go,{once:true,passive:true})})})()</script>';
   return '<!DOCTYPE html>\n<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'+

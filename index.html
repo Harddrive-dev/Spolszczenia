@@ -94,7 +94,7 @@ tbody td:first-child,thead th:first-child{min-width:340px}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
 td.au{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ocb{color:#f5b301;font-weight:700;font-size:12px;white-space:nowrap}
-td.au .au1{display:block;line-height:1.3;overflow:hidden;text-overflow:ellipsis}
+td.au .au1{display:flex;align-items:center;gap:4px;line-height:1.3;min-width:0}td.au .aun{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}td.au .ocb{flex:none}
 td.vr{white-space:nowrap}td.vr .au1{display:block;line-height:1.3}
 th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}
@@ -1005,7 +1005,7 @@ function ocBadge(g,name){var sp=null,m=g.author&&g.author!=="—"?g.author:"—"
   return ' <span class="ocb" title="Średnia ocena spolszczenia: '+t+'/5 ('+o.n+' '+(o.n===1?"ocena":(o.n%10>=2&&o.n%10<=4&&(o.n%100<10||o.n%100>=20))?"oceny":"ocen")+')">★ '+t+'</span>'}
 // najlepsza średnia spośród spolszczeń gry (sortowanie „Najlepiej oceniane”); null = brak ocen
 function ocNaj(g){var k=keyOf(g)+"|",b=null;for(var key in OC)if(key.indexOf(k)===0&&OC[key].n&&(!b||OC[key].a>b.a||(OC[key].a===b.a&&OC[key].n>b.n)))b=OC[key];return b}
-function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.length<2?esc(a[0])+ocBadge(g,a[0]):a.map(function(n){return '<span class="au1">'+esc(n)+ocBadge(g,n)+'</span>'}).join("")}
+function authorsCell(g){var a=authorsOf(g);return !a.length?"—":a.map(function(n){return '<span class="au1"><span class="aun">'+esc(n)+'</span>'+ocBadge(g,n)+'</span>'}).join("")} // nazwa skracana „…”, ocena ★ zawsze widoczna
 // Zakres spolszczenia: „Dubbing + napisy” liczy się też jako dubbing i jako napisy (filtry, licznik dubbingów)
 var TYPY=["Napisy","Dubbing + napisy","Dubbing"];function isDubT(t){return t==="Dubbing"||t==="Dubbing + napisy"}function typOk(v,t){return v===t||(v==="Dubbing + napisy"&&(t==="Dubbing"||t==="Napisy"))}
 function spTyp(g,t){if(t==="Oficjalna PL")return g.pl==="of";if(spExtra(g).some(function(s){return typOk(s.type,t)}))return true;return typOk(g.type,t)&&(g.pl!=="of"||t==="Dubbing")}

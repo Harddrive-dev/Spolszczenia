@@ -2671,14 +2671,14 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
     '<nav class="pftb"><a href="'+esc(pfUrl(d,""))+'" class="'+(PRF.sub?"":"on")+'"><i>👤</i><em>Profil</em></a><a href="'+esc(pfUrl(d,"komentarze"))+'" class="'+(PRF.sub==="komentarze"?"on":"")+'"><i>💬</i><em>Komentarze</em> <span>'+d.komentarze+'</span></a>'+
     (d.wlasny?'<a href="'+esc(pfUrl(d,"wiadomosci"))+'" class="'+(PRF.sub==="wiadomosci"?"on":"")+'"><i>✉️</i><em>Wiadomości</em>'+(MSGN?' <span class="nw">'+MSGN+'</span>':'')+'</a>'+
      '<a href="'+esc(pfUrl(d,"powiadomienia"))+'" class="'+(PRF.sub==="powiadomienia"?"on":"")+'"><i>🔔</i><em>Powiadomienia</em>'+(POWN?' <span class="nw">'+POWN+'</span>':'')+'</a>':'')+'</nav></div>';
-  if(PRF.sub==="komentarze"){v.innerHTML=h+pfKomHtml(d);return}
+  if(PRF.sub==="komentarze"){pfSet(v,h+pfKomHtml(d));return}
   if(PRF.sub==="wiadomosci"&&d.wlasny){v.innerHTML=h+wmHtml(d);wmPo();return}
   // Powiadomienia – osobna zakładka (tylko na własnym profilu); lista może rosnąć, nie rozpycha już kolumny ze statystykami
-  if(PRF.sub==="powiadomienia"&&d.wlasny){v.innerHTML=h+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen)+'</div>';return}
+  if(PRF.sub==="powiadomienia"&&d.wlasny){pfSet(v,h+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen)+'</div>');return}
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><a class="pfl pfll" href="'+esc(pfUrl(d,"komentarze"))+'"><span>Napisane komentarze</span><b>'+d.komentarze+' ›</b></a><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
   h+='<div class="pfg jeden">'+st+'</div>';
   if(d.wlasny)h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span>'+(pfAktGlos(d)||'<small>raz w tygodniu</small>')+'</div><div><b>+2 pkt</b><span>Ocena spolszczenia</span>'+(pfAktOc(d)||'<small>do 3 dziennie, raz na spolszczenie</small>')+'</div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2&nbsp;–&nbsp;30&nbsp;pkt · 3&nbsp;–&nbsp;80&nbsp;pkt · 4&nbsp;–&nbsp;150&nbsp;pkt · 5&nbsp;–&nbsp;250&nbsp;pkt · dalej co poziom o&nbsp;50&nbsp;pkt więcej.</p></div>';
-  v.innerHTML=h}
+  pfSet(v,h)}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
 function pfKomHtml(d){var K=PRF.kom;if(K&&!K.err&&!items.length&&K.rows.some(function(c){return !c._t}))K=null; // bez katalogu – tylko gdy w pamięci są nazwy gier
@@ -2711,14 +2711,19 @@ function pfoSet(k,d){try{var c=JSON.parse(localStorage.getItem("pfo")||"{}");var
   [String(k).toLowerCase(),String(d.id),d.profilnick?String(d.profilnick).toLowerCase():""].forEach(function(kk){if(kk)c[kk]={t:Date.now(),d:dd}});
   var ks=Object.keys(c).sort(function(a,b){return c[b].t-c[a].t});ks.slice(30).forEach(function(z){delete c[z]});localStorage.setItem("pfo",JSON.stringify(c))}catch(e){}}
 // Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
+// Po odświeżeniu strony sesja wraca dopiero po chwili – wtedy (jest zapamiętany token) bierzemy własny profil z pamięci bez sprawdzania konta;
+// „prof.d” i tak jest kasowany po wylogowaniu, więc należy do tej samej osoby
+function pfCacheRaw(){try{var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&c.data?c:null}catch(e){return null}}
+// Profil rysujemy ponownie tylko, gdy coś się zmieniło (bez mignięcia obrazków po odświeżeniu danych w tle)
+function pfSet(v,h){if(v.__h===h&&v.__e&&v.firstElementChild===v.__e)return;v.innerHTML=h;v.__h=h;v.__e=v.firstElementChild}
 function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
   if(v&&u)localStorage.setItem("prof.d",JSON.stringify({uid:u.id,nick:v.data.profilnick?String(v.data.profilnick).toLowerCase():"",data:v.data,hist:v.hist,pow:v.pow,seen:v.seen}));else localStorage.removeItem("prof.d")}catch(e){}return null}
 async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.akt=null;PRF.ws=null;PRF.tab=null;PRF.lim=5;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
-  var pc=me()?pfCache():null;if(pc&&(!key||key===me().id||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
+  var pc=me()?pfCache():(authTok()?pfCacheRaw():null);if(pc&&(!key||key===(me()?me().id:pc.uid)||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
   else if(key){var po=pfoGet(key);if(po)PRF.data=po}
   // zakładki z pamięci od razu (nie czekamy na odpowiedź bazy o profilu)
   if(PRF.data){if(PRF.sub==="komentarze"){var kc0=pkcGet(PRF.data.id);if(kc0)PRF.kom=kc0}
-    if(PRF.sub==="wiadomosci"&&PRF.data.wlasny){var wc0=wmC();if(wc0){if(wc0.list)WM.list=wc0.list;var cv0=WM.z&&wc0.conv[WM.z];if(cv0){WM.msgs=cv0.msgs;WM.p=cv0.p;WM.st=cv0.st}}}}
+    if(PRF.sub==="wiadomosci"&&PRF.data.wlasny){var wc0=wmC();if(!wc0&&!me()&&authTok())try{wc0=JSON.parse(localStorage.getItem("wm.c")||"null")}catch(e){}if(wc0){if(wc0.list)WM.list=wc0.list;var cv0=WM.z&&wc0.conv[WM.z];if(cv0){WM.msgs=cv0.msgs;WM.p=cv0.p;WM.st=cv0.st}}}}
   renderProf();
   if(!CM)return;var k=key;if(!k){if(!me())return;k=me().id}
   try{var r=await sb.rpc("profil",{p_klucz:k});if(r.error)throw r.error;if(t!==PRF.t)return;PRF.data=r.data||false;
@@ -2815,7 +2820,7 @@ async function wmAkcja(b){var a=b.getAttribute("data-wm");
 // Przyciski na cudzym profilu
 // Zdjęcie na profilu: własne – z myAvatar(); cudze – z tabeli „awatary” (doczytywane w tle), a bez wpisu – zdjęcie z konta
 var AWK={};
-function pfAv(d){if(d.wlasny)return myAvatar()||"";
+function pfAv(d){if(d.wlasny){if(me())return myAvatar()||"";var c=null;try{c=JSON.parse(localStorage.getItem("av.c")||"null")}catch(e){}if(c&&c.u===d.id&&typeof c.a==="string")return /^https:\/\//i.test(c.a)?c.a:"";return /^https:\/\//i.test(d.avatar||"")?d.avatar:""}
   if(d.id&&!(d.id in AWK)&&CM){AWK[d.id]=null;sb.from("awatary").select("url").eq("user_id",d.id).maybeSingle().then(function(r){if(r.error)return;AWK[d.id]=r.data?String(r.data.url||""):false;if(r.data&&PRF.data&&PRF.data.id===d.id)renderProf()})}
   var k=AWK[d.id];if(typeof k==="string")return /^https:\/\//i.test(k)?k:"";return /^https:\/\//i.test(d.avatar||"")?d.avatar:""}
 // Okienko „📷 Zdjęcie profilowe”: przeglądarka przycina zdjęcie do kwadratu 256×256 i zapisuje jako WebP (ok. 20 KB),

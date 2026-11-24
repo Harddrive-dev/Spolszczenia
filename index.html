@@ -634,6 +634,10 @@ a.pfrk:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 
 .pfav{width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#c76a3a);display:grid;place-items:center;font-size:44px;font-weight:800;color:#1f1513;position:relative}
 .pfav img{width:100%;height:100%;border-radius:50%;object-fit:cover}
 .pflv{position:absolute;right:-4px;bottom:-4px;background:#f5b301;color:#1b1408;font-weight:800;font-size:13px;border-radius:999px;padding:4px 9px;border:3px solid var(--surface)}
+.pflv,.pfedit{z-index:2}.pfav.ed{cursor:pointer;outline:none}.pfav.ed:after{content:"📷 Zmień";position:absolute;inset:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:14px;font-weight:700;display:grid;place-items:center;opacity:0;transition:opacity .15s}
+.pfav.ed:hover:after,.pfav.ed:focus-visible:after{opacity:1}.pfedit{position:absolute;right:-2px;top:-2px;width:32px;height:32px;border-radius:50%;border:3px solid var(--surface);background:var(--accent);color:#1f1513;font-size:15px;display:grid;place-items:center;transition:transform .15s}.pfav.ed:hover .pfedit{transform:scale(1.12)}
+.avh{margin:0 0 6px}.avrow{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:10px}.avpv{width:96px;height:96px;flex:none;font-size:40px;overflow:hidden}.avbt{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.avbt .btn{width:auto;display:inline-block}.avpick{position:relative;overflow:hidden;cursor:pointer}.avpick input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:0}.avinfo{font-size:12.5px;margin:14px 0 4px}.avok{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}.avok .btn{width:auto}
 .pfn{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.pfn h2{margin:0;font-size:28px;overflow-wrap:anywhere}
 .pfr{font-size:12px;font-weight:800;border-radius:6px;padding:2px 8px;background:var(--accent);color:#1f1513}
 .pfj{color:var(--muted);font-size:13px;margin:4px 0 12px}
@@ -1379,7 +1383,7 @@ async function loadRole(){
 var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;
 function profCache(){var u=me();try{var c=JSON.parse(localStorage.getItem("prof.c")||"null");if(u&&c&&c.u===u.id)return c}catch(e){}return null}
 function profSave(){var u=me();if(!u)return;try{localStorage.setItem("prof.c",JSON.stringify({u:u.id,n:(PROF.row&&PROF.row.nick)||""}))}catch(e){}}
-async function loadProfile(){var u=me();if(!CM||!u)return;if(PROF.u===u.id)return;PROF={ok:null,row:null,u:u.id};
+async function loadProfile(){var u=me();if(!CM||!u)return;loadAv();if(PROF.u===u.id)return;PROF={ok:null,row:null,u:u.id};
   try{var r=await sb.from("profiles").select("nick,nick_changed_at,nick_prompted").maybeSingle();if(r.error)throw r.error;if(PROF.u!==u.id)return;PROF.ok=true;PROF.row=r.data||null;profSave()}
   catch(e){if(PROF.u!==u.id)return;PROF.ok=false;PROF.row=null}
   updateAuth();if(onKonto)renderKonto();if(curKey&&$("cform"))renderForm();nickAsk()}
@@ -1471,10 +1475,10 @@ function fitChip(){var c=document.getElementById("uchip"),t=document.querySelect
 window.addEventListener("resize",fitChip);
 function updateAuth(){var u=me(),c=$("uchip"),box=$("uav");c.style.display="";setTimeout(fitChip,0);
   if(typeof FAV!=="undefined"&&FAV)favLoad();
-  if(!u){$("ulv").style.display="none";MYLV=null;try{if(!authTok()){localStorage.removeItem("prof.d");snapClear()}}catch(e){}if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
+  if(!u){$("ulv").style.display="none";MYLV=null;avFor=null;try{if(!authTok()){localStorage.removeItem("prof.d");snapClear()}}catch(e){}if(typeof POWN!=="undefined"){POWN=0;MSGN=0;powUI()}if(typeof onProf!=="undefined"&&onProf&&!PRF.key){PRF.data=null;PRF.hist=null;renderProf()}PROF={ok:null,row:null,u:null};NICKASKED=false;$("fz").style.display="none";$("fz").value="";$("unm").textContent="Zaloguj się";box.innerHTML=USER_ICON;$("umenu").className="umenu";if(typeof steamUI==="function")steamUI();return}
   if(PROF.u!==u.id)loadProfile();
   if(isMod()){loadMod();loadSubCount()}else{subCnt=0;if(typeof showSubCount==="function")showSubCount()}$("umod").style.display=isMod()?"":"none";$("uadd").style.display=isMod()?"":"none";$("umods").style.display=isAdmin()?"":"none";$("unews").style.display=isAdmin()?"":"none";$("umodt").style.display=isMod()?"":"none";
-  var n=nick()||"Użytkownik",m=u.user_metadata||{},av=m.avatar_url||m.picture||"";
+  var n=nick()||"Użytkownik",av=myAvatar()||"";
   $("unm").textContent=n;box.innerHTML="";
   if(/^https:\/\//i.test(av)){var im=document.createElement("img");im.alt="";im.referrerPolicy="no-referrer";im.onerror=function(){box.textContent=n.charAt(0).toUpperCase()};im.src=av;box.appendChild(im)}
   else box.textContent=n.charAt(0).toUpperCase();
@@ -1486,7 +1490,17 @@ function avHue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c
 function avHtml(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
   if(/^https:\/\//i.test(url||""))return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)"><img alt="" loading="lazy" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">'+'</span>';
   return '<span class="cav" style="background:hsl('+avHue(name)+',70%,70%)">'+l+'</span>'}
-function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
+// Własne zdjęcie profilowe (tabela „awatary”, plik na R2: cdn.grypopolsku.pl/awatary/). Kopia w localStorage „av.c” {u, a}:
+// a = adres własnego zdjęcia / "" (bez zdjęcia – litera) / null (zdjęcie z Google/Discorda). Wspólna ze stronami gier i Aktualnościami.
+function avC(){var u=me();try{var c=JSON.parse(localStorage.getItem("av.c")||"null");if(u&&c&&c.u===u.id)return c}catch(e){}return null}
+function avSet(a){var u=me();if(!u)return;try{localStorage.setItem("av.c",JSON.stringify({u:u.id,a:a}))}catch(e){}}
+function metaAv(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
+function myAvatar(){var c=avC();if(c&&typeof c.a==="string")return /^https:\/\//i.test(c.a)?c.a:null;return metaAv()}
+var avFor=null;
+async function loadAv(){var u=me();if(!CM||!u||avFor===u.id)return;avFor=u.id;
+  try{var r=await sb.from("awatary").select("url").eq("user_id",u.id).maybeSingle();if(r.error||!me()||me().id!==u.id)return;
+    var was=myAvatar();avSet(r.data?String(r.data.url||""):null);if(myAvatar()!==was)avOdswiez()}catch(e){}}
+function avOdswiez(){updateAuth();if(curKey&&$("cform"))renderForm();if(typeof onProf!=="undefined"&&onProf)renderProf()}
 var LVC={};
 // „Lv X” i link do profilu przy nickach (Ostatnie komentarze, Dyskusje). lvNeed dociąga brakujące poziomy i rysuje widok jeszcze raz.
 function lvNeed(ids,cb){if(!CM)return;ids=(ids||[]).filter(function(i,k,a){return i&&!(i in LVC)&&a.indexOf(i)===k});if(!ids.length)return;ids.forEach(function(i){LVC[i]=0});
@@ -2416,7 +2430,7 @@ function favUnr(g){var f=FAV.m[keyOf(g)];if(!f)return false;var b=f.s&&f.s>f.c?f
 // zanim wczyta się katalog gier (spolszczenia.json, ok. 1 MB). Osobno dla konta, czyszczony po wylogowaniu.
 function snapGet(n){var u=me();if(!u)return "";try{var c=JSON.parse(localStorage.getItem("snap."+n)||"null");return c&&c.uid===u.id?c.h:""}catch(e){return ""}}
 function snapSet(n,h){var u=me();if(!u)return;try{localStorage.setItem("snap."+n,JSON.stringify({uid:u.id,h:h}))}catch(e){}}
-function snapClear(){try{["snap.steam","snap.fav","wm.c"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
+function snapClear(){try{["snap.steam","snap.fav","wm.c","av.c"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
 function favGames(){return items.filter(function(g){return FAV.m[keyOf(g)]})}
 function favUnread(){return favGames().filter(favUnr)}
 function hrtBtn(g){if(!CM)return "";var k=keyOf(g),on=isFav(k),t=on?"Usuń z ulubionych":"Dodaj do ulubionych";return '<button class="mini hrt'+(on?" on":"")+'" type="button" data-fk="'+esc(k)+'" aria-pressed="'+on+'" title="'+t+'" aria-label="'+t+'">'+HRT+'</button>'}
@@ -2634,9 +2648,9 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   if(PRF.err){v.innerHTML=hd+'<div class="pfc"><p class="msg err">Nie udało się wczytać profilu. Spróbuj odświeżyć stronę.</p></div>';return}
   if(PRF.data===null){v.innerHTML=hd+'<div class="pfc"><p class="msg"><span class="spn"></span>Wczytywanie profilu…</p></div>';return}
   if(!PRF.data){v.innerHTML=hd+'<div class="pfc"><p class="msg">Nie znaleziono takiego profilu.</p></div>';return}
-  var d=PRF.data,li=lvInfo(d.punkty),pr=Math.max(0,Math.min(100,Math.round((d.punkty-li.od)*100/Math.max(1,li["do"]-li.od)))),n=d.nick||"Gracz",av=/^https:\/\//i.test(d.avatar||"")?d.avatar:"";
+  var d=PRF.data,li=lvInfo(d.punkty),pr=Math.max(0,Math.min(100,Math.round((d.punkty-li.od)*100/Math.max(1,li["do"]-li.od)))),n=d.nick||"Gracz",av=pfAv(d);
   var dl=d.dolaczyl?new Date(d.dolaczyl).toLocaleDateString("pl-PL",{day:"numeric",month:"long",year:"numeric"}):"";
-  var h=hd+'<div class="pfc"><div class="pfh"><div class="pfav">'+(av?'<img alt="" referrerpolicy="no-referrer" src="'+esc(av)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'<span class="pflv">Lv '+li.lv+'</span></div><div>'+
+  var h=hd+'<div class="pfc"><div class="pfh"><div class="pfav'+(d.wlasny?' ed" id="pfaved" role="button" tabindex="0" title="Zmień zdjęcie profilowe':'')+'">'+(av?'<img alt="" referrerpolicy="no-referrer" src="'+esc(av)+'" onerror="this.remove()">':esc(n.charAt(0).toUpperCase()))+'<span class="pflv">Lv '+li.lv+'</span>'+(d.wlasny?'<span class="pfedit" aria-hidden="true">✎</span>':'')+'</div><div>'+
     '<div class="pfn"><h2>'+esc(n)+'</h2>'+(pfRanga(d)?'<span class="pfr">'+esc(pfRanga(d))+'</span>':'')+'</div><p class="pfj">'+(dl?'Na GryPoPolsku.pl od '+esc(dl):'')+'</p>'+
     '<div class="pfbar"><i style="width:'+pr+'%"></i></div><div class="pfbl"><span>Poziom <b>'+li.lv+'</b></span><span><b>'+d.punkty+'</b> / '+li["do"]+' pkt – jeszcze <b>'+(li["do"]-d.punkty)+' pkt</b> do poziomu '+(li.lv+1)+'</span></div>'+
     '<div class="pft"><div><b>'+d.punkty+'</b><small>punktów razem</small></div><div><b>'+d.tydzien+'</b><small>w tym tygodniu</small></div><div><b>'+d.miesiac+'</b><small>w tym miesiącu</small></div><a class="pfrk" href="#/ranking" title="Zobacz ranking graczy"><b>'+(d.ranking?"#"+d.ranking:"—")+'</b><small>w rankingu ›</small></a></div>'+
@@ -2786,7 +2800,50 @@ async function wmAkcja(b){var a=b.getAttribute("data-wm");
   if(a==="napisz"){if(!me()){curKey=null;return openModal(loginHtml())}if(PRF.data)goView(PHASH+"/"+me().id+"/wiadomosci/"+PRF.data.id);return}
   if(a==="pblok"&&PRF.data){b.disabled=true;var zz=!(PRF.ws&&PRF.ws.zablokowany);var r4=await sb.rpc("zablokuj",{p_kogo:PRF.data.id,p_tak:zz});if(!r4.error){var s4=await sb.rpc("wiadomosc_status",{p_do:PRF.data.id});if(!s4.error)PRF.ws=s4.data}renderProf();return}}
 // Przyciski na cudzym profilu
+// Zdjęcie na profilu: własne – z myAvatar(); cudze – z tabeli „awatary” (doczytywane w tle), a bez wpisu – zdjęcie z konta
+var AWK={};
+function pfAv(d){if(d.wlasny)return myAvatar()||"";
+  if(d.id&&!(d.id in AWK)&&CM){AWK[d.id]=null;sb.from("awatary").select("url").eq("user_id",d.id).maybeSingle().then(function(r){if(r.error)return;AWK[d.id]=r.data?String(r.data.url||""):false;if(r.data&&PRF.data&&PRF.data.id===d.id)renderProf()})}
+  var k=AWK[d.id];if(typeof k==="string")return /^https:\/\//i.test(k)?k:"";return /^https:\/\//i.test(d.avatar||"")?d.avatar:""}
+// Okienko „📷 Zdjęcie profilowe”: przeglądarka przycina zdjęcie do kwadratu 256×256 i zapisuje jako WebP (ok. 20 KB),
+// funkcja Supabase „awatar” wgrywa je na R2 i zapisuje w bazie (też przy starszych komentarzach)
+var AVN=null;
+function avIn(a,n){return a?'<img alt="" referrerpolicy="no-referrer" src="'+esc(a)+'">':esc(String(n||"?").charAt(0).toUpperCase())}
+function avProv(){var u=me(),p=u&&u.app_metadata&&u.app_metadata.provider;return p==="discord"?"Discorda":p==="google"?"Google":"konta"}
+function avModal(){if(!me())return;AVN=null;var cur=myAvatar(),c=avC();
+  openModal('<h2 class="avh">📷 Zdjęcie profilowe</h2><p class="msg dsub">Widać je przy nicku, w komentarzach, w rankingu i w wiadomościach.</p>'+
+    '<div class="avrow"><div class="pfav avpv" id="avpv">'+avIn(cur,nick())+'</div><div class="avbt"><label class="btn on avpick">📁 Wybierz zdjęcie<input type="file" id="avfile" accept="image/jpeg,image/png,image/webp"></label>'+
+    (metaAv()&&c&&typeof c.a==="string"&&c.a!==metaAv()?'<button class="btn" type="button" id="avgoogle">↩ Wróć do zdjęcia z '+avProv()+'</button>':'')+
+    (cur?'<button class="btn" type="button" id="avdel">🗑 Usuń zdjęcie (zostaje litera)</button>':'')+'</div></div>'+
+    '<p class="msg avinfo">JPG, PNG lub WebP. Zdjęcie przytniemy do kwadratu, zmniejszymy i zapiszemy jako WebP (ok. 20 KB). Zdjęcia obraźliwe administrator usuwa.</p><p class="msg" id="avmsg"></p>'+
+    '<div class="avok"><button class="btn" type="button" id="avno">Anuluj</button><button class="btn on" type="button" id="avsave" disabled>Zapisz</button></div>')}
+function avMsg(t,err){var m=$("avmsg");if(m){m.textContent=t||"";m.className="msg"+(err?" err":"")}}
+function avBusy(b){["avsave","avgoogle","avdel","avno","avfile"].forEach(function(i){var e=$(i);if(e)e.disabled=b||(i==="avsave"&&!AVN)})}
+async function avPrep(f){if(!f)throw new Error("Nie wybrano pliku.");if(!/^image\/(jpeg|png|webp)$/i.test(f.type||""))throw new Error("Wybierz zdjęcie JPG, PNG albo WebP.");
+  if(f.size>20*1024*1024)throw new Error("Plik jest za duży (najwyżej 20 MB).");
+  var bm;try{bm=await createImageBitmap(f)}catch(e){throw new Error("Nie udało się odczytać zdjęcia.")}
+  var s=Math.min(bm.width,bm.height),src=document.createElement("canvas"),x;src.width=src.height=s;x=src.getContext("2d");x.drawImage(bm,(bm.width-s)/2,(bm.height-s)/2,s,s,0,0,s,s);if(bm.close)bm.close();
+  while(s>512){var h=document.createElement("canvas");s=Math.round(s/2);h.width=h.height=s;x=h.getContext("2d");x.imageSmoothingQuality="high";x.drawImage(src,0,0,s,s);src=h} // zmniejszanie po połowie = ostrzejsze zdjęcie
+  var cv=document.createElement("canvas");cv.width=cv.height=256;x=cv.getContext("2d");x.imageSmoothingQuality="high";x.drawImage(src,0,0,256,256);
+  var typ="image/webp",u=cv.toDataURL(typ,.85);
+  if(u.indexOf("data:image/webp")!==0){var j=document.createElement("canvas");j.width=j.height=256;x=j.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,256,256);x.drawImage(cv,0,0);typ="image/jpeg";u=j.toDataURL(typ,.88)} // przeglądarka bez WebP (starsze Safari)
+  return {typ:typ,dane:u.split(",")[1],src:u}}
+async function avCall(body){var r=await sb.functions.invoke("awatar",{body:body});if(r.error){var m=r.error.message||"Błąd";try{var j=await r.error.context.json();if(j&&j.error)m=j.error}catch(e){}throw new Error(m)}
+  if(r.data&&r.data.error)throw new Error(r.data.error);return r.data||{}}
+async function avAkcja(body,a){avBusy(true);avMsg("Zapisuję…");try{var d=await avCall(body);avSet(body.action==="zapisz"?d.url:a);closeModal();avOdswiez()}
+  catch(e){avMsg(e.message||"Nie udało się zapisać.",true);avBusy(false)}}
+document.addEventListener("change",async function(e){if(e.target.id!=="avfile")return;var f=e.target.files&&e.target.files[0];AVN=null;avBusy(true);avMsg("Przygotowuję zdjęcie…");
+  try{AVN=await avPrep(f);$("avpv").innerHTML='<img alt="" src="'+AVN.src+'">';avMsg("Podgląd gotowy – kliknij „Zapisz”. Rozmiar: "+Math.max(1,Math.round(AVN.dane.length*3/4/1024))+" KB.")}catch(err){avMsg(err.message,true)}avBusy(false)});
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("#pfaved,#avno,#avsave,#avgoogle,#avdel,#pfavdel");if(!t)return;
+  if(t.id==="pfaved"){avModal();return}if(t.id==="avno"){closeModal();return}
+  if(t.id==="avsave"){if(AVN)avAkcja({action:"zapisz",typ:AVN.typ,dane:AVN.dane});return}
+  if(t.id==="avgoogle"){avAkcja({action:"google"},null);return}
+  if(t.id==="avdel"){avAkcja({action:"usun"},"");return}
+  if(t.id==="pfavdel"){var d=PRF.data;if(!d||!confirm("Usunąć zdjęcie profilowe osoby „"+(d.nick||"Gracz")+"”? Zostanie litera nicku."))return;t.disabled=true;
+    avCall({action:"usun",kto:d.id}).then(function(){AWK[d.id]="";renderProf()}).catch(function(err){t.disabled=false;alert("Nie udało się: "+(err.message||err))})}});
+document.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target&&e.target.id==="pfaved"){e.preventDefault();avModal()}});
 function pfAkcje(d){if(!CM)return "";var ws=PRF.ws,obs=d.rola&&PF_RANGA[d.rola],h='<div class="pfa"><button class="btn on" type="button" data-wm="napisz"'+(me()&&ws&&!ws.moge&&ws.powod!=="zablokowany"?' disabled':'')+'>✉️ Napisz wiadomość</button>';
+  if(me()&&isAdmin()&&pfAv(d))h+='<button class="btn" type="button" id="pfavdel" title="Usuń zdjęcie tej osoby (np. obraźliwe)">🗑 Usuń zdjęcie</button>';
   if(me()&&!obs)h+='<button class="btn" type="button" data-wm="pblok">'+(ws&&ws.zablokowany?"Odblokuj":"🚫 Zablokuj")+'</button>';
   h+='</div>';if(me()&&ws&&!ws.moge){var inf={poziom:"Wiadomości możesz wysyłać od 2 poziomu konta.",limit:"Wysłałeś dziś już 50 wiadomości – wróć jutro.",blokada:"Ta osoba nie przyjmuje od Ciebie wiadomości.",zablokowany:"Zablokowałeś tę osobę."}[ws.powod];if(inf)h+='<p class="msg pfai">'+esc(inf)+'</p>'}
   return h}

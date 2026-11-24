@@ -10,7 +10,7 @@ function me(){return session&&session.user?session.user:null}
 // Kopię zapisuje strona główna w localStorage „prof.c” – dzięki niej nick widać od razu, bez mignięcia.
 var profNick=null,profFor=null;
 function profC(){var u=me();try{var c=JSON.parse(localStorage.getItem("prof.c")||"null");if(u&&c&&c.u===u.id)return c.n||""}catch(e){}return ""}
-async function profLoad(){var u=me();if(!sb||!u||profFor===u.id)return;profFor=u.id;
+async function profLoad(){var u=me();if(!sb||!u)return;avLoad();if(profFor===u.id)return;profFor=u.id;
   try{var r=await sb.from("profiles").select("nick").maybeSingle();if(r.error||profFor!==u.id)return;profNick=r.data&&r.data.nick||null;
     try{localStorage.setItem("prof.c",JSON.stringify({u:u.id,n:profNick||""}))}catch(e){}renderUser();if(typeof renderForm==="function"&&$("cform")&&!($("cbody")&&$("cbody").value))try{renderForm()}catch(e){}}catch(e){}}
 function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
@@ -18,7 +18,13 @@ function nick(){var u=me(),m=(u&&u.user_metadata)||{},cc=m.custom_claims||{};
   // bez nicku ustawionego na stronie: tylko pierwsze słowo nazwy z konta (imię, bez nazwiska) – tak samo jak w bazie (nick_konta)
   var n=m.nick||String(cc.global_name||m.full_name||m.name||m.user_name||m.preferred_username||"").trim().split(/\s+/)[0]||(u?"Gracz":""); // nie pokazujemy początku e-maila
   return String(n).trim().slice(0,30)}
-function myAvatar(){var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
+// Własne zdjęcie profilowe (zmienia się na profilu, strona główna): kopia w localStorage „av.c” {u, a} – a: adres / "" (litera) / null (zdjęcie z konta)
+function avC(){var u=me();try{var c=JSON.parse(localStorage.getItem("av.c")||"null");if(u&&c&&c.u===u.id)return c}catch(e){}return null}
+function myAvatar(){var c=avC();if(c&&typeof c.a==="string")return /^https:\/\//i.test(c.a)?c.a:null;var u=me(),m=(u&&u.user_metadata)||{},a=m.avatar_url||m.picture||"";return /^https:\/\//i.test(a)&&a.length<=500?a:null}
+var avFor=null;
+async function avLoad(){var u=me();if(!sb||!u||avFor===u.id)return;avFor=u.id;
+  try{var r=await sb.from("awatary").select("url").eq("user_id",u.id).maybeSingle();if(r.error||!me()||me().id!==u.id)return;var was=myAvatar();
+    localStorage.setItem("av.c",JSON.stringify({u:u.id,a:r.data?String(r.data.url||""):null}));if(myAvatar()!==was){renderUser();if(typeof renderForm==="function"&&$("cform")&&!($("cbody")&&$("cbody").value))try{renderForm()}catch(e){}}}catch(e){}}
 function hue(n){var h=0;String(n||"?").split("").forEach(function(c){h=(h*31+c.charCodeAt(0))%360});return h}
 function av(url,name){var l=esc(String(name||"?").charAt(0).toUpperCase());
   return '<span class="cav" style="background:hsl('+hue(name)+',70%,70%)">'+(/^https:\/\//i.test(url||"")?'<img alt="" loading="lazy" referrerpolicy="no-referrer" src="'+esc(url)+'" onerror="this.remove()">':l)+'</span>'}

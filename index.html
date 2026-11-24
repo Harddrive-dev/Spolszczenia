@@ -649,6 +649,8 @@ a.pfrk:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 
 .pfp small{margin-left:auto;color:var(--muted);white-space:nowrap}.pfp a{color:inherit;font-weight:700}
 .pfk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pfk div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px}.pfk b{display:block;font-size:20px;color:#f5b301}.pfk span{font-size:13.5px}.pfk small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
 .pfa{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pfdz{display:block;margin-top:3px;font-style:normal;font-size:12.5px;color:var(--muted)}.pfdz .pfz{color:#f5b301;font-weight:800}
+.pfdz.ok{color:var(--text)}a.pfdz{text-decoration:none;transition:color .15s}a.pfdz:hover{color:var(--accent)}
 .pftb{display:flex;gap:4px;margin:18px -22px -20px;padding:0 22px;border-top:1px solid var(--line)}
 .pftb a{padding:12px 16px 11px;font-weight:800;font-size:14px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;transition:color .15s,border-color .15s}
 .pftb a:hover{color:var(--text);border-bottom-color:var(--line)}.pftb a.on{color:var(--accent);border-bottom-color:var(--accent)}
@@ -2606,6 +2608,15 @@ function pfTabBadges(){[["/wiadomosci",typeof MSGN!=="undefined"?MSGN:0],["/powi
   if(x[1]){if(!sp){sp=document.createElement("span");sp.className="nw";a.appendChild(document.createTextNode(" "));a.appendChild(sp)}sp.textContent=x[1]>99?"99+":String(x[1])}else if(sp)sp.remove()})}
 function powUI(){pfTabBadges();var b=$("upbd");if(b){b.textContent=POWN>99?"99+":String(POWN);b.style.display=POWN?"":"none"}var mb=$("umsgbd");if(mb){mb.textContent=MSGN>99?"99+":String(MSGN);mb.style.display=MSGN?"":"none"}if(typeof showSubCount==="function")showSubCount()}
 var PF_RANGA={admin:"ADMIN",mod:"MODERATOR",opiekun:"OPIEKUN"};
+// Na własnym profilu: ile ocen zostało na dziś (limit 3, liczą się nowe oceny – zmiana oceny nie) i czy jest już głos w tym tygodniu
+function pfAktOc(d){var a=PRF.akt;if(!d.wlasny||!a||a.oc==null)return "";var z=Math.max(0,3-a.oc);
+  return z?'<em class="pfdz ok">Dziś możesz ocenić jeszcze <span class="pfz">'+z+'</span> z 3</em>':'<em class="pfdz">Dzisiejszy limit wykorzystany – wróć jutro</em>'}
+function pfAktGlos(d){var a=PRF.akt;if(!d.wlasny||!a||a.gl==null)return "";
+  var g=a.gl&&typeof a.gl==="string"?gameByKey(a.gl):null;
+  return a.gl?'<em class="pfdz">✓ W tym tygodniu już zagłosowałeś'+(g?': <a class="pfgl" href="/gra/'+esc(keyOf(g))+'/">'+esc(g.game)+'</a>':'')+'</em>':'<a class="pfdz ok" href="#/glosowanie">W tym tygodniu jeszcze nie głosowałeś – zagłosuj ›</a>'}
+async function pfAktLoad(){if(!CM||!me())return;var t=PRF.t,od=new Date();od.setHours(0,0,0,0);
+  try{var r=await Promise.all([sb.from("oceny").select("gra",{count:"exact",head:true}).eq("user_id",me().id).gte("created_at",od.toISOString()),sb.rpc("my_vote")]);if(t!==PRF.t)return;
+    PRF.akt={oc:r[0].error?null:(r[0].count||0),gl:r[1].error?null:(r[1].data?(typeof r[1].data==="string"?r[1].data:(r[1].data.game_key||true)):false)};if(onProf&&!PRF.sub)renderProf()}catch(e){}}
 // ranga z platformą (np. „OPIEKUN PSP”) – funkcja „profil” zwraca ją w polu „ranga”
 function pfRanga(d){return d&&d.ranga?String(d.ranga).toUpperCase():(d&&PF_RANGA[d.rola])||""}
 function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
@@ -2631,7 +2642,7 @@ function renderProf(){var v=$("profview");if(!v)return;var hd=VBACK;
   if(PRF.sub==="powiadomienia"&&d.wlasny){v.innerHTML=h+'<div class="pfc"><h3>🔔 Powiadomienia</h3>'+pfPowiadomienia(PRF.hist,PRF.pow,PRF.seen)+'</div>';return}
   var st='<div class="pfc"><h3>📊 Statystyki</h3><div class="pfl"><span>Głosy na grę tygodnia</span><b>'+d.glosy+'</b></div><div class="pfl"><span>Ocenione spolszczenia</span><b>'+d.oceny+'</b></div><a class="pfl pfll" href="'+esc(pfUrl(d,"komentarze"))+'"><span>Napisane komentarze</span><b>'+d.komentarze+' ›</b></a><div class="pfl"><span>Otrzymane 👍 pod komentarzami</span><b>'+d.lajki+'</b></div>'+(d.wlasny&&d.ulubione!=null?'<div class="pfl"><span>Gry w ulubionych</span><b>'+d.ulubione+'</b></div>':'')+'</div>';
   h+='<div class="pfg jeden">'+st+'</div>';
-  h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span><small>raz w tygodniu</small></div><div><b>+2 pkt</b><span>Ocena spolszczenia</span><small>do 3 dziennie, raz na spolszczenie</small></div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
+  if(d.wlasny)h+='<div class="pfc"><h3>⭐ Jak zdobywać punkty</h3><div class="pfk"><div><b>+5 pkt</b><span>Głos na grę tygodnia</span>'+(pfAktGlos(d)||'<small>raz w tygodniu</small>')+'</div><div><b>+2 pkt</b><span>Ocena spolszczenia</span>'+(pfAktOc(d)||'<small>do 3 dziennie, raz na spolszczenie</small>')+'</div><div><b>+3 pkt</b><span>👍 pod Twoim komentarzem</span><small>od innej osoby, bez limitu</small></div></div><p class="msg" style="margin:12px 0 0">Poziomy: 2 – 30 pkt · 3 – 80 pkt · 4 – 150 pkt · 5 – 250 pkt · dalej co poziom o 50 pkt więcej.</p></div>';
   v.innerHTML=h}
 function pfUrl(d,sub){var k=d.profilnick?String(d.profilnick).toLowerCase():d.id;return PHASH+"/"+encodeURIComponent(k)+(sub?"/"+sub:"")}
 // Zakładka „Komentarze”: komentarze napisane przez tę osobę (publiczne – i tak widać je pod grami)
@@ -2667,7 +2678,7 @@ function pfoSet(k,d){try{var c=JSON.parse(localStorage.getItem("pfo")||"{}");var
 // Własny profil zapamiętany w przeglądarce („prof.d”) – pokazuje się od razu, a w tle odświeżamy dane z bazy. Czyszczony po wylogowaniu.
 function pfCache(v){var u=me();try{if(v===undefined){var c=JSON.parse(localStorage.getItem("prof.d")||"null");return c&&u&&c.uid===u.id?c:null}
   if(v&&u)localStorage.setItem("prof.d",JSON.stringify({uid:u.id,nick:v.data.profilnick?String(v.data.profilnick).toLowerCase():"",data:v.data,hist:v.hist,pow:v.pow,seen:v.seen}));else localStorage.removeItem("prof.d")}catch(e){}return null}
-async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.ws=null;PRF.tab=null;PRF.lim=5;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
+async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");var t=++PRF.t;PRF.key=key||"";PRF.sub=sub||"";PRF.kom=null;PRF.akt=null;PRF.ws=null;PRF.tab=null;PRF.lim=5;PRF.data=null;PRF.hist=null;PRF.pow=null;PRF.seen=null;PRF.err=false;
   var pc=me()?pfCache():null;if(pc&&(!key||key===me().id||String(key).toLowerCase()===pc.nick)){PRF.data=pc.data;PRF.hist=pc.hist;PRF.pow=pc.pow;PRF.seen=pc.seen}
   else if(key){var po=pfoGet(key);if(po)PRF.data=po}
   // zakładki z pamięci od razu (nie czekamy na odpowiedź bazy o profilu)
@@ -2681,6 +2692,7 @@ async function showProf(key,sub){enterView("prof","Profil – GryPoPolsku.pl");v
       if(PRF.sub==="powiadomienia"){var sr=await sb.rpc("powiad_przeczytane");PRF.seen=(!sr.error&&sr.data)?sr.data:null;if(!sr.error){POWN=0;hdrC("pow",0);powUI()}}
       pfCache({data:PRF.data,hist:PRF.hist,pow:PRF.pow,seen:PRF.seen})}
     if(PRF.data&&!PRF.data.wlasny&&key)pfoSet(key,PRF.data);
+    if(PRF.data&&PRF.data.wlasny&&!PRF.sub)pfAktLoad();
     // ładny adres: #/profil/<nick> zamiast długiego kodu (bez nowego wpisu w historii)
     if(PRF.data&&(PRF.key||PRF.sub)){var want=pfUrl(PRF.data,PRF.sub)+(PRF.sub==="wiadomosci"&&WM.z?"/"+WM.z:"");if(location.hash!==want)try{history.replaceState(null,"",location.pathname+location.search+want)}catch(e){}}
     if(PRF.data)document.title=(PRF.data.nick||"Profil")+(PRF.sub==="komentarze"?" – komentarze":" – profil")+" – GryPoPolsku.pl";

@@ -1111,7 +1111,14 @@ window.addEventListener("pagehide",function(){if(onCat())saveF(scrollPos())});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("#tb a.g,#cards a.g");if(a)saveF(scrollPos())},true);
 // Wstawia HTML tylko gdy coś się zmieniło – przy ładowaniu tabela jest liczona kilka razy (dane, zatwierdzone zmiany),
 // a podmiana wierszy pod kursorem „gubiła” kliknięcia przez ułamek sekundy.
-function setHtml(el,h){if(!el||el.__h===h)return;el.innerHTML=h;el.__h=h}
+function setHtml(el,h){if(!el||el.__h===h)return;el.innerHTML=h;el.__h=h;if(el.id==="tb")fitAu()}
+// Długa nazwa autora: skracamy ją sami („…” tuż za ostatnią literą), żeby ocena ★ stała zaraz obok – bez dziury, jaką zostawia skracanie w CSS
+function fitAu(){document.querySelectorAll("#tb .aun").forEach(function(s){var p=s.parentNode,b=p.querySelector(".ocb"),f=s.getAttribute("data-f");
+  if(f===null){f=s.textContent;s.setAttribute("data-f",f)}s.textContent=f;s.style.flex="";s.removeAttribute("title");
+  if(s.scrollWidth<=s.clientWidth+1)return;var av=s.getBoundingClientRect().width,lo=0,hi=f.length;s.style.flex="none";
+  while(lo<hi){var m=(lo+hi+1)>>1;s.textContent=f.slice(0,m).replace(/\s+$/,"")+"…";if(s.getBoundingClientRect().width<=av+.5)lo=m;else hi=m-1}
+  s.textContent=f.slice(0,lo).replace(/\s+$/,"")+"…";s.title=f})}
+var fitAuT;window.addEventListener("resize",function(){clearTimeout(fitAuT);fitAuT=setTimeout(fitAu,150)});
 function odswiezLiczniki(){document.querySelectorAll(".cbtn[data-k]").forEach(function(b){var n=counts[b.getAttribute("data-k")]||0,t=n?"Komentarze ("+n+")":"Komentarze",x=b.querySelector("b");if(x)x.textContent=n;b.title=t;b.setAttribute("aria-label",t)})}
 function render(){
   syncBar();var all=filtered(),pages=Math.max(1,Math.ceil(all.length/PS));if(page>pages)page=pages;if(page<1)page=1;saveF();

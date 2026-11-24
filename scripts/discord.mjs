@@ -128,7 +128,7 @@ async function send(embeds, content, hook = HOOK) {
 
 
 // ---- Komentarze ze strony na kanał #komentarze ----
-// Numer ostatniego wysłanego komentarza trzymamy w pliku scripts/discord-komentarze.json (zapisuje go automat razem z resztą zmian).
+// (zapas) Numer ostatniego sprawdzonego komentarza trzymamy w pliku scripts/discord-komentarze.json (zapisuje go automat razem z resztą zmian).
 // Odczyt z kanału przez bota nie działa: bez uprawnienia „Message Content” Discord zwraca puste treści wiadomości.
 const sbGet = async q => { const r = await fetch(SB + "/rest/v1/" + q, { headers: { apikey: SBKEY, Authorization: "Bearer " + SBKEY } }); if (!r.ok) throw new Error("Supabase " + r.status); return r.json(); };
 const KOM_STATE = "scripts/discord-komentarze.json";
@@ -139,7 +139,11 @@ async function commentEvents() {
   const cols = "id,game_key,author,body,created_at,parent_id,avatar_url,is_mod";
   let rows;
   if (!last) rows = (await sbGet(`comments?select=${cols}&order=id.desc&limit=3`)).reverse(); // pierwsze uruchomienie: 3 ostatnie na start
-  else rows = await sbGet(`comments?select=${cols}&id=gt.${last}&order=id.asc&limit=30`);
+  // Od 24.11 komentarze wysyła od razu funkcja Supabase „discord-komentarz”; automat jest tylko zapasem: bierze komentarze
+  // starsze niż 3 minuty (funkcja ma czas zadziałać) i pomija te, które funkcja już wysłała (tabela discord_wyslane).
+  else rows = await sbGet(`comments?select=${cols}&id=gt.${last}&created_at=lt.${new Date(Date.now() - 180e3).toISOString()}&order=id.asc&limit=30`);
+  const sent = new Set();
+  try { for (const x of await sbGet(`discord_wyslane?select=comment_id&comment_id=gt.${last}`)) sent.add(+x.comment_id); } catch {}
   commentEvents.maxId = rows.reduce((m, c) => Math.max(m, +c.id || 0), last);
   if (!rows.length) return [];
   const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")), byKey = new Map(list.map(g => [g.id || slug(g.game || ""), g]));
@@ -148,6 +152,7 @@ async function commentEvents() {
   if (newsSlugs.length) { try { for (const n of await sbGet(`news?select=slug,title&published=eq.true&slug=in.(${newsSlugs.map(encodeURIComponent).join(",")})`)) titles.set(n.slug, n.title); } catch {} }
   const ev = [];
   for (const c of rows) {
+    if (sent.has(+c.id)) continue;
     const ns = (/^news:(.+)$/.exec(c.game_key || "") || [])[1];
     let title, url, thumb;
     if (ns) { if (!titles.has(ns)) continue; title = titles.get(ns); url = `${SITE}/aktualnosci/${ns}/`; }
@@ -156,7 +161,7 @@ async function commentEvents() {
     const e = {
       author: { name: (c.author || "Gracz").slice(0, 80) + (c.is_mod ? " · moderator" : ""), ...(/^https:\/\//.test(c.avatar_url || "") ? { icon_url: c.avatar_url } : {}) },
       title: ((c.parent_id ? "↪ Odpowiedź: " : "💬 ") + title).slice(0, 250),
-      url: url + "#komentarze-c" + c.id,
+      url: url + "#komentarz-" + c.id,
       description: (body.length > 400 ? body.slice(0, 397) + "…" : body) + `\n\n[Odpowiedz na stronie](${url}#komentarze-c${c.id}) · [Wszystkie komentarze](${SITE}/#/ostatnie-komentarze)`,
       color: c.parent_id ? 0x8e5cd9 : 0xe8905f,
       footer: { text: ns ? "Komentarz pod wpisem · GryPoPolsku.pl" : "Komentarz · GryPoPolsku.pl" },
@@ -185,7 +190,7 @@ if (TEST) {
   const list = JSON.parse(fs.readFileSync("spolszczenia.json", "utf8")).filter(g => !onlyZap(g));
   const last = list.slice().sort((a, b) => String(b.upd || b.dodano || "").localeCompare(String(a.upd || a.dodano || "")))[0];
   await send([gameEmbed(last, "test", "To jest wiadomość testowa dla kanału z katalogiem. Jeśli ją widzisz, ogłoszenia działają.")]);
-  if (HOOK_KOM) await send([{ title: "🧪 Test: komentarze ze strony", url: SITE + "/#/ostatnie-komentarze", color: COLORS.test, description: "To jest wiadomość testowa dla kanału z komentarzami. Nowe komentarze ze strony będą tu trafiać co około 30 minut.", footer: { text: "GryPoPolsku.pl – Dyskusje" } }], null, HOOK_KOM);
+  if (HOOK_KOM) await send([{ title: "🧪 Test: komentarze ze strony", url: SITE + "/#/ostatnie-komentarze", color: COLORS.test, description: "To jest wiadomość testowa dla kanału z komentarzami. Nowe komentarze ze strony trafiają tu od razu po dodaniu.", footer: { text: "GryPoPolsku.pl – Dyskusje" } }], null, HOOK_KOM);
   if (HOOK_NEWS !== HOOK) await send([{ title: "🧪 Test ogłoszeń: Aktualności", url: SITE + "/aktualnosci/", color: COLORS.wpis, description: "To jest wiadomość testowa dla kanału z Aktualnościami. Jeśli ją widzisz, nowe wpisy będą trafiać tutaj.", footer: { text: "GryPoPolsku.pl – Aktualności" } }], null, HOOK_NEWS);
   console.log("Wysłano wiadomość testową.");
   process.exit(0);

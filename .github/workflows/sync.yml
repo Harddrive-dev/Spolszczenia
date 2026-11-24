@@ -1,7 +1,7 @@
 name: Aktualizuj spolszczenia.json
 on:
   schedule:
-    - cron: "*/30 * * * *"   # co 30 minut
+    - cron: "13,43 * * * *"   # co 30 minut, ale nie o pełnej i nie o wpół (wtedy GitHub najczęściej pomija przebiegi)
   workflow_dispatch:           # przycisk "Run workflow" do ręcznego uruchomienia
     inputs:
       czekaj:

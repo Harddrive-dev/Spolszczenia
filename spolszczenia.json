@@ -4654,10 +4654,6 @@
       "Tłumacze: KorzychXP/HED",
       "Pomoc techniczna: Danio & MixerX"
     ],
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    },
     "spolszczenia": [
       {
         "id": "manhunt--killer",
@@ -17119,10 +17115,6 @@
     "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-type-0-hd-26327234.webp",
     "opis": "Kadeci klasy Zero z akademii Vermilion Bird walczą w wojnie o kryształy krainy Orience. Bardziej mroczna odsłona serii z walką w czasie rzeczywistym.",
     "steam": 340170,
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    },
     "tworcy": [
       "Vetix",
       "xionix"
@@ -19325,7 +19317,7 @@
     ],
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-15"
     },
     "opis": "To zestaw zawierający pierwszą grę Grand Theft Auto z 1997 roku oraz dodatki London 1969 i London 1961. W klasycznym GTA, oglądanym z góry, gracz jest drobnym przestępcą, który wykonuje zlecenia gangów w trzech fikcyjnych miastach. Kradnie samochody, ucieka przed policją i zdobywa punkty potrzebne do przejścia dalej. Dodatki przenoszą akcję do Londynu z lat 60."
   },
@@ -19559,7 +19551,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/manhunt-2-7131ee97.webp",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-18"
+      "dzien": "2026-11-15"
     },
     "tworcy": [
       "TomaszDoki (tłumaczenie)",
@@ -20143,7 +20135,7 @@
     "dodano": "2026-07-31",
     "img": "https://cdn.grypopolsku.pl/okladki/lego-batman-the-videogame-55fcd5fd.webp",
     "zmiana": {
-      "kto": "kokos324",
+      "kto": "Harddrive",
       "dzien": "2026-11-18"
     },
     "linki": [
@@ -23436,10 +23428,6 @@
     "opis": "Icy Tower to kultowa, zręcznościowa gra platformowa z 2001 roku, w której wcielasz się w Harolda the Homeboya wspinającego się na pozornie nieskończoną, lodową wieżę.",
     "steam": 3014860,
     "upd": "2026-11-18",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    },
     "tworcy": [
       "Vetix",
       "Rogal"
@@ -23929,7 +23917,7 @@
       }
     ],
     "zmiana": {
-      "kto": "kokos324",
+      "kto": "Harddrive",
       "dzien": "2026-11-18"
     },
     "zrzuty": [
@@ -24000,10 +23988,6 @@
         "u": "https://grajpopolsku.pl/forum/viewtopic.php?t=589"
       }
     ],
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    },
     "tworcy": [
       "doki10"
     ]
@@ -24054,11 +24038,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/bleach-rebirth-of-souls-5c1cb6b5.webp",
     "opis": "BLEACH: Rebirth of Souls to wydana w 2025 roku trójwymiarowa bijatyka arenówka stworzona przez studio Tamsoft i wydana przez Bandai Namco Entertainment. Produkcja jest dużą, konsolowo-pecetową adaptacją kultowej mangi i anime Bleach autorstwa Tite Kubo, obejmującą główne wątki fabularne znane z serii – od sagi zastępczego Shinigami (Substitute Soul Reaper), przez ratunek w Soul Society, aż po wojnę z Arrancarami i starcie z Sōsuke Aizenem.",
     "steam": 1689620,
-    "upd": "2026-11-19",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    }
+    "upd": "2026-11-19"
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
@@ -24074,11 +24054,7 @@
     "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-41fa0f5c.webp",
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles to wydana w 2021 roku trójwymiarowa bijatyka arenówka z elementami przygodowej gry akcji, stworzona przez studio CyberConnect2 (znane z serii Naruto: Ultimate Ninja Storm) i wydana przez firmę Sega. Produkcja jest wierną adaptacją pierwszego sezonu popularnego anime Kimetsu no Yaiba oraz kinowego hitu Mugen Train.",
     "steam": 1490890,
-    "upd": "2026-11-19",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    }
+    "upd": "2026-11-19"
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
@@ -24112,11 +24088,7 @@
     "steam": 356190,
     "upd": "2026-11-18",
     "status": "Gotowe",
-    "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-war-47fc84ab.webp",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-18"
-    }
+    "img": "https://cdn.grypopolsku.pl/okladki/middle-earth-shadow-of-war-47fc84ab.webp"
   },
   {
     "game": "Deliver At All Costs",

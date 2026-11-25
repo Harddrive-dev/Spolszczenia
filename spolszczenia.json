@@ -16967,9 +16967,13 @@
     "link": "https://vetspolszczenia.pl/projekt.html?id=dinkum",
     "dodano": "2026-06-25",
     "upd": "2026-10-24",
-    "img": "https://cdn.grypopolsku.pl/okladki/dinkum-c870f314.webp",
+    "img": "https://cdn.grypopolsku.pl/okladki/dinkum-bf81f65d.webp",
     "steam": 1062520,
-    "opis": "Dinkum to symulator życia z elementami survivalu, osadzony na wyspie inspirowanej australijskim buszem. Gracz uprawia rośliny, hoduje zwierzęta, poluje, łowi ryby i kopie w kopalniach. Za zdobyte surowce rozbudowuje miasteczko i przyciąga nowych mieszkańców. W grę można grać samemu albo ze znajomymi."
+    "opis": "Dinkum to symulator życia z elementami survivalu, osadzony na wyspie inspirowanej australijskim buszem. Gracz uprawia rośliny, hoduje zwierzęta, poluje, łowi ryby i kopie w kopalniach. Za zdobyte surowce rozbudowuje miasteczko i przyciąga nowych mieszkańców. W grę można grać samemu albo ze znajomymi.",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-25"
+    }
   },
   {
     "game": "Drillbound",

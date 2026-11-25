@@ -343,7 +343,9 @@ function boot(){
     // sesja zamknięta na serwerze (np. „Wyloguj” na innym urządzeniu) → wylogowanie tylko tutaj, żeby strona nie udawała zalogowania
     if(session)setTimeout(function(){sb.auth.getUser().then(function(u){var m=String(u.error&&(u.error.code||u.error.message)||"");if(u.error&&/session|jwt|not.found|expired|missing|invalid/i.test(m))sb.auth.signOut({scope:"local"})}).catch(function(){})},1500);
     return loadRole()}).then(function(){if(pg==="post"){initPost()}else renderUser()},function(){renderUser();if(pg==="post")initPost()});
-  sb.auth.onAuthStateChange(function(ev,s){var was=me();session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me()){favCheck();ocMine()}loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
+  sb.auth.onAuthStateChange(function(ev,s){var was=me(),wasId=was&&was.id,rolaPrzed=myRole;session=s;if(s&&s.user){try{sessionStorage.removeItem("wroc")}catch(e){}}setTimeout(function(){renderUser();if(!!was!==!!me()){favCheck();ocMine()}
+  // ta sama osoba (np. odświeżenie sesji po powrocie do karty) – nie rysujemy od nowa pola komentarza i listy (wpisany tekst zostaje)
+  if(wasId&&me()&&me().id===wasId)return;loadRole().then(function(){if(pg==="post"&&KEY){renderForm();renderList()}})},0)});
 }
 boot();
 })();

@@ -1400,8 +1400,10 @@ function fzOk(g,z){if(!z||!modWidok())return true;if(!mozeEdytowac(g))return fal
 function isAdmin(){return roleLoaded?myRole==="admin":emailIsOwner()}
 async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
+  var przed=roleLoaded?JSON.stringify([myRole,myPlat,myGrp]):null;
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
     if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}myGrp=[];if(myRole==="dev"){var rg=await sb.rpc("my_groups");myGrp=(!rg.error&&Array.isArray(rg.data))?rg.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
+  if(przed!==null&&przed===JSON.stringify([myRole,myPlat,myGrp])){updateAuth();return} // rola bez zmian – nie czyścimy otwartych formularzy
   updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";if(fzv)dodajZnaczki()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs){if($("subview").querySelector(".sub"))openSubs(true);else renderSubs()}if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
@@ -1634,7 +1636,10 @@ if(CM){
   });
   loadCounts();loadOceny();loadWiesci();loadKom();
   sb.auth.getSession().then(function(r){session=r.data.session;authReady=true;updateAuth();refreshView();loadRole();loginFromLink();steamBoot();setTimeout(sessCheck,1500)});
-  sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user);session=s;authReady=true;
+  sb.auth.onAuthStateChange(function(ev,s){var wasIn=!!(session&&session.user),wasId=wasIn?session.user.id:null;session=s;authReady=true;
+    // Po powrocie do karty Supabase odświeża sesję (SIGNED_IN / TOKEN_REFRESHED) – to ta sama osoba, więc nie rysujemy
+    // niczego od nowa (inaczej znikało to, co ktoś zaczął wpisywać: komentarz, zgłoszenie, moderator, wpis…). Tylko pasek u góry.
+    if(wasId&&s&&s.user&&s.user.id===wasId&&ev!=="PASSWORD_RECOVERY"&&ev!=="USER_UPDATED"){setTimeout(updateAuth,0);return}
     if(ev==="SIGNED_IN"&&s&&s.user){var bk=backUrl();if(bk){try{sessionStorage.removeItem("wroc")}catch(e){}location.replace(bk);return}}setTimeout(function(){updateAuth();loadRole();
     if(ev==="PASSWORD_RECOVERY"){showNewPass();return}
     if(curKey){renderForm();loadComments(curKey)}else if(!recov&&!wasIn&&$("cm").className.indexOf("open")>-1&&s&&!$("nickbox"))closeModal();if(onVote&&(wasIn!==!!(s&&s.user)))loadVote();if(steamBooted&&wasIn!==!!(s&&s.user))steamLoad()},0)});

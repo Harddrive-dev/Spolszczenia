@@ -1397,7 +1397,7 @@ async function loadRole(){
   if(!CM||!me()){myRole=null;roleLoaded=false;return}
   try{var r=await sb.rpc("my_role");if(r.error)throw r.error;myRole=r.data||null;myPlat=[];
     if(myRole==="opiekun"){var rp=await sb.rpc("my_platforms");myPlat=(!rp.error&&Array.isArray(rp.data))?rp.data:[]}roleLoaded=true}catch(e){roleLoaded=false}
-  updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";if(fzv)dodajZnaczki()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs)renderSubs();if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
+  updateAuth();try{var fzv=modWidok();$("fz").style.display=fzv?"":"none";if(!fzv)$("fz").value="";if(fzv)dodajZnaczki()}catch(e){}if(curKey)loadComments(curKey);if(typeof onSubs!=="undefined"&&onSubs){if($("subview").querySelector(".sub"))openSubs(true);else renderSubs()}if(typeof onAdd!=="undefined"&&onAdd)renderAdd();if(typeof onMods!=="undefined"&&onMods)renderMods();if(typeof onNews!=="undefined"&&onNews)renderNews();if(typeof onKonto!=="undefined"&&onKonto)renderKonto()}
 // ===== Własny nick na stronie (tabela profiles – SQL profile-nick.sql). Nick z profilu ma pierwszeństwo przed danymi z Google/Discorda. =====
 // PROF.ok: null = jeszcze nie wczytano, false = brak tabeli lub błąd (wtedy nic nie pokazujemy i działa stary podpis).
 var PROF={ok:null,row:null,u:null},NICKASKED=false,CONFIRM=false;
@@ -1671,7 +1671,7 @@ var KIND={new:"Nowe spolszczenie",edit:"Zmiana",link:"Zepsuty link",bug:"Błąd"
 // końcówka osobnego adresu gry na drugą platformę (jak w katalogu: …-psp, …-ps2, …-nds, …-switch)
 function subKon(p){var m={"sony psp":"psp","sony ps2":"ps2","sony ps3":"ps3","sony psx":"psx","nintendo nds":"nds","nintendo switch":"switch","nintendo 3ds":"3ds","game boy advance":"gba","nintendo wii":"wii","android":"android","meta quest":"quest","vr pc":"vr","pc":"pc"},k=String(p||"").split(/,\s*/)[0].toLowerCase();return m[k]||slug(k)||"inna"};
 (function(){var st=document.createElement("style");st.textContent=".sf{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);min-height:38px}.sf .sk{color:var(--muted);width:92px;flex:none;font-size:13px}.sf .sv{flex:1;min-width:0;overflow-wrap:anywhere}.sf input,.sf select{width:100%;padding:5px 9px;font-size:14px}.sf.ch{background:rgba(255,138,31,.12)}.sf .chn{color:var(--accent);font-size:11px;margin-left:6px}.mini.ok{color:var(--ok);border-color:var(--ok)}.spn{display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}.sub .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.okb{border-color:var(--ok);color:var(--ok);font-weight:700}.btn.okb:hover{background:var(--ok);color:var(--bg)}.btn.nob{border-color:#ff6b6b;color:#ff6b6b}.pp{position:relative}.pps{width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 32px 9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text);cursor:pointer;position:relative;min-height:40px}.pps::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}.ppl{display:none;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:6px;max-height:240px;overflow:auto}.ppl.open{display:block}.ppl label.pi{display:flex;flex-direction:row;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;color:var(--text);font-size:14px;cursor:pointer}.ppl label.pi:hover{background:var(--line)}.ppl label.pi input{width:auto}.ppo{display:flex;gap:6px;margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}.ppo input{flex:1}.btn.nob:hover{background:#ff6b6b;color:var(--bg)}";document.head.appendChild(st)})();
-var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","g"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"],["steam","Steam ID","t"],["id","Osobny adres","t"],["opis","Opis","a"]];
+var SF=[["game","Gra","t"],["platform","Platforma","t"],["genre","Gatunek","g"],["type","Zakres","s"],["status","Status","s"],["prog","Postęp (%)","n"],["ver","Wersja","t"],["author","Autor / grupa","t"],["steam","Steam ID","t"],["id","Osobny adres","t"],["yt","YouTube (film)","t"],["opis","Opis","a"]];
 function sfOpts(k,cur){var a=k==="genre"?[""].concat(GENRES):k==="type"?TYPY.slice():["Gotowe","W trakcie","Korekta","Beta","Testy","Premiera","Zapowiedź"];if(cur&&a.indexOf(cur)<0)a.push(cur);
   return a.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||"— brak —")+'</option>'}).join("")}
 function editRows(x){var d=x.data||{};if(!d.game)d=Object.assign({},d,{game:x.game});
@@ -1695,7 +1695,7 @@ async function openSubs(keep){
     var r=await q;if(r.error)throw r.error;
     box.innerHTML=SBACK+'<h2>Zgłoszenia</h2><p class="btns" style="justify-content:flex-start"><button class="btn'+(subAll?'':' on')+'" data-subf="new">Nowe</button><button class="btn'+(subAll?' on':'')+'" data-subf="all">Wszystkie</button></p>'+
      (r.data.length?r.data.map(function(x){return '<div class="sub"><div class="subh"><span class="modb" style="margin:0">'+(x.data&&x.data.bot&&x.kind==="new"?"🤖 ":"")+esc(KIND[x.kind]||x.kind)+'</span> <b>'+esc(x.game)+'</b>'+(x.status!=="new"?' <span class="cvmuted">('+(x.status==="done"?"załatwione":"odrzucone")+')</span>':'')+'</div><div class="cvmuted">'+esc(x.user_name||"—")+' · '+esc(new Date(x.created_at).toLocaleString("pl-PL"))+'</div><div class="subd">'+(x.data&&x.data.bot&&x.kind==="new"&&(x.data.uwagi||[]).length?'<div class="subu">'+x.data.uwagi.map(function(u){return '<div>⚠️ '+esc(u)+'</div>'}).join("")+'</div>':"")+subDetails(x)+(x.note?'<div><span class="cvmuted">opis:</span> '+esc(x.note)+'</div>':"")+'</div>'+(x.kind==="new"&&x.status==="new"?'<label style="display:block;margin-top:8px;font-size:13px;color:var(--muted)">Okładka (opcjonalnie, https://… lub img/nazwa.jpg) – dodajesz ją tylko Ty jako moderator<span class="siw"><img class="sip" id="sp_'+x.id+'" alt="" referrerpolicy="no-referrer"'+((x.data||{}).img?' src="'+esc(x.data.img)+'"':' hidden')+' onerror="this.hidden=true"><input type="text" id="si_'+x.id+'" maxlength="500" value="'+esc((x.data||{}).img||"")+'" style="width:100%;margin-top:4px" placeholder="np. https://cdn2.steamgriddb.com/…"></span><small style="display:block;margin-top:4px">Obrazek znajdziesz na <a href="https://www.steamgriddb.com/" target="_blank" rel="noopener">steamgriddb.com</a> (zakładka „Grids”, prawy przycisk myszy → „Kopiuj adres obrazu”).</small></label><p class="msg err" id="sim_'+x.id+'" style="margin:4px 0 0"></p>':"")+'<div class="acts">'+(x.status==="new"?'<button class="btn okb" type="button" data-subset="done" data-id="'+x.id+'">'+(x.kind==="bug"?"Załatwione":(x.kind==="new"?"Zatwierdź i dodaj na stronę":"Zatwierdź"))+'</button><button class="btn nob" type="button" data-subset="rejected" data-id="'+x.id+'">Odrzuć</button>':subDelHtml(x))+'</div></div>'}).join(""):'<p class="msg">Brak zgłoszeń.</p>');
-    window.__subs=r.data;loadSubCount();
+    window.__subs=r.data;subDrRestore();loadSubCount();
   }catch(e){$("subview").innerHTML=SBACK+'<h2>Zgłoszenia</h2><p class="msg err">Nie udało się wczytać zgłoszeń (czy uruchomiłeś zgloszenia.sql w Supabase?).</p>'}}
 document.addEventListener("input",function(e){var m=/^si_(.+)$/.exec(e.target.id||"");if(!m)return;var im=$("sp_"+m[1]),v=e.target.value.trim();if(!im)return;if(/^https:\/\//i.test(v)){im.hidden=false;im.src=v}else im.hidden=true});
 document.addEventListener("click",async function(e){var t=e.target.closest&&e.target.closest("button");if(!t)return;
@@ -1715,19 +1715,20 @@ document.addEventListener("click",async function(e){var t=e.target.closest&&e.ta
       if(nd.id){nd.id=slug(nd.id);if(items.some(function(g){return keyOf(g)===nd.id})){bad("Adres /gra/"+nd.id+"/ jest już zajęty – zmień „Osobny adres”.");return}}
       else if(items.some(function(g){return slug(g.game)===slug(nd.game)})){var gx=items.filter(function(g){return slug(g.game)===slug(nd.game)})[0];bad("Gra „"+nd.game+"” jest już w katalogu ("+gx.platform+"). Jeśli to inna platforma, wpisz „Osobny adres”, np. "+slug(nd.game)+"-"+subKon(nd.platform)+" – albo odrzuć zgłoszenie.");return}
       if(nd.steam&&!/^\d{1,8}([\s,;]+\d{1,8})*$/.test(nd.steam)){bad("Steam ID to sam numer (np. 372360) – albo zostaw puste.");return}
+      if(nd.yt&&!/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(nd.yt)){bad("Link do YouTube musi wyglądać tak: https://www.youtube.com/watch?v=… albo https://youtu.be/… – albo zostaw puste.");return}
       nd.link=lk;nd.prog=Math.max(0,Math.min(100,+nd.prog||0));
       if(!nd.game)nd.game=sx.game;if(iv)nd.img=iv;upd.data=nd}
     var sibs=t.closest(".sub").querySelectorAll("button");busy(t,st==="done"?"Zapisuję…":"Odrzucam…");sibs.forEach(function(b){if(b!==t)b.disabled=true});
     var ur=await sb.from("submissions").update(upd).eq("id",sid).select("id");
     if(!ur.error&&(!ur.data||!ur.data.length))ur={error:{message:"brak uprawnień lub zgłoszenie już nie istnieje (odśwież stronę i sprawdź, czy jesteś zalogowany jako moderator)"}};
     if(ur.error){busy(t,0);sibs.forEach(function(b){b.disabled=false});var em2=$("sim_"+sid);if(em2)em2.textContent="Nie udało się zapisać: "+plMsg(ur.error.message);return}
-    if(st==="done")odswiezStrone();await openSubs(true);loadSubCount();loadCatalog();return}
+    subDrDel(sid);if(st==="done")odswiezStrone();await openSubs(true);loadSubCount();loadCatalog();return}
   if(t.getAttribute("data-fedit")){var row=t.closest(".sf"),sv=row.querySelector(".sv"),kind=row.getAttribute("data-t");
     if(!row.querySelector("input,select,textarea")){var cur=row.getAttribute("data-v");
       sv.innerHTML=kind==="a"?'<textarea maxlength="500" rows="4" style="width:100%">'+esc(cur)+'</textarea>':kind==="g"?'<input type="text" list="gl_mod" maxlength="40" autocomplete="off" value="'+esc(cur)+'">':kind==="s"?'<select>'+sfOpts(row.getAttribute("data-f"),cur)+'</select>':'<input '+(kind==="n"?'type="number" min="0" max="100"':'type="text" maxlength="200"')+' value="'+esc(cur)+'">';
       t.textContent="Zapisz";t.className="mini ok";sv.firstChild.focus()}
     else{var nv=row.querySelector("input,select,textarea").value.trim();row.setAttribute("data-v",nv);sv.textContent=nv||"—";t.textContent="Zmień";t.className="mini";
-      var ch=nv!==row.getAttribute("data-o");row.classList.toggle("ch",ch);if(ch){var n=document.createElement("span");n.className="chn";n.textContent="zmienione";sv.appendChild(n)}}
+      var ch=nv!==row.getAttribute("data-o");row.classList.toggle("ch",ch);if(ch){var n=document.createElement("span");n.className="chn";n.textContent="zmienione";sv.appendChild(n)}subDrSave(row)}
     return}
   if(t.getAttribute("data-subdel")){busy(t,"Usuwam…");var dr=await sb.from("submissions").delete().eq("id",t.getAttribute("data-subdel")).select("id");
     if(dr.error||!dr.data||!dr.data.length){busy(t,0);var note=document.createElement("span");note.className="msg err";note.style.marginLeft="8px";note.textContent=dr.error?"Nie udało się usunąć: "+plMsg(dr.error.message):"Nie można usunąć: zatwierdzone zgłoszenia można kasować dopiero godzinę po zatwierdzeniu.";t.parentNode.appendChild(note);return}
@@ -2984,6 +2985,22 @@ function showVote(){
   if(was!=="vote"){vLoaded=false;VCONF=null}
   loadVote()}
 var SBACK=VBACK;
+// Szkice w Zgłoszeniach: to, co wpiszesz (opis, okładka, link, zmienione pola), zapamiętujemy w przeglądarce
+// – po przejściu do innej karty i powrocie (albo odświeżeniu listy) wszystko wraca na miejsce. Kasowane po zatwierdzeniu/odrzuceniu.
+function subDrAll(){try{return JSON.parse(localStorage.getItem("sub.d")||"{}")}catch(e){return {}}}
+function subDrPut(a){try{var k=Object.keys(a);if(k.length>30)k.sort(function(x,y){return a[x].t-a[y].t}).slice(0,k.length-30).forEach(function(x){delete a[x]});localStorage.setItem("sub.d",JSON.stringify(a))}catch(e){}}
+function subIdOf(el){var s=el&&el.closest&&el.closest(".sub"),b=s&&s.querySelector("[data-subset][data-id]");return b?b.getAttribute("data-id"):null}
+function subDrSave(el){var id=subIdOf(el);if(!id)return;var sub=el.closest(".sub"),d={f:{},t:Date.now()};
+  sub.querySelectorAll(".sf[data-f]").forEach(function(r){var c=r.querySelector("textarea"),v=c?c.value:r.getAttribute("data-v");if(v!==r.getAttribute("data-o"))d.f[r.getAttribute("data-f")]=v});
+  var si=$("si_"+id),sl=$("sl_"+id),x=(window.__subs||[]).filter(function(y){return String(y.id)===id})[0],od=(x&&x.data)||{};
+  if(si&&si.value!==(od.img||""))d.img=si.value;if(sl&&sl.value!==(od.link||""))d.link=sl.value;
+  var a=subDrAll();if(Object.keys(d.f).length||d.img!=null||d.link!=null)a[id]=d;else delete a[id];subDrPut(a)}
+function subDrDel(id){var a=subDrAll();if(a[id]){delete a[id];subDrPut(a)}}
+function subDrRestore(){var a=subDrAll();Object.keys(a).forEach(function(id){var b=document.querySelector('#subview [data-subset][data-id="'+id+'"]'),sub=b&&b.closest(".sub");if(!sub)return;var d=a[id];
+  Object.keys(d.f||{}).forEach(function(k){var r=sub.querySelector('.sf[data-f="'+k+'"]');if(!r)return;var v=d.f[k],c=r.querySelector("textarea");r.setAttribute("data-v",v);
+    if(c)c.value=v;else{var sv=r.querySelector(".sv");sv.textContent=v||"—";r.classList.add("ch");var n=document.createElement("span");n.className="chn";n.textContent="zmienione";sv.appendChild(n)}});
+  var si=$("si_"+id),sl=$("sl_"+id);if(si&&d.img!=null){si.value=d.img;si.dispatchEvent(new Event("input",{bubbles:true}))}if(sl&&d.link!=null)sl.value=d.link})}
+document.addEventListener("input",function(e){if(e.target.closest&&e.target.closest("#subview .sub"))subDrSave(e.target)});
 function renderSubs(){
   var box=$("subview"),h='<h2>Zgłoszenia</h2>';
   if(!CM)return;

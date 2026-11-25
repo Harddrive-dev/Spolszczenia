@@ -1381,7 +1381,7 @@ function isMod(){return roleLoaded?(myRole==="mod"||myRole==="admin"):emailIsOwn
 // DEV – twórca spolszczeń: zielona odznaka + poprawianie tylko gier swojej grupy (grupy z funkcji my_groups)
 function isDev(){return roleLoaded&&myRole==="dev"}
 var myGrp=[];
-function wGrupie(g){if(!g||!myGrp.length)return false;var au=[String(g.author||"")].concat(g.tworcy||[],(g.spolszczenia||[]).map(function(x){return x.author||""})).join(" | ").toLowerCase();
+function wGrupie(g){if(!g||!myGrp.length)return false;var au=[String(g.author||"")].concat(g.tworcy||[]).join(" | ").toLowerCase(); // tylko główny autor i twórcy – nie dodatkowe spolszczenia innych grup
   return myGrp.some(function(x){return x&&au.indexOf(String(x).toLowerCase())>=0})}
 // Opiekun sekcji (rola „opiekun”, np. tylko PSP): poprawia wpisy i wgrywa zrzuty tylko w grach ze swojej platformy.
 // To tylko wygoda w przeglądarce – naprawdę pilnują tego baza, funkcja „zrzuty” i automat (scripts/sync.mjs).

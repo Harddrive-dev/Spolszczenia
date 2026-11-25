@@ -25182,8 +25182,12 @@
     "dodano": "2026-11-25",
     "img": "https://cdn.grypopolsku.pl/okladki/the-legend-of-zelda-ocarina-of-time-remake-a4049f34.webp",
     "opis": "The Legend of Zelda: Ocarina of Time (Remake z 2026 roku) to pełnoprawna, stworzona od podstaw odświeżona wersja legendarnej przygodowej gry akcji (action-adventure) z 1998 roku (Nintendo 64). Gra została wyprodukowana przez studio Nintendo EPD pod okiem Eijiego Aonumy i wydana 5 listopada 2026 roku na konsolę Nintendo Switch 2.",
-    "instr": "VoicePack przygotowany dla wersji gry na Nintendo Switch 2.\nDo poprawnego działania lektora wymagany jest grabber wideo (urządzenie do przechwytywania obrazu), który umożliwia przesyłanie obrazu z konsoli do aplikacji LoreSpeak.\n\n# Jak uruchomić lektora na Nintendo Switch 2?\n1. Podłącz konsolę Nintendo Switch 2 do grabbera, a grabber do komputera.\n2. Uruchom grę na konsoli.\n3. Otwórz LoreSpeak i wybierz grabber jako źródło obrazu.\n4. Włącz VoicePack i rozpocznij rozgrywkę z lektorem.\n\nWażne: VoicePack został opracowany na podstawie wersji gry na Nintendo Switch 2. Nie gwarantujemy poprawnego działania ze starszymi wersjami gry.",
-    "upd": "2026-11-25"
+    "instr": "VoicePack przygotowany dla wersji gry na Nintendo Switch 2.\nDo poprawnego działania lektora wymagany jest grabber wideo (urządzenie do przechwytywania obrazu), który umożliwia przesyłanie obrazu z konsoli do aplikacji LoreSpeak.\n\n# Jak uruchomić lektora na Nintendo Switch 2?\n1. Podłącz konsolę Nintendo Switch 2 do grabbera, a grabber do komputera.\n2. Uruchom grę na konsoli.\n3. Otwórz LoreSpeak i wybierz grabber jako źródło obrazu.\n4. Włącz VoicePack i rozpocznij rozgrywkę z lektorem.\n\nWażne: VoicePack został opracowany na podstawie wersji gry na Nintendo Switch 2. Nie gwarantujemy poprawnego działania ze starszymi wersjami gry.\n\n*Źródło opisu: [LoreSpeak.pl](https://lorespeak.pl/games/the-legend-of-zelda-ocarina-of-time)*",
+    "upd": "2026-11-25",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-25"
+    }
   },
   {
     "game": "Sniper: Ghost Warrior 2",

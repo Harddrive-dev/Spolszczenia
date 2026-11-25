@@ -247,3 +247,8 @@ html{-webkit-tap-highlight-color:transparent}
 .ubtn .ulv{margin-left:0}
 .ubtn .ulv.hv{position:absolute;left:21px;top:21px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border:2px solid var(--surface);border-radius:999px;font-size:10px;line-height:14px;text-align:center;margin:0}
 .cnick{color:inherit;text-decoration:none}.cnick:hover{color:var(--accent);text-decoration:underline}
+/* Liczniki (czerwone kółka, poziom): cyfra zawsze na środku (25.11) */
+.bn,.bd,.ubtn .ulv.hv{line-height:1;font-variant-numeric:tabular-nums;text-box:trim-both cap alphabetic}
+.bn{border:0;box-shadow:0 0 0 2px var(--bg);height:18px;min-width:18px;padding:0 5px;top:-6px;right:-4px}
+.bd{height:19px;min-width:19px;padding:0 6px}
+.ubtn .ulv.hv{display:grid;place-items:center;padding:0 3px}

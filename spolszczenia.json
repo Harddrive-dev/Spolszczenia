@@ -25170,26 +25170,6 @@
     "upd": "2026-11-23"
   },
   {
-    "game": "MADiSON",
-    "platform": "PC",
-    "type": "Napisy",
-    "prog": 100,
-    "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/madison",
-    "genre": "Horror",
-    "dodano": "2026-11-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
-    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
-    "steam": 1670870,
-    "upd": "2026-11-07",
-    "zmiana": {
-      "kto": "Harddrive",
-      "dzien": "2026-11-07"
-    }
-  },
-  {
     "game": "The Legend of Zelda Ocarina of Time Remake",
     "platform": "PC, Nintendo Switch 2",
     "type": "Napisy",
@@ -25220,5 +25200,25 @@
     "opis": "Sniper: Ghost Warrior 2 to wydana w marcu 2013 roku pierwszoosobowa strzelanka taktyczna (FPS / skradanka) wyprodukowana przez polskie studio City Interactive (obecnie CI Games). Gra jest bezpośrednią kontynuacją Sniper: Ghost Warrior z 2010 roku i wykorzystuje silnik CryEngine 3.",
     "steam": 34870,
     "upd": "2026-11-25"
+  },
+  {
+    "game": "MADiSON",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/madison",
+    "genre": "Horror",
+    "dodano": "2026-11-07",
+    "img": "https://cdn.grypopolsku.pl/okladki/madison-f8121bff.webp",
+    "opis": "MADiSON to pierwszoosobowy horror psychologiczny z 2022 roku, stworzony przez studio BLOODIOUS GAMES. Gra słynie z niezwykle gęstej, przytłaczającej atmosfery i uchodzi za jedną z najstraszniejszych produkcji ostatnich lat.\n\nWcielasz się w postać Luki, który budzi się zamknięty w ciemnym pokoju z zakrwawionymi dłońmi. Okazuje się, że chłopak stał się celem demonicznej siły (tytułowej Madison), która zmusza go do dokończenia okrutnego rytuału rozpoczętego dekady wcześniej.",
+    "steam": 1670870,
+    "upd": "2026-11-07",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-07"
+    }
   }
 ]

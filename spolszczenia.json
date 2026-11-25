@@ -25085,5 +25085,38 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Terrible Lizards",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=terrible-lizards",
+    "genre": "Strategia",
+    "dodano": "2026-11-25",
+    "img": "https://cdn.grypopolsku.pl/okladki/terrible-lizards-c0b70d44.webp",
+    "opis": "Terrible Lizards to pierwszoosobowa gra parkourowa z elementami survival horroru, stworzona przez niezależne studio Brainlag Games (twórców Voivod: The Nuclear Warrior).\n\nAkcja gry toczy się w latach 90. w USA, przy słynnej trasie Route 66. Gracz wciela się w mężczyznę o imieniu Ray, którego samochód psuje się na pustkowiu. Szukając pomocy, trafia on do podupadłej, na wpół opuszczonej przydrożnej atrakcji turystycznej – parku tematycznego z dinozaurami (Dinosaur Land). Szybko okazuje się, że w",
+    "steam": 2920220,
+    "upd": "2026-11-23"
+  },
+  {
+    "game": "Tales of Symphonia",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "1.0",
+    "author": "TalesOfManiac",
+    "link": "https://talesofmaniac.pl/#projekt-symphonia",
+    "yt": "https://www.youtube.com/watch?v=AT8URCek-tk",
+    "genre": "RPG",
+    "dodano": "2026-11-25",
+    "img": "https://cdn.grypopolsku.pl/okladki/tales-of-symphonia-85b7fe20.webp",
+    "opis": "Tales of Symphonia to wydana pierwotnie w 2003 roku (w Europie w 2004 na konsolę Nintendo GameCube) kultowa gra jRPG akcji stworzona przez studio Namco Tales Studio. Jest uznawana za jedną z najważniejszych i najbardziej przełomowych odsłon serii Tales of, która spopularyzowała cykl na Zachodzie. Doczekała się również portów oraz remasterów (m.in. na PS2, PS3, PC oraz jako Tales of Symphonia Remastered w 2023 roku na PS4, Xbox One i Nintendo Switch).",
+    "steam": 372360,
+    "upd": "2026-11-24"
   }
 ]

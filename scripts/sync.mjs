@@ -18,7 +18,9 @@ const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|
 const find=k=>list.find(g=>keyOf(g)===k);
 // Opiekun sekcji (rola „opiekun”, np. tylko PSP): przy jego poprawkach baza wpisuje data.zakres = lista platform.
 // Poprawkę przyjmujemy tylko w grze, której platforma zawiera jedną z nich (np. „PSP” → „Sony PSP”).
-const wZakresie=(g,d)=>!Array.isArray(d.zakres)||d.zakres.some(p=>p&&String(g.platform||"").toLowerCase().includes(String(p).toLowerCase()));
+const wZakresie=(g,d)=>(!Array.isArray(d.zakres)||d.zakres.some(p=>p&&String(g.platform||"").toLowerCase().includes(String(p).toLowerCase())))
+  // DEV (25.11): tylko gry swojej grupy – grupa w autorze, twórcach albo w jednym ze spolszczeń gry
+  &&(!Array.isArray(d.grupy)||d.grupy.some(x=>x&&[String(g.author||"")].concat(g.tworcy||[],(g.spolszczenia||[]).map(s=>s.author||"")).join(" | ").toLowerCase().includes(String(x).toLowerCase())));
 // Numer gry na Steamie: sam numer, link do sklepu albo kilka po przecinku. Zwraca listę numerów albo null, gdy coś jest nie tak.
 const steamParse=v=>{v=String(Array.isArray(v)?v.join(","):v??"").trim();if(!v)return[];const out=[];for(const x of v.split(/[\s,;]+/)){if(!x)continue;const m=/^(\d{1,8})$/.exec(x)||/steam(?:powered|community)\.com\/(?:app|agecheck\/app)\/(\d{1,8})/i.exec(x);if(!m)return null;if(!out.includes(+m[1]))out.push(+m[1])}return out};
 const steamSet=(g,ids)=>{if(ids&&ids.length)g.steam=ids.length===1?ids[0]:ids;else delete g.steam};

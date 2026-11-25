@@ -252,3 +252,4 @@ html{-webkit-tap-highlight-color:transparent}
 .bn{border:0;box-shadow:0 0 0 2px var(--bg);height:18px;min-width:18px;padding:0 5px;top:-6px;right:-4px}
 .bd{height:19px;min-width:19px;padding:0 6px}
 .ubtn .ulv.hv{display:grid;place-items:center;padding:0 3px}
+.devb{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:1px 8px;margin-left:6px;background:#2fb36a;color:#06210f}

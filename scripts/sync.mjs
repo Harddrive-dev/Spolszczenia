@@ -13,7 +13,7 @@ const rows=await res.json();
 const CZAS=new Date().toISOString(); // do tej chwili zmiany z bazy są przerobione – strona (index.html) pokazuje od razu tylko nowsze zmiany okładek
 const list=JSON.parse(fs.readFileSync("spolszczenia.json","utf8")),before=JSON.stringify(list,null,2);
 for(const g of list)if(g.status==="W toku")g.status="Beta";
-const TYPES=["Napisy","Dubbing + napisy","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link"];
+const TYPES=["Napisy","Dubbing + napisy","Dubbing"],DUBST=["Gotowe","Beta","Testy"],EDIT=["status","ver","author","genre","link","prog"];
 const YT=u=>/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#\/]|$)/.test(String(u||"").trim());
 const find=k=>list.find(g=>keyOf(g)===k);
 // Opiekun sekcji (rola „opiekun”, np. tylko PSP): przy jego poprawkach baza wpisuje data.zakres = lista platform.
@@ -47,7 +47,7 @@ for(const r of rows){const d=r.data||{},day=String(r.created_at||"").slice(0,10)
   if(d.genre)e.genre=d.genre;if(d.premiera&&/^\d{4}-\d{2}-\d{2}$/.test(d.premiera))e.premiera=d.premiera;e.dodano=day;if(d.img&&/^(https?:\/\/|img\/)/i.test(d.img))e.img=r2img(String(d.img));if(d.opis)e.opis=String(d.opis).slice(0,500);{const st=steamParse(d.steam);if(st&&st.length)steamSet(e,st)}if(d.instr)e.instr=String(d.instr).trim().slice(0,3000);e.upd=d.upd||day;if(nid&&nid!==slug(name)){e.id=nid;e.osobna=true}list.push(e)}
  else if(r.kind==="edit"){const g=find(d.key);if(!g)continue;const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){if(!EDIT.includes(c.field))continue;const v=String(c.to==null?"":c.to).trim();
-   if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
+   if(c.field==="link"&&!/^https?:\/\//i.test(v))continue;if(c.field==="prog"){if(/^\d{1,3}$/.test(v))g.prog=Math.min(100,+v);continue}/* postęp jako liczba (zmiany od bota, 26.11) */if(c.field==="genre"||v)g[c.field]=v;if(c.field==="genre"&&!v)delete g.genre}
   if(day&&spUpd(przed,g))g.upd=day}
  else if(r.kind==="modedit"){const g=find(d.key);if(!g)continue;if(!wZakresie(g,d)){console.log("Pominięto poprawkę spoza sekcji opiekuna:",r.game,"(",(d.zakres||[]).join(", "),")");continue}const przed={ver:g.ver,status:g.status};
   for(const c of d.changes||[]){const f=c.field,v=String(c.to==null?"":c.to).trim();

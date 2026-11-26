@@ -19354,7 +19354,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.3.6",
+    "ver": "1.6",
     "genre": "Akcja",
     "author": "Na100procent",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4931",
@@ -19366,9 +19366,10 @@
     ],
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-15"
+      "dzien": "2026-11-26"
     },
-    "opis": "To zestaw zawierający pierwszą grę Grand Theft Auto z 1997 roku oraz dodatki London 1969 i London 1961. W klasycznym GTA, oglądanym z góry, gracz jest drobnym przestępcą, który wykonuje zlecenia gangów w trzech fikcyjnych miastach. Kradnie samochody, ucieka przed policją i zdobywa punkty potrzebne do przejścia dalej. Dodatki przenoszą akcję do Londynu z lat 60."
+    "opis": "To zestaw zawierający pierwszą grę Grand Theft Auto z 1997 roku oraz dodatki London 1969 i London 1961. W klasycznym GTA, oglądanym z góry, gracz jest drobnym przestępcą, który wykonuje zlecenia gangów w trzech fikcyjnych miastach. Kradnie samochody, ucieka przed policją i zdobywa punkty potrzebne do przejścia dalej. Dodatki przenoszą akcję do Londynu z lat 60.",
+    "upd": "2026-11-26"
   },
   {
     "game": "Re-Volt",

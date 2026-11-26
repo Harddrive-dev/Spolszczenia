@@ -25307,5 +25307,37 @@
     "opis": "My Time at Portia to wydana w styczniu 2019 roku (po okresie wczesnego dostępu) przygodowa gra symulacyjna z elementami RPG (life sim / crafting RPG), stworzona przez chińskie studio Pathea Games i wydana przez Team17. Produkcja doczekała się kontynuacji zatytułowanej My Time at Sandrock.",
     "steam": 666140,
     "upd": "2026-11-25"
+  },
+  {
+    "game": "My Time at Sandrock",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=my-time-at-sandrock",
+    "genre": "RPG",
+    "dodano": "2026-11-25",
+    "img": "https://cdn.grypopolsku.pl/okladki/my-time-at-sandrock-4371e6a2.webp",
+    "opis": "My Time at Sandrock to wydana w listopadzie 2023 roku przygodowa gra symulacyjna z elementami RPG (life sim / crafting RPG), stworzona przez chińskie studio Pathea Games i wydana przez PM Studios oraz Focus Entertainment. Produkcja stanowi bezpośrednią kontynuację ciepło przyjętego My Time at Portia, rozgrywającą się w tym samym uniwersum.",
+    "steam": 1084600,
+    "upd": "2026-11-25"
+  },
+  {
+    "game": "Shadowrun: Dragonfall - Director's Cut",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Testy",
+    "prog": 10,
+    "ver": "—",
+    "author": "VetSpolszczenia",
+    "link": "https://vetspolszczenia.pl/projekt.html?id=shadowrun-dragonfall-director-s-cut",
+    "genre": "RPG",
+    "dodano": "2026-11-25",
+    "img": "https://cdn.grypopolsku.pl/okladki/shadowrun-dragonfall-director-s-cut-8b174c96.webp",
+    "opis": "Shadowrun: Dragonfall – Director's Cut to wydana we wrześniu 2014 roku taktyczna gra RPG (cRPG / tactical RPG), stworzona i wydana przez studio Harebrained Schemes. Stanowi samodzielną, znacznie rozbudowaną i ulepszoną edycję dodatku Dragonfall do gry Shadowrun Returns (2013), osadzoną w kultowym uniwersum łączącym cyberpunk z elementami magii i fantasy.",
+    "steam": 300550,
+    "upd": "2026-11-25"
   }
 ]

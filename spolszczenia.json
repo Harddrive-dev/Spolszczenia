@@ -25394,5 +25394,21 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
+  },
+  {
+    "game": "Milki Delivery",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "bearded1305",
+    "link": "https://bazarowespolszczenia.pl/gra/milki_delivery",
+    "genre": "Przygodowa",
+    "dodano": "2026-11-26",
+    "img": "https://cdn.grypopolsku.pl/okladki/milki-delivery-71700f1f.webp",
+    "opis": "Milki Delivery to krótka, przytulna gra przygodowo-eksploracyjna typu cozy wydana 17 listopada 2026 roku przez twórców hitu Minami Lane (duet Blibloop i Doot). Gracz wciela się w młodą kurierkę o imieniu Neha, która wraz ze swoją udomowioną krową Milki zakłada lokalny serwis dostaw mleka, przemierzając na rowerze malowniczą, ręcznie rysowaną krainę.",
+    "steam": 4259360,
+    "upd": "2026-11-26"
   }
 ]

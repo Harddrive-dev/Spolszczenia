@@ -21077,8 +21077,26 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4214",
     "dodano": "2024-10-29",
     "steam": 1621690,
-    "img": "https://cdn.grypopolsku.pl/okladki/core-keeper-b59a9f88.webp",
-    "opis": "Core Keeper to przygodowa gra typu sandbox o kopaniu i eksploracji, dla 1–8 graczy. Bohater budzi się w zapomnianej jaskini pełnej stworzeń, reliktów i surowców. Gracze kopią, budują, walczą, tworzą przedmioty i uprawiają rośliny. Celem jest odkrycie tajemnicy starożytnego Rdzenia."
+    "img": "https://cdn.grypopolsku.pl/okladki/core-keeper-ca9b7c6b.webp",
+    "opis": "Core Keeper to przygodowa gra typu sandbox o kopaniu i eksploracji, dla 1–8 graczy. Bohater budzi się w zapomnianej jaskini pełnej stworzeń, reliktów i surowców. Gracze kopią, budują, walczą, tworzą przedmioty i uprawiają rośliny. Celem jest odkrycie tajemnicy starożytnego Rdzenia.",
+    "spolszczenia": [
+      {
+        "id": "core-keeper--vetspolszczenia",
+        "author": "VetSpolszczenia",
+        "link": "https://vetspolszczenia.pl/projekt.html?id=core-keeper",
+        "type": "Napisy",
+        "status": "Gotowe",
+        "prog": 100,
+        "ver": "1.0",
+        "upd": "2026-11-26",
+        "dodano": "2026-11-26"
+      }
+    ],
+    "upd": "2026-11-26",
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-26"
+    }
   },
   {
     "game": "SteamWorld Heist",

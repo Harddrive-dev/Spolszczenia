@@ -95,7 +95,8 @@ jobs:
       - name: Filmy YouTube na Discordzie
         # odnawia powiadomienia od YouTube (funkcja Supabase youtube-discord) i wysyła filmy, które by umknęły
         continue-on-error: true
-        run: curl -s -m 60 -X POST https://qbozpokxgtspwdxvbevv.supabase.co/functions/v1/youtube-discord -H "Content-Type: application/json" -d '{"odnow":true}' || true
+        run: |
+          curl -s -m 60 -X POST https://qbozpokxgtspwdxvbevv.supabase.co/functions/v1/youtube-discord -H "Content-Type: application/json" -d '{"odnow":true}' || true
       - name: Zapisz zmiany
         if: always()
         run: |

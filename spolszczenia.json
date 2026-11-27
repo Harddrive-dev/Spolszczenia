@@ -612,7 +612,8 @@
       "Manuel Czaszka",
       "twig",
       "mziab"
-    ]
+    ],
+    "opis": "Przygodowa gra platformowa na podstawie filmu Tima Burtona z 2010 roku, stworzona przez Étranges Libellules i wydana przez Disney Interactive Studios. Alicja wraca przez króliczą norę do magicznej krainy, którą odwiedziła jako dziecko. Wersja na Nintendo DS mocno różni się od wydań na Wii i PC – ma bardziej kreskówkową oprawę, a całą grą steruje się na ekranie dotykowym."
   },
   {
     "game": "Alien Shooter TD",
@@ -715,7 +716,8 @@
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/argus/",
     "genre": "Strzelanka",
-    "img": "https://cdn.grypopolsku.pl/okladki/argus-dd1d3398.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/argus-dd1d3398.webp",
+    "opis": "Pionowa strzelanka z 1986 roku, stworzona przez NMK i wydana przez Jaleco – najpierw na automaty, a potem na Famicoma, wyłącznie w Japonii. Gracz steruje myśliwcem kosmicznym z działkiem laserowym i bombami na cele naziemne. Po pokonaniu bossa trzeba bezpiecznie wylądować na pasie startowym, a celem jest zniszczenie latającej fortecy Mega Argus."
   },
   {
     "game": "Arx Fatalis",
@@ -850,7 +852,8 @@
     "upd": "2021-03-18",
     "link": "https://grajpopolsku.pl/download/astro-fang-super-machine/",
     "genre": "Sportowa / wyścigi",
-    "img": "https://cdn.grypopolsku.pl/okladki/astro-fang-super-machine-7feeae9e.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/astro-fang-super-machine-7feeae9e.webp",
+    "opis": "Wyścigi połączone z walką pojazdów, wydane w 1990 roku przez A-Wave na Famicoma, tylko w Japonii. Na spustoszonej planecie RS-121β została tylko jedna budowla – autostrada zwana Black Line, z którą wiąże się starożytna legenda. Gracz bierze udział w wyścigu na tej trasie i zrzuca rywali z drogi pociskami, a w warsztatach naprawia auto i uzupełnia broń."
   },
   {
     "game": "Atlantis IV Evolution",
@@ -1709,7 +1712,8 @@
     "author": "mziab",
     "link": "https://grajpopolsku.pl/download/cyber-knight-ii/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Taktyczna gra RPG w klimacie science fiction, pełna mechów i statków kosmicznych, wydana w 1994 roku przez Tonkin House tylko w Japonii. Załoga z pierwszej części wraca na Ziemię i odkrywa, że władzę przejęło despotyczne imperium. Na pokładzie nowego statku Galvodirge bohaterowie przemierzają galaktykę, odwiedzają ludzkie cywilizacje i szukają sposobu, by powstrzymać atak Ziemi."
   },
   {
     "game": "Darkwing Duck",
@@ -1990,7 +1994,8 @@
     "link": "https://ikskoks.pl/download/dexters-laboratory-mandarks-lab-spolszczenie/",
     "genre": "Platformówka",
     "dodano": "2026-10-28",
-    "yt": "https://www.youtube.com/watch?v=2068TBtkHFk"
+    "yt": "https://www.youtube.com/watch?v=2068TBtkHFk",
+    "opis": "Przygodowa gra akcji w grafice 3D cel-shading z 2002 roku, oparta na serialu Cartoon Network „Laboratorium Dextera”. Rywal Dextera, Mandark, włamuje się do jego laboratorium i przeprogramowuje komputer tak, by nie wpuszczał Dextera do środka. Trzeba odzyskać laboratorium, przemierzając dom i laboratorium Dextera i zaliczając minigry, m.in. lekcję tańca Dee Dee, zbijaka i wyścigi."
   },
   {
     "game": "Diablo",
@@ -2568,7 +2573,8 @@
     "author": "mziab",
     "link": "https://grajpopolsku.pl/download/dual-orb-2/",
     "genre": "RPG",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Turowa gra RPG z 1994 roku na Super Famicoma od I'Max, kontynuacja Dual Orb, wydana tylko w Japonii. Dawno temu kwitnącą cywilizację zniszczył smok, którego pokonano za pomocą magicznej kuli – kosztem całej techniki świata. Tysiąc lat później bohaterem jest Aleth, chłopiec znaleziony jako niemowlę przez arcykapłana Garade, który wraz z przyjacielem, księciem Lagnusem, odnajduje w zakazanym lochu „boginię” bez pamięci."
   },
   {
     "game": "Duck Tales",
@@ -2610,7 +2616,8 @@
     "link": "https://grajpopolsku.pl/download/dungeons-of-avalon/",
     "dodano": "2026-10-28",
     "genre": "RPG",
-    "img": "https://cdn.grypopolsku.pl/okladki/dungeons-of-avalon-6bf9881f.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/dungeons-of-avalon-6bf9881f.webp",
+    "opis": "Niemiecka gra RPG typu dungeon crawler na Amigę, wydana w 1992 roku jako darmowy dodatek na dyskietce do magazynu Amiga Fun, a później po angielsku w Amiga Mania. Lochy zwiedza się z perspektywy pierwszej osoby, krok po kroku po siatce pól. Gra doczekała się kontynuacji – Dungeons of Avalon II."
   },
   {
     "game": "Dust: An Elysian Tail",
@@ -2656,7 +2663,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "opis": "Gra logiczna, znana też pod tytułami Elven Mists i Jewel Land. Krainę elfów spowiły gęste, magiczne mgły."
   },
   {
     "game": "Eriksholm The Stolen Dream",
@@ -3168,7 +3176,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/from-the-abyss/",
     "dodano": "2026-10-28",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Gra akcji RPG na Nintendo DS od Sonic Powered z 2008 roku, w stylu serii Mana. Kraina Rubenhaut powstała, by strzec Bramy Otchłani – magicznego kryształu stworzonego przez Świętego Światła. Labirynt Otchłani generuje się losowo, więc każdy gracz ma inny świat, a dzięki systemowi Soul Capture można przejmować umiejętności wrogów. Można grać samemu lub we dwóch."
   },
   {
     "game": "Front Line",
@@ -4039,7 +4048,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "opis": "Krótka darmowa gra studentów DigiPen z 2009 roku – połączenie wyścigów z platformówką. Gracz steruje małym niebieskim totemem tiki, który toczy się co sił przez wybuchający wulkan, przeskakując rzeki lawy i uciekając przed walącymi się skałami. Gra ma cztery poziomy."
   },
   {
     "game": "Ike Ike! Nekketsu Hockey Bu – Subette Koronde Dai Rantou",
@@ -4088,7 +4098,8 @@
     "tworcy": [
       "krzys837",
       "W3trace"
-    ]
+    ],
+    "opis": "Gra logiczna z 2001 roku, oparta na serialu „Inspektor Gadżet”. Doktor Claw tworzy w tajnej bazie na Księżycu kryształy kontrolujące umysły i zrzuca je na Ziemię, a jego sługusy pilnują ich w czterech różnych krainach. Gadżet musi przesuwać kryształy w odpowiednie rzędy na ponad 40 poziomach, zanim skończy się czas."
   },
   {
     "game": "Inversion",
@@ -4873,7 +4884,8 @@
     "link": "https://ikskoks.pl/download/mental-repairs-inc-spolszczenie/",
     "dodano": "2026-10-28",
     "genre": "Przygodowa",
-    "img": "https://cdn.grypopolsku.pl/okladki/mental-repairs-inc-a816ed9d.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/mental-repairs-inc-a816ed9d.webp",
+    "opis": "Darmowa przygodówka point'n'click z 2008 roku, stworzona jako praca dyplomowa na Uniwersytecie Sztuk w Zurychu. Henrik Liaw jest psychiatrą maszyn – wchodzi do „umysłów” zepsutych urządzeń i leczy je od środka. Pewnej nocy główny komputer firmy Rhosonit Engineering przechodzi załamanie nerwowe, a po drodze czekają m.in. kserokopiarka, która przestała widzieć kolory, automat do kawy z niską samooceną i winda z rozdwojeniem jaźni."
   },
   {
     "game": "Metal Gear",
@@ -5054,7 +5066,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-06"
-    }
+    },
+    "opis": "Darmowa powieść wizualna (visual novel) stworzona w Ren'Py przez American Bishoujo. Młody Amerykanin przed studiami odwiedza ciocię i wujka na North Sand Island, małej wyspie na wybrzeżu Atlantyku. Pewnej nocy, fotografując księżyc w pełni, dostrzega tajemniczą dziewczynę w długiej białej sukni spacerującą samotnie po plaży. Gra ma 21 ścieżek i 4 zakończenia."
   },
   {
     "game": "Mortal Kombat Komplete Edition",
@@ -5685,7 +5698,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/psychotoxic/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka FPP z 2004 roku od niemieckiego studia NuClearVision Entertainment. Bohaterką jest Angie Prophet – w części człowiek, w części anioł – która ma uratować świat przed nuklearną zagładą. Akcja toczy się w 2022 roku w Nowym Jorku, a gra ma wyłącznie kampanię dla jednego gracza."
   },
   {
     "game": "PT Boats",
@@ -5995,7 +6009,8 @@
     "author": "krzys837",
     "link": "https://grajpopolsku.pl/download/rox-psx/",
     "genre": "Logiczna",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Gra logiczna od Altron, wydana w Japonii w 1998 roku, a w Europie w 2003 roku. Z góry spadają kości do gry, a liczą się zarówno ich kolory, jak i liczby oczek. Kości znikają, gdy dwie skrajne pokazują tę samą liczbę, a między nimi leży dokładnie tyle kości – jeśli skrajne mają ten sam kolor, znikają też wszystkie pomiędzy. Można też grać we dwóch."
   },
   {
     "game": "Rune",
@@ -6775,7 +6790,8 @@
         "upd": "",
         "dodano": ""
       }
-    ]
+    ],
+    "opis": "Klasyczna zręcznościowa strzelanka kosmiczna z 2016 roku od Digital Dawn Studios. Gracz steruje mopsem Demetriusem Trzecim, który broni swojej przestrzeni przed złymi kotami rzucającymi rybami – i przed przypadkowymi kamieniami, bo bez nich kosmiczna strzelanka nie byłaby kosmiczna."
   },
   {
     "game": "Superbike Racing",
@@ -6788,7 +6804,8 @@
     "author": "—",
     "link": "https://grajpopolsku.pl/download/superbike-racing/",
     "genre": "Sportowa / wyścigi",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Wyścigi motocyklowe z 2004 roku od brytyjskiej firmy IncaGold, specjalizującej się w tanich produkcjach. Gra łączy elementy symulacji motocyklowej z wyścigami zręcznościowymi, a model jazdy jest mocno uproszczony."
   },
   {
     "game": "Sword of Mana",
@@ -8125,7 +8142,8 @@
     "author": "RPG",
     "link": "https://grajpopolsku.pl/download/villgust/",
     "dodano": "2026-10-28",
-    "genre": "RPG"
+    "genre": "RPG",
+    "opis": "Gra RPG z 1992 roku na Super Famicoma od Winkysoft i Bandai, wydana tylko w Japonii. Bohaterem jest Shun, nastolatek ze współczesnej Japonii, który trafia do równoległego, średniowiecznego świata – musi uratować swoją dziewczynę i wrócić do domu. W walkach może brać udział aż pięciu członków drużyny, a gra doczekała się też dwóch odcinków anime OVA."
   },
   {
     "game": "Waking Mars",
@@ -8402,7 +8420,8 @@
     "author": "minDStorm",
     "link": "https://grajpopolsku.pl/download/zombiez-seeker/",
     "genre": "Strzelanka",
-    "dodano": "2026-10-28"
+    "dodano": "2026-10-28",
+    "opis": "Strzelanka FPP „na szynach” z 2011 roku, stworzona przez tajlandzkie studio 7 Raven Studios. Dwójce nastolatków psuje się samochód w dziwnym miasteczku i muszą odpierać hordy zombie, mutantów i innych stworów. Gra ma pięć poziomów, a do wyboru są trzy bronie: pistolet, strzelba i karabin maszynowy."
   },
   {
     "game": "Silent Hill 2",
@@ -12605,7 +12624,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-08"
-    }
+    },
+    "opis": "Turowa gra RPG od Square Enix i Lancarse, pierwsza odsłona Final Fantasy w stylu graficznym HD-2D, wydana 22 października 2026 roku. To rozbudowany remake pierwszego wątku fabularnego mobilnej gry Final Fantasy Brave Exvius. W walkach można przyzywać postacie z całej serii, m.in. Wojownika Światła, Terrę i Zidane'a."
   },
   {
     "game": "Phoenix Wright: Ace Attorney Trilogy",
@@ -12778,7 +12798,8 @@
     "link": "https://bazarowespolszczenia.pl/gra/the_boys_vr",
     "dodano": "2026-05-03",
     "upd": "2026-10-17",
-    "img": "https://cdn.grypopolsku.pl/okladki/the-boys-vr-a6b03b57.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/the-boys-vr-a6b03b57.webp",
+    "opis": "The Boys: Trigger Warning – skradankowa gra akcji VR od brazylijskiego studia ARVORE, wydana 26 marca 2026 roku na Meta Quest, a później także na PS VR2. Bohater, Lucas, przypadkiem odkrywa makabryczny sekret firmy Vought. The Boys wyciągają go z opałów, dają mu moce i rzucają w sam środek swojej wojny z Vought i jej superbohaterami."
   },
   {
     "game": "Party Hard",
@@ -13178,7 +13199,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-15"
-    }
+    },
+    "opis": "Survival horror od Koei, wydany na Dreamcasta 20 stycznia 2000 roku tylko w Japonii (Nanatsu no Hikan: Senritsu no Bishō). Przyjaciele Kei i Reina trafiają na tajemniczą wyspę New Russell, gdzie szukają zaginionego doktora Ernesta. Do zbadania jest siedem posiadłości pełnych potworów, a w trybie kooperacji jeden gracz steruje Kei, a drugi Reiną."
   },
   {
     "game": "Well Dweller",
@@ -19515,7 +19537,8 @@
     "author": "Alvo6241",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3562",
     "dodano": "2020-07-07",
-    "img": "https://cdn.grypopolsku.pl/okladki/saint-seiya-ougon-densetsu-kanketsu-hen-24a84ce6.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/saint-seiya-ougon-densetsu-kanketsu-hen-24a84ce6.webp",
+    "opis": "Gra RPG z 1988 roku na Famicoma od Bandai, oparta na anime i mandze Saint Seiya (Rycerze Zodiaku), kontynuacja Saint Seiya: Ougon Densetsu, wydana tylko w Japonii. Seiya dociera do świątyni Papieża Aresa i odkrywa, że to Złoty Rycerz Bliźniąt Saga, który zabił prawdziwego Papieża. Rozgrywka łączy przewijane etapy akcji z turowymi walkami."
   },
   {
     "game": "King's Quest I: Quest for the Crown",
@@ -19868,7 +19891,8 @@
     "author": "Action",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4873",
     "dodano": "2026-09-19",
-    "img": "https://cdn.grypopolsku.pl/okladki/asterix-mega-szalenstwo-b802d422.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/asterix-mega-szalenstwo-b802d422.webp",
+    "opis": "Imprezowa gra z minigrami z 2001 roku (Asterix: Mega Madness) od Unique Development Studios i Infogrames. Galowie biorą udział w serii zwariowanych konkurencji sportowych, by zdobyć największy zaszczyt – miejsce obok wodza na uczcie. Do wyboru są cztery postacie: Asteriks, Obeliks, pani Geriatriks i Kakofoniks, 14 konkurencji i tryb drużynowy dla maksymalnie czterech graczy."
   },
   {
     "game": "Ballance",
@@ -20903,7 +20927,8 @@
     "author": "Rolly",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3278",
     "dodano": "2018-02-10",
-    "img": "https://cdn.grypopolsku.pl/okladki/shin-megami-tensei-synchronicity-prologue-b76df3d7.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/shin-megami-tensei-synchronicity-prologue-b76df3d7.webp",
+    "opis": "Darmowa platformówka 2D w stylu metroidvanii od zespołu Ladybug, wydana przez Atlus 16 października 2017 roku jako promocja Shin Megami Tensei: Strange Journey Redux. Gracz steruje maskotkami serii – Jackiem Frostem i Jackiem O'Lanternem. Akcja toczy się w tle wydarzeń ze Strange Journey, obok działań ekipy badawczej Schwarzwelt."
   },
   {
     "game": "Reverie Knights Tactics",
@@ -21156,7 +21181,8 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4188",
     "dodano": "2024-09-16",
     "steam": 858100,
-    "img": "https://cdn.grypopolsku.pl/okladki/grimshade-2704a0b2.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/grimshade-2704a0b2.webp",
+    "opis": "Drużynowa gra RPG inspirowana japońskimi RPG z lat 90., z taktycznymi walkami turowymi i mroczną historią o wojnie i osobistych wyborach. Las wokół miasta Brann opanowały potwory, pod miastem nagle wylądowała armia sąsiedniego królestwa, a król i jego wierni Czempioni zniknęli. Gra opowiada o drużynie bohaterów, których los wplątał w wydarzenia rozgrywające się w świecie Ree'fah."
   },
   {
     "game": "The Crooked Man",
@@ -21916,7 +21942,8 @@
     "link": "https://ikskoks.pl/download/java-tekken-mobile-spolszczenie-pl-dubbing/",
     "dodano": "2020-02-11",
     "img": "https://cdn.grypopolsku.pl/okladki/tekken-mobile-6b944797.webp",
-    "yt": "https://www.youtube.com/watch?v=ccoGF-9gD04"
+    "yt": "https://www.youtube.com/watch?v=ccoGF-9gD04",
+    "opis": "Bijatyka na telefony z Javą od Namco Bandai – seria Tekken przeniesiona na komórki w grafice 2D. Gra zawiera ośmiu wojowników z serii, z których na początku dostępni są tylko Jin i Xiaoyu. Można też walczyć z innym graczem przez Bluetooth."
   },
   {
     "game": "Crash Bandicoot: Mutant Island",
@@ -21930,7 +21957,8 @@
     "link": "https://ikskoks.pl/download/crash-bandicoot-mutant-island-spolszczenie-download/",
     "dodano": "2020-02-02",
     "img": "https://cdn.grypopolsku.pl/okladki/crash-bandicoot-mutant-island-2400ce79.webp",
-    "yt": "https://www.youtube.com/watch?v=oGpXymgxH00"
+    "yt": "https://www.youtube.com/watch?v=oGpXymgxH00",
+    "opis": "Platformówka 2D na telefony z 2009 roku od Glu Mobile i Vivendi Games Mobile. Crash dowiaduje się, że jego siostrę Coco porwał doktor Neo Cortex. Cortex zbudował gigantycznego robota i zahipnotyzował wszystkie bandicooty na wyspie tajemniczymi słuchawkami, a po drodze czekają też tytani wysocy jak drapacze chmur."
   },
   {
     "game": "Disciples III: Reincarnation",
@@ -21958,7 +21986,8 @@
     "author": "tomo92s",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=3463",
     "dodano": "2019-07-21",
-    "img": "https://cdn.grypopolsku.pl/okladki/tiny-room-stories-town-mystery-5788aba8.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/tiny-room-stories-town-mystery-5788aba8.webp",
+    "opis": "Przygodówka point'n'click z mechaniką escape roomu od Kiary Games. Gracz jest prywatnym detektywem, który po liście od ojca z prośbą o pomoc przyjeżdża do miasteczka Redcliff – i zastaje je zupełnie puste. Trzeba szukać wskazówek, rozwiązywać zagadki i otwierać zamki, obracając trójwymiarowe lokacje, by niczego nie przeoczyć."
   },
   {
     "game": "Candle",
@@ -22440,7 +22469,8 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=2902",
     "dodano": "2016-02-29",
     "img": "https://cdn.grypopolsku.pl/okladki/gunspell-8e6af6dc.webp",
-    "steam": 328100
+    "steam": 328100,
+    "opis": "Gra łącząca RPG z grą logiczną typu „trzy w rzędzie” (match-3). Gracz zostaje członkiem potężnego Zakonu, który chroni Ziemię przed stworzeniami z ciemnej strony. Walki toczy się, układając elementy na planszy, a w grę można grać bez połączenia z internetem."
   },
   {
     "game": "Secret Files 3",
@@ -22527,7 +22557,8 @@
     "author": "Magister",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=2822",
     "dodano": "2015-12-04",
-    "img": "https://cdn.grypopolsku.pl/okladki/basement-66df4ac7.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/basement-66df4ac7.webp",
+    "opis": "Strategia ekonomiczna od białoruskiego studia Halfbus, która zaczęła się jako prototyp na konkurs Ludum Dare 29. Gunther i jego przyjaciel Jesse zakładają nielegalny biznes narkotykowy, by zdobyć pieniądze na wymarzoną grę wideo Gunthera. Wszystko zaczyna się w piwnicy starego garażu wujka, a z czasem trzeba rozbudowywać laboratorium, zatrudniać ludzi i uważać na policję."
   },
   {
     "game": "Rock of Ages",
@@ -22801,7 +22832,8 @@
     "author": "mgos307",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=2297",
     "dodano": "2014-03-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/dr-chaos-fa73ed42.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/dr-chaos-fa73ed42.webp",
+    "opis": "Przygodowa gra akcji od Marionette, wydana w 1987 roku w Japonii przez Pony Canyon, a w 1988 roku w USA na NES przez FCI. Gracz wciela się w Michaela Chaosa, brata szalonego fizyka dr. Ginna Chaosa, który prowadził w swojej rezydencji eksperymenty ze strefą warp i zaginął. Japoński podtytuł gry to „Wrota Piekieł”."
   },
   {
     "game": "Dracula 4: The Shadow of the Dragon",
@@ -22928,7 +22960,8 @@
     "author": "WIAFilms",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=1871",
     "dodano": "2013-03-24",
-    "img": "https://cdn.grypopolsku.pl/okladki/leisure-suit-larry-wielkie-hity-i-te-zapomniane-0da6ae41.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/leisure-suit-larry-wielkie-hity-i-te-zapomniane-0da6ae41.webp",
+    "opis": "Kolekcja z 1994 roku od Sierra On-Line, zawierająca wszystkie wydane do tamtej pory gry z serii Leisure Suit Larry (Larry 1, 2, 3, 5 i 6). Bohaterem jest sympatyczny nieudacznik Larry Laffer, a gry to klasyczne przygodówki. Seria zawiera dosadny język i motywy erotyczne, więc jest przeznaczona dla dorosłych."
   },
   {
     "game": "SSX Out of Bounds",
@@ -22969,7 +23002,8 @@
     "author": "batter86",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=1713",
     "dodano": "2013-01-01",
-    "img": "https://cdn.grypopolsku.pl/okladki/gun-nac-35a901f9.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/gun-nac-35a901f9.webp",
+    "opis": "Strzelanka z przewijanym ekranem z 1990 roku, stworzona przez studio Compile. Rozgrywką przypomina Zanac, ale ma komiczny klimat – gracz strzela m.in. do robotycznych królików, uśmiechniętych buziek i innych dziwacznych przeciwników. Gra słynie z tego, jak często nagradza gracza ulepszeniami broni."
   },
   {
     "game": "Master of Defense",
@@ -22982,7 +23016,8 @@
     "author": "tomcionek15",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=1559",
     "dodano": "2012-09-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/master-of-defense-908e0da1.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/master-of-defense-908e0da1.webp",
+    "opis": "Trójwymiarowa strategia typu tower defense od Voodoo Dimention. Gracz broni królestwa przed falami złych potworów, budując wieże obronne. Po każdej odpartej fali mieszkańcy płacą złotem, a gracz zdobywa punkty doświadczenia, co dodaje grze elementy RPG."
   },
   {
     "game": "Cargo! The Quest for Gravity",
@@ -23024,7 +23059,8 @@
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=1324",
     "dodano": "2012-03-01",
     "steam": 567240,
-    "img": "https://cdn.grypopolsku.pl/okladki/drawn-trail-of-shadows-e24a9a54.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/drawn-trail-of-shadows-e24a9a54.webp",
+    "opis": "Trzecia część serii przygodówek Drawn od Big Fish Games, wydana w październiku 2011 roku. Przy kominku Franklin opowiada małej Iris o chłopcu sprzed wielu lat, który miał ten sam „dar” co ona – rysowane przez niego obrazy ożywały. Chłopca uwięził w malowanym świecie zły czarnoksiężnik. Gra łączy przygodę z szukaniem ukrytych przedmiotów, zagadkami i minigrami."
   },
   {
     "game": "Naruto: Ninja Council 2",
@@ -23097,7 +23133,8 @@
     "author": "Shorty",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=692",
     "dodano": "2010-08-16",
-    "img": "https://cdn.grypopolsku.pl/okladki/red-faction-guerrilla-eceece1b.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/red-faction-guerrilla-eceece1b.webp",
+    "opis": "Mobilna gra akcji z 2009 roku na telefony z Javą, stworzona przez G5 Entertainment i wydana przez THQ Wireless. To izometryczna wersja Red Faction: Guerrilla – gry, w której ruch oporu Red Faction walczy na Marsie z ciemiężącymi go Siłami Obrony Ziemi (EDF)."
   },
   {
     "game": "Slide-A-Lama Deluxe",
@@ -23110,7 +23147,8 @@
     "author": "Shorty",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=693",
     "dodano": "2010-08-16",
-    "img": "https://cdn.grypopolsku.pl/okladki/slide-a-lama-deluxe-ae780254.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/slide-a-lama-deluxe-ae780254.webp",
+    "opis": "Gra logiczna na telefony od Redboss Games, oparta na popularnej grze z komunikatora ICQ. Gracz układa kolorowe owoce w świątyni w rzędy po co najmniej trzy. W oryginalnej wersji dla dwóch graczy celem było przeciągnięcie na swoją stronę wszystkich lam przeciwnika."
   },
   {
     "game": "Castlevania: Dawn of Sorrow",
@@ -23123,7 +23161,8 @@
     "author": "Shorty",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=688",
     "dodano": "2010-08-15",
-    "img": "https://cdn.grypopolsku.pl/okladki/castlevania-dawn-of-sorrow-918f29c2.webp"
+    "img": "https://cdn.grypopolsku.pl/okladki/castlevania-dawn-of-sorrow-918f29c2.webp",
+    "opis": "Wersja na telefony z Javą z 2009 roku gry Castlevania: Dawn of Sorrow z Nintendo DS. Zachowuje ogólną fabułę, poziomy, przeciwników i przedmioty oryginału, ale w mniejszej, przerobionej formie. To kontynuacja Aria of Sorrow: Drakula został pokonany, a jego moce przejął Soma Cruz – jego reinkarnacja, który z pomocą przyjaciół nie daje się zmienić w nowego władcę ciemności."
   },
   {
     "game": "Prehistorik Man",
@@ -24201,7 +24240,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-20"
     },
-    "genre": "Przygodowa"
+    "genre": "Przygodowa",
+    "opis": "Gra akcji na Androida z 2014 roku od GlobalFun Games, oparta na serialu Cartoon Network „Pora na przygodę!”. Cztery księżniczki zostały porwane przez złoczyńców i są więzione w niebezpiecznych lochach rozsianych po Krainie Ooo. Finn i Jake muszą je uratować – gra jest widziana z góry i ma kolorową grafikę 2D."
   },
   {
     "game": "Regular Show: Best Park In The Universe",
@@ -24219,7 +24259,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-20"
     },
-    "genre": "Akcja"
+    "genre": "Akcja",
+    "opis": "Bijatyka (beat'em up) na urządzenia mobilne z 2013 roku od Heavy Boat, wydana przez Cartoon Network i oparta na serialu „Zwykły serial”. Mordecai i Rigby chcą, by ich park był najlepszym parkiem we wszechświecie. W tym celu muszą się przebić przez kosmitów, potwory, wściekłych osiłków, szalonych pracowników parku i duchy."
   },
   {
     "game": "Cat Quest III",

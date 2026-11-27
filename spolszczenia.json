@@ -17531,17 +17531,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.7",
+    "ver": "1.8",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=lost-ark",
     "dodano": "2026-09-28",
-    "upd": "2026-11-05",
+    "upd": "2026-11-27",
     "img": "https://cdn.grypopolsku.pl/okladki/lost-ark-1d78e1e9.webp",
     "opis": "Izometryczne MMORPG akcji od Smilegate. Przemierzasz kontynenty Arkesii, walczysz z ogromnymi bossami w rajdach i szukasz Arki, by powstrzymać demony.",
     "steam": 1599340,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-06"
+      "dzien": "2026-11-27"
     },
     "tworcy": [
       "Vetix",
@@ -18075,11 +18075,11 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.7",
+    "ver": "1.8",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=the-seven-deadly-sins-origin",
     "dodano": "2026-09-20",
-    "upd": "2026-11-19",
+    "upd": "2026-11-27",
     "img": "https://cdn.grypopolsku.pl/okladki/the-seven-deadly-sins-origin-f3d04f13.webp",
     "steam": 3679080,
     "tworcy": [
@@ -18087,7 +18087,11 @@
       "Vetix"
     ],
     "opis": "The Seven Deadly Sins: Origin to fabularna gra akcji z otwartym światem studia Netmarble, osadzona w uniwersum mangi i anime The Seven Deadly Sins. Gracz wciela się w księcia Tristana z Liones. Przemierza otwarty świat Brytanii, który pogrążył się w chaosie po zderzeniu czasu i przestrzeni. Celem jest przywrócenie porządku w świecie.",
-    "instrPaczka": 1
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-27"
+    }
   },
   {
     "game": "The Thing That Happened",

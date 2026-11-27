@@ -19474,7 +19474,7 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.6",
+    "ver": "1.7.1",
     "genre": "Akcja",
     "author": "Na100procent",
     "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=4931",
@@ -19486,10 +19486,10 @@
     ],
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-26"
+      "dzien": "2026-11-27"
     },
     "opis": "To zestaw zawierający pierwszą grę Grand Theft Auto z 1997 roku oraz dodatki London 1969 i London 1961. W klasycznym GTA, oglądanym z góry, gracz jest drobnym przestępcą, który wykonuje zlecenia gangów w trzech fikcyjnych miastach. Kradnie samochody, ucieka przed policją i zdobywa punkty potrzebne do przejścia dalej. Dodatki przenoszą akcję do Londynu z lat 60.",
-    "upd": "2026-11-26"
+    "upd": "2026-11-27"
   },
   {
     "game": "Re-Volt",
@@ -25570,6 +25570,22 @@
     "upd": "2026-11-26"
   },
   {
+    "game": "Touhou Koumakyou: New Classic - the Embodiment of Scarlet Devil",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "W trakcie",
+    "prog": 70,
+    "ver": "—",
+    "author": "Grupa Karambola",
+    "link": "https://bazaspolszczen.pl/games/touhou-koumakyou-new-classic-the-embodiment-of-scarlet-d/grupa-karambola",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-27",
+    "img": "https://cdn.grypopolsku.pl/okladki/touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil-623349e2.webp",
+    "opis": "Touhou Koumakyou: New Classic - the Embodiment of Scarlet Devil to wydany w 2026 roku pełny remake (odświeżona wersja) kultowej japońskiej gry z 2002 roku, stanowiącej szóstą odsłonę serii Touhou Project (a zarazem pierwszą wydaną na systemy Windows).",
+    "steam": 4659620,
+    "upd": "2026-11-26"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -25588,21 +25604,5 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
-  },
-  {
-    "game": "Touhou Koumakyou: New Classic - the Embodiment of Scarlet Devil",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "W trakcie",
-    "prog": 70,
-    "ver": "—",
-    "author": "Grupa Karambola",
-    "link": "https://bazaspolszczen.pl/games/touhou-koumakyou-new-classic-the-embodiment-of-scarlet-d/grupa-karambola",
-    "genre": "Strzelanka",
-    "dodano": "2026-11-27",
-    "img": "https://cdn.grypopolsku.pl/okladki/touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil-623349e2.webp",
-    "opis": "Touhou Koumakyou: New Classic - the Embodiment of Scarlet Devil to wydany w 2026 roku pełny remake (odświeżona wersja) kultowej japońskiej gry z 2002 roku, stanowiącej szóstą odsłonę serii Touhou Project (a zarazem pierwszą wydaną na systemy Windows).",
-    "steam": 4659620,
-    "upd": "2026-11-26"
   }
 ]

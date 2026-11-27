@@ -10254,7 +10254,8 @@
     "tworcy": [
       "Vetix",
       "Undertaker"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "The Walking Dead: The Telltale Definitive Series",
@@ -10302,7 +10303,8 @@
       "Vetix",
       "Hektor",
       "pavlikdc"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Clive Barker's Hellraiser: Revival",
@@ -10480,7 +10482,8 @@
     "tworcy": [
       "Vetix",
       "Misstgun"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Broken Sword - Cień templariuszy: Reforged",
@@ -10654,7 +10657,8 @@
     "tworcy": [
       "Vetix",
       "mhkage."
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Starfield Premium Edition",
@@ -16655,7 +16659,8 @@
       "Vetix",
       "Lisa_"
     ],
-    "opis": "Amenti to horror z perspektywy pierwszej osoby studia Darkphobia Games. Fotograf wchodzi do Wielkich Piramid, aby sfotografować szczątki faraona Rudamona. Wkrótce dosięga go złowroga klątwa, a starożytny grobowiec budzi mroczne siły. Gra stawia pytania o budowę piramid i związki starożytnych Egipcjan z obcymi istotami."
+    "opis": "Amenti to horror z perspektywy pierwszej osoby studia Darkphobia Games. Fotograf wchodzi do Wielkich Piramid, aby sfotografować szczątki faraona Rudamona. Wkrótce dosięga go złowroga klątwa, a starożytny grobowiec budzi mroczne siły. Gra stawia pytania o budowę piramid i związki starożytnych Egipcjan z obcymi istotami.",
+    "instrPaczka": 1
   },
   {
     "game": "Another Crab's Treasure",
@@ -16671,7 +16676,8 @@
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/another-crab-s-treasure-3d24120e.webp",
     "steam": 1887840,
-    "opis": "Another Crab's Treasure to gra akcji w stylu soulslike studia Aggro Crab, osadzona w podwodnym królestwie. Krab pustelnik Kril traci muszlę, którą zabrał mu rekin lichwiarz. Zamiast muszli nosi śmieci, takie jak puszki czy kubki, które chronią go przed atakami wrogów. Wyrusza na poszukiwanie skarbu, aby odkupić swój dom, a gra łączy wymagające walki z dużą dawką humoru."
+    "opis": "Another Crab's Treasure to gra akcji w stylu soulslike studia Aggro Crab, osadzona w podwodnym królestwie. Krab pustelnik Kril traci muszlę, którą zabrał mu rekin lichwiarz. Zamiast muszli nosi śmieci, takie jak puszki czy kubki, które chronią go przed atakami wrogów. Wyrusza na poszukiwanie skarbu, aby odkupić swój dom, a gra łączy wymagające walki z dużą dawką humoru.",
+    "instrPaczka": 1
   },
   {
     "game": "Asterigos: Curse of the Stars",
@@ -16691,7 +16697,8 @@
       "Vetix",
       "Vertullo"
     ],
-    "opis": "Asterigos: Curse of the Stars to fabularna gra akcji studia Acme Gamestudio, inspirowana mitologią grecką i rzymską. Młoda wojowniczka Hilda trafia do przeklętego miasta Aphes w poszukiwaniu swojego ojca. Walczy z legionami wrogów i mitycznymi bossami, korzystając z kilku rodzajów broni. Świat jest pełen połączonych ścieżek i sekretów do odkrycia."
+    "opis": "Asterigos: Curse of the Stars to fabularna gra akcji studia Acme Gamestudio, inspirowana mitologią grecką i rzymską. Młoda wojowniczka Hilda trafia do przeklętego miasta Aphes w poszukiwaniu swojego ojca. Walczy z legionami wrogów i mitycznymi bossami, korzystając z kilku rodzajów broni. Świat jest pełen połączonych ścieżek i sekretów do odkrycia.",
+    "instrPaczka": 1
   },
   {
     "game": "Bayonetta",
@@ -16707,7 +16714,8 @@
     "upd": "2026-09-17",
     "img": "https://cdn.grypopolsku.pl/okladki/bayonetta-9086bcef.webp",
     "opis": "Czarownica Bayonetta budzi się po latach bez pamięci i walczy z zastępami aniołów. Efektowny slasher, w którym unik w ostatniej chwili spowalnia czas.",
-    "steam": 460790
+    "steam": 460790,
+    "instrPaczka": 1
   },
   {
     "game": "Bayonetta 2",
@@ -16726,7 +16734,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-02"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Bayonetta 3",
@@ -16741,7 +16750,8 @@
     "dodano": "2026-10-05",
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/bayonetta-3-bb167ce2.webp",
-    "opis": "Bayonetta podróżuje przez alternatywne światy, by powstrzymać zagrażający wszechświatu byt. Do walki wchodzą wielkie przyzywane demony i nowa bohaterka, Viola."
+    "opis": "Bayonetta podróżuje przez alternatywne światy, by powstrzymać zagrażający wszechświatu byt. Do walki wchodzą wielkie przyzywane demony i nowa bohaterka, Viola.",
+    "instrPaczka": 1
   },
   {
     "game": "Black Desert",
@@ -16765,7 +16775,8 @@
     "tworcy": [
       "Vetix",
       "Misstgun"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Blades of Fire",
@@ -16781,7 +16792,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/blades-of-fire-475c8f0e.webp",
     "opis": "Gra akcji od twórców Metroid Dread, w której samodzielnie kujesz broń i walczysz z królową, która zamieniła stal w kamień. Mechanika kuźni jest tu kluczowa.",
-    "steam": 2091020
+    "steam": 2091020,
+    "instrPaczka": 1
   },
   {
     "game": "Blades of Time",
@@ -16806,7 +16818,8 @@
       "Vetix",
       "xionix"
     ],
-    "opis": "Blades of Time to gra akcji studia Gaijin Entertainment. Ayumi, łowczyni skarbów walcząca mieczem i bronią palną, trafia na starożytną wyspę pełną bogactw i magii Chaosu. Na wyspie roi się od krwiożerczych potworów. Bohaterka potrafi cofać czas i tworzyć swoje kopie, które walczą u jej boku."
+    "opis": "Blades of Time to gra akcji studia Gaijin Entertainment. Ayumi, łowczyni skarbów walcząca mieczem i bronią palną, trafia na starożytną wyspę pełną bogactw i magii Chaosu. Na wyspie roi się od krwiożerczych potworów. Bohaterka potrafi cofać czas i tworzyć swoje kopie, które walczą u jej boku.",
+    "instrPaczka": 1
   },
   {
     "game": "Bloodstained: Ritual of the Night",
@@ -16826,7 +16839,8 @@
     "tworcy": [
       "Misstgun",
       "Vetix"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Crown Siege",
@@ -16846,7 +16860,8 @@
       "Misstgun",
       "Rogal"
     ],
-    "opis": "Crown Siege to krótka gra przyrostowa o obronie królestwa. Gracz rozbudowuje i wzmacnia armię, aby odpierać niekończące się fale wrogów. Z każdym podejściem jego wojsko staje się silniejsze. Celem jest utrzymanie korony jak najdłużej."
+    "opis": "Crown Siege to krótka gra przyrostowa o obronie królestwa. Gracz rozbudowuje i wzmacnia armię, aby odpierać niekończące się fale wrogów. Z każdym podejściem jego wojsko staje się silniejsze. Celem jest utrzymanie korony jak najdłużej.",
+    "instrPaczka": 1
   },
   {
     "game": "Crownhold",
@@ -16862,7 +16877,8 @@
     "upd": "2026-09-21",
     "img": "https://cdn.grypopolsku.pl/okladki/crownhold-2d7da00b.webp",
     "steam": 4579940,
-    "opis": "Crownhold to krótka gra przyrostowa o rozbudowie królestwa. Gracz zaczyna od małego zamku i stopniowo powiększa swoje włości. Zarządza surowcami, odkrywa obce krainy i buduje armię. Z czasem może oblegać zamki wrogów i podbijać ich ziemie."
+    "opis": "Crownhold to krótka gra przyrostowa o rozbudowie królestwa. Gracz zaczyna od małego zamku i stopniowo powiększa swoje włości. Zarządza surowcami, odkrywa obce krainy i buduje armię. Z czasem może oblegać zamki wrogów i podbijać ich ziemie.",
+    "instrPaczka": 1
   },
   {
     "game": "Daymare: 1998",
@@ -16889,7 +16905,8 @@
     "tworcy": [
       "Vetix",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Dead Rising 3",
@@ -16905,7 +16922,8 @@
     "upd": "2026-10-19",
     "img": "https://cdn.grypopolsku.pl/okladki/dead-rising-3-271138ad.webp",
     "steam": 265550,
-    "opis": "Dead Rising 3 to gra akcji z otwartym światem studia Capcom Vancouver z 2013 roku. Mechanik Nick Ramos próbuje uciec z kalifornijskiego miasta Los Perdidos, opanowanego przez hordy zombie. Bohater może łączyć przedmioty w szalone bronie i pojazdy, aby rozprawiać się z nieumarłymi. Na ucieczkę ma ograniczony czas, zanim wojsko zrówna miasto z ziemią."
+    "opis": "Dead Rising 3 to gra akcji z otwartym światem studia Capcom Vancouver z 2013 roku. Mechanik Nick Ramos próbuje uciec z kalifornijskiego miasta Los Perdidos, opanowanego przez hordy zombie. Bohater może łączyć przedmioty w szalone bronie i pojazdy, aby rozprawiać się z nieumarłymi. Na ucieczkę ma ograniczony czas, zanim wojsko zrówna miasto z ziemią.",
+    "instrPaczka": 1
   },
   {
     "game": "Dementium II HD",
@@ -16920,7 +16938,8 @@
     "dodano": "2026-10-30",
     "upd": "2026-10-30",
     "img": "https://cdn.grypopolsku.pl/okladki/dementium-ii-hd-e180244c.webp",
-    "opis": "Odświeżony horror z Nintendo DS. Bohater budzi się w szpitalu psychiatrycznym po operacji mózgu i musi uciec przed koszmarnymi istotami."
+    "opis": "Odświeżony horror z Nintendo DS. Bohater budzi się w szpitalu psychiatrycznym po operacji mózgu i musi uciec przed koszmarnymi istotami.",
+    "instrPaczka": 1
   },
   {
     "game": "Devil May Cry 4 Special Edition",
@@ -16936,7 +16955,8 @@
     "upd": "2026-10-22",
     "img": "https://cdn.grypopolsku.pl/okladki/devil-may-cry-4-special-edition-ff9b458b.webp",
     "opis": "Młody Nero i Dante stają naprzeciw siebie w mieście Fortuna. To rozszerzone wydanie z dodatkowymi grywalnymi postaciami, w tym Vergilem.",
-    "steam": 329050
+    "steam": 329050,
+    "instrPaczka": 1
   },
   {
     "game": "Devil May Cry HD Collection",
@@ -16960,7 +16980,8 @@
     "tworcy": [
       "Vetix",
       "Misstgun"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Digimon Story: Time Stranger",
@@ -16976,7 +16997,8 @@
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/digimon-story-time-stranger-94ed3ad1.webp",
     "steam": 1984270,
-    "opis": "Digimon Story Time Stranger to fabularna gra RPG studia Media.Vision z serii Digimon Story. Gracz odkrywa tajemnicę, która zagraża zarówno światu ludzi, jak i cyfrowemu światu Digimonów. Zbiera i rozwija wiele różnych Digimonów, które walczą u jego boku w turowych bitwach. Ważną rolę odgrywa więź między ludźmi a Digimonami, a historia dotyczy upadku świata."
+    "opis": "Digimon Story Time Stranger to fabularna gra RPG studia Media.Vision z serii Digimon Story. Gracz odkrywa tajemnicę, która zagraża zarówno światu ludzi, jak i cyfrowemu światu Digimonów. Zbiera i rozwija wiele różnych Digimonów, które walczą u jego boku w turowych bitwach. Ważną rolę odgrywa więź między ludźmi a Digimonami, a historia dotyczy upadku świata.",
+    "instrPaczka": 1
   },
   {
     "game": "Dinkum",
@@ -16996,7 +17018,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-25"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Drillbound",
@@ -17016,7 +17039,8 @@
       "Misstgun",
       "Rogal"
     ],
-    "opis": "Drillbound to krótka gra przyrostowa o kopaniu aż do jądra planety. Gracz przesuwa wiertło po szynie, kruszy kolejne warstwy skał i zbiera surowce, unikając przy tym pocisków. Za zdobyte zasoby ulepsza wiertło i odblokowuje potężne maszyny. Z każdym podejściem schodzi coraz głębiej."
+    "opis": "Drillbound to krótka gra przyrostowa o kopaniu aż do jądra planety. Gracz przesuwa wiertło po szynie, kruszy kolejne warstwy skał i zbiera surowce, unikając przy tym pocisków. Za zdobyte zasoby ulepsza wiertło i odblokowuje potężne maszyny. Z każdym podejściem schodzi coraz głębiej.",
+    "instrPaczka": 1
   },
   {
     "game": "Dungeons 3",
@@ -17032,7 +17056,8 @@
     "upd": "2026-09-16",
     "img": "https://cdn.grypopolsku.pl/okladki/dungeons-3-dbea07e8.webp",
     "steam": 493900,
-    "opis": "Dungeons 3 to strategia studia Realmforge Studios, w której gracz jest Władcą Lochów. Buduje podziemny loch, w którym mieszkają jego potwory, i dba o ich potrzeby. Następnie wyprowadza armię na powierzchnię, aby podbijać krainy dobra. Pomaga mu mroczna elfka Thalya, a całość pełna jest humoru i parodii fantasy."
+    "opis": "Dungeons 3 to strategia studia Realmforge Studios, w której gracz jest Władcą Lochów. Buduje podziemny loch, w którym mieszkają jego potwory, i dba o ich potrzeby. Następnie wyprowadza armię na powierzchnię, aby podbijać krainy dobra. Pomaga mu mroczna elfka Thalya, a całość pełna jest humoru i parodii fantasy.",
+    "instrPaczka": 1
   },
   {
     "game": "E-Shop Tycoon",
@@ -17052,7 +17077,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-05"
     },
-    "opis": "E-Shop Tycoon to symulator zarządzania sklepem internetowym. Gracz zaczyna od zera jako start-up i krok po kroku buduje imperium handlu online. Optymalizuje logistykę magazynu, zatrudnia i szkoli pracowników oraz urządza biura. Musi też radzić sobie z wydarzeniami w branży i kryzysami marketingowymi."
+    "opis": "E-Shop Tycoon to symulator zarządzania sklepem internetowym. Gracz zaczyna od zera jako start-up i krok po kroku buduje imperium handlu online. Optymalizuje logistykę magazynu, zatrudnia i szkoli pracowników oraz urządza biura. Musi też radzić sobie z wydarzeniami w branży i kryzysami marketingowymi.",
+    "instrPaczka": 1
   },
   {
     "game": "Eternal Strands",
@@ -17068,7 +17094,8 @@
     "upd": "2026-07-07",
     "img": "https://cdn.grypopolsku.pl/okladki/eternal-strands-fc3bec92.webp",
     "steam": 1491410,
-    "opis": "Eternal Strands to przygodowa gra akcji studia Yellow Brick Games, założonego przez weteranów branży. Brynn, młoda Tkaczka, chce ocalić świat przed zagładą i odkryć tajemnice Enklawy. Walczy z ogromnymi stworzeniami, wspinając się na nie i korzystając z magii żywiołów oraz potężnych broni. Magiczne moce oddziałują z otoczeniem, np. ogień rozprzestrzenia się po trawie."
+    "opis": "Eternal Strands to przygodowa gra akcji studia Yellow Brick Games, założonego przez weteranów branży. Brynn, młoda Tkaczka, chce ocalić świat przed zagładą i odkryć tajemnice Enklawy. Walczy z ogromnymi stworzeniami, wspinając się na nie i korzystając z magii żywiołów oraz potężnych broni. Magiczne moce oddziałują z otoczeniem, np. ogień rozprzestrzenia się po trawie.",
+    "instrPaczka": 1
   },
   {
     "game": "EVE Online",
@@ -17088,7 +17115,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-17"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Evil Genius 2: World Domination",
@@ -17104,7 +17132,8 @@
     "upd": "2026-09-22",
     "img": "https://cdn.grypopolsku.pl/okladki/evil-genius-2-world-domination-22f8c010.webp",
     "steam": 700600,
-    "opis": "Evil Genius 2: World Domination to satyryczna gra konstrukcyjna studia Rebellion w stylu filmów szpiegowskich. Gracz wciela się w geniusza zła, który chce zawładnąć światem. Buduje tajną bazę na tropikalnej wyspie, szkoli pomagierów i broni się przed agentami Sił Sprawiedliwości. Gra jest kontynuacją kultowego Evil Genius z 2004 roku."
+    "opis": "Evil Genius 2: World Domination to satyryczna gra konstrukcyjna studia Rebellion w stylu filmów szpiegowskich. Gracz wciela się w geniusza zła, który chce zawładnąć światem. Buduje tajną bazę na tropikalnej wyspie, szkoli pomagierów i broni się przed agentami Sił Sprawiedliwości. Gra jest kontynuacją kultowego Evil Genius z 2004 roku.",
+    "instrPaczka": 1
   },
   {
     "game": "F.I.S.T.: Forged In Shadow Torch",
@@ -17129,7 +17158,8 @@
       "Vetix",
       "Undertaker"
     ],
-    "opis": "F.I.S.T.: Forged In Shadow Torch to metroidvania akcji chińskiego studia TiGames w klimacie dieselpunku. Miasto Pochodni, zamieszkane przez zwierzęta, sześć lat temu przegrało wojnę z legionem robotów. Królik Rayton, były bojownik ruchu oporu, wraca do walki, gdy jego przyjaciel zostaje aresztowany. Do walki używa ogromnej mechanicznej pięści, a gra słynie z widowiskowych kombinacji ciosów."
+    "opis": "F.I.S.T.: Forged In Shadow Torch to metroidvania akcji chińskiego studia TiGames w klimacie dieselpunku. Miasto Pochodni, zamieszkane przez zwierzęta, sześć lat temu przegrało wojnę z legionem robotów. Królik Rayton, były bojownik ruchu oporu, wraca do walki, gdy jego przyjaciel zostaje aresztowany. Do walki używa ogromnej mechanicznej pięści, a gra słynie z widowiskowych kombinacji ciosów.",
+    "instrPaczka": 1
   },
   {
     "game": "Fantasy Life i: The Girl Who Steals Time",
@@ -17149,7 +17179,8 @@
       "Vetix",
       "Undertaker"
     ],
-    "opis": "Fantasy Life i: The Girl Who Steals Time to sielankowa gra RPG studia Level-5. Gracz może swobodnie zmieniać jedną z 14 ról zwanych Życiami – od wojownika i maga po rybaka, kucharza czy cieślę. Fabuła obejmuje podróże w czasie z tajemniczą dziewczyną, która potrafi kraść czas. Oprócz przygód gracz rozbudowuje własną wyspę i spędza czas na beztroskich zajęciach."
+    "opis": "Fantasy Life i: The Girl Who Steals Time to sielankowa gra RPG studia Level-5. Gracz może swobodnie zmieniać jedną z 14 ról zwanych Życiami – od wojownika i maga po rybaka, kucharza czy cieślę. Fabuła obejmuje podróże w czasie z tajemniczą dziewczyną, która potrafi kraść czas. Oprócz przygód gracz rozbudowuje własną wyspę i spędza czas na beztroskich zajęciach.",
+    "instrPaczka": 1
   },
   {
     "game": "Fatal Frame / Project Zero: Mask of the Lunar Eclipse",
@@ -17165,7 +17196,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/fatal-frame-project-zero-mask-of-the-lunar-eclipse-b97cff62.webp",
     "opis": "Japoński survival horror. Trzy dziewczyny wracają na wyspę Rogetsu, by odzyskać utracone wspomnienia, a z duchami walczą specjalnym aparatem Camera Obscura.",
-    "steam": 2130460
+    "steam": 2130460,
+    "instrPaczka": 1
   },
   {
     "game": "Final Fantasy Type-0 HD",
@@ -17185,7 +17217,8 @@
     "tworcy": [
       "Vetix",
       "xionix"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Fire Emblem Engage",
@@ -17204,7 +17237,8 @@
     "tworcy": [
       "Vetix",
       "Undertaker"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Forager",
@@ -17220,7 +17254,8 @@
     "upd": "2026-10-27",
     "img": "https://cdn.grypopolsku.pl/okladki/forager-06c5f4bd.webp",
     "opis": "Pikselowa gra, w której zbierasz surowce, budujesz fabryki i wykupujesz kolejne wyspy. Prosta pętla szybko zamienia się w rozbudowane zarządzanie.",
-    "steam": 751780
+    "steam": 751780,
+    "instrPaczka": 1
   },
   {
     "game": "Forspoken",
@@ -17240,7 +17275,8 @@
     "tworcy": [
       "Vetix",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "GRIME",
@@ -17260,7 +17296,8 @@
       "Vetix",
       "Undertaker"
     ],
-    "opis": "GRIME to przygodowa gra akcji w stylu metroidvanii z elementami soulslike, przygotowana przez Clover Bite. Gracz kieruje istotą z czarną dziurą zamiast głowy, która pochłania pokonanych wrogów, aby stać się silniejsza. Walczy żywą bronią, która zmienia kształt i funkcje. Świat gry jest surrealistyczny, mroczny i pełen tajemnic."
+    "opis": "GRIME to przygodowa gra akcji w stylu metroidvanii z elementami soulslike, przygotowana przez Clover Bite. Gracz kieruje istotą z czarną dziurą zamiast głowy, która pochłania pokonanych wrogów, aby stać się silniejsza. Walczy żywą bronią, która zmienia kształt i funkcje. Świat gry jest surrealistyczny, mroczny i pełen tajemnic.",
+    "instrPaczka": 1
   },
   {
     "game": "GRIME II",
@@ -17276,7 +17313,8 @@
     "upd": "2026-07-19",
     "img": "https://cdn.grypopolsku.pl/okladki/grime-ii-d22e3e01.webp",
     "steam": 2529790,
-    "opis": "GRIME II to surrealistyczna gra akcji w stylu metroidvanii studia Clover Bite, kontynuacja gry GRIME z 2021 roku. Gracz wciela się w Bezkształtnego – mimika, który pochłania stworzenia. Za pomocą macek zrobionych z dłoni łapie wrogów i przywołuje później formy w ich kształcie. Akcja toczy się w nowej, dziwnej krainie uniwersum GRIME, zdominowanej przez sztukę."
+    "opis": "GRIME II to surrealistyczna gra akcji w stylu metroidvanii studia Clover Bite, kontynuacja gry GRIME z 2021 roku. Gracz wciela się w Bezkształtnego – mimika, który pochłania stworzenia. Za pomocą macek zrobionych z dłoni łapie wrogów i przywołuje później formy w ich kształcie. Akcja toczy się w nowej, dziwnej krainie uniwersum GRIME, zdominowanej przez sztukę.",
+    "instrPaczka": 1
   },
   {
     "game": "Hitman World of Assassination",
@@ -17292,7 +17330,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/hitman-world-of-assassination-f472d493.webp",
     "opis": "Agent 47 podróżuje po świecie i eliminuje cele w rozbudowanych, otwartych lokacjach. Zbiór trylogii, w której sam wybierasz przebranie, narzędzia i sposób wykonania zlecenia.",
-    "steam": 1659040
+    "steam": 1659040,
+    "instrPaczka": 1
   },
   {
     "game": "Halo: The Master Chief Collection",
@@ -17312,7 +17351,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-16"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Hearth and Hamlet",
@@ -17328,7 +17368,8 @@
     "upd": "2026-09-22",
     "img": "https://cdn.grypopolsku.pl/okladki/hearth-and-hamlet-2a592af4.webp",
     "steam": 4315040,
-    "opis": "Hearth and Hamlet to przytulna gra przyrostowa o budowaniu średniowiecznego miasta w pikselowym świecie pełnym magii. Gracz zaczyna od ogniska, a kończy na całym królestwie. Zbiera surowce, przydziela pracowników i prowadzi badania nad nowymi technologiami. Może też uchwalać prawa i handlować z dalekimi krainami."
+    "opis": "Hearth and Hamlet to przytulna gra przyrostowa o budowaniu średniowiecznego miasta w pikselowym świecie pełnym magii. Gracz zaczyna od ogniska, a kończy na całym królestwie. Zbiera surowce, przydziela pracowników i prowadzi badania nad nowymi technologiami. Może też uchwalać prawa i handlować z dalekimi krainami.",
+    "instrPaczka": 1
   },
   {
     "game": "Hole Is Mine",
@@ -17348,7 +17389,8 @@
       "Vetix",
       "Rogal"
     ],
-    "opis": "Hole Is Mine to przyrostowa gra przygodowa o oczyszczaniu boskiej Dziury. Gracz nurkuje w jej głąb i wysyła stworki zwane Mini'Ohs, które kopią za niego. Wydobywa zanieczyszczenia, ulepsza swoje moce i odkrywa ukryte sekrety. Zdobyte zasoby pozwalają rozwijać wioskę i dawać Mini'Ohs niezwykłe zdolności."
+    "opis": "Hole Is Mine to przyrostowa gra przygodowa o oczyszczaniu boskiej Dziury. Gracz nurkuje w jej głąb i wysyła stworki zwane Mini'Ohs, które kopią za niego. Wydobywa zanieczyszczenia, ulepsza swoje moce i odkrywa ukryte sekrety. Zdobyte zasoby pozwalają rozwijać wioskę i dawać Mini'Ohs niezwykłe zdolności.",
+    "instrPaczka": 1
   },
   {
     "game": "In Sound Mind",
@@ -17364,7 +17406,8 @@
     "upd": "2026-07-28",
     "img": "https://cdn.grypopolsku.pl/okladki/in-sound-mind-9b995bff.webp",
     "steam": 1119980,
-    "opis": "In Sound Mind to psychologiczny horror z perspektywy pierwszej osoby studia We Create Stuff. Bohater budzi się w dziwnym budynku i odkrywa ślady osób, które zmarły po eksperymentalnej terapii. Przemierza zakamarki własnego umysłu, rozwiązując zagadki i walcząc z nietypowymi bossami. Muzykę do gry stworzył zespół The Living Tombstone."
+    "opis": "In Sound Mind to psychologiczny horror z perspektywy pierwszej osoby studia We Create Stuff. Bohater budzi się w dziwnym budynku i odkrywa ślady osób, które zmarły po eksperymentalnej terapii. Przemierza zakamarki własnego umysłu, rozwiązując zagadki i walcząc z nietypowymi bossami. Muzykę do gry stworzył zespół The Living Tombstone.",
+    "instrPaczka": 1
   },
   {
     "game": "Indiana Jones and the Infernal Machine",
@@ -17380,7 +17423,8 @@
     "upd": "2026-08-01",
     "img": "https://cdn.grypopolsku.pl/okladki/indiana-jones-and-the-infernal-machine-ec71849f.webp",
     "steam": 904540,
-    "opis": "Indiana Jones and the Infernal Machine to przygodowa gra akcji LucasArts z 1999 roku. Jest rok 1947, a sowieccy agenci badają ruiny legendarnej Wieży Babel. CIA prosi Indianę Jonesa, aby sprawdził, czego szukają. Gra łączy wspinaczkę, eksplorację i zagadki z walką w trójwymiarowym świecie."
+    "opis": "Indiana Jones and the Infernal Machine to przygodowa gra akcji LucasArts z 1999 roku. Jest rok 1947, a sowieccy agenci badają ruiny legendarnej Wieży Babel. CIA prosi Indianę Jonesa, aby sprawdził, czego szukają. Gra łączy wspinaczkę, eksplorację i zagadki z walką w trójwymiarowym świecie.",
+    "instrPaczka": 1
   },
   {
     "game": "Kingdoms of Amalur: Re-Reckoning",
@@ -17401,7 +17445,8 @@
       "Vetix",
       "Rogal",
       "Niearek"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Lightning Returns: Final Fantasy XIII",
@@ -17417,7 +17462,8 @@
     "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/lightning-returns-final-fantasy-xiii-e309bb77.webp",
     "opis": "Finał trylogii Final Fantasy XIII. Lightning ma trzynaście dni, by ocalić dusze ludzi przed końcem świata, a czas w grze płynie nieubłaganie.",
-    "steam": 345350
+    "steam": 345350,
+    "instrPaczka": 1
   },
   {
     "game": "Lake",
@@ -17437,7 +17483,8 @@
       "Vetix",
       "Kamilek005"
     ],
-    "opis": "Lake to spokojna gra przygodowa studia Gamious, osadzona w 1986 roku. Meredith Weiss robi sobie przerwę od kariery programistki w wielkim mieście i wraca do rodzinnego miasteczka Providence Oaks. Przez dwa tygodnie zastępuje ojca jako listonoszka, rozwożąc listy i paczki. Poznaje mieszkańców, a jej wybory decydują o tym, jak potoczy się jej życie."
+    "opis": "Lake to spokojna gra przygodowa studia Gamious, osadzona w 1986 roku. Meredith Weiss robi sobie przerwę od kariery programistki w wielkim mieście i wraca do rodzinnego miasteczka Providence Oaks. Przez dwa tygodnie zastępuje ojca jako listonoszka, rozwożąc listy i paczki. Poznaje mieszkańców, a jej wybory decydują o tym, jak potoczy się jej życie.",
+    "instrPaczka": 1
   },
   {
     "game": "Lara Croft and the Guardian of Light",
@@ -17457,7 +17504,8 @@
       "Vetix",
       "mhkage."
     ],
-    "opis": "Lara Croft and the Guardian of Light to przygodowa gra akcji Crystal Dynamics z widokiem z góry. Lara Croft wraz z Totekiem, majańskim wojownikiem, ściga złego boga Xolotla i próbuje odzyskać artefakt zwany Dymiącym Lustrem. Gra łączy walkę, zagadki i platformowe wyzwania. Całość można przejść samemu albo we dwójkę."
+    "opis": "Lara Croft and the Guardian of Light to przygodowa gra akcji Crystal Dynamics z widokiem z góry. Lara Croft wraz z Totekiem, majańskim wojownikiem, ściga złego boga Xolotla i próbuje odzyskać artefakt zwany Dymiącym Lustrem. Gra łączy walkę, zagadki i platformowe wyzwania. Całość można przejść samemu albo we dwójkę.",
+    "instrPaczka": 1
   },
   {
     "game": "Like a Dragon Gaiden: The Man Who Erased His Name",
@@ -17473,7 +17521,8 @@
     "upd": "2026-10-18",
     "img": "https://cdn.grypopolsku.pl/okladki/like-a-dragon-gaiden-the-man-who-erased-his-name-9fb84b65.webp",
     "steam": 2375550,
-    "opis": "Like a Dragon Gaiden: The Man Who Erased His Name to gra akcji RGG Studio z serii Yakuza / Like a Dragon. Kazuma Kiryu, dawny legendarny yakuza, sfingował własną śmierć, aby chronić swoją rodzinę. Teraz tajemnicza postać próbuje zmusić go do wyjścia z ukrycia. Gra łączy widowiskowe walki wręcz z gadżetami szpiegowskimi i wieloma atrakcjami pobocznymi."
+    "opis": "Like a Dragon Gaiden: The Man Who Erased His Name to gra akcji RGG Studio z serii Yakuza / Like a Dragon. Kazuma Kiryu, dawny legendarny yakuza, sfingował własną śmierć, aby chronić swoją rodzinę. Teraz tajemnicza postać próbuje zmusić go do wyjścia z ukrycia. Gra łączy widowiskowe walki wręcz z gadżetami szpiegowskimi i wieloma atrakcjami pobocznymi.",
+    "instrPaczka": 1
   },
   {
     "game": "Lost Ark",
@@ -17497,7 +17546,8 @@
     "tworcy": [
       "Vetix",
       "Misstgun"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Lost in Random",
@@ -17513,7 +17563,8 @@
     "upd": "2026-11-15",
     "img": "https://cdn.grypopolsku.pl/okladki/lost-in-random-148414bb.webp",
     "opis": "Baśniowa gra akcji w świecie, gdzie wszystkim rządzą kości. Even wyrusza na ratunek siostrze Odd z pomocą żywej kostki Dicey, łącząc walkę z kartami.",
-    "steam": 1462570
+    "steam": 1462570,
+    "instrPaczka": 1
   },
   {
     "game": "Lucius II",
@@ -17533,7 +17584,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-11"
     },
-    "opis": "Lucius II: The Prophecy to horror akcji studia Shiver Games, kontynuacja gry Lucius. Lucius, syn diabła, budzi się w szpitalu psychiatrycznym po wydarzeniach z pierwszej części. Ucieka z niego i wyrusza do miasta, aby wypełnić swoje mroczne przeznaczenie. Wykorzystuje nadprzyrodzone moce, a ofiary może eliminować w pomysłowy sposób."
+    "opis": "Lucius II: The Prophecy to horror akcji studia Shiver Games, kontynuacja gry Lucius. Lucius, syn diabła, budzi się w szpitalu psychiatrycznym po wydarzeniach z pierwszej części. Ucieka z niego i wyrusza do miasta, aby wypełnić swoje mroczne przeznaczenie. Wykorzystuje nadprzyrodzone moce, a ofiary może eliminować w pomysłowy sposób.",
+    "instrPaczka": 1
   },
   {
     "game": "Momodora: Reverie Under The Moonlight",
@@ -17549,7 +17601,8 @@
     "upd": "2026-10-01",
     "img": "https://cdn.grypopolsku.pl/okladki/momodora-reverie-under-the-moonlight-a40f86fb.webp",
     "steam": 428550,
-    "opis": "Momodora: Reverie Under The Moonlight to czwarta część serii platformówek Momodora studia Bombservice. Kapłanka Kaho wyrusza przez przeklętą krainę, aby spotkać się z królową i rozproszyć zło, które zagraża życiu. Walczy liściem klonu jak mieczem i łukiem, wykonując kombinacje ciosów i uniki. Gra ma styl metroidvanii i wymagające walki z bossami."
+    "opis": "Momodora: Reverie Under The Moonlight to czwarta część serii platformówek Momodora studia Bombservice. Kapłanka Kaho wyrusza przez przeklętą krainę, aby spotkać się z królową i rozproszyć zło, które zagraża życiu. Walczy liściem klonu jak mieczem i łukiem, wykonując kombinacje ciosów i uniki. Gra ma styl metroidvanii i wymagające walki z bossami.",
+    "instrPaczka": 1
   },
   {
     "game": "Ninja Gaiden 2 Black",
@@ -17565,7 +17618,8 @@
     "upd": "2026-07-13",
     "img": "https://cdn.grypopolsku.pl/okladki/ninja-gaiden-2-black-6cf42fda.webp",
     "opis": "Odświeżona wersja Ninja Gaiden 2. Ryu Hayabusa walczy z Czarnym Pająkiem i demonami w szybkich, brutalnych starciach.",
-    "steam": 3287520
+    "steam": 3287520,
+    "instrPaczka": 1
   },
   {
     "game": "Ninja Gaiden 4",
@@ -17581,7 +17635,8 @@
     "upd": "2026-09-21",
     "img": "https://cdn.grypopolsku.pl/okladki/ninja-gaiden-4-44635b18.webp",
     "opis": "Nowa odsłona serii o wymagającej walce ninja, z nowym bohaterem Yakumo i powrotem Ryu Hayabusy. Akcja dzieje się w mrocznej, futurystycznej wersji Tokio.",
-    "steam": 2627260
+    "steam": 2627260,
+    "instrPaczka": 1
   },
   {
     "game": "New Super Lucky's Tale",
@@ -17601,7 +17656,8 @@
     "tworcy": [
       "Vetix",
       "Rogal"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Ni no Kuni: Wrath of the White Witch Remastered",
@@ -17617,7 +17673,8 @@
     "upd": "2026-11-14",
     "img": "https://cdn.grypopolsku.pl/okladki/ni-no-kuni-wrath-of-the-white-witch-remastered-ea249237.webp",
     "opis": "Oliver po stracie matki trafia do magicznego świata i próbuje ją uratować. Baśniowe jRPG z oprawą studia Ghibli.",
-    "steam": 798460
+    "steam": 798460,
+    "instrPaczka": 1
   },
   {
     "game": "Outcast - Second Contact",
@@ -17633,7 +17690,8 @@
     "upd": "2026-10-25",
     "img": "https://cdn.grypopolsku.pl/okladki/outcast-second-contact-2bcaa508.webp",
     "steam": 618970,
-    "opis": "Outcast – Second Contact to remake kultowej gry z 1999 roku, która była jedną z pierwszych przygodowych gier akcji z otwartym światem. Cutter Slade, były żołnierz elitarnych jednostek, trafia na obcą planetę Adelpha. Mieszkańcy uznają go za mesjasza, który ma ich uratować przed tyranem. Od jego działań zależą losy dwóch światów – Adelphy i Ziemi."
+    "opis": "Outcast – Second Contact to remake kultowej gry z 1999 roku, która była jedną z pierwszych przygodowych gier akcji z otwartym światem. Cutter Slade, były żołnierz elitarnych jednostek, trafia na obcą planetę Adelpha. Mieszkańcy uznają go za mesjasza, który ma ich uratować przed tyranem. Od jego działań zależą losy dwóch światów – Adelphy i Ziemi.",
+    "instrPaczka": 1
   },
   {
     "game": "Overlord: Raising Hell",
@@ -17649,7 +17707,8 @@
     "upd": "2026-10-29",
     "img": "https://cdn.grypopolsku.pl/okladki/overlord-raising-hell-af69d257.webp",
     "steam": 12710,
-    "opis": "Overlord: Raising Hell to rozszerzone wydanie gry Overlord studia Triumph Studios, zawierające dodatkową zawartość. Gracz wciela się w Władcę Ciemności, który odbudowuje swoją potęgę w baśniowym świecie pełnym zepsutych bohaterów. Zamiast walczyć samemu, dowodzi hordą złośliwych, psotnych sługusów. Można być złym albo naprawdę złym, a decyzje wpływają na wygląd mrocznej wieży i świata."
+    "opis": "Overlord: Raising Hell to rozszerzone wydanie gry Overlord studia Triumph Studios, zawierające dodatkową zawartość. Gracz wciela się w Władcę Ciemności, który odbudowuje swoją potęgę w baśniowym świecie pełnym zepsutych bohaterów. Zamiast walczyć samemu, dowodzi hordą złośliwych, psotnych sługusów. Można być złym albo naprawdę złym, a decyzje wpływają na wygląd mrocznej wieży i świata.",
+    "instrPaczka": 1
   },
   {
     "game": "Oxygen Not Included",
@@ -17665,7 +17724,8 @@
     "upd": "2026-10-18",
     "img": "https://cdn.grypopolsku.pl/okladki/oxygen-not-included-2782b076.webp",
     "opis": "Symulator kolonii w asteroidzie, gdzie grupa duplikantów musi przeżyć bez tlenu i jedzenia. Zarządzasz gazem, ciepłem i zasobami.",
-    "steam": 457140
+    "steam": 457140,
+    "instrPaczka": 1
   },
   {
     "game": "Palia",
@@ -17685,7 +17745,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-16"
     },
-    "opis": "Palia to darmowy symulator życia w świecie fantasy studia Singularity 6, w który gra się razem z innymi. Gracz buduje i urządza własny dom, tworzy przedmioty i zwiedza kolorową krainę. Może łowić ryby, gotować, uprawiać rośliny i zaprzyjaźniać się z mieszkańcami. Gra stawia na relaks i spokojne tempo zamiast walki."
+    "opis": "Palia to darmowy symulator życia w świecie fantasy studia Singularity 6, w który gra się razem z innymi. Gracz buduje i urządza własny dom, tworzy przedmioty i zwiedza kolorową krainę. Może łowić ryby, gotować, uprawiać rośliny i zaprzyjaźniać się z mieszkańcami. Gra stawia na relaks i spokojne tempo zamiast walki.",
+    "instrPaczka": 1
   },
   {
     "game": "Patrician 4",
@@ -17701,7 +17762,8 @@
     "upd": "2026-06-23",
     "img": "https://cdn.grypopolsku.pl/okladki/patrician-4-497d7f26.webp",
     "steam": 57620,
-    "opis": "Patrician IV to strategia ekonomiczna studia Gaming Minds, kolejna część znanej serii. Gracz jest kupcem w północnej Europie w czasach świetności Hanzy. Handluje towarami między miastami, buduje statki i rozwija swoje przedsiębiorstwo. Z czasem może zdobyć wpływy polityczne, a nawet zostać przywódcą całej Hanzy."
+    "opis": "Patrician IV to strategia ekonomiczna studia Gaming Minds, kolejna część znanej serii. Gracz jest kupcem w północnej Europie w czasach świetności Hanzy. Handluje towarami między miastami, buduje statki i rozwija swoje przedsiębiorstwo. Z czasem może zdobyć wpływy polityczne, a nawet zostać przywódcą całej Hanzy.",
+    "instrPaczka": 1
   },
   {
     "game": "Persona 5 Strikers",
@@ -17721,7 +17783,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-25"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Pumpkin Jack",
@@ -17737,7 +17800,8 @@
     "upd": "2026-10-25",
     "img": "https://cdn.grypopolsku.pl/okladki/pumpkin-jack-728ac5b9.webp",
     "steam": 1186640,
-    "opis": "Pumpkin Jack to trójwymiarowa platformówka akcji studia Evil Raptor, utrzymana w klimacie Halloween. Gracz wciela się w Jacka, mitycznego Dyniowego Władcę, który pomaga siłom Zła pokonać Dobro. Przemierza niesamowite krainy, walczy z wrogami i rozwiązuje proste zagadki. Gra nawiązuje do klasycznych platformówek z PlayStation 2."
+    "opis": "Pumpkin Jack to trójwymiarowa platformówka akcji studia Evil Raptor, utrzymana w klimacie Halloween. Gracz wciela się w Jacka, mitycznego Dyniowego Władcę, który pomaga siłom Zła pokonać Dobro. Przemierza niesamowite krainy, walczy z wrogami i rozwiązuje proste zagadki. Gra nawiązuje do klasycznych platformówek z PlayStation 2.",
+    "instrPaczka": 1
   },
   {
     "game": "ReCore: Definitive Edition",
@@ -17753,7 +17817,8 @@
     "upd": "2026-07-11",
     "img": "https://cdn.grypopolsku.pl/okladki/recore-definitive-edition-d55f9416.webp",
     "steam": 537450,
-    "opis": "ReCore: Definitive Edition to przygodowa gra akcji Armature Studio i Comcept, współtworzona przez Keijiego Inafune. Joule Adams, jedna z ostatnich przedstawicielek ludzkości, budzi się na pustynnej planecie Far Eden. Towarzyszą jej roboty z wymiennymi rdzeniami, które pomagają w walce i eksploracji. Wydanie Definitive zawiera dodatkową zawartość i poprawki."
+    "opis": "ReCore: Definitive Edition to przygodowa gra akcji Armature Studio i Comcept, współtworzona przez Keijiego Inafune. Joule Adams, jedna z ostatnich przedstawicielek ludzkości, budzi się na pustynnej planecie Far Eden. Towarzyszą jej roboty z wymiennymi rdzeniami, które pomagają w walce i eksploracji. Wydanie Definitive zawiera dodatkową zawartość i poprawki.",
+    "instrPaczka": 1
   },
   {
     "game": "Risk of Rain 2",
@@ -17769,7 +17834,8 @@
     "upd": "2026-10-17",
     "img": "https://cdn.grypopolsku.pl/okladki/risk-of-rain-2-72c665e1.webp",
     "opis": "Trzecioosobowy roguelike, w którym po rozbiciu statku walczysz na obcej planecie. Im dłużej grasz, tym silniejsi przeciwnicy, a przedmioty kumulują swoje efekty.",
-    "steam": 632360
+    "steam": 632360,
+    "instrPaczka": 1
   },
   {
     "game": "Rock Bottom",
@@ -17789,7 +17855,8 @@
       "Misstgun",
       "Rogal"
     ],
-    "opis": "Rock Bottom to przyrostowa gra o kopaniu, w której każde uderzenie kilofem czyni bohatera silniejszym. Gracz zbiera rudy, wytapia je i ulepsza sprzęt. Schodzi przez osiem różnych warstw ziemi, odblokowując niszczycielskie umiejętności. Celem jest odkrycie, co kryje się na samym dnie."
+    "opis": "Rock Bottom to przyrostowa gra o kopaniu, w której każde uderzenie kilofem czyni bohatera silniejszym. Gracz zbiera rudy, wytapia je i ulepsza sprzęt. Schodzi przez osiem różnych warstw ziemi, odblokowując niszczycielskie umiejętności. Celem jest odkrycie, co kryje się na samym dnie.",
+    "instrPaczka": 1
   },
   {
     "game": "Scarlet Nexus",
@@ -17805,7 +17872,8 @@
     "upd": "2026-08-07",
     "img": "https://cdn.grypopolsku.pl/okladki/scarlet-nexus-7098ea7c.webp",
     "opis": "W przyszłości pełnej mutantów młodzi żołnierze walczą dzięki mocom psychokinezy. Efektowne jRPG akcji z dwoma bohaterami do wyboru.",
-    "steam": 775500
+    "steam": 775500,
+    "instrPaczka": 1
   },
   {
     "game": "SoulCalibur VI",
@@ -17821,7 +17889,8 @@
     "upd": "2026-07-23",
     "img": "https://cdn.grypopolsku.pl/okladki/soulcalibur-vi-7f78a109.webp",
     "opis": "Bijatyka z bronią białą, która wraca do wydarzeń z pierwszej części serii. Znani wojownicy walczą o miecz Soul Edge.",
-    "steam": 544750
+    "steam": 544750,
+    "instrPaczka": 1
   },
   {
     "game": "Soulstice",
@@ -17837,7 +17906,8 @@
     "upd": "2026-10-16",
     "img": "https://cdn.grypopolsku.pl/okladki/soulstice-294a9a81.webp",
     "opis": "Dwie siostry, Briar i duch Lute, walczą z Upiorami w gotyckim świecie. Slasher z ładną oprawą, w którym obie bohaterki współpracują w walce.",
-    "steam": 1602080
+    "steam": 1602080,
+    "instrPaczka": 1
   },
   {
     "game": "Space Hulk: Deathwing Enhanced Edition",
@@ -17857,7 +17927,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     },
-    "opis": "Space Hulk: Deathwing – Enhanced Edition to strzelanka pierwszoosobowa studia Streum On, oparta na kultowej grze planszowej ze świata Warhammer 40,000. Gracz jest Bibliotekarzem z Pierwszej Kompanii Mrocznych Aniołów, zwanej Deathwing. Wraz z oddziałem w terminatorskich pancerzach przemierza ciasne korytarze kosmicznego wraku i walczy z Genokradami. Grać można samemu albo w trybie współpracy dla 2–4 graczy."
+    "opis": "Space Hulk: Deathwing – Enhanced Edition to strzelanka pierwszoosobowa studia Streum On, oparta na kultowej grze planszowej ze świata Warhammer 40,000. Gracz jest Bibliotekarzem z Pierwszej Kompanii Mrocznych Aniołów, zwanej Deathwing. Wraz z oddziałem w terminatorskich pancerzach przemierza ciasne korytarze kosmicznego wraku i walczy z Genokradami. Grać można samemu albo w trybie współpracy dla 2–4 graczy.",
+    "instrPaczka": 1
   },
   {
     "game": "Starsector",
@@ -17876,7 +17947,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-16"
     },
-    "opis": "Starsector to kosmiczna gra strategiczna i sandbox studia Fractal Softworks. Gracz dowodzi flotą statków w Sektorze Perseusza, gdzie po upadku dawnego imperium walczą ze sobą różne frakcje. Może handlować, wykonywać zlecenia, walczyć z piratami, zakładać kolonie albo prowadzić wojny. Bitwy kosmiczne toczą się w czasie rzeczywistym, a statki można dowolnie uzbrajać i ulepszać."
+    "opis": "Starsector to kosmiczna gra strategiczna i sandbox studia Fractal Softworks. Gracz dowodzi flotą statków w Sektorze Perseusza, gdzie po upadku dawnego imperium walczą ze sobą różne frakcje. Może handlować, wykonywać zlecenia, walczyć z piratami, zakładać kolonie albo prowadzić wojny. Bitwy kosmiczne toczą się w czasie rzeczywistym, a statki można dowolnie uzbrajać i ulepszać.",
+    "instrPaczka": 1
   },
   {
     "game": "Stranger of Paradise: Final Fantasy Origin",
@@ -17896,7 +17968,8 @@
     "tworcy": [
       "Vetix",
       "Undertaker"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "The Bureau: XCOM Declassified",
@@ -17912,7 +17985,8 @@
     "upd": "2026-08-18",
     "img": "https://cdn.grypopolsku.pl/okladki/the-bureau-xcom-declassified-4346fa7a.webp",
     "steam": 65930,
-    "opis": "The Bureau: XCOM Declassified to taktyczna strzelanka trzecioosobowa 2K Marin, osadzona w świecie XCOM. Jest rok 1962, a ściśle tajna jednostka zwana Biurem bada serię tajemniczych ataków obcych. Gracz jako agent William Carter wydaje rozkazy dwóm członkom swojego oddziału w trakcie walki. Gra opowiada o początkach organizacji XCOM w realiach zimnej wojny."
+    "opis": "The Bureau: XCOM Declassified to taktyczna strzelanka trzecioosobowa 2K Marin, osadzona w świecie XCOM. Jest rok 1962, a ściśle tajna jednostka zwana Biurem bada serię tajemniczych ataków obcych. Gracz jako agent William Carter wydaje rozkazy dwóm członkom swojego oddziału w trakcie walki. Gra opowiada o początkach organizacji XCOM w realiach zimnej wojny.",
+    "instrPaczka": 1
   },
   {
     "game": "The Dark Queen of Mortholme",
@@ -17928,7 +18002,8 @@
     "upd": "2026-10-11",
     "img": "https://cdn.grypopolsku.pl/okladki/the-dark-queen-of-mortholme-e943c10f.webp",
     "steam": 3587610,
-    "opis": "The Dark Queen of Mortholme to krótka gra niezależna, w której gracz jest ostatnim bossem – Mroczną Królową Mortholme. Bohater przybywa, aby ją pokonać, i łatwo przegrywa, ale wraca raz za razem. Z każdym starciem między królową a bohaterem rodzi się nietypowa więź. Gra opowiada o zmianie perspektywy i pięknie przemiany."
+    "opis": "The Dark Queen of Mortholme to krótka gra niezależna, w której gracz jest ostatnim bossem – Mroczną Królową Mortholme. Bohater przybywa, aby ją pokonać, i łatwo przegrywa, ale wraca raz za razem. Z każdym starciem między królową a bohaterem rodzi się nietypowa więź. Gra opowiada o zmianie perspektywy i pięknie przemiany.",
+    "instrPaczka": 1
   },
   {
     "game": "The Guild 1 Remake: Europa 1410",
@@ -17948,7 +18023,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-17"
     },
-    "opis": "The Guild 1 Remake: Europa 1410 to symulacja ekonomiczna, nowa wersja klasycznej gry Europa 1400: The Guild. Gracz zakłada dynastię w średniowiecznej Europie i wybiera dla niej zawód. Handluje, angażuje się w politykę i intrygi, aby piąć się po szczeblach władzy. Członkowie rodu starzeją się, więc trzeba zadbać o dziedziców i przyszłość dynastii."
+    "opis": "The Guild 1 Remake: Europa 1410 to symulacja ekonomiczna, nowa wersja klasycznej gry Europa 1400: The Guild. Gracz zakłada dynastię w średniowiecznej Europie i wybiera dla niej zawód. Handluje, angażuje się w politykę i intrygi, aby piąć się po szczeblach władzy. Członkowie rodu starzeją się, więc trzeba zadbać o dziedziców i przyszłość dynastii.",
+    "instrPaczka": 1
   },
   {
     "game": "The Gunk",
@@ -17968,7 +18044,8 @@
       "Vetix",
       "Kamilek005"
     ],
-    "opis": "The Gunk to przygodowa gra akcji studia Image & Form, twórców serii SteamWorld. Rani i jej partnerka Becks to kosmiczne przewoźniczki, którym brakuje pieniędzy. Trafiają na nietkniętą planetę pełną życia, ale zalaną dziwną mazią zwaną Gunk. Rani wsysa maź specjalną rękawicą, przywracając życie planecie i odkrywając jej tajemnice."
+    "opis": "The Gunk to przygodowa gra akcji studia Image & Form, twórców serii SteamWorld. Rani i jej partnerka Becks to kosmiczne przewoźniczki, którym brakuje pieniędzy. Trafiają na nietkniętą planetę pełną życia, ale zalaną dziwną mazią zwaną Gunk. Rani wsysa maź specjalną rękawicą, przywracając życie planecie i odkrywając jej tajemnice.",
+    "instrPaczka": 1
   },
   {
     "game": "The Legend of Heroes: Trails beyond the Horizon",
@@ -17988,7 +18065,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     },
-    "opis": "The Legend of Heroes: Trails beyond the Horizon to fabularna gra RPG studia Nihon Falcom z serii Trails. Zbliża się przepowiedziany koniec kontynentu Zemuria, a ludzkość przygotowuje się do pierwszego lotu w kosmos. Gracz zwiedza Republikę Calvardu z trzema różnymi bohaterami. Walki łączą działanie w czasie rzeczywistym z systemem turowym."
+    "opis": "The Legend of Heroes: Trails beyond the Horizon to fabularna gra RPG studia Nihon Falcom z serii Trails. Zbliża się przepowiedziany koniec kontynentu Zemuria, a ludzkość przygotowuje się do pierwszego lotu w kosmos. Gracz zwiedza Republikę Calvardu z trzema różnymi bohaterami. Walki łączą działanie w czasie rzeczywistym z systemem turowym.",
+    "instrPaczka": 1
   },
   {
     "game": "The Seven Deadly Sins: Origin",
@@ -18008,7 +18086,8 @@
       "Misstgun",
       "Vetix"
     ],
-    "opis": "The Seven Deadly Sins: Origin to fabularna gra akcji z otwartym światem studia Netmarble, osadzona w uniwersum mangi i anime The Seven Deadly Sins. Gracz wciela się w księcia Tristana z Liones. Przemierza otwarty świat Brytanii, który pogrążył się w chaosie po zderzeniu czasu i przestrzeni. Celem jest przywrócenie porządku w świecie."
+    "opis": "The Seven Deadly Sins: Origin to fabularna gra akcji z otwartym światem studia Netmarble, osadzona w uniwersum mangi i anime The Seven Deadly Sins. Gracz wciela się w księcia Tristana z Liones. Przemierza otwarty świat Brytanii, który pogrążył się w chaosie po zderzeniu czasu i przestrzeni. Celem jest przywrócenie porządku w świecie.",
+    "instrPaczka": 1
   },
   {
     "game": "The Thing That Happened",
@@ -18024,7 +18103,8 @@
     "upd": "2026-07-24",
     "steam": 2906500,
     "img": "https://cdn.grypopolsku.pl/okladki/the-thing-that-happened-3691563b.webp",
-    "opis": "The Thing That Happened to survivalowa gra akcji z otwartym światem i widokiem z perspektywy trzeciej osoby. Gracz korzysta z różnych broni, dodatków i umiejętności walki wręcz. Może też tworzyć przedmioty, które pomagają w przetrwaniu. Celem jest przebicie się przez wrogów w nieprzyjaznym świecie."
+    "opis": "The Thing That Happened to survivalowa gra akcji z otwartym światem i widokiem z perspektywy trzeciej osoby. Gracz korzysta z różnych broni, dodatków i umiejętności walki wręcz. Może też tworzyć przedmioty, które pomagają w przetrwaniu. Celem jest przebicie się przez wrogów w nieprzyjaznym świecie.",
+    "instrPaczka": 1
   },
   {
     "game": "Unknown 9: Awakening",
@@ -18040,7 +18120,8 @@
     "upd": "2026-07-09",
     "img": "https://cdn.grypopolsku.pl/okladki/unknown-9-awakening-56c67f51.webp",
     "steam": 1477940,
-    "opis": "Unknown 9: Awakening to przygodowa gra akcji studia Reflector Entertainment. Haroona, młoda kwestorka, ma wrodzony dar podróżowania do Uskoku – tajemniczego wymiaru przenikającego się z rzeczywistością. Poszukuje potężnej, ukrytej wiedzy i walczy z tajnym ugrupowaniem o złych zamiarach. Jej moce pozwalają m.in. przejmować na chwilę kontrolę nad wrogami."
+    "opis": "Unknown 9: Awakening to przygodowa gra akcji studia Reflector Entertainment. Haroona, młoda kwestorka, ma wrodzony dar podróżowania do Uskoku – tajemniczego wymiaru przenikającego się z rzeczywistością. Poszukuje potężnej, ukrytej wiedzy i walczy z tajnym ugrupowaniem o złych zamiarach. Jej moce pozwalają m.in. przejmować na chwilę kontrolę nad wrogami.",
+    "instrPaczka": 1
   },
   {
     "game": "Valkyria Chronicles",
@@ -18056,7 +18137,8 @@
     "upd": "2026-11-18",
     "img": "https://cdn.grypopolsku.pl/okladki/valkyria-chronicles-7978e780.webp",
     "opis": "Taktyczne RPG o fikcyjnej wojnie w Europie, z oprawą stylizowaną na akwarelę. Oddział Welkina Guntera broni księstwa Gallia przed Imperium.",
-    "steam": 294860
+    "steam": 294860,
+    "instrPaczka": 1
   },
   {
     "game": "Vigil: The Longest Night",
@@ -18072,7 +18154,8 @@
     "upd": "2026-10-05",
     "img": "https://cdn.grypopolsku.pl/okladki/vigil-the-longest-night-20a347de.webp",
     "steam": 720560,
-    "opis": "Vigil: The Longest Night to dwuwymiarowa gra akcji w stylu metroidvanii studia Glass Heart Games, inspirowana Salt and Sanctuary i Castlevanią. Leila, członkini Zakonu Czuwających, wyrusza w podróż przez świat, w którym zgasło światło dnia. Szuka prawdy o swojej tajemniczej siostrze i mierzy się z przerażającymi istotami ukrytymi w ciemności. Gra oferuje rozległe mapy, rozwój postaci i wymagające walki."
+    "opis": "Vigil: The Longest Night to dwuwymiarowa gra akcji w stylu metroidvanii studia Glass Heart Games, inspirowana Salt and Sanctuary i Castlevanią. Leila, członkini Zakonu Czuwających, wyrusza w podróż przez świat, w którym zgasło światło dnia. Szuka prawdy o swojej tajemniczej siostrze i mierzy się z przerażającymi istotami ukrytymi w ciemności. Gra oferuje rozległe mapy, rozwój postaci i wymagające walki.",
+    "instrPaczka": 1
   },
   {
     "game": "Wildfrost",
@@ -18088,7 +18171,8 @@
     "upd": "2026-10-19",
     "img": "https://cdn.grypopolsku.pl/okladki/wildfrost-c74a1f1e.webp",
     "opis": "Karciany roguelike o śnieżnym świecie skutym wieczną zimą. Prowadzisz karawanę i układasz talię, a licznik ataku każdej karty wymusza planowanie.",
-    "steam": 1811990
+    "steam": 1811990,
+    "instrPaczka": 1
   },
   {
     "game": "Yooka-Replaylee",
@@ -18108,7 +18192,8 @@
       "Vetix",
       "Lisa_"
     ],
-    "opis": "Yooka-Replaylee to ulepszona wersja trójwymiarowej platformówki Yooka-Laylee z 2017 roku studia Playtonic Games. Kameleon Yooka i nietoperzyca Laylee zbierają zaginione strony magicznej księgi. Gra inspiruje się klasykami typu Banjo-Kazooie, w których przemierza się otwarte światy i zbiera przedmioty. Nowa wersja ma nowe wyzwania, sekrety, mechaniki i ułatwienia dostępu."
+    "opis": "Yooka-Replaylee to ulepszona wersja trójwymiarowej platformówki Yooka-Laylee z 2017 roku studia Playtonic Games. Kameleon Yooka i nietoperzyca Laylee zbierają zaginione strony magicznej księgi. Gra inspiruje się klasykami typu Banjo-Kazooie, w których przemierza się otwarte światy i zbiera przedmioty. Nowa wersja ma nowe wyzwania, sekrety, mechaniki i ułatwienia dostępu.",
+    "instrPaczka": 1
   },
   {
     "game": "You Know The Drill",
@@ -18128,7 +18213,8 @@
       "kto": "Harddrive",
       "dzien": "2026-11-22"
     },
-    "opis": "You Know The Drill to relaksująca gra przyrostowa o kopaniu pod ziemią. Gracz wierci w głąb ziemi i wydobywa rudy. Za zebrane surowce ulepsza swoje wiertło, aby kopać jeszcze głębiej. Z każdym podejściem odblokowuje kolejne ulepszenia i nowe możliwości."
+    "opis": "You Know The Drill to relaksująca gra przyrostowa o kopaniu pod ziemią. Gracz wierci w głąb ziemi i wydobywa rudy. Za zebrane surowce ulepsza swoje wiertło, aby kopać jeszcze głębiej. Z każdym podejściem odblokowuje kolejne ulepszenia i nowe możliwości.",
+    "instrPaczka": 1
   },
   {
     "game": "Zoria: Age of Shattering",
@@ -18144,7 +18230,8 @@
     "upd": "2026-09-18",
     "img": "https://cdn.grypopolsku.pl/okladki/zoria-age-of-shattering-b7e2ece7.webp",
     "steam": 1159090,
-    "opis": "Zoria: Age of Shattering to drużynowa, taktyczna gra RPG z turowymi walkami studia Tiny Trinket Games. Gracz prowadzi drużynę czterech bohaterów przez rozległe krainy fantastycznego kontynentu. Każda postać ma unikalne umiejętności i cechy, które przydają się w walce. Oprócz przygód trzeba też zarządzać bazą wypadową i rozwijać ją."
+    "opis": "Zoria: Age of Shattering to drużynowa, taktyczna gra RPG z turowymi walkami studia Tiny Trinket Games. Gracz prowadzi drużynę czterech bohaterów przez rozległe krainy fantastycznego kontynentu. Każda postać ma unikalne umiejętności i cechy, które przydają się w walce. Oprócz przygód trzeba też zarządzać bazą wypadową i rozwijać ją.",
+    "instrPaczka": 1
   },
   {
     "game": "Pathfinder: Kingmaker",
@@ -18894,7 +18981,8 @@
     "tworcy": [
       "Vetix",
       "pavlikdc"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "The Wolf Among Us Remastered",
@@ -18981,7 +19069,8 @@
       "Vetix",
       "Lisa_"
     ],
-    "opis": "Garfield – Escape from Monday to trójwymiarowa platformówka z Garfieldem w roli głównej. Najleniwszy kot na świecie utknął w koszmarnym śnie pełnym warzyw. Gracz musi go z niego obudzić, przemierzając kolorowe poziomy. Tym razem Garfield będzie musiał się sporo napracować."
+    "opis": "Garfield – Escape from Monday to trójwymiarowa platformówka z Garfieldem w roli głównej. Najleniwszy kot na świecie utknął w koszmarnym śnie pełnym warzyw. Gracz musi go z niego obudzić, przemierzając kolorowe poziomy. Tym razem Garfield będzie musiał się sporo napracować.",
+    "instrPaczka": 1
   },
   {
     "game": "METAL GEAR SOLID - Master Collection Version",
@@ -19106,7 +19195,8 @@
     "tworcy": [
       "Vetix",
       "pavlikdc"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Death's Gambit: Afterlife",
@@ -19173,7 +19263,8 @@
     "tworcy": [
       "Vetix",
       "Hektor"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Stygian Outer Gods",
@@ -19189,7 +19280,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/stygian-outer-gods-aa83e0fa.webp",
     "opis": "Stygian: Outer Gods (2026) to survival horror z elementami RPG zaprezentowany z perspektywy pierwszej osoby (FPP), stworzony przez studio Misterial Games i wydany przez Fulqrum Publishing na silniku Unreal Engine 5. Tytuł osadzony jest w tym samym uniwersum co taktyczne RPG Stygian: Reign of the Old Ones z 2019 roku, inspirowanym prozą H.P.",
     "steam": 2581410,
-    "upd": "2026-11-10"
+    "upd": "2026-11-10",
+    "instrPaczka": 1
   },
   {
     "game": "Sonic Rivals",
@@ -19298,7 +19390,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-inc-ae7d62d6.webp",
     "opis": "Kingdom Inc. (2026) to niezależna gra strategiczna łącząca mechaniki budowania fabryki (automation/crafting), symulatora miasta oraz gry przygodowej, stworzona przez studio Leaping Turtle.   W odróżnieniu od klasycznych gier budowlanych, w Kingdom Inc. gracz wciela się w rolę zarządcy upadającego królestwa Yensburg i przekształca je w sprawnie działające „przedsiębiorstwo” produkcyjne.",
     "steam": 4538080,
-    "upd": "2026-11-11"
+    "upd": "2026-11-11",
+    "instrPaczka": 1
   },
   {
     "game": "System Shock 2: 25th Anniversary Remaster",
@@ -23253,7 +23346,8 @@
     "tworcy": [
       "Vetix",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "CarX Street",
@@ -23269,7 +23363,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/carx-street-b7962912.webp",
     "opis": "CarX Street to dynamiczna gra wyścigowa w otwartym świecie, skupiająca się na nielegalnych wyścigach ulicznych, drifcie oraz zaawansowanym tuningu samochodów.",
     "steam": 1114150,
-    "upd": "2026-11-12"
+    "upd": "2026-11-12",
+    "instrPaczka": 1
   },
   {
     "game": "The Necromancer’s Tale",
@@ -23321,7 +23416,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-eighties-822624ff.webp",
     "opis": "Kingdom Eighties to gra należąca do gatunku strategii czasu rzeczywistego (RTS) z silnymi elementami tower defense, budowania bazy oraz przygodówki (side-scroller).",
     "steam": 1956040,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "Kingdom Two Crowns",
@@ -23337,7 +23433,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-two-crowns-8c988649.webp",
     "opis": "Kingdom Two Crowns to klimatyczna gra strategiczna 2D z piękną oprawą pixel-art, w której wcielasz się w monarchę budującego własne królestwo od zera.\n\nPrzemierzając krainę na wierzchowcu, rekrutujesz poddanych, wznosisz mury, rozwijasz gospodarkę i odkrywasz nowe wyspy, by w nocy odpierać fale potworów czyhających na Twoją koronę. Całość opiera się na intuicyjnym sterowaniu i systemie zarządzania monetami, a unikalny tryb kooperacji pozwala przeżyć tę przygodę solo lub wspólnie z drugim graczem",
     "steam": 701160,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "Kingdom: Classic",
@@ -23353,7 +23450,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-classic-140bb547.webp",
     "opis": "Kingdom: Classic to minimalistyczna, dwuwymiarowa gra strategiczna z nastrojową oprawą pixel-art, która zapoczątkowała całą serię.\n\nJako monarcha przemierzający krainę na wierzchowcu, musisz zbudować swoje królestwo od podstaw za pomocą prostego systemu wydawania złotych monet. Za dnia rekrutujesz poddanych, wznosisz mury i rozwijasz gospodarkę, by nocą odpierać coraz silniejsze ataki tajemniczych stworów czyhających na Twoją koronę. Gra stawia na samodzielne odkrywanie zasad i wysokie wyzwanie",
     "steam": 368230,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "Kingdom: New Lands",
@@ -23369,7 +23467,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/kingdom-new-lands-e1e3ff5a.webp",
     "opis": "Kingdom: New Lands to nastrojowa, dwuwymiarowa gra strategiczna z oprawą pixel-art, rozwijająca pomysły znane z pierwowzoru o rozbudowany element odkrywania nieznanego.\n\nJako monarcha przemierzasz konno kolejne wyspy, rekrutując poddanych, wznosząc umocnienia i odpierając nocne ataki tajemniczych stworów czyhających na Twoją koronę. Twoim głównym celem jest nie tylko obrona obozu przed coraz silniejszymi falami wrogów oraz surową zimą, ale też odbudowa wraku statku, który pozwala wyruszyć w dals",
     "steam": 496300,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "over the hill",
@@ -23389,7 +23488,8 @@
     "tworcy": [
       "Misstgun",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Definitely Not Fried Chicken",
@@ -23405,7 +23505,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/definitely-not-fried-chicken-300ff431.webp",
     "opis": "Definitely Not Fried Chicken to osadzona w klimacie lat 80. gra ekonomiczno-strategiczna (tycoon / symulator zarządzania), w której budujesz narkotykowe imperium pod przykrywką całkowicie legalnych biznesów.",
     "steam": 1036240,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "The Witch's Bakery",
@@ -23422,7 +23523,8 @@
     "opis": "The Witch's Bakery to przytulna, dwuwymiarowa gra przygodowo-symulacyjna (cozy RPG), w której wcielasz się w młodą czarownicę prowadzącą magiczną piekarnię we współczesnym Paryżu.",
     "steam": 2967950,
     "upd": "2026-11-20",
-    "ukonczono": "2026-11-19"
+    "ukonczono": "2026-11-19",
+    "instrPaczka": 1
   },
   {
     "game": "Ys Origin",
@@ -23438,7 +23540,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/ys-origin-1fc7e76a.webp",
     "opis": "Ys Origin to dynamiczna gra action RPG typu hack-and-slash, będąca fabularnym prequelem kultowej japońskiej serii Ys, której akcja rozgrywa się 700 lat przed wydarzeniami z pierwszej części.",
     "steam": 207350,
-    "upd": "2026-11-13"
+    "upd": "2026-11-13",
+    "instrPaczka": 1
   },
   {
     "game": "Twin Mirror",
@@ -23539,7 +23642,8 @@
     "tworcy": [
       "Vetix",
       "Rogal"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "TCG Card Shop Simulator",
@@ -23555,7 +23659,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tcg-card-shop-simulator-5211393c.webp",
     "opis": "TCG Card Shop Simulator to symulator ekonomiczny / gra typu tycoon z perspektywy pierwszej osoby (FPP), skupiająca się na prowadzeniu własnego sklepu z kolekcjonerskimi grami karcianymi.",
     "steam": 3070070,
-    "upd": "2026-11-14"
+    "upd": "2026-11-14",
+    "instrPaczka": 1
   },
   {
     "game": "DERELIKT",
@@ -23683,7 +23788,8 @@
     "dodano": "2026-11-15",
     "upd": "2026-11-15",
     "genre": "Horror",
-    "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść."
+    "opis": "Kooperacyjny horror od Swain Games dla 1–4 graczy, dostępny we wczesnym dostępie. Sprzętem do wykrywania zjawisk paranormalnych szukasz śladów, ustalasz składniki rytuału i próbujesz wypędzić demona – jeden błąd i możesz już nie wyjść.",
+    "instrPaczka": 1
   },
   {
     "game": "The Hundred Line -Last Defense Academy-",
@@ -23703,7 +23809,8 @@
     "tworcy": [
       "Vetix",
       "Undertaker"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "The Path Into The Abyss (demo)",
@@ -23767,7 +23874,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/battlefleet-gothic-armada-2-c841ef28.webp",
     "opis": "Battlefleet Gothic: Armada 2 to taktyczna strategia czasu rzeczywistego (RTS) osadzona w mrocznym uniwersum Warhammera 40,000, w której przejmujesz dowodzenie nad potężnymi flotami kosmicznymi. Wydana w 2019 roku produkcja studia Tindalos Interactive jest bezpośrednią kontynuacją gry z 2016 roku, znacząco rozbudowaną pod względem skali i zawartości.",
     "steam": 573100,
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "instrPaczka": 1
   },
   {
     "game": "Cat Quest II",
@@ -23787,7 +23895,8 @@
     "tworcy": [
       "Vetix",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Golf With Your Friends",
@@ -23803,7 +23912,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/golf-with-your-friends-7d88f75f.webp",
     "opis": "Golf With Your Friends to dynamiczna, zręcznościowa gra imprezowa o minigolfie, nastawiona przede wszystkim na rywalizację ze znajomymi w sieci. Produkcja studia Blacklight Interactive (wydana przez Team17) stawia na szalone, nierealistyczne tory pełne przeszkód oraz możliwość modyfikowania zasad rozgrywki.",
     "steam": 431240,
-    "upd": "2026-11-16"
+    "upd": "2026-11-16",
+    "instrPaczka": 1
   },
   {
     "game": "Remnant II",
@@ -23923,7 +24033,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/across-the-obelisk-96dcf9cd.webp",
     "opis": "Across the Obelisk to wydana w 2022 roku turowa gra RPG typu roguelite deckbuilder, stworzona przez studio Dreamsite Games. Tytuł łączy budowanie talii kart znaną z gier takich jak Slay the Spire z klasyczną eksploracją drużynową oraz rozbudowanym trybem kooperacji.",
     "steam": 1385380,
-    "upd": "2026-11-17"
+    "upd": "2026-11-17",
+    "instrPaczka": 1
   },
   {
     "game": "Pascal's Wager: Definitive Edition",
@@ -23939,7 +24050,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/pascal-s-wager-definitive-edition-e0ce46e7.webp",
     "opis": "Pascal's Wager: Definitive Edition to mroczna gra RPG akcji typu soulslike, stworzona przez studio TipsWorks. Pierwotnie zadebiutowała na urządzeniach mobilnych w 2020 roku, zyskując uznanie jako jedna z pierwszych pełnoprawnych produkcji „konsolowej jakości” na smartfony, a edycja Definitive Edition przeniosła ją w odświeżonej formie na PC i Nintendo Switch wraz ze wszystkimi dodatkami.",
     "steam": 1456650,
-    "upd": "2026-11-17"
+    "upd": "2026-11-17",
+    "instrPaczka": 1
   },
   {
     "game": "Kunitsu-Gami: Path of the Goddess",
@@ -24151,7 +24263,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-24"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
@@ -24167,7 +24280,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-41fa0f5c.webp",
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles to wydana w 2021 roku trójwymiarowa bijatyka arenówka z elementami przygodowej gry akcji, stworzona przez studio CyberConnect2 (znane z serii Naruto: Ultimate Ninja Storm) i wydana przez firmę Sega. Produkcja jest wierną adaptacją pierwszego sezonu popularnego anime Kimetsu no Yaiba oraz kinowego hitu Mugen Train.",
     "steam": 1490890,
-    "upd": "2026-11-19"
+    "upd": "2026-11-19",
+    "instrPaczka": 1
   },
   {
     "game": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
@@ -24184,7 +24298,8 @@
     "opis": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 to wydana w 2025 roku kontynuacja trójwymiarowej bijatyki arenówki z elementami przygodowej gry akcji, ponownie opracowana przez studio CyberConnect2 i wydana przez firmę Sega. Produkcja rozwija formułę pierwszej części i adaptuje kolejne kluczowe wątki z anime Kimetsu no Yaiba – od Dzielnicy Rozrywki (Entertainment District Arc), przez Wioskę Kowali (Swordsmith Village Arc), aż po Trening Filarów (Hashira Training Arc).",
     "steam": 2928600,
     "upd": "2026-11-19",
-    "ukonczono": "2026-11-19"
+    "ukonczono": "2026-11-19",
+    "instrPaczka": 1
   },
   {
     "game": "Middle-earth: Shadow of War",
@@ -24221,7 +24336,8 @@
     "tworcy": [
       "Vetix",
       "Rogal"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Adventure Time: Heroes of Ooo",
@@ -24280,7 +24396,8 @@
     "tworcy": [
       "Vetix",
       "Lisa_"
-    ]
+    ],
+    "instrPaczka": 1
   },
   {
     "game": "Monster Sanctuary",
@@ -24312,7 +24429,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/final-fantasy-x-x-2-hd-remaster-6670434d.webp",
     "opis": "FINAL FANTASY X/X-2 HD Remaster to wydany w 2013 roku (a następnie przeniesiony na nowsze platformy) odświeżony pakiet dwóch kultowych japońskich gier fabularnych (jRPG) z ery PlayStation 2, stworzony i wydany przez firmę Square Enix. Kolekcja zawiera pełne wersje Final Fantasy X oraz jego bezpośredniej kontynuacji Final Fantasy X-2 w wersji International, wraz z dodatkowymi epilogami.",
     "steam": 359870,
-    "upd": "2026-11-19"
+    "upd": "2026-11-19",
+    "instrPaczka": 1
   },
   {
     "game": "PowerWash Simulator",
@@ -24328,7 +24446,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/powerwash-simulator-ff26baef.webp",
     "opis": "PowerWash Simulator to wydany w 2022 roku relaksujący symulator mycia ciśnieniowego z perspektywy pierwszej osoby (FPP), stworzony przez brytyjskie studio FuturLab i wydany przez Square Enix Collective. Produkcja zdobyła ogromną popularność jako tzw. gra typu cozy – pozbawiona presji czasu, rywalizacji i przemocy, skupiająca się na satysfakcjonującym przywracaniu porządku.",
     "steam": 1290000,
-    "upd": "2026-11-19"
+    "upd": "2026-11-19",
+    "instrPaczka": 1
   },
   {
     "game": "Coromon",
@@ -24361,7 +24480,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/metal-gear-solid-4-guns-of-the-patriots-master-collection-version-4327c894.webp",
     "opis": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version to pierwsze w historii wydanie multiplatformowe kultowej skradanki akcji z 2008 roku, która przez 18 lat pozostawała tytułem ekskluzywnym dla konsoli PlayStation 3. Gra zadebiutowała 27 sierpnia 2026 roku jako główny element zestawu Metal Gear Solid: Master Collection Vol. 2 (oraz jako samodzielny tytuł cyfrowy) na PC, PlayStation 5, Xbox Series X/S, Nintendo Switch oraz Nintendo Switch 2.",
     "steam": 2492670,
-    "upd": "2026-11-20"
+    "upd": "2026-11-20",
+    "instrPaczka": 1
   },
   {
     "game": "Contract J.A.C.K.",
@@ -24763,7 +24883,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/fell-seal-arbiter-s-mark-03012a21.webp",
     "opis": "Fell Seal: Arbiter's Mark to turowa gra taktyczna RPG (Tactical RPG / Strategy RPG), silnie inspirowana klasykami takimi jak Final Fantasy Tactics oraz Tactics Ogre.\n\nRozgrywka skupia się na prowadzeniu drużyny najemników przez liniową kampanię fabularną, toczeniu turowych bitew na izometrycznych, podzielonych na pola (siatkę) mapach z uwzględnieniem ukształtowania terenu oraz na rozbudowanym systemie rozwoju postaci, obejmującym ponad 30 klas i setki umiejętności.",
     "steam": 699170,
-    "upd": "2026-11-22"
+    "upd": "2026-11-22",
+    "instrPaczka": 1
   },
   {
     "game": "NTE: Neverness to Everness",
@@ -25154,7 +25275,8 @@
     "zmiana": {
       "kto": "Harddrive",
       "dzien": "2026-11-25"
-    }
+    },
+    "instrPaczka": 1
   },
   {
     "game": "Tales of Symphonia",
@@ -25288,7 +25410,8 @@
     "dodano": "2026-11-25",
     "img": "https://cdn.grypopolsku.pl/okladki/god-of-war-ii-fbf979c2.webp",
     "opis": "God of War II to wydana w 2007 roku na konsolę PlayStation 2 przygodowa gra akcji (action-adventure / hack and slash), stworzona przez studio Santa Monica Studio i wydana przez Sony Computer Entertainment. Jest bezpośrednią kontynuacją pierwszego God of War z 2005 roku.",
-    "upd": "2026-11-24"
+    "upd": "2026-11-24",
+    "instrPaczka": 1
   },
   {
     "game": "Lil Gator Game",
@@ -25304,7 +25427,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/lil-gator-game-833343df.webp",
     "opis": "Lil Gator Game to wydana w grudniu 2022 roku urocza, trójwymiarowa platformówka przygodowa / gra eksploracyjna (typu cozy game), stworzona przez niezależne studio MegaWobble i wydana przez Playtonic Friends.",
     "steam": 1586800,
-    "upd": "2026-11-24"
+    "upd": "2026-11-24",
+    "instrPaczka": 1
   },
   {
     "game": "Aragami 2",
@@ -25320,7 +25444,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/aragami-2-e786cbf0.webp",
     "opis": "Aragami 2 to wydana we wrześniu 2021 roku trzecioosobowa skradanka z elementami gry akcji (stealth / action-adventure), stworzona i wydana przez hiszpańskie studio Lince Works. Produkcja jest bezpośrednią kontynuacją ciepło przyjętego Aragami z 2016 roku.",
     "steam": 1158370,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "Dwarf Fortress",
@@ -25336,7 +25461,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/dwarf-fortress-f140d9dc.webp",
     "opis": "Dwarf Fortress to legendarna, niezwykle rozbudowana gra strategiczno-ekonomiczna i symulator zarządzania kolonią z elementami roguelike, rozwijana nieprzerwanie od 2002 roku (pierwsza wersja alfa ukazała się w 2006 roku) przez braci Tarna i Zacha Adamsów (studio Bay 12 Games). W grudniu 2022 roku gra zadebiutowała w komercyjnej wersji na platformie Steam (wydanej przez Kitfox Games), zyskując pełną oprawę graficzną piksel-art oraz obsługę myszy w miejsce klasycznej grafiki opartej na znakach ASC",
     "steam": 975370,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "My Time at Portia",
@@ -25352,7 +25478,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/my-time-at-portia-49050bff.webp",
     "opis": "My Time at Portia to wydana w styczniu 2019 roku (po okresie wczesnego dostępu) przygodowa gra symulacyjna z elementami RPG (life sim / crafting RPG), stworzona przez chińskie studio Pathea Games i wydana przez Team17. Produkcja doczekała się kontynuacji zatytułowanej My Time at Sandrock.",
     "steam": 666140,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "My Time at Sandrock",
@@ -25368,7 +25495,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/my-time-at-sandrock-4371e6a2.webp",
     "opis": "My Time at Sandrock to wydana w listopadzie 2023 roku przygodowa gra symulacyjna z elementami RPG (life sim / crafting RPG), stworzona przez chińskie studio Pathea Games i wydana przez PM Studios oraz Focus Entertainment. Produkcja stanowi bezpośrednią kontynuację ciepło przyjętego My Time at Portia, rozgrywającą się w tym samym uniwersum.",
     "steam": 1084600,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "Shadowrun: Dragonfall - Director's Cut",
@@ -25384,7 +25512,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/shadowrun-dragonfall-director-s-cut-8b174c96.webp",
     "opis": "Shadowrun: Dragonfall – Director's Cut to wydana we wrześniu 2014 roku taktyczna gra RPG (cRPG / tactical RPG), stworzona i wydana przez studio Harebrained Schemes. Stanowi samodzielną, znacznie rozbudowaną i ulepszoną edycję dodatku Dragonfall do gry Shadowrun Returns (2013), osadzoną w kultowym uniwersum łączącym cyberpunk z elementami magii i fantasy.",
     "steam": 300550,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "Shadowrun: Hong Kong",
@@ -25400,7 +25529,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/shadowrun-hong-kong-9e0eafb6.webp",
     "opis": "Shadowrun: Hong Kong to wydana w sierpniu 2015 roku taktyczna gra RPG (cRPG / tactical RPG), stworzona i wydana przez studio Harebrained Schemes. Jest to trzecia samodzielna produkcja z odrodzonej serii gier komputerowych osadzonych w uniwersum Shadowrun (po Shadowrun Returns i Shadowrun: Dragonfall), łączącym mroczny cyberpunk z elementami magii, mitologii i fantasy. W 2016 roku gra otrzymała bezpłatną aktualizację Extended Edition, dodającą minikampanię Shadows of Hong Kong.",
     "steam": 346940,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "Tales of Maj'Eyal",
@@ -25416,7 +25546,8 @@
     "img": "https://cdn.grypopolsku.pl/okladki/tales-of-maj-eyal-ada8d9eb.webp",
     "opis": "Tales of Maj'Eyal (w skrócie ToME4) to wydana w 2012 roku (po wieloletnim rozwoju jako projekt open-source) turowa taktyczna gra RPG typu roguelike, stworzona przez Nicolasa Casaliniego (znanego jako DarkGod) i studio Netcore Games. Produkcja stanowi bezpośrednią ewolucję klasycznego ToME 2 (pierwotnie Tales of Middle-earth), ale całkowicie zrywa z uniwersum Tolkiena na rzecz rozbudowanego, autorskiego świata fantasy.",
     "steam": 259680,
-    "upd": "2026-11-25"
+    "upd": "2026-11-25",
+    "instrPaczka": 1
   },
   {
     "game": "Milki Delivery",

@@ -25586,6 +25586,22 @@
     "upd": "2026-11-26"
   },
   {
+    "game": "Crysis Remastered",
+    "platform": "PC",
+    "type": "Napisy",
+    "prog": 100,
+    "ver": "—",
+    "author": "—",
+    "pl": "of",
+    "lore": "https://lorespeak.pl/games/crysis-remastered",
+    "genre": "Strzelanka",
+    "dodano": "2026-11-28",
+    "img": "https://cdn.grypopolsku.pl/okladki/crysis-remastered-7cfbedc4.webp",
+    "opis": "Crysis Remastered to odświeżona wersja kultowej strzelanki pierwszoosobowej (FPS) z 2007 roku, przygotowana przez studia Crytek oraz Saber Interactive. Gra nie jest dostępna w aktualnych wynikach zakupowych w tej wyszukiwarce, ale poniżej znajdziesz jej szczegółowy opis.",
+    "steam": 1715130,
+    "upd": "2026-11-28"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -25606,19 +25622,19 @@
     }
   },
   {
-    "game": "Crysis Remastered",
+    "game": "GTA 2: Definitive Retro Edition",
     "platform": "PC",
     "type": "Napisy",
+    "status": "Gotowe",
     "prog": 100,
     "ver": "—",
-    "author": "—",
-    "pl": "of",
-    "lore": "https://lorespeak.pl/games/crysis-remastered",
-    "genre": "Strzelanka",
+    "author": "Na100procent",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=5014",
+    "yt": "https://www.youtube.com/watch?v=STfeKDAafc0",
+    "genre": "Akcja",
     "dodano": "2026-11-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/crysis-remastered-7cfbedc4.webp",
-    "opis": "Crysis Remastered to odświeżona wersja kultowej strzelanki pierwszoosobowej (FPS) z 2007 roku, przygotowana przez studia Crytek oraz Saber Interactive. Gra nie jest dostępna w aktualnych wynikach zakupowych w tej wyszukiwarce, ale poniżej znajdziesz jej szczegółowy opis.",
-    "steam": 1715130,
+    "img": "https://cdn.grypopolsku.pl/okladki/gta-2-definitive-retro-edition-047c5ad5.webp",
+    "opis": "GTA 2: Definitive Retro Edition to nieoficjalne, darmowe, fanowskie odświeżenie kultowej gry akcji Grand Theft Auto 2 z 1999 roku, przygotowane na PC przez polskiego moddera i opublikowane w listopadzie 2026 roku (m.in. za pośrednictwem społeczności Graj Po Polsku). Projekt powstał jako kontynuacja analogicznej inicjatywy odświeżającej pierwszą część serii (GTA 1: Definitive Retro Edition).",
     "upd": "2026-11-28"
   }
 ]

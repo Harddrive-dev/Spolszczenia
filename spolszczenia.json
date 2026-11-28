@@ -11377,18 +11377,18 @@
     "type": "Dubbing",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "0.7.1",
+    "ver": "0.8.0",
     "author": "WoWPoPolsku",
     "link": "https://www.curseforge.com/wow/addons/forever-wowpopolsku-2-0",
     "dodano": "2026-10-31",
     "img": "https://cdn.grypopolsku.pl/okladki/world-of-warcraft-forever-d397fa07.webp",
-    "upd": "2026-11-22",
+    "upd": "2026-11-28",
     "genre": "RPG",
     "opis": "Nowe spojrzenie na klasyczny Azeroth, w którym znane ścieżki prowadzą do nowych odkryć. Wersja rozwijana osobno od Retaila, dostępna w ramach subskrypcji World of Warcraft.",
     "instr": "## Polskie napisy (Forever WoWPoPolsku 2.0)\n\n1. Zainstaluj aplikację CurseForge i wybierz w niej World of Warcraft Forever.\n2. Wyszukaj **Forever WoWPoPolsku 2.0** i kliknij **Install**.\n3. Uruchom grę i włącz addon na liście przy wyborze postaci. Resztę ustawień przeprowadzi z Tobą kreator.\n\n## Polski dubbing zadań (Spoken, opcjonalnie)\n\n4. Zainstaluj [Spoken](https://www.curseforge.com/wow/addons/spoken) w wersji 3.8.3 lub nowszej.\n5. Dodaj paczkę głosów **„Polski”**, najprościej przez program Spoken Manager (zakładka Community).\n6. Uruchom grę ponownie (samo /reload nie wystarczy) i w ustawieniach Spoken ustaw **Language → Voice Language: Polski**.\n\n👉 [Instrukcja krok po kroku (PDF)](https://wowpopolsku.pl/pobierz/Spoken-po-polsku-instalacja.pdf) · [Więcej we wpisie w Aktualnościach](/aktualnosci/world-of-warcraft-forever-z-polskim-lektorem-spoken-i-wowpopolsku-dzialaja-razem/)",
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-22"
+      "dzien": "2026-11-28"
     },
     "spolszczenia": [
       {
@@ -16760,17 +16760,17 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.11",
+    "ver": "1.12",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=black-desert",
     "dodano": "2026-10-09",
-    "upd": "2026-11-16",
+    "upd": "2026-11-27",
     "img": "https://cdn.grypopolsku.pl/okladki/black-desert-0a987861.webp",
     "opis": "Koreańskie MMORPG z dynamiczną walką akcji i rozbudowanym życiem w otwartym świecie. Oprócz potworów możesz handlować, hodować konie i łowić ryby.",
     "steam": 582660,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-16"
+      "dzien": "2026-11-28"
     },
     "tworcy": [
       "Vetix",
@@ -17306,15 +17306,19 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=grime-ii",
     "dodano": "2026-07-19",
-    "upd": "2026-07-19",
+    "upd": "2026-11-27",
     "img": "https://cdn.grypopolsku.pl/okladki/grime-ii-d22e3e01.webp",
     "steam": 2529790,
     "opis": "GRIME II to surrealistyczna gra akcji w stylu metroidvanii studia Clover Bite, kontynuacja gry GRIME z 2021 roku. Gracz wciela się w Bezkształtnego – mimika, który pochłania stworzenia. Za pomocą macek zrobionych z dłoni łapie wrogów i przywołuje później formy w ich kształcie. Akcja toczy się w nowej, dziwnej krainie uniwersum GRIME, zdominowanej przez sztukę.",
-    "instrPaczka": 1
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-28"
+    }
   },
   {
     "game": "Hitman World of Assassination",
@@ -17323,15 +17327,19 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.6",
+    "ver": "1.7",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=hitman-world-of-assassination",
     "dodano": "2026-08-16",
-    "upd": "2026-10-29",
+    "upd": "2026-11-27",
     "img": "https://cdn.grypopolsku.pl/okladki/hitman-world-of-assassination-f472d493.webp",
     "opis": "Agent 47 podróżuje po świecie i eliminuje cele w rozbudowanych, otwartych lokacjach. Zbiór trylogii, w której sam wybierasz przebranie, narzędzia i sposób wykonania zlecenia.",
     "steam": 1659040,
-    "instrPaczka": 1
+    "instrPaczka": 1,
+    "zmiana": {
+      "kto": "Harddrive",
+      "dzien": "2026-11-28"
+    }
   },
   {
     "game": "Halo: The Master Chief Collection",
@@ -17573,16 +17581,16 @@
     "type": "Napisy",
     "status": "Gotowe",
     "prog": 100,
-    "ver": "1.0",
+    "ver": "1.1",
     "author": "VetSpolszczenia",
     "link": "https://vetspolszczenia.pl/projekt.html?id=lucius-ii",
     "dodano": "2026-10-27",
-    "upd": "2026-10-27",
+    "upd": "2026-11-28",
     "img": "https://cdn.grypopolsku.pl/okladki/lucius-ii-b94c6ba3.webp",
     "steam": 296830,
     "zmiana": {
       "kto": "Harddrive",
-      "dzien": "2026-11-11"
+      "dzien": "2026-11-28"
     },
     "opis": "Lucius II: The Prophecy to horror akcji studia Shiver Games, kontynuacja gry Lucius. Lucius, syn diabła, budzi się w szpitalu psychiatrycznym po wydarzeniach z pierwszej części. Ucieka z niego i wyrusza do miasta, aby wypełnić swoje mroczne przeznaczenie. Wykorzystuje nadprzyrodzone moce, a ofiary może eliminować w pomysłowy sposób.",
     "instrPaczka": 1
@@ -25602,6 +25610,22 @@
     "upd": "2026-11-28"
   },
   {
+    "game": "GTA 2: Definitive Retro Edition",
+    "platform": "PC",
+    "type": "Napisy",
+    "status": "Gotowe",
+    "prog": 100,
+    "ver": "—",
+    "author": "Na100procent",
+    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=5014",
+    "yt": "https://www.youtube.com/watch?v=STfeKDAafc0",
+    "genre": "Akcja",
+    "dodano": "2026-11-28",
+    "img": "https://cdn.grypopolsku.pl/okladki/gta-2-definitive-retro-edition-047c5ad5.webp",
+    "opis": "GTA 2: Definitive Retro Edition to nieoficjalne, darmowe, fanowskie odświeżenie kultowej gry akcji Grand Theft Auto 2 z 1999 roku, przygotowane na PC przez polskiego moddera i opublikowane w listopadzie 2026 roku (m.in. za pośrednictwem społeczności Graj Po Polsku). Projekt powstał jako kontynuacja analogicznej inicjatywy odświeżającej pierwszą część serii (GTA 1: Definitive Retro Edition).",
+    "upd": "2026-11-28"
+  },
+  {
     "game": "MADiSON",
     "platform": "PC",
     "type": "Napisy",
@@ -25620,21 +25644,5 @@
       "kto": "Harddrive",
       "dzien": "2026-11-07"
     }
-  },
-  {
-    "game": "GTA 2: Definitive Retro Edition",
-    "platform": "PC",
-    "type": "Napisy",
-    "status": "Gotowe",
-    "prog": 100,
-    "ver": "—",
-    "author": "Na100procent",
-    "link": "https://grajpopolsku.pl/forum/viewtopic.php?t=5014",
-    "yt": "https://www.youtube.com/watch?v=STfeKDAafc0",
-    "genre": "Akcja",
-    "dodano": "2026-11-28",
-    "img": "https://cdn.grypopolsku.pl/okladki/gta-2-definitive-retro-edition-047c5ad5.webp",
-    "opis": "GTA 2: Definitive Retro Edition to nieoficjalne, darmowe, fanowskie odświeżenie kultowej gry akcji Grand Theft Auto 2 z 1999 roku, przygotowane na PC przez polskiego moddera i opublikowane w listopadzie 2026 roku (m.in. za pośrednictwem społeczności Graj Po Polsku). Projekt powstał jako kontynuacja analogicznej inicjatywy odświeżającej pierwszą część serii (GTA 1: Definitive Retro Edition).",
-    "upd": "2026-11-28"
   }
 ]
